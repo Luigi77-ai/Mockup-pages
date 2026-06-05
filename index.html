@@ -213,23 +213,24 @@
       border-color: var(--gold-dark);
     }
 
-    .icon-gold {
+    .icon-glass {
       width: 44px;
       height: 44px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: var(--gold-dark);
-      background: linear-gradient(180deg, #fff7c7 0%, #ffd73a 100%);
-      border: 1px solid rgba(201, 149, 0, 0.28);
+      color: rgba(255,255,255,0.96);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(8px);
       flex-shrink: 0;
-      transition: transform var(--transition), background var(--transition), color var(--transition);
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
     }
 
-    .icon-gold:hover {
+    .icon-glass:hover {
       transform: translateY(-2px);
-      background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 100%);
-      color: #111111;
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.28);
     }
 
     .home-section {
@@ -435,6 +436,7 @@
     .portfolio-section {
       background: #ffffff;
       overflow: hidden;
+      padding-top: 0;
     }
 
     .portfolio-marquee-bar {
@@ -444,7 +446,8 @@
       border-top: 1px solid rgba(255,255,255,0.08);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       overflow: hidden;
-      margin-bottom: 18px;
+      margin-bottom: 0;
+      margin-top: -1px;
     }
 
     .portfolio-marquee-track {
@@ -464,42 +467,23 @@
       padding-right: 44px;
     }
 
-    .portfolio-hero-video {
-      position: relative;
-      width: 100%;
-      height: 280px;
-      overflow: hidden;
-      border: 1px solid rgba(16,16,16,0.08);
-      box-shadow: var(--shadow-md);
-      margin-bottom: 26px;
-      background: #0f1725;
-    }
-
-    .portfolio-hero-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .portfolio-hero-fade {
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 42%;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(
-        180deg,
-        rgba(8, 18, 33, 0) 0%,
-        rgba(8, 18, 33, 0.38) 35%,
-        rgba(8, 18, 33, 0.78) 100%
-      );
+    .portfolio-inner {
+      padding-top: 30px;
     }
 
     .portfolio-head {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      align-items: end;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 22px;
+      align-items: stretch;
       margin-bottom: 30px;
+    }
+
+    .portfolio-title-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 16px;
     }
 
     .portfolio-title {
@@ -509,6 +493,32 @@
       text-transform: uppercase;
       font-weight: 800;
       max-width: 8ch;
+    }
+
+    .portfolio-side-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 180px 180px;
+      gap: 14px;
+    }
+
+    .portfolio-side-gallery .gallery-card {
+      overflow: hidden;
+      border: 1px solid rgba(16,16,16,0.08);
+      box-shadow: var(--shadow-soft);
+      background: #f3f3f3;
+      min-height: 160px;
+    }
+
+    .portfolio-side-gallery .gallery-card img,
+    .portfolio-side-gallery .gallery-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portfolio-side-gallery .wide {
+      grid-column: 1 / 3;
     }
 
     .portfolio-grid {
@@ -691,7 +701,7 @@
 
     .cap-item:hover {
       transform: translateY(-2px);
-      color: #fff0ab;
+      color: #ffffff;
     }
 
     .cap-item span:last-child {
@@ -707,7 +717,8 @@
       gap: 16px;
     }
 
-    .media-stack .stack-card {
+    .media-stack .stack-card,
+    .media-feature-large {
       min-height: 240px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.16);
@@ -718,7 +729,9 @@
     }
 
     .media-stack .stack-card img,
-    .media-stack .stack-card video {
+    .media-stack .stack-card video,
+    .media-feature-large img,
+    .media-feature-large video {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -735,6 +748,11 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    .media-feature-large {
+      min-height: 320px;
+      margin-top: 18px;
     }
 
     .proof-section {
@@ -884,7 +902,8 @@
       .about-grid,
       .capabilities-layout,
       .proof-grid,
-      .contact-card {
+      .contact-card,
+      .portfolio-head {
         grid-template-columns: 1fr;
       }
 
@@ -898,6 +917,15 @@
       .project-card.medium,
       .project-card.wide {
         grid-column: span 6;
+      }
+
+      .portfolio-side-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 180px;
+      }
+
+      .portfolio-side-gallery .wide {
+        grid-column: auto;
       }
     }
 
@@ -949,8 +977,13 @@
       }
 
       .media-stack,
-      .contact-mini-gallery {
+      .contact-mini-gallery,
+      .portfolio-side-gallery {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .portfolio-side-gallery .wide {
+        grid-column: 1 / 3;
       }
     }
 
@@ -972,7 +1005,8 @@
       .work-strip,
       .proof-banners,
       .media-stack,
-      .contact-mini-gallery {
+      .contact-mini-gallery,
+      .portfolio-side-gallery {
         grid-template-columns: 1fr;
       }
 
@@ -982,13 +1016,14 @@
       }
 
       .about-gallery .large,
-      .about-gallery .wide {
+      .about-gallery .wide,
+      .portfolio-side-gallery .wide {
         grid-column: auto;
         grid-row: auto;
       }
 
-      .portfolio-hero-video {
-        height: 220px;
+      .media-feature-large {
+        min-height: 240px;
       }
     }
   </style>
@@ -1134,18 +1169,25 @@
         </div>
       </div>
 
-      <div class="container">
-        <div class="portfolio-hero-video">
-          <video autoplay muted loop playsinline>
-            <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
-          </video>
-          <div class="portfolio-hero-fade"></div>
-        </div>
-
+      <div class="container portfolio-inner">
         <div class="portfolio-head">
-          <div>
+          <div class="portfolio-title-wrap">
             <div class="eyebrow">Featured Projects</div>
             <h2 class="portfolio-title">Work That Feels Premium Without Saying Too Much</h2>
+          </div>
+
+          <div class="portfolio-side-gallery">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" alt="Featured gallery image one" />
+            </div>
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=80" alt="Featured gallery image two" />
+            </div>
+            <div class="gallery-card wide">
+              <video autoplay muted loop playsinline>
+                <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
 
@@ -1283,16 +1325,25 @@
             </p>
           </div>
 
-          <div class="media-stack">
-            <div class="stack-card">
-              <span class="media-tag">Photo Space</span>
-              <img src="https://images.unsplash.com/photo-1580281780460-82d277b0e3f8?auto=format&fit=crop&w=1200&q=80" alt="Creative media sample" />
+          <div>
+            <div class="media-stack">
+              <div class="stack-card">
+                <span class="media-tag">Photo Space</span>
+                <img src="https://images.unsplash.com/photo-1580281780460-82d277b0e3f8?auto=format&fit=crop&w=1200&q=80" alt="Creative media sample" />
+              </div>
+
+              <div class="stack-card">
+                <span class="media-tag">Video Space</span>
+                <video autoplay muted loop playsinline>
+                  <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
 
-            <div class="stack-card">
-              <span class="media-tag">Video Space</span>
+            <div class="media-feature-large">
+              <span class="media-tag">Large Media Space</span>
               <video autoplay muted loop playsinline>
-                <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
+                <source src="assets/videos/13986255_2160_3840_25fps.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -1302,42 +1353,43 @@
           <div class="marquee">
             <div class="marquee-group">
               <div class="cap-item">
-                <span class="icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                    <circle cx="11" cy="11" r="7"></circle>
-                    <path d="M21 21l-4.3-4.3"></path>
+                <span class="icon-glass">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 7.5 12 4l8 3.5v9L12 20l-8-3.5v-9Z"></path>
+                    <path d="M12 20V11"></path>
+                    <path d="M20 7.5 12 11 4 7.5"></path>
                   </svg>
                 </span>
                 <span>Brand Positioning</span>
               </div>
 
               <div class="cap-item">
-                <span class="icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                    <path d="M4 5h16v14H4z"></path>
-                    <path d="M8 9h8"></path>
-                    <path d="M8 13h5"></path>
+                <span class="icon-glass">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                    <path d="M3 9h18"></path>
+                    <path d="M8 4v16"></path>
                   </svg>
                 </span>
                 <span>Web Design</span>
               </div>
 
               <div class="cap-item">
-                <span class="icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                    <polygon points="9 7 9 17 17 12 9 7"></polygon>
-                    <rect x="3" y="5" width="18" height="14"></rect>
+                <span class="icon-glass">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                    <path d="m10 9 5 3-5 3V9Z"></path>
                   </svg>
                 </span>
                 <span>Video Content</span>
               </div>
 
               <div class="cap-item">
-                <span class="icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                    <path d="M4 19V5"></path>
-                    <path d="M10 19V9"></path>
-                    <path d="M16 19V12"></path>
+                <span class="icon-glass">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19V9"></path>
+                    <path d="M10 19V5"></path>
+                    <path d="M16 19v-7"></path>
                     <path d="M22 19V3"></path>
                   </svg>
                 </span>
@@ -1345,20 +1397,20 @@
               </div>
 
               <div class="cap-item">
-                <span class="icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                    <path d="M3 3v18h18"></path>
-                    <path d="M7 14l4-4 3 3 5-6"></path>
+                <span class="icon-glass">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19h16"></path>
+                    <path d="m5 15 4-4 3 3 6-7"></path>
                   </svg>
                 </span>
                 <span>Conversion Systems</span>
               </div>
 
               <div class="cap-item">
-                <span class="icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                    <path d="M12 3v18"></path>
-                    <path d="M3 12h18"></path>
+                <span class="icon-glass">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3.5"></circle>
+                    <path d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.9V20a2 2 0 1 1-4 0v-.2a1 1 0 0 0-.6-.9 1 1 0 0 0-1.1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.9-.6H4a2 2 0 1 1 0-4h.2a1 1 0 0 0 .9-.6 1 1 0 0 0-.2-1.1l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1 1 0 0 0 1.1.2 1 1 0 0 0 .6-.9V4a2 2 0 1 1 4 0v.2a1 1 0 0 0 .6.9 1 1 0 0 0 1.1-.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1 1 0 0 0-.2 1.1 1 1 0 0 0 .9.6H20a2 2 0 1 1 0 4h-.2a1 1 0 0 0-.9.6Z"></path>
                   </svg>
                 </span>
                 <span>Creative Direction</span>
@@ -1367,42 +1419,43 @@
 
             <div class="marquee-group" aria-hidden="true">
               <div class="cap-item">
-                <span class="icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                    <circle cx="11" cy="11" r="7"></circle>
-                    <path d="M21 21l-4.3-4.3"></path>
+                <span class="icon-glass">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 7.5 12 4l8 3.5v9L12 20l-8-3.5v-9Z"></path>
+                    <path d="M12 20V11"></path>
+                    <path d="M20 7.5 12 11 4 7.5"></path>
                   </svg>
                 </span>
                 <span>Brand Positioning</span>
               </div>
 
               <div class="cap-item">
-                <span class="icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                    <path d="M4 5h16v14H4z"></path>
-                    <path d="M8 9h8"></path>
-                    <path d="M8 13h5"></path>
+                <span class="icon-glass">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                    <path d="M3 9h18"></path>
+                    <path d="M8 4v16"></path>
                   </svg>
                 </span>
                 <span>Web Design</span>
               </div>
 
               <div class="cap-item">
-                <span class="icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                    <polygon points="9 7 9 17 17 12 9 7"></polygon>
-                    <rect x="3" y="5" width="18" height="14"></rect>
+                <span class="icon-glass">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                    <path d="m10 9 5 3-5 3V9Z"></path>
                   </svg>
                 </span>
                 <span>Video Content</span>
               </div>
 
               <div class="cap-item">
-                <span class="icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                    <path d="M4 19V5"></path>
-                    <path d="M10 19V9"></path>
-                    <path d="M16 19V12"></path>
+                <span class="icon-glass">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19V9"></path>
+                    <path d="M10 19V5"></path>
+                    <path d="M16 19v-7"></path>
                     <path d="M22 19V3"></path>
                   </svg>
                 </span>
@@ -1410,20 +1463,20 @@
               </div>
 
               <div class="cap-item">
-                <span class="icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                    <path d="M3 3v18h18"></path>
-                    <path d="M7 14l4-4 3 3 5-6"></path>
+                <span class="icon-glass">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19h16"></path>
+                    <path d="m5 15 4-4 3 3 6-7"></path>
                   </svg>
                 </span>
                 <span>Conversion Systems</span>
               </div>
 
               <div class="cap-item">
-                <span class="icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                    <path d="M12 3v18"></path>
-                    <path d="M3 12h18"></path>
+                <span class="icon-glass">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3.5"></circle>
+                    <path d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.9V20a2 2 0 1 1-4 0v-.2a1 1 0 0 0-.6-.9 1 1 0 0 0-1.1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.9-.6H4a2 2 0 1 1 0-4h.2a1 1 0 0 0 .9-.6 1 1 0 0 0-.2-1.1l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1 1 0 0 0 1.1.2 1 1 0 0 0 .6-.9V4a2 2 0 1 1 4 0v.2a1 1 0 0 0 .6.9 1 1 0 0 0 1.1-.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1 1 0 0 0-.2 1.1 1 1 0 0 0 .9.6H20a2 2 0 1 1 0 4h-.2a1 1 0 0 0-.9.6Z"></path>
                   </svg>
                 </span>
                 <span>Creative Direction</span>
@@ -1447,11 +1500,12 @@
 
           <div class="proof-banners">
             <article class="proof-banner">
-              <span class="icon-gold">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                  <path d="M12 20V10"></path>
-                  <path d="M18 20V4"></path>
-                  <path d="M6 20v-6"></path>
+              <span class="icon-glass" style="color:#111111;background:rgba(255,255,255,0.7);border:1px solid rgba(17,17,17,0.12);backdrop-filter:none;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19V9"></path>
+                  <path d="M10 19V5"></path>
+                  <path d="M16 19v-7"></path>
+                  <path d="M22 19V3"></path>
                 </svg>
               </span>
               <h3>Clear Taste</h3>
@@ -1459,9 +1513,10 @@
             </article>
 
             <article class="proof-banner">
-              <span class="icon-gold">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                  <path d="M12 21l-8-7V5h16v9l-8 7z"></path>
+              <span class="icon-glass" style="color:#111111;background:rgba(255,255,255,0.7);border:1px solid rgba(17,17,17,0.12);backdrop-filter:none;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                  <path d="m10 9 5 3-5 3V9Z"></path>
                 </svg>
               </span>
               <h3>Real Media</h3>
@@ -1469,10 +1524,10 @@
             </article>
 
             <article class="proof-banner">
-              <span class="icon-gold">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                  <path d="M5 12h14"></path>
-                  <path d="M12 5l7 7-7 7"></path>
+              <span class="icon-glass" style="color:#111111;background:rgba(255,255,255,0.7);border:1px solid rgba(17,17,17,0.12);backdrop-filter:none;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19h16"></path>
+                  <path d="m5 15 4-4 3 3 6-7"></path>
                 </svg>
               </span>
               <h3>Fast Signal</h3>
@@ -1480,12 +1535,11 @@
             </article>
 
             <article class="proof-banner">
-              <span class="icon-gold">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
-                  <path d="M12 3v6"></path>
-                  <path d="M12 15v6"></path>
-                  <path d="M3 12h6"></path>
-                  <path d="M15 12h6"></path>
+              <span class="icon-glass" style="color:#111111;background:rgba(255,255,255,0.7);border:1px solid rgba(17,17,17,0.12);backdrop-filter:none;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 7.5 12 4l8 3.5v9L12 20l-8-3.5v-9Z"></path>
+                  <path d="M12 20V11"></path>
+                  <path d="M20 7.5 12 11 4 7.5"></path>
                 </svg>
               </span>
               <h3>Space To Grow</h3>
