@@ -14,25 +14,22 @@
 
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #101010;
-      --muted: #334055;
-      --line: rgba(16, 16, 16, 0.08);
+      --bg: #f8f6f1;
+      --surface: #ffffff;
+      --surface-soft: #eae2b7;
+      --text: #111111;
+      --muted: #3f4b57;
+      --line: rgba(0, 48, 73, 0.14);
 
-      --gold: #ffd028;
-      --gold-light: #ffe36a;
-      --gold-soft: #fff6bf;
-      --gold-dark: #c99500;
-
-      --blue-deep: #003ea8;
-      --blue: #1268ff;
-      --blue-bright: #49b3ff;
-      --blue-soft: #d8eeff;
-      --blue-pale: #edf7ff;
+      --brand-navy: #003049;
+      --brand-red: #d62828;
+      --brand-orange: #f77f00;
+      --brand-yellow: #fcbf49;
+      --brand-cream: #eae2b7;
 
       --container: 1340px;
-      --shadow-soft: 0 20px 40px rgba(20, 28, 40, 0.07);
-      --shadow-md: 0 24px 60px rgba(20, 28, 40, 0.11);
+      --shadow-soft: 0 20px 40px rgba(0, 48, 73, 0.08);
+      --shadow-md: 0 24px 60px rgba(0, 48, 73, 0.12);
       --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -54,6 +51,10 @@
       text-rendering: optimizeLegibility;
     }
 
+    body.is-locked {
+      overflow: hidden;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -65,6 +66,33 @@
       height: auto;
     }
 
+    .intro-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000000;
+      color: #ffffff;
+      transition: opacity 600ms ease, visibility 600ms ease;
+    }
+
+    .intro-screen.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-screen h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-align: center;
+      color: #ffffff;
+    }
+
     .container {
       width: min(100% - 40px, var(--container));
       margin-inline: auto;
@@ -74,7 +102,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.94);
+      background: rgba(248, 246, 241, 0.94);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
       transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), opacity 260ms ease;
@@ -110,9 +138,9 @@
       font-size: clamp(1.35rem, 2vw, 2rem);
       font-weight: 800;
       letter-spacing: -0.07em;
-      color: var(--text);
+      color: var(--brand-navy);
       text-transform: uppercase;
-      transition: transform var(--transition), opacity var(--transition);
+      transition: transform var(--transition), opacity var(--transition), color var(--transition);
       transform-origin: center;
       white-space: nowrap;
     }
@@ -124,7 +152,7 @@
       right: 14%;
       bottom: 6px;
       height: 2px;
-      background: var(--text);
+      background: var(--brand-red);
       transform: scaleX(0);
       transform-origin: center;
       transition: transform var(--transition);
@@ -132,6 +160,7 @@
 
     .main-nav a:hover {
       transform: scale(1.06);
+      color: var(--brand-red);
     }
 
     .main-nav a:hover::after {
@@ -151,14 +180,14 @@
       font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--blue-deep);
+      color: var(--brand-navy);
     }
 
     .eyebrow::before {
       content: "";
       width: 36px;
       height: 2px;
-      background: linear-gradient(90deg, var(--gold) 0%, var(--blue) 100%);
+      background: linear-gradient(90deg, var(--brand-red) 0%, var(--brand-orange) 45%, var(--brand-yellow) 100%);
     }
 
     .display-title {
@@ -167,7 +196,7 @@
       letter-spacing: -0.1em;
       text-transform: uppercase;
       font-weight: 800;
-      color: var(--text);
+      color: var(--brand-navy);
     }
 
     .mini-copy {
@@ -235,6 +264,10 @@
     .home-section {
       padding-top: 30px;
       padding-bottom: 58px;
+      background:
+        radial-gradient(circle at 84% 16%, rgba(214, 40, 40, 0.09), transparent 18%),
+        radial-gradient(circle at 12% 82%, rgba(247, 127, 0, 0.10), transparent 24%),
+        linear-gradient(180deg, #f8f6f1 0%, #fffdf9 100%);
     }
 
     .hero-grid {
@@ -252,17 +285,16 @@
     }
 
     .hero-copy .display-title {
-      max-width: 8.2ch;
+      max-width: 8.6ch;
     }
 
     .hero-copy .display-title .accent {
       background: linear-gradient(
         90deg,
-        var(--gold) 0%,
-        var(--gold-light) 18%,
-        var(--blue-bright) 52%,
-        var(--blue) 80%,
-        var(--blue-deep) 100%
+        var(--brand-red) 0%,
+        var(--brand-orange) 34%,
+        var(--brand-yellow) 66%,
+        var(--brand-navy) 100%
       );
       -webkit-background-clip: text;
       background-clip: text;
@@ -283,11 +315,11 @@
 
     .hero-video {
       position: absolute;
-      inset: 40px 130px 40px 70px;
+      inset: 28px 40px 28px 40px;
       overflow: hidden;
       border-radius: 26px;
       box-shadow: var(--shadow-md);
-      border: 1px solid rgba(16,16,16,0.08);
+      border: 1px solid rgba(0,48,73,0.12);
       background: #f1f3f7;
     }
 
@@ -296,27 +328,6 @@
       height: 100%;
       object-fit: cover;
     }
-
-    .floating-card {
-      position: absolute;
-      overflow: hidden;
-      border-radius: 18px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(16,16,16,0.08);
-      background: #f3f3f3;
-      animation: floatCard 6s ease-in-out infinite;
-    }
-
-    .floating-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .fc-1 { width: 148px; height: 132px; top: 0; left: 0; animation-delay: 0s; }
-    .fc-2 { width: 170px; height: 120px; top: 108px; right: 0; animation-delay: .7s; }
-    .fc-3 { width: 142px; height: 174px; bottom: 0; left: 34px; animation-delay: 1.2s; }
-    .fc-4 { width: 170px; height: 118px; bottom: 34px; right: 72px; animation-delay: 1.7s; }
 
     .work-strip {
       margin-top: 28px;
@@ -329,19 +340,25 @@
       min-height: 92px;
       padding: 16px 18px;
       background: #ffffff;
-      border: 1px solid #111111;
+      border: 1px solid rgba(0,48,73,0.16);
       box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 6px;
-      transition: transform var(--transition), background var(--transition);
+      transition: transform var(--transition), background var(--transition), border-color var(--transition);
     }
 
     .work-badge:hover {
       transform: translateY(-4px);
-      background: #ffffff;
+      background: var(--brand-cream);
+      border-color: rgba(214,40,40,0.24);
     }
+
+    .work-badge:nth-child(1) strong { color: var(--brand-navy); }
+    .work-badge:nth-child(2) strong { color: var(--brand-red); }
+    .work-badge:nth-child(3) strong { color: var(--brand-orange); }
+    .work-badge:nth-child(4) strong { color: #856300; }
 
     .work-badge strong {
       font-size: 0.96rem;
@@ -361,9 +378,9 @@
 
     .about-section {
       background:
-        radial-gradient(circle at 18% 22%, rgba(73, 179, 255, 0.24), transparent 28%),
-        radial-gradient(circle at 82% 18%, rgba(255, 208, 40, 0.18), transparent 22%),
-        linear-gradient(135deg, var(--blue-soft) 0%, var(--blue-pale) 55%, #ffffff 100%);
+        radial-gradient(circle at 18% 22%, rgba(0, 48, 73, 0.12), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(252, 191, 73, 0.20), transparent 22%),
+        linear-gradient(135deg, #f6f1de 0%, #f8f6f1 50%, #ffffff 100%);
     }
 
     .about-grid {
@@ -376,9 +393,9 @@
     .about-panel {
       min-height: 0;
       padding: 24px 26px;
-      background: rgba(255,255,255,0.74);
+      background: rgba(255,255,255,0.80);
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(16,16,16,0.08);
+      border: 1px solid rgba(0,48,73,0.1);
       box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
@@ -394,6 +411,7 @@
       text-transform: uppercase;
       font-weight: 800;
       max-width: 6.5ch;
+      color: var(--brand-navy);
     }
 
     .about-panel p {
@@ -424,7 +442,7 @@
 
     .about-gallery .card {
       overflow: hidden;
-      border: 1px solid rgba(16,16,16,0.08);
+      border: 1px solid rgba(0,48,73,0.08);
       box-shadow: var(--shadow-soft);
       background: #f2f2f2;
     }
@@ -448,8 +466,8 @@
 
     .portfolio-marquee-bar {
       width: 100%;
-      background: #ffd028;
-      color: #111111;
+      background: linear-gradient(90deg, var(--brand-navy) 0%, var(--brand-red) 32%, var(--brand-orange) 66%, var(--brand-yellow) 100%);
+      color: #ffffff;
       border-top: 1px solid rgba(17,17,17,0.08);
       border-bottom: 1px solid rgba(17,17,17,0.08);
       margin-bottom: 0;
@@ -504,6 +522,7 @@
       text-transform: uppercase;
       font-weight: 800;
       max-width: 8ch;
+      color: var(--brand-navy);
     }
 
     .portfolio-side-gallery {
@@ -515,7 +534,7 @@
 
     .portfolio-side-gallery .gallery-card {
       overflow: hidden;
-      border: 1px solid rgba(16,16,16,0.08);
+      border: 1px solid rgba(0,48,73,0.08);
       box-shadow: var(--shadow-soft);
       background: #f3f3f3;
       min-height: 160px;
@@ -542,7 +561,7 @@
       position: relative;
       min-height: 340px;
       overflow: hidden;
-      border: 1px solid rgba(16,16,16,0.08);
+      border: 1px solid rgba(0,48,73,0.09);
       box-shadow: var(--shadow-soft);
       background: #f2f2f2;
       transition: transform var(--transition), box-shadow var(--transition);
@@ -569,7 +588,7 @@
       position: absolute;
       inset: auto 0 0 0;
       padding: 18px 18px 16px;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(11,17,28,0.86) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,48,73,0.93) 100%);
       color: #ffffff;
       display: flex;
       align-items: end;
@@ -593,7 +612,7 @@
       line-height: 1.4;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      opacity: 0.88;
+      opacity: 0.9;
       font-weight: 700;
     }
 
@@ -627,7 +646,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(135deg, rgba(7,17,31,0.82) 0%, rgba(8,30,75,0.62) 48%, rgba(255,208,40,0.18) 100%);
+        linear-gradient(135deg, rgba(0,48,73,0.88) 0%, rgba(214,40,40,0.34) 42%, rgba(247,127,0,0.28) 70%, rgba(252,191,73,0.18) 100%);
       backdrop-filter: blur(2px);
     }
 
@@ -664,7 +683,7 @@
     }
 
     .capabilities-copy .mini-copy {
-      color: rgba(255,255,255,0.88);
+      color: rgba(255,255,255,0.9);
     }
 
     .capabilities-marquee {
@@ -748,7 +767,7 @@
       left: 14px;
       top: 14px;
       padding: 8px 10px;
-      background: rgba(13,13,13,0.82);
+      background: rgba(0,0,0,0.82);
       color: #ffffff;
       font-size: 0.74rem;
       font-weight: 800;
@@ -762,7 +781,7 @@
     }
 
     .proof-section {
-      background: #ffffff;
+      background: linear-gradient(180deg, #ffffff 0%, #f7f3e7 100%);
     }
 
     .proof-grid {
@@ -779,6 +798,7 @@
       text-transform: uppercase;
       font-weight: 800;
       max-width: 9ch;
+      color: var(--brand-navy);
     }
 
     .proof-copy p {
@@ -801,7 +821,7 @@
       min-height: 340px;
       padding: 22px 18px 28px;
       background: #ffffff;
-      border: 1px solid rgba(17,17,17,0.12);
+      border: 1px solid rgba(0,48,73,0.12);
       box-shadow: var(--shadow-soft);
       clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
       display: flex;
@@ -813,6 +833,11 @@
       transform: translateY(18px);
       transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
     }
+
+    .proof-banner:nth-child(1) { border-top: 4px solid var(--brand-navy); }
+    .proof-banner:nth-child(2) { border-top: 4px solid var(--brand-red); }
+    .proof-banner:nth-child(3) { border-top: 4px solid var(--brand-orange); }
+    .proof-banner:nth-child(4) { border-top: 4px solid var(--brand-yellow); }
 
     .proof-banner:hover {
       transform: translateY(0px);
@@ -850,7 +875,7 @@
     }
 
     .contact-section {
-      background: #ffffff;
+      background: linear-gradient(180deg, #f8f6f1 0%, #ffffff 100%);
     }
 
     .contact-card {
@@ -858,9 +883,13 @@
       grid-template-columns: 1fr 1fr;
       gap: 28px;
       padding: 34px;
-      border: 1px solid rgba(16,16,16,0.08);
+      border: 1px solid rgba(0,48,73,0.08);
       box-shadow: var(--shadow-md);
-      background: linear-gradient(135deg, #ffffff 0%, #edf7ff 70%, #fff6cf 100%);
+      background:
+        radial-gradient(circle at 12% 22%, rgba(214,40,40,0.08), transparent 20%),
+        radial-gradient(circle at 92% 16%, rgba(247,127,0,0.11), transparent 22%),
+        radial-gradient(circle at 80% 82%, rgba(252,191,73,0.16), transparent 26%),
+        linear-gradient(135deg, #ffffff 0%, #f7f1df 100%);
     }
 
     .contact-card h2 {
@@ -870,6 +899,7 @@
       text-transform: uppercase;
       font-weight: 800;
       max-width: 10ch;
+      color: var(--brand-navy);
     }
 
     .contact-card p {
@@ -902,7 +932,7 @@
     .contact-mini-gallery .mini {
       min-height: 110px;
       overflow: hidden;
-      border: 1px solid rgba(16,16,16,0.08);
+      border: 1px solid rgba(0,48,73,0.08);
       box-shadow: var(--shadow-soft);
       background: #f2f2f2;
     }
@@ -911,11 +941,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    @keyframes floatCard {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
     }
 
     @keyframes marqueeLeft {
@@ -973,27 +998,13 @@
 
       .hero-media {
         min-height: auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
-      }
-
-      .hero-video,
-      .floating-card {
-        position: relative;
-        inset: auto;
-        width: 100%;
-        height: auto;
-        animation: none;
       }
 
       .hero-video {
-        grid-column: 1 / 3;
-        min-height: 300px;
-      }
-
-      .floating-card {
-        min-height: 150px;
+        position: relative;
+        inset: auto;
+        width: 100%;
+        min-height: 320px;
       }
 
       .project-card.large,
@@ -1073,7 +1084,11 @@
     }
   </style>
 </head>
-<body>
+<body class="is-locked">
+  <div class="intro-screen" id="introScreen" aria-hidden="true">
+    <h1>The Boss Agency</h1>
+  </div>
+
   <div class="topbar-wrap" id="topbarWrap">
     <header class="topbar">
       <div class="container topbar-inner">
@@ -1095,11 +1110,14 @@
           <div class="hero-copy">
             <div class="eyebrow">Selected Work</div>
             <h1 class="display-title">
-              They Know
-              <span class="accent">What</span>
-              They’re
-              Doing
+              Nosotros
+              <span class="accent">Sabemos</span>
+              Lo Que
+              Hacemos
             </h1>
+            <p class="mini-copy">
+              Diseñamos presencia digital con estrategia, claridad visual y ejecución real para marcas que quieren verse más fuertes y vender mejor.
+            </p>
             <div class="hero-actions">
               <a class="cta-button" href="#work">View Projects</a>
               <a class="cta-button secondary" href="#contact">Start a Project</a>
@@ -1111,22 +1129,6 @@
               <video autoplay muted loop playsinline>
                 <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
               </video>
-            </div>
-
-            <div class="floating-card fc-1">
-              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80" alt="Project still 1" />
-            </div>
-
-            <div class="floating-card fc-2">
-              <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=80" alt="Project still 2" />
-            </div>
-
-            <div class="floating-card fc-3">
-              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" alt="Project still 3" />
-            </div>
-
-            <div class="floating-card fc-4">
-              <img src="https://images.unsplash.com/photo-1598257006626-5b2c3f25f78b?auto=format&fit=crop&w=900&q=80" alt="Project still 4" />
             </div>
           </div>
         </div>
@@ -1162,12 +1164,12 @@
             </div>
 
             <p>
-              Less talking, more proof. This section is built to show range, quality, and confidence through layout, motion, images, and media blocks.
+              Mostramos nuestro trabajo con intención, buen criterio visual y una estructura pensada para que cada proyecto se vea fuerte, claro y profesional.
             </p>
 
             <div class="hero-actions">
               <a class="cta-button" href="#work">See the Work</a>
-              <a class="cta-button secondary" href="#process">How They Work</a>
+              <a class="cta-button secondary" href="#process">How We Work</a>
             </div>
           </div>
 
@@ -1406,7 +1408,7 @@
             <div class="eyebrow">Capabilities</div>
             <h2>Smart Systems. Sharp Creative. Better Presence.</h2>
             <p class="mini-copy">
-              Keep this part simple. Let the visuals do most of the talking, and use the moving line below to show what the agency actually does.
+              Creamos presencia digital con estrategia, ejecución visual y sistemas pensados para posicionar mejor cada marca.
             </p>
           </div>
 
@@ -1579,7 +1581,7 @@
             <div class="eyebrow">Why It Works</div>
             <h2>Professional Without Feeling Overwritten</h2>
             <p>
-              The goal is simple: show quality fast. Strong layout, strong visuals, selective copy, and enough motion to make the work feel alive.
+              Nuestra meta es mostrar calidad rápido, con una mezcla clara de estrategia, dirección visual y ejecución que se siente premium desde el primer scroll.
             </p>
           </div>
 
@@ -1594,7 +1596,7 @@
                 </svg>
               </span>
               <h3>Clear Taste</h3>
-              <p>Visual restraint, good hierarchy, clean spacing, and confident art direction.</p>
+              <p>Construimos piezas con criterio visual, jerarquía limpia y una presencia de marca más sólida.</p>
             </article>
 
             <article class="proof-banner">
@@ -1605,7 +1607,7 @@
                 </svg>
               </span>
               <h3>Real Media</h3>
-              <p>Built with room for videos, website shots, photography, and campaign assets.</p>
+              <p>Presentamos websites, fotos, video, campañas y piezas reales dentro de un sistema visual coherente.</p>
             </article>
 
             <article class="proof-banner">
@@ -1616,7 +1618,7 @@
                 </svg>
               </span>
               <h3>Fast Signal</h3>
-              <p>People should understand the level of work in seconds, not after reading paragraphs.</p>
+              <p>Hacemos que el valor del trabajo se entienda en segundos, sin depender de textos largos.</p>
             </article>
 
             <article class="proof-banner">
@@ -1628,7 +1630,7 @@
                 </svg>
               </span>
               <h3>Space To Grow</h3>
-              <p>Add more projects, testimonials, mockups, reels, and screenshots without breaking the system.</p>
+              <p>Dejamos una base flexible para seguir sumando proyectos, campañas, reels y casos de estudio.</p>
             </article>
           </div>
         </div>
@@ -1640,9 +1642,9 @@
         <div class="contact-card">
           <div>
             <div class="eyebrow">Next Move</div>
-            <h2>Want Your Work To Look This Sharp Too?</h2>
+            <h2>Let’s Build Something That Looks This Strong</h2>
             <p>
-              Keep this last section simple. One strong CTA, a clean gallery, and enough confidence to close the page with authority.
+              Si quieres una presencia más clara, más premium y mejor pensada para vender, aquí es donde empezamos.
             </p>
           </div>
 
@@ -1687,6 +1689,14 @@
 
         lastScroll = currentScroll;
       });
+    })();
+
+    (function () {
+      const intro = document.getElementById("introScreen");
+      setTimeout(() => {
+        intro.classList.add("is-hidden");
+        document.body.classList.remove("is-locked");
+      }, 2000);
     })();
   </script>
 </body>
