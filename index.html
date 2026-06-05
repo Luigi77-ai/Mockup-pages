@@ -110,7 +110,7 @@
 
     .hero {
       position: relative;
-      min-height: 95vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -138,8 +138,8 @@
       inset: 0;
       z-index: 1;
       background:
-        linear-gradient(to right, rgba(10, 22, 34, 0.84), rgba(10, 22, 34, 0.46)),
-        linear-gradient(to top, rgba(10, 22, 34, 0.46), rgba(10, 22, 34, 0.14));
+        linear-gradient(to right, rgba(20, 49, 78, 0.76), rgba(20, 49, 78, 0.44)),
+        linear-gradient(to top, rgba(20, 49, 78, 0.54), rgba(20, 49, 78, 0.16));
     }
 
     .hero-inner {
@@ -244,11 +244,12 @@
 
     .hero-media {
       position: relative;
-      min-height: 620px;
+      min-height: 700px;
     }
 
     .hero-image-main,
-    .hero-image-float {
+    .hero-image-float,
+    .hero-image-strip {
       position: absolute;
       overflow: hidden;
       border-radius: var(--radius-lg);
@@ -256,19 +257,31 @@
     }
 
     .hero-image-main {
-      inset: 0 12% 0 0;
+      inset: 0 12% 110px 0;
+      z-index: 2;
     }
 
     .hero-image-float {
       width: 40%;
       right: 0;
-      bottom: 7%;
+      bottom: 140px;
       border: 8px solid rgba(244, 248, 251, 0.92);
       border-radius: 22px;
+      z-index: 3;
+    }
+
+    .hero-image-strip {
+      left: 8%;
+      right: 4%;
+      bottom: 0;
+      height: 180px;
+      border: 8px solid rgba(244, 248, 251, 0.9);
+      z-index: 1;
     }
 
     .hero-image-main img,
-    .hero-image-float img {
+    .hero-image-float img,
+    .hero-image-strip img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -278,7 +291,7 @@
       position: absolute;
       right: clamp(10px, 2vw, 24px);
       bottom: 0;
-      z-index: 2;
+      z-index: 4;
       width: clamp(200px, 23vw, 340px);
       pointer-events: none;
       filter: drop-shadow(0 18px 32px rgba(0,0,0,.18));
@@ -316,7 +329,7 @@
 
     .services-shell {
       position: relative;
-      overflow: hidden;
+      padding-top: 30px;
     }
 
     .services-topbar {
@@ -324,7 +337,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 18px;
+      margin-bottom: 24px;
     }
 
     .services-nav {
@@ -337,7 +350,7 @@
       height: 54px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.72);
+      background: rgba(255,255,255,.85);
       color: var(--text);
       cursor: pointer;
       font-size: 22px;
@@ -351,151 +364,165 @@
       background: var(--white);
     }
 
-    .services-viewport {
-      overflow: hidden;
+    .brace-rail {
       position: relative;
-    }
-
-    .services-track {
+      height: 250px;
       display: flex;
-      gap: 20px;
-      transition: transform 480ms cubic-bezier(0.16,1,0.3,1);
-      will-change: transform;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 26px;
     }
 
-    .service-slide {
-      min-width: calc(33.333% - 14px);
-      position: relative;
-    }
-
-    .card {
-      position: relative;
-      background: rgba(251, 253, 255, 0.9);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      transition: transform var(--transition), box-shadow var(--transition);
-      backdrop-filter: blur(2px);
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .tooth-ornament {
+    .brace-metal-line {
       position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 92px;
-      height: 112px;
-      opacity: .18;
-      z-index: 0;
-      animation: floatTooth 4.6s ease-in-out infinite;
-    }
-
-    .tooth-shape {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg,#ffffff 0%, #e9f4fb 100%);
-      border: 2px solid rgba(77,143,190,.22);
-      border-radius: 42% 42% 38% 38% / 32% 32% 56% 56%;
-      box-shadow: inset 0 -8px 18px rgba(77,143,190,.08);
-    }
-
-    .brace-line {
-      position: absolute;
-      left: 10px;
-      right: 10px;
-      top: 48%;
-      height: 8px;
-      transform: translateY(-50%);
-      background: linear-gradient(90deg,#6aa6cf,#3e7ea9);
-      border-radius: 999px;
-      box-shadow: 0 0 0 2px rgba(255,255,255,.6);
-    }
-
-    .brace-dot {
-      position: absolute;
+      left: 6%;
+      right: 6%;
       top: 50%;
-      width: 12px;
-      height: 12px;
-      margin-top: -6px;
-      border-radius: 4px;
-      background: #4d8fbe;
-      box-shadow: 0 0 0 2px #fff;
-      animation: bracePulse 2.8s ease-in-out infinite;
+      height: 10px;
+      transform: translateY(-50%);
+      background: linear-gradient(90deg, #9eb1c0, #d7e0e8 20%, #90a4b4 50%, #d7e0e8 80%, #9eb1c0);
+      border-radius: 999px;
+      box-shadow:
+        inset 0 1px 2px rgba(255,255,255,.8),
+        inset 0 -1px 2px rgba(66,87,104,.28),
+        0 10px 30px rgba(66,87,104,.12);
+      z-index: 0;
     }
 
-    .d1 { left: 18px; animation-delay: 0s; }
-    .d2 { left: 38px; animation-delay: .22s; }
-    .d3 { right: 38px; animation-delay: .44s; }
-    .d4 { right: 18px; animation-delay: .66s; }
-
-    @keyframes floatTooth {
-      0%,100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-8px) rotate(-2deg); }
-    }
-
-    @keyframes bracePulse {
-      0%,100% { transform: scale(1); opacity: .9; }
-      50% { transform: scale(1.12); opacity: 1; }
-    }
-
-    .card-image {
+    .brace-wheel {
       position: relative;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      background: #dce7f0;
+      width: min(100%, 980px);
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       z-index: 1;
     }
 
-    .card-image img {
+    .service-orbit {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .orbit-item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 170px;
+      height: 170px;
+      margin: -85px 0 0 -85px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 6px solid rgba(255,255,255,.92);
+      box-shadow: 0 24px 50px rgba(34,62,84,.14);
+      cursor: pointer;
+      transition: transform 420ms cubic-bezier(0.16,1,0.3,1), opacity 420ms ease, box-shadow 420ms ease, filter 420ms ease;
+      background: #dce7f0;
+    }
+
+    .orbit-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .badge {
+    .orbit-item::after {
+      content: "";
       position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(20,32,43,0.08);
-      color: var(--text);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-weight: 800;
-      z-index: 2;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,18,28,.18), rgba(8,18,28,0));
+      pointer-events: none;
     }
 
-    .card-body {
-      padding: 20px;
-      position: relative;
+    .orbit-item.active {
+      transform: translate(var(--tx), var(--ty)) scale(1.18);
+      z-index: 5;
+      box-shadow: 0 34px 70px rgba(34,62,84,.18);
+      filter: saturate(1.04);
+    }
+
+    .orbit-item.left-2,
+    .orbit-item.right-2 {
+      opacity: .62;
+      transform: translate(var(--tx), var(--ty)) scale(.78);
       z-index: 1;
     }
 
-    .card-title {
-      font-size: 1.35rem;
-      margin-bottom: 8px;
+    .orbit-item.left-1,
+    .orbit-item.right-1 {
+      opacity: .88;
+      transform: translate(var(--tx), var(--ty)) scale(.92);
+      z-index: 2;
     }
 
-    .card-price {
-      color: var(--text);
+    .orbit-item.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(var(--tx), var(--ty)) scale(.6);
+      z-index: 0;
+    }
+
+    .bracket-node {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 34px;
+      height: 34px;
+      margin: -17px 0 0 -17px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #eef3f7 0%, #aab8c4 100%);
+      border: 1px solid rgba(83,98,110,.25);
+      box-shadow:
+        inset 0 1px 1px rgba(255,255,255,.9),
+        inset 0 -2px 4px rgba(82,102,118,.22),
+        0 8px 20px rgba(40,54,66,.12);
+      transform: translate(var(--tx), -50%);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .service-detail {
+      background: rgba(251, 253, 255, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      min-height: 220px;
+      transition: opacity 260ms ease, transform 260ms ease;
+    }
+
+    .service-detail-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: #e8f3fb;
+      color: #2c648a;
+      font-size: 12px;
       font-weight: 800;
-      margin-top: 12px;
-      margin-bottom: 16px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
 
-    .text-link {
-      font-size: 14px;
+    .service-detail h3 {
+      font-size: clamp(1.45rem, 2vw, 2.2rem);
+      margin-bottom: 10px;
+    }
+
+    .service-detail p {
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 62ch;
+    }
+
+    .service-detail-meta {
+      margin-top: 16px;
+      font-weight: 800;
       color: var(--text);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      font-weight: 700;
     }
 
     .video-band {
@@ -611,15 +638,37 @@
       }
 
       .hero-media {
-        min-height: 520px;
+        min-height: 620px;
         order: -1;
       }
 
-      .hero-image-main { inset: 0 10% 0 0; }
-      .hero-image-float { width: 42%; }
+      .hero-image-main {
+        inset: 0 10% 120px 0;
+      }
 
-      .service-slide {
-        min-width: calc(50% - 10px);
+      .hero-image-float {
+        width: 42%;
+        bottom: 150px;
+      }
+
+      .hero-image-strip {
+        left: 4%;
+        right: 4%;
+        height: 150px;
+      }
+
+      .brace-rail {
+        height: 220px;
+      }
+
+      .brace-wheel {
+        height: 220px;
+      }
+
+      .orbit-item {
+        width: 140px;
+        height: 140px;
+        margin: -70px 0 0 -70px;
       }
 
       .nav { display: none; }
@@ -627,19 +676,54 @@
     }
 
     @media (max-width: 640px) {
-      .hero-media { min-height: 430px; }
-      .hero-image-main { inset: 0; }
-      .hero-image-float {
-        width: 44%;
-        right: 4%;
-        bottom: -4%;
+      .hero-media {
+        min-height: 480px;
       }
+
+      .hero-image-main {
+        inset: 0 0 120px 0;
+      }
+
+      .hero-image-float {
+        width: 42%;
+        right: 4%;
+        bottom: 138px;
+      }
+
+      .hero-image-strip {
+        left: 0;
+        right: 0;
+        height: 120px;
+      }
+
       .hero-doctor {
         width: 145px;
       }
-      .service-slide {
-        min-width: 100%;
+
+      .brace-rail {
+        height: 280px;
       }
+
+      .brace-wheel {
+        height: 280px;
+      }
+
+      .brace-metal-line {
+        left: 2%;
+        right: 2%;
+      }
+
+      .orbit-item {
+        width: 106px;
+        height: 106px;
+        margin: -53px 0 0 -53px;
+        border-width: 4px;
+      }
+
+      .service-detail {
+        padding: 22px 18px;
+      }
+
       .footer-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -663,7 +747,7 @@
     <section class="hero">
       <div class="hero-video" aria-hidden="true">
         <video autoplay muted loop playsinline>
-          <source src="https://cdn.coverr.co/videos/coverr-dentist-working-with-patient-1560678661483?download=1080p" type="video/mp4" />
+          <source src="https://cdn.coverr.co/videos/coverr-happy-people-smiling-together-1561292272092?download=1080p" type="video/mp4" />
         </video>
       </div>
 
@@ -700,8 +784,13 @@
             <div class="hero-image-main">
               <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80" alt="Dental team consulting with patient" />
             </div>
+
             <div class="hero-image-float">
               <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=80" alt="Close-up of dental consultation" />
+            </div>
+
+            <div class="hero-image-strip">
+              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1400&q=80" alt="Smiling dental patient horizontal image" />
             </div>
           </div>
         </div>
@@ -725,130 +814,49 @@
 
           <div class="services-shell">
             <div class="services-topbar">
-              <div class="eyebrow" style="margin:0">Slide through services</div>
+              <div class="eyebrow" style="margin:0">Dental orbit services</div>
               <div class="services-nav">
                 <button class="services-arrow" type="button" id="prevService" aria-label="Previous service">←</button>
                 <button class="services-arrow" type="button" id="nextService" aria-label="Next service">→</button>
               </div>
             </div>
 
-            <div class="services-viewport">
-              <div class="services-track" id="servicesTrack">
-                <div class="service-slide">
-                  <article class="card">
-                    <div class="tooth-ornament" aria-hidden="true">
-                      <div class="tooth-shape"></div>
-                      <div class="brace-line"></div>
-                      <span class="brace-dot d1"></span>
-                      <span class="brace-dot d2"></span>
-                      <span class="brace-dot d3"></span>
-                      <span class="brace-dot d4"></span>
-                    </div>
-                    <div class="card-image">
-                      <span class="badge">Core</span>
-                      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" alt="Bilingual dental website service" />
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title">Bilingual Website Messaging</h3>
-                      <p>Build a clearer digital experience for English and Spanish-speaking families with messaging that feels relevant, welcoming, and trustworthy.</p>
-                      <div class="card-price">English + Spanish</div>
-                      <a href="#drop" class="text-link">View details</a>
-                    </div>
-                  </article>
+            <div class="brace-rail">
+              <div class="brace-metal-line"></div>
+              <div class="brace-wheel">
+                <div class="service-orbit" id="serviceOrbit">
+                  <button class="orbit-item active" data-index="0" aria-label="Bilingual Website Messaging">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" alt="Bilingual website messaging" />
+                  </button>
+                  <button class="orbit-item right-1" data-index="1" aria-label="Local SEO and Google Presence">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80" alt="Local SEO for dental practices" />
+                  </button>
+                  <button class="orbit-item right-2" data-index="2" aria-label="Paid Ads Landing Strategy">
+                    <img src="https://images.unsplash.com/photo-1580281658629-8845843507f2?auto=format&fit=crop&w=1200&q=80" alt="Paid ads landing strategy" />
+                  </button>
+                  <button class="orbit-item hidden" data-index="3" aria-label="Google Business Profile Support">
+                    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=80" alt="Google business profile support" />
+                  </button>
+                  <button class="orbit-item left-2" data-index="4" aria-label="Dental Brand Positioning">
+                    <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80" alt="Dental brand positioning" />
+                  </button>
                 </div>
 
-                <div class="service-slide">
-                  <article class="card">
-                    <div class="tooth-ornament" aria-hidden="true">
-                      <div class="tooth-shape"></div>
-                      <div class="brace-line"></div>
-                      <span class="brace-dot d1"></span>
-                      <span class="brace-dot d2"></span>
-                      <span class="brace-dot d3"></span>
-                      <span class="brace-dot d4"></span>
-                    </div>
-                    <div class="card-image">
-                      <span class="badge">Best fit</span>
-                      <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80" alt="Local SEO for dental practices" />
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title">Local SEO + Google Presence</h3>
-                      <p>Improve how your practice shows up locally so more nearby families can discover your services through Google search and maps.</p>
-                      <div class="card-price">Visibility + Trust</div>
-                      <a href="#drop" class="text-link">View details</a>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="service-slide">
-                  <article class="card">
-                    <div class="tooth-ornament" aria-hidden="true">
-                      <div class="tooth-shape"></div>
-                      <div class="brace-line"></div>
-                      <span class="brace-dot d1"></span>
-                      <span class="brace-dot d2"></span>
-                      <span class="brace-dot d3"></span>
-                      <span class="brace-dot d4"></span>
-                    </div>
-                    <div class="card-image">
-                      <span class="badge">Performance</span>
-                      <img src="https://images.unsplash.com/photo-1580281658629-8845843507f2?auto=format&fit=crop&w=1200&q=80" alt="Landing page strategy for dental ads" />
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title">Paid Ads Landing Strategy</h3>
-                      <p>Create a cleaner conversion path so paid traffic lands on a page designed to turn interest into booked consultations.</p>
-                      <div class="card-price">Focused Conversion</div>
-                      <a href="#drop" class="text-link">View details</a>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="service-slide">
-                  <article class="card">
-                    <div class="tooth-ornament" aria-hidden="true">
-                      <div class="tooth-shape"></div>
-                      <div class="brace-line"></div>
-                      <span class="brace-dot d1"></span>
-                      <span class="brace-dot d2"></span>
-                      <span class="brace-dot d3"></span>
-                      <span class="brace-dot d4"></span>
-                    </div>
-                    <div class="card-image">
-                      <span class="badge">Support</span>
-                      <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=80" alt="Google Business Profile management" />
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title">Google Business Profile Support</h3>
-                      <p>Strengthen your listing with clearer positioning, category alignment, review strategy direction, and stronger first impressions on Google.</p>
-                      <div class="card-price">Maps + Reputation</div>
-                      <a href="#drop" class="text-link">View details</a>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="service-slide">
-                  <article class="card">
-                    <div class="tooth-ornament" aria-hidden="true">
-                      <div class="tooth-shape"></div>
-                      <div class="brace-line"></div>
-                      <span class="brace-dot d1"></span>
-                      <span class="brace-dot d2"></span>
-                      <span class="brace-dot d3"></span>
-                      <span class="brace-dot d4"></span>
-                    </div>
-                    <div class="card-image">
-                      <span class="badge">Trust</span>
-                      <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80" alt="Dental branding and trust strategy" />
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title">Dental Brand Positioning</h3>
-                      <p>Refine how your practice looks and sounds online so families immediately understand your value, tone, and patient experience.</p>
-                      <div class="card-price">Clarity + Relevance</div>
-                      <a href="#drop" class="text-link">View details</a>
-                    </div>
-                  </article>
-                </div>
+                <span class="bracket-node" style="--tx:-280px"></span>
+                <span class="bracket-node" style="--tx:-140px"></span>
+                <span class="bracket-node" style="--tx:0px"></span>
+                <span class="bracket-node" style="--tx:140px"></span>
+                <span class="bracket-node" style="--tx:280px"></span>
               </div>
+            </div>
+
+            <div class="service-detail" id="serviceDetail">
+              <div class="service-detail-badge" id="serviceBadge">Core</div>
+              <h3 id="serviceTitle">Bilingual Website Messaging</h3>
+              <p id="serviceText">
+                Build a clearer digital experience for English and Spanish-speaking families with messaging that feels relevant, welcoming, and trustworthy.
+              </p>
+              <div class="service-detail-meta" id="serviceMeta">English + Spanish</div>
             </div>
           </div>
         </div>
@@ -920,50 +928,130 @@
 
   <script>
     (function () {
-      const track = document.getElementById('servicesTrack');
+      const services = [
+        {
+          badge: 'Core',
+          title: 'Bilingual Website Messaging',
+          text: 'Build a clearer digital experience for English and Spanish-speaking families with messaging that feels relevant, welcoming, and trustworthy.'
+,
+          meta: 'English + Spanish'
+        },
+        {
+          badge: 'Best fit',
+          title: 'Local SEO + Google Presence',
+          text: 'Improve how your practice shows up locally so more nearby families can discover your services through Google search and maps.',
+          meta: 'Visibility + Trust'
+        },
+        {
+          badge: 'Performance',
+          title: 'Paid Ads Landing Strategy',
+          text: 'Create a cleaner conversion path so paid traffic lands on a page designed to turn interest into booked consultations.',
+          meta: 'Focused Conversion'
+        },
+        {
+          badge: 'Support',
+          title: 'Google Business Profile Support',
+          text: 'Strengthen your listing with clearer positioning, category alignment, review strategy direction, and stronger first impressions on Google.',
+          meta: 'Maps + Reputation'
+        },
+        {
+          badge: 'Trust',
+          title: 'Dental Brand Positioning',
+          text: 'Refine how your practice looks and sounds online so families immediately understand your value, tone, and patient experience.',
+          meta: 'Clarity + Relevance'
+        }
+      ];
+
+      const orbitItems = Array.from(document.querySelectorAll('.orbit-item'));
       const prev = document.getElementById('prevService');
       const next = document.getElementById('nextService');
-      if (!track || !prev || !next) return;
+      const badge = document.getElementById('serviceBadge');
+      const title = document.getElementById('serviceTitle');
+      const text = document.getElementById('serviceText');
+      const meta = document.getElementById('serviceMeta');
 
-      const slides = Array.from(track.children);
-      let index = 0;
+      let current = 0;
 
-      function slidesPerView() {
-        if (window.innerWidth <= 640) return 1;
-        if (window.innerWidth <= 980) return 2;
-        return 3;
+      const positionsDesktop = [
+        { x: 0, y: -10, cls: 'active' },
+        { x: 180, y: -22, cls: 'right-1' },
+        { x: 330, y: 8, cls: 'right-2' },
+        { x: -330, y: 8, cls: 'hidden' },
+        { x: -180, y: -22, cls: 'left-2' }
+      ];
+
+      function getPositions() {
+        if (window.innerWidth <= 640) {
+          return [
+            { x: 0, y: 0, cls: 'active' },
+            { x: 92, y: -10, cls: 'right-1' },
+            { x: 170, y: 6, cls: 'right-2' },
+            { x: -170, y: 6, cls: 'hidden' },
+            { x: -92, y: -10, cls: 'left-2' }
+          ];
+        }
+
+        if (window.innerWidth <= 980) {
+          return [
+            { x: 0, y: 0, cls: 'active' },
+            { x: 132, y: -14, cls: 'right-1' },
+            { x: 246, y: 4, cls: 'right-2' },
+            { x: -246, y: 4, cls: 'hidden' },
+            { x: -132, y: -14, cls: 'left-2' }
+          ];
+        }
+
+        return positionsDesktop;
       }
 
-      function updateSlider() {
-        const perView = slidesPerView();
-        const gap = 20;
-        const firstSlide = slides[0];
-        if (!firstSlide) return;
+      function renderDetail(index) {
+        const item = services[index];
+        badge.textContent = item.badge;
+        title.textContent = item.title;
+        text.textContent = item.text;
+        meta.textContent = item.meta;
+      }
 
-        const slideWidth = firstSlide.getBoundingClientRect().width + gap;
-        const maxIndex = Math.max(0, slides.length - perView);
+      function updateOrbit() {
+        const positions = getPositions();
 
-        if (index > maxIndex) index = maxIndex;
-        if (index < 0) index = 0;
+        orbitItems.forEach((item, i) => {
+          const relative = (i - current + orbitItems.length) % orbitItems.length;
+          let mapped;
 
-        track.style.transform = 'translateX(' + (-index * slideWidth) + 'px)';
-        prev.style.opacity = index === 0 ? '.45' : '1';
-        next.style.opacity = index === maxIndex ? '.45' : '1';
+          if (relative === 0) mapped = positions[0];
+          else if (relative === 1) mapped = positions[1];
+          else if (relative === 2) mapped = positions[2];
+          else if (relative === orbitItems.length - 1) mapped = positions[4];
+          else mapped = positions[3];
+
+          item.className = 'orbit-item ' + mapped.cls;
+          item.style.setProperty('--tx', mapped.x + 'px');
+          item.style.setProperty('--ty', mapped.y + 'px');
+        });
+
+        renderDetail(current);
       }
 
       prev.addEventListener('click', function () {
-        index -= 1;
-        updateSlider();
+        current = (current - 1 + services.length) % services.length;
+        updateOrbit();
       });
 
       next.addEventListener('click', function () {
-        index += 1;
-        updateSlider();
+        current = (current + 1) % services.length;
+        updateOrbit();
       });
 
-      window.addEventListener('resize', updateSlider);
-      window.addEventListener('load', updateSlider);
-      updateSlider();
+      orbitItems.forEach((item) => {
+        item.addEventListener('click', function () {
+          current = Number(item.dataset.index);
+          updateOrbit();
+        });
+      });
+
+      window.addEventListener('resize', updateOrbit);
+      updateOrbit();
     })();
   </script>
 </body>
