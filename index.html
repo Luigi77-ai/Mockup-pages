@@ -16,10 +16,11 @@
     :root {
       --bg: #ffffff;
       --text: #111111;
-      --muted: #777777;
+      --muted: #4f4f4f;
       --line: rgba(17, 17, 17, 0.08);
       --container: 1320px;
       --shadow-soft: 0 20px 40px rgba(20, 28, 40, 0.06);
+      --shadow-md: 0 26px 60px rgba(20, 28, 40, 0.1);
       --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -61,13 +62,13 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.94);
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
 
     .topbar-inner {
-      min-height: 108px;
+      min-height: 122px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -78,7 +79,7 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       align-items: center;
-      gap: 12px;
+      gap: 4px;
     }
 
     .main-nav a {
@@ -86,22 +87,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 72px;
-      font-size: clamp(1rem, 1.4vw, 1.45rem);
+      min-height: 82px;
+      font-size: clamp(1.45rem, 2vw, 2.25rem);
       font-weight: 800;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.07em;
       color: var(--text);
       text-transform: uppercase;
       transition: transform var(--transition), opacity var(--transition);
       transform-origin: center;
+      white-space: nowrap;
     }
 
     .main-nav a::after {
       content: "";
       position: absolute;
-      left: 16%;
-      right: 16%;
-      bottom: 10px;
+      left: 10%;
+      right: 10%;
+      bottom: 8px;
       height: 2px;
       background: #111111;
       transform: scaleX(0);
@@ -120,7 +122,7 @@
 
     .section {
       min-height: 100vh;
-      padding: 40px 0 80px;
+      padding: 42px 0 80px;
       border-bottom: 1px solid var(--line);
       background: #ffffff;
     }
@@ -136,7 +138,7 @@
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #7a7a7a;
     }
 
     .section-title {
@@ -152,92 +154,168 @@
     .section-text {
       font-size: 1rem;
       line-height: 1.8;
-      color: var(--muted);
+      color: #6b6b6b;
       max-width: 48rem;
     }
 
     .home-section {
-      padding-top: 54px;
+      min-height: auto;
+      padding-top: 58px;
+      padding-bottom: 70px;
     }
 
-    .home-head {
-      margin-bottom: 40px;
+    .home-layout {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      align-items: center;
+      text-align: center;
     }
 
     .home-title {
-      font-size: clamp(3.2rem, 9vw, 9rem);
+      font-size: clamp(3.2rem, 8.6vw, 8.8rem);
       line-height: 0.9;
-      letter-spacing: -0.08em;
+      letter-spacing: -0.09em;
       text-transform: uppercase;
       font-weight: 800;
-      max-width: 9ch;
+      max-width: 11ch;
+      margin-inline: auto;
       background: linear-gradient(
         90deg,
-        #0d2f6f 0%,
-        #1e5aa8 18%,
-        #3f8fd1 38%,
-        #85c6ef 54%,
-        #2f73c8 72%,
-        #173c83 100%
+        #0a2b67 0%,
+        #1b57a2 16%,
+        #3a8dd8 34%,
+        #8bc8f3 50%,
+        #3c8fd8 68%,
+        #1d4e95 84%,
+        #102f6c 100%
       );
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      margin-bottom: 18px;
     }
 
     .home-subtext {
-      font-size: 1.05rem;
-      line-height: 1.85;
-      color: var(--muted);
-      max-width: 44rem;
+      font-size: 1rem;
+      line-height: 1.9;
+      color: #111111;
+      max-width: 52rem;
+      margin-inline: auto;
+      margin-bottom: 40px;
     }
 
-    .home-media-grid {
-      display: grid;
-      grid-template-columns: 160px 1fr 160px;
-      grid-template-rows: 120px 170px 170px 120px;
-      gap: 18px;
-      min-height: 760px;
-      align-items: stretch;
+    .home-visual-wrap {
+      position: relative;
+      width: min(100%, 1020px);
+      height: 600px;
     }
 
-    .media-box {
-      border-radius: 22px;
+    .home-video-card {
+      position: absolute;
+      inset: 60px 110px 40px 110px;
+      border-radius: 28px;
       overflow: hidden;
-      background: #f4f4f2;
+      background: #f3f3f1;
       border: 1px solid rgba(17,17,17,0.06);
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow-md);
+      z-index: 1;
     }
 
-    .media-box img,
-    .media-box video {
+    .home-video-card video {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .media-main {
-      grid-column: 2 / 3;
-      grid-row: 1 / 5;
-      min-height: 100%;
+    .floating-image {
+      position: absolute;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #f3f3f1;
+      border: 1px solid rgba(17,17,17,0.06);
+      box-shadow: var(--shadow-soft);
+      z-index: 2;
+      animation: floatCard 5.5s ease-in-out infinite;
     }
 
-    .box-1 { grid-column: 1 / 2; grid-row: 1 / 2; }
-    .box-2 { grid-column: 1 / 2; grid-row: 2 / 3; }
-    .box-3 { grid-column: 1 / 2; grid-row: 3 / 4; }
-    .box-4 { grid-column: 1 / 2; grid-row: 4 / 5; }
-    .box-5 { grid-column: 3 / 4; grid-row: 1 / 2; }
-    .box-6 { grid-column: 3 / 4; grid-row: 2 / 4; }
-    .box-7 { grid-column: 3 / 4; grid-row: 4 / 5; }
+    .floating-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .img-1 {
+      width: 130px;
+      height: 130px;
+      top: 10px;
+      left: 70px;
+      animation-delay: 0s;
+    }
+
+    .img-2 {
+      width: 150px;
+      height: 120px;
+      top: 120px;
+      left: 0;
+      animation-delay: .6s;
+    }
+
+    .img-3 {
+      width: 120px;
+      height: 160px;
+      bottom: 90px;
+      left: 50px;
+      animation-delay: 1.2s;
+    }
+
+    .img-4 {
+      width: 140px;
+      height: 110px;
+      bottom: 10px;
+      left: 160px;
+      animation-delay: 1.8s;
+    }
+
+    .img-5 {
+      width: 130px;
+      height: 130px;
+      top: 18px;
+      right: 80px;
+      animation-delay: .3s;
+    }
+
+    .img-6 {
+      width: 165px;
+      height: 150px;
+      top: 135px;
+      right: 0;
+      animation-delay: .9s;
+    }
+
+    .img-7 {
+      width: 135px;
+      height: 110px;
+      bottom: 26px;
+      right: 120px;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes floatCard {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
 
     @media (max-width: 1100px) {
-      .home-media-grid {
-        grid-template-columns: 110px 1fr 110px;
-        grid-template-rows: 100px 150px 150px 100px;
-        min-height: 620px;
+      .home-visual-wrap {
+        height: 540px;
+      }
+
+      .home-video-card {
+        inset: 70px 70px 40px 70px;
       }
     }
 
@@ -249,12 +327,11 @@
 
       .main-nav {
         grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 4px;
       }
 
       .main-nav a {
-        min-height: 56px;
-        font-size: 0.9rem;
+        min-height: 60px;
+        font-size: 1rem;
       }
 
       .section {
@@ -262,28 +339,33 @@
         padding: 40px 0 72px;
       }
 
-      .home-media-grid {
+      .home-visual-wrap {
+        height: auto;
+        display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        min-height: auto;
+        gap: 14px;
       }
 
-      .media-main {
+      .home-video-card,
+      .floating-image {
+        position: relative;
+        inset: auto;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        height: auto;
+        animation: none;
+      }
+
+      .home-video-card {
         grid-column: 1 / 3;
-        grid-row: auto;
-        min-height: 420px;
+        min-height: 320px;
       }
 
-      .box-1,
-      .box-2,
-      .box-3,
-      .box-4,
-      .box-5,
-      .box-6,
-      .box-7 {
-        grid-column: auto;
-        grid-row: auto;
-        min-height: 150px;
+      .floating-image {
+        min-height: 140px;
       }
     }
 
@@ -295,19 +377,19 @@
       .main-nav a {
         justify-content: flex-start;
         padding-left: 8px;
+        font-size: 1.1rem;
       }
 
       .home-title {
         max-width: 100%;
       }
 
-      .home-media-grid {
+      .home-visual-wrap {
         grid-template-columns: 1fr;
       }
 
-      .media-main {
+      .home-video-card {
         grid-column: auto;
-        min-height: 300px;
       }
     }
   </style>
@@ -327,47 +409,45 @@
 
   <main>
     <section id="home" class="section home-section">
-      <div class="container section-inner">
-        <div class="home-head">
-          <div class="section-label">Section 01</div>
-          <h1 class="home-title">Help your dental practice attract more Spanish-speaking patients.</h1>
-          <p class="home-subtext">
-            A bilingual dental growth page designed to position the brand with more clarity, more trust, and a stronger visual identity for practices looking to connect with Hispanic families.
-          </p>
-        </div>
+      <div class="container home-layout">
+        <h1 class="home-title">Help your dental practice attract more Spanish-speaking patients.</h1>
 
-        <div class="home-media-grid">
-          <div class="media-box box-1">
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Dental image 1" />
-          </div>
+        <p class="home-subtext">
+          A bilingual dental growth page designed to position the brand with more clarity, more trust, and a stronger visual identity for practices looking to connect with Hispanic families.
+        </p>
 
-          <div class="media-box box-2">
-            <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80" alt="Dental image 2" />
-          </div>
-
-          <div class="media-box box-3">
-            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="Dental image 3" />
-          </div>
-
-          <div class="media-box box-4">
-            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="Dental image 4" />
-          </div>
-
-          <div class="media-box media-main">
+        <div class="home-visual-wrap">
+          <div class="home-video-card">
             <video autoplay muted loop playsinline>
               <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
             </video>
           </div>
 
-          <div class="media-box box-5">
+          <div class="floating-image img-1">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Dental image 1" />
+          </div>
+
+          <div class="floating-image img-2">
+            <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80" alt="Dental image 2" />
+          </div>
+
+          <div class="floating-image img-3">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="Dental image 3" />
+          </div>
+
+          <div class="floating-image img-4">
+            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="Dental image 4" />
+          </div>
+
+          <div class="floating-image img-5">
             <img src="https://images.unsplash.com/photo-1580281780460-82d277b0e3f8?auto=format&fit=crop&w=800&q=80" alt="Dental image 5" />
           </div>
 
-          <div class="media-box box-6">
+          <div class="floating-image img-6">
             <img src="https://images.unsplash.com/photo-1598257006626-5b2c3f25f78b?auto=format&fit=crop&w=900&q=80" alt="Dental image 6" />
           </div>
 
-          <div class="media-box box-7">
+          <div class="floating-image img-7">
             <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Dental image 7" />
           </div>
         </div>
