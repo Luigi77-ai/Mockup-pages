@@ -16,9 +16,8 @@
     :root {
       --bg: #ffffff;
       --text: #111111;
-      --muted: #232323;
+      --muted: #1f1f1f;
       --line: rgba(17, 17, 17, 0.08);
-      --menu-bg: #cfeeff;
       --container: 1320px;
       --shadow-soft: 0 20px 40px rgba(20, 28, 40, 0.06);
       --shadow-md: 0 26px 60px rgba(20, 28, 40, 0.1);
@@ -61,33 +60,29 @@
 
     .topbar-wrap {
       position: sticky;
-      top: 18px;
+      top: 0;
       z-index: 100;
-      display: flex;
-      justify-content: center;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
       transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), opacity 260ms ease;
     }
 
     .topbar-wrap.is-hidden {
-      transform: translateY(-140%);
+      transform: translateY(-100%);
       opacity: 0;
     }
 
     .topbar {
-      width: min(100% - 40px, 760px);
-      background: rgba(207, 238, 255, 0.96);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(17,17,17,0.06);
-      border-radius: 999px;
-      box-shadow: 0 10px 30px rgba(58, 101, 135, 0.10);
+      background: transparent;
     }
 
     .topbar-inner {
-      min-height: 72px;
+      min-height: 92px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0 18px;
+      padding: 0 10px;
     }
 
     .main-nav {
@@ -103,8 +98,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 54px;
-      font-size: clamp(1.2rem, 1.8vw, 1.75rem);
+      min-height: 64px;
+      font-size: clamp(1.35rem, 2vw, 2rem);
       font-weight: 800;
       letter-spacing: -0.07em;
       color: var(--text);
@@ -119,7 +114,7 @@
       position: absolute;
       left: 14%;
       right: 14%;
-      bottom: 4px;
+      bottom: 6px;
       height: 2px;
       background: #111111;
       transform: scaleX(0);
@@ -138,7 +133,7 @@
 
     .section {
       min-height: 100vh;
-      padding: 34px 0 80px;
+      padding: 30px 0 80px;
       border-bottom: 1px solid var(--line);
       background: #ffffff;
     }
@@ -176,7 +171,7 @@
 
     .home-section {
       min-height: auto;
-      padding-top: 34px;
+      padding-top: 28px;
       padding-bottom: 64px;
     }
 
@@ -188,20 +183,22 @@
     }
 
     .hero-copy {
-      margin-top: 28px;
-      margin-bottom: 8px;
+      margin-top: 18px;
+      margin-bottom: 10px;
+      width: 100%;
     }
 
     .home-title {
-      font-size: clamp(2.7rem, 6.2vw, 6.5rem);
-      line-height: 0.94;
+      font-size: clamp(2.1rem, 5.2vw, 5.2rem);
+      line-height: 0.96;
       letter-spacing: -0.08em;
       text-transform: uppercase;
       font-weight: 800;
-      max-width: none;
+      max-width: 100%;
+      width: 100%;
       margin-inline: auto;
       color: #111111;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .home-title .title-line {
@@ -225,29 +222,21 @@
       color: transparent;
     }
 
-    .subtext-bar {
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
-      background: linear-gradient(90deg, #0f3f92 0%, #1f63c3 45%, #0f4aa6 100%);
-      padding: 12px 24px;
-      margin-bottom: 10px;
-    }
-
     .home-subtext {
       font-size: 1rem;
       line-height: 1.8;
-      color: #ffffff;
+      color: #111111;
       max-width: 60rem;
       margin-inline: auto;
-      font-weight: 700;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
     .home-visual-wrap {
       position: relative;
       width: min(100%, 1000px);
       height: 560px;
-      margin-top: 4px;
+      margin-top: 0;
     }
 
     .home-video-card {
@@ -357,21 +346,9 @@
       .home-video-card {
         inset: 44px 70px 24px 70px;
       }
-
-      .topbar {
-        width: min(100% - 32px, 700px);
-      }
     }
 
     @media (max-width: 980px) {
-      .topbar-wrap {
-        top: 10px;
-      }
-
-      .topbar {
-        width: min(100% - 24px, 94vw);
-      }
-
       .topbar-inner {
         min-height: auto;
         padding: 10px 12px;
@@ -383,12 +360,16 @@
 
       .main-nav a {
         min-height: 48px;
-        font-size: 0.95rem;
+        font-size: 1rem;
       }
 
       .section {
         min-height: auto;
         padding: 24px 0 72px;
+      }
+
+      .home-title {
+        font-size: clamp(1.9rem, 5vw, 4rem);
       }
 
       .home-title .title-line {
@@ -433,11 +414,7 @@
       .main-nav a {
         justify-content: flex-start;
         padding-left: 8px;
-        font-size: 1rem;
-      }
-
-      .subtext-bar {
-        padding: 12px 16px;
+        font-size: 1.08rem;
       }
 
       .home-visual-wrap {
@@ -453,7 +430,7 @@
 <body>
   <div class="topbar-wrap" id="topbarWrap">
     <header class="topbar">
-      <div class="topbar-inner">
+      <div class="container topbar-inner">
         <nav class="main-nav" aria-label="Main navigation">
           <a href="#home">Home</a>
           <a href="#about">About</a>
@@ -475,11 +452,9 @@
           </h1>
         </div>
 
-        <div class="subtext-bar">
-          <p class="home-subtext">
-            A bilingual dental growth page designed to position the brand with more clarity, more trust, and a stronger visual identity for practices looking to connect with Hispanic families.
-          </p>
-        </div>
+        <p class="home-subtext">
+          A bilingual dental growth page designed to position the brand with more clarity, more trust, and a stronger visual identity for practices looking to connect with Hispanic families.
+        </p>
 
         <div class="home-visual-wrap">
           <div class="home-video-card">
