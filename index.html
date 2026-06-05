@@ -18,7 +18,9 @@
       --text: #111111;
       --muted: #777777;
       --line: rgba(17, 17, 17, 0.08);
-      --container: 1280px;
+      --container: 1320px;
+      --shadow-soft: 0 20px 40px rgba(20, 28, 40, 0.06);
+      --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
@@ -44,6 +46,12 @@
       text-decoration: none;
     }
 
+    img, video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
     .container {
       width: min(100% - 40px, var(--container));
       margin-inline: auto;
@@ -53,49 +61,66 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: #ffffff;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
 
     .topbar-inner {
-      min-height: 110px;
+      min-height: 108px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      font-size: 1.05rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: var(--text);
-      white-space: nowrap;
+      justify-content: center;
     }
 
     .main-nav {
-      display: flex;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       align-items: center;
-      gap: 34px;
-      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .main-nav a {
-      font-size: clamp(1.05rem, 1.4vw, 1.4rem);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 72px;
+      font-size: clamp(1rem, 1.4vw, 1.45rem);
       font-weight: 800;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.05em;
       color: var(--text);
       text-transform: uppercase;
-      transition: opacity 180ms ease;
+      transition: transform var(--transition), opacity var(--transition);
+      transform-origin: center;
+    }
+
+    .main-nav a::after {
+      content: "";
+      position: absolute;
+      left: 16%;
+      right: 16%;
+      bottom: 10px;
+      height: 2px;
+      background: #111111;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--transition);
     }
 
     .main-nav a:hover {
-      opacity: 0.55;
+      transform: scale(1.08);
+      opacity: 1;
+    }
+
+    .main-nav a:hover::after {
+      transform: scaleX(1);
     }
 
     .section {
       min-height: 100vh;
-      padding: 140px 0 80px;
+      padding: 40px 0 80px;
       border-bottom: 1px solid var(--line);
       background: #ffffff;
     }
@@ -103,7 +128,6 @@
     .section-inner {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
       gap: 18px;
     }
 
@@ -132,25 +156,158 @@
       max-width: 48rem;
     }
 
+    .home-section {
+      padding-top: 54px;
+    }
+
+    .home-head {
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .home-title {
+      font-size: clamp(3.2rem, 9vw, 9rem);
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+      text-transform: uppercase;
+      font-weight: 800;
+      max-width: 9ch;
+      background: linear-gradient(
+        90deg,
+        #0d2f6f 0%,
+        #1e5aa8 18%,
+        #3f8fd1 38%,
+        #85c6ef 54%,
+        #2f73c8 72%,
+        #173c83 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .home-subtext {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 44rem;
+    }
+
+    .home-media-grid {
+      display: grid;
+      grid-template-columns: 160px 1fr 160px;
+      grid-template-rows: 120px 170px 170px 120px;
+      gap: 18px;
+      min-height: 760px;
+      align-items: stretch;
+    }
+
+    .media-box {
+      border-radius: 22px;
+      overflow: hidden;
+      background: #f4f4f2;
+      border: 1px solid rgba(17,17,17,0.06);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .media-box img,
+    .media-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .media-main {
+      grid-column: 2 / 3;
+      grid-row: 1 / 5;
+      min-height: 100%;
+    }
+
+    .box-1 { grid-column: 1 / 2; grid-row: 1 / 2; }
+    .box-2 { grid-column: 1 / 2; grid-row: 2 / 3; }
+    .box-3 { grid-column: 1 / 2; grid-row: 3 / 4; }
+    .box-4 { grid-column: 1 / 2; grid-row: 4 / 5; }
+    .box-5 { grid-column: 3 / 4; grid-row: 1 / 2; }
+    .box-6 { grid-column: 3 / 4; grid-row: 2 / 4; }
+    .box-7 { grid-column: 3 / 4; grid-row: 4 / 5; }
+
+    @media (max-width: 1100px) {
+      .home-media-grid {
+        grid-template-columns: 110px 1fr 110px;
+        grid-template-rows: 100px 150px 150px 100px;
+        min-height: 620px;
+      }
+    }
+
     @media (max-width: 980px) {
       .topbar-inner {
         min-height: auto;
-        padding: 24px 0;
-        align-items: flex-start;
-        flex-direction: column;
+        padding: 18px 0;
       }
 
       .main-nav {
-        gap: 18px;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 4px;
       }
 
       .main-nav a {
-        font-size: 1rem;
+        min-height: 56px;
+        font-size: 0.9rem;
       }
 
       .section {
         min-height: auto;
-        padding: 120px 0 72px;
+        padding: 40px 0 72px;
+      }
+
+      .home-media-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        min-height: auto;
+      }
+
+      .media-main {
+        grid-column: 1 / 3;
+        grid-row: auto;
+        min-height: 420px;
+      }
+
+      .box-1,
+      .box-2,
+      .box-3,
+      .box-4,
+      .box-5,
+      .box-6,
+      .box-7 {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 150px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .main-nav {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .main-nav a {
+        justify-content: flex-start;
+        padding-left: 8px;
+      }
+
+      .home-title {
+        max-width: 100%;
+      }
+
+      .home-media-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .media-main {
+        grid-column: auto;
+        min-height: 300px;
       }
     }
   </style>
@@ -158,8 +315,6 @@
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <a href="#home" class="brand">Diane Dental Growth</a>
-
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -171,13 +326,51 @@
   </header>
 
   <main>
-    <section id="home" class="section">
+    <section id="home" class="section home-section">
       <div class="container section-inner">
-        <div class="section-label">Section 01</div>
-        <h1 class="section-title">Home</h1>
-        <p class="section-text">
-          This will be the main hero section.
-        </p>
+        <div class="home-head">
+          <div class="section-label">Section 01</div>
+          <h1 class="home-title">Help your dental practice attract more Spanish-speaking patients.</h1>
+          <p class="home-subtext">
+            A bilingual dental growth page designed to position the brand with more clarity, more trust, and a stronger visual identity for practices looking to connect with Hispanic families.
+          </p>
+        </div>
+
+        <div class="home-media-grid">
+          <div class="media-box box-1">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Dental image 1" />
+          </div>
+
+          <div class="media-box box-2">
+            <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80" alt="Dental image 2" />
+          </div>
+
+          <div class="media-box box-3">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="Dental image 3" />
+          </div>
+
+          <div class="media-box box-4">
+            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="Dental image 4" />
+          </div>
+
+          <div class="media-box media-main">
+            <video autoplay muted loop playsinline>
+              <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="media-box box-5">
+            <img src="https://images.unsplash.com/photo-1580281780460-82d277b0e3f8?auto=format&fit=crop&w=800&q=80" alt="Dental image 5" />
+          </div>
+
+          <div class="media-box box-6">
+            <img src="https://images.unsplash.com/photo-1598257006626-5b2c3f25f78b?auto=format&fit=crop&w=900&q=80" alt="Dental image 6" />
+          </div>
+
+          <div class="media-box box-7">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Dental image 7" />
+          </div>
+        </div>
       </div>
     </section>
 
