@@ -97,30 +97,37 @@
 
     .intro-kicker {
       display: inline-block;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.68);
+      color: rgba(255,255,255,0.82);
     }
 
-    .intro-screen h1 {
-      font-size: clamp(2.5rem, 6vw, 5.6rem);
-      font-weight: 800;
-      letter-spacing: -0.08em;
-      line-height: 0.92;
-      text-transform: uppercase;
-      color: #ffffff;
+    .intro-logo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 6px 0 16px;
+    }
+
+    .intro-logo {
+      width: min(100%, 340px);
+      max-height: 180px;
+      object-fit: contain;
+      mix-blend-mode: screen;
+      filter: brightness(1.85) contrast(1.18) grayscale(1);
+      opacity: 0.98;
     }
 
     .intro-screen p {
-      margin: 18px auto 0;
+      margin: 0 auto;
       max-width: 34rem;
       font-size: 0.98rem;
       line-height: 1.8;
       font-weight: 600;
-      color: rgba(255,255,255,0.76);
+      color: rgba(255,255,255,0.86);
     }
 
     .container {
@@ -221,8 +228,8 @@
     }
 
     .display-title {
-      font-size: clamp(2.35rem, 5vw, 5rem);
-      line-height: 0.92;
+      font-size: clamp(1.95rem, 3.9vw, 4rem);
+      line-height: 0.94;
       letter-spacing: -0.09em;
       text-transform: uppercase;
       font-weight: 800;
@@ -313,7 +320,7 @@
     }
 
     .hero-copy .display-title {
-      max-width: 8.8ch;
+      max-width: 10.8ch;
     }
 
     .hero-copy .display-title .accent {
@@ -1080,6 +1087,11 @@
       .intro-screen p {
         font-size: 0.9rem;
       }
+
+      .intro-logo {
+        width: min(100%, 260px);
+        max-height: 140px;
+      }
     }
   </style>
 </head>
@@ -1087,7 +1099,15 @@
   <div class="intro-screen" id="introScreen" aria-hidden="true">
     <div class="intro-brand">
       <span class="intro-kicker">Creative Direction • Strategy • Digital Presence</span>
-      <h1>The Boss Agency</h1>
+
+      <div class="intro-logo-wrap">
+        <img
+          class="intro-logo"
+          src="./assets/images/Boss New Logo.jpeg"
+          alt="Boss Agency logo"
+        />
+      </div>
+
       <p>
         Clear positioning, strong visuals, and work presented with a more refined, professional tone from the first second.
       </p>
@@ -1504,7 +1524,7 @@
             <div class="eyebrow">Next Move</div>
             <h2>Want Your Work To Look This Sharp Too?</h2>
             <p>
-              This section closes the page with a direct call to action and a cleaner gallery made only with attached images.
+              Keep this last section simple. One strong CTA, a clean gallery, and enough confidence to close the page with authority.
             </p>
           </div>
 
@@ -1518,13 +1538,13 @@
 
             <div class="contact-mini-gallery">
               <div class="mini">
-                <img src="./assets/images/Captura de pantalla 2026-06-05 183508.png" alt="Gallery image one" />
+                <img src="./assets/images/Captura de pantalla 2026-06-05 183508.png" alt="Gallery preview one" />
               </div>
               <div class="mini">
-                <img src="./assets/images/Captura de pantalla 2026-06-05 183618.png" alt="Gallery image two" />
+                <img src="./assets/images/Captura de pantalla 2026-06-05 183618.png" alt="Gallery preview two" />
               </div>
               <div class="mini">
-                <img src="./assets/images/Captura de pantalla 2026-06-05 183821.png" alt="Gallery image three" />
+                <img src="./assets/images/Captura de pantalla 2026-06-05 184102.png" alt="Gallery preview three" />
               </div>
             </div>
           </div>
@@ -1535,8 +1555,16 @@
 
   <script>
     (function () {
+      const introScreen = document.getElementById("introScreen");
       const topbar = document.getElementById("topbarWrap");
       let lastScroll = window.scrollY;
+
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          introScreen.classList.add("is-hidden");
+          document.body.classList.remove("is-locked");
+        }, 1400);
+      });
 
       window.addEventListener("scroll", function () {
         const currentScroll = window.scrollY;
@@ -1548,17 +1576,6 @@
         }
 
         lastScroll = currentScroll;
-      });
-    })();
-
-    (function () {
-      const introScreen = document.getElementById("introScreen");
-
-      window.addEventListener("load", function () {
-        setTimeout(function () {
-          introScreen.classList.add("is-hidden");
-          document.body.classList.remove("is-locked");
-        }, 1400);
       });
     })();
   </script>
