@@ -16,16 +16,22 @@
     :root {
       --bg: #ffffff;
       --text: #111111;
-      --muted: #3e4550;
+      --muted: #38414d;
+      --muted-strong: #161616;
       --line: rgba(17, 17, 17, 0.08);
       --container: 1320px;
-      --blue-soft: #edf6ff;
-      --blue-mid: #cbe5ff;
-      --blue-electric: #7cc7ff;
+
+      --gold: #caa64a;
+      --gold-light: #e2c975;
+      --gold-dark: #9a7420;
+
+      --sky-1: #eef8ff;
+      --sky-2: #d6eeff;
+      --sky-3: #bce3ff;
+      --sky-4: #92d1ff;
+      --sky-5: #dff5ff;
       --blue-deep: #0f3f92;
-      --gold: #b8892d;
-      --gold-light: #dfb75c;
-      --gold-dark: #8c6620;
+
       --shadow-soft: 0 20px 40px rgba(20, 28, 40, 0.06);
       --shadow-md: 0 26px 60px rgba(20, 28, 40, 0.1);
       --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -136,7 +142,7 @@
 
     .section {
       min-height: auto;
-      padding: 70px 0;
+      padding: 72px 0;
       border-bottom: 1px solid var(--line);
       background: #ffffff;
     }
@@ -159,13 +165,6 @@
       color: var(--text);
     }
 
-    .section-text {
-      font-size: 1rem;
-      line-height: 1.75;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
     .cta-button {
       display: inline-flex;
       align-items: center;
@@ -173,7 +172,7 @@
       min-height: 56px;
       padding: 0 24px;
       border: 2px solid var(--gold-dark);
-      background: linear-gradient(180deg, #e2c675 0%, #b8892d 100%);
+      background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 100%);
       color: #111111;
       font-size: 0.92rem;
       font-weight: 800;
@@ -196,28 +195,44 @@
     }
 
     .cta-button.secondary:hover {
-      background: #111111;
-      color: #ffffff;
-      border-color: #111111;
+      background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 100%);
+      color: #111111;
+      border-color: var(--gold-dark);
     }
 
-    .icon-tile {
+    .icon-plain {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #1c1c1c;
+      flex-shrink: 0;
+      transition: transform var(--transition), color var(--transition);
+    }
+
+    .icon-plain:hover {
+      transform: translateY(-2px);
+      color: var(--gold-dark);
+    }
+
+    .icon-gold {
       width: 44px;
       height: 44px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: #0f3f92;
-      background: linear-gradient(180deg, #ffffff 0%, #dff1ff 100%);
-      border: 1px solid rgba(15, 63, 146, 0.12);
+      color: var(--gold-dark);
+      background: linear-gradient(180deg, #fff8e4 0%, #f4dfa3 100%);
+      border: 1px solid rgba(202, 166, 74, 0.28);
       transition: transform var(--transition), background var(--transition), color var(--transition);
       flex-shrink: 0;
     }
 
-    .icon-tile:hover {
+    .icon-gold:hover {
       transform: translateY(-2px);
-      background: linear-gradient(180deg, #0f3f92 0%, #3a8dd8 100%);
-      color: #ffffff;
+      background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 100%);
+      color: #111111;
     }
 
     .home-section {
@@ -312,7 +327,10 @@
       animation: floatCard 5.5s ease-in-out infinite;
     }
 
-    .floating-image img {
+    .floating-image img,
+    .about-inline-image img,
+    .about-photo img,
+    .services-inline-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -327,30 +345,34 @@
     .img-7 { width: 136px; height: 110px; bottom: 10px; right: 118px; animation-delay: 1.5s; }
 
     .about-section {
-      padding-top: 82px;
-      padding-bottom: 88px;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(146, 209, 255, 0.45), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(188, 227, 255, 0.55), transparent 24%),
+        radial-gradient(circle at 75% 80%, rgba(214, 238, 255, 0.9), transparent 28%),
+        linear-gradient(135deg, var(--sky-1) 0%, var(--sky-2) 28%, var(--sky-3) 58%, var(--sky-5) 100%);
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 34px;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 38px;
       align-items: center;
     }
 
     .about-display {
       position: relative;
-      min-height: 620px;
+      min-height: 640px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: flex-start;
+      padding-top: 12px;
     }
 
     .about-big-title {
       position: relative;
-      font-size: clamp(4.8rem, 11vw, 10rem);
-      line-height: 0.84;
-      letter-spacing: -0.11em;
+      font-size: clamp(5rem, 11vw, 10rem);
+      line-height: 0.8;
+      letter-spacing: -0.12em;
       font-weight: 800;
       text-transform: uppercase;
       color: var(--text);
@@ -362,23 +384,14 @@
 
     .about-inline-image {
       position: absolute;
-      width: clamp(180px, 19vw, 290px);
-      height: clamp(116px, 11vw, 180px);
-      right: -2%;
-      top: 44%;
+      width: clamp(190px, 18vw, 280px);
+      height: clamp(130px, 11vw, 180px);
+      right: -6%;
+      top: 56%;
       overflow: hidden;
-      border-radius: 18px;
       box-shadow: var(--shadow-md);
       border: 1px solid rgba(17,17,17,0.06);
       background: #f3f3f1;
-    }
-
-    .about-inline-image img,
-    .about-photo img,
-    .services-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
 
     .about-content {
@@ -393,7 +406,6 @@
       max-width: 380px;
       height: 250px;
       overflow: hidden;
-      border-radius: 22px;
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(17,17,17,0.06);
       background: #f3f3f1;
@@ -403,7 +415,7 @@
       max-width: 32rem;
       font-size: 1.02rem;
       line-height: 1.75;
-      color: var(--muted);
+      color: var(--muted-strong);
       font-weight: 700;
     }
 
@@ -414,24 +426,26 @@
     }
 
     .industries-row {
-      margin-top: 32px;
+      margin-top: 34px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 18px;
     }
 
     .industry-card {
-      padding: 22px 20px;
+      padding: 22px 18px;
       border: 1px solid rgba(17,17,17,0.08);
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(6px);
       display: flex;
       align-items: center;
-      gap: 14px;
-      transition: transform var(--transition), background var(--transition), color var(--transition);
+      gap: 12px;
+      transition: transform var(--transition), background var(--transition);
     }
 
     .industry-card:hover {
       transform: translateY(-4px);
-      background: linear-gradient(180deg, #f5fbff 0%, #dff1ff 100%);
+      background: rgba(255,255,255,0.78);
     }
 
     .industry-card span:last-child {
@@ -447,10 +461,31 @@
       overflow: hidden;
     }
 
+    .services-top-search {
+      width: fit-content;
+      max-width: 520px;
+      margin-left: auto;
+      margin-bottom: 28px;
+      background: #0c0c0c;
+      color: #ffffff;
+      padding: 16px 18px;
+      display: grid;
+      gap: 8px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .services-top-search span {
+      font-size: 0.88rem;
+      line-height: 1.4;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
     .services-layout {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 28px;
+      grid-template-columns: 0.94fr 1.06fr;
+      gap: 30px;
       align-items: center;
     }
 
@@ -462,20 +497,20 @@
     }
 
     .services-copy h2 {
-      font-size: clamp(3rem, 6vw, 6.2rem);
-      line-height: 0.9;
+      font-size: clamp(3.1rem, 6vw, 6.4rem);
+      line-height: 0.88;
       letter-spacing: -0.09em;
       text-transform: uppercase;
       font-weight: 800;
       color: var(--text);
-      max-width: 10ch;
+      max-width: 11ch;
     }
 
     .services-copy p {
-      max-width: 36rem;
+      max-width: 37rem;
       font-size: 1rem;
       line-height: 1.8;
-      color: var(--muted);
+      color: var(--muted-strong);
       font-weight: 700;
     }
 
@@ -487,14 +522,14 @@
 
     .services-divider {
       width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(184,137,45,0) 0%, rgba(184,137,45,0.9) 14%, rgba(15,63,146,0.95) 50%, rgba(184,137,45,0.9) 86%, rgba(184,137,45,0) 100%);
-      margin: 10px 0 0;
+      height: 3px;
+      background: linear-gradient(90deg, rgba(202,166,74,0) 0%, rgba(202,166,74,1) 15%, rgba(15,63,146,0.85) 50%, rgba(202,166,74,1) 85%, rgba(202,166,74,0) 100%);
+      margin-top: 6px;
     }
 
     .services-display {
       position: relative;
-      min-height: 640px;
+      min-height: 660px;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -502,12 +537,12 @@
 
     .services-big-title {
       position: relative;
-      width: min(100%, 860px);
+      width: min(100%, 900px);
       margin-left: auto;
       text-align: right;
-      font-size: clamp(5rem, 12vw, 10.8rem);
-      line-height: 0.8;
-      letter-spacing: -0.12em;
+      font-size: clamp(4.6rem, 10vw, 8.8rem);
+      line-height: 0.82;
+      letter-spacing: -0.11em;
       text-transform: uppercase;
       font-weight: 800;
       color: var(--text);
@@ -519,10 +554,10 @@
 
     .services-inline-photo {
       position: absolute;
-      width: clamp(210px, 23vw, 320px);
-      height: clamp(150px, 13vw, 210px);
-      right: 22%;
-      top: 43%;
+      width: clamp(210px, 22vw, 310px);
+      height: clamp(140px, 12vw, 200px);
+      right: 6%;
+      top: 54%;
       overflow: hidden;
       box-shadow: var(--shadow-md);
       border: 1px solid rgba(17,17,17,0.06);
@@ -530,7 +565,7 @@
     }
 
     .services-line-services {
-      margin-top: 28px;
+      margin-top: 30px;
       width: 100%;
       border-top: 1px solid rgba(17,17,17,0.12);
       border-bottom: 1px solid rgba(17,17,17,0.12);
@@ -541,7 +576,7 @@
     .marquee {
       display: flex;
       width: max-content;
-      animation: marqueeLeft 28s linear infinite;
+      animation: marqueeLeft 30s linear infinite;
       will-change: transform;
     }
 
@@ -561,14 +596,14 @@
       align-items: center;
       gap: 12px;
       padding: 0 18px;
-      min-height: 54px;
+      min-height: 56px;
       white-space: nowrap;
       transition: transform var(--transition), color var(--transition);
     }
 
     .service-inline-item:hover {
       transform: translateY(-2px);
-      color: var(--blue-deep);
+      color: var(--gold-dark);
     }
 
     .service-inline-item span:last-child {
@@ -578,29 +613,8 @@
       letter-spacing: -0.03em;
     }
 
-    .search-fade-row {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 16px;
-      align-items: center;
-    }
-
-    .search-word {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text);
-      opacity: 0.18;
-      animation: softPulse 10s ease-in-out infinite;
-    }
-
-    .search-word:nth-child(2) { animation-delay: 1.2s; }
-    .search-word:nth-child(3) { animation-delay: 2.4s; }
-    .search-word:nth-child(4) { animation-delay: 3.6s; }
-    .search-word:nth-child(5) { animation-delay: 4.8s; }
-
     .proof-section {
-      background: linear-gradient(135deg, #eef8ff 0%, #ccecff 35%, #94d8ff 68%, #dff5ff 100%);
+      background: linear-gradient(135deg, #eef8ff 0%, #cfeeff 34%, #8ad1ff 62%, #def6ff 100%);
     }
 
     .proof-grid {
@@ -613,42 +627,53 @@
     .proof-copy p {
       max-width: 44rem;
       font-size: 1rem;
-      line-height: 1.8;
-      color: var(--muted);
-      font-weight: 700;
+      line-height: 1.82;
+      color: #0f0f0f;
+      font-weight: 800;
       margin-top: 18px;
     }
 
-    .proof-points {
-      margin-top: 34px;
+    .proof-banners {
+      margin-top: 40px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      align-items: start;
+      gap: 18px;
+      align-items: stretch;
     }
 
-    .proof-point {
-      background: transparent;
-      padding: 0;
-      border: 0;
-      box-shadow: none;
+    .proof-banner {
+      position: relative;
+      min-height: 340px;
+      padding: 22px 18px 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.55) 100%);
+      box-shadow: var(--shadow-soft);
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      justify-content: flex-start;
+      transform: translateY(18px);
+      transition: transform var(--transition), background var(--transition);
     }
 
-    .proof-point h3 {
-      margin-top: 12px;
+    .proof-banner:hover {
+      transform: translateY(0px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,249,229,0.86) 100%);
+    }
+
+    .proof-banner h3 {
       font-size: 1rem;
-      line-height: 1.25;
+      line-height: 1.2;
       text-transform: uppercase;
       letter-spacing: -0.04em;
       font-weight: 800;
       color: var(--text);
     }
 
-    .proof-point p {
-      margin-top: 10px;
+    .proof-banner p {
       font-size: 0.94rem;
-      line-height: 1.7;
-      color: var(--muted);
+      line-height: 1.72;
+      color: var(--muted-strong);
       font-weight: 700;
     }
 
@@ -695,7 +720,7 @@
       margin-top: 8px;
       font-size: 0.96rem;
       line-height: 1.72;
-      color: var(--muted);
+      color: var(--muted-strong);
       font-weight: 700;
     }
 
@@ -729,7 +754,7 @@
       max-width: 42rem;
       font-size: 1rem;
       line-height: 1.8;
-      color: var(--muted);
+      color: var(--muted-strong);
       font-weight: 700;
     }
 
@@ -759,12 +784,6 @@
       to { transform: translateX(-50%); }
     }
 
-    @keyframes softPulse {
-      0%, 100% { opacity: 0.16; transform: translateY(0px); }
-      20% { opacity: 1; transform: translateY(-1px); }
-      40% { opacity: 0.36; transform: translateY(0px); }
-    }
-
     @media (max-width: 1180px) {
       .about-grid,
       .services-layout,
@@ -773,20 +792,21 @@
         grid-template-columns: 1fr;
       }
 
-      .industries-row {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .proof-points {
+      .industries-row,
+      .proof-banners {
         grid-template-columns: repeat(2, 1fr);
       }
 
       .services-display {
-        min-height: 520px;
+        min-height: 460px;
       }
 
       .services-inline-photo {
-        right: 12%;
+        right: 10%;
+      }
+
+      .services-top-search {
+        margin-left: 0;
       }
     }
 
@@ -849,23 +869,14 @@
         min-height: 140px;
       }
 
-      .services-display {
-        min-height: 420px;
-      }
-
       .services-big-title {
-        font-size: clamp(4rem, 15vw, 8rem);
+        font-size: clamp(4rem, 14vw, 7rem);
       }
 
       .services-inline-photo {
         width: 180px;
-        height: 120px;
-        right: 8%;
-        top: 48%;
-      }
-
-      .proof-points {
-        grid-template-columns: 1fr;
+        height: 118px;
+        top: 58%;
       }
     }
 
@@ -897,19 +908,29 @@
       }
 
       .industries-row,
-      .proof-points {
+      .proof-banners {
         grid-template-columns: 1fr;
       }
 
+      .about-big-title,
       .services-big-title {
-        font-size: clamp(3.5rem, 18vw, 6rem);
+        font-size: clamp(3.7rem, 18vw, 5.8rem);
       }
 
+      .about-inline-image,
       .services-inline-photo {
         width: 132px;
         height: 88px;
+      }
+
+      .about-inline-image {
         right: 0;
-        top: 50%;
+        top: 62%;
+      }
+
+      .services-inline-photo {
+        right: 0;
+        top: 62%;
       }
 
       .process-step {
@@ -918,6 +939,11 @@
 
       .contact-card {
         padding: 24px;
+      }
+
+      .services-top-search {
+        width: 100%;
+        max-width: 100%;
       }
     }
   </style>
@@ -989,7 +1015,9 @@
           <div class="about-display">
             <div class="about-big-title">
               <span class="line">DENTAL</span>
-              <span class="line">ADS PAID</span>
+              <span class="line">ADS</span>
+              <span class="line">PAID</span>
+
               <figure class="about-inline-image">
                 <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80" alt="Dental ads campaign visual" />
               </figure>
@@ -1018,7 +1046,7 @@
 
         <div class="industries-row">
           <div class="industry-card">
-            <span class="icon-tile">
+            <span class="icon-plain">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                 <path d="M4 21h16"></path>
                 <path d="M6 21V8l6-4 6 4v13"></path>
@@ -1028,7 +1056,7 @@
           </div>
 
           <div class="industry-card">
-            <span class="icon-tile">
+            <span class="icon-plain">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                 <rect x="4" y="4" width="16" height="16"></rect>
                 <path d="M9 4v16"></path>
@@ -1039,7 +1067,7 @@
           </div>
 
           <div class="industry-card">
-            <span class="icon-tile">
+            <span class="icon-plain">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                 <circle cx="12" cy="8" r="3"></circle>
                 <path d="M6 20c1.5-3 4-5 6-5s4.5 2 6 5"></path>
@@ -1049,7 +1077,7 @@
           </div>
 
           <div class="industry-card">
-            <span class="icon-tile">
+            <span class="icon-plain">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                 <path d="M12 3c4 0 7 3.1 7 7 0 5-7 11-7 11S5 15 5 10c0-3.9 3-7 7-7z"></path>
               </svg>
@@ -1062,6 +1090,11 @@
 
     <section id="services" class="section services-section">
       <div class="container">
+        <div class="services-top-search">
+          <span>Dentist near me · Psychologist accepting new clients</span>
+          <span>Therapy near me · Pediatric dentist near me · Bilingual doctor near me</span>
+        </div>
+
         <div class="services-layout">
           <div class="services-copy">
             <h2>We Build Client Generating Systems</h2>
@@ -1088,9 +1121,12 @@
 
           <div class="services-display">
             <div class="services-big-title">
-              <span class="line">DENTAL</span>
-              <span class="line">PAID</span>
-              <span class="line">ADS</span>
+              <span class="line">Trusted</span>
+              <span class="line">Serviced</span>
+              <span class="line">Based</span>
+              <span class="line">Businesses</span>
+              <span class="line">Across The</span>
+              <span class="line">U.S.</span>
 
               <figure class="services-inline-photo">
                 <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=80" alt="Dentist consultation visual" />
@@ -1103,7 +1139,7 @@
           <div class="marquee">
             <div class="marquee-group">
               <div class="service-inline-item">
-                <span class="icon-tile">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <circle cx="11" cy="11" r="7"></circle>
                     <path d="M21 21l-4.3-4.3"></path>
@@ -1113,7 +1149,7 @@
               </div>
 
               <div class="service-inline-item">
-                <span class="icon-tile">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <path d="M4 5h16v14H4z"></path>
                     <path d="M8 9h8"></path>
@@ -1124,7 +1160,7 @@
               </div>
 
               <div class="service-inline-item">
-                <span class="icon-tile">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <polygon points="9 7 9 17 17 12 9 7"></polygon>
                     <rect x="3" y="5" width="18" height="14"></rect>
@@ -1134,7 +1170,7 @@
               </div>
 
               <div class="service-inline-item">
-                <span class="icon-tile">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <path d="M4 19V5"></path>
                     <path d="M10 19V9"></path>
@@ -1146,7 +1182,7 @@
               </div>
 
               <div class="service-inline-item">
-                <span class="icon-tile">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <path d="M3 3v18h18"></path>
                     <path d="M7 14l4-4 3 3 5-6"></path>
@@ -1158,7 +1194,7 @@
 
             <div class="marquee-group" aria-hidden="true">
               <div class="service-inline-item">
-                <span class="icon-tile">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <circle cx="11" cy="11" r="7"></circle>
                     <path d="M21 21l-4.3-4.3"></path>
@@ -1168,7 +1204,7 @@
               </div>
 
               <div class="service-inline-item">
-                <span class="icon-tile">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <path d="M4 5h16v14H4z"></path>
                     <path d="M8 9h8"></path>
@@ -1179,7 +1215,7 @@
               </div>
 
               <div class="service-inline-item">
-                <span class="icon-tile">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <polygon points="9 7 9 17 17 12 9 7"></polygon>
                     <rect x="3" y="5" width="18" height="14"></rect>
@@ -1189,7 +1225,7 @@
               </div>
 
               <div class="service-inline-item">
-                <span class="icon-tile">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <path d="M4 19V5"></path>
                     <path d="M10 19V9"></path>
@@ -1201,7 +1237,7 @@
               </div>
 
               <div class="service-inline-item">
-                <span class="icon-tile">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <path d="M3 3v18h18"></path>
                     <path d="M7 14l4-4 3 3 5-6"></path>
@@ -1212,14 +1248,6 @@
             </div>
           </div>
         </div>
-
-        <div class="search-fade-row">
-          <span class="search-word">Dentist near me</span>
-          <span class="search-word">Psychologist accepting new clients</span>
-          <span class="search-word">Therapy near me</span>
-          <span class="search-word">Pediatric dentist near me</span>
-          <span class="search-word">Bilingual doctor near me</span>
-        </div>
       </div>
     </section>
 
@@ -1227,15 +1255,14 @@
       <div class="container">
         <div class="proof-grid">
           <div class="proof-copy">
-            <div class="section-label">Proof & Process</div>
             <h2 class="section-title">If They Can’t Find You, Trust You, Or Understand You, They Will Choose Someone Else</h2>
             <p>
               People search for care every day. If your practice isn’t showing up with the right keywords, strong reviews, clear positioning, and an easy path to book, those potential patients go to a competitor instead.
             </p>
 
-            <div class="proof-points">
-              <article class="proof-point">
-                <span class="icon-tile">
+            <div class="proof-banners">
+              <article class="proof-banner">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <path d="M12 20V10"></path>
                     <path d="M18 20V4"></path>
@@ -1246,8 +1273,8 @@
                 <p>Local SEO that puts your business on the map and in front of the right local searches.</p>
               </article>
 
-              <article class="proof-point">
-                <span class="icon-tile">
+              <article class="proof-banner">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <path d="M12 21l-8-7V5h16v9l-8 7z"></path>
                   </svg>
@@ -1256,8 +1283,8 @@
                 <p>Authority-building content creates confidence and helps patients feel clear before they contact you.</p>
               </article>
 
-              <article class="proof-point">
-                <span class="icon-tile">
+              <article class="proof-banner">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <path d="M5 12h14"></path>
                     <path d="M12 5l7 7-7 7"></path>
@@ -1267,8 +1294,8 @@
                 <p>Better ads, clearer messaging, and conversion systems turn attention into booked appointments.</p>
               </article>
 
-              <article class="proof-point">
-                <span class="icon-tile">
+              <article class="proof-banner">
+                <span class="icon-gold">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
                     <path d="M12 3v6"></path>
                     <path d="M12 15v6"></path>
@@ -1325,7 +1352,6 @@
       <div class="container">
         <div class="contact-card">
           <div>
-            <div class="section-label">Contact</div>
             <h2>Start Attracting Spanish-Speaking Patients Before Your Competitors Do</h2>
             <p>
               Ready to turn your online presence into a client-generating system? Your future clients are already searching. Let’s make sure they find you, trust you, and choose you.
