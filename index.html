@@ -6,33 +6,32 @@
   <title>Diane Dental Growth</title>
   <meta
     name="description"
-    content="Minimal bilingual dental landing page designed to attract more Spanish-speaking patients with a premium and professional feel."
+    content="A refined bilingual dental growth landing page with a clean, minimal direction."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
 
   <style>
     :root {
-      --bg: #f5f7f8;
-      --surface: rgba(255,255,255,0.74);
-      --surface-strong: rgba(255,255,255,0.88);
-      --text: #15202a;
-      --muted: #667482;
-      --line: rgba(21, 32, 42, 0.10);
-      --accent: #4e87ad;
-      --accent-deep: #326b91;
-      --white: #ffffff;
+      --bg: #ffffff;
+      --surface: #f7f7f5;
+      --surface-2: #f2f2ef;
+      --text: #111111;
+      --muted: #666666;
+      --line: rgba(17,17,17,0.09);
+      --accent: #1f4d73;
+      --accent-soft: #e9f0f5;
       --radius-sm: 14px;
-      --radius-md: 22px;
-      --radius-lg: 30px;
-      --shadow-soft: 0 18px 50px rgba(30, 51, 68, 0.08);
-      --shadow-strong: 0 28px 70px rgba(20, 35, 48, 0.14);
-      --container: 1180px;
-      --transition: 260ms cubic-bezier(0.16, 1, 0.3, 1);
+      --radius-md: 24px;
+      --radius-lg: 34px;
+      --shadow-sm: 0 14px 30px rgba(10, 10, 10, 0.04);
+      --shadow-md: 0 28px 60px rgba(10, 10, 10, 0.07);
+      --container: 1240px;
+      --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * { box-sizing: border-box; }
@@ -41,8 +40,8 @@
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: "Manrope", sans-serif;
-      line-height: 1.6;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -57,27 +56,24 @@
     }
 
     .eyebrow {
-      margin: 0 0 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+      margin: 0 0 14px;
       font-size: 11px;
-      color: rgba(255,255,255,0.78);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
       font-weight: 700;
     }
 
-    .eyebrow.dark {
-      color: var(--muted);
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 12px;
-      font-weight: 800;
-      line-height: 0.95;
+    h1, h2, h3, h4 {
+      margin: 0;
+      color: var(--text);
       letter-spacing: -0.05em;
+      line-height: 0.98;
+      font-weight: 800;
     }
 
     p {
-      margin: 0 0 12px;
+      margin: 0;
       color: var(--muted);
       max-width: 62ch;
     }
@@ -86,9 +82,9 @@
       position: sticky;
       top: 0;
       z-index: 80;
+      background: rgba(255,255,255,0.84);
       backdrop-filter: blur(16px);
-      background: rgba(245, 247, 248, 0.82);
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(17,17,17,0.06);
     }
 
     .header-inner {
@@ -107,448 +103,400 @@
 
     .nav {
       display: flex;
-      gap: 20px;
-      color: var(--muted);
+      gap: 24px;
       font-size: 14px;
+      color: var(--muted);
       font-weight: 600;
     }
 
+    .nav a {
+      transition: color var(--transition);
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
     .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: #1d3142;
+      padding: 44px 0 32px;
     }
 
-    .hero-video,
-    .proof-video {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .hero-video video,
-    .proof-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background:
-        linear-gradient(to right, rgba(22, 49, 74, 0.78), rgba(22, 49, 74, 0.46)),
-        linear-gradient(to top, rgba(22, 49, 74, 0.48), rgba(22, 49, 74, 0.16));
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      padding: 84px 0;
-    }
-
-    .hero-grid {
+    .hero-shell {
       display: grid;
-      grid-template-columns: 1.03fr 0.97fr;
-      gap: 52px;
-      align-items: center;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 40px;
+      align-items: end;
+      min-height: calc(100vh - 120px);
     }
 
     .hero-copy {
-      color: var(--white);
-      position: relative;
-      z-index: 3;
+      padding: 34px 0 20px;
     }
 
     .hero-title {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 18px;
-    }
-
-    .hero-line-wrap {
-      display: block;
-      overflow: hidden;
-    }
-
-    .hero-line {
-      display: block;
-      color: var(--white);
-      font-size: clamp(2.7rem, 6vw, 7rem);
-      line-height: 0.9;
-      letter-spacing: -0.08em;
+      margin-bottom: 22px;
+      font-size: clamp(3rem, 8vw, 8.1rem);
       text-transform: uppercase;
-      transform: translateY(120%);
-      opacity: 0;
-      animation: riseUp 1s cubic-bezier(0.16,1,0.3,1) forwards;
-      text-shadow: 0 14px 36px rgba(0,0,0,.16);
+      max-width: 8ch;
     }
 
-    .line-1 { animation-delay: .08s; }
-    .line-2 { animation-delay: .24s; }
-    .line-3 { animation-delay: .4s; }
-
-    @keyframes riseUp {
-      0% { transform: translateY(120%); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-
-    .hero-subcopy {
-      color: rgba(255,255,255,.84);
-      max-width: 35rem;
-      margin-top: 18px;
+    .hero-text {
       font-size: 1rem;
-      line-height: 1.75;
+      line-height: 1.8;
+      max-width: 34rem;
+      margin-bottom: 28px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 24px;
+      margin-bottom: 34px;
     }
 
     .btn {
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 0 20px;
-      border-radius: 999px;
-      border: 1px solid transparent;
       font-weight: 700;
-      cursor: pointer;
+      border: 1px solid transparent;
       transition: all var(--transition);
+      cursor: pointer;
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: var(--white);
-      box-shadow: 0 16px 30px rgba(78, 135, 173, 0.2);
+      background: var(--text);
+      color: #fff;
     }
 
     .btn-primary:hover {
-      background: var(--accent-deep);
       transform: translateY(-1px);
+      opacity: 0.94;
     }
 
     .btn-secondary {
-      border-color: rgba(255,255,255,0.24);
-      background: rgba(255,255,255,0.08);
-      color: var(--white);
+      background: transparent;
+      color: var(--text);
+      border-color: var(--line);
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.14);
+      background: var(--surface);
     }
 
-    .hero-media {
+    .hero-meta {
+      display: flex;
+      gap: 26px;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .hero-meta-item span {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .hero-meta-item strong {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .hero-visual {
       position: relative;
-      min-height: 720px;
-    }
-
-    .hero-image-main,
-    .hero-image-float,
-    .hero-image-strip {
-      position: absolute;
+      min-height: 780px;
+      border-radius: 36px;
       overflow: hidden;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-strong);
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(6px);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
     }
 
-    .hero-image-main {
-      inset: 0 12% 112px 0;
-      z-index: 2;
+    .hero-visual-main {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
     }
 
-    .hero-image-float {
-      width: 40%;
-      right: 0;
-      bottom: 156px;
-      border: 7px solid rgba(255,255,255,0.88);
-      border-radius: 22px;
-      z-index: 3;
-    }
-
-    .hero-image-strip {
-      left: 10%;
-      right: 6%;
-      bottom: 42px;
-      height: 176px;
-      border: 4px solid rgba(255,255,255,0.84);
-      z-index: 4;
-    }
-
-    .hero-image-main img,
-    .hero-image-float img,
-    .hero-image-strip img {
+    .hero-visual-main img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .hero-doctor {
+    .hero-card {
       position: absolute;
-      right: clamp(10px, 2vw, 24px);
-      bottom: 0;
-      z-index: 5;
-      width: clamp(200px, 23vw, 330px);
-      pointer-events: none;
-      filter: drop-shadow(0 18px 32px rgba(0,0,0,.16));
-      opacity: .96;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      z-index: 3;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(17,17,17,0.06);
+      border-radius: 26px;
+      padding: 22px;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .hero-card h3 {
+      font-size: clamp(1.4rem, 2.2vw, 2rem);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero-card p {
+      line-height: 1.75;
+      font-size: 0.98rem;
+    }
+
+    .hero-card-media {
+      height: 210px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+
+    .hero-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .section {
-      position: relative;
-      padding: 86px 0;
-    }
-
-    .section-soft {
-      background:
-        linear-gradient(rgba(245,247,248,0.92), rgba(245,247,248,0.92)),
-        linear-gradient(135deg, #edf2f5 0%, #f7f9fa 100%);
+      padding: 110px 0;
+      border-top: 1px solid rgba(17,17,17,0.05);
     }
 
     .section-head {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
-      gap: 34px;
-      margin-bottom: 34px;
+      gap: 26px;
       align-items: end;
+      margin-bottom: 34px;
     }
 
     .section-head h2 {
-      font-size: clamp(1.7rem, 2vw, 2.4rem);
-      max-width: 12ch;
+      font-size: clamp(2rem, 3vw, 3.6rem);
       text-transform: uppercase;
+      max-width: 9ch;
     }
 
     .section-lead {
       font-size: 1rem;
-      line-height: 1.8;
-      color: #5f6e7a;
-      max-width: 56ch;
+      line-height: 1.85;
+      max-width: 58ch;
     }
 
-    .services-section {
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(rgba(245,247,248,0.88), rgba(245,247,248,0.9)),
-        url('./assets/images/799a1edd6b24dccee88a23d74095a0dc.jpg') center/cover no-repeat;
-    }
-
-    .services-topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .services-nav {
-      display: flex;
-      gap: 10px;
-    }
-
-    .services-arrow {
-      width: 52px;
-      height: 52px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.84);
-      color: var(--text);
-      cursor: pointer;
-      font-size: 21px;
-      font-weight: 800;
-      transition: transform var(--transition), background var(--transition), opacity var(--transition);
-      box-shadow: 0 10px 30px rgba(34,62,84,.06);
-    }
-
-    .services-arrow:hover {
-      transform: translateY(-2px);
-      background: var(--white);
-    }
-
-    .services-viewport {
-      overflow: hidden;
-      position: relative;
-      margin-bottom: 28px;
-    }
-
-    .services-track {
-      display: flex;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      width: max-content;
-      will-change: transform;
     }
 
     .service-card {
-      width: 260px;
-      flex: 0 0 260px;
-      border: 1px solid rgba(21,32,42,0.08);
-      border-radius: 26px;
+      position: relative;
+      min-height: 520px;
+      border-radius: 28px;
       overflow: hidden;
-      background: rgba(255,255,255,0.76);
-      box-shadow: var(--shadow-soft);
+      background: var(--surface);
+      border: 1px solid rgba(17,17,17,0.06);
+      box-shadow: var(--shadow-sm);
       cursor: pointer;
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-      backdrop-filter: blur(8px);
     }
 
-    .service-card:hover,
-    .service-card.active {
-      transform: translateY(-5px);
-      box-shadow: 0 26px 56px rgba(26,48,67,0.14);
-      border-color: rgba(78,135,173,0.24);
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(17,17,17,0.09);
     }
 
-    .service-card-image {
-      aspect-ratio: 1 / 1;
+    .service-image {
+      position: absolute;
+      inset: 0;
       overflow: hidden;
-      background: #dfe8ef;
     }
 
-    .service-card-image img {
+    .service-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 500ms ease;
+      transition: transform 900ms ease;
     }
 
-    .service-card:hover .service-card-image img,
-    .service-card.active .service-card-image img {
-      transform: scale(1.03);
+    .service-card:hover .service-image img {
+      transform: scale(1.04);
     }
 
-    .service-card-caption {
-      padding: 14px 16px 16px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text);
+    .service-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(17,17,17,0.84), rgba(17,17,17,0.18) 58%, rgba(17,17,17,0.05));
+    }
+
+    .service-content {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+      color: #fff;
+    }
+
+    .service-index {
+      font-size: 11px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      opacity: 0.72;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
-    .service-info {
-      max-width: 760px;
-      background: var(--surface-strong);
-      border: 1px solid var(--line);
+    .service-content h3 {
+      color: #fff;
+      font-size: clamp(1.45rem, 2vw, 2rem);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .service-content p {
+      color: rgba(255,255,255,0.82);
+      line-height: 1.75;
+      font-size: 0.96rem;
+      max-width: 34ch;
+    }
+
+    .service-panel {
+      margin-top: 20px;
+      background: var(--surface);
+      border: 1px solid rgba(17,17,17,0.07);
       border-radius: 28px;
       padding: 28px;
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
     }
 
-    .service-badge {
+    .service-panel-label {
       display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 34px;
+      min-height: 32px;
       padding: 0 12px;
+      align-items: center;
       border-radius: 999px;
-      background: #e5eef5;
-      color: #426f90;
+      background: var(--accent-soft);
+      color: var(--accent);
       font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
       text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 800;
       margin-bottom: 14px;
     }
 
-    .service-info h3 {
-      font-size: clamp(1.35rem, 2vw, 2rem);
-      margin-bottom: 10px;
+    .service-panel h3 {
+      font-size: clamp(1.5rem, 2.2vw, 2.2rem);
       text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
-    .service-info p {
-      font-size: 1rem;
+    .service-panel p {
       line-height: 1.85;
-      max-width: 60ch;
+      font-size: 1rem;
     }
 
-    .service-meta {
+    .service-panel strong {
+      display: inline-block;
       margin-top: 14px;
       color: var(--text);
+      font-size: 0.98rem;
       font-weight: 800;
     }
 
-    .proof-section {
+    .proof-shell {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .proof-video-card {
       position: relative;
+      min-height: 640px;
+      border-radius: 32px;
       overflow: hidden;
-      color: var(--white);
-      background: #122332;
+      background: var(--surface);
+      border: 1px solid rgba(17,17,17,0.06);
+      box-shadow: var(--shadow-sm);
     }
 
-    .proof-video {
-      filter: blur(8px) saturate(0.95);
-      transform: scale(1.06);
+    .proof-video-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.95);
     }
 
-    .proof-overlay {
+    .proof-video-overlay {
       position: absolute;
       inset: 0;
-      z-index: 1;
-      background:
-        linear-gradient(to right, rgba(14, 30, 42, 0.72), rgba(14, 30, 42, 0.5)),
-        linear-gradient(to top, rgba(14, 30, 42, 0.52), rgba(14, 30, 42, 0.22));
+      background: linear-gradient(to top, rgba(17,17,17,0.18), rgba(17,17,17,0.02));
     }
 
-    .proof-section .container {
-      position: relative;
-      z-index: 2;
-    }
-
-    .proof-section .eyebrow,
-    .proof-section h2 { color: var(--white); }
-
-    .proof-section p,
-    .proof-section .section-lead { color: rgba(255,255,255,0.84); }
-
-    .lookbook-grid {
+    .proof-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.96fr 0.96fr;
-      gap: 16px;
-      margin-bottom: 40px;
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
 
-    .lookbook-item {
-      border-radius: 24px;
+    .proof-card {
+      border-radius: 28px;
       overflow: hidden;
-      min-height: 250px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.14);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+      background: var(--surface);
+      border: 1px solid rgba(17,17,17,0.06);
+      box-shadow: var(--shadow-sm);
+      min-height: 310px;
     }
 
-    .lookbook-item img {
+    .proof-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .cta-panel {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 30px;
-      padding: 32px;
+    .cta {
+      padding-top: 90px;
+    }
+
+    .cta-shell {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 24px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
       align-items: center;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.14);
-      backdrop-filter: blur(12px);
+      padding: 34px;
+      border: 1px solid rgba(17,17,17,0.07);
+      border-radius: 32px;
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 3vw, 3.6rem);
+      text-transform: uppercase;
+      max-width: 10ch;
+      margin-bottom: 12px;
     }
 
     .signup {
@@ -559,24 +507,24 @@
     }
 
     .signup input {
-      min-width: 240px;
       flex: 1 1 240px;
-      min-height: 48px;
+      min-width: 240px;
+      min-height: 50px;
       padding: 0 16px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.22);
-      background: rgba(255,255,255,0.08);
-      color: var(--white);
+      border: 1px solid rgba(17,17,17,0.08);
+      background: #fff;
+      color: var(--text);
+      outline: none;
     }
 
-    .signup input::placeholder {
-      color: rgba(255,255,255,0.7);
+    .signup input:focus {
+      border-color: rgba(31,77,115,0.28);
+      box-shadow: 0 0 0 4px rgba(31,77,115,0.08);
     }
 
     .site-footer {
-      padding: 32px 0;
-      border-top: 1px solid var(--line);
-      background: #f7f8f9;
+      padding: 32px 0 42px;
     }
 
     .footer-inner {
@@ -584,6 +532,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(17,17,17,0.06);
       color: var(--muted);
       font-size: 14px;
     }
@@ -594,86 +544,66 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 980px) {
-      .hero-grid,
+    @media (max-width: 1100px) {
+      .hero-shell,
       .section-head,
-      .lookbook-grid,
-      .cta-panel {
+      .proof-shell,
+      .cta-shell,
+      .hero-card-grid {
         grid-template-columns: 1fr;
       }
 
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 620px;
+      }
+
+      .proof-video-card,
+      .proof-card {
+        min-height: 420px;
+      }
+
+      .signup {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav { display: none; }
+
       .hero {
+        padding-top: 24px;
+      }
+
+      .hero-shell {
         min-height: auto;
       }
 
-      .hero-inner {
-        padding: 72px 0 64px;
+      .hero-copy {
+        padding-top: 10px;
       }
 
-      .hero-media {
-        min-height: 620px;
-        order: -1;
+      .hero-visual {
+        min-height: 520px;
       }
 
-      .hero-image-main {
-        inset: 0 10% 110px 0;
+      .hero-card {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        padding: 18px;
       }
 
-      .hero-image-float {
-        width: 42%;
-        bottom: 148px;
+      .section,
+      .cta {
+        padding: 78px 0;
       }
 
-      .hero-image-strip {
-        left: 6%;
-        right: 4%;
-        bottom: 38px;
-        height: 150px;
-      }
-
-      .nav { display: none; }
-      .signup { justify-content: flex-start; }
-    }
-
-    @media (max-width: 640px) {
-      .header-inner {
-        min-height: 76px;
-      }
-
-      .hero-media {
-        min-height: 500px;
-      }
-
-      .hero-image-main {
-        inset: 0 0 110px 0;
-      }
-
-      .hero-image-float {
-        width: 42%;
-        right: 4%;
-        bottom: 144px;
-        border-width: 5px;
-      }
-
-      .hero-image-strip {
-        left: 0;
-        right: 0;
-        bottom: 26px;
-        height: 110px;
-        border-width: 3px;
-      }
-
-      .hero-doctor {
-        width: 145px;
-      }
-
-      .service-card {
-        width: 220px;
-        flex-basis: 220px;
-      }
-
-      .service-info {
-        padding: 22px 18px;
+      .cta-shell {
+        padding: 22px;
       }
 
       .footer-inner {
@@ -688,179 +618,173 @@
     <div class="container header-inner">
       <a href="#top" class="brand">Diane Dental Growth</a>
       <nav class="nav" aria-label="Primary">
-        <a href="#collection">Services</a>
-        <a href="#lookbook">Proof</a>
-        <a href="#drop">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#proof">Proof</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="hero-video" aria-hidden="true">
-        <video autoplay muted loop playsinline>
-          <source src="./assets/videos/smiles-bg.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <div class="container hero-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Bilingual dental growth</p>
+          <h1 class="hero-title">Help your dental practice attract more Spanish-speaking patients.</h1>
+          <p class="hero-text">
+            A cleaner, more focused brand presence for dental practices that want to look more credible, connect better with Hispanic families, and convert interest into real appointments.
+          </p>
 
-      <div class="hero-overlay"></div>
-
-      <img
-        class="hero-doctor"
-        src="./assets/images/dentist.png"
-        alt="Dentist"
-      />
-
-      <div class="hero-inner">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Diane · Dental Growth Landing</p>
-
-            <h1 class="hero-title" aria-label="Help your dental practice attract more Spanish speaking patients">
-              <span class="hero-line-wrap"><span class="hero-line line-1">Help your dental practice</span></span>
-              <span class="hero-line-wrap"><span class="hero-line line-2">Attract more</span></span>
-              <span class="hero-line-wrap"><span class="hero-line line-3">Spanish speaking patients.</span></span>
-            </h1>
-
-            <p class="hero-subcopy">
-              A premium bilingual dental landing page concept built for practices that want stronger positioning, more local visibility, and a more trustworthy experience for Hispanic families.
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#drop">Book a Free Call</a>
-              <a class="btn btn-secondary" href="https://thebossagency.co/contact/" target="_blank" rel="noopener noreferrer">View Contact Page</a>
-            </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Book a Free Call</a>
+            <a class="btn btn-secondary" href="https://thebossagency.co/contact/" target="_blank" rel="noopener noreferrer">View Contact</a>
           </div>
 
-          <div class="hero-media" aria-hidden="true">
-            <div class="hero-image-main">
-              <img src="./assets/images/hero-main.jpg" alt="Dental team consulting with patient" />
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span>Focus</span>
+              <strong>Bilingual positioning</strong>
             </div>
-
-            <div class="hero-image-float">
-              <img src="./assets/images/hero-float.jpg" alt="Close-up of dental consultation" />
+            <div class="hero-meta-item">
+              <span>Approach</span>
+              <strong>Minimal, premium, clear</strong>
             </div>
+            <div class="hero-meta-item">
+              <span>Built for</span>
+              <strong>Growth-minded practices</strong>
+            </div>
+          </div>
+        </div>
 
-            <div class="hero-image-strip">
-              <img src="./assets/images/hero-strip.jpg" alt="Smiling dental patient horizontal image" />
+        <div class="hero-visual">
+          <div class="hero-visual-main">
+            <img src="./assets/images/hero-main.jpg" alt="Dental consultation scene" />
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-card-grid">
+              <div>
+                <h3>Designed to feel more trustworthy at first glance.</h3>
+                <p>
+                  The page direction is intentionally restrained: white background, calm spacing, stronger typography, and visual decisions that feel more like a premium brand than a typical agency landing page.
+                </p>
+              </div>
+              <div class="hero-card-media">
+                <img src="./assets/images/hero-detail.jpg" alt="Dental close-up detail" />
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="collection" class="section section-soft services-section">
+    <section id="services" class="section">
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="eyebrow dark">Services</p>
-            <h2>Focused services for dental growth.</h2>
+            <p class="eyebrow">Services</p>
+            <h2>Focused offers with a cleaner presentation.</h2>
           </div>
           <div>
             <p class="section-lead">
-              A cleaner, simpler section with image-led cards. The movement keeps it alive, and clicking any image reveals the offer in a more premium way.
+              Instead of overexplaining everything at once, the section stays image-led and simple. Each card gives the offer room to breathe and keeps the experience more refined.
             </p>
           </div>
         </div>
 
-        <div class="services-topbar">
-          <div class="eyebrow dark" style="margin:0">Selected services</div>
-          <div class="services-nav">
-            <button class="services-arrow" type="button" id="prevService" aria-label="Previous service">←</button>
-            <button class="services-arrow" type="button" id="nextService" aria-label="Next service">→</button>
-          </div>
+        <div class="services-grid">
+          <article class="service-card" data-index="0">
+            <div class="service-image">
+              <img src="./assets/images/service-1.jpg" alt="Bilingual website messaging service" />
+            </div>
+            <div class="service-overlay"></div>
+            <div class="service-content">
+              <div class="service-index">01</div>
+              <h3>Bilingual Messaging</h3>
+              <p>Position your practice more clearly for English and Spanish-speaking families.</p>
+            </div>
+          </article>
+
+          <article class="service-card" data-index="1">
+            <div class="service-image">
+              <img src="./assets/images/service-2.jpg" alt="Local SEO dental service" />
+            </div>
+            <div class="service-overlay"></div>
+            <div class="service-content">
+              <div class="service-index">02</div>
+              <h3>Local SEO</h3>
+              <p>Improve how your practice appears in local search and Google Maps.</p>
+            </div>
+          </article>
+
+          <article class="service-card" data-index="2">
+            <div class="service-image">
+              <img src="./assets/images/service-3.jpg" alt="Landing page strategy service" />
+            </div>
+            <div class="service-overlay"></div>
+            <div class="service-content">
+              <div class="service-index">03</div>
+              <h3>Landing Strategy</h3>
+              <p>Create a more intentional conversion path for paid traffic and patient inquiries.</p>
+            </div>
+          </article>
         </div>
 
-        <div class="services-viewport">
-          <div class="services-track" id="servicesTrack">
-            <article class="service-card active" data-index="0">
-              <div class="service-card-image">
-                <img src="./assets/images/service-1.jpg" alt="Bilingual website messaging service" />
-              </div>
-              <div class="service-card-caption">Bilingual Messaging</div>
-            </article>
-
-            <article class="service-card" data-index="1">
-              <div class="service-card-image">
-                <img src="./assets/images/service-2.jpg" alt="Local SEO dental service" />
-              </div>
-              <div class="service-card-caption">Local SEO</div>
-            </article>
-
-            <article class="service-card" data-index="2">
-              <div class="service-card-image">
-                <img src="./assets/images/service-3.jpg" alt="Paid ads landing strategy service" />
-              </div>
-              <div class="service-card-caption">Landing Strategy</div>
-            </article>
-
-            <article class="service-card" data-index="3">
-              <div class="service-card-image">
-                <img src="./assets/images/service-4.jpg" alt="Google Business Profile support" />
-              </div>
-              <div class="service-card-caption">Google Presence</div>
-            </article>
-
-            <article class="service-card" data-index="4">
-              <div class="service-card-image">
-                <img src="./assets/images/service-5.jpg" alt="Dental brand positioning service" />
-              </div>
-              <div class="service-card-caption">Brand Positioning</div>
-            </article>
-          </div>
-        </div>
-
-        <div class="service-info" id="serviceInfo">
-          <div class="service-badge" id="serviceBadge">Core</div>
+        <div class="service-panel" id="servicePanel">
+          <div class="service-panel-label" id="serviceLabel">Core</div>
           <h3 id="serviceTitle">Bilingual Website Messaging</h3>
           <p id="serviceText">
             Build a clearer digital experience for English and Spanish-speaking families with messaging that feels relevant, welcoming, and trustworthy.
           </p>
-          <div class="service-meta" id="serviceMeta">English + Spanish</div>
+          <strong id="serviceMeta">English + Spanish</strong>
         </div>
       </div>
     </section>
 
-    <section id="lookbook" class="section proof-section">
-      <div class="proof-video" aria-hidden="true">
-        <video autoplay muted loop playsinline>
-          <source src="./assets/videos/13986255_2160_3840_25fps.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div class="proof-overlay"></div>
-
+    <section id="proof" class="section">
       <div class="container">
         <div class="section-head">
           <div>
             <p class="eyebrow">Proof</p>
-            <h2>Built to feel more relevant than a generic agency page.</h2>
+            <h2>A more editorial and credible visual language.</h2>
           </div>
           <div>
             <p class="section-lead">
-              The visual system stays clean and restrained so the offer feels intentional, modern, and more credible for a niche dental audience.
+              The direction stays mostly white and restrained, using real imagery and cleaner composition to make the page feel more intentional, premium, and believable.
             </p>
           </div>
         </div>
 
-        <div class="lookbook-grid">
-          <figure class="lookbook-item">
-            <img src="./assets/images/proof-1.jpg" alt="Dental campaign image 1" />
-          </figure>
-          <figure class="lookbook-item">
-            <img src="./assets/images/proof-2.jpg" alt="Dental campaign image 2" />
-          </figure>
-          <figure class="lookbook-item">
-            <img src="./assets/images/proof-3.jpg" alt="Dental campaign image 3" />
-          </figure>
-        </div>
+        <div class="proof-shell">
+          <div class="proof-video-card">
+            <div class="proof-video">
+              <video autoplay muted loop playsinline>
+                <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="proof-video-overlay"></div>
+          </div>
 
-        <div id="drop" class="cta-panel">
+          <div class="proof-grid">
+            <figure class="proof-card">
+              <img src="./assets/images/proof-1.jpg" alt="Dental campaign image 1" />
+            </figure>
+            <figure class="proof-card">
+              <img src="./assets/images/proof-2.jpg" alt="Dental campaign image 2" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="container">
+        <div class="cta-shell">
           <div>
             <p class="eyebrow">Contact</p>
-            <h2>Book a free call for your next dental growth move.</h2>
+            <h2>Book a free call for your next growth move.</h2>
             <p>
-              Let’s talk about your current website, your visibility in Google, and how to create a better bilingual patient journey for your practice.
+              Let’s talk about your website, your positioning, and how to create a stronger bilingual experience for the right patients.
             </p>
           </div>
 
@@ -877,9 +801,9 @@
     <div class="container footer-inner">
       <div>Diane Dental Growth</div>
       <div class="footer-links">
-        <a href="#collection">Services</a>
-        <a href="#lookbook">Proof</a>
-        <a href="https://thebossagency.co/contact/" target="_blank" rel="noopener noreferrer">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#proof">Proof</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </footer>
@@ -888,116 +812,51 @@
     (function () {
       const services = [
         {
-          badge: 'Core',
+          label: 'Core',
           title: 'Bilingual Website Messaging',
           text: 'Build a clearer digital experience for English and Spanish-speaking families with messaging that feels relevant, welcoming, and trustworthy.',
           meta: 'English + Spanish'
         },
         {
-          badge: 'Best fit',
+          label: 'Best fit',
           title: 'Local SEO + Google Presence',
           text: 'Improve how your practice shows up locally so more nearby families can discover your services through Google search and maps.',
           meta: 'Visibility + Trust'
         },
         {
-          badge: 'Performance',
+          label: 'Performance',
           title: 'Paid Ads Landing Strategy',
           text: 'Create a cleaner conversion path so paid traffic lands on a page designed to turn interest into booked consultations.',
           meta: 'Focused Conversion'
-        },
-        {
-          badge: 'Support',
-          title: 'Google Business Profile Support',
-          text: 'Strengthen your listing with clearer positioning, category alignment, review strategy direction, and stronger first impressions on Google.',
-          meta: 'Maps + Reputation'
-        },
-        {
-          badge: 'Trust',
-          title: 'Dental Brand Positioning',
-          text: 'Refine how your practice looks and sounds online so families immediately understand your value, tone, and patient experience.',
-          meta: 'Clarity + Relevance'
         }
       ];
 
-      const track = document.getElementById('servicesTrack');
       const cards = Array.from(document.querySelectorAll('.service-card'));
-      const prev = document.getElementById('prevService');
-      const next = document.getElementById('nextService');
-      const badge = document.getElementById('serviceBadge');
+      const label = document.getElementById('serviceLabel');
       const title = document.getElementById('serviceTitle');
       const text = document.getElementById('serviceText');
       const meta = document.getElementById('serviceMeta');
 
-      let active = 0;
-      let position = 0;
-      let autoMove;
+      function setService(index) {
+        const data = services[index];
+        label.textContent = data.label;
+        title.textContent = data.title;
+        text.textContent = data.text;
+        meta.textContent = data.meta;
 
-      function setActive(index) {
-        active = index;
         cards.forEach((card, i) => {
-          card.classList.toggle('active', i === index);
+          card.style.opacity = i === index ? '1' : '0.94';
+          card.style.transform = i === index ? 'translateY(-4px)' : 'translateY(0)';
         });
-
-        badge.textContent = services[index].badge;
-        title.textContent = services[index].title;
-        text.textContent = services[index].text;
-        meta.textContent = services[index].meta;
       }
-
-      function maxScroll() {
-        const viewport = track.parentElement.getBoundingClientRect().width;
-        const total = track.scrollWidth;
-        return Math.max(0, total - viewport);
-      }
-
-      function moveTrack(amount) {
-        position += amount;
-        const limit = maxScroll();
-
-        if (position > limit) position = 0;
-        if (position < 0) position = limit;
-
-        track.style.transform = 'translateX(' + (-position) + 'px)';
-      }
-
-      function startAuto() {
-        stopAuto();
-        autoMove = setInterval(function () {
-          moveTrack(1.1);
-        }, 18);
-      }
-
-      function stopAuto() {
-        if (autoMove) clearInterval(autoMove);
-      }
-
-      prev.addEventListener('click', function () {
-        stopAuto();
-        moveTrack(-280);
-        startAuto();
-      });
-
-      next.addEventListener('click', function () {
-        stopAuto();
-        moveTrack(280);
-        startAuto();
-      });
 
       cards.forEach((card) => {
         card.addEventListener('click', function () {
-          setActive(Number(card.dataset.index));
+          setService(Number(card.dataset.index));
         });
       });
 
-      track.addEventListener('mouseenter', stopAuto);
-      track.addEventListener('mouseleave', startAuto);
-      window.addEventListener('resize', function () {
-        position = 0;
-        moveTrack(0);
-      });
-
-      setActive(0);
-      startAuto();
+      setService(0);
     })();
   </script>
 </body>
