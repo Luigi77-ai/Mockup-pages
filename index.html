@@ -306,13 +306,13 @@
       min-height: 520px;
     }
 
-    .hero-blank {
+    .hero-video {
       position: absolute;
-      inset: 28px 40px 28px 40px;
+      inset: 0;
       border-radius: 26px;
-      border: 1px solid rgba(0,48,73,0.12);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,246,241,0.98) 100%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       box-shadow: var(--shadow-md);
     }
 
@@ -1082,8 +1082,8 @@
         <nav class="main-nav" aria-label="Main navigation">
           <a href="#home">Home</a>
           <a href="#about">About</a>
-          <a href="#work">Work</a>
-          <a href="#process">Proof</a>
+          <a href="#work">Services</a>
+          <a href="#process">Case Studies</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -1103,7 +1103,7 @@
             </h1>
 
             <p class="mini-copy">
-              We build digital presence with strategy, visual clarity, and execution that helps brands look stronger and convert better.
+              We build digital presence with strategy, visual clarity, and execution that helps dental practices stand out locally, attract high-value cases, and convert more traffic into patients.
             </p>
 
             <div class="hero-actions">
@@ -1113,7 +1113,9 @@
           </div>
 
           <div class="hero-media">
-            <div class="hero-blank" aria-hidden="true"></div>
+            <video class="hero-video" autoplay muted loop playsinline>
+            <source src="./assets/videos/introvideo.mp4" type="video/mp4" />
+          </video>
           </div>
         </div>
 
@@ -1441,8 +1443,8 @@
                   <path d="M22 19V3"></path>
                 </svg>
               </span>
-              <h3>Clear Taste</h3>
-              <p>Visual restraint, good hierarchy, and strong presentation choices make the work feel more credible.</p>
+              <h3>Patient Trust</h3>
+              <p>A premium online presence builds instant credibility, positioning your clinic as the top choice in your local area.</p>
             </article>
 
             <article class="proof-banner">
@@ -1463,8 +1465,8 @@
                   <path d="m5 15 4-4 3 3 6-7"></path>
                 </svg>
               </span>
-              <h3>Fast Signal</h3>
-              <p>Visitors understand the level of work much faster when the portfolio looks clean and direct.</p>
+              <h3>High-Converting Design</h3>
+              <p>We build clean, direct landing pages engineered to turn local traffic into booked appointments seamlessly.</p>
             </article>
 
             <article class="proof-banner">
@@ -1475,8 +1477,8 @@
                   <path d="M20 7.5 12 11 4 7.5"></path>
                 </svg>
               </span>
-              <h3>Room To Grow</h3>
-              <p>The structure stays flexible so you can keep adding more cases without damaging the layout.</p>
+              <h3>Scalable Growth</h3>
+              <p>Our patient acquisition systems stay flexible, allowing you to scale up ad spend and add new services without breaking your funnel.</p>
             </article>
           </div>
         </div>
@@ -1490,17 +1492,13 @@
             <div class="eyebrow">Next Move</div>
             <h2>Want Your Work To Look This Sharp Too?</h2>
             <p>
-              Keep this last section simple. One strong CTA, a clean gallery, and enough confidence to close the page with authority.
+              Ready to fill your open chairs with high-value patients? Let's map out your growth strategy.
             </p>
           </div>
 
           <div class="contact-actions">
             <a class="cta-button" href="https://api.leadconnectorhq.com/widget/appointment/digitaldiscoverycall/discoverycall" target="_blank" rel="noopener noreferrer">
-              Book a Strategy Call
-            </a>
-
-            <a class="cta-button secondary" href="#work">
-              Back to Work
+              Claim Your Strategy Call
             </a>
 
             <div class="contact-mini-gallery">
