@@ -429,17 +429,17 @@
     }
 
     .services-mini-badge.one{
-      top:86px;
-      left:12px;
-      width:44px;
-      height:44px;
+      top:96px;
+      left:56px;
+      width:46px;
+      height:46px;
       font-size:22px;
       transform:rotate(-8deg);
     }
 
     .services-mini-badge.two{
-      top:28px;
-      left:58px;
+      top:42px;
+      left:104px;
       width:56px;
       height:56px;
       font-size:28px;
@@ -447,8 +447,8 @@
     }
 
     .services-mini-badge.three{
-      top:120px;
-      left:74px;
+      top:132px;
+      left:122px;
       width:62px;
       height:62px;
       font-size:30px;
@@ -458,12 +458,30 @@
     }
 
     .services-mini-badge.four{
-      top:112px;
-      right:34px;
+      top:138px;
+      left:318px;
       width:54px;
       height:54px;
       font-size:28px;
       transform:rotate(8deg);
+    }
+
+    .services-mini-badge.five{
+      top:236px;
+      left:24px;
+      width:42px;
+      height:42px;
+      font-size:20px;
+      transform:rotate(-10deg);
+    }
+
+    .services-mini-badge.six{
+      top:222px;
+      left:286px;
+      width:48px;
+      height:48px;
+      font-size:22px;
+      transform:rotate(9deg);
     }
 
     .services-spark{
@@ -536,38 +554,41 @@
 
     .services-tagline{
       position:absolute;
-      left:0;
-      bottom:12px;
+      left:16px;
+      bottom:18px;
       z-index:6;
       margin:0;
       font-size:clamp(2.2rem, 5vw, 4rem);
       line-height:.88;
       letter-spacing:-.07em;
       text-transform:uppercase;
-      color:#111;
+      color:#ffffff;
+      text-shadow:0 8px 24px rgba(0,0,0,.18);
       max-width:10ch;
     }
 
     .services-content{
       display:flex;
       flex-direction:column;
-      align-items:flex-start;
+      align-items:center;
       justify-content:center;
       min-height:620px;
       padding-right:14px;
+      text-align:center;
     }
 
     .services-tabs{
       display:flex;
-      flex-wrap:wrap;
-      gap:16px;
+      flex-wrap:nowrap;
+      gap:24px;
       margin-bottom:42px;
       width:100%;
-      justify-content:flex-start;
+      justify-content:center;
+      align-items:flex-start;
     }
 
     .service-tab{
-      min-width:118px;
+      min-width:auto;
       background:transparent;
       border:none;
       padding:0;
@@ -575,11 +596,12 @@
       flex-direction:column;
       align-items:center;
       gap:8px;
-      color:rgba(0,48,73,.38);
+      color:#ffffff;
       font-weight:700;
       font-size:15px;
       line-height:1.2;
       cursor:default;
+      text-align:center;
     }
 
     .service-tab svg{
@@ -593,7 +615,7 @@
     }
 
     .service-tab.active{
-      color:var(--brand-orange);
+      color:#ffffff;
     }
 
     .services-word{
@@ -602,7 +624,7 @@
       line-height:.88;
       letter-spacing:-.08em;
       text-transform:uppercase;
-      color:var(--brand-navy);
+      color:var(--brand-red);
       align-self:center;
       text-align:center;
       width:100%;
@@ -857,8 +879,12 @@
 
       .services-word,
       .services-copy{
-        align-self:flex-start;
-        text-align:left;
+        align-self:center;
+        text-align:center;
+      }
+
+      .services-tabs{
+        justify-content:center;
       }
     }
 
@@ -912,8 +938,9 @@
       }
 
       .services-tabs{
-        gap:12px;
-        justify-content:flex-start;
+        gap:14px;
+        justify-content:center;
+        flex-wrap:wrap;
       }
 
       .service-tab{
@@ -951,11 +978,19 @@
       .services-tagline{
         font-size:clamp(1.8rem, 9vw, 3rem);
         max-width:9ch;
+        left:10px;
       }
 
       .services-word{
         font-size:clamp(3rem, 14vw, 4.8rem);
       }
+
+      .services-mini-badge.one{ top:86px; left:34px; }
+      .services-mini-badge.two{ top:34px; left:76px; }
+      .services-mini-badge.three{ top:118px; left:92px; }
+      .services-mini-badge.four{ top:128px; left:252px; }
+      .services-mini-badge.five{ top:214px; left:10px; }
+      .services-mini-badge.six{ top:204px; left:236px; }
     }
   </style>
 </head>
@@ -1081,6 +1116,8 @@
               <div class="services-mini-badge two">🧠</div>
               <div class="services-mini-badge three">👑</div>
               <div class="services-mini-badge four">✨</div>
+              <div class="services-mini-badge five">💅</div>
+              <div class="services-mini-badge six">💻</div>
 
               <div class="services-spark one">✦</div>
               <div class="services-spark two">✦</div>
