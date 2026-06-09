@@ -17,25 +17,28 @@
 
   <style>
     :root{
-      --bg:#fffdea;
-      --paper:#fff5d4;
-      --card:#ffffff;
-      --text:#1c1b18;
-      --muted:#675e50;
-      --border:#b7b0a5;
-
-      --orange:#f06231;
-      --yellow:#ffe479;
-      --dark:#1c1b18;
-      --white:#ffffff;
+      --bg:#EAE2B7;
+      --paper:#F5EBC8;
+      --card:rgba(255,255,255,.86);
+      --text:#16110d;
+      --muted:#5f5246;
+      --border:rgba(0,48,73,.20);
 
       --brand-navy:#003049;
-      --brand-red:#d62828;
-      --brand-orange:#f77f00;
-      --brand-yellow:#fcbf49;
+      --brand-red:#D62828;
+      --brand-orange:#F77F00;
+      --brand-yellow:#FCBF49;
+      --brand-cream:#EAE2B7;
+
+      --dark:#16110d;
+      --white:#ffffff;
 
       --radius:6px;
       --sidebar-width:320px;
+      --menu-rail-width:96px;
+      --menu-tab-width:78px;
+      --menu-gap:18px;
+      --menu-offset:18px;
     }
 
     *{box-sizing:border-box}
@@ -46,9 +49,9 @@
       font-family:"Be Vietnam Pro",sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 84% 16%, rgba(214, 40, 40, 0.07), transparent 18%),
-        radial-gradient(circle at 12% 82%, rgba(247, 127, 0, 0.08), transparent 24%),
-        linear-gradient(180deg, var(--bg) 0%, #fffdf3 100%);
+        radial-gradient(circle at 82% 14%, rgba(214, 40, 40, 0.08), transparent 18%),
+        radial-gradient(circle at 12% 80%, rgba(247, 127, 0, 0.10), transparent 24%),
+        linear-gradient(180deg, #ece4bd 0%, var(--brand-cream) 100%);
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
       position:relative;
@@ -70,8 +73,8 @@
     .page-brand-orb{
       position:absolute;
       border-radius:999px;
-      filter:blur(18px);
-      opacity:.16;
+      filter:blur(20px);
+      opacity:.18;
       mix-blend-mode:multiply;
     }
 
@@ -80,7 +83,7 @@
       height:360px;
       top:4%;
       left:-8%;
-      background:radial-gradient(circle, rgba(214,40,40,.24) 0%, rgba(214,40,40,0) 72%);
+      background:radial-gradient(circle, rgba(214,40,40,.22) 0%, rgba(214,40,40,0) 72%);
     }
 
     .page-brand-orb.two{
@@ -96,14 +99,14 @@
       height:300px;
       bottom:8%;
       left:10%;
-      background:radial-gradient(circle, rgba(252,191,73,.26) 0%, rgba(252,191,73,0) 72%);
+      background:radial-gradient(circle, rgba(252,191,73,.24) 0%, rgba(252,191,73,0) 72%);
     }
 
     .page-brand-mark{
       position:absolute;
       width:clamp(110px, 15vw, 240px);
       aspect-ratio:1/1;
-      opacity:.065;
+      opacity:.07;
       filter:blur(1px);
       transform-origin:center;
     }
@@ -121,83 +124,98 @@
     .page-brand-mark.m5{bottom:5%;right:-1%;transform:rotate(14deg) scale(1.45);opacity:.045;}
     .page-brand-mark.m6{top:70%;left:44%;transform:rotate(-8deg) scale(.78);opacity:.05;}
 
-    .menu-rail{
+    .menu-system{
       position:fixed;
       top:0;
       left:0;
       height:100vh;
-      width:54px;
-      z-index:30;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      width:calc(var(--sidebar-width) + var(--menu-rail-width));
+      z-index:50;
       pointer-events:none;
     }
 
-    .menu-tab{
+    .menu-panel{
+      position:absolute;
+      top:0;
+      left:0;
+      width:var(--sidebar-width);
+      height:100vh;
+      padding:18px;
+      background:linear-gradient(180deg, var(--brand-orange) 0%, #ef7700 100%);
+      border-right:1px solid rgba(0,0,0,.08);
+      transform:translateX(calc(-100% + var(--menu-offset)));
+      transition:transform .34s ease;
+      pointer-events:auto;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      box-shadow:0 20px 50px rgba(0,48,73,.12);
+    }
+
+    .menu-trigger{
+      position:absolute;
+      top:0;
+      left:0;
+      height:100vh;
+      width:var(--menu-rail-width);
+      transform:translateX(0);
+      transition:transform .34s ease;
       pointer-events:auto;
       border:none;
       background:transparent;
-      color:#111;
       cursor:pointer;
       display:flex;
       align-items:center;
       justify-content:center;
       padding:0;
-      width:54px;
-      height:260px;
-      position:relative;
+    }
+
+    body.menu-open .menu-panel{
+      transform:translateX(0);
+    }
+
+    body.menu-open .menu-trigger{
+      transform:translateX(calc(var(--sidebar-width) - var(--menu-rail-width) + var(--menu-offset)));
+    }
+
+    .menu-trigger-inner{
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      padding:18px 0;
+    }
+
+    .menu-tab{
+      width:var(--menu-tab-width);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
     }
 
     .menu-tab-text{
       writing-mode:vertical-rl;
       transform:rotate(180deg);
-      font-size:14px;
-      line-height:1;
-      letter-spacing:.18em;
+      font-size:21px;
+      line-height:0.95;
+      letter-spacing:.10em;
       text-transform:uppercase;
       font-weight:800;
-      color:#111;
+      color:#000000;
       user-select:none;
+      text-shadow:0 0 0 #000;
     }
 
-    .menu-tab::after{
-      content:"";
-      position:absolute;
-      bottom:18px;
-      left:50%;
-      transform:translateX(-50%);
-      width:2px;
-      height:78px;
-      background:var(--orange);
+    .menu-tab-line{
+      width:4px;
+      height:240px;
       border-radius:999px;
-    }
-
-    .layout{
-      min-height:100vh;
-      position:relative;
-      z-index:1;
-    }
-
-    .sidebar{
-      position:fixed;
-      top:0;
-      left:0;
-      width:var(--sidebar-width);
-      height:100vh;
-      background:linear-gradient(180deg, var(--orange) 0%, #ea5b2c 100%);
-      padding:18px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      border-right:1px solid rgba(0,0,0,.08);
-      z-index:40;
-      transform:translateX(calc(-100% + 54px));
-      transition:transform .32s ease;
-    }
-
-    body.menu-open .sidebar{
-      transform:translateX(0);
+      background:var(--brand-orange);
+      flex:0 0 auto;
+      box-shadow:0 0 0 1px rgba(0,0,0,.02);
     }
 
     .brand-box{
@@ -229,7 +247,7 @@
       grid-template-columns:1fr auto;
       gap:10px;
       padding:14px;
-      background:var(--yellow);
+      background:var(--brand-yellow);
       border-radius:var(--radius);
       color:var(--text);
       font-size:14px;
@@ -239,7 +257,7 @@
 
     .nav-link:hover{
       transform:translateY(-1px);
-      background:#fff1a8;
+      background:#ffd86d;
     }
 
     .nav-link small{
@@ -254,8 +272,14 @@
       color:var(--brand-navy);
     }
 
+    .layout{
+      min-height:100vh;
+      position:relative;
+      z-index:1;
+    }
+
     .content{
-      padding:24px 24px 24px 84px;
+      padding:24px 24px 24px 108px;
       position:relative;
     }
 
@@ -275,6 +299,7 @@
       line-height:.92;
       letter-spacing:-.06em;
       max-width:8ch;
+      color:var(--brand-navy);
     }
 
     .hero-copy p{
@@ -335,6 +360,7 @@
       font-size:clamp(2rem,4vw,3.4rem);
       line-height:1;
       letter-spacing:-.04em;
+      color:var(--brand-navy);
     }
 
     .service-grid,
@@ -353,7 +379,7 @@
     .about-panel{
       border:1px dashed var(--border);
       border-radius:var(--radius);
-      background:rgba(255,255,255,.88);
+      background:var(--card);
       overflow:hidden;
       backdrop-filter:blur(6px);
     }
@@ -369,7 +395,7 @@
     .project-num{
       width:52px;
       height:52px;
-      border:1px dashed var(--border);
+      border:1px dashed rgba(0,48,73,.18);
       border-radius:6px;
       display:grid;
       place-items:center;
@@ -388,6 +414,7 @@
       font-size:1.7rem;
       line-height:1;
       letter-spacing:-.03em;
+      color:var(--brand-navy);
     }
 
     .service-card p,
@@ -409,11 +436,12 @@
 
     .chip{
       padding:8px 12px;
-      background:var(--paper);
+      background:rgba(252,191,73,.28);
       border-radius:2px;
       font-size:13px;
       font-weight:600;
-      border:1px solid rgba(0,48,73,.06);
+      border:1px solid rgba(247,127,0,.12);
+      color:var(--brand-navy);
     }
 
     .about-lead{
@@ -423,12 +451,13 @@
       font-size:clamp(2.6rem,6vw,5.6rem);
       line-height:.95;
       letter-spacing:-.06em;
+      color:var(--brand-navy);
     }
 
-    .about-lead .accent{color:var(--orange)}
+    .about-lead .accent{color:var(--brand-red)}
 
     .about-panel{
-      background:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.88);
       padding:28px;
       position:relative;
     }
@@ -442,7 +471,7 @@
 
     .about-panel h4{
       margin:0 0 10px;
-      color:var(--orange);
+      color:var(--brand-red);
       font-size:1rem;
       line-height:1.2;
     }
@@ -451,6 +480,7 @@
       margin:0 0 16px;
       font-size:2rem;
       letter-spacing:-.03em;
+      color:var(--brand-navy);
     }
 
     .about-panel p{
@@ -489,14 +519,14 @@
       min-height:58px;
       padding:0 24px;
       border-radius:6px;
-      background:var(--dark);
-      color:var(--paper);
+      background:var(--brand-navy);
+      color:#fff;
       font-weight:700;
       transition:background .2s ease, transform .2s ease;
     }
 
     .cta-button:hover{
-      background:var(--orange);
+      background:var(--brand-red);
       transform:translateY(-1px);
     }
 
@@ -525,14 +555,14 @@
       display:grid;
       place-items:center;
       border-radius:999px;
-      border:1px dashed var(--border);
+      border:1px dashed rgba(0,48,73,.18);
       background:#fff;
       color:var(--brand-navy);
       font-weight:700;
     }
 
     @media (max-width: 1100px){
-      .content{padding:24px 18px 18px 78px;}
+      .content{padding:24px 18px 18px 98px;}
       .hero{
         min-height:auto;
         grid-template-columns:1fr;
@@ -540,6 +570,12 @@
     }
 
     @media (max-width: 760px){
+      :root{
+        --sidebar-width:290px;
+        --menu-rail-width:82px;
+        --menu-tab-width:64px;
+      }
+
       .service-grid,
       .project-grid,
       .blog-grid,
@@ -562,7 +598,7 @@
         height:420px;
       }
 
-      .content{padding:20px 14px 14px 72px;}
+      .content{padding:20px 14px 14px 86px;}
 
       .page-brand-mark.m2,
       .page-brand-mark.m5{
@@ -573,13 +609,17 @@
         width:clamp(96px, 24vw, 150px);
       }
 
-      .menu-tab{
-        height:220px;
+      .menu-tab-text{
+        font-size:17px;
+        letter-spacing:.08em;
       }
 
-      .sidebar{
-        width:290px;
-        transform:translateX(calc(-100% + 50px));
+      .menu-tab-line{
+        height:210px;
+      }
+
+      body.menu-open .menu-trigger{
+        transform:translateX(calc(var(--sidebar-width) - var(--menu-rail-width) + 14px));
       }
     }
   </style>
@@ -593,60 +633,54 @@
     <div class="page-brand-mark m1">
       <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="78" cy="76" r="42" fill="#003049"/>
-        <circle cx="136" cy="76" r="42" fill="#d62828"/>
-        <circle cx="107" cy="132" r="42" fill="#f77f00"/>
+        <circle cx="136" cy="76" r="42" fill="#D62828"/>
+        <circle cx="107" cy="132" r="42" fill="#F77F00"/>
       </svg>
     </div>
 
     <div class="page-brand-mark m2">
       <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="82" cy="82" r="36" fill="#003049"/>
-        <circle cx="140" cy="82" r="36" fill="#fcbf49"/>
-        <circle cx="111" cy="136" r="36" fill="#d62828"/>
+        <circle cx="140" cy="82" r="36" fill="#FCBF49"/>
+        <circle cx="111" cy="136" r="36" fill="#D62828"/>
       </svg>
     </div>
 
     <div class="page-brand-mark m3">
       <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="78" cy="76" r="40" fill="#f77f00"/>
+        <circle cx="78" cy="76" r="40" fill="#F77F00"/>
         <circle cx="136" cy="76" r="40" fill="#003049"/>
-        <circle cx="107" cy="132" r="40" fill="#fcbf49"/>
+        <circle cx="107" cy="132" r="40" fill="#FCBF49"/>
       </svg>
     </div>
 
     <div class="page-brand-mark m4">
       <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="84" cy="80" r="34" fill="#d62828"/>
+        <circle cx="84" cy="80" r="34" fill="#D62828"/>
         <circle cx="138" cy="80" r="34" fill="#003049"/>
-        <circle cx="111" cy="132" r="34" fill="#f77f00"/>
+        <circle cx="111" cy="132" r="34" fill="#F77F00"/>
       </svg>
     </div>
 
     <div class="page-brand-mark m5">
       <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="78" cy="76" r="44" fill="#003049"/>
-        <circle cx="136" cy="76" r="44" fill="#fcbf49"/>
-        <circle cx="107" cy="132" r="44" fill="#d62828"/>
+        <circle cx="136" cy="76" r="44" fill="#FCBF49"/>
+        <circle cx="107" cy="132" r="44" fill="#D62828"/>
       </svg>
     </div>
 
     <div class="page-brand-mark m6">
       <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="82" cy="82" r="32" fill="#f77f00"/>
+        <circle cx="82" cy="82" r="32" fill="#F77F00"/>
         <circle cx="138" cy="82" r="32" fill="#003049"/>
-        <circle cx="110" cy="132" r="32" fill="#fcbf49"/>
+        <circle cx="110" cy="132" r="32" fill="#FCBF49"/>
       </svg>
     </div>
   </div>
 
-  <div class="menu-rail">
-    <button class="menu-tab" id="menuToggle" type="button" aria-expanded="false" aria-controls="sideMenu" aria-label="Toggle menu">
-      <span class="menu-tab-text">THE BOSS AGENCY</span>
-    </button>
-  </div>
-
-  <div class="layout">
-    <aside class="sidebar" id="sideMenu">
+  <div class="menu-system">
+    <aside class="menu-panel" id="sideMenu">
       <div class="brand-box">
         <a class="brand" href="#hero">The Boss Agency Co</a>
         <div class="nav-stack">
@@ -658,6 +692,17 @@
       </div>
     </aside>
 
+    <button class="menu-trigger" id="menuToggle" type="button" aria-expanded="false" aria-controls="sideMenu" aria-label="Toggle menu">
+      <span class="menu-trigger-inner">
+        <span class="menu-tab">
+          <span class="menu-tab-text">THE BOSS AGENCY</span>
+        </span>
+        <span class="menu-tab-line" aria-hidden="true"></span>
+      </span>
+    </button>
+  </div>
+
+  <div class="layout">
     <main class="content">
       <section class="hero" id="hero">
         <div class="hero-copy">
