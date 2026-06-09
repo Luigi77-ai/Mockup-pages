@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Boss Agency Co | Digital Marketing, Branding & Growth</title>
+  <title>The Boss Agency Co | Creative Growth Studio</title>
   <meta
     name="description"
     content="The Boss Agency Co helps businesses grow through branding, web development, social media strategy, Google My Business optimization, and data-driven marketing solutions."
@@ -11,884 +11,700 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
 
   <style>
-    :root {
-      --bg: #f8f6f1;
-      --surface: #fffdf9;
-      --surface-2: #fff7ea;
-      --text: #111111;
-      --muted: #5d6672;
-      --line: rgba(0, 48, 73, 0.12);
-      --navy: #003049;
-      --red: #d62828;
-      --orange: #f77f00;
-      --yellow: #fcbf49;
-      --white: #ffffff;
-      --shadow: 0 18px 45px rgba(0, 48, 73, 0.08);
-      --radius: 24px;
-      --radius-sm: 14px;
-      --container: 1180px;
+    :root{
+      --bg:#fffdea;
+      --paper:#fff5d4;
+      --card:#ffffff;
+      --text:#1c1b18;
+      --muted:#675e50;
+      --border:#b7b0a5;
+      --orange:#f06231;
+      --yellow:#ffe479;
+      --dark:#1c1b18;
+      --white:#ffffff;
+      --radius:6px;
+      --container:calc(100vw - 360px);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "Plus Jakarta Sans", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 85% 12%, rgba(214, 40, 40, 0.08), transparent 18%),
-        radial-gradient(circle at 15% 82%, rgba(247, 127, 0, 0.10), transparent 24%),
-        linear-gradient(180deg, #f8f6f1 0%, #fffdf9 100%);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Be Vietnam Pro",sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
 
-    .container {
-      width: min(100% - 40px, var(--container));
-      margin-inline: auto;
+    .layout{
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:320px 1fr;
     }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(16px);
-      background: rgba(248, 246, 241, 0.9);
-      border-bottom: 1px solid var(--line);
+    .sidebar{
+      position:sticky;
+      top:0;
+      height:100vh;
+      background:var(--orange);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      border-right:1px solid rgba(0,0,0,.08);
     }
 
-    .topbar-inner {
-      min-height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+    .brand-box,
+    .nav-box,
+    .sidebar-foot{
+      border-radius:var(--radius);
+      overflow:hidden;
     }
 
-    .brand {
-      font-size: 1rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--navy);
+    .brand-box{
+      background:var(--orange);
+      color:#fff;
+      padding:14px 14px 18px;
+      border:1px solid rgba(255,255,255,.15);
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
+    .brand{
+      display:inline-block;
+      font-size:1.05rem;
+      font-weight:800;
+      letter-spacing:-.02em;
     }
 
-    .nav a {
-      color: var(--muted);
-      font-size: 0.95rem;
-      font-weight: 700;
+    .nav-stack{
+      display:grid;
+      gap:10px;
+      margin-top:12px;
     }
 
-    .nav a:hover { color: var(--red); }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 20px;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 0.95rem;
-      transition: 180ms ease;
-      border: 1px solid transparent;
+    .nav-link{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:10px;
+      padding:14px;
+      background:var(--yellow);
+      border-radius:var(--radius);
+      color:var(--text);
+      font-size:14px;
+      font-weight:700;
     }
 
-    .btn-primary {
-      background: var(--navy);
-      color: var(--white);
-      box-shadow: var(--shadow);
+    .nav-link small{
+      width:28px;
+      height:28px;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      background:#fff;
+      font-size:12px;
+      font-weight:800;
     }
 
-    .btn-primary:hover {
-      background: var(--red);
-      transform: translateY(-1px);
+    .sidebar-meta{
+      margin-top:auto;
+      display:grid;
+      gap:12px;
     }
 
-    .btn-secondary {
-      background: transparent;
-      color: var(--navy);
-      border-color: rgba(0, 48, 73, 0.14);
+    .meta-card{
+      background:#fff;
+      border:1px dashed var(--border);
+      border-radius:var(--radius);
+      padding:16px;
     }
 
-    .btn-secondary:hover {
-      border-color: rgba(214, 40, 40, 0.3);
-      color: var(--red);
+    .meta-card strong{
+      display:block;
+      font-size:14px;
+      margin-bottom:8px;
     }
 
-    .hero {
-      padding: 72px 0 44px;
+    .meta-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 30px;
-      align-items: stretch;
+    .content{
+      padding:24px;
     }
 
-    .hero-copy,
-    .hero-card {
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(0,48,73,0.08);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .hero{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:28px;
+      align-items:center;
+      min-height:100vh;
+      padding:12px 0 60px;
     }
 
-    .hero-copy {
-      padding: 38px;
+    .hero-copy h1{
+      margin:0;
+      font-size:clamp(3.4rem,8vw,7.4rem);
+      line-height:.92;
+      letter-spacing:-.06em;
+      max-width:8ch;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--navy);
+    .hero-copy p{
+      margin:18px 0 0;
+      max-width:54ch;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.75;
     }
 
-    .eyebrow::before {
-      content: "";
-      width: 38px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--red) 0%, var(--orange) 45%, var(--yellow) 100%);
+    .hero-topline{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:20px;
+      font-size:14px;
     }
 
-    h1 {
-      margin: 18px 0 16px;
-      font-size: clamp(2.5rem, 5vw, 5.2rem);
-      line-height: 0.98;
-      letter-spacing: -0.03em;
-      color: var(--navy);
-      max-width: 11ch;
+    .hero-topline .muted{color:var(--muted)}
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:14px;
+    }
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#67b935;
+      flex:0 0 auto;
     }
 
-    .hero-copy p {
-      max-width: 60ch;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.8;
-      font-weight: 600;
+    .hero-collage{
+      position:relative;
+      min-height:640px;
+      display:grid;
+      place-items:center;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 24px;
+    .hero-collage .stack{
+      position:relative;
+      width:min(420px,90%);
+      height:560px;
     }
 
-    .hero-card {
-      padding: 28px;
-      display: grid;
-      gap: 18px;
-      align-content: start;
-      background:
-        linear-gradient(180deg, rgba(255,245,212,0.9), rgba(255,255,255,0.9));
+    .shot{
+      position:absolute;
+      overflow:hidden;
+      border-radius:6px;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 12px 30px rgba(0,0,0,.08);
+      background:#ddd;
     }
 
-    .stat {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(0,48,73,0.08);
+    .shot img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
-    .stat-label {
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.74rem;
-      font-weight: 800;
-      margin-bottom: 8px;
+    .shot.one{width:54%;height:44%;left:8%;top:8%;transform:translateY(-16px)}
+    .shot.two{width:44%;height:36%;right:2%;top:13%;transform:rotate(30deg)}
+    .shot.three{width:56%;height:44%;left:12%;bottom:10%;transform:translateY(10px)}
+    .shot.four{width:42%;height:34%;right:6%;bottom:12%;transform:rotate(-30deg)}
+
+    .section{
+      padding:84px 0;
     }
 
-    .stat h3 {
-      margin: 0 0 8px;
-      color: var(--navy);
-      font-size: 1.25rem;
-      line-height: 1.2;
+    .section-title{
+      margin:0 0 28px;
+      text-align:center;
+      font-size:clamp(2rem,4vw,3.4rem);
+      line-height:1;
+      letter-spacing:-.04em;
     }
 
-    .stat p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 0.95rem;
-      font-weight: 600;
+    .service-grid,
+    .project-grid,
+    .blog-grid,
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
     }
 
-    .section {
-      padding: 26px 0 74px;
+    .service-card,
+    .project-card,
+    .blog-card,
+    .contact-card,
+    .about-panel{
+      border:1px dashed var(--border);
+      border-radius:var(--radius);
+      background:var(--card);
+      overflow:hidden;
     }
 
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: end;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
+    .service-card .inner,
+    .project-card .inner,
+    .blog-card .inner,
+    .contact-card .inner{
+      padding:24px;
     }
 
-    .section-heading h2 {
-      margin: 0;
-      font-size: clamp(1.8rem, 3vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      color: var(--navy);
+    .service-num,
+    .project-num{
+      width:52px;
+      height:52px;
+      border:1px dashed var(--border);
+      border-radius:6px;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      margin-bottom:18px;
+      transform:rotate(-11deg);
+      background:#fff;
     }
 
-    .section-heading p {
-      margin: 0;
-      max-width: 58ch;
-      color: var(--muted);
-      line-height: 1.8;
-      font-weight: 600;
+    .service-card h3,
+    .project-card h3,
+    .blog-card h3,
+    .contact-card h3{
+      margin:0 0 10px;
+      font-size:1.7rem;
+      line-height:1;
+      letter-spacing:-.03em;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+    .service-card p,
+    .project-card p,
+    .blog-card p,
+    .contact-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.7;
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+    .chip-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
     }
 
-    .card {
-      border-radius: var(--radius);
-      border: 1px solid rgba(0,48,73,0.09);
-      background: rgba(255,255,255,0.82);
-      box-shadow: var(--shadow);
-      padding: 24px;
+    .chip{
+      padding:8px 12px;
+      background:var(--paper);
+      border-radius:2px;
+      font-size:13px;
+      font-weight:600;
     }
 
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.2rem;
-      line-height: 1.2;
-      color: var(--navy);
+    .about-lead{
+      max-width:18ch;
+      margin:0 auto 28px;
+      text-align:center;
+      font-size:clamp(2.6rem,6vw,5.6rem);
+      line-height:.95;
+      letter-spacing:-.06em;
     }
 
-    .card p, .card li {
-      color: var(--muted);
-      font-size: 0.96rem;
-      line-height: 1.78;
-      font-weight: 600;
+    .about-lead .accent{color:var(--orange)}
+
+    .about-panel{
+      background:#fff;
+      padding:28px;
+      position:relative;
     }
 
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:20px;
+      align-items:start;
     }
 
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 0 12px;
-      border-radius: 999px;
-      background: var(--surface-2);
-      color: var(--navy);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      border: 1px solid rgba(0,48,73,0.08);
+    .about-panel h4{
+      margin:0 0 10px;
+      color:var(--orange);
+      font-size:1rem;
+      line-height:1.2;
     }
 
-    .placeholder {
-      min-height: 240px;
-      display: grid;
-      align-content: space-between;
+    .about-panel h3{
+      margin:0 0 16px;
+      font-size:2rem;
+      letter-spacing:-.03em;
     }
 
-    .placeholder .empty-note {
-      margin-top: 22px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(0,48,73,0.04);
-      border: 1px dashed rgba(0,48,73,0.18);
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.7;
-      font-weight: 600;
+    .about-panel p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.8;
     }
 
-    .work-list {
-      display: grid;
-      gap: 14px;
+    .about-photo{
+      border-radius:6px;
+      overflow:hidden;
+      transform:rotate(-6deg);
     }
 
-    .work-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 18px 0;
-      border-bottom: 1px dashed rgba(0,48,73,0.14);
+    .about-photo img{
+      width:100%;
+      aspect-ratio:10/11;
+      object-fit:cover;
     }
 
-    .work-item:last-child { border-bottom: 0; padding-bottom: 0; }
-
-    .work-item strong {
-      display: block;
-      color: var(--navy);
-      font-size: 1.03rem;
-      margin-bottom: 6px;
+    .cta-band{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:16px;
+      align-items:center;
+      padding-top:18px;
+      border-top:1px dashed var(--border);
     }
 
-    .work-item span {
-      color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 700;
-      white-space: nowrap;
+    .cta-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:58px;
+      padding:0 24px;
+      border-radius:6px;
+      background:var(--dark);
+      color:var(--paper);
+      font-weight:700;
     }
 
-    .cta-panel {
-      padding: 34px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, #003049 0%, #163f59 100%);
-      color: #fff;
-      box-shadow: var(--shadow);
+    .cta-button:hover{background:var(--orange)}
+
+    .footer{
+      margin-top:70px;
+      border-top:1px dashed var(--border);
+      padding:22px 0 14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:14px;
     }
 
-    .cta-panel h2 {
-      margin: 0 0 14px;
-      font-size: clamp(2rem, 4vw, 3.6rem);
-      line-height: 1;
-      letter-spacing: -0.03em;
+    .socials{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
     }
 
-    .cta-panel p {
-      margin: 0;
-      max-width: 56ch;
-      color: rgba(255,255,255,0.82);
-      line-height: 1.8;
-      font-weight: 600;
+    .socials a{
+      width:40px;
+      height:40px;
+      display:grid;
+      place-items:center;
+      border-radius:999px;
+      border:1px dashed var(--border);
+      background:#fff;
     }
 
-    .cta-actions {
-      margin-top: 24px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .cta-panel .btn-primary {
-      background: var(--yellow);
-      color: var(--navy);
-    }
-
-    .cta-panel .btn-primary:hover {
-      background: var(--orange);
-      color: #fff;
-    }
-
-    .cta-panel .btn-secondary {
-      color: #fff;
-      border-color: rgba(255,255,255,0.22);
-    }
-
-    .footer {
-      padding: 26px 0 34px;
-      border-top: 1px solid var(--line);
-      background: rgba(255,255,255,0.55);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .footer p,
-    .footer li,
-    .footer a {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 0.94rem;
-      font-weight: 600;
-    }
-
-    .footer h4 {
-      margin: 0 0 10px;
-      color: var(--navy);
-      font-size: 1rem;
-    }
-
-    .footer-links {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 18px;
-    }
-
-    .mini-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 8px;
-    }
-
-    @media (max-width: 1024px) {
-      .hero-grid,
-      .grid-3,
-      .grid-2,
-      .footer-grid,
-      .footer-links {
-        grid-template-columns: 1fr;
+    @media (max-width: 1100px){
+      .layout{grid-template-columns:1fr}
+      .sidebar{
+        position:relative;
+        height:auto;
       }
+      .hero{
+        min-height:auto;
+        grid-template-columns:1fr;
+      }
+      .content{padding:18px}
     }
 
-    @media (max-width: 720px) {
-      .container { width: min(100% - 24px, var(--container)); }
-      .topbar-inner { min-height: 74px; align-items: flex-start; padding: 14px 0; }
-      .nav { gap: 12px; }
-      .hero { padding: 44px 0 26px; }
-      .hero-copy, .hero-card, .card, .cta-panel { padding: 22px; }
-      .section { padding: 18px 0 54px; }
-      h1 { max-width: 100%; }
-      .work-item { flex-direction: column; }
+    @media (max-width: 760px){
+      .service-grid,
+      .project-grid,
+      .blog-grid,
+      .contact-grid,
+      .about-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-copy h1{
+        max-width:100%;
+        font-size:clamp(2.8rem,15vw,4.8rem);
+      }
+
+      .hero-collage{
+        min-height:460px;
+      }
+
+      .hero-collage .stack{
+        width:100%;
+        height:420px;
+      }
+
+      .content{padding:14px}
+      .sidebar{padding:14px}
     }
   </style>
 </head>
 <body>
+  <div class="layout">
 
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="https://thebossagency.co/" target="_blank" rel="noopener noreferrer">The Boss Agency Co</a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#work">Our Work</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <aside class="sidebar">
+      <div class="brand-box">
+        <a class="brand" href="#hero">The Boss Agency Co</a>
+        <div class="nav-stack">
+          <a class="nav-link" href="#projects"><span>Projects</span><small>01</small></a>
+          <a class="nav-link" href="#about"><span>About</span><small>02</small></a>
+          <a class="nav-link" href="#services"><span>Services</span><small>03</small></a>
+          <a class="nav-link" href="#contact"><span>Contact</span><small>04</small></a>
+        </div>
+      </div>
 
-  <main>
+      <div class="sidebar-meta">
+        <div class="meta-card">
+          <strong>Showcase of innovation</strong>
+          <p>Est. 15 - 2025</p>
+        </div>
+        <div class="meta-card">
+          <strong>Available for the project</strong>
+          <p>Brand strategy, web development, social media, visibility systems, and 77777.</p>
+        </div>
+      </div>
+    </aside>
 
-    <section class="hero">
-      <div class="container hero-grid">
+    <main class="content">
+      <section class="hero" id="hero">
         <div class="hero-copy">
-          <div class="eyebrow">Digital Growth</div>
-          <h1>Elevate your brand with strategy that actually moves the business.</h1>
+          <div class="hero-topline">
+            <span class="status"><span class="dot"></span>Available for the project</span>
+            <span class="muted">Est. 2015</span>
+          </div>
+
+          <h1>Boss ideas for brands that need traction.</h1>
           <p>
-            The Boss Agency Co helps businesses grow through data-driven strategies, creative execution,
-            branding support, web development, social media strategy, and digital visibility services built
-            to strengthen your online presence.
+            We help businesses grow with branding, web development, social media strategy,
+            Google My Business optimization, and clean execution that actually moves the business forward.
           </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://thebossagency.co/contact/" target="_blank" rel="noopener noreferrer">Book a Call</a>
-            <a class="btn btn-secondary" href="https://thebossagency.co/services/" target="_blank" rel="noopener noreferrer">Explore Services</a>
-          </div>
-        </div>
-
-        <aside class="hero-card">
-          <div class="stat">
-            <div class="stat-label">What we do</div>
-            <h3>Branding, visibility, and digital growth support</h3>
-            <p>Built for businesses that need a stronger presence, better positioning, and marketing that feels intentional.</p>
-          </div>
-
-          <div class="stat">
-            <div class="stat-label">Core focus</div>
-            <h3>Data-driven strategies + creative solutions</h3>
-            <p>Messaging and execution designed to elevate your brand in the digital landscape.</p>
-          </div>
-
-          <div class="stat">
-            <div class="stat-label">Primary paths</div>
-            <p>Web Development, Google My Business, Social Media Strategy, Brand Support, and growth-oriented consulting.</p>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-heading">
-          <h2>About The Boss Agency Co</h2>
           <p>
-            This section replaces the original template founder story with a brand-aligned introduction.
-            The public site positions The Boss Agency Co as a partner helping businesses and non-profits
-            amplify their presence and achieve measurable success through digital marketing and strategic execution.
+            77777 77777 77777 if you still need to add stronger founder positioning,
+            proof points, niche focus, or a sharper value proposition.
           </p>
         </div>
 
-        <div class="grid-2">
-          <article class="card">
-            <h3>Who we are</h3>
-            <p>
-              We are building this section as a cleaner, more professional brand statement for The Boss Agency Co.
-              For now, this copy introduces the agency as a strategic creative partner focused on visibility,
-              positioning, and meaningful business growth.
-            </p>
-            <p>
-              This can later be edited with the founder story, mission statement, personal philosophy,
-              or a stronger agency narrative once you review the structure.
-            </p>
-          </article>
-
-          <article class="card placeholder">
-            <div>
-              <h3>Founder / brand story</h3>
-              <p>
-                This area was intentionally kept as a structured placeholder because the original template had story content
-                that does not belong to The Boss Agency Co.
-              </p>
+        <div class="hero-collage">
+          <div class="stack">
+            <div class="shot one">
+              <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Creative team collaboration" />
             </div>
-            <div class="empty-note">
-              Placeholder left professionally blank for: founder note, values, vision, credentials, origin story, or team introduction.
+            <div class="shot two">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Brand planning session" />
             </div>
-          </article>
+            <div class="shot three">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Marketing strategy discussion" />
+            </div>
+            <div class="shot four">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Website growth metrics" />
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Services</h2>
-          <p>
-            The public site references branding strategy, web development, Google My Business, and social media strategy,
-            so this section has been rewritten around those service lines while preserving a premium presentation.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3>Brand Strategy</h3>
-            <p>
-              Strategic direction for businesses that need better positioning, stronger messaging, and a clearer brand foundation.
-            </p>
-            <div class="tag-list">
-              <span class="tag">Positioning</span>
-              <span class="tag">Messaging</span>
-              <span class="tag">Strategy</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Web Development</h3>
-            <p>
-              Website support focused on presenting the brand clearly, building trust quickly, and guiding visitors toward action.
-            </p>
-            <div class="tag-list">
-              <span class="tag">Website Build</span>
-              <span class="tag">UX</span>
-              <span class="tag">Conversion</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Social Media Strategy</h3>
-            <p>
-              Social content direction and platform strategy built to improve consistency, visibility, and audience connection.
-            </p>
-            <div class="tag-list">
-              <span class="tag">Instagram</span>
-              <span class="tag">Content</span>
-              <span class="tag">Growth</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Google My Business</h3>
-            <p>
-              Local visibility support to help businesses strengthen discoverability and show up more professionally online.
-            </p>
-            <div class="tag-list">
-              <span class="tag">Local SEO</span>
-              <span class="tag">Listings</span>
-              <span class="tag">Visibility</span>
-            </div>
-          </article>
-
-          <article class="card placeholder">
-            <div>
-              <h3>Additional Service</h3>
-              <p>
-                This card has been left intentionally broad so you can later add another offer that belongs on the homepage.
-              </p>
-            </div>
-            <div class="empty-note">
-              Placeholder for: ads, funnels, consulting, coaching, email marketing, CRM setup, or another signature service.
-            </div>
-          </article>
-
-          <article class="card placeholder">
-            <div>
-              <h3>Additional Service</h3>
-              <p>
-                Another blank but professionally styled block was added because the original template layout expected more service inventory.
-              </p>
-            </div>
-            <div class="empty-note">
-              Placeholder for future expansion or a signature offer highlight.
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="work">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Selected Work</h2>
-          <p>
-            The live site already references projects including website design and client work,
-            so this section now reflects The Boss Agency Co instead of the template portfolio items.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Featured project list</h3>
-            <div class="work-list">
-              <div class="work-item">
-                <div>
-                  <strong>Systro Solutions</strong>
-                  <p>Homepage work / digital presence reference.</p>
-                </div>
-                <span>Website</span>
-              </div>
-
-              <div class="work-item">
-                <div>
-                  <strong>Action Zone Tampa</strong>
-                  <p>Client work reference included on the public portfolio.</p>
-                </div>
-                <span>Brand / Web</span>
-              </div>
-
-              <div class="work-item">
-                <div>
-                  <strong>Holistic Chef</strong>
-                  <p>Referenced as part of The Boss Agency Co portfolio examples.</p>
-                </div>
-                <span>Digital Presence</span>
-              </div>
-
-              <div class="work-item">
-                <div>
-                  <strong>Lux E Curtains</strong>
-                  <p>Portfolio placeholder adapted from the live public work listing.</p>
-                </div>
-                <span>Creative / Web</span>
+      <section class="section" id="services">
+        <h2 class="section-title">Services</h2>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="inner">
+              <div class="service-num">01</div>
+              <h3>Brand strategy</h3>
+              <p>Positioning, messaging, visual direction, and strategic clarity for brands that need stronger presence.</p>
+              <div class="chip-row">
+                <span class="chip">Brand audit</span>
+                <span class="chip">Audience research</span>
+                <span class="chip">77777</span>
               </div>
             </div>
           </article>
 
-          <article class="card placeholder">
+          <article class="service-card">
+            <div class="inner">
+              <div class="service-num">02</div>
+              <h3>Web development</h3>
+              <p>Conversion-focused websites built to present the business clearly, cleanly, and professionally.</p>
+              <div class="chip-row">
+                <span class="chip">UX structure</span>
+                <span class="chip">Responsive build</span>
+                <span class="chip">Website refresh</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="inner">
+              <div class="service-num">03</div>
+              <h3>Social strategy</h3>
+              <p>Content planning, platform structure, and consistent direction so the brand feels intentional online.</p>
+              <div class="chip-row">
+                <span class="chip">Content</span>
+                <span class="chip">Instagram</span>
+                <span class="chip">Growth</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="inner">
+              <div class="service-num">04</div>
+              <h3>Visibility systems</h3>
+              <p>Google My Business, local presence, trust signals, and online discoverability improvements.</p>
+              <div class="chip-row">
+                <span class="chip">Local SEO</span>
+                <span class="chip">Listings</span>
+                <span class="chip">77777</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="inner">
+              <div class="project-num">01</div>
+              <h3>Systro Solutions</h3>
+              <p>Homepage direction, website presentation, and digital presence support adapted for a stronger public-facing brand.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="inner">
+              <div class="project-num">02</div>
+              <h3>Action Zone Tampa</h3>
+              <p>Brand and web support reference. 77777 77777 for results, challenge, deliverables, or metrics.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="inner">
+              <div class="project-num">03</div>
+              <h3>Holistic Chef</h3>
+              <p>Digital presence direction and premium placeholder copy until the final case study is ready.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="inner">
+              <div class="project-num">04</div>
+              <h3>Lux E Curtains</h3>
+              <p>Creative and web presentation block. Add transformation story, scope, and outcome here: 77777 77777.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <h2 class="about-lead">We don’t do fluff. Just focused, <span class="accent">boss-level</span> work.</h2>
+
+        <div class="about-panel">
+          <div class="about-grid">
             <div>
-              <h3>Case study spotlight</h3>
+              <h4>A note from the founder</h4>
+              <h3>Our journey & vision</h3>
               <p>
-                The original template had image-based project storytelling that does not yet map one-to-one to your brand.
-                I left this as a premium placeholder so you can decide which client or transformation deserves the main spotlight.
+                At The Boss Agency Co, we believe brands do not need more noise.
+                They need stronger positioning, better execution, and a digital presence that feels clear and intentional.
+              </p>
+              <p>
+                77777 77777 77777 if you still need to add the founder story, philosophy,
+                credentials, mission, or why the agency was built in the first place.
               </p>
             </div>
-            <div class="empty-note">
-              Placeholder for one detailed case study: challenge, solution, deliverables, and result.
+
+            <div class="about-photo">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Founder portrait placeholder" />
             </div>
-          </article>
-        </div>
-      </div>
-    </section>
+          </div>
 
-    <section class="section" id="testimonials">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Client Experience</h2>
-          <p>
-            The original template testimonials were removed because they belong to another brand.
-            This section is preserved in the layout but professionally reset for future real client proof.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card placeholder">
-            <div>
-              <h3>Testimonial 01</h3>
-              <p>Reserved for a real client quote from The Boss Agency Co.</p>
-            </div>
-            <div class="empty-note">Add client name, role, company, and outcome.</div>
-          </article>
-
-          <article class="card placeholder">
-            <div>
-              <h3>Testimonial 02</h3>
-              <p>Structured placeholder left intentionally blank.</p>
-            </div>
-            <div class="empty-note">Use for social proof tied to branding, web, or social media results.</div>
-          </article>
-
-          <article class="card placeholder">
-            <div>
-              <h3>Testimonial 03</h3>
-              <p>Formatted to match the rest of the site while awaiting approved testimonial content.</p>
-            </div>
-            <div class="empty-note">Optional: insert metrics, screenshots, or before/after outcomes later.</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="blog">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Blog & Resources</h2>
-          <p>
-            The Boss Agency Co has an active blog and free resource section, so this part now points to that ecosystem
-            instead of the generic Framer template blog feed.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Insights for business growth</h3>
-            <p>
-              The blog includes marketing and business education content, including niche selection guidance
-              and other growth-oriented topics for entrepreneurs and business owners.
+          <div class="cta-band">
+            <p style="margin:0;color:var(--muted);font-size:15px;line-height:1.7;">
+              We build connections, experiences, and trust through branding, websites, content, and 77777.
             </p>
-            <div class="hero-actions">
-              <a class="btn btn-secondary" href="https://thebossagency.co/blog/" target="_blank" rel="noopener noreferrer">Visit Blog</a>
-              <a class="btn btn-secondary" href="https://thebossagency.co/freebies2/" target="_blank" rel="noopener noreferrer">View Freebies</a>
-            </div>
-          </article>
-
-          <article class="card placeholder">
-            <div>
-              <h3>Featured article block</h3>
-              <p>
-                This content area was preserved from the old structure but left open so you can later choose a specific article
-                or lead magnet to feature on the homepage.
-              </p>
-            </div>
-            <div class="empty-note">
-              Placeholder for featured article, lead magnet, checklist, or newsletter invitation.
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="cta-panel">
-          <h2>It’s time to level up your brand.</h2>
-          <p>
-            This call-to-action replaces the template CTA with a brand-aligned message based on The Boss Agency Co’s public positioning.
-            It is ready for later edits, but already strong enough to preview professionally on the page.
-          </p>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="https://thebossagency.co/contact/" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
-            <a class="btn btn-secondary" href="https://thebossagency.co/our-work/" target="_blank" rel="noopener noreferrer">See Our Work</a>
+            <a class="cta-button" href="#contact">Let’s talk</a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Contact</h2>
-          <p>
-            The original fake email, phone number, and sample address were removed.
-            This section now keeps only verified brand-safe contact direction and leaves room for your final preferred details.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Get in touch</h3>
-            <p>
-              Use the official contact page to connect with The Boss Agency Co, request services,
-              or book a business and marketing discovery conversation.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="https://thebossagency.co/contact/" target="_blank" rel="noopener noreferrer">Open Contact Page</a>
+      <section class="section" id="blog">
+        <h2 class="section-title">Blog & resources</h2>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="inner">
+              <h3>Growth insights</h3>
+              <p>Use this block for business education, lead magnets, blog highlights, or a featured article from the brand ecosystem.</p>
             </div>
           </article>
 
-          <article class="card placeholder">
-            <div>
-              <h3>Direct contact details</h3>
-              <p>
-                This block was intentionally left without phone, email, or address because the template values were fake
-                and I only kept public-safe replacements.
-              </p>
-            </div>
-            <div class="empty-note">
-              Placeholder for your preferred business email, phone, social links, office location, or booking widget.
+          <article class="blog-card">
+            <div class="inner">
+              <h3>Featured resource</h3>
+              <p>77777 77777 77777 to add a checklist, freebie, template, niche guide, or newsletter CTA.</p>
             </div>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
+      <section class="section" id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <div class="inner">
+              <h3>Let’s build something remarkable</h3>
+              <p>Use this section for your main booking message and strongest call to action.</p>
+              <div class="chip-row">
+                <a class="cta-button" href="https://thebossagency.co/contact/" target="_blank" rel="noopener noreferrer">Book a 30-min call</a>
+              </div>
+            </div>
+          </article>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>The Boss Agency Co</h4>
-        <p>
-          We specialize in driving results through data-driven strategies and creative solutions
-          that elevate your brand in the digital landscape.
-        </p>
-        <p>© 2026 All rights reserved.</p>
-      </div>
-
-      <div class="footer-links">
-        <div>
-          <h4>Pages</h4>
-          <ul class="mini-list">
-            <li><a href="https://thebossagency.co/" target="_blank" rel="noopener noreferrer">Home</a></li>
-            <li><a href="https://thebossagency.co/about/" target="_blank" rel="noopener noreferrer">About</a></li>
-            <li><a href="https://thebossagency.co/services/" target="_blank" rel="noopener noreferrer">Services</a></li>
-            <li><a href="https://thebossagency.co/our-work/" target="_blank" rel="noopener noreferrer">Our Work</a></li>
-          </ul>
+          <article class="contact-card">
+            <div class="inner">
+              <h3>Direct details</h3>
+              <p>Business email: 77777</p>
+              <p>Phone: 77777</p>
+              <p>Location / service area: 77777</p>
+            </div>
+          </article>
         </div>
+      </section>
 
-        <div>
-          <h4>More</h4>
-          <ul class="mini-list">
-            <li><a href="https://thebossagency.co/blog/" target="_blank" rel="noopener noreferrer">Blog</a></li>
-            <li><a href="https://thebossagency.co/contact/" target="_blank" rel="noopener noreferrer">Contact</a></li>
-            <li><a href="https://thebossagency.co/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
-            <li><a href="https://thebossagency.co/login-2/" target="_blank" rel="noopener noreferrer">Book Discovery Call</a></li>
-          </ul>
+      <footer class="footer">
+        <div>© 2026 The Boss Agency Co.</div>
+        <div class="socials">
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">IN</a>
         </div>
-      </div>
-    </div>
-  </footer>
-
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
