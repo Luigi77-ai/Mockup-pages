@@ -35,10 +35,9 @@
 
       --radius:6px;
       --sidebar-width:320px;
-      --menu-rail-width:96px;
-      --menu-tab-width:78px;
-      --menu-gap:18px;
-      --menu-offset:18px;
+      --menu-rail-width:88px;
+      --menu-line-width:4px;
+      --menu-offset:0px;
     }
 
     *{box-sizing:border-box}
@@ -129,53 +128,25 @@
       top:0;
       left:0;
       height:100vh;
-      width:calc(var(--sidebar-width) + var(--menu-rail-width));
       z-index:50;
+      display:flex;
       pointer-events:none;
     }
 
-    .menu-panel{
-      position:absolute;
-      top:0;
-      left:0;
-      width:var(--sidebar-width);
-      height:100vh;
-      padding:18px;
-      background:linear-gradient(180deg, var(--brand-orange) 0%, #ef7700 100%);
-      border-right:1px solid rgba(0,0,0,.08);
-      transform:translateX(calc(-100% + var(--menu-offset)));
-      transition:transform .34s ease;
-      pointer-events:auto;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      box-shadow:0 20px 50px rgba(0,48,73,.12);
-    }
-
     .menu-trigger{
-      position:absolute;
-      top:0;
-      left:0;
-      height:100vh;
       width:var(--menu-rail-width);
-      transform:translateX(0);
-      transition:transform .34s ease;
-      pointer-events:auto;
+      height:100vh;
       border:none;
       background:transparent;
       cursor:pointer;
+      pointer-events:auto;
       display:flex;
       align-items:center;
       justify-content:center;
       padding:0;
-    }
-
-    body.menu-open .menu-panel{
-      transform:translateX(0);
-    }
-
-    body.menu-open .menu-trigger{
-      transform:translateX(calc(var(--sidebar-width) - var(--menu-rail-width) + var(--menu-offset)));
+      position:relative;
+      z-index:52;
+      flex:0 0 auto;
     }
 
     .menu-trigger-inner{
@@ -184,38 +155,52 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:16px;
-      padding:18px 0;
-    }
-
-    .menu-tab{
-      width:var(--menu-tab-width);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex:0 0 auto;
+      gap:14px;
+      padding:20px 0;
     }
 
     .menu-tab-text{
       writing-mode:vertical-rl;
       transform:rotate(180deg);
-      font-size:21px;
-      line-height:0.95;
+      font-size:22px;
+      line-height:.92;
       letter-spacing:.10em;
       text-transform:uppercase;
       font-weight:800;
       color:#000000;
       user-select:none;
-      text-shadow:0 0 0 #000;
+      white-space:nowrap;
     }
 
     .menu-tab-line{
-      width:4px;
-      height:240px;
+      width:var(--menu-line-width);
+      height:250px;
       border-radius:999px;
       background:var(--brand-orange);
       flex:0 0 auto;
-      box-shadow:0 0 0 1px rgba(0,0,0,.02);
+    }
+
+    .menu-panel{
+      width:var(--sidebar-width);
+      height:100vh;
+      padding:18px;
+      background:linear-gradient(180deg, var(--brand-orange) 0%, #ef7700 100%);
+      border-right:1px solid rgba(0,0,0,.08);
+      box-shadow:0 20px 50px rgba(0,48,73,.12);
+      transform:translateX(calc(-100% - var(--menu-rail-width)));
+      transition:transform .34s ease;
+      pointer-events:auto;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      position:absolute;
+      top:0;
+      left:var(--menu-rail-width);
+      z-index:51;
+    }
+
+    body.menu-open .menu-panel{
+      transform:translateX(0);
     }
 
     .brand-box{
@@ -571,9 +556,8 @@
 
     @media (max-width: 760px){
       :root{
-        --sidebar-width:290px;
-        --menu-rail-width:82px;
-        --menu-tab-width:64px;
+        --sidebar-width:280px;
+        --menu-rail-width:78px;
       }
 
       .service-grid,
@@ -598,7 +582,7 @@
         height:420px;
       }
 
-      .content{padding:20px 14px 14px 86px;}
+      .content{padding:20px 14px 14px 88px;}
 
       .page-brand-mark.m2,
       .page-brand-mark.m5{
@@ -610,16 +594,12 @@
       }
 
       .menu-tab-text{
-        font-size:17px;
+        font-size:18px;
         letter-spacing:.08em;
       }
 
       .menu-tab-line{
-        height:210px;
-      }
-
-      body.menu-open .menu-trigger{
-        transform:translateX(calc(var(--sidebar-width) - var(--menu-rail-width) + 14px));
+        height:220px;
       }
     }
   </style>
@@ -680,6 +660,13 @@
   </div>
 
   <div class="menu-system">
+    <button class="menu-trigger" id="menuToggle" type="button" aria-expanded="false" aria-controls="sideMenu" aria-label="Toggle menu">
+      <span class="menu-trigger-inner">
+        <span class="menu-tab-text">THE BOSS AGENCY</span>
+        <span class="menu-tab-line" aria-hidden="true"></span>
+      </span>
+    </button>
+
     <aside class="menu-panel" id="sideMenu">
       <div class="brand-box">
         <a class="brand" href="#hero">The Boss Agency Co</a>
@@ -691,15 +678,6 @@
         </div>
       </div>
     </aside>
-
-    <button class="menu-trigger" id="menuToggle" type="button" aria-expanded="false" aria-controls="sideMenu" aria-label="Toggle menu">
-      <span class="menu-trigger-inner">
-        <span class="menu-tab">
-          <span class="menu-tab-text">THE BOSS AGENCY</span>
-        </span>
-        <span class="menu-tab-line" aria-hidden="true"></span>
-      </span>
-    </button>
   </div>
 
   <div class="layout">
