@@ -44,6 +44,7 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:"Be Vietnam Pro",sans-serif;
@@ -76,7 +77,7 @@
       width:var(--menu-rail-width);
       height:100vh;
       border:none;
-      background:transparent;
+      background:linear-gradient(180deg, #ff9a1f 0%, #f77f00 100%);
       cursor:pointer;
       display:flex;
       align-items:center;
@@ -85,6 +86,7 @@
       flex:0 0 auto;
       position:relative;
       z-index:2;
+      box-shadow:0 16px 36px rgba(247,127,0,.22);
     }
 
     .menu-trigger-inner{
@@ -106,7 +108,7 @@
       letter-spacing:.10em;
       text-transform:uppercase;
       font-weight:800;
-      color:var(--brand-navy);
+      color:#ffffff;
       user-select:none;
       white-space:nowrap;
     }
@@ -115,7 +117,7 @@
       width:4px;
       height:250px;
       border-radius:999px;
-      background:var(--brand-orange);
+      background:#ffffff;
       flex:0 0 auto;
     }
 
@@ -123,9 +125,9 @@
       width:var(--sidebar-width);
       height:100vh;
       padding:18px;
-      background:linear-gradient(180deg, #fff8ef 0%, #fff1d5 100%);
-      border-right:1px solid rgba(0,48,73,.10);
-      box-shadow:0 20px 50px rgba(0,48,73,.08);
+      background:linear-gradient(180deg, #f77f00 0%, #f19a00 100%);
+      border-right:1px solid rgba(255,255,255,.12);
+      box-shadow:0 20px 50px rgba(0,48,73,.12);
       display:flex;
       flex-direction:column;
       gap:12px;
@@ -136,10 +138,10 @@
     .brand-box{
       border-radius:16px;
       overflow:hidden;
-      background:rgba(255,255,255,.55);
-      color:var(--brand-navy);
+      background:rgba(255,255,255,.18);
+      color:#ffffff;
       padding:14px 14px 18px;
-      border:1px solid rgba(0,48,73,.08);
+      border:1px solid rgba(255,255,255,.16);
       backdrop-filter:blur(10px);
     }
 
@@ -161,18 +163,18 @@
       grid-template-columns:1fr auto;
       gap:10px;
       padding:14px;
-      background:rgba(255,255,255,.7);
+      background:rgba(255,255,255,.16);
       border-radius:14px;
-      color:var(--text);
+      color:#ffffff;
       font-size:14px;
       font-weight:700;
       transition:transform .2s ease, background .2s ease;
-      border:1px solid rgba(0,48,73,.07);
+      border:1px solid rgba(255,255,255,.14);
     }
 
     .nav-link:hover{
       transform:translateY(-1px);
-      background:#ffffff;
+      background:rgba(255,255,255,.26);
     }
 
     .nav-link small{
@@ -184,8 +186,8 @@
       background:#ffffff;
       font-size:12px;
       font-weight:800;
-      color:var(--brand-navy);
-      border:1px solid rgba(0,48,73,.10);
+      color:var(--brand-orange);
+      border:1px solid rgba(255,255,255,.10);
     }
 
     .menu-socials{
@@ -202,16 +204,16 @@
       display:grid;
       place-items:center;
       border-radius:999px;
-      background:rgba(255,255,255,.75);
-      border:1px solid rgba(0,48,73,.10);
-      color:var(--brand-navy);
+      background:rgba(255,255,255,.20);
+      border:1px solid rgba(255,255,255,.14);
+      color:#ffffff;
       transition:transform .2s ease, background .2s ease, color .2s ease;
     }
 
     .menu-socials a:hover{
       transform:translateY(-2px);
-      background:var(--brand-navy);
-      color:#fff;
+      background:#ffffff;
+      color:var(--brand-orange);
     }
 
     .menu-socials svg{
@@ -252,7 +254,7 @@
 
     .hero-copy{
       width:100%;
-      max-width:860px;
+      max-width:980px;
       margin:0 auto;
       display:flex;
       flex-direction:column;
@@ -266,13 +268,13 @@
       font-size:clamp(2.5rem,5.8vw,5.4rem);
       line-height:.94;
       letter-spacing:-.06em;
-      max-width:10.5ch;
+      max-width:11.2ch;
       color:var(--brand-navy);
     }
 
     .hero-copy p{
       margin:16px 0 0;
-      max-width:58ch;
+      max-width:66ch;
       color:var(--muted);
       font-size:16px;
       line-height:1.75;
@@ -281,8 +283,8 @@
     .hero-showcase{
       margin:8px auto 0;
       width:100%;
-      max-width:1180px;
-      min-height:250px;
+      max-width:1200px;
+      min-height:320px;
       position:relative;
       display:block;
       overflow:visible;
@@ -291,82 +293,95 @@
     .hero-ribbon{
       position:relative;
       width:100%;
-      height:260px;
-      max-width:1080px;
+      height:320px;
+      max-width:1140px;
       margin:0 auto;
     }
 
     .hero-sweep{
       position:absolute;
       bottom:0;
-      border-radius:220px 220px 26px 26px;
+      border-radius:240px 240px 30px 30px;
       filter:blur(.1px);
       transform-origin:bottom center;
       opacity:1;
+      box-shadow:0 18px 40px rgba(0,0,0,.06);
     }
 
     .hero-sweep.s1{
-      left:6%;
-      width:14%;
-      height:125px;
+      left:4%;
+      width:15%;
+      height:156px;
       background:linear-gradient(180deg, #8E002A 0%, #B50036 100%);
-      transform:rotate(-16deg);
+      transform:rotate(-14deg);
     }
+
     .hero-sweep.s2{
-      left:17%;
-      width:13%;
-      height:168px;
+      left:15%;
+      width:14%;
+      height:198px;
       background:linear-gradient(180deg, #F36B00 0%, #F77F00 100%);
-      transform:rotate(-10deg);
+      transform:rotate(-9deg);
     }
+
     .hero-sweep.s3{
-      left:29%;
-      width:13%;
-      height:205px;
+      left:27%;
+      width:14%;
+      height:238px;
       background:linear-gradient(180deg, #F6C51C 0%, #FCBF49 100%);
       transform:rotate(-4deg);
     }
+
     .hero-sweep.s4{
-      left:42%;
-      width:11%;
-      height:250px;
+      left:40%;
+      width:12%;
+      height:296px;
       background:linear-gradient(180deg, #4340D5 0%, #5A54EA 100%);
       transform:rotate(0deg);
     }
+
     .hero-sweep.s5{
-      left:53%;
-      width:12%;
-      height:220px;
+      left:52%;
+      width:13%;
+      height:256px;
       background:linear-gradient(180deg, #51C7EB 0%, #6ADCF8 100%);
       transform:rotate(5deg);
     }
+
     .hero-sweep.s6{
       left:64%;
-      width:13%;
-      height:180px;
+      width:14%;
+      height:212px;
       background:linear-gradient(180deg, #64E3B0 0%, #7AEEBE 100%);
-      transform:rotate(11deg);
+      transform:rotate(10deg);
     }
+
     .hero-sweep.s7{
-      left:75%;
-      width:16%;
-      height:142px;
+      left:76%;
+      width:17%;
+      height:168px;
       background:linear-gradient(180deg, #D7F03A 0%, #E7F75C 100%);
-      transform:rotate(8deg);
+      transform:rotate(7deg);
     }
 
     .hero-glow{
       position:absolute;
-      inset:26px 60px 0;
+      inset:-4px 10px -10px;
       background:
-        radial-gradient(circle at 10% 88%, rgba(142,0,42,.20), transparent 14%),
-        radial-gradient(circle at 22% 74%, rgba(243,107,0,.19), transparent 15%),
-        radial-gradient(circle at 35% 60%, rgba(246,197,28,.19), transparent 16%),
-        radial-gradient(circle at 47% 42%, rgba(67,64,213,.18), transparent 16%),
-        radial-gradient(circle at 59% 55%, rgba(81,199,235,.18), transparent 15%),
-        radial-gradient(circle at 73% 68%, rgba(100,227,176,.18), transparent 15%),
-        radial-gradient(circle at 89% 84%, rgba(215,240,58,.19), transparent 14%);
-      filter:blur(28px);
+        radial-gradient(circle at 7% 86%, rgba(142,0,42,.34), transparent 16%),
+        radial-gradient(circle at 14% 68%, rgba(186,18,76,.26), transparent 13%),
+        radial-gradient(circle at 20% 72%, rgba(243,107,0,.32), transparent 15%),
+        radial-gradient(circle at 28% 54%, rgba(247,127,0,.32), transparent 16%),
+        radial-gradient(circle at 37% 42%, rgba(246,197,28,.32), transparent 17%),
+        radial-gradient(circle at 47% 18%, rgba(67,64,213,.31), transparent 18%),
+        radial-gradient(circle at 53% 40%, rgba(90,84,234,.24), transparent 14%),
+        radial-gradient(circle at 60% 42%, rgba(81,199,235,.30), transparent 16%),
+        radial-gradient(circle at 67% 58%, rgba(80,226,255,.22), transparent 13%),
+        radial-gradient(circle at 74% 62%, rgba(100,227,176,.31), transparent 16%),
+        radial-gradient(circle at 82% 76%, rgba(133,239,147,.24), transparent 13%),
+        radial-gradient(circle at 90% 84%, rgba(215,240,58,.34), transparent 15%),
+        radial-gradient(circle at 96% 56%, rgba(252,191,73,.20), transparent 11%);
+      filter:blur(34px);
       opacity:1;
       pointer-events:none;
     }
@@ -386,7 +401,12 @@
       color:var(--brand-navy);
     }
 
-    .services-section{ padding:92px 0 58px; }
+    .services-section{
+      padding:92px 0 58px;
+      background:linear-gradient(180deg, #ffe38a 0%, #fcbf49 100%);
+      border-radius:34px;
+      overflow:hidden;
+    }
 
     .services-shell{
       display:grid;
@@ -417,11 +437,12 @@
       position:absolute;
       left:28px;
       bottom:88px;
-      width:168px;
-      height:168px;
-      background:var(--brand-yellow);
-      border-radius:180px 180px 28px 28px;
+      width:220px;
+      height:220px;
+      background:#f7cd57;
+      border-radius:220px 220px 36px 36px;
       z-index:1;
+      box-shadow:0 18px 34px rgba(247,127,0,.12);
     }
 
     .services-dot-grid{
@@ -488,19 +509,7 @@
     .services-spark.three{ top:144px; left:212px; font-size:22px; }
 
     .services-tagline{
-      position:absolute;
-      left:2px;
-      bottom:8px;
-      z-index:6;
-      margin:0;
-      font-size:clamp(1.5rem, 3vw, 2.4rem);
-      line-height:.9;
-      letter-spacing:-.07em;
-      text-transform:uppercase;
-      color:var(--brand-yellow);
-      max-width:8ch;
-      pointer-events:none;
-      text-shadow:0 2px 10px rgba(0,48,73,.10);
+      display:none;
     }
 
     .services-content{
@@ -511,7 +520,7 @@
       min-height:470px;
       text-align:center;
       position:relative;
-      padding-top:36px;
+      padding-top:10px;
     }
 
     .services-tabs{
@@ -639,7 +648,7 @@
 
     .service-copy p{
       margin:0 0 18px;
-      color:var(--muted);
+      color:#4f453b;
       font-size:.97rem;
       line-height:1.75;
       max-width:32rem;
@@ -648,7 +657,7 @@
     .service-bullets{
       display:grid;
       gap:10px;
-      margin:0 0 22px;
+      margin:0;
     }
 
     .service-bullets span{
@@ -671,21 +680,7 @@
     }
 
     .services-cta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:52px;
-      padding:0 28px;
-      border-radius:8px;
-      background:var(--brand-navy);
-      color:#fff;
-      font-weight:700;
-      transition:background .2s ease,transform .2s ease;
-    }
-
-    .services-cta:hover{
-      background:var(--brand-red);
-      transform:translateY(-1px);
+      display:none;
     }
 
     .service-media{
@@ -700,12 +695,13 @@
       position:absolute;
       left:14px;
       bottom:62px;
-      width:170px;
-      height:170px;
-      border-radius:180px 180px 30px 30px;
-      background:var(--media-accent, var(--brand-yellow));
+      width:220px;
+      height:220px;
+      border-radius:220px 220px 34px 34px;
+      background:rgba(252,191,73,.98);
       z-index:1;
-      opacity:.92;
+      opacity:1;
+      box-shadow:0 18px 34px rgba(247,127,0,.12);
     }
 
     .service-media-dots{
@@ -775,10 +771,9 @@
       line-height:.92;
       letter-spacing:-.06em;
       text-transform:uppercase;
-      color:var(--brand-yellow);
+      color:var(--brand-navy);
       max-width:8ch;
       pointer-events:none;
-      text-shadow:0 2px 10px rgba(0,48,73,.18);
     }
 
     .consult-bar{
@@ -874,18 +869,58 @@
       border-radius:24px;
     }
 
-    .project-card.tall{ grid-area:a; min-height:540px; border-radius:140px 34px 34px 34px; }
-    .project-card.tall::before{ border-radius:136px 30px 30px 30px; }
-    .project-card.tall img{ border-radius:132px 26px 26px 26px; }
+    .project-card.tall{
+      grid-area:a;
+      min-height:540px;
+      border-radius:140px 34px 34px 34px;
+      overflow:visible;
+      background:transparent;
+      box-shadow:none;
+      padding:0;
+    }
+
+    .project-card.tall::before{
+      display:none;
+    }
+
+    .project-card.tall .project-bg-bloom{
+      position:absolute;
+      inset:-28px -18px -22px -26px;
+      z-index:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 10% 80%, rgba(142,0,42,.92) 0%, rgba(142,0,42,.28) 18%, transparent 38%),
+        radial-gradient(circle at 20% 52%, rgba(243,107,0,.90) 0%, rgba(243,107,0,.26) 18%, transparent 38%),
+        radial-gradient(circle at 34% 24%, rgba(246,197,28,.94) 0%, rgba(246,197,28,.26) 18%, transparent 38%),
+        radial-gradient(circle at 48% 10%, rgba(67,64,213,.88) 0%, rgba(67,64,213,.24) 18%, transparent 38%),
+        radial-gradient(circle at 62% 24%, rgba(81,199,235,.88) 0%, rgba(81,199,235,.24) 18%, transparent 38%),
+        radial-gradient(circle at 74% 46%, rgba(100,227,176,.86) 0%, rgba(100,227,176,.22) 18%, transparent 38%),
+        radial-gradient(circle at 88% 72%, rgba(215,240,58,.94) 0%, rgba(215,240,58,.22) 18%, transparent 38%);
+      filter:blur(18px);
+      opacity:1;
+    }
+
+    .project-card.tall img{
+      position:relative;
+      z-index:2;
+      border-radius:132px 26px 26px 26px;
+      box-shadow:0 24px 44px rgba(0,48,73,.16);
+      background:#ffffff;
+      padding:4px;
+    }
+
     .project-card.arch{ grid-area:b; min-height:260px; border-radius:120px 120px 28px 28px; }
     .project-card.arch::before{ border-radius:116px 116px 24px 24px; }
     .project-card.arch img{ border-radius:112px 112px 20px 20px; }
+
     .project-card.soft{ grid-area:c; min-height:260px; border-radius:28px 90px 28px 90px; }
     .project-card.soft::before{ border-radius:24px 86px 24px 86px; }
     .project-card.soft img{ border-radius:20px 82px 20px 82px; }
+
     .project-card.wide{ grid-area:d; min-height:260px; border-radius:28px; }
     .project-card.wide::before{ border-radius:24px; }
     .project-card.wide img{ border-radius:20px; }
+
     .project-card.blob{ grid-area:e; min-height:260px; border-radius:34px 34px 120px 34px; }
     .project-card.blob::before{ border-radius:30px 30px 116px 30px; }
     .project-card.blob img{ border-radius:26px 26px 112px 26px; }
@@ -1081,20 +1116,17 @@
       position:relative;
       overflow:hidden;
       padding:8px 0;
-      min-height:210px;
-      background:transparent;
-      border:none;
-      border-radius:0;
-      backdrop-filter:none;
-      width:100%;
+      min-height:220px;
+      width:calc(100% + 120px);
+      margin-left:-60px;
     }
 
     .blog-track{
       display:flex;
       width:max-content;
       gap:18px;
-      animation:blogScroll 34s linear infinite;
-      padding:0 24px 0 0;
+      animation:blogScroll 38s linear infinite;
+      padding:0 12px;
       align-items:stretch;
     }
 
@@ -1104,11 +1136,10 @@
       background:#ffffff;
       border-radius:24px;
       padding:18px 18px 16px;
-      box-shadow:0 16px 30px rgba(0,0,0,.14);
+      box-shadow:0 16px 30px rgba(0,0,0,.12);
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      border:1px solid rgba(255,255,255,.12);
     }
 
     .blog-topic .kicker{
@@ -1129,12 +1160,23 @@
       max-width:14ch;
     }
 
+    .blog-topic .topic-box{
+      margin-top:18px;
+      min-height:74px;
+      border-radius:18px;
+      background:
+        linear-gradient(135deg, rgba(0,48,73,.08), rgba(247,127,0,.10), rgba(252,191,73,.18));
+      border:1px solid rgba(0,48,73,.08);
+    }
+
     @keyframes blogScroll{
       0%{ transform:translateX(0); }
       100%{ transform:translateX(-50%); }
     }
 
-    .contact-section{ position:relative; }
+    .contact-section{
+      position:relative;
+    }
 
     .contact-grid{
       display:grid;
@@ -1147,8 +1189,9 @@
     .contact-card{
       border:1px dashed var(--border);
       border-radius:26px;
-      background:#ffffff;
+      background:rgba(255,255,255,.92);
       overflow:hidden;
+      backdrop-filter:blur(6px);
       box-shadow:0 18px 40px rgba(0,48,73,.06);
     }
 
@@ -1187,9 +1230,14 @@
       font-size:14px;
     }
 
-    .contact-form-shell{ position:relative; }
+    .contact-form-shell{
+      position:relative;
+    }
 
-    .contact-form{ display:grid; gap:16px; }
+    .contact-form{
+      display:grid;
+      gap:16px;
+    }
 
     .form-row{
       display:grid;
@@ -1210,7 +1258,9 @@
       color:var(--brand-navy);
     }
 
-    .input,.select,.textarea{
+    .input,
+    .select,
+    .textarea{
       width:100%;
       border:1px solid rgba(0,48,73,.14);
       background:#ffffff;
@@ -1228,7 +1278,9 @@
       resize:vertical;
     }
 
-    .input:focus,.select:focus,.textarea:focus{
+    .input:focus,
+    .select:focus,
+    .textarea:focus{
       border-color:rgba(0,48,73,.45);
       box-shadow:0 0 0 4px rgba(0,48,73,.08);
     }
@@ -1310,7 +1362,8 @@
     .contact-success{
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, rgba(0,48,73,.96) 0%, rgba(13,63,99,.96) 100%);
+      background:
+        linear-gradient(180deg, rgba(0,48,73,.96) 0%, rgba(13,63,99,.96) 100%);
       color:#ffffff;
       display:flex;
       align-items:center;
@@ -1370,6 +1423,39 @@
       color:var(--brand-navy);
       font-weight:800;
       cursor:pointer;
+    }
+
+    .impact-banner{
+      width:calc(100% + 48px);
+      margin:42px 0 -24px -24px;
+      background:linear-gradient(180deg, #08395c 0%, #003049 100%);
+      padding:58px 24px 68px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .impact-banner::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 12% 24%, rgba(255,255,255,.05), transparent 18%),
+        radial-gradient(circle at 86% 74%, rgba(255,255,255,.04), transparent 18%);
+      pointer-events:none;
+    }
+
+    .impact-banner-text{
+      position:relative;
+      z-index:1;
+      margin:0 auto;
+      max-width:1280px;
+      text-align:center;
+      font-size:clamp(3.2rem, 9vw, 9rem);
+      line-height:.88;
+      letter-spacing:-.08em;
+      text-transform:uppercase;
+      color:#2f6e95;
+      font-weight:800;
     }
 
     .footer{
@@ -1444,39 +1530,6 @@
         grid-template-columns:1fr;
       }
 
-      .services-content{
-        min-height:auto;
-        padding-top:0;
-      }
-
-      .services-tabs{
-        justify-content:center;
-        margin-inline:auto;
-      }
-
-      .services-panel{ min-height:unset; }
-
-      .service-view{
-        position:relative;
-        grid-template-columns:1fr;
-        opacity:0;
-        height:0;
-        overflow:hidden;
-        transform:translateX(50px);
-      }
-
-      .service-view.active{
-        height:auto;
-        opacity:1;
-        transform:translateX(0);
-      }
-
-      .service-copy{ text-align:center; }
-      .service-copy h3,
-      .service-copy p{ max-width:none; }
-      .service-bullets{ justify-items:center; }
-      .service-media{ margin-top:10px; }
-
       .project-grid{
         grid-template-columns:1fr 1fr;
         grid-template-areas:
@@ -1511,28 +1564,33 @@
         letter-spacing:.08em;
       }
 
-      .menu-tab-line{ height:220px; }
+      .menu-tab-line{
+        height:220px;
+      }
 
       .hero-copy h1{
-        font-size:clamp(2.5rem,11vw,4rem);
         max-width:100%;
       }
 
-      .hero-copy p{ font-size:15px; }
+      .hero-copy p{
+        max-width:34ch;
+      }
 
       .hero-showcase{
-        max-width:100%;
-        min-height:180px;
+        min-height:240px;
       }
 
       .hero-ribbon{
-        height:180px;
-        max-width:100%;
+        height:240px;
       }
 
-      .hero-glow{
-        inset:18px 12px 0;
-      }
+      .hero-sweep.s1{height:112px}
+      .hero-sweep.s2{height:148px}
+      .hero-sweep.s3{height:182px}
+      .hero-sweep.s4{height:224px}
+      .hero-sweep.s5{height:192px}
+      .hero-sweep.s6{height:156px}
+      .hero-sweep.s7{height:120px}
 
       .services-tabs{
         gap:16px;
@@ -1547,9 +1605,13 @@
         font-size:13px;
       }
 
-      .service-tab svg{
-        width:26px;
-        height:26px;
+      .project-card.tall .project-bg-bloom{
+        inset:-20px -10px -16px -12px;
+      }
+
+      .blog-marquee{
+        width:calc(100% + 40px);
+        margin-left:-20px;
       }
 
       .project-grid{
@@ -1563,37 +1625,11 @@
       }
 
       .project-card,
-      .project-card.tall,
       .project-card.arch,
       .project-card.soft,
       .project-card.wide,
       .project-card.blob{
         min-height:250px;
-        border-radius:26px;
-      }
-
-      .project-card::before,
-      .project-card.tall::before,
-      .project-card.arch::before,
-      .project-card.soft::before,
-      .project-card.wide::before,
-      .project-card.blob::before{
-        border-radius:22px;
-      }
-
-      .project-card img,
-      .project-card.tall img,
-      .project-card.arch img,
-      .project-card.soft img,
-      .project-card.wide img,
-      .project-card.blob img{
-        border-radius:18px;
-      }
-
-      .cta-button{
-        min-width:240px;
-        min-height:64px;
-        font-size:17px;
       }
 
       .form-row,
@@ -1602,22 +1638,9 @@
         grid-template-columns:1fr;
       }
 
-      .blog-section{
-        width:calc(100% + 32px);
-        margin-left:-16px;
-        margin-right:-16px;
-      }
-
-      .blog-wrap{
-        padding:0 16px;
-      }
-
-      .blog-track{
-        padding-right:16px;
-      }
-
-      .blog-topic{
-        flex-basis:260px;
+      .footer{
+        grid-template-columns:1fr;
+        text-align:center;
       }
     }
   </style>
@@ -1642,16 +1665,19 @@
             <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95Zm8.95 1.55a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.35A5.65 5.65 0 1 1 6.35 12 5.66 5.66 0 0 1 12 6.35Zm0 1.8A3.85 3.85 0 1 0 15.85 12 3.85 3.85 0 0 0 12 8.15Z"/>
           </svg>
         </a>
+
         <a href="#" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M13.5 22v-8.2h2.76l.41-3.2H13.5V8.56c0-.92.26-1.55 1.58-1.55h1.69V4.15c-.29-.04-1.28-.12-2.44-.12-2.42 0-4.08 1.48-4.08 4.2v2.37H7.5v3.2h2.75V22z"/>
           </svg>
         </a>
+
         <a href="#" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48 2.49 2.49 0 0 1 4.98 3.5ZM3 9h4v12H3Zm6.5 0h3.83v1.64h.05c.53-1.01 1.83-2.08 3.77-2.08 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.58c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94V21h-4Z"/>
           </svg>
         </a>
+
         <a href="#" aria-label="YouTube">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M23.5 7.2a3 3 0 0 0-2.11-2.12C19.52 4.5 12 4.5 12 4.5s-7.52 0-9.39.58A3 3 0 0 0 .5 7.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 4.8 3 3 0 0 0 2.11 2.12C4.48 19.5 12 19.5 12 19.5s7.52 0 9.39-.58a3 3 0 0 0 2.11-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-4.8ZM9.6 15.3V8.7l6 3.3Z"/>
@@ -1673,9 +1699,9 @@
       <section class="hero" id="hero">
         <div class="hero-inner">
           <div class="hero-copy">
-            <h1>Boss ideas for brands that need traction.</h1>
+            <h1>Boss ideas for brands<br>that need traction</h1>
             <p>
-              We help businesses grow with branding, web development, social media strategy,
+              We help businesses grow with branding, web development, social media strategy,<br>
               Google My Business optimization, and clean execution that actually moves the business forward.
             </p>
           </div>
@@ -1704,6 +1730,7 @@
 
               <div class="services-mini-badge one">🩵</div>
               <div class="services-mini-badge two">🧠</div>
+              <div class="services-mini-badge.three"></div>
               <div class="services-mini-badge three">👑</div>
               <div class="services-mini-badge four">✨</div>
               <div class="services-mini-badge five">💅</div>
@@ -1716,8 +1743,6 @@
               <div class="services-photo-card">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80" alt="Founder portrait" />
               </div>
-
-              <h2 class="services-tagline">WE KNOW WHAT WE DO</h2>
             </div>
           </div>
 
@@ -1772,7 +1797,7 @@
             </div>
 
             <div class="services-panel">
-              <article class="service-view active" data-view="branding" style="--media-accent:#f4bf47; --media-icon:#d62828;">
+              <article class="service-view active" data-view="branding" style="--media-icon:#d62828;">
                 <div class="service-copy">
                   <h2 class="services-word">SERVICES</h2>
                   <h3>Brand identities that look premium and feel consistent.</h3>
@@ -1785,7 +1810,6 @@
                     <span>Logo refinement and identity kits</span>
                     <span>Messaging alignment for premium positioning</span>
                   </div>
-                  <a class="services-cta" href="#contact">Build your brand</a>
                 </div>
 
                 <div class="service-media">
@@ -1806,7 +1830,7 @@
                 </div>
               </article>
 
-              <article class="service-view" data-view="webdev" style="--media-accent:#003049; --media-icon:#003049;">
+              <article class="service-view" data-view="webdev" style="--media-icon:#003049;">
                 <div class="service-copy">
                   <h2 class="services-word">SERVICES</h2>
                   <h3>Web experiences that feel polished and convert better.</h3>
@@ -1819,7 +1843,6 @@
                     <span>Responsive UI with stronger user flow</span>
                     <span>Clean structure for visibility and conversion</span>
                   </div>
-                  <a class="services-cta" href="#contact">Build your website</a>
                 </div>
 
                 <div class="service-media">
@@ -1839,7 +1862,7 @@
                 </div>
               </article>
 
-              <article class="service-view" data-view="marketing" style="--media-accent:#f77f00; --media-icon:#f77f00;">
+              <article class="service-view" data-view="marketing" style="--media-icon:#f77f00;">
                 <div class="service-copy">
                   <h2 class="services-word">SERVICES</h2>
                   <h3>Marketing systems that help your business get noticed faster.</h3>
@@ -1852,7 +1875,6 @@
                     <span>Content direction for social and paid traffic</span>
                     <span>Audience-focused growth planning</span>
                   </div>
-                  <a class="services-cta" href="#contact">Plan your marketing</a>
                 </div>
 
                 <div class="service-media">
@@ -1872,7 +1894,7 @@
                 </div>
               </article>
 
-              <article class="service-view" data-view="strategy" style="--media-accent:#16110d; --media-icon:#16110d;">
+              <article class="service-view" data-view="strategy" style="--media-icon:#16110d;">
                 <div class="service-copy">
                   <h2 class="services-word">SERVICES</h2>
                   <h3>Strategy that gives direction before you waste time or budget.</h3>
@@ -1885,7 +1907,6 @@
                     <span>Content, brand, and funnel roadmap</span>
                     <span>Decision support for smarter execution</span>
                   </div>
-                  <a class="services-cta" href="#contact">Shape your strategy</a>
                 </div>
 
                 <div class="service-media">
@@ -1908,7 +1929,7 @@
                 </div>
               </article>
 
-              <article class="service-view" data-view="ai" style="--media-accent:#fcbf49; --media-icon:#fcbf49;">
+              <article class="service-view" data-view="ai" style="--media-icon:#c89314;">
                 <div class="service-copy">
                   <h2 class="services-word">SERVICES</h2>
                   <h3>AI workflows that make your brand move quicker and cleaner.</h3>
@@ -1921,7 +1942,6 @@
                     <span>Automations for repetitive business tasks</span>
                     <span>Faster production with better consistency</span>
                   </div>
-                  <a class="services-cta" href="#contact">Add AI support</a>
                 </div>
 
                 <div class="service-media">
@@ -1943,12 +1963,6 @@
         </div>
       </section>
 
-      <section class="consult-bar" aria-label="Book a consultation">
-        <div class="consult-bar-inner">
-          <a class="consult-bar-button" href="#contact">Book a Consultation</a>
-        </div>
-      </section>
-
       <section class="projects-band">
         <div class="projects-stage">
           <section class="section" id="projects" style="padding:0;">
@@ -1956,6 +1970,7 @@
 
             <div class="project-grid">
               <article class="project-card tall">
+                <div class="project-bg-bloom"></div>
                 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image one" />
               </article>
 
@@ -1971,7 +1986,7 @@
                 <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image four" />
               </article>
 
-              <article class="project-card.blob">
+              <article class="project-card.blob blob">
                 <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image five" />
               </article>
             </div>
@@ -2004,7 +2019,7 @@
               </div>
 
               <div class="cta-band">
-                <a class="cta-button" href="#contact">Let’s Talk</a>
+                <a class="cta-button" href="#contact">Let’s talk</a>
               </div>
             </div>
           </section>
@@ -2027,6 +2042,7 @@
                     <div class="kicker">Topic</div>
                     <h3>How branding changes perceived value</h3>
                   </div>
+                  <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
@@ -2034,6 +2050,7 @@
                     <div class="kicker">Topic</div>
                     <h3>What makes a website feel premium</h3>
                   </div>
+                  <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
@@ -2041,6 +2058,7 @@
                     <div class="kicker">Topic</div>
                     <h3>Social content that actually supports growth</h3>
                   </div>
+                  <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
@@ -2048,6 +2066,7 @@
                     <div class="kicker">Topic</div>
                     <h3>Why clear strategy beats more content</h3>
                   </div>
+                  <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
@@ -2055,6 +2074,7 @@
                     <div class="kicker">Topic</div>
                     <h3>Using AI without losing the brand voice</h3>
                   </div>
+                  <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
@@ -2062,6 +2082,7 @@
                     <div class="kicker">Topic</div>
                     <h3>How branding changes perceived value</h3>
                   </div>
+                  <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
@@ -2069,6 +2090,7 @@
                     <div class="kicker">Topic</div>
                     <h3>What makes a website feel premium</h3>
                   </div>
+                  <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
@@ -2076,6 +2098,7 @@
                     <div class="kicker">Topic</div>
                     <h3>Social content that actually supports growth</h3>
                   </div>
+                  <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
@@ -2083,6 +2106,7 @@
                     <div class="kicker">Topic</div>
                     <h3>Why clear strategy beats more content</h3>
                   </div>
+                  <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
@@ -2090,6 +2114,7 @@
                     <div class="kicker">Topic</div>
                     <h3>Using AI without losing the brand voice</h3>
                   </div>
+                  <div class="topic-box"></div>
                 </article>
               </div>
             </div>
@@ -2210,6 +2235,10 @@
         </div>
       </section>
 
+      <section class="impact-banner" aria-hidden="true">
+        <h2 class="impact-banner-text">WE KNOW WHAT WE DO</h2>
+      </section>
+
       <footer class="footer">
         <div class="footer-copy">© 2026 The Boss Agency Co</div>
 
@@ -2219,16 +2248,19 @@
               <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95Zm8.95 1.55a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.35A5.65 5.65 0 1 1 6.35 12 5.66 5.66 0 0 1 12 6.35Zm0 1.8A3.85 3.85 0 1 0 15.85 12 3.85 3.85 0 0 0 12 8.15Z"/>
             </svg>
           </a>
+
           <a href="#" aria-label="Facebook">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M13.5 22v-8.2h2.76l.41-3.2H13.5V8.56c0-.92.26-1.55 1.58-1.55h1.69V4.15c-.29-.04-1.28-.12-2.44-.12-2.42 0-4.08 1.48-4.08 4.2v2.37H7.5v3.2h2.75V22z"/>
             </svg>
           </a>
+
           <a href="#" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48 2.49 2.49 0 0 1 4.98 3.5ZM3 9h4v12H3Zm6.5 0h3.83v1.64h.05c.53-1.01 1.83-2.08 3.77-2.08 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.58c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94V21h-4Z"/>
             </svg>
           </a>
+
           <a href="#" aria-label="YouTube">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M23.5 7.2a3 3 0 0 0-2.11-2.12C19.52 4.5 12 4.5 12 4.5s-7.52 0-9.39.58A3 3 0 0 0 .5 7.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 4.8 3 3 0 0 0 2.11 2.12C4.48 19.5 12 19.5 12 19.5s7.52 0 9.39-.58a3 3 0 0 0 2.11-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-4.8ZM9.6 15.3V8.7l6 3.3Z"/>
@@ -2273,7 +2305,9 @@
         tab.setAttribute('aria-selected', 'true');
 
         const activeView = document.querySelector(`.service-view[data-view="${target}"]`);
-        if (activeView) activeView.classList.add('active');
+        if (activeView) {
+          activeView.classList.add('active');
+        }
       });
     });
 
