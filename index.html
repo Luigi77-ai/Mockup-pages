@@ -517,7 +517,7 @@
     .services-tabs{
       position:absolute;
       top:0;
-      right:-90px;
+      right:-180px;
       display:flex;
       flex-direction:column;
       flex-wrap:nowrap;
@@ -585,7 +585,7 @@
       max-width:690px;
       position:relative;
       min-height:390px;
-      padding-right:170px;
+      padding-right:220px;
     }
 
     .service-view{
@@ -763,20 +763,22 @@
 
     .project-grid{
       display:grid;
-      grid-template-columns:1.08fr .92fr .92fr;
+      grid-template-columns:0.94fr 0.8fr 0.8fr;
       grid-template-areas:
         "a b c"
         "a d e";
-      gap:18px;
+      gap:14px;
+      max-width:920px;
+      margin:0 auto;
     }
 
     .project-card{
       position:relative;
-      min-height:250px;
-      border-radius:32px;
+      min-height:220px;
+      border-radius:28px;
       padding:4px;
       overflow:hidden;
-      background:#ffffff;
+      background:linear-gradient(135deg,#D62828 0%,#F77F00 33%,#FCBF49 66%,#003049 100%);
       box-shadow:none;
     }
 
@@ -784,7 +786,7 @@
       content:"";
       position:absolute;
       inset:4px;
-      border-radius:28px;
+      border-radius:24px;
       background:#ffffff;
       z-index:1;
     }
@@ -795,53 +797,53 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      border-radius:24px;
+      border-radius:20px;
     }
 
     .project-card.tall{
       grid-area:a;
-      min-height:540px;
-      border-radius:140px 34px 34px 34px;
+      min-height:470px;
+      border-radius:120px 28px 28px 28px;
     }
 
-    .project-card.tall::before{ border-radius:136px 30px 30px 30px; }
-    .project-card.tall img{ border-radius:132px 26px 26px 26px; }
+    .project-card.tall::before{ border-radius:116px 24px 24px 24px; }
+    .project-card.tall img{ border-radius:112px 20px 20px 20px; }
 
     .project-card.arch{
       grid-area:b;
-      min-height:260px;
-      border-radius:120px 120px 28px 28px;
+      min-height:220px;
+      border-radius:100px 100px 24px 24px;
     }
 
-    .project-card.arch::before{ border-radius:116px 116px 24px 24px; }
-    .project-card.arch img{ border-radius:112px 112px 20px 20px; }
+    .project-card.arch::before{ border-radius:96px 96px 20px 20px; }
+    .project-card.arch img{ border-radius:92px 92px 16px 16px; }
 
     .project-card.soft{
       grid-area:c;
-      min-height:260px;
-      border-radius:28px 90px 28px 90px;
+      min-height:220px;
+      border-radius:24px 76px 24px 76px;
     }
 
-    .project-card.soft::before{ border-radius:24px 86px 24px 86px; }
-    .project-card.soft img{ border-radius:20px 82px 20px 82px; }
+    .project-card.soft::before{ border-radius:20px 72px 20px 72px; }
+    .project-card.soft img{ border-radius:16px 68px 16px 68px; }
 
     .project-card.wide{
       grid-area:d;
-      min-height:260px;
-      border-radius:28px;
+      min-height:220px;
+      border-radius:24px;
     }
 
-    .project-card.wide::before{ border-radius:24px; }
-    .project-card.wide img{ border-radius:20px; }
+    .project-card.wide::before{ border-radius:20px; }
+    .project-card.wide img{ border-radius:16px; }
 
     .project-card.blob{
       grid-area:e;
-      min-height:260px;
-      border-radius:34px 34px 120px 34px;
+      min-height:220px;
+      border-radius:28px 28px 100px 28px;
     }
 
-    .project-card.blob::before{ border-radius:30px 30px 116px 30px; }
-    .project-card.blob img{ border-radius:26px 26px 112px 26px; }
+    .project-card.blob::before{ border-radius:24px 24px 96px 24px; }
+    .project-card.blob img{ border-radius:20px 20px 92px 20px; }
 
     .about-zone{
       margin-top:34px;
@@ -860,6 +862,7 @@
     }
 
     .about-lead .accent{ color:var(--brand-red); }
+    .about-lead .lead-red{ color:var(--brand-red); }
 
     .about-panel{
       background:transparent;
@@ -936,8 +939,9 @@
 
     .cta-band{
       margin-top:24px;
-      display:flex;
-      justify-content:center;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:16px;
       align-items:center;
       padding-top:22px;
       border-top:none;
@@ -1085,31 +1089,27 @@
 
     .contact-section{
       position:relative;
-      background:#ffffff;
-      padding-bottom:24px;
     }
 
     .contact-grid{
       display:grid;
-      grid-template-columns:1fr;
-      gap:0;
+      grid-template-columns:.88fr 1.12fr;
+      gap:22px;
       align-items:stretch;
       position:relative;
-      max-width:900px;
-      margin:0 auto;
     }
 
     .contact-card{
-      border:none;
-      border-radius:0;
-      background:transparent;
-      overflow:visible;
-      backdrop-filter:none;
-      box-shadow:none;
+      border:1px dashed var(--border);
+      border-radius:26px;
+      background:rgba(255,255,255,.92);
+      overflow:hidden;
+      backdrop-filter:blur(6px);
+      box-shadow:0 18px 40px rgba(0,48,73,.06);
     }
 
     .contact-card .inner{
-      padding:0;
+      padding:28px;
       height:100%;
     }
 
@@ -1119,32 +1119,37 @@
       line-height:1;
       letter-spacing:-.04em;
       color:var(--brand-navy);
-      text-align:center;
     }
 
     .contact-card p{
-      margin:0 auto;
+      margin:0;
       color:var(--muted);
       font-size:15px;
       line-height:1.75;
-      text-align:center;
-      max-width:62ch;
     }
 
     .contact-meta{
-      display:none;
+      display:grid;
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .contact-meta-item{
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(0,48,73,.05);
+      color:var(--brand-navy);
+      font-weight:700;
+      font-size:14px;
     }
 
     .contact-form-shell{
       position:relative;
-      margin-top:28px;
     }
 
     .contact-form{
       display:grid;
       gap:16px;
-      max-width:760px;
-      margin:0 auto;
     }
 
     .form-row{
@@ -1170,9 +1175,9 @@
     .select,
     .textarea{
       width:100%;
-      border:1px solid rgba(0,48,73,.12);
+      border:1px solid rgba(0,48,73,.14);
       background:#ffffff;
-      border-radius:0;
+      border-radius:16px;
       min-height:56px;
       padding:0 16px;
       color:var(--text);
@@ -1190,7 +1195,7 @@
     .select:focus,
     .textarea:focus{
       border-color:rgba(0,48,73,.45);
-      box-shadow:none;
+      box-shadow:0 0 0 4px rgba(0,48,73,.08);
     }
 
     .phone-grid{
@@ -1221,7 +1226,7 @@
       align-items:center;
       justify-content:center;
       text-align:center;
-      border-radius:0;
+      border-radius:16px;
       border:1px solid rgba(0,48,73,.12);
       background:#ffffff;
       color:var(--brand-navy);
@@ -1236,8 +1241,8 @@
       background:var(--brand-navy);
       color:#ffffff;
       border-color:var(--brand-navy);
-      transform:none;
-      box-shadow:none;
+      transform:translateY(-1px);
+      box-shadow:0 12px 24px rgba(0,48,73,.16);
     }
 
     .contact-submit{
@@ -1246,27 +1251,25 @@
       justify-content:center;
       min-height:58px;
       border:none;
-      border-radius:0;
-      background:var(--brand-orange);
+      border-radius:16px;
+      background:var(--brand-navy);
       color:#ffffff;
       padding:0 28px;
       font-weight:800;
       letter-spacing:.01em;
       cursor:pointer;
       transition:transform .2s ease, background .2s ease;
-      width:100%;
     }
 
     .contact-submit:hover{
-      background:var(--brand-navy);
-      transform:none;
+      background:var(--brand-red);
+      transform:translateY(-1px);
     }
 
     .contact-note{
       color:var(--muted);
       font-size:13px;
       line-height:1.65;
-      text-align:center;
     }
 
     .contact-success{
@@ -1280,6 +1283,7 @@
       justify-content:center;
       text-align:center;
       padding:28px;
+      border-radius:26px;
       opacity:0;
       visibility:hidden;
       pointer-events:none;
@@ -1326,18 +1330,28 @@
       justify-self:center;
       min-height:52px;
       padding:0 22px;
-      border-radius:0;
-      border:none;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
       background:#ffffff;
       color:var(--brand-navy);
       font-weight:800;
       cursor:pointer;
     }
 
+    .contact-bottom-text{
+      margin:34px auto 0;
+      max-width:18ch;
+      text-align:center;
+      font-size:clamp(2.8rem,6vw,5.7rem);
+      line-height:.92;
+      letter-spacing:-.07em;
+      color:var(--brand-navy);
+    }
+
     .footer{
-      margin-top:46px;
-      border-top:none;
-      padding:20px 0 12px;
+      margin-top:70px;
+      border-top:1px dashed rgba(0,48,73,.18);
+      padding:26px 0 18px;
       display:grid;
       grid-template-columns:1fr auto 1fr;
       align-items:center;
@@ -1360,26 +1374,26 @@
     }
 
     .footer-socials a{
-      width:44px;
-      height:44px;
+      width:46px;
+      height:46px;
       display:grid;
       place-items:center;
       border-radius:999px;
-      border:none;
-      background:var(--brand-navy);
-      color:#ffffff;
+      border:1px solid rgba(0,48,73,.16);
+      background:rgba(0,48,73,.04);
+      color:var(--brand-navy);
       transition:transform .2s ease, background .2s ease, color .2s ease;
     }
 
     .footer-socials a:hover{
       transform:translateY(-2px);
-      background:var(--brand-orange);
+      background:var(--brand-navy);
       color:#ffffff;
     }
 
     .footer-socials svg{
-      width:18px;
-      height:18px;
+      width:20px;
+      height:20px;
       fill:currentColor;
       display:block;
     }
@@ -1401,32 +1415,9 @@
     @media (max-width: 1100px){
       .services-shell,
       .about-grid,
-      .blog-wrap{
+      .blog-wrap,
+      .contact-grid{
         grid-template-columns:1fr;
-      }
-
-      .services-shell{ gap:16px; }
-
-      .services-content{
-        min-height:auto;
-        padding-top:0;
-      }
-
-      .services-tabs{
-        position:relative;
-        top:auto;
-        right:0;
-        flex-direction:row;
-        flex-wrap:wrap;
-        align-items:center;
-        justify-content:center;
-        width:100%;
-        margin:0 0 24px;
-      }
-
-      .services-panel{
-        min-height:unset;
-        padding-right:0;
       }
 
       .service-view{
@@ -1444,16 +1435,26 @@
         transform:translateX(0);
       }
 
+      .services-tabs{
+        position:relative;
+        top:auto;
+        right:auto;
+        align-items:center;
+        margin:0 auto 24px;
+      }
+
+      .services-panel{
+        padding-right:0;
+      }
+
       .project-grid{
         grid-template-columns:1fr 1fr;
         grid-template-areas:
           "a a"
           "b c"
           "d e";
+        max-width:none;
       }
-
-      .project-card.tall{ min-height:420px; }
-      .blog-side-title{ position:relative; top:auto; }
 
       .footer{
         grid-template-columns:1fr;
@@ -1473,121 +1474,6 @@
         --menu-total-width:calc(var(--menu-rail-width) + var(--sidebar-width));
       }
 
-      .menu-tab-text{
-        font-size:18px;
-        letter-spacing:.08em;
-      }
-
-      .menu-tab-line{
-        height:220px;
-      }
-
-      .hero-copy h1{
-        font-size:clamp(2.2rem,10vw,3.8rem);
-      }
-
-      .hero-copy p{
-        font-size:15px;
-      }
-
-      .hero-showcase{
-        height:220px;
-      }
-
-      .hero-ribbon{
-        height:250px;
-        bottom:-12px;
-      }
-
-      .hero-sweep{
-        bottom:-90px;
-        border-radius:180px 180px 24px 24px;
-      }
-
-      .hero-sweep.s1{ height:150px; }
-      .hero-sweep.s2{ height:178px; }
-      .hero-sweep.s3{ height:206px; }
-      .hero-sweep.s4{ height:238px; }
-      .hero-sweep.s5{ height:214px; }
-      .hero-sweep.s6{ height:188px; }
-      .hero-sweep.s7{ height:160px; }
-
-      .services-section{
-        padding:60px 16px 34px;
-        margin-left:-16px;
-        margin-right:-16px;
-      }
-
-      .services-shell{
-        grid-template-columns:1fr;
-        gap:20px;
-      }
-
-      .services-visual{
-        min-height:390px;
-        justify-content:center;
-      }
-
-      .services-photo-stage{
-        max-width:330px;
-        height:360px;
-        margin-left:0;
-      }
-
-      .services-photo-card{
-        left:52px;
-        width:206px;
-        height:274px;
-      }
-
-      .services-blob-yellow{
-        width:206px;
-        height:206px;
-        left:30px;
-        bottom:68px;
-      }
-
-      .services-tabs{
-        position:relative;
-        right:0;
-        top:auto;
-        flex-direction:row;
-        flex-wrap:wrap;
-        align-items:center;
-        justify-content:center;
-        gap:16px;
-        margin:0 0 24px;
-      }
-
-      .service-tab{
-        min-width:96px;
-        font-size:14px;
-      }
-
-      .service-tab svg{
-        width:28px;
-        height:28px;
-      }
-
-      .service-media{
-        height:310px;
-      }
-
-      .service-media-card{
-        left:50%;
-        transform:translateX(-50%);
-      }
-
-      .service-media-shape{
-        left:50%;
-        transform:translateX(-58%);
-      }
-
-      .service-media-dots{
-        left:50%;
-        transform:translateX(-92%);
-      }
-
       .project-grid{
         grid-template-columns:1fr;
         grid-template-areas:
@@ -1604,8 +1490,8 @@
       .project-card.soft,
       .project-card.wide,
       .project-card.blob{
-        min-height:250px;
-        border-radius:26px;
+        min-height:230px;
+        border-radius:24px;
       }
 
       .project-card::before,
@@ -1614,7 +1500,7 @@
       .project-card.soft::before,
       .project-card.wide::before,
       .project-card.blob::before{
-        border-radius:22px;
+        border-radius:20px;
       }
 
       .project-card img,
@@ -1623,35 +1509,14 @@
       .project-card.soft img,
       .project-card.wide img,
       .project-card.blob img{
-        border-radius:18px;
+        border-radius:16px;
       }
 
-      .about-photo{
-        min-height:300px;
-      }
-
-      .about-photo img{
-        min-height:292px;
-      }
-
+      .cta-band,
       .form-row,
       .phone-grid,
       .service-checks{
         grid-template-columns:1fr;
-      }
-
-      .blog-section{
-        width:calc(100% + 32px);
-        margin-left:-16px;
-        margin-right:-16px;
-      }
-
-      .blog-wrap{
-        width:min(100% - 24px, 1280px);
-      }
-
-      .blog-topic{
-        flex-basis:260px;
       }
     }
   </style>
@@ -1670,25 +1535,22 @@
         </div>
       </div>
 
-      <div class="menu-socials" aria-label="Social media links">
+      <div class="menu-socials">
         <a href="#" aria-label="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95Zm8.95 1.55a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.35A5.65 5.65 0 1 1 6.35 12 5.66 5.66 0 0 1 12 6.35Zm0 1.8A3.85 3.85 0 1 0 15.85 12 3.85 3.85 0 0 0 12 8.15Z"/>
           </svg>
         </a>
-
         <a href="#" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M13.5 22v-8.2h2.76l.41-3.2H13.5V8.56c0-.92.26-1.55 1.58-1.55h1.69V4.15c-.29-.04-1.28-.12-2.44-.12-2.42 0-4.08 1.48-4.08 4.2v2.37H7.5v3.2h2.75V22z"/>
           </svg>
         </a>
-
         <a href="#" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48 2.49 2.49 0 0 1 4.98 3.5ZM3 9h4v12H3Zm6.5 0h3.83v1.64h.05c.53-1.01 1.83-2.08 3.77-2.08 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.58c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94V21h-4Z"/>
           </svg>
         </a>
-
         <a href="#" aria-label="YouTube">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M23.5 7.2a3 3 0 0 0-2.11-2.12C19.52 4.5 12 4.5 12 4.5s-7.52 0-9.39.58A3 3 0 0 0 .5 7.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 4.8 3 3 0 0 0 2.11 2.12C4.48 19.5 12 19.5 12 19.5s7.52 0 9.39-.58a3 3 0 0 0 2.11-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-4.8ZM9.6 15.3V8.7l6 3.3Z"/>
@@ -1806,7 +1668,7 @@
             </div>
 
             <div class="services-panel">
-              <article class="service-view active" data-view="branding" style="--media-accent:#ffffff; --media-icon:#d62828;">
+              <article class="service-view active" data-view="branding" style="--media-accent:#ffffff; --media-icon:#D62828;">
                 <div class="service-copy">
                   <h2 class="services-word">Services</h2>
                   <h3>Brand identities that look premium and feel consistent.</h3>
@@ -1835,7 +1697,6 @@
                   <div class="service-media-card">
                     <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Brand strategy session" />
                   </div>
-                  <h4 class="service-media-label">Brand Focus</h4>
                 </div>
               </article>
 
@@ -1867,11 +1728,10 @@
                   <div class="service-media-card">
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Website design dashboard" />
                   </div>
-                  <h4 class="service-media-label">Web Build</h4>
                 </div>
               </article>
 
-              <article class="service-view" data-view="marketing" style="--media-accent:#ffffff; --media-icon:#E07A2F;">
+              <article class="service-view" data-view="marketing" style="--media-accent:#ffffff; --media-icon:#F77F00;">
                 <div class="service-copy">
                   <h2 class="services-word">Services</h2>
                   <h3>Marketing systems that help your business get noticed faster.</h3>
@@ -1899,7 +1759,6 @@
                   <div class="service-media-card">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Marketing analytics screen" />
                   </div>
-                  <h4 class="service-media-label">Growth Moves</h4>
                 </div>
               </article>
 
@@ -1934,7 +1793,6 @@
                   <div class="service-media-card">
                     <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Business planning session" />
                   </div>
-                  <h4 class="service-media-label">Smart Direction</h4>
                 </div>
               </article>
 
@@ -1964,7 +1822,6 @@
                   <div class="service-media-card">
                     <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80" alt="AI interface and digital workflow" />
                   </div>
-                  <h4 class="service-media-label">AI Powered</h4>
                 </div>
               </article>
             </div>
@@ -1974,32 +1831,26 @@
 
       <section class="projects-band" id="projects">
         <div class="projects-stage">
-          <h2 class="section-title">Projects</h2>
-
           <div class="project-grid">
             <article class="project-card tall">
               <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image one" />
             </article>
-
             <article class="project-card arch">
               <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image two" />
             </article>
-
             <article class="project-card soft">
               <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image three" />
             </article>
-
             <article class="project-card wide">
               <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image four" />
             </article>
-
             <article class="project-card blob">
               <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image five" />
             </article>
           </div>
 
           <section class="about-zone" id="about">
-            <h2 class="about-lead">We don’t do fluff.<br>Just focused, boss-level work.</h2>
+            <h2 class="about-lead"><span class="lead-red">We don’t do fluff.</span> Just focused, <span class="accent">boss-level</span> work.</h2>
 
             <div class="about-panel">
               <div class="about-grid">
@@ -2022,6 +1873,9 @@
               </div>
 
               <div class="cta-band">
+                <p style="margin:0;color:var(--muted);font-size:15px;line-height:1.7;">
+                  We build connections, experiences, and trust through branding, websites, content, and 77777.
+                </p>
                 <a class="cta-button" href="#contact">Let’s talk</a>
               </div>
             </div>
@@ -2136,6 +1990,12 @@
                 Share a few details about your business, what you need, and where you want to go next.
                 We’ll review your information and reach out with the right next step.
               </p>
+
+              <div class="contact-meta">
+                <div class="contact-meta-item">Email: hello@thebossagency.co</div>
+                <div class="contact-meta-item">Phone: +1 430-209-3120</div>
+                <div class="contact-meta-item">Services: Branding, Web Dev, Marketing, Strategy, AI</div>
+              </div>
             </div>
           </article>
 
@@ -2230,6 +2090,8 @@
             </div>
           </article>
         </div>
+
+        <h2 class="contact-bottom-text">We build connections, experiences, and trust.</h2>
       </section>
 
       <footer class="footer">
