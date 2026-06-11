@@ -4,18 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Boss Agency Co | Creative Growth Studio</title>
+
   <meta
     name="description"
     content="The Boss Agency Co helps businesses grow through branding, web development, social media strategy, Google My Business optimization, and data-driven marketing solutions."
   />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
+
   <style>
-    :root{
+    :root {
       --bg:#ffffff;
       --paper:#ffffff;
       --card:#ffffff;
@@ -41,9 +44,16 @@
       --sidebar-width:300px;
       --menu-total-width:calc(var(--menu-rail-width) + var(--sidebar-width));
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
+
+    * {
+      box-sizing:border-box;
+    }
+
+    html {
+      scroll-behavior:smooth;
+    }
+
+    body {
       margin:0;
       font-family:"Be Vietnam Pro",sans-serif;
       color:var(--text);
@@ -52,11 +62,25 @@
       text-rendering:optimizeLegibility;
       overflow-x:hidden;
     }
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-    button,input,select,textarea{font:inherit}
 
-    .menu-shell{
+    a {
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img {
+      display:block;
+      max-width:100%;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font:inherit;
+    }
+
+    .menu-shell {
       position:fixed;
       top:0;
       left:0;
@@ -67,9 +91,12 @@
       transform:translateX(calc(-1 * var(--sidebar-width)));
       transition:transform .34s ease;
     }
-    body.menu-open .menu-shell{ transform:translateX(0); }
 
-    .menu-trigger{
+    body.menu-open .menu-shell {
+      transform:translateX(0);
+    }
+
+    .menu-trigger {
       width:var(--menu-rail-width);
       height:100vh;
       border:none;
@@ -84,7 +111,8 @@
       z-index:2;
       box-shadow:none;
     }
-    .menu-trigger-inner{
+
+    .menu-trigger-inner {
       width:100%;
       height:100%;
       display:flex;
@@ -94,7 +122,8 @@
       padding:20px 0;
       background:transparent;
     }
-    .menu-tab-text{
+
+    .menu-tab-text {
       writing-mode:vertical-rl;
       transform:rotate(180deg);
       font-size:22px;
@@ -106,7 +135,8 @@
       user-select:none;
       white-space:nowrap;
     }
-    .menu-tab-line{
+
+    .menu-tab-line {
       width:4px;
       height:250px;
       border-radius:999px;
@@ -114,7 +144,7 @@
       flex:0 0 auto;
     }
 
-    .menu-panel{
+    .menu-panel {
       width:var(--sidebar-width);
       height:100vh;
       padding:18px;
@@ -127,7 +157,8 @@
       flex:0 0 auto;
       justify-content:space-between;
     }
-    .brand-box{
+
+    .brand-box {
       border-radius:16px;
       overflow:hidden;
       background:rgba(255,255,255,.16);
@@ -136,18 +167,21 @@
       border:1px solid rgba(255,255,255,.16);
       backdrop-filter:blur(10px);
     }
-    .brand{
+
+    .brand {
       display:inline-block;
       font-size:1.05rem;
       font-weight:800;
       letter-spacing:-.02em;
     }
-    .nav-stack{
+
+    .nav-stack {
       display:grid;
       gap:10px;
       margin-top:12px;
     }
-    .nav-link{
+
+    .nav-link {
       display:grid;
       grid-template-columns:1fr auto;
       gap:10px;
@@ -160,11 +194,13 @@
       transition:transform .2s ease, background .2s ease;
       border:1px solid rgba(255,255,255,.12);
     }
-    .nav-link:hover{
+
+    .nav-link:hover {
       transform:translateY(-1px);
       background:rgba(255,255,255,.22);
     }
-    .nav-link small{
+
+    .nav-link small {
       width:28px;
       height:28px;
       border-radius:999px;
@@ -176,14 +212,16 @@
       color:var(--brand-orange);
       border:1px solid rgba(255,255,255,.10);
     }
-    .menu-socials{
+
+    .menu-socials {
       display:flex;
       justify-content:center;
       gap:12px;
       padding:4px 0 10px;
       flex-wrap:wrap;
     }
-    .menu-socials a{
+
+    .menu-socials a {
       width:42px;
       height:42px;
       display:grid;
@@ -194,18 +232,20 @@
       color:#ffffff;
       transition:transform .2s ease, background .2s ease, color .2s ease;
     }
-    .menu-socials a:hover{
+
+    .menu-socials a:hover {
       transform:translateY(-2px);
       background:#ffffff;
       color:var(--brand-orange);
     }
-    .menu-socials svg{
+
+    .menu-socials svg {
       width:18px;
       height:18px;
       fill:currentColor;
     }
 
-    .layout{
+    .layout {
       min-height:100vh;
       position:relative;
       z-index:1;
@@ -213,15 +253,18 @@
       transition:margin-left .34s ease;
       background:#ffffff;
     }
-    body.menu-open .layout{ margin-left:var(--menu-total-width); }
 
-    .content{
+    body.menu-open .layout {
+      margin-left:var(--menu-total-width);
+    }
+
+    .content {
       padding:24px;
       position:relative;
       background:#ffffff;
     }
 
-    .hero{
+    .hero {
       min-height:auto;
       padding:24px 0 0;
       text-align:center;
@@ -230,14 +273,16 @@
       position:relative;
       isolation:isolate;
     }
-    .hero-inner{
+
+    .hero-inner {
       max-width:1280px;
       margin:0 auto;
       padding:0;
       position:relative;
       z-index:1;
     }
-    .hero-copy{
+
+    .hero-copy {
       width:100%;
       max-width:980px;
       margin:0 auto;
@@ -247,7 +292,8 @@
       position:relative;
       z-index:2;
     }
-    .hero-copy h1{
+
+    .hero-copy h1 {
       margin:0;
       font-size:clamp(2.5rem,5.8vw,5.4rem);
       line-height:.94;
@@ -255,14 +301,16 @@
       max-width:none;
       color:var(--brand-navy);
     }
-    .hero-copy p{
+
+    .hero-copy p {
       margin:16px 0 0;
       max-width:66ch;
       color:var(--muted);
       font-size:16px;
       line-height:1.75;
     }
-    .hero-showcase{
+
+    .hero-showcase {
       margin:8px auto 0;
       width:100%;
       max-width:1240px;
@@ -271,7 +319,8 @@
       display:block;
       overflow:hidden;
     }
-    .hero-ribbon{
+
+    .hero-ribbon {
       position:absolute;
       left:50%;
       bottom:-6px;
@@ -280,7 +329,8 @@
       height:360px;
       overflow:hidden;
     }
-    .hero-sweep{
+
+    .hero-sweep {
       position:absolute;
       bottom:-110px;
       border-radius:260px 260px 34px 34px;
@@ -288,7 +338,8 @@
       opacity:1;
       box-shadow:none;
     }
-    .hero-sweep.s1{
+
+    .hero-sweep.s1 {
       left:4%;
       width:15%;
       height:210px;
@@ -296,7 +347,8 @@
       transform:rotate(-14deg);
       z-index:2;
     }
-    .hero-sweep.s2{
+
+    .hero-sweep.s2 {
       left:15%;
       width:14%;
       height:250px;
@@ -304,7 +356,8 @@
       transform:rotate(-9deg);
       z-index:3;
     }
-    .hero-sweep.s3{
+
+    .hero-sweep.s3 {
       left:27%;
       width:14%;
       height:295px;
@@ -312,7 +365,8 @@
       transform:rotate(-4deg);
       z-index:4;
     }
-    .hero-sweep.s4{
+
+    .hero-sweep.s4 {
       left:40%;
       width:12%;
       height:350px;
@@ -320,7 +374,8 @@
       transform:rotate(0deg);
       z-index:5;
     }
-    .hero-sweep.s5{
+
+    .hero-sweep.s5 {
       left:52%;
       width:13%;
       height:312px;
@@ -328,7 +383,8 @@
       transform:rotate(5deg);
       z-index:4;
     }
-    .hero-sweep.s6{
+
+    .hero-sweep.s6 {
       left:64%;
       width:14%;
       height:268px;
@@ -336,7 +392,8 @@
       transform:rotate(10deg);
       z-index:3;
     }
-    .hero-sweep.s7{
+
+    .hero-sweep.s7 {
       left:76%;
       width:17%;
       height:225px;
@@ -345,12 +402,13 @@
       z-index:2;
     }
 
-    .section{
+    .section {
       padding:84px 0;
       position:relative;
       background:#ffffff;
     }
-    .section-title{
+
+    .section-title {
       margin:0 0 28px;
       text-align:center;
       font-size:clamp(2rem,4vw,3.4rem);
@@ -359,14 +417,15 @@
       color:var(--brand-navy);
     }
 
-    .services-section{
+    .services-section {
       padding:72px 24px 38px;
       margin-left:-24px;
       margin-right:-24px;
       background:var(--brand-yellow);
       overflow:hidden;
     }
-    .services-shell{
+
+    .services-shell {
       display:grid;
       grid-template-columns:minmax(320px, 390px) minmax(360px, 1fr);
       gap:2px;
@@ -374,21 +433,24 @@
       max-width:1040px;
       margin:0 auto;
     }
-    .services-visual{
+
+    .services-visual {
       position:relative;
       min-height:420px;
       display:flex;
       align-items:flex-end;
       justify-content:flex-start;
     }
-    .services-photo-stage{
+
+    .services-photo-stage {
       position:relative;
       width:100%;
       max-width:350px;
       height:390px;
       margin-left:-6px;
     }
-    .services-blob-yellow{
+
+    .services-blob-yellow {
       position:absolute;
       left:28px;
       bottom:74px;
@@ -399,7 +461,8 @@
       z-index:1;
       box-shadow:none;
     }
-    .services-dot-grid{
+
+    .services-dot-grid {
       position:absolute;
       left:24px;
       bottom:18px;
@@ -410,7 +473,8 @@
       opacity:.48;
       z-index:1;
     }
-    .services-photo-card{
+
+    .services-photo-card {
       position:absolute;
       left:56px;
       bottom:0;
@@ -423,13 +487,15 @@
       background:#d9cbb4;
       transition:transform .35s ease, box-shadow .35s ease;
     }
-    .services-photo-card img{
+
+    .services-photo-card img {
       width:100%;
       height:100%;
       object-fit:cover;
       object-position:center top;
     }
-    .services-mini-badge{
+
+    .services-mini-badge {
       position:absolute;
       display:flex;
       align-items:center;
@@ -439,13 +505,64 @@
       box-shadow:0 10px 24px rgba(0,0,0,.08);
       z-index:4;
     }
-    .services-mini-badge.one{ top:40px; left:66px; width:40px; height:40px; font-size:18px; transform:rotate(-8deg); }
-    .services-mini-badge.two{ top:6px; left:120px; width:48px; height:48px; font-size:23px; transform:rotate(8deg); }
-    .services-mini-badge.three{ top:90px; left:10px; width:52px; height:52px; font-size:26px; background:var(--brand-orange); color:#fff; border:3px solid #fff; }
-    .services-mini-badge.four{ top:78px; left:246px; width:44px; height:44px; font-size:22px; transform:rotate(8deg); }
-    .services-mini-badge.five{ top:176px; left:6px; width:38px; height:38px; font-size:18px; transform:rotate(-10deg); }
-    .services-mini-badge.six{ top:182px; left:252px; width:40px; height:40px; font-size:18px; transform:rotate(8deg); }
-    .services-spark{
+
+    .services-mini-badge.one {
+      top:40px;
+      left:66px;
+      width:40px;
+      height:40px;
+      font-size:18px;
+      transform:rotate(-8deg);
+    }
+
+    .services-mini-badge.two {
+      top:6px;
+      left:120px;
+      width:48px;
+      height:48px;
+      font-size:23px;
+      transform:rotate(8deg);
+    }
+
+    .services-mini-badge.three {
+      top:90px;
+      left:10px;
+      width:52px;
+      height:52px;
+      font-size:26px;
+      background:var(--brand-orange);
+      color:#fff;
+      border:3px solid #fff;
+    }
+
+    .services-mini-badge.four {
+      top:78px;
+      left:246px;
+      width:44px;
+      height:44px;
+      font-size:22px;
+      transform:rotate(8deg);
+    }
+
+    .services-mini-badge.five {
+      top:176px;
+      left:6px;
+      width:38px;
+      height:38px;
+      font-size:18px;
+      transform:rotate(-10deg);
+    }
+
+    .services-mini-badge.six {
+      top:182px;
+      left:252px;
+      width:40px;
+      height:40px;
+      font-size:18px;
+      transform:rotate(8deg);
+    }
+
+    .services-spark {
       position:absolute;
       z-index:4;
       color:#ffffff;
@@ -453,11 +570,25 @@
       line-height:1;
       opacity:.9;
     }
-    .services-spark.one{ top:40px; left:222px; }
-    .services-spark.two{ top:148px; left:46px; font-size:24px; }
-    .services-spark.three{ top:130px; left:212px; font-size:22px; }
 
-    .services-content{
+    .services-spark.one {
+      top:40px;
+      left:222px;
+    }
+
+    .services-spark.two {
+      top:148px;
+      left:46px;
+      font-size:24px;
+    }
+
+    .services-spark.three {
+      top:130px;
+      left:212px;
+      font-size:22px;
+    }
+
+    .services-content {
       display:flex;
       flex-direction:column;
       align-items:flex-start;
@@ -468,7 +599,8 @@
       padding-top:0;
       padding-left:0;
     }
-    .services-tabs{
+
+    .services-tabs {
       position:absolute;
       top:0;
       right:-180px;
@@ -487,7 +619,8 @@
       border-radius:0;
       z-index:4;
     }
-    .service-tab{
+
+    .service-tab {
       min-width:120px;
       background:transparent;
       border:none;
@@ -506,7 +639,8 @@
       text-align:center;
       transition:transform .22s ease,color .22s ease,filter .22s ease,opacity .22s ease;
     }
-    .service-tab svg{
+
+    .service-tab svg {
       width:32px;
       height:32px;
       stroke:currentColor;
@@ -516,27 +650,31 @@
       stroke-linejoin:round;
       transition:transform .22s ease,color .22s ease;
     }
-    .service-tab.active{
+
+    .service-tab.active {
       transform:translateX(-4px);
       filter:drop-shadow(0 10px 18px rgba(0,0,0,.08));
     }
-    .service-tab:hover{
+
+    .service-tab:hover {
       transform:translateX(-5px);
       filter:drop-shadow(0 10px 18px rgba(0,0,0,.08));
     }
+
     .service-tab:hover svg,
-    .service-tab.active svg{
+    .service-tab.active svg {
       transform:scale(1.08);
     }
 
-    .services-panel{
+    .services-panel {
       width:100%;
       max-width:690px;
       position:relative;
       min-height:390px;
       padding-right:220px;
     }
-    .service-view{
+
+    .service-view {
       position:absolute;
       inset:0;
       display:grid;
@@ -548,14 +686,19 @@
       transform:translateX(80px);
       transition:opacity .45s ease, transform .45s cubic-bezier(.22,1,.36,1);
     }
-    .service-view.active{
+
+    .service-view.active {
       opacity:1;
       pointer-events:auto;
       transform:translateX(0);
       z-index:2;
     }
-    .service-copy{text-align:left}
-    .services-word{
+
+    .service-copy {
+      text-align:left;
+    }
+
+    .services-word {
       margin:0 0 12px;
       font-size:clamp(1.85rem, 3vw, 2.6rem);
       line-height:.95;
@@ -564,7 +707,8 @@
       color:var(--brand-red);
       width:100%;
     }
-    .service-copy h3{
+
+    .service-copy h3 {
       margin:0 0 12px;
       font-size:clamp(1.35rem, 2.4vw, 2rem);
       line-height:1;
@@ -572,19 +716,22 @@
       color:var(--brand-navy);
       max-width:13ch;
     }
-    .service-copy p{
+
+    .service-copy p {
       margin:0 0 18px;
       color:#4f453b;
       font-size:.97rem;
       line-height:1.75;
       max-width:32rem;
     }
-    .service-bullets{
+
+    .service-bullets {
       display:grid;
       gap:10px;
       margin:0;
     }
-    .service-bullets span{
+
+    .service-bullets span {
       display:flex;
       align-items:center;
       gap:10px;
@@ -593,7 +740,8 @@
       font-weight:700;
       letter-spacing:.01em;
     }
-    .service-bullets span::before{
+
+    .service-bullets span::before {
       content:"";
       width:10px;
       height:10px;
@@ -601,14 +749,16 @@
       background:currentColor;
       flex:0 0 auto;
     }
-    .service-media{
+
+    .service-media {
       position:relative;
       height:320px;
       display:flex;
       align-items:flex-end;
       justify-content:center;
     }
-    .service-media-shape{
+
+    .service-media-shape {
       position:absolute;
       left:18px;
       bottom:52px;
@@ -618,7 +768,8 @@
       background:var(--media-accent, #ffffff);
       z-index:1;
     }
-    .service-media-dots{
+
+    .service-media-dots {
       position:absolute;
       left:10px;
       bottom:8px;
@@ -629,7 +780,8 @@
       opacity:.55;
       z-index:1;
     }
-    .service-media-card{
+
+    .service-media-card {
       position:absolute;
       left:40px;
       bottom:0;
@@ -641,13 +793,15 @@
       background:#d7c8b5;
       z-index:3;
     }
-    .service-media-card img{
+
+    .service-media-card img {
       width:100%;
       height:100%;
       object-fit:cover;
       object-position:center;
     }
-    .service-media-icon{
+
+    .service-media-icon {
       position:absolute;
       top:16px;
       right:18px;
@@ -661,7 +815,8 @@
       z-index:4;
       color:var(--media-icon, var(--brand-navy));
     }
-    .service-media-icon svg{
+
+    .service-media-icon svg {
       width:26px;
       height:26px;
       stroke:currentColor;
@@ -670,11 +825,12 @@
       stroke-linecap:round;
       stroke-linejoin:round;
     }
-    .service-media-label{
+
+    .service-media-label {
       display:none;
     }
 
-    .projects-band{
+    .projects-band {
       position:relative;
       margin:40px 0 24px;
       padding:34px 26px 34px;
@@ -683,24 +839,28 @@
       overflow:visible;
       isolation:isolate;
     }
+
     .projects-band::before,
-    .projects-band::after{
+    .projects-band::after {
       content:none;
     }
-    .projects-stage{
+
+    .projects-stage {
       padding:24px 12px 24px;
     }
-    .project-grid{
+
+    .project-grid {
       display:grid;
       grid-template-columns:0.94fr 0.8fr 0.8fr;
       grid-template-areas:
-      "a b c"
-      "a d e";
+        "a b c"
+        "a d e";
       gap:14px;
       max-width:920px;
       margin:0 auto;
     }
-    .project-card{
+
+    .project-card {
       position:relative;
       min-height:220px;
       border-radius:28px;
@@ -709,7 +869,8 @@
       background:linear-gradient(135deg,#D62828 0%,#F77F00 33%,#FCBF49 66%,#003049 100%);
       box-shadow:none;
     }
-    .project-card::before{
+
+    .project-card::before {
       content:"";
       position:absolute;
       inset:4px;
@@ -717,7 +878,8 @@
       background:#ffffff;
       z-index:1;
     }
-    .project-card img{
+
+    .project-card img {
       position:relative;
       z-index:2;
       width:100%;
@@ -725,48 +887,84 @@
       object-fit:cover;
       border-radius:20px;
     }
-    .project-card.tall{
+
+    .project-card.tall {
       grid-area:a;
       min-height:470px;
       border-radius:120px 28px 28px 28px;
     }
-    .project-card.tall::before{ border-radius:116px 24px 24px 24px; }
-    .project-card.tall img{ border-radius:112px 20px 20px 20px; }
-    .project-card.arch{
+
+    .project-card.tall::before {
+      border-radius:116px 24px 24px 24px;
+    }
+
+    .project-card.tall img {
+      border-radius:112px 20px 20px 20px;
+    }
+
+    .project-card.arch {
       grid-area:b;
       min-height:220px;
       border-radius:100px 100px 24px 24px;
     }
-    .project-card.arch::before{ border-radius:96px 96px 20px 20px; }
-    .project-card.arch img{ border-radius:92px 92px 16px 16px; }
-    .project-card.soft{
+
+    .project-card.arch::before {
+      border-radius:96px 96px 20px 20px;
+    }
+
+    .project-card.arch img {
+      border-radius:92px 92px 16px 16px;
+    }
+
+    .project-card.soft {
       grid-area:c;
       min-height:220px;
       border-radius:24px 76px 24px 76px;
     }
-    .project-card.soft::before{ border-radius:20px 72px 20px 72px; }
-    .project-card.soft img{ border-radius:16px 68px 16px 68px; }
-    .project-card.wide{
+
+    .project-card.soft::before {
+      border-radius:20px 72px 20px 72px;
+    }
+
+    .project-card.soft img {
+      border-radius:16px 68px 16px 68px;
+    }
+
+    .project-card.wide {
       grid-area:d;
       min-height:220px;
       border-radius:24px;
     }
-    .project-card.wide::before{ border-radius:20px; }
-    .project-card.wide img{ border-radius:16px; }
-    .project-card.blob{
+
+    .project-card.wide::before {
+      border-radius:20px;
+    }
+
+    .project-card.wide img {
+      border-radius:16px;
+    }
+
+    .project-card.blob {
       grid-area:e;
       min-height:220px;
       border-radius:28px 28px 100px 28px;
     }
-    .project-card.blob::before{ border-radius:24px 24px 96px 24px; }
-    .project-card.blob img{ border-radius:20px 20px 92px 20px; }
 
-    .about-zone{
+    .project-card.blob::before {
+      border-radius:24px 24px 96px 24px;
+    }
+
+    .project-card.blob img {
+      border-radius:20px 20px 92px 20px;
+    }
+
+    .about-zone {
       margin-top:34px;
       padding:36px 0 10px;
       border-top:none;
     }
-    .about-lead{
+
+    .about-lead {
       max-width:22ch;
       margin:0 auto 24px;
       text-align:center;
@@ -775,44 +973,57 @@
       letter-spacing:-.07em;
       color:var(--brand-navy);
     }
-    .about-lead .accent{ color:var(--brand-red); }
-    .about-lead .lead-red{ color:var(--brand-red); }
-    .about-panel{
+
+    .about-lead .accent {
+      color:var(--brand-red);
+    }
+
+    .about-lead .lead-red {
+      color:var(--brand-red);
+    }
+
+    .about-panel {
       background:transparent;
       border-radius:30px;
       padding:10px 0 0;
       border:none;
       box-shadow:none;
     }
-    .about-grid{
+
+    .about-grid {
       display:grid;
       grid-template-columns:1.04fr .96fr;
       gap:26px;
       align-items:center;
     }
-    .about-copy-wrap{
+
+    .about-copy-wrap {
       padding:10px 8px 10px 0;
     }
-    .about-panel h4{
+
+    .about-panel h4 {
       margin:0 0 10px;
       color:var(--brand-red);
       font-size:1rem;
       line-height:1.2;
     }
-    .about-panel h3{
+
+    .about-panel h3 {
       margin:0 0 16px;
       font-size:2.2rem;
       letter-spacing:-.04em;
       color:var(--brand-navy);
     }
-    .about-panel p{
+
+    .about-panel p {
       margin:0 0 14px;
       color:var(--muted);
       font-size:15px;
       line-height:1.8;
       max-width:58ch;
     }
-    .about-photo{
+
+    .about-photo {
       position:relative;
       min-height:340px;
       max-width:360px;
@@ -820,11 +1031,11 @@
       border-radius:34px;
       padding:4px;
       overflow:hidden;
-      background:
-      linear-gradient(135deg, #003049 0%, #d62828 30%, #f77f00 62%, #fcbf49 100%);
+      background:linear-gradient(135deg, #003049 0%, #d62828 30%, #f77f00 62%, #fcbf49 100%);
       box-shadow:0 18px 34px rgba(0,48,73,.08);
     }
-    .about-photo::before{
+
+    .about-photo::before {
       content:"";
       position:absolute;
       inset:4px;
@@ -832,7 +1043,8 @@
       background:#ffffff;
       z-index:1;
     }
-    .about-photo img{
+
+    .about-photo img {
       position:relative;
       z-index:2;
       width:100%;
@@ -842,7 +1054,7 @@
       border-radius:26px;
     }
 
-    .cta-band{
+    .cta-band {
       margin-top:24px;
       display:grid;
       grid-template-columns:1fr auto;
@@ -852,7 +1064,8 @@
       border-top:none;
       min-height:92px;
     }
-    .cta-button{
+
+    .cta-button {
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -866,12 +1079,13 @@
       font-size:1rem;
       transition:background .2s ease, transform .2s ease;
     }
-    .cta-button:hover{
+
+    .cta-button:hover {
       background:var(--brand-red);
       transform:translateY(-1px);
     }
 
-    .blog-section{
+    .blog-section {
       width:calc(100% + 48px);
       margin-left:-24px;
       margin-right:-24px;
@@ -880,16 +1094,18 @@
       overflow:hidden;
       position:relative;
     }
-    .blog-section::before{
+
+    .blog-section::before {
       content:"";
       position:absolute;
       inset:0;
       background:
-      radial-gradient(circle at 12% 20%, rgba(252,191,73,.18), transparent 24%),
-      radial-gradient(circle at 88% 78%, rgba(214,40,40,.16), transparent 22%);
+        radial-gradient(circle at 12% 20%, rgba(252,191,73,.18), transparent 24%),
+        radial-gradient(circle at 88% 78%, rgba(214,40,40,.16), transparent 22%);
       pointer-events:none;
     }
-    .blog-wrap{
+
+    .blog-wrap {
       position:relative;
       z-index:1;
       width:min(100% - 48px, 1280px);
@@ -899,7 +1115,8 @@
       gap:28px;
       align-items:start;
     }
-    .blog-side-title{
+
+    .blog-side-title {
       font-size:clamp(2.8rem, 7vw, 5.6rem);
       line-height:.9;
       letter-spacing:-.08em;
@@ -909,18 +1126,21 @@
       top:40px;
       text-align:left;
     }
-    .blog-board{
+
+    .blog-board {
       display:grid;
       gap:18px;
       min-height:360px;
     }
-    .blog-intro{
+
+    .blog-intro {
       color:rgba(255,255,255,.82);
       font-size:15px;
       line-height:1.8;
       max-width:58ch;
     }
-    .blog-marquee{
+
+    .blog-marquee {
       position:relative;
       overflow:hidden;
       border-radius:28px;
@@ -930,7 +1150,8 @@
       backdrop-filter:blur(10px);
       min-height:220px;
     }
-    .blog-track{
+
+    .blog-track {
       display:flex;
       width:max-content;
       gap:18px;
@@ -938,7 +1159,8 @@
       padding:0 18px;
       align-items:stretch;
     }
-    .blog-topic{
+
+    .blog-topic {
       flex:0 0 320px;
       min-height:170px;
       background:#ffffff;
@@ -949,7 +1171,8 @@
       flex-direction:column;
       justify-content:space-between;
     }
-    .blog-topic .kicker{
+
+    .blog-topic .kicker {
       color:var(--brand-orange);
       font-size:12px;
       font-weight:800;
@@ -957,7 +1180,8 @@
       text-transform:uppercase;
       margin-bottom:10px;
     }
-    .blog-topic h3{
+
+    .blog-topic h3 {
       margin:0;
       color:var(--brand-navy);
       font-size:1.28rem;
@@ -965,23 +1189,26 @@
       letter-spacing:-.04em;
       max-width:14ch;
     }
-    .blog-topic .topic-box{
+
+    .blog-topic .topic-box {
       margin-top:18px;
       min-height:74px;
       border-radius:18px;
       background:
-      linear-gradient(135deg, rgba(0,48,73,.08), rgba(247,127,0,.10), rgba(252,191,73,.18));
+        linear-gradient(135deg, rgba(0,48,73,.08), rgba(247,127,0,.10), rgba(252,191,73,.18));
       border:1px solid rgba(0,48,73,.08);
     }
-    @keyframes blogScroll{
-      0%{ transform:translateX(0); }
-      100%{ transform:translateX(-50%); }
+
+    @keyframes blogScroll {
+      0% { transform:translateX(0); }
+      100% { transform:translateX(-50%); }
     }
 
-    .contact-section{
+    .contact-section {
       position:relative;
     }
-    .contact-grid{
+
+    .contact-grid {
       display:grid;
       grid-template-columns:.88fr 1.12fr;
       gap:22px;
@@ -990,7 +1217,7 @@
     }
 
     /* CAMBIO PEDIDO: sin cuadros/fondo en Contact */
-    .contact-card{
+    .contact-card {
       border:none;
       border-radius:0;
       background:#ffffff;
@@ -998,29 +1225,34 @@
       backdrop-filter:none;
       box-shadow:none;
     }
-    .contact-card .inner{
+
+    .contact-card .inner {
       padding:0;
       height:100%;
     }
-    .contact-card h3{
+
+    .contact-card h3 {
       margin:0 0 10px;
       font-size:1.9rem;
       line-height:1;
       letter-spacing:-.04em;
       color:var(--brand-navy);
     }
-    .contact-card p{
+
+    .contact-card p {
       margin:0;
       color:var(--muted);
       font-size:15px;
       line-height:1.75;
     }
-    .contact-meta{
+
+    .contact-meta {
       display:grid;
       gap:14px;
       margin-top:20px;
     }
-    .contact-meta-item{
+
+    .contact-meta-item {
       padding:0;
       border-radius:0;
       background:transparent;
@@ -1029,32 +1261,37 @@
       font-size:14px;
     }
 
-    .contact-form-shell{
+    .contact-form-shell {
       position:relative;
     }
-    .contact-form{
+
+    .contact-form {
       display:grid;
       gap:16px;
     }
-    .form-row{
+
+    .form-row {
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:14px;
     }
-    .field{
+
+    .field {
       display:grid;
       gap:8px;
     }
-    .field label{
+
+    .field label {
       font-size:13px;
       font-weight:800;
       letter-spacing:.08em;
       text-transform:uppercase;
       color:var(--brand-navy);
     }
+
     .input,
     .select,
-    .textarea{
+    .textarea {
       width:100%;
       border:1px solid rgba(0,48,73,.14);
       background:#ffffff;
@@ -1065,36 +1302,43 @@
       outline:none;
       transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
     }
-    .textarea{
+
+    .textarea {
       min-height:150px;
       padding:16px;
       resize:vertical;
     }
+
     .input:focus,
     .select:focus,
-    .textarea:focus{
+    .textarea:focus {
       border-color:rgba(0,48,73,.45);
       box-shadow:0 0 0 4px rgba(0,48,73,.08);
     }
-    .phone-grid{
+
+    .phone-grid {
       display:grid;
       grid-template-columns:140px 1fr;
       gap:12px;
     }
-    .service-checks{
+
+    .service-checks {
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:10px;
     }
-    .check-option{
+
+    .check-option {
       position:relative;
     }
-    .check-option input{
+
+    .check-option input {
       position:absolute;
       opacity:0;
       pointer-events:none;
     }
-    .check-option span{
+
+    .check-option span {
       min-height:52px;
       display:flex;
       align-items:center;
@@ -1110,14 +1354,16 @@
       transition:all .2s ease;
       cursor:pointer;
     }
-    .check-option input:checked + span{
+
+    .check-option input:checked + span {
       background:var(--brand-navy);
       color:#ffffff;
       border-color:var(--brand-navy);
       transform:translateY(-1px);
       box-shadow:0 12px 24px rgba(0,48,73,.16);
     }
-    .contact-submit{
+
+    .contact-submit {
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -1132,20 +1378,22 @@
       cursor:pointer;
       transition:transform .2s ease, background .2s ease;
     }
-    .contact-submit:hover{
+
+    .contact-submit:hover {
       background:var(--brand-red);
       transform:translateY(-1px);
     }
-    .contact-note{
+
+    .contact-note {
       color:var(--muted);
       font-size:13px;
       line-height:1.65;
     }
-    .contact-success{
+
+    .contact-success {
       position:absolute;
       inset:0;
-      background:
-      linear-gradient(180deg, rgba(0,48,73,.96) 0%, rgba(13,63,99,.96) 100%);
+      background:linear-gradient(180deg, rgba(0,48,73,.96) 0%, rgba(13,63,99,.96) 100%);
       color:#ffffff;
       display:flex;
       align-items:center;
@@ -1159,37 +1407,43 @@
       transition:opacity .35s ease, visibility .35s ease;
       z-index:8;
     }
-    .contact-success.show{
+
+    .contact-success.show {
       opacity:1;
       visibility:visible;
       pointer-events:auto;
     }
-    .contact-success-inner{
+
+    .contact-success-inner {
       max-width:560px;
       display:grid;
       gap:14px;
     }
-    .contact-success-kicker{
+
+    .contact-success-kicker {
       color:var(--brand-yellow);
       font-size:12px;
       font-weight:800;
       letter-spacing:.14em;
       text-transform:uppercase;
     }
-    .contact-success h3{
+
+    .contact-success h3 {
       margin:0;
       font-size:clamp(2rem,4vw,3.2rem);
       line-height:.95;
       letter-spacing:-.06em;
       color:#ffffff;
     }
-    .contact-success p{
+
+    .contact-success p {
       margin:0;
       color:rgba(255,255,255,.84);
       font-size:15px;
       line-height:1.8;
     }
-    .contact-success button{
+
+    .contact-success button {
       justify-self:center;
       min-height:52px;
       padding:0 22px;
@@ -1202,7 +1456,7 @@
     }
 
     /* CAMBIO PEDIDO: texto de abajo */
-    .contact-bottom-text{
+    .contact-bottom-text {
       margin:34px auto 0;
       max-width:18ch;
       text-align:center;
@@ -1212,7 +1466,7 @@
       color:var(--brand-navy);
     }
 
-    .footer{
+    .footer {
       margin-top:70px;
       border-top:1px dashed rgba(0,48,73,.18);
       padding:26px 0 18px;
@@ -1223,18 +1477,21 @@
       color:var(--brand-navy);
       font-size:14px;
     }
-    .footer-copy{
+
+    .footer-copy {
       color:var(--brand-navy);
       font-weight:700;
     }
-    .footer-socials{
+
+    .footer-socials {
       display:flex;
       align-items:center;
       justify-content:center;
       gap:14px;
       flex-wrap:wrap;
     }
-    .footer-socials a{
+
+    .footer-socials a {
       width:46px;
       height:46px;
       display:grid;
@@ -1245,38 +1502,43 @@
       color:var(--brand-navy);
       transition:transform .2s ease, background .2s ease, color .2s ease;
     }
-    .footer-socials a:hover{
+
+    .footer-socials a:hover {
       transform:translateY(-2px);
       background:var(--brand-navy);
       color:#ffffff;
     }
-    .footer-socials svg{
+
+    .footer-socials svg {
       width:20px;
       height:20px;
       fill:currentColor;
       display:block;
     }
-    .footer-links{
+
+    .footer-links {
       display:flex;
       justify-content:flex-end;
       gap:16px;
       flex-wrap:wrap;
     }
-    .footer-links a{
+
+    .footer-links a {
       color:var(--brand-navy);
       font-weight:700;
       font-size:13px;
       letter-spacing:.02em;
     }
 
-    @media (max-width: 1100px){
+    @media (max-width: 1100px) {
       .services-shell,
       .about-grid,
       .blog-wrap,
-      .contact-grid{
+      .contact-grid {
         grid-template-columns:1fr;
       }
-      .service-view{
+
+      .service-view {
         position:relative;
         grid-template-columns:1fr;
         opacity:0;
@@ -1284,117 +1546,148 @@
         overflow:hidden;
         transform:translateX(50px);
       }
-      .service-view.active{
+
+      .service-view.active {
         height:auto;
         opacity:1;
         transform:translateX(0);
       }
-      .services-tabs{
+
+      .services-tabs {
         position:relative;
         top:auto;
         right:auto;
         align-items:center;
         margin:0 auto 24px;
       }
-      .services-panel{
+
+      .services-panel {
         padding-right:0;
       }
-      .project-grid{
+
+      .project-grid {
         grid-template-columns:1fr 1fr;
         grid-template-areas:
-        "a a"
-        "b c"
-        "d e";
+          "a a"
+          "b c"
+          "d e";
         max-width:none;
       }
-      .footer{
+
+      .footer {
         grid-template-columns:1fr;
         text-align:center;
       }
+
       .footer-copy,
-      .footer-links{
+      .footer-links {
         justify-content:center;
       }
     }
 
-    @media (max-width: 760px){
-      :root{
+    @media (max-width: 760px) {
+      :root {
         --menu-rail-width:78px;
         --sidebar-width:260px;
         --menu-total-width:calc(var(--menu-rail-width) + var(--sidebar-width));
       }
-      .project-grid{
+
+      .project-grid {
         grid-template-columns:1fr;
         grid-template-areas:
-        "a"
-        "b"
-        "c"
-        "d"
-        "e";
+          "a"
+          "b"
+          "c"
+          "d"
+          "e";
       }
+
       .project-card,
       .project-card.tall,
       .project-card.arch,
       .project-card.soft,
       .project-card.wide,
-      .project-card.blob{
+      .project-card.blob {
         min-height:230px;
         border-radius:24px;
       }
+
       .project-card::before,
       .project-card.tall::before,
       .project-card.arch::before,
       .project-card.soft::before,
       .project-card.wide::before,
-      .project-card.blob::before{
+      .project-card.blob::before {
         border-radius:20px;
       }
+
       .project-card img,
       .project-card.tall img,
       .project-card.arch img,
       .project-card.soft img,
       .project-card.wide img,
-      .project-card.blob img{
+      .project-card.blob img {
         border-radius:16px;
       }
+
       .cta-band,
       .form-row,
       .phone-grid,
-      .service-checks{
+      .service-checks {
         grid-template-columns:1fr;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="menu-shell">
     <aside class="menu-panel" id="sideMenu">
       <div class="brand-box">
         <a class="brand" href="#hero">The Boss Agency Co</a>
         <div class="nav-stack">
-          <a class="nav-link" href="#projects"><span>Projects</span><small>01</small></a>
-          <a class="nav-link" href="#about"><span>About</span><small>02</small></a>
-          <a class="nav-link" href="#services"><span>Services</span><small>03</small></a>
-          <a class="nav-link" href="#blog"><span>Blog</span><small>04</small></a>
-          <a class="nav-link" href="#contact"><span>Contact</span><small>05</small></a>
+          <a class="nav-link" href="#projects">
+            <span>Projects</span>
+            <small>01</small>
+          </a>
+          <a class="nav-link" href="#about">
+            <span>About</span>
+            <small>02</small>
+          </a>
+          <a class="nav-link" href="#services">
+            <span>Services</span>
+            <small>03</small>
+          </a>
+          <a class="nav-link" href="#blog">
+            <span>Blog</span>
+            <small>04</small>
+          </a>
+          <a class="nav-link" href="#contact">
+            <span>Contact</span>
+            <small>05</small>
+          </a>
         </div>
       </div>
+
       <div class="menu-socials">
         <a href="#" aria-label="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95Zm8.95 1.55a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.35A5.65 5.65 0 1 1 6.35 12 5.66 5.66 0 0 1 12 6.35Zm0 1.8A3.85 3.85 0 1 0 15.85 12 3.85 3.85 0 0 0 12 8.15Z"/>
           </svg>
         </a>
+
         <a href="#" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M13.5 22v-8.2h2.76l.41-3.2H13.5V8.56c0-.92.26-1.55 1.58-1.55h1.69V4.15c-.29-.04-1.28-.12-2.44-.12-2.42 0-4.08 1.48-4.08 4.2v2.37H7.5v3.2h2.75V22z"/>
           </svg>
         </a>
+
         <a href="#" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48 2.49 2.49 0 0 1 4.98 3.5ZM3 9h4v12H3Zm6.5 0h3.83v1.64h.05c.53-1.01 1.83-2.08 3.77-2.08 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.58c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94V21h-4Z"/>
           </svg>
         </a>
+
         <a href="#" aria-label="YouTube">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M23.5 7.2a3 3 0 0 0-2.11-2.12C19.52 4.5 12 4.5 12 4.5s-7.52 0-9.39.58A3 3 0 0 0 .5 7.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 4.8 3 3 0 0 0 2.11 2.12C4.48 19.5 12 19.5 12 19.5s7.52 0 9.39-.58a3 3 0 0 0 2.11-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-4.8ZM9.6 15.3V8.7l6 3.3Z"/>
@@ -1403,7 +1696,14 @@
       </div>
     </aside>
 
-    <button class="menu-trigger" id="menuToggle" type="button" aria-expanded="false" aria-controls="sideMenu" aria-label="Toggle menu">
+    <button
+      class="menu-trigger"
+      id="menuToggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="sideMenu"
+      aria-label="Toggle menu"
+    >
       <span class="menu-trigger-inner">
         <span class="menu-tab-text">THE BOSS AGENCY</span>
         <span class="menu-tab-line" aria-hidden="true"></span>
@@ -1413,6 +1713,7 @@
 
   <div class="layout">
     <main class="content">
+      <!-- HERO -->
       <section class="hero" id="hero">
         <div class="hero-inner">
           <div class="hero-copy">
@@ -1422,6 +1723,7 @@
               Google My Business optimization, and clean execution that actually moves the business forward.
             </p>
           </div>
+
           <div class="hero-showcase" aria-hidden="true">
             <div class="hero-ribbon">
               <span class="hero-sweep s1"></span>
@@ -1436,30 +1738,43 @@
         </div>
       </section>
 
+      <!-- SERVICES -->
       <section class="section services-section" id="services">
         <div class="services-shell">
           <div class="services-visual">
             <div class="services-photo-stage">
               <div class="services-blob-yellow"></div>
               <div class="services-dot-grid"></div>
+
               <div class="services-mini-badge one">🩵</div>
               <div class="services-mini-badge two">🧠</div>
               <div class="services-mini-badge three">👑</div>
               <div class="services-mini-badge four">✨</div>
               <div class="services-mini-badge five">💅</div>
               <div class="services-mini-badge six">💻</div>
+
               <div class="services-spark one">✦</div>
               <div class="services-spark two">✦</div>
               <div class="services-spark three">〰</div>
+
               <div class="services-photo-card">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80" alt="Founder portrait" />
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80"
+                  alt="Founder portrait"
+                />
               </div>
             </div>
           </div>
 
           <div class="services-content">
             <div class="services-tabs" role="tablist" aria-label="Service categories">
-              <button class="service-tab active" type="button" data-service="branding" role="tab" aria-selected="true">
+              <button
+                class="service-tab active"
+                type="button"
+                data-service="branding"
+                role="tab"
+                aria-selected="true"
+              >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
                   <circle cx="9.5" cy="7" r="3"></circle>
@@ -1469,7 +1784,13 @@
                 <span>Branding</span>
               </button>
 
-              <button class="service-tab" type="button" data-service="webdev" role="tab" aria-selected="false">
+              <button
+                class="service-tab"
+                type="button"
+                data-service="webdev"
+                role="tab"
+                aria-selected="false"
+              >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <rect x="3" y="4" width="18" height="14" rx="2"></rect>
                   <path d="M8 20h8"></path>
@@ -1478,7 +1799,13 @@
                 <span>Web Dev</span>
               </button>
 
-              <button class="service-tab" type="button" data-service="marketing" role="tab" aria-selected="false">
+              <button
+                class="service-tab"
+                type="button"
+                data-service="marketing"
+                role="tab"
+                aria-selected="false"
+              >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M18 20V10"></path>
                   <path d="M12 20V4"></path>
@@ -1487,7 +1814,13 @@
                 <span>Marketing</span>
               </button>
 
-              <button class="service-tab" type="button" data-service="strategy" role="tab" aria-selected="false">
+              <button
+                class="service-tab"
+                type="button"
+                data-service="strategy"
+                role="tab"
+                aria-selected="false"
+              >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M8 6h13"></path>
                   <path d="M8 12h13"></path>
@@ -1499,7 +1832,13 @@
                 <span>Strategy</span>
               </button>
 
-              <button class="service-tab" type="button" data-service="ai" role="tab" aria-selected="false">
+              <button
+                class="service-tab"
+                type="button"
+                data-service="ai"
+                role="tab"
+                aria-selected="false"
+              >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 3l1.8 3.6L18 8.4l-3 2.9.7 4.2L12 13.8 8.3 15.5 9 11.3 6 8.4l4.2-.8L12 3z"></path>
                 </svg>
@@ -1508,7 +1847,12 @@
             </div>
 
             <div class="services-panel">
-              <article class="service-view active" data-view="branding" style="--media-accent:#ffffff; --media-icon:#D62828;">
+              <!-- BRANDING -->
+              <article
+                class="service-view active"
+                data-view="branding"
+                style="--media-accent:#ffffff; --media-icon:#D62828;"
+              >
                 <div class="service-copy">
                   <h2 class="services-word">Services</h2>
                   <h3>Brand identities that look premium and feel consistent.</h3>
@@ -1522,9 +1866,11 @@
                     <span>Messaging alignment for premium positioning</span>
                   </div>
                 </div>
+
                 <div class="service-media">
                   <div class="service-media-shape"></div>
                   <div class="service-media-dots"></div>
+
                   <div class="service-media-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
@@ -1533,13 +1879,22 @@
                       <path d="M23 11h-6"></path>
                     </svg>
                   </div>
+
                   <div class="service-media-card">
-                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Brand strategy session" />
+                    <img
+                      src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80"
+                      alt="Brand strategy session"
+                    />
                   </div>
                 </div>
               </article>
 
-              <article class="service-view" data-view="webdev" style="--media-accent:#ffffff; --media-icon:#003049;">
+              <!-- WEB DEV -->
+              <article
+                class="service-view"
+                data-view="webdev"
+                style="--media-accent:#ffffff; --media-icon:#003049;"
+              >
                 <div class="service-copy">
                   <h2 class="services-word">Services</h2>
                   <h3>Web experiences that feel polished and convert better.</h3>
@@ -1553,9 +1908,11 @@
                     <span>Clean structure for visibility and conversion</span>
                   </div>
                 </div>
+
                 <div class="service-media">
                   <div class="service-media-shape"></div>
                   <div class="service-media-dots"></div>
+
                   <div class="service-media-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <rect x="3" y="4" width="18" height="14" rx="2"></rect>
@@ -1563,13 +1920,22 @@
                       <path d="M12 18v2"></path>
                     </svg>
                   </div>
+
                   <div class="service-media-card">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Website design dashboard" />
+                    <img
+                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+                      alt="Website design dashboard"
+                    />
                   </div>
                 </div>
               </article>
 
-              <article class="service-view" data-view="marketing" style="--media-accent:#ffffff; --media-icon:#F77F00;">
+              <!-- MARKETING -->
+              <article
+                class="service-view"
+                data-view="marketing"
+                style="--media-accent:#ffffff; --media-icon:#F77F00;"
+              >
                 <div class="service-copy">
                   <h2 class="services-word">Services</h2>
                   <h3>Marketing systems that help your business get noticed faster.</h3>
@@ -1583,9 +1949,11 @@
                     <span>Audience-focused growth planning</span>
                   </div>
                 </div>
+
                 <div class="service-media">
                   <div class="service-media-shape"></div>
                   <div class="service-media-dots"></div>
+
                   <div class="service-media-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M18 20V10"></path>
@@ -1593,29 +1961,40 @@
                       <path d="M6 20v-6"></path>
                     </svg>
                   </div>
+
                   <div class="service-media-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Marketing analytics screen" />
+                    <img
+                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+                      alt="Marketing analytics dashboard"
+                    />
                   </div>
                 </div>
               </article>
 
-              <article class="service-view" data-view="strategy" style="--media-accent:#ffffff; --media-icon:#16110d;">
+              <!-- STRATEGY -->
+              <article
+                class="service-view"
+                data-view="strategy"
+                style="--media-accent:#ffffff; --media-icon:#003049;"
+              >
                 <div class="service-copy">
                   <h2 class="services-word">Services</h2>
-                  <h3>Strategy that gives direction before you waste time or budget.</h3>
+                  <h3>Strategy that makes your efforts feel aligned instead of random.</h3>
                   <p>
-                    We help you define what to do, what to stop doing, and where your business should focus
-                    so every next step feels sharper and more intentional.
+                    We help you organize your offer, audience, and actions so every move your business
+                    makes is easier to explain, easier to repeat, and easier to scale.
                   </p>
                   <div class="service-bullets">
-                    <span>Offer clarity and market positioning</span>
-                    <span>Content, brand, and funnel roadmap</span>
-                    <span>Decision support for smarter execution</span>
+                    <span>Offer and positioning structure</span>
+                    <span>Audience and journey mapping</span>
+                    <span>Roadmaps that match your capacity</span>
                   </div>
                 </div>
+
                 <div class="service-media">
                   <div class="service-media-shape"></div>
                   <div class="service-media-dots"></div>
+
                   <div class="service-media-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M8 6h13"></path>
@@ -1626,36 +2005,51 @@
                       <path d="M3 18h.01"></path>
                     </svg>
                   </div>
+
                   <div class="service-media-card">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Business planning session" />
+                    <img
+                      src="https://images.unsplash.com/photo-1522204502588-56c094ccb996?auto=format&fit=crop&w=1200&q=80"
+                      alt="Strategy workshop"
+                    />
                   </div>
                 </div>
               </article>
 
-              <article class="service-view" data-view="ai" style="--media-accent:#ffffff; --media-icon:#F6C51C;">
+              <!-- AI -->
+              <article
+                class="service-view"
+                data-view="ai"
+                style="--media-accent:#ffffff; --media-icon:#D62828;"
+              >
                 <div class="service-copy">
                   <h2 class="services-word">Services</h2>
-                  <h3>AI workflows that make your brand move quicker and cleaner.</h3>
+                  <h3>AI workflows that actually support your marketing and operations.</h3>
                   <p>
-                    We use AI as a smart support layer to speed up ideas, systems, content,
-                    and internal workflows without losing the human quality of the brand.
+                    We plug AI into your existing tools so your content, customer touchpoints,
+                    and operations get more leverage without turning into another shiny distraction.
                   </p>
                   <div class="service-bullets">
-                    <span>AI-assisted content and workflow support</span>
-                    <span>Automations for repetitive business tasks</span>
-                    <span>Faster production with better consistency</span>
+                    <span>AI-assisted content and outreach flows</span>
+                    <span>Automation of repetitive marketing tasks</span>
+                    <span>Playbooks your team can actually follow</span>
                   </div>
                 </div>
+
                 <div class="service-media">
                   <div class="service-media-shape"></div>
                   <div class="service-media-dots"></div>
+
                   <div class="service-media-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M12 3l1.8 3.6L18 8.4l-3 2.9.7 4.2L12 13.8 8.3 15.5 9 11.3 6 8.4l4.2-.8L12 3z"></path>
                     </svg>
                   </div>
+
                   <div class="service-media-card">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80" alt="AI interface and digital workflow" />
+                    <img
+                      src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+                      alt="AI-enabled workspace"
+                    />
                   </div>
                 </div>
               </article>
@@ -1664,155 +2058,168 @@
         </div>
       </section>
 
-      <section class="projects-band">
-        <div class="projects-stage">
-          <section class="section" id="projects" style="padding:0;">
-            <h2 class="section-title">Projects</h2>
+      <!-- PROJECTS -->
+      <section class="section" id="projects">
+        <h2 class="section-title">Selected client work</h2>
 
+        <div class="projects-band">
+          <div class="projects-stage">
             <div class="project-grid">
               <article class="project-card tall">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image one" />
+                <img
+                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80"
+                  alt="Project 1"
+                />
               </article>
 
               <article class="project-card arch">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image two" />
+                <img
+                  src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=80"
+                  alt="Project 2"
+                />
               </article>
 
               <article class="project-card soft">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image three" />
+                <img
+                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1200&q=80"
+                  alt="Project 3"
+                />
               </article>
 
               <article class="project-card wide">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image four" />
+                <img
+                  src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80"
+                  alt="Project 4"
+                />
               </article>
 
               <article class="project-card blob">
-                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image five" />
+                <img
+                  src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=80"
+                  alt="Project 5"
+                />
               </article>
             </div>
-          </section>
+          </div>
+        </div>
 
-          <section class="about-zone" id="about">
-            <h2 class="about-lead">We don’t do fluff. Just focused, <span class="accent">boss-level</span> work.</h2>
+        <div class="about-zone" id="about">
+          <p class="about-lead">
+            We build brands that feel <span class="lead-red">boss</span> and still make sense.
+          </p>
 
-            <div class="about-panel">
-              <div class="about-grid">
-                <div class="about-copy-wrap">
-                  <h4>A note from the founder</h4>
-                  <h3>Our journey &amp; vision</h3>
-                  <p>
-                    At The Boss Agency Co, we believe brands do not need more noise.
-                    They need stronger positioning, better execution, and a digital presence that feels clear and intentional.
-                  </p>
-                  <p>
-                    77777 77777 77777 if you still need to add the founder story, philosophy,
-                    credentials, mission, or why the agency was built in the first place.
-                  </p>
-                </div>
+          <div class="about-panel">
+            <div class="about-grid">
+              <div class="about-copy-wrap">
+                <h4>About the studio</h4>
+                <h3>Creative support that feels like an in-house partner.</h3>
+                <p>
+                  The Boss Agency Co is a small creative studio focused on helping small and mid-sized
+                  businesses organize their brand, upgrade their web presence, and install clean marketing systems.
+                </p>
+                <p>
+                  We care about simple structures, premium-feeling visuals, and execution that doesn’t require
+                  a full-time marketing team to maintain.
+                </p>
+                <p>
+                  You get a mix of strategic direction, hands-on design and build, and practical templates your
+                  team can actually use.
+                </p>
 
-                <div class="about-photo">
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80" alt="Founder portrait placeholder" />
+                <div class="cta-band">
+                  <a href="#contact" class="cta-button">
+                    Book a working session
+                  </a>
                 </div>
               </div>
 
-              <div class="cta-band">
-                <p style="margin:0;color:var(--muted);font-size:15px;line-height:1.7;">
-                  We build connections, experiences, and trust through branding, websites, content, and 77777.
-                </p>
-                <a class="cta-button" href="#contact">Let’s talk</a>
+              <div class="about-photo">
+                <img
+                  src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=1200&q=80"
+                  alt="Studio portrait"
+                />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </section>
 
+      <!-- BLOG -->
       <section class="blog-section" id="blog">
         <div class="blog-wrap">
-          <div class="blog-side-title">Blog</div>
+          <div class="blog-side-title">
+            Boss<br />Notes
+          </div>
 
           <div class="blog-board">
             <p class="blog-intro">
-              A space for insights, strategy notes, marketing ideas, branding direction, and the kind of conversations that help business owners make cleaner decisions.
+              Short notes, prompts, and playbooks for business owners who want a more premium brand and
+              cleaner marketing system without pretending to be a giant company.
             </p>
 
             <div class="blog-marquee">
               <div class="blog-track">
                 <article class="blog-topic">
                   <div>
-                    <div class="kicker">Topic</div>
-                    <h3>How branding changes perceived value</h3>
+                    <div class="kicker">BRAND</div>
+                    <h3>What “premium” actually looks like online</h3>
                   </div>
                   <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
                   <div>
-                    <div class="kicker">Topic</div>
-                    <h3>What makes a website feel premium</h3>
+                    <div class="kicker">WEB</div>
+                    <h3>Landing page sections that matter most</h3>
                   </div>
                   <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
                   <div>
-                    <div class="kicker">Topic</div>
-                    <h3>Social content that actually supports growth</h3>
+                    <div class="kicker">SYSTEMS</div>
+                    <h3>How to keep your marketing from feeling random</h3>
                   </div>
                   <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
                   <div>
-                    <div class="kicker">Topic</div>
-                    <h3>Why clear strategy beats more content</h3>
+                    <div class="kicker">AI</div>
+                    <h3>Using AI as a support, not a replacement</h3>
+                  </div>
+                  <div class="topic-box"></div>
+                </article>
+
+                <!-- duplicated for seamless marquee -->
+                <article class="blog-topic">
+                  <div>
+                    <div class="kicker">BRAND</div>
+                    <h3>What “premium” actually looks like online</h3>
                   </div>
                   <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
                   <div>
-                    <div class="kicker">Topic</div>
-                    <h3>Using AI without losing the brand voice</h3>
+                    <div class="kicker">WEB</div>
+                    <h3>Landing page sections that matter most</h3>
                   </div>
                   <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
                   <div>
-                    <div class="kicker">Topic</div>
-                    <h3>How branding changes perceived value</h3>
+                    <div class="kicker">SYSTEMS</div>
+                    <h3>How to keep your marketing from feeling random</h3>
                   </div>
                   <div class="topic-box"></div>
                 </article>
 
                 <article class="blog-topic">
                   <div>
-                    <div class="kicker">Topic</div>
-                    <h3>What makes a website feel premium</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
-
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>Social content that actually supports growth</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
-
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>Why clear strategy beats more content</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
-
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>Using AI without losing the brand voice</h3>
+                    <div class="kicker">AI</div>
+                    <h3>Using AI as a support, not a replacement</h3>
                   </div>
                   <div class="topic-box"></div>
                 </article>
@@ -1822,229 +2229,82 @@
         </div>
       </section>
 
+      <!-- CONTACT -->
       <section class="section contact-section" id="contact">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title">Let’s plan your next move</h2>
 
         <div class="contact-grid">
-          <article class="contact-card">
+          <div class="contact-card">
             <div class="inner">
-              <h3>Let’s build something strong.</h3>
+              <h3>Tell us where you want your brand to go.</h3>
               <p>
-                Share a few details about your business, what you need, and where you want to go next.
-                We’ll review your information and reach out with the right next step.
+                Share a bit about your business, your offer, and what “boss” looks like for you.
+                We’ll follow up with a short list of options and a simple next step.
               </p>
 
               <div class="contact-meta">
-                <div class="contact-meta-item">Email: hello@thebossagency.co</div>
-                <div class="contact-meta-item">Phone: +1 430-209-3120</div>
-                <div class="contact-meta-item">Services: Branding, Web Dev, Marketing, Strategy, AI</div>
+                <div class="contact-meta-item">
+                  Typical projects: brand refresh, new site, or marketing system clean-up.
+                </div>
+                <div class="contact-meta-item">
+                  We work best with founders and teams who care about quality and clarity.
+                </div>
               </div>
             </div>
-          </article>
+          </div>
 
-          <article class="contact-card contact-form-shell">
-            <div class="inner">
-              <form
-                id="bossContactForm"
-                class="contact-form"
-                action="https://formsubmit.co/hello@thebossagency.co"
-                method="POST"
-              >
-                <input type="hidden" name="_subject" value="New website inquiry - The Boss Agency Co">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-
-                <div class="form-row">
-                  <div class="field">
-                    <label for="fullName">Full name</label>
-                    <input class="input" id="fullName" name="Full Name" type="text" placeholder="Your full name" required>
-                  </div>
-
-                  <div class="field">
-                    <label for="emailAddress">Email</label>
-                    <input class="input" id="emailAddress" name="Email" type="email" placeholder="you@example.com" required>
-                  </div>
+          <div class="contact-form-shell">
+            <form
+              class="contact-form"
+              action="#"
+              method="post"
+            >
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" class="input" required />
                 </div>
 
                 <div class="field">
-                  <label>Phone number</label>
-                  <div class="phone-grid">
-                    <select class="select" name="Country Code" aria-label="Country code" required>
-                      <option value="+1 USA / Canada">+1 USA / Canada</option>
-                      <option value="+52 Mexico">+52 Mexico</option>
-                      <option value="+57 Colombia">+57 Colombia</option>
-                      <option value="+34 Spain">+34 Spain</option>
-                      <option value="+44 United Kingdom">+44 United Kingdom</option>
-                    </select>
-                    <input class="input" name="Phone Number" type="tel" placeholder="Phone number" required>
-                  </div>
+                  <label for="business">Business name</label>
+                  <input id="business" name="business" type="text" class="input" />
                 </div>
-
-                <div class="field">
-                  <label>What services do you need?</label>
-                  <div class="service-checks">
-                    <label class="check-option">
-                      <input type="checkbox" name="Services Needed[]" value="Branding">
-                      <span>Branding</span>
-                    </label>
-                    <label class="check-option">
-                      <input type="checkbox" name="Services Needed[]" value="Web Dev">
-                      <span>Web Dev</span>
-                    </label>
-                    <label class="check-option">
-                      <input type="checkbox" name="Services Needed[]" value="Marketing">
-                      <span>Marketing</span>
-                    </label>
-                    <label class="check-option">
-                      <input type="checkbox" name="Services Needed[]" value="Strategy">
-                      <span>Strategy</span>
-                    </label>
-                    <label class="check-option">
-                      <input type="checkbox" name="Services Needed[]" value="AI">
-                      <span>AI</span>
-                    </label>
-                  </div>
-                </div>
-
-                <div class="field">
-                  <label for="comments">Comments</label>
-                  <textarea class="textarea" id="comments" name="Comments" placeholder="Tell us about your business, goals, or project details." required></textarea>
-                </div>
-
-                <button class="contact-submit" type="submit">Send inquiry</button>
-
-                <p class="contact-note">
-                  This form sends your inquiry to hello@thebossagency.co.
-                  SMS notification can be added later with an external automation.
-                </p>
-              </form>
-            </div>
-
-            <div class="contact-success" id="contactSuccess">
-              <div class="contact-success-inner">
-                <div class="contact-success-kicker">Thank you</div>
-                <h3>Your information was received.</h3>
-                <p>
-                  We’ve reviewed your submission queue and your inquiry has been sent successfully.
-                  A member of The Boss Agency Co will follow up with you as soon as possible.
-                </p>
-                <button type="button" id="closeSuccess">Close</button>
               </div>
-            </div>
-          </article>
-        </div>
 
-        <div class="contact-bottom-text">WE KNOW WHAT WE DO</div>
-      </section>
+              <div class="form-row">
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" class="input" required />
+                </div>
 
-      <footer class="footer">
-        <div class="footer-copy">© 2026 The Boss Agency Co</div>
+                <div class="field">
+                  <label for="website">Current website</label>
+                  <input id="website" name="website" type="url" class="input" />
+                </div>
+              </div>
 
-        <div class="footer-socials">
-          <a href="#" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95Zm8.95 1.55a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.35A5.65 5.65 0 1 1 6.35 12 5.66 5.66 0 0 1 12 6.35Zm0 1.8A3.85 3.85 0 1 0 15.85 12 3.85 3.85 0 0 0 12 8.15Z"/>
-            </svg>
-          </a>
+              <div class="field">
+                <label for="services">What do you need help with?</label>
+                <div class="service-checks" id="services">
+                  <label class="check-option">
+                    <input type="checkbox" name="services[]" value="Branding" />
+                    <span>Branding</span>
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="services[]" value="Web" />
+                    <span>Website</span>
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="services[]" value="Marketing" />
+                    <span>Marketing systems</span>
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="services[]" value="AI" />
+                    <span>AI workflows</span>
+                  </label>
+                </div>
+              </div>
 
-          <a href="#" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M13.5 22v-8.2h2.76l.41-3.2H13.5V8.56c0-.92.26-1.55 1.58-1.55h1.69V4.15c-.29-.04-1.28-.12-2.44-.12-2.42 0-4.08 1.48-4.08 4.2v2.37H7.5v3.2h2.75V22z"/>
-            </svg>
-          </a>
-
-          <a href="#" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48 2.49 2.49 0 0 1 4.98 3.5ZM3 9h4v12H3Zm6.5 0h3.83v1.64h.05c.53-1.01 1.83-2.08 3.77-2.08 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.58c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94V21h-4Z"/>
-            </svg>
-          </a>
-
-          <a href="#" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M23.5 7.2a3 3 0 0 0-2.11-2.12C19.52 4.5 12 4.5 12 4.5s-7.52 0-9.39.58A3 3 0 0 0 .5 7.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 4.8 3 3 0 0 0 2.11 2.12C4.48 19.5 12 19.5 12 19.5s7.52 0 9.39-.58a3 3 0 0 0 2.11-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-4.8ZM9.6 15.3V8.7l6 3.3Z"/>
-            </svg>
-          </a>
-        </div>
-
-        <div class="footer-links">
-          <a href="#">Terms</a>
-          <a href="#">Privacy</a>
-          <a href="#">Cookies</a>
-        </div>
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    menuToggle.addEventListener('click', () => {
-      document.body.classList.toggle('menu-open');
-      const expanded = document.body.classList.contains('menu-open');
-      menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    });
-
-    const serviceTabs = document.querySelectorAll('.service-tab');
-    const serviceViews = document.querySelectorAll('.service-view');
-
-    serviceTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        const target = tab.dataset.service;
-
-        serviceTabs.forEach((item) => {
-          item.classList.remove('active');
-          item.setAttribute('aria-selected', 'false');
-        });
-
-        serviceViews.forEach((view) => {
-          view.classList.remove('active');
-        });
-
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-
-        const activeView = document.querySelector(`.service-view[data-view="${target}"]`);
-        if (activeView) {
-          activeView.classList.add('active');
-        }
-      });
-    });
-
-    const contactForm = document.getElementById('bossContactForm');
-    const contactSuccess = document.getElementById('contactSuccess');
-    const closeSuccess = document.getElementById('closeSuccess');
-
-    contactForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-
-      const selectedServices = [...contactForm.querySelectorAll('input[name="Services Needed[]"]:checked')];
-      if (!selectedServices.length) {
-        alert('Please select at least one service.');
-        return;
-      }
-
-      const formData = new FormData(contactForm);
-
-      try {
-        const response = await fetch(contactForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          contactSuccess.classList.add('show');
-          contactForm.reset();
-        } else {
-          alert('There was an issue sending your form. Please try again.');
-        }
-      } catch (error) {
-        alert('There was an issue sending your form. Please try again.');
-      }
-    });
-
-    closeSuccess.addEventListener('click', () => {
-      contactSuccess.classList.remove('show');
-    });
-  </script>
-</body>
-</html>
+              <div class="field">
+                <label for="message">Tell us a bit about your project</label>
+                <textarea id="message" name="message"
