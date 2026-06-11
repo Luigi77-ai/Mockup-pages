@@ -1091,7 +1091,39 @@
     transform:translateX(-50%);
   }
 }
+/* Máscara de blur en los bordes del carrusel de blog */
+.blog-topics-static::before,
+.blog-topics-static::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:80px;
+  pointer-events:none;
+  z-index:2;
+}
 
+/* Lado izquierdo (entrada) */
+.blog-topics-static::before{
+  left:0;
+  background:linear-gradient(
+    to right,
+    rgba(7, 40, 70, 1) 0%,
+    rgba(7, 40, 70, 0.6) 40%,
+    rgba(7, 40, 70, 0) 100%
+  );
+}
+
+/* Lado derecho (salida) */
+.blog-topics-static::after{
+  right:0;
+  background:linear-gradient(
+    to left,
+    rgba(7, 40, 70, 1) 0%,
+    rgba(7, 40, 70, 0.6) 40%,
+    rgba(7, 40, 70, 0) 100%
+  );
+}
     .contact-section{
       position:relative;
     }
