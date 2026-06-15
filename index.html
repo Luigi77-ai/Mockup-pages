@@ -284,6 +284,236 @@
     .service-media-icon{position:absolute;top:16px;right:18px;width:54px;height:54px;border-radius:999px;display:grid;place-items:center;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.08);z-index:4;color:var(--media-icon,var(--brand-navy))}
     .service-media-icon svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 
+    /* ── REVIEWS ── */
+    .reviews-section{
+      padding:78px 0 44px;
+      background:#ffffff;
+      position:relative;
+      overflow:hidden;
+    }
+    .reviews-shell{
+      max-width:1180px;
+      margin:0 auto;
+      position:relative;
+    }
+    .reviews-heading{
+      display:grid;
+      gap:14px;
+      justify-items:center;
+      text-align:center;
+      margin-bottom:30px;
+    }
+    .reviews-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 16px;
+      border:1px dashed rgba(0,48,73,.26);
+      border-radius:999px;
+      color:var(--brand-navy);
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      background:#ffffff;
+    }
+    .reviews-kicker::before{
+      content:"";
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:#f3b8c8;
+      display:block;
+      flex:0 0 auto;
+    }
+    .reviews-title{
+      margin:0;
+      font-size:clamp(2.1rem,4.5vw,3.9rem);
+      line-height:.96;
+      letter-spacing:-.05em;
+      color:var(--brand-navy);
+      max-width:11ch;
+    }
+    .reviews-copy{
+      margin:0;
+      max-width:58ch;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    .reviews-slider-wrap{
+      position:relative;
+      padding:8px 58px 0;
+    }
+    .reviews-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:48px;
+      height:48px;
+      border-radius:999px;
+      border:1px solid rgba(0,48,73,.16);
+      background:#ffffff;
+      color:var(--brand-navy);
+      box-shadow:0 14px 28px rgba(0,48,73,.08);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      z-index:3;
+      transition:transform .22s ease, background .22s ease, color .22s ease, border-color .22s ease;
+    }
+    .reviews-arrow:hover{
+      transform:translateY(-50%) scale(1.06);
+      background:var(--brand-navy);
+      color:#ffffff;
+      border-color:var(--brand-navy);
+    }
+    .reviews-arrow.prev{left:0}
+    .reviews-arrow.next{right:0}
+
+    .reviews-track{
+      display:grid;
+      grid-auto-flow:column;
+      grid-auto-columns:minmax(260px, 1fr);
+      gap:20px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      scroll-behavior:smooth;
+      padding:6px 2px 18px;
+      scrollbar-width:none;
+    }
+    .reviews-track::-webkit-scrollbar{display:none}
+
+    .review-card{
+      min-height:100%;
+      border:1.5px dashed rgba(0,48,73,.28);
+      border-radius:24px;
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      scroll-snap-align:start;
+      transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    }
+    .review-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 16px 34px rgba(0,48,73,.10);
+      border-color:rgba(0,48,73,.38);
+    }
+    .review-card.sky{background:#dff4ff}
+    .review-card.mint{background:#dff7eb}
+    .review-card.white{background:#ffffff}
+
+    .review-image{
+      width:100%;
+      aspect-ratio:1.2/1;
+      border-radius:26px;
+      overflow:hidden;
+      background:#ffffff;
+      box-shadow:inset 0 0 0 1px rgba(0,48,73,.08);
+    }
+    .review-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .review-content{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      flex:1;
+      text-align:center;
+    }
+    .review-rating{
+      display:flex;
+      justify-content:center;
+      gap:4px;
+      color:#D62828;
+      font-size:14px;
+      letter-spacing:.08em;
+    }
+    .review-card h3{
+      margin:0;
+      font-size:1.28rem;
+      line-height:1.08;
+      letter-spacing:-.03em;
+      color:var(--brand-navy);
+      font-weight:800;
+    }
+    .review-meta{
+      margin:0;
+      color:rgba(0,48,73,.72);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .review-card p{
+      margin:0;
+      color:#2a241f;
+      font-size:14px;
+      line-height:1.75;
+      text-align:center;
+    }
+
+    .review-cta{
+      margin-top:auto;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      align-self:center;
+      min-height:52px;
+      padding:0 22px;
+      border-radius:999px;
+      background:#ffffff;
+      border:1px solid rgba(0,48,73,.20);
+      color:#000000;
+      font-size:14px;
+      font-weight:800;
+      letter-spacing:.01em;
+      transition:transform .22s ease, opacity .22s ease, box-shadow .22s ease;
+    }
+    .review-cta:hover{
+      transform:scale(1.04);
+      opacity:.92;
+      box-shadow:0 12px 20px rgba(0,48,73,.08);
+    }
+    .review-cta-dot{
+      width:12px;
+      height:12px;
+      border-radius:999px;
+      background:#f3b8c8;
+      flex:0 0 auto;
+    }
+
+    .reviews-bottom{
+      display:flex;
+      justify-content:center;
+      margin-top:18px;
+    }
+    .reviews-all-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:58px;
+      padding:0 26px;
+      border-radius:999px;
+      background:var(--brand-navy);
+      color:#ffffff;
+      font-weight:800;
+      font-size:14px;
+      letter-spacing:.03em;
+      transition:transform .22s ease, background .22s ease;
+    }
+    .reviews-all-link:hover{
+      background:var(--brand-red);
+      transform:translateY(-2px);
+    }
+
     /* ── PROJECTS ── */
     .projects-band{position:relative;margin:40px 0 24px;padding:34px 26px 34px;border-radius:34px;overflow:visible;isolation:isolate}
     .projects-band::before,.projects-band::after{content:none}
@@ -730,6 +960,9 @@
       .service-view.active{height:auto;opacity:1;transform:translateX(0)}
       .services-tabs{position:relative;top:auto;right:auto;align-items:center;margin:0 auto 24px}
       .services-panel{padding-right:0}
+      .reviews-slider-wrap{padding:8px 0 0}
+      .reviews-arrow{display:none}
+      .reviews-track{grid-auto-columns:minmax(300px, 82%)}
       .project-grid{grid-template-columns:1fr 1fr;grid-template-areas:"a a" "b c" "d e";max-width:none}
       .footer{grid-template-columns:1fr;text-align:center}
       .footer-copy,.footer-links{justify-content:center}
@@ -748,6 +981,9 @@
       }
       .top-marquee-content{padding:10px 0;gap:16px}
       .top-marquee-item{font-size:10px;letter-spacing:.07em}
+      .reviews-title{max-width:14ch}
+      .reviews-track{grid-auto-columns:minmax(268px, 88%)}
+      .review-card{padding:16px}
       .project-grid{grid-template-columns:1fr;grid-template-areas:"a" "b" "c" "d" "e"}
       .project-card,.project-card.tall,.project-card.arch,.project-card.soft,.project-card.wide,.project-card.blob{min-height:230px;border-radius:24px}
       .project-card::before,.project-card.tall::before,.project-card.arch::before,.project-card.soft::before,.project-card.wide::before,.project-card.blob::before{border-radius:20px}
@@ -763,10 +999,11 @@
         <a class="brand" href="#hero">The Boss Agency Co</a>
         <div class="nav-stack">
           <a class="nav-link" href="#services"><span>Services</span><small>01</small></a>
-          <a class="nav-link" href="#projects"><span>Projects</span><small>02</small></a>
-          <a class="nav-link" href="#about"><span>About</span><small>03</small></a>
-          <a class="nav-link" href="#blog"><span>Blog</span><small>04</small></a>
-          <a class="nav-link" href="#contact"><span>Contact</span><small>05</small></a>
+          <a class="nav-link" href="#reviews"><span>Reviews</span><small>02</small></a>
+          <a class="nav-link" href="#projects"><span>Projects</span><small>03</small></a>
+          <a class="nav-link" href="#about"><span>About</span><small>04</small></a>
+          <a class="nav-link" href="#blog"><span>Blog</span><small>05</small></a>
+          <a class="nav-link" href="#contact"><span>Contact</span><small>06</small></a>
         </div>
       </div>
       <div class="menu-socials">
@@ -795,71 +1032,25 @@
   <div class="layout">
     <main class="content">
 
-      <div class="top-marquee" aria-label="The Boss Agency Co offers and values">
+      <div class="top-marquee" aria-label="Agency highlights">
         <div class="top-marquee-track">
           <div class="top-marquee-content">
-            <span class="top-marquee-item">Brand Strategy</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Web Development</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Social Media Strategy</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Google My Business Optimization</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Marketing Systems</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Creative Direction</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Content Planning</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">AI Workflows</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Lead Generation</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Clarity</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Consistency</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Trust</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Execution</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Premium Positioning</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Business Growth</span>
-            <span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Branding</span><span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Web Development</span><span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Marketing Strategy</span><span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Google Business Optimization</span><span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Creative Direction</span><span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Social Media Management</span><span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Boss-Level Execution</span><span class="top-marquee-dot"></span>
           </div>
           <div class="top-marquee-content" aria-hidden="true">
-            <span class="top-marquee-item">Brand Strategy</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Web Development</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Social Media Strategy</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Google My Business Optimization</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Marketing Systems</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Creative Direction</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Content Planning</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">AI Workflows</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Lead Generation</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Clarity</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Consistency</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Trust</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Execution</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Premium Positioning</span>
-            <span class="top-marquee-dot"></span>
-            <span class="top-marquee-item">Business Growth</span>
-            <span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Branding</span><span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Web Development</span><span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Marketing Strategy</span><span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Google Business Optimization</span><span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Creative Direction</span><span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Social Media Management</span><span class="top-marquee-dot"></span>
+            <span class="top-marquee-item">Boss-Level Execution</span><span class="top-marquee-dot"></span>
           </div>
         </div>
       </div>
@@ -1024,6 +1215,97 @@
         </div>
       </section>
 
+      <section class="reviews-section" id="reviews">
+        <div class="reviews-shell">
+          <div class="reviews-heading">
+            <span class="reviews-kicker">Client love</span>
+            <h2 class="reviews-title">Reviews from real clients.</h2>
+            <p class="reviews-copy">A few kind words from businesses that trusted The Boss Agency Co with their websites, strategy, social media, and marketing support.</p>
+          </div>
+
+          <div class="reviews-slider-wrap">
+            <button class="reviews-arrow prev" id="reviewsPrev" type="button" aria-label="Previous reviews">←</button>
+            <div class="reviews-track" id="reviewsTrack">
+              <article class="review-card sky">
+                <div class="review-image">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80" alt="Happy client portrait one" loading="lazy" />
+                </div>
+                <div class="review-content">
+                  <div class="review-rating" aria-label="5 star review">★★★★★</div>
+                  <h3>Beautiful guidance</h3>
+                  <p class="review-meta">Claudia Kohlsche</p>
+                  <p>I would definitely recommend Diane’s services. She is such a beautiful person inside and out, very professional, and a great communicator.</p>
+                </div>
+                <a class="review-cta" href="https://www.google.com/search?sca_esv=4d8ac88c582c6dac&sxsrf=ANbL-n4rn-MuS2tnQuYsEdZ9BH7jJVoTrA:1781556907502&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOSFY7DBMVWCqoKTZrhlonNRpX4TcXN0HKigmZpuoQztzJSIYlyClNtzFZ1fhlC9xNdJkBi647uVNLuPlrUgL3orSFhpCcYrbAr3jk-8p-gt4vf6qTg%3D%3D&q=The+Boss+Agency+Co+Opiniones&sa=X&ved=2ahUKEwiapfnUkIqVAxXqMlkFHcT5HLYQ0bkNegQINRAF&biw=1536&bih=776&dpr=1.25" target="_blank" rel="noopener noreferrer">
+                  <span class="review-cta-dot"></span>
+                  Read review
+                </a>
+              </article>
+
+              <article class="review-card mint">
+                <div class="review-image">
+                  <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=1200&q=80" alt="Happy client portrait two" loading="lazy" />
+                </div>
+                <div class="review-content">
+                  <div class="review-rating" aria-label="5 star review">★★★★★</div>
+                  <h3>Much needed clarity</h3>
+                  <p class="review-meta">Alexa Lo</p>
+                  <p>My first business coaching session was refreshing and extremely helpful. The conversation gave me much needed clarity and direction for my business.</p>
+                </div>
+                <a class="review-cta" href="https://www.google.com/search?sca_esv=4d8ac88c582c6dac&sxsrf=ANbL-n4rn-MuS2tnQuYsEdZ9BH7jJVoTrA:1781556907502&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOSFY7DBMVWCqoKTZrhlonNRpX4TcXN0HKigmZpuoQztzJSIYlyClNtzFZ1fhlC9xNdJkBi647uVNLuPlrUgL3orSFhpCcYrbAr3jk-8p-gt4vf6qTg%3D%3D&q=The+Boss+Agency+Co+Opiniones&sa=X&ved=2ahUKEwiapfnUkIqVAxXqMlkFHcT5HLYQ0bkNegQINRAF&biw=1536&bih=776&dpr=1.25" target="_blank" rel="noopener noreferrer">
+                  <span class="review-cta-dot"></span>
+                  Read review
+                </a>
+              </article>
+
+              <article class="review-card white">
+                <div class="review-image">
+                  <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80" alt="Happy client portrait three" loading="lazy" />
+                </div>
+                <div class="review-content">
+                  <div class="review-rating" aria-label="5 star review">★★★★★</div>
+                  <h3>They know what they do</h3>
+                  <p class="review-meta">Gloria Camacho</p>
+                  <p>Best value on media services. They helped with my website and Google Business profile, and I now get regular clients without spending on advertising.</p>
+                </div>
+                <a class="review-cta" href="https://www.google.com/search?sca_esv=4d8ac88c582c6dac&sxsrf=ANbL-n4rn-MuS2tnQuYsEdZ9BH7jJVoTrA:1781556907502&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOSFY7DBMVWCqoKTZrhlonNRpX4TcXN0HKigmZpuoQztzJSIYlyClNtzFZ1fhlC9xNdJkBi647uVNLuPlrUgL3orSFhpCcYrbAr3jk-8p-gt4vf6qTg%3D%3D&q=The+Boss+Agency+Co+Opiniones&sa=X&ved=2ahUKEwiapfnUkIqVAxXqMlkFHcT5HLYQ0bkNegQINRAF&biw=1536&bih=776&dpr=1.25" target="_blank" rel="noopener noreferrer">
+                  <span class="review-cta-dot"></span>
+                  Read review
+                </a>
+              </article>
+
+              <article class="review-card sky">
+                <div class="review-image">
+                  <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80" alt="Happy client portrait four" loading="lazy" />
+                </div>
+                <div class="review-content">
+                  <div class="review-rating" aria-label="5 star review">★★★★★</div>
+                  <h3>Dynamic website</h3>
+                  <p class="review-meta">Christi Slaven</p>
+                  <p>I was so impressed with the professionalism and attention to detail. The website felt dynamic, elevated, and beyond what I imagined was possible.</p>
+                </div>
+                <a class="review-cta" href="https://www.google.com/search?sca_esv=4d8ac88c582c6dac&sxsrf=ANbL-n4rn-MuS2tnQuYsEdZ9BH7jJVoTrA:1781556907502&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOSFY7DBMVWCqoKTZrhlonNRpX4TcXN0HKigmZpuoQztzJSIYlyClNtzFZ1fhlC9xNdJkBi647uVNLuPlrUgL3orSFhpCcYrbAr3jk-8p-gt4vf6qTg%3D%3D&q=The+Boss+Agency+Co+Opiniones&sa=X&ved=2ahUKEwiapfnUkIqVAxXqMlkFHcT5HLYQ0bkNegQINRAF&biw=1536&bih=776&dpr=1.25" target="_blank" rel="noopener noreferrer">
+                  <span class="review-cta-dot"></span>
+                  Read review
+                </a>
+              </article>
+            </div>
+            <button class="reviews-arrow next" id="reviewsNext" type="button" aria-label="Next reviews">→</button>
+          </div>
+
+          <div class="reviews-bottom">
+            <a
+              class="reviews-all-link"
+              href="https://www.google.com/search?sca_esv=4d8ac88c582c6dac&sxsrf=ANbL-n4rn-MuS2tnQuYsEdZ9BH7jJVoTrA:1781556907502&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOSFY7DBMVWCqoKTZrhlonNRpX4TcXN0HKigmZpuoQztzJSIYlyClNtzFZ1fhlC9xNdJkBi647uVNLuPlrUgL3orSFhpCcYrbAr3jk-8p-gt4vf6qTg%3D%3D&q=The+Boss+Agency+Co+Opiniones&sa=X&ved=2ahUKEwiapfnUkIqVAxXqMlkFHcT5HLYQ0bkNegQINRAF&biw=1536&bih=776&dpr=1.25"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See all reviews
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section class="projects-band" id="projects">
         <div class="projects-stage">
           <div class="project-grid">
@@ -1031,7 +1313,7 @@
             <article class="project-card arch"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image two" /></article>
             <article class="project-card soft"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image three" /></article>
             <article class="project-card wide"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image four" /></article>
-            <article class="project-card blob"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image five" /></article>
+            <article class="project-card.blob"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image five" /></article>
           </div>
 
           <section class="about-zone" id="about">
@@ -1077,7 +1359,6 @@
 
             <div class="monitor-screen">
               <div class="screen-slides" id="blogSlides">
-
                 <div class="slide-card" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80')">
                   <div class="slide-content">
                     <span class="slide-tag">Branding</span>
@@ -1117,7 +1398,6 @@
                     <p class="slide-desc">Not everything needs AI. But these specific use cases can save your team hours every single week.</p>
                   </div>
                 </div>
-
               </div>
 
               <div class="screen-glow"></div>
@@ -1247,6 +1527,30 @@
         if(v) v.classList.add('active');
       });
     });
+
+    (function(){
+      const track = document.getElementById('reviewsTrack');
+      const prev = document.getElementById('reviewsPrev');
+      const next = document.getElementById('reviewsNext');
+      if(!track || !prev || !next) return;
+
+      const getStep = () => {
+        const firstCard = track.querySelector('.review-card');
+        if(!firstCard) return 320;
+        const cardWidth = firstCard.getBoundingClientRect().width;
+        const styles = window.getComputedStyle(track);
+        const gap = parseFloat(styles.columnGap || styles.gap || 20);
+        return cardWidth + gap;
+      };
+
+      prev.addEventListener('click', () => {
+        track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+      });
+
+      next.addEventListener('click', () => {
+        track.scrollBy({ left: getStep(), behavior: 'smooth' });
+      });
+    })();
 
     (function(){
       const slides   = document.getElementById('blogSlides');
