@@ -240,7 +240,7 @@
     .cta-button:hover{background:var(--brand-red);transform:translateY(-1px)}
 
     /* ════════════════════════════════════════
-       BLOG SECTION — NUEVA VERSIÓN CON MONITOR
+       BLOG SECTION — AJUSTADO
     ════════════════════════════════════════ */
     #blog {
       width: calc(100% + 48px);
@@ -255,19 +255,17 @@
       align-items: center;
     }
 
-    /* Destellos de fondo sutiles para mantener la paleta */
     #blog::before {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 10% 20%, rgba(224,122,47,.14), transparent 28%),
-        radial-gradient(circle at 90% 80%, rgba(214,40,40,.10), transparent 24%),
-        radial-gradient(circle at 50% 50%, rgba(220,196,109,.06), transparent 40%);
+        radial-gradient(circle at 12% 18%, rgba(224,122,47,.12), transparent 30%),
+        radial-gradient(circle at 88% 82%, rgba(220,196,109,.10), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
       pointer-events: none;
     }
 
-    /* Palabra BLOG gigante de fondo */
     .blog-bg-word {
       position: absolute;
       top: 50%;
@@ -280,11 +278,10 @@
       white-space: nowrap;
       pointer-events: none;
       user-select: none;
-      /* Difuminado de abajo (navy transparente) hacia arriba (orange/yellow) */
       background: linear-gradient(
         to top,
-        rgba(0, 48, 73, 0)        0%,
-        rgba(0, 48, 73, 0)       18%,
+        rgba(0, 48, 73, 0) 0%,
+        rgba(0, 48, 73, 0) 18%,
         rgba(224, 122, 47, 0.18) 38%,
         rgba(224, 122, 47, 0.55) 62%,
         rgba(220, 196, 109, 0.9) 100%
@@ -295,67 +292,92 @@
       z-index: 0;
     }
 
-    /* Contenedor monitor + flechas */
     .blog-monitor-wrap {
       position: relative;
       z-index: 2;
       width: 100%;
-      max-width: 820px;
+      max-width: 980px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-right: 86px;
     }
 
-    /* Carcasa del monitor */
+    .blog-side-label{
+      position:absolute;
+      top:50%;
+      right:10px;
+      transform:translateY(-50%);
+      writing-mode:vertical-rl;
+      text-orientation:mixed;
+      font-size:clamp(22px,2.2vw,34px);
+      line-height:1;
+      letter-spacing:.24em;
+      font-weight:800;
+      color:#ffffff;
+      text-transform:uppercase;
+      user-select:none;
+      z-index:3;
+    }
+
     .monitor-body {
       width: 100%;
-      background: linear-gradient(160deg, #1e2d3d 0%, #112233 55%, #0a1a28 100%);
-      border: 2px solid rgba(224, 122, 47, 0.30);
-      border-radius: 20px;
-      padding: 14px 14px 0;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f0e8 100%);
+      border: 4px solid var(--brand-orange);
+      border-radius: 34px;
+      padding: 16px 16px 0;
       box-shadow:
-        0 0 0 1px rgba(255,255,255,.04),
-        0 32px 90px rgba(0,0,0,.65),
-        0 0 70px rgba(224,122,47,.07),
-        inset 0 1px 0 rgba(255,255,255,.06);
+        0 24px 50px rgba(0,48,73,.18),
+        0 8px 0 rgba(255,255,255,.2) inset;
+      position: relative;
     }
 
-    /* Barra superior tipo macOS */
+    .monitor-body::before{
+      content:"";
+      position:absolute;
+      inset:10px 10px auto 10px;
+      height:12px;
+      border-radius:999px;
+      background:linear-gradient(90deg, rgba(214,40,40,.18), rgba(224,122,47,.18), rgba(220,196,109,.2));
+      opacity:.55;
+      pointer-events:none;
+    }
+
     .monitor-bar {
       display: flex;
       align-items: center;
       gap: 7px;
-      margin-bottom: 12px;
-      padding: 0 4px;
+      margin-bottom: 14px;
+      padding: 2px 4px 0;
     }
+
     .m-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
-    .m-dot.r { background: #ff5f57; }
-    .m-dot.y { background: #febc2e; }
-    .m-dot.g { background: #28c840; }
+    .m-dot.r { background: #D62828; }
+    .m-dot.y { background: #DCC46D; }
+    .m-dot.g { background: #E07A2F; }
+
     .monitor-url {
       flex: 1;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.09);
-      border-radius: 6px;
-      height: 22px;
+      background: rgba(0,48,73,.06);
+      border: 1px solid rgba(0,48,73,.10);
+      border-radius: 999px;
+      height: 26px;
       display: flex;
       align-items: center;
-      padding: 0 10px;
+      padding: 0 12px;
     }
-    .monitor-url span { font-size: 10px; color: rgba(255,255,255,.28); font-family: monospace; }
+    .monitor-url span { font-size: 10px; color: rgba(0,48,73,.45); font-family: monospace; }
 
-    /* Pantalla */
     .monitor-screen {
-      background: #08111c;
-      border-radius: 6px;
+      background: #f8f5ef;
+      border-radius: 22px;
       overflow: hidden;
       aspect-ratio: 16/9;
       position: relative;
-      border: 1px solid rgba(224,122,47,.12);
-      box-shadow: inset 0 0 50px rgba(0,0,0,.5);
+      border: 2px solid rgba(0,48,73,.10);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.75);
     }
 
-    /* Carrusel dentro de la pantalla */
     .screen-slides {
       display: flex;
       width: 100%;
@@ -376,16 +398,15 @@
       padding: 9% 7% 7%;
     }
 
-    /* Overlay oscuro por card */
     .slide-card::before {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(0, 12, 24, 0.97) 0%,
-        rgba(0, 20, 40, 0.65) 42%,
-        rgba(0, 10, 20, 0.12) 100%
+        rgba(0, 48, 73, 0.94) 0%,
+        rgba(0, 48, 73, 0.58) 42%,
+        rgba(0, 48, 73, 0.12) 100%
       );
       z-index: 0;
     }
@@ -398,12 +419,12 @@
       font-weight: 800;
       letter-spacing: .13em;
       text-transform: uppercase;
-      color: var(--brand-orange);
-      border: 1px solid rgba(224,122,47,.40);
-      border-radius: 4px;
-      padding: 3px 10px;
-      margin-bottom: 9px;
-      background: rgba(224,122,47,.10);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 999px;
+      padding: 4px 12px;
+      margin-bottom: 10px;
+      background: rgba(224,122,47,.88);
     }
 
     .slide-title {
@@ -418,57 +439,68 @@
 
     .slide-desc {
       font-size: clamp(10px, 1.2vw, 13px);
-      color: rgba(255,255,255,.48);
+      color: rgba(255,255,255,.82);
       max-width: 380px;
       line-height: 1.55;
     }
 
-    /* Scanlines y brillo */
     .screen-glow {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(224,122,47,.05) 0%, transparent 65%);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), transparent 18%),
+        radial-gradient(circle at 50% 0%, rgba(220,196,109,.10) 0%, transparent 60%);
       pointer-events: none;
       z-index: 10;
     }
+
     .screen-lines {
       position: absolute;
       inset: 0;
-      background: repeating-linear-gradient(to bottom, transparent, transparent 2px, rgba(0,0,0,.06) 2px, rgba(0,0,0,.06) 4px);
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 3px,
+        rgba(255,255,255,.03) 3px,
+        rgba(255,255,255,.03) 6px
+      );
       pointer-events: none;
       z-index: 11;
+      opacity:.35;
     }
 
-    /* Pie del monitor (cuello + base) */
     .monitor-stand {
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .stand-neck {
-      width: 56px;
-      height: 26px;
-      background: linear-gradient(to bottom, #1a2535, #111c28);
-      border-left: 1px solid rgba(255,255,255,.04);
-      border-right: 1px solid rgba(255,255,255,.04);
-    }
-    .stand-base {
-      width: 190px;
-      height: 13px;
-      background: linear-gradient(to bottom, #1a2535, #0e1820);
-      border-radius: 0 0 12px 12px;
-      border: 1px solid rgba(255,255,255,.04);
-      border-top: none;
-      box-shadow: 0 8px 22px rgba(0,0,0,.55);
+      width: 72px;
+      height: 30px;
+      background: linear-gradient(to bottom, #e8dece, #d9c8ad);
+      border-left: 2px solid rgba(0,48,73,.10);
+      border-right: 2px solid rgba(0,48,73,.10);
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
     }
 
-    /* Flechas de navegación */
+    .stand-base {
+      width: 220px;
+      height: 16px;
+      background: linear-gradient(to bottom, #e6d7be, #cdb55e);
+      border-radius: 0 0 16px 16px;
+      border: 1px solid rgba(0,48,73,.10);
+      border-top: none;
+      box-shadow: 0 10px 24px rgba(0,48,73,.16);
+    }
+
     .blog-arrows {
       position: absolute;
       top: 50%;
-      left: -56px;
-      right: -56px;
+      left: -24px;
+      right: 54px;
       transform: translateY(-50%);
       display: flex;
       justify-content: space-between;
@@ -478,30 +510,29 @@
 
     .b-arrow {
       pointer-events: all;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(0,30,50,.75);
-      border: 1.5px solid rgba(224,122,47,.45);
-      color: var(--brand-orange);
+      width: 50px;
+      height: 50px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 2px solid rgba(0,48,73,.10);
+      color: var(--brand-navy);
       font-size: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: all .22s ease;
-      box-shadow: 0 0 20px rgba(224,122,47,.12);
-      backdrop-filter: blur(8px);
+      box-shadow: 0 12px 28px rgba(0,48,73,.16);
       flex-shrink: 0;
     }
+
     .b-arrow:hover {
-      background: rgba(224,122,47,.22);
+      background: var(--brand-orange);
+      color: #ffffff;
       border-color: var(--brand-orange);
-      box-shadow: 0 0 28px rgba(224,122,47,.35);
       transform: scale(1.08);
     }
 
-    /* Puntos indicadores */
     .blog-dots {
       display: flex;
       gap: 8px;
@@ -509,42 +540,68 @@
       position: relative;
       z-index: 2;
     }
+
     .b-dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.28);
       cursor: pointer;
       transition: all .3s ease;
       border: none;
       padding: 0;
     }
+
     .b-dot.active {
-      background: var(--brand-orange);
-      box-shadow: 0 0 8px var(--brand-orange);
-      width: 22px;
-      border-radius: 4px;
+      background: var(--brand-yellow);
+      box-shadow: 0 0 0 2px rgba(255,255,255,.18);
+      width: 24px;
+      border-radius: 999px;
     }
 
     @media (max-width: 780px) {
-      .blog-arrows { left: -32px; right: -32px; }
-      .b-arrow { width: 36px; height: 36px; font-size: 16px; }
-      .stand-base { width: 130px; }
+      .blog-monitor-wrap{padding-right:0}
+      .blog-side-label{
+        position:relative;
+        top:auto;
+        right:auto;
+        transform:none;
+        writing-mode:horizontal-tb;
+        letter-spacing:.18em;
+        margin-top:18px;
+      }
+      .blog-arrows { left: -12px; right: -12px; }
+      .b-arrow { width: 38px; height: 38px; font-size: 16px; }
+      .stand-base { width: 150px; }
     }
+
     @media (max-width: 500px) {
-      .blog-arrows { left: -20px; right: -20px; }
+      .blog-arrows { left: -8px; right: -8px; }
     }
-    /* ════════ FIN BLOG ════════ */
 
     /* ── CONTACT ── */
     .contact-section{position:relative}
     .contact-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:22px;align-items:stretch;position:relative}
-    .contact-card{border:1px dashed var(--border);border-radius:26px;background:rgba(255,255,255,.92);overflow:hidden;backdrop-filter:blur(6px);box-shadow:0 18px 40px rgba(0,48,73,.06)}
-    .contact-card .inner{padding:28px;height:100%}
+    .contact-card{
+      border:none;
+      border-radius:0;
+      background:transparent;
+      overflow:visible;
+      backdrop-filter:none;
+      box-shadow:none;
+    }
+    .contact-card .inner{padding:0;height:100%}
     .contact-card h3{margin:0 0 10px;font-size:1.9rem;line-height:1;letter-spacing:-.04em;color:var(--brand-navy)}
     .contact-card p{margin:0;color:var(--muted);font-size:15px;line-height:1.75}
     .contact-meta{display:grid;gap:14px;margin-top:20px}
-    .contact-meta-item{padding:14px 16px;border-radius:16px;background:rgba(0,48,73,.05);color:var(--brand-navy);font-weight:700;font-size:14px}
+    .contact-meta-item{
+      padding:0;
+      border-radius:0;
+      background:transparent;
+      color:var(--brand-navy);
+      font-weight:700;
+      font-size:14px;
+    }
     .contact-form-shell{position:relative}
     .contact-form{display:grid;gap:16px}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -603,7 +660,6 @@
   </style>
 </head>
 <body>
-
   <!-- ══ MENU ══ -->
   <div class="menu-shell">
     <aside class="menu-panel" id="sideMenu">
@@ -840,25 +896,20 @@
       </section>
 
       <!-- ══════════════════════════════════════
-           BLOG — NUEVA SECCIÓN CON MONITOR
+           BLOG
       ══════════════════════════════════════ -->
       <section id="blog">
-
-        <!-- Palabra BLOG de fondo -->
         <div class="blog-bg-word" aria-hidden="true">BLOG</div>
 
-        <!-- Monitor + flechas + dots -->
         <div class="blog-monitor-wrap">
+          <div class="blog-side-label" aria-hidden="true">BLOG</div>
 
-          <!-- Flechas afuera del monitor -->
           <div class="blog-arrows" id="blogArrows">
             <button class="b-arrow" id="blogPrev" aria-label="Artículo anterior">&#8592;</button>
             <button class="b-arrow" id="blogNext" aria-label="Artículo siguiente">&#8594;</button>
           </div>
 
-          <!-- Carcasa del monitor -->
           <div class="monitor-body">
-            <!-- Barra superior -->
             <div class="monitor-bar">
               <div class="m-dot r"></div>
               <div class="m-dot y"></div>
@@ -866,11 +917,9 @@
               <div class="monitor-url"><span>thebossagency.co/blog</span></div>
             </div>
 
-            <!-- Pantalla -->
             <div class="monitor-screen">
               <div class="screen-slides" id="blogSlides">
 
-                <!-- Slide 1 — Branding -->
                 <div class="slide-card" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80')">
                   <div class="slide-content">
                     <span class="slide-tag">Branding</span>
@@ -879,7 +928,6 @@
                   </div>
                 </div>
 
-                <!-- Slide 2 — Web -->
                 <div class="slide-card" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80')">
                   <div class="slide-content">
                     <span class="slide-tag">Web</span>
@@ -888,7 +936,6 @@
                   </div>
                 </div>
 
-                <!-- Slide 3 — Marketing -->
                 <div class="slide-card" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80')">
                   <div class="slide-content">
                     <span class="slide-tag">Marketing</span>
@@ -897,7 +944,6 @@
                   </div>
                 </div>
 
-                <!-- Slide 4 — Systems -->
                 <div class="slide-card" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80')">
                   <div class="slide-content">
                     <span class="slide-tag">Systems</span>
@@ -906,7 +952,6 @@
                   </div>
                 </div>
 
-                <!-- Slide 5 — AI -->
                 <div class="slide-card" style="background-image:url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80')">
                   <div class="slide-content">
                     <span class="slide-tag">AI</span>
@@ -915,26 +960,21 @@
                   </div>
                 </div>
 
-              </div><!-- /screen-slides -->
+              </div>
 
-              <!-- Overlays de pantalla -->
               <div class="screen-glow"></div>
               <div class="screen-lines"></div>
-            </div><!-- /monitor-screen -->
-          </div><!-- /monitor-body -->
+            </div>
+          </div>
 
-          <!-- Pie / stand -->
           <div class="monitor-stand">
             <div class="stand-neck"></div>
             <div class="stand-base"></div>
           </div>
 
-          <!-- Puntos indicadores -->
           <div class="blog-dots" id="blogDots"></div>
-
-        </div><!-- /blog-monitor-wrap -->
+        </div>
       </section>
-      <!-- ══ FIN BLOG ══ -->
 
       <!-- ══ CONTACT ══ -->
       <section class="section contact-section" id="contact">
@@ -1009,7 +1049,7 @@
             </div>
           </article>
         </div>
-        <h2 class="contact-bottom-text">We build connections, experiences, and trust.</h2>
+        <h2 class="contact-bottom-text">WE KNOW WHAT WE DO</h2>
       </section>
 
       <!-- ══ FOOTER ══ -->
@@ -1029,7 +1069,7 @@
       </footer>
 
     </main>
-  </div><!-- /layout -->
+  </div>
 
   <script>
     /* ── MENU ── */
@@ -1062,7 +1102,6 @@
       const total    = cards.length;
       let current    = 0;
 
-      // Crear dots
       cards.forEach((_,i) => {
         const d = document.createElement('button');
         d.className = 'b-dot' + (i === 0 ? ' active' : '');
@@ -1082,7 +1121,6 @@
       document.getElementById('blogPrev').addEventListener('click', () => goTo(current - 1));
       document.getElementById('blogNext').addEventListener('click', () => goTo(current + 1));
 
-      // Auto-avance cada 5 segundos
       setInterval(() => goTo(current + 1), 5000);
     })();
 
@@ -1106,5 +1144,7 @@
     });
     closeSuccess.addEventListener('click', () => contactSuccess.classList.remove('show'));
   </script>
+
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a238429ed0ee22f92f984a5" data-source="WEB_USER"></script>
 </body>
 </html>
