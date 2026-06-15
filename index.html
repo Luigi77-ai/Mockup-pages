@@ -240,7 +240,7 @@
     .cta-button:hover{background:var(--brand-red);transform:translateY(-1px)}
 
     /* ════════════════════════════════════════
-       BLOG SECTION — AJUSTE SOLO EN BLOG
+       BLOG SECTION — AJUSTADO AL ESTILO DE LA PÁGINA
     ════════════════════════════════════════ */
     #blog {
       width: calc(100% + 48px);
@@ -271,20 +271,20 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: clamp(260px, 42vw, 620px);
+      font-size: clamp(140px, 24vw, 280px);
       font-weight: 800;
-      letter-spacing: -.08em;
-      line-height: .82;
+      letter-spacing: -.04em;
+      line-height: 1;
       white-space: nowrap;
       pointer-events: none;
       user-select: none;
       background: linear-gradient(
         to top,
         rgba(0, 48, 73, 0) 0%,
-        rgba(0, 48, 73, 0) 10%,
-        rgba(224, 122, 47, 0.20) 34%,
-        rgba(224, 122, 47, 0.62) 60%,
-        rgba(220, 196, 109, 0.96) 100%
+        rgba(0, 48, 73, 0) 18%,
+        rgba(224, 122, 47, 0.18) 38%,
+        rgba(224, 122, 47, 0.55) 62%,
+        rgba(220, 196, 109, 0.9) 100%
       );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -560,9 +560,6 @@
     }
 
     @media (max-width: 780px) {
-      .blog-bg-word{
-        font-size:clamp(160px, 48vw, 300px);
-      }
       .blog-monitor-wrap{padding-right:0}
       .blog-side-label{
         position:relative;
@@ -579,9 +576,6 @@
     }
 
     @media (max-width: 500px) {
-      .blog-bg-word{
-        font-size:clamp(120px, 44vw, 220px);
-      }
       .blog-arrows { left: -8px; right: -8px; }
     }
 
@@ -606,7 +600,7 @@
       background:transparent;
       color:var(--brand-navy);
       font-weight:700;
-      font-size:14px;
+      font-size:14px
     }
     .contact-form-shell{position:relative}
     .contact-form{display:grid;gap:16px}
@@ -666,7 +660,6 @@
   </style>
 </head>
 <body>
-  <!-- ══ MENU ══ -->
   <div class="menu-shell">
     <aside class="menu-panel" id="sideMenu">
       <div class="brand-box">
