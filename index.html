@@ -240,7 +240,7 @@
     .cta-button:hover{background:var(--brand-red);transform:translateY(-1px)}
 
     /* ════════════════════════════════════════
-       BLOG SECTION — AJUSTADO
+       BLOG SECTION — AJUSTE SOLO EN BLOG
     ════════════════════════════════════════ */
     #blog {
       width: calc(100% + 48px);
@@ -271,20 +271,20 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: clamp(140px, 24vw, 280px);
+      font-size: clamp(260px, 42vw, 620px);
       font-weight: 800;
-      letter-spacing: -.04em;
-      line-height: 1;
+      letter-spacing: -.08em;
+      line-height: .82;
       white-space: nowrap;
       pointer-events: none;
       user-select: none;
       background: linear-gradient(
         to top,
         rgba(0, 48, 73, 0) 0%,
-        rgba(0, 48, 73, 0) 18%,
-        rgba(224, 122, 47, 0.18) 38%,
-        rgba(224, 122, 47, 0.55) 62%,
-        rgba(220, 196, 109, 0.9) 100%
+        rgba(0, 48, 73, 0) 10%,
+        rgba(224, 122, 47, 0.20) 34%,
+        rgba(224, 122, 47, 0.62) 60%,
+        rgba(220, 196, 109, 0.96) 100%
       );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -560,6 +560,9 @@
     }
 
     @media (max-width: 780px) {
+      .blog-bg-word{
+        font-size:clamp(160px, 48vw, 300px);
+      }
       .blog-monitor-wrap{padding-right:0}
       .blog-side-label{
         position:relative;
@@ -576,6 +579,9 @@
     }
 
     @media (max-width: 500px) {
+      .blog-bg-word{
+        font-size:clamp(120px, 44vw, 220px);
+      }
       .blog-arrows { left: -8px; right: -8px; }
     }
 
@@ -699,7 +705,6 @@
   <div class="layout">
     <main class="content">
 
-      <!-- ══ HERO ══ -->
       <section class="hero" id="hero">
         <div class="hero-inner">
           <div class="hero-copy">
@@ -720,7 +725,6 @@
         </div>
       </section>
 
-      <!-- ══ SERVICES ══ -->
       <section class="section services-section" id="services">
         <div class="services-shell">
           <div class="services-visual">
@@ -861,7 +865,6 @@
         </div>
       </section>
 
-      <!-- ══ PROJECTS ══ -->
       <section class="projects-band" id="projects">
         <div class="projects-stage">
           <div class="project-grid">
@@ -872,7 +875,6 @@
             <article class="project-card blob"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image five" /></article>
           </div>
 
-          <!-- ══ ABOUT ══ -->
           <section class="about-zone" id="about">
             <h2 class="about-lead"><span class="lead-red">We don't do fluff.</span> Just focused, <span class="accent">boss-level</span> work.</h2>
             <div class="about-panel">
@@ -895,9 +897,6 @@
         </div>
       </section>
 
-      <!-- ══════════════════════════════════════
-           BLOG
-      ══════════════════════════════════════ -->
       <section id="blog">
         <div class="blog-bg-word" aria-hidden="true">BLOG</div>
 
@@ -976,7 +975,6 @@
         </div>
       </section>
 
-      <!-- ══ CONTACT ══ -->
       <section class="section contact-section" id="contact">
         <h2 class="section-title">Contact</h2>
         <div class="contact-grid">
@@ -1052,7 +1050,6 @@
         <h2 class="contact-bottom-text">WE KNOW WHAT WE DO</h2>
       </section>
 
-      <!-- ══ FOOTER ══ -->
       <footer class="footer">
         <div class="footer-copy">© 2026 The Boss Agency Co</div>
         <div class="footer-socials">
@@ -1072,14 +1069,12 @@
   </div>
 
   <script>
-    /* ── MENU ── */
     const menuToggle = document.getElementById('menuToggle');
     menuToggle.addEventListener('click', () => {
       document.body.classList.toggle('menu-open');
       menuToggle.setAttribute('aria-expanded', document.body.classList.contains('menu-open'));
     });
 
-    /* ── SERVICES TABS ── */
     const serviceTabs  = document.querySelectorAll('.service-tab');
     const serviceViews = document.querySelectorAll('.service-view');
     serviceTabs.forEach(tab => {
@@ -1094,7 +1089,6 @@
       });
     });
 
-    /* ── BLOG SLIDER ── */
     (function(){
       const slides   = document.getElementById('blogSlides');
       const dotsEl   = document.getElementById('blogDots');
@@ -1124,7 +1118,6 @@
       setInterval(() => goTo(current + 1), 5000);
     })();
 
-    /* ── CONTACT FORM ── */
     const contactForm    = document.getElementById('bossContactForm');
     const contactSuccess = document.getElementById('contactSuccess');
     const closeSuccess   = document.getElementById('closeSuccess');
