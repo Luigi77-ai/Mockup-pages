@@ -210,7 +210,7 @@
 
     .hero-inner {
       width: 100%;
-      max-width: 920px;
+      max-width: 1120px;
       margin: 0 auto;
       display: flex;
       justify-content: center;
@@ -218,11 +218,12 @@
 
     .headline {
       width: 100%;
-      max-width: 900px;
+      max-width: 760px;
       font-family: 'Anton', sans-serif;
       text-transform: uppercase;
       color: #000;
-      font-size: clamp(3rem, 6.2vw, 6.2rem);
+      text-align: center;
+      margin: 0 auto;
       line-height: 0.9;
       letter-spacing: 0.01em;
     }
@@ -230,6 +231,7 @@
     .line {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 14px;
       flex-wrap: nowrap;
       white-space: nowrap;
@@ -237,6 +239,18 @@
 
     .line + .line {
       margin-top: 14px;
+    }
+
+    .headline-main {
+      font-size: clamp(3rem, 6vw, 6.1rem);
+    }
+
+    .headline-focus {
+      font-size: clamp(3.9rem, 8vw, 7.6rem);
+    }
+
+    .headline-sub {
+      font-size: clamp(2.5rem, 5vw, 4.7rem);
     }
 
     .statement-card {
@@ -323,10 +337,6 @@
     }
 
     @media (max-width: 900px) {
-      .headline {
-        font-size: clamp(2.6rem, 8vw, 5rem);
-      }
-
       .statement-card {
         min-width: 340px;
         height: 68px;
@@ -365,18 +375,12 @@
         padding: 108px 14px 28px;
       }
 
-      .hero {
-        align-items: center;
-        justify-content: flex-start;
-      }
-
       .hero-inner {
-        justify-content: flex-start;
+        justify-content: center;
       }
 
       .headline {
-        font-size: clamp(2.25rem, 11vw, 4.2rem);
-        line-height: 0.92;
+        max-width: 620px;
       }
 
       .line {
@@ -410,7 +414,19 @@
       }
 
       .headline {
-        font-size: clamp(2rem, 14vw, 3.6rem);
+        max-width: 100%;
+      }
+
+      .headline-main {
+        font-size: clamp(2.3rem, 12vw, 4rem);
+      }
+
+      .headline-focus {
+        font-size: clamp(3rem, 14vw, 5rem);
+      }
+
+      .headline-sub {
+        font-size: clamp(2rem, 10vw, 3.4rem);
       }
 
       .side-menu {
@@ -511,12 +527,16 @@
     <section class="hero" id="home">
       <div class="hero-inner">
         <div class="headline">
-          <div class="line">
-            <span>We Build Brands</span>
+          <div class="line headline-main">
+            <span>We Build</span>
           </div>
 
-          <div class="line">
-            <span>That Stand Out</span>
+          <div class="line headline-focus">
+            <span>Visibility</span>
+          </div>
+
+          <div class="line headline-main">
+            <span>With Strategy</span>
 
             <div class="statement-card">
               <div class="statement-track">
@@ -525,12 +545,8 @@
             </div>
           </div>
 
-          <div class="line">
-            <span>With Strategy</span>
-          </div>
-
-          <div class="line">
-            <span>Data And Digital Growth</span>
+          <div class="line headline-sub">
+            <span>And Growth</span>
           </div>
         </div>
       </div>
@@ -582,11 +598,6 @@
     const sideMenu = document.getElementById('sideMenu');
     const menuOverlay = document.getElementById('menuOverlay');
     const menuLinks = document.querySelectorAll('.menu-links a');
-
-    function openMenu() {
-      sideMenu.classList.add('show');
-      menuOverlay.classList.add('show');
-    }
 
     function closeMenu() {
       sideMenu.classList.remove('show');
