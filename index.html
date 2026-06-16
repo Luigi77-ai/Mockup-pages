@@ -1,285 +1,357 @@
-# The Boss Agency - Website
-
-Una página web moderna, audaz e innovadora para The Boss Agency, una agencia de marketing de clase mundial. Diseñada con tipografía impactante, animaciones suaves y un enfoque 100% en resultados medibles.
-
-## 🎨 Características Principales
-
-- **Tipografía Audaz**: Títulos gigantes en Poppins Black para máximo impacto visual
-- **Diseño Innovador**: Inspirado en Sessions.co.uk con layout asimétrico y dinámico
-- **Carrusel Interactivo**: Casos de éxito con navegación fluida y números destacados
-- **Números Grandes**: Estadísticas y resultados prominentes en cada sección
-- **Paleta Premium**: Blanco, negro y dorado para transmitir lujo y profesionalismo
-- **Animaciones Suaves**: Transiciones fluidas y hover effects elegantes
-- **Responsive Design**: Optimizado para móvil, tablet y desktop
-- **Formulario de Contacto**: Integrado en sección oscura con validación
-
-## 🛠️ Stack Tecnológico
-
-- **React 19**: Framework de UI
-- **TypeScript**: Tipado estático
-- **Tailwind CSS 4**: Estilos utilitarios
-- **Vite**: Bundler y dev server
-- **Framer Motion**: Animaciones (preparado para implementar)
-- **Lucide React**: Iconografía
-- **Wouter**: Enrutamiento cliente
-
-## 📁 Estructura del Proyecto
-
-```
-thebossagency-website/
-├── client/
-│   ├── public/              # Archivos estáticos
-│   │   └── __manus__/       # Configuración de Manus
-│   └── src/
-│       ├── components/      # Componentes React
-│       │   ├── Header.tsx
-│       │   ├── Hero.tsx
-│       │   ├── Services.tsx
-│       │   ├── Portfolio.tsx
-│       │   ├── About.tsx
-│       │   ├── Contact.tsx
-│       │   ├── Footer.tsx
-│       │   └── ui/          # Componentes shadcn/ui
-│       ├── pages/           # Páginas
-│       ├── contexts/        # React Contexts
-│       ├── hooks/           # Custom Hooks
-│       ├── lib/             # Utilidades
-│       ├── App.tsx          # Componente raíz
-│       ├── main.tsx         # Entrada de React
-│       └── index.css        # Estilos globales
-├── server/                  # Backend (placeholder)
-├── shared/                  # Código compartido
-├── package.json
-├── vite.config.ts
-├── tsconfig.json
-└── README.md
-```
-
-## 🚀 Instalación y Desarrollo
-
-### Requisitos Previos
-
-- Node.js 18+
-- pnpm (recomendado) o npm
-
-### Instalación
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/tuusuario/thebossagency-website.git
-cd thebossagency-website
-
-# Instalar dependencias
-pnpm install
-# o
-npm install
-```
-
-### Desarrollo
-
-```bash
-# Iniciar servidor de desarrollo
-pnpm dev
-# o
-npm run dev
-```
-
-El servidor estará disponible en `http://localhost:5173`
-
-### Build para Producción
-
-```bash
-# Compilar para producción
-pnpm build
-# o
-npm run build
-
-# Vista previa del build
-pnpm preview
-# o
-npm run preview
-```
-
-## 📋 Secciones de la Página
-
-### 1. **Header**
-Navegación fija con logo, menú de navegación y botón CTA. Responsive con menú hamburguesa en móvil.
-
-### 2. **Hero Section**
-Título gigante "HACEMOS QUE LAS MARCAS DOMINEN EL MERCADO" con imagen integrada. Estadísticas clave y dos CTAs principales.
-
-### 3. **Services (Tres Pilares)**
-Tres servicios principales en sección dorada:
-- Estrategia Digital (250% engagement)
-- Marketing Orientado a Resultados (5M+ impresiones)
-- Gestión de Marca (100K+ seguidores)
-
-### 4. **Portfolio (Casos de Éxito)**
-Carrusel interactivo de proyectos con:
-- Imagen del proyecto
-- Estadísticas de éxito (250%, 5M+, 180%, 100K+)
-- Navegación con botones y indicadores
-- Contador de slides
-
-### 5. **About (Quiénes Somos)**
-Sección en fondo negro con:
-- Descripción de la agencia
-- Estadísticas destacadas (150+, 3.5X, 98%, 12+)
-- Valores de la empresa
-- Sección de equipo experto
-
-### 6. **Contact (Contacto)**
-Formulario de contacto con:
-- Información de contacto (email, teléfono, ubicación)
-- Formulario con validación
-- Diseño en fondo blanco y negro
-
-### 7. **Footer**
-Enlaces de navegación, servicios, redes sociales y información legal.
-
-## 🎨 Paleta de Colores
-
-| Color | Hex | Uso |
-|-------|-----|-----|
-| Blanco | #FFFFFF | Fondo principal |
-| Negro | #000000 | Tipografía principal |
-| Dorado | #D4AF37 | Acentos, botones, destacados |
-| Gris Oscuro | #1a1a1a | Fondos alternados |
-
-## 📱 Tipografía
-
-- **Poppins**: Títulos (Bold/Black)
-- **Montserrat**: Subtítulos y etiquetas (Bold/SemiBold)
-- **Inter**: Body text (Regular)
-
-## 🔧 Configuración
-
-### Variables de Entorno
-
-Crear archivo `.env.local` en la raíz del proyecto:
-
-```env
-VITE_APP_TITLE=The Boss Agency
-VITE_APP_ID=thebossagency
-```
-
-### Tailwind CSS
-
-La configuración de Tailwind está en `tailwind.config.js`. Los colores personalizados (dorado, etc.) están definidos en `client/src/index.css`.
-
-## 📊 Performance
-
-- **Lighthouse Score**: 90+
-- **Bundle Size**: ~150KB (gzipped)
-- **Time to Interactive**: <2s
-- **Responsive**: Mobile-first approach
-
-## 🔐 Seguridad
-
-- Validación de formularios en cliente y servidor
-- Sanitización de inputs
-- CORS configurado correctamente
-- Dependencias actualizadas regularmente
-
-## 📝 Componentes Principales
-
-### Header.tsx
-Navegación con scroll suave entre secciones. Responsive con menú hamburguesa.
-
-### Hero.tsx
-Sección hero con tipografía gigante, imagen integrada y CTAs.
-
-### Services.tsx
-Tres pilares de servicios en sección dorada con iconografía.
-
-### Portfolio.tsx
-Carrusel interactivo de casos de éxito con navegación.
-
-### About.tsx
-Información sobre la agencia, valores y equipo.
-
-### Contact.tsx
-Formulario de contacto con información de contacto.
-
-### Footer.tsx
-Enlaces, redes sociales e información legal.
-
-## 🚀 Deployment
-
-### Opción 1: Manus (Recomendado)
-```bash
-# Publicar directamente desde Manus
-# Usa el botón Publish en el Management UI
-```
-
-### Opción 2: Vercel
-```bash
-# Instalar Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-```
-
-### Opción 3: Netlify
-```bash
-# Instalar Netlify CLI
-npm i -g netlify-cli
-
-# Deploy
-netlify deploy --prod --dir=dist
-```
-
-### Opción 4: GitHub Pages
-```bash
-# Configurar en vite.config.ts
-# base: '/thebossagency-website/'
-
-pnpm build
-# Subir carpeta dist a gh-pages branch
-```
-
-## 📚 Documentación Adicional
-
-- [React Documentation](https://react.dev)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Vite Guide](https://vitejs.dev)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs)
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está bajo la licencia MIT. Ver archivo `LICENSE` para más detalles.
-
-## 👨‍💼 Autor
-
-**The Boss Agency**
-- Website: https://thebossagency.co
-- Email: hola@thebossagency.com
-- Teléfono: +1 (555) 123-4567
-
-## 🙏 Agradecimientos
-
-- Inspiración de diseño: Sessions.co.uk
-- Componentes UI: shadcn/ui
-- Iconografía: Lucide React
-- Estilos: Tailwind CSS
-
-## 📞 Soporte
-
-Para preguntas o soporte, contacta a:
-- Email: hola@thebossagency.com
-- Issues: Abre un issue en GitHub
-
----
-
-**Última actualización**: Junio 2026
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Boss Agency - Hacemos que las marcas dominen el mercado. Estrategia digital, marketing, branding y diseño web con resultados comprobados." />
+  <title>The Boss Agency - Dominamos el Mercado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #D4AF37; --gold-light: #F0D060;
+      --black: #0A0A0A; --dark: #111111; --dark2: #1A1A1A;
+      --grey: #2A2A2A; --grey-mid: #555; --grey-light: #999;
+      --white: #FFFFFF; --off-white: #F5F5F5;
+      --radius: 16px; --radius-sm: 10px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--white); line-height: 1.5; overflow-x: hidden; }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+    /* HEADER */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(212,175,55,0.15); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; max-width: 1280px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--white); }
+    .logo-icon { width: 44px; height: 44px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+    .logo-text { font-family: 'Bebas Neue', cursive; font-size: 26px; letter-spacing: 0.05em; line-height: 1; }
+    .logo-sub { font-size: 10px; letter-spacing: 0.2em; color: var(--gold); font-weight: 600; }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a { color: #999; text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 14px; border-radius: 8px; transition: all .3s; }
+    nav a:hover { color: #fff; background: rgba(255,255,255,0.06); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none; border: none; cursor: pointer; transition: all .3s; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; }
+    .btn-gold { background: var(--gold); color: var(--black); padding: 12px 22px; font-size: 14px; }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-outline { border: 2px solid var(--gold); color: var(--gold); padding: 10px 20px; font-size: 14px; background: transparent; }
+    .btn-outline:hover { background: var(--gold); color: var(--black); }
+    .btn-lg { padding: 16px 32px; font-size: 16px; }
+    .btn-xl { padding: 18px 40px; font-size: 18px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 26px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 81px; left: 0; right: 0; bottom: 0; background: rgba(10,10,10,0.98); backdrop-filter: blur(12px); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'Bebas Neue', cursive; font-size: 40px; color: #fff; text-decoration: none; letter-spacing: 0.05em; transition: color .3s; }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* SECTIONS */
+    section { padding: 100px 0; }
+    .section-label { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.3); padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; }
+    .section-title { font-family: 'Bebas Neue', cursive; font-size: clamp(48px,7vw,96px); line-height: 0.9; letter-spacing: 0.01em; margin-bottom: 20px; }
+    .section-title .gold { color: var(--gold); }
+    .section-subtitle { font-size: clamp(16px,2vw,20px); color: #999; line-height: 1.6; max-width: 600px; }
+    .section-header { margin-bottom: 60px; }
+    .section-header.center { text-align: center; display: flex; flex-direction: column; align-items: center; }
+
+    /* HERO */
+    #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 100px; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,175,55,0.12) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 80% 80%, rgba(212,175,55,0.05) 0%, transparent 60%); }
+    .hero-grid { position: absolute; inset: 0; z-index: 0; opacity: 0.04; background-image: linear-gradient(rgba(212,175,55,1) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,1) 1px, transparent 1px); background-size: 60px 60px; }
+    .hero-content { position: relative; z-index: 1; width: 100%; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; margin-bottom: 28px; }
+    .hero-eyebrow::before { content: ''; width: 30px; height: 2px; background: var(--gold); }
+    h1.hero-title { font-family: 'Bebas Neue', cursive; font-size: clamp(60px,10vw,140px); line-height: 0.9; letter-spacing: 0.01em; margin-bottom: 28px; }
+    h1.hero-title .gold { color: var(--gold); }
+    h1.hero-title .outline { -webkit-text-stroke: 2px rgba(255,255,255,0.25); color: transparent; }
+    .hero-desc { font-size: clamp(16px,2vw,20px); color: #999; line-height: 1.6; max-width: 560px; margin-bottom: 40px; }
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 60px; }
+    .hero-stats { display: flex; gap: 40px; flex-wrap: wrap; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .stat-num { font-family: 'Bebas Neue', cursive; font-size: clamp(32px,4vw,52px); color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 13px; color: #999; margin-top: 4px; }
+
+    /* SERVICES */
+    #servicios { background: var(--dark); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px,1fr)); gap: 20px; }
+    .service-card { background: var(--dark2); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); padding: 32px; transition: all .4s; position: relative; overflow: hidden; }
+    .service-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(212,175,55,0.05) 0%, transparent 60%); opacity: 0; transition: opacity .4s; }
+    .service-card:hover { border-color: rgba(212,175,55,0.3); transform: translateY(-4px); }
+    .service-card:hover::before { opacity: 1; }
+    .service-icon { width: 56px; height: 56px; background: rgba(212,175,55,0.1); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px; }
+    .service-num { font-family: 'Bebas Neue', cursive; font-size: 64px; color: rgba(212,175,55,0.06); position: absolute; top: 20px; right: 24px; line-height: 1; pointer-events: none; }
+    .service-title { font-family: 'Bebas Neue', cursive; font-size: 28px; letter-spacing: 0.02em; margin-bottom: 12px; line-height: 1; }
+    .service-desc { font-size: 14px; color: #999; line-height: 1.6; margin-bottom: 20px; }
+    .service-metric { display: inline-block; font-size: 13px; font-weight: 700; color: var(--gold); background: rgba(212,175,55,0.1); padding: 4px 12px; border-radius: 100px; }
+
+    /* CASOS */
+    #casos { background: var(--black); }
+    .casos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px,1fr)); gap: 20px; }
+    .caso-card { background: var(--dark2); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,0.06); transition: all .4s; }
+    .caso-card:hover { border-color: rgba(212,175,55,0.3); transform: translateY(-4px); }
+    .caso-img-placeholder { width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-size: 56px; position: relative; }
+    .caso-badge { position: absolute; top: 16px; left: 16px; background: rgba(10,10,10,0.85); backdrop-filter: blur(8px); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--gold); padding: 4px 12px; border-radius: 100px; border: 1px solid rgba(212,175,55,0.3); }
+    .caso-body { padding: 24px; }
+    .caso-title { font-family: 'Bebas Neue', cursive; font-size: 28px; letter-spacing: 0.02em; margin-bottom: 8px; }
+    .caso-desc { font-size: 14px; color: #999; line-height: 1.5; margin-bottom: 16px; }
+    .caso-metric { display: flex; align-items: center; gap: 8px; }
+    .caso-metric-num { font-family: 'Bebas Neue', cursive; font-size: 28px; color: var(--gold); line-height: 1; }
+    .caso-metric-label { font-size: 12px; color: #999; }
+
+    /* NOSOTROS */
+    #nosotros { background: var(--dark); }
+    .nosotros-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .nosotros-img { width: 100%; aspect-ratio: 4/5; border-radius: var(--radius); background: linear-gradient(135deg, var(--grey) 0%, rgba(212,175,55,0.15) 100%); display: flex; align-items: center; justify-content: center; font-size: 100px; position: relative; }
+    .nosotros-badge { position: absolute; bottom: 28px; left: -24px; background: var(--gold); color: var(--black); border-radius: var(--radius-sm); padding: 20px 24px; }
+    .nosotros-badge-num { font-family: 'Bebas Neue', cursive; font-size: 48px; line-height: 1; }
+    .nosotros-badge-label { font-size: 12px; font-weight: 700; }
+    .values-list { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+    .value-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px; background: rgba(212,175,55,0.05); border-radius: var(--radius-sm); border: 1px solid rgba(212,175,55,0.1); }
+    .value-icon { font-size: 24px; flex-shrink: 0; }
+    .value-title { font-weight: 700; margin-bottom: 4px; }
+    .value-desc { font-size: 13px; color: #999; }
+
+    /* PROCESO */
+    #proceso { background: var(--black); }
+    .proceso-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; position: relative; }
+    .proceso-steps::before { content: ''; position: absolute; top: 28px; left: 12.5%; right: 12.5%; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold)); z-index: 0; }
+    .proceso-step { text-align: center; padding: 0 12px; position: relative; z-index: 1; }
+    .proceso-num { width: 56px; height: 56px; border-radius: 50%; background: var(--gold); color: var(--black); font-family: 'Bebas Neue', cursive; font-size: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; border: 4px solid var(--black); }
+    .proceso-title { font-family: 'Bebas Neue', cursive; font-size: 24px; letter-spacing: 0.02em; margin-bottom: 12px; }
+    .proceso-desc { font-size: 14px; color: #999; line-height: 1.5; }
+    .proceso-deliverables { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+    .deliverable { font-size: 11px; color: var(--gold); background: rgba(212,175,55,0.1); padding: 3px 8px; border-radius: 4px; }
+
+    /* TESTIMONIOS */
+    #testimonios { background: var(--dark); }
+    .testimonios-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 20px; }
+    .testimonio-card { background: var(--dark2); border-radius: var(--radius); padding: 32px; border: 1px solid rgba(255,255,255,0.06); transition: border-color .3s; }
+    .testimonio-card:hover { border-color: rgba(212,175,55,0.2); }
+    .stars { color: var(--gold); font-size: 18px; margin-bottom: 16px; letter-spacing: 2px; }
+    .testimonio-text { font-size: 15px; color: #aaa; line-height: 1.7; font-style: italic; margin-bottom: 24px; }
+    .testimonio-author { display: flex; align-items: center; gap: 14px; }
+    .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #8B6914); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .author-name { font-weight: 700; font-size: 15px; }
+    .author-role { font-size: 13px; color: #999; }
+    .client-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 32px; margin-top: 60px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .client-logo { font-family: 'Bebas Neue', cursive; font-size: 22px; color: rgba(255,255,255,0.15); letter-spacing: 0.1em; transition: color .3s; cursor: default; }
+    .client-logo:hover { color: rgba(212,175,55,0.4); }
+
+    /* BLOG */
+    #blog { background: var(--black); }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 20px; }
+    .blog-card { background: var(--dark2); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,0.06); transition: all .4s; }
+    .blog-card:hover { border-color: rgba(212,175,55,0.3); transform: translateY(-4px); }
+    .blog-img { width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-size: 48px; background: linear-gradient(135deg, var(--grey) 0%, var(--dark2) 100%); }
+    .blog-body { padding: 24px; }
+    .blog-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+    .blog-cat { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); background: rgba(212,175,55,0.1); padding: 3px 10px; border-radius: 100px; }
+    .blog-date { font-size: 12px; color: #999; }
+    .blog-title { font-family: 'Bebas Neue', cursive; font-size: 24px; letter-spacing: 0.02em; line-height: 1.1; margin-bottom: 10px; }
+    .blog-excerpt { font-size: 14px; color: #999; line-height: 1.5; margin-bottom: 16px; }
+    .blog-link { font-size: 13px; font-weight: 700; color: var(--gold); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap .3s; }
+    .blog-link:hover { gap: 10px; }
+
+    /* PRECIOS */
+    #precios { background: var(--dark); }
+    .precios-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .precio-card { background: var(--dark2); border-radius: var(--radius); padding: 40px 32px; border: 1px solid rgba(255,255,255,0.06); position: relative; transition: all .4s; }
+    .precio-card:hover { transform: translateY(-4px); }
+    .precio-card.featured { background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, var(--dark2) 100%); border-color: var(--gold); }
+    .precio-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--black); font-size: 11px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 16px; border-radius: 100px; white-space: nowrap; }
+    .precio-plan { font-family: 'Bebas Neue', cursive; font-size: 14px; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 16px; }
+    .precio-amount { font-family: 'Bebas Neue', cursive; font-size: 60px; line-height: 1; margin-bottom: 4px; }
+    .precio-amount .currency { font-size: 28px; vertical-align: top; margin-top: 10px; display: inline-block; }
+    .precio-amount .period { font-size: 18px; color: #999; }
+    .precio-desc { font-size: 14px; color: #999; margin-bottom: 32px; line-height: 1.5; }
+    .precio-features { list-style: none; margin-bottom: 36px; display: flex; flex-direction: column; gap: 12px; }
+    .precio-features li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: #aaa; }
+    .precio-features li::before { content: '✓'; color: var(--gold); font-weight: 800; flex-shrink: 0; }
+    .precio-features li.no::before { content: '✗'; color: rgba(255,255,255,0.15); }
+    .precio-features li.no { opacity: 0.35; }
+
+    /* FAQ */
+    #faq { background: var(--black); }
+    .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: var(--dark2); border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.06); overflow: hidden; }
+    .faq-question { display: flex; align-items: center; justify-content: space-between; padding: 22px 28px; cursor: pointer; font-weight: 600; font-size: 16px; user-select: none; transition: background .3s; background: none; border: none; width: 100%; color: #fff; text-align: left; gap: 16px; }
+    .faq-question:hover { background: rgba(212,175,55,0.04); }
+    .faq-icon { font-size: 22px; color: var(--gold); flex-shrink: 0; transition: transform .3s; line-height: 1; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s; padding: 0 28px; }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0 28px 22px; }
+    .faq-answer p { font-size: 15px; color: #999; line-height: 1.7; }
+
+    /* CONTACTO */
+    #contacto { background: var(--dark); }
+    .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    .contact-info { display: flex; flex-direction: column; gap: 28px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 16px; }
+    .contact-icon { width: 48px; height: 48px; background: rgba(212,175,55,0.1); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .contact-label { font-size: 12px; color: #999; margin-bottom: 4px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .contact-value { font-size: 16px; font-weight: 600; }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-label { font-size: 13px; font-weight: 600; letter-spacing: 0.05em; }
+    .form-input, .form-select, .form-textarea { background: var(--dark2); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-sm); padding: 14px 18px; color: #fff; font-size: 15px; font-family: inherit; transition: border-color .3s; width: 100%; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--gold); }
+    .form-select { appearance: none; cursor: pointer; }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-input::placeholder, .form-textarea::placeholder { color: #666; }
+
+    /* FOOTER */
+    footer { background: #0d0d0d; border-top: 1px solid rgba(255,255,255,0.06); padding: 64px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand p { font-size: 14px; color: #999; line-height: 1.7; margin-top: 16px; max-width: 280px; }
+    .footer-social { display: flex; gap: 12px; margin-top: 24px; }
+    .social-btn { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); color: #999; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 16px; transition: all .3s; }
+    .social-btn:hover { background: var(--gold); color: var(--black); }
+    .footer-col h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #999; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color .3s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 13px; color: #999; flex-wrap: wrap; gap: 12px; }
+    .footer-newsletter { display: flex; gap: 0; margin-top: 16px; }
+    .footer-newsletter input { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-right: none; border-radius: 8px 0 0 8px; padding: 12px 16px; color: #fff; font-size: 14px; font-family: inherit; }
+    .footer-newsletter input::placeholder { color: #666; }
+    .footer-newsletter input:focus { outline: none; border-color: var(--gold); }
+    .footer-newsletter button { background: var(--gold); color: var(--black); border: none; padding: 12px 18px; border-radius: 0 8px 8px 0; font-weight: 700; font-size: 13px; cursor: pointer; transition: background .3s; white-space: nowrap; font-family: inherit; }
+    .footer-newsletter button:hover { background: var(--gold-light); }
+
+    /* SCROLL TOP */
+    .scroll-top { position: fixed; bottom: 32px; right: 32px; z-index: 50; width: 48px; height: 48px; background: var(--gold); color: var(--black); border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 20px; opacity: 0; pointer-events: none; transition: all .3s; box-shadow: 0 4px 20px rgba(212,175,55,0.4); }
+    .scroll-top.visible { opacity: 1; pointer-events: auto; }
+    .scroll-top:hover { transform: translateY(-3px); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .precios-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nosotros-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .header-inner { padding: 16px 20px; }
+      .services-grid, .casos-grid, .testimonios-grid, .blog-grid { grid-template-columns: 1fr; }
+      .contacto-grid { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .proceso-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .proceso-steps::before { display: none; }
+      .precios-grid { max-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; }
+      .btn-xl { width: 100%; justify-content: center; }
+      .proceso-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">👑</div>
+      <div>
+        <div class="logo-text">THE BOSS</div>
+        <div class="logo-sub">AGENCY</div>
+      </div>
+    </a>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#casos">Portafolio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#blog">Blog</a>
+      <a href="#precios">Precios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="btn btn-gold" style="margin-left:12px;">Agendar Llamada →</a>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#servicios" class="mobile-link">Servicios</a>
+  <a href="#casos" class="mobile-link">Portafolio</a>
+  <a href="#nosotros" class="mobile-link">Nosotros</a>
+  <a href="#blog" class="mobile-link">Blog</a>
+  <a href="#precios" class="mobile-link">Precios</a>
+  <a href="#contacto" class="mobile-link">Contacto</a>
+  <a href="#contacto" class="btn btn-gold btn-lg mobile-link">Agendar Llamada →</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container hero-content">
+    <div class="hero-eyebrow">Agencia de Marketing Digital</div>
+    <h1 class="hero-title">
+      HACEMOS QUE<br>
+      LAS MARCAS<br>
+      <span class="gold">DOMINEN</span><br>
+      <span class="outline">EL MERCADO</span>
+    </h1>
+    <p class="hero-desc">Transformamos marcas con estrategia, creatividad y datos. De la idea al liderazgo del mercado, en tiempo récord.</p>
+    <div class="hero-ctas">
+      <a href="#contacto" class="btn btn-gold btn-xl">Empezar Ahora →</a>
+      <a href="#casos" class="btn btn-outline btn-xl">Ver Portafolio</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">150+</div>
+        <div class="stat-label">Proyectos Exitosos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3.5X</div>
+        <div class="stat-label">Crecimiento Promedio</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Clientes Satisfechos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">12+</div>
+        <div class="stat-label">Años de Experiencia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Lo Que Hacemos</div>
+      <h2 class="section-title">NUESTROS <span class="gold">SERVICIOS</span></h2>
+      <p class="section-subtitle">Soluciones digitales completas diseñadas para catapultar tu marca al siguiente nivel con resultados medibles.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-icon">🎯</div>
+        <div class="service-title">Estrategia Digital</div>
+        <p class="service-desc">Desarrollamos estrategias digitales personalizadas que alinean cada acción con tus objetivos de negocio. Análisis profundo, hoja de ruta clara.</p>
+        <span class="service-metric">↑ 250% Engagement</span>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-icon">📈</div>
+        <div class="service-title">Marketing Orientado a Resultados</div>
+        <p class="service-desc">Campañas de performance que maximizan tu ROI. Paid media, email marketing y funnel de conversión optimizado con data en tiempo real.</p>
+        <span class="service-metric">5M+ Impresiones</span>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon">👑
