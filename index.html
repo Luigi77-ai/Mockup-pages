@@ -1,636 +1,372 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Boss Agency Co | Home</title>
-  <meta
-    name="description"
-    content="The Boss Agency Co home section mockup."
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sessions Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#ffffff;
-      --text:#16110d;
-      --brand-orange:#E07A2F;
-      --menu-rail-width:88px;
-      --sidebar-width:300px;
-      --menu-total-width:calc(var(--menu-rail-width) + var(--sidebar-width));
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;scroll-behavior:smooth}
-    body{
-      font-family:"Be Vietnam Pro",sans-serif;
-      color:var(--text);
-      background:#ffffff;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-      overflow-x:hidden;
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --pill: #000000;
+      --pill-text: #ffffff;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-    button{font:inherit}
-
-    .menu-shell{
-      position:fixed;
-      top:0;
-      left:0;
-      width:var(--menu-total-width);
-      height:100vh;
-      z-index:60;
-      display:flex;
-      transform:translateX(calc(-1 * var(--sidebar-width)));
-      transition:transform .34s ease;
-      pointer-events:none;
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    body.menu-open .menu-shell{
-      transform:translateX(0);
-      pointer-events:auto;
+    .page {
+      min-height: 100vh;
+      padding: 24px 18px 40px;
+      display: flex;
+      flex-direction: column;
     }
 
-    .menu-trigger{
-      width:var(--menu-rail-width);
-      height:100vh;
-      border:none;
-      background:var(--brand-orange);
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:0;
-      flex:0 0 auto;
-      position:relative;
-      z-index:2;
-      pointer-events:auto;
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
     }
 
-    .menu-trigger-inner{
-      width:100%;
-      height:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-      padding:20px 0;
-      background:transparent;
+    .brand {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 0.9;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
-    .menu-tab-text{
-      writing-mode:vertical-rl;
-      transform:rotate(180deg);
-      font-size:22px;
-      line-height:.92;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      font-weight:800;
-      color:#ffffff;
-      user-select:none;
-      white-space:nowrap;
+    .brand .mark {
+      display: inline-block;
+      position: relative;
+      margin-left: 4px;
     }
 
-    .menu-tab-line{
-      width:4px;
-      height:250px;
-      border-radius:999px;
-      background:#ffffff;
-      flex:0 0 auto;
+    .brand .mark::after {
+      content: "S";
+      position: absolute;
+      inset: 0;
+      transform: scale(0.78);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid #000;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      line-height: 1;
     }
 
-    .menu-panel{
-      width:var(--sidebar-width);
-      height:100vh;
-      padding:24px 20px;
-      background:var(--brand-orange);
-      color:#ffffff;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      gap:18px;
+    .actions {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding-top: 6px;
     }
 
-    .brand-box{
-      border-radius:16px;
-      overflow:hidden;
-      background:rgba(255,255,255,.16);
-      color:#ffffff;
-      padding:16px;
-      border:1px solid rgba(255,255,255,.16);
-      backdrop-filter:blur(10px);
+    .menu-btn,
+    .circle-btn {
+      background: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .brand{
-      display:inline-block;
-      font-size:1.05rem;
-      font-weight:800;
-      letter-spacing:-.02em;
+    .menu-btn {
+      height: 70px;
+      min-width: 88px;
+      padding: 0 18px;
+      border-radius: 18px;
+      font-family: 'Anton', sans-serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
-    .nav-stack{
-      display:grid;
-      gap:10px;
-      margin-top:12px;
+    .circle-btn {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      font-size: 1.5rem;
     }
 
-    .nav-link{
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:10px;
-      padding:14px;
-      background:rgba(255,255,255,.14);
-      border-radius:14px;
-      color:#ffffff;
-      font-size:14px;
-      font-weight:700;
-      transition:transform .2s ease,background .2s ease;
-      border:1px solid rgba(255,255,255,.12);
+    .hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0;
     }
 
-    .nav-link:hover{
-      transform:translateY(-1px);
-      background:rgba(255,255,255,.22);
+    .headline {
+      width: min(920px, 100%);
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      color: #000;
+      line-height: 0.9;
+      font-size: clamp(3rem, 7vw, 7rem);
+      letter-spacing: 0.5px;
     }
 
-    .nav-link small{
-      width:28px;
-      height:28px;
-      border-radius:999px;
-      display:grid;
-      place-items:center;
-      background:#ffffff;
-      font-size:12px;
-      font-weight:800;
-      color:var(--brand-orange);
+    .line {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
     }
 
-    .menu-socials{
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
+    .line + .line {
+      margin-top: 12px;
     }
 
-    .menu-socials a{
-      width:42px;
-      height:42px;
-      display:grid;
-      place-items:center;
-      border-radius:999px;
-      background:rgba(255,255,255,.18);
-      border:1px solid rgba(255,255,255,.14);
-      color:#ffffff;
-      transition:transform .2s ease,background .2s ease,color .2s ease;
+    .media-card {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #111;
+      flex-shrink: 0;
     }
 
-    .menu-socials a:hover{
-      transform:translateY(-2px);
-      background:#ffffff;
-      color:var(--brand-orange);
+    .media-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .menu-socials svg{
-      width:18px;
-      height:18px;
-      fill:currentColor;
+    .burger-card {
+      width: 156px;
+      height: 74px;
+      background: #111;
     }
 
-    .layout{
-      min-height:100vh;
-      margin-left:var(--menu-rail-width);
-      transition:margin-left .34s ease;
-      background:#ffffff;
+    .logo-card {
+      width: 410px;
+      height: 74px;
+      background: #1b1b1b;
+      color: #fff;
+      padding: 0 22px;
+      justify-content: space-between;
+      font-family: Arial, sans-serif;
     }
 
-    body.menu-open .layout{
-      margin-left:var(--menu-total-width);
+    .logo-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .content{
-      padding:24px;
-      background:#ffffff;
+    .logo-badge {
+      width: 44px;
+      height: 44px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: bold;
     }
 
-    .hero{
-      min-height:calc(100vh - 48px);
-      padding:0;
-      background:#ffffff;
-      position:relative;
-      overflow:hidden;
-      display:flex;
-      align-items:stretch;
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
     }
 
-    .hero-inner{
-      width:100%;
-      max-width:1500px;
-      margin:0 auto;
-      min-height:calc(100vh - 48px);
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
-      position:relative;
-      z-index:1;
+    .logo-text strong {
+      font-size: 1.2rem;
+      letter-spacing: 0.4px;
     }
 
-    .hero-topbar{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:24px;
-      padding:0 6px;
-      margin-bottom:24px;
+    .logo-text span {
+      font-size: 0.72rem;
+      opacity: 0.9;
+      margin-top: 3px;
     }
 
-    .hero-mark{
-      display:inline-flex;
-      align-items:flex-start;
-      justify-content:flex-start;
-      color:#000000;
-      font-size:clamp(3.2rem,7vw,5.8rem);
-      line-height:.86;
-      letter-spacing:-.08em;
-      font-weight:900;
-      text-transform:uppercase;
-      user-select:none;
+    .logo-right {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
     }
 
-    .hero-mark span{
-      display:inline-block;
-      position:relative;
+    .bowl-card {
+      width: 128px;
+      height: 74px;
+      background: #111;
     }
 
-    .hero-mark span::after{
-      content:"";
-      display:inline-block;
-      width:.72em;
-      height:.72em;
-      border:6px solid #000;
-      border-radius:999px;
-      margin-left:.06em;
-      vertical-align:middle;
-      transform:translateY(-.03em);
-    }
-
-    .hero-actions-top{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding-top:2px;
-      flex-shrink:0;
-    }
-
-    .hero-menu-pill,
-    .hero-menu-circle{
-      border:none;
-      background:#000000;
-      color:#ffffff;
-      cursor:pointer;
-      transition:transform .2s ease,opacity .2s ease;
-    }
-
-    .hero-menu-pill:hover,
-    .hero-menu-circle:hover{
-      transform:translateY(-1px);
-      opacity:.92;
-    }
-
-    .hero-menu-pill{
-      min-width:74px;
-      height:60px;
-      padding:0 16px;
-      border-radius:16px;
-      font-size:1.05rem;
-      font-weight:900;
-      letter-spacing:-.03em;
-      text-transform:uppercase;
-    }
-
-    .hero-menu-circle{
-      width:60px;
-      height:60px;
-      border-radius:999px;
-      display:grid;
-      place-items:center;
-      font-size:1.15rem;
-      font-weight:900;
-      line-height:1;
-    }
-
-    .hero-center{
-      flex:1;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px 0 36px;
-    }
-
-    .hero-copy{
-      width:100%;
-      max-width:980px;
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      text-align:left;
-    }
-
-    .hero-editorial-title{
-      width:100%;
-      margin:0;
-      color:#000000;
-      font-size:clamp(3.2rem,6.8vw,7rem);
-      line-height:.9;
-      letter-spacing:-.09em;
-      font-weight:900;
-      text-transform:uppercase;
-    }
-
-    .hero-editorial-title .line{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      flex-wrap:nowrap;
-      white-space:nowrap;
-    }
-
-    .hero-editorial-title .line + .line{
-      margin-top:14px;
-    }
-
-    .hero-chip-dark{
-      min-width:360px;
-      height:64px;
-      border-radius:10px;
-      background:#191919;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      color:#ffffff;
-      padding:0 22px;
-      position:relative;
-      overflow:hidden;
-      flex:0 0 auto;
-    }
-
-    .hero-chip-dark::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(90deg, rgba(255,255,255,.04), rgba(255,255,255,0));
-      pointer-events:none;
-    }
-
-    .hero-chip-brand{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      width:100%;
-      font-size:.92rem;
-      font-weight:800;
-      letter-spacing:.02em;
-      text-transform:uppercase;
-      position:relative;
-      z-index:1;
-    }
-
-    .hero-chip-brand strong{
-      font-size:1.05rem;
-      letter-spacing:-.03em;
-      font-weight:900;
-    }
-
-    .hero-image-card{
-      position:relative;
-      flex:0 0 auto;
-      overflow:hidden;
-      border-radius:10px;
-      background:#111;
-      box-shadow:0 10px 24px rgba(0,0,0,.12);
-    }
-
-    .hero-image-card img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .hero-image-card.top-card{
-      width:130px;
-      height:70px;
-      transform:translateY(-4px);
-    }
-
-    .hero-image-card.bottom-card{
-      width:108px;
-      height:66px;
-      transform:translateY(2px);
-    }
-
-    .hero-editorial-sub{
-      margin:28px 0 0;
-      max-width:700px;
-      color:#3f3a35;
-      font-size:15px;
-      line-height:1.7;
-      font-weight:600;
-      letter-spacing:-.01em;
-    }
-
-    @media (max-width:1180px){
-      .hero-editorial-title .line{
-        flex-wrap:wrap;
-        white-space:normal;
+    @media (max-width: 900px) {
+      .menu-btn {
+        height: 58px;
+        min-width: 78px;
+        border-radius: 16px;
+        font-size: 1rem;
       }
-      .hero-chip-dark{
-        min-width:300px;
+
+      .circle-btn {
+        width: 58px;
+        height: 58px;
+      }
+
+      .logo-card {
+        width: 100%;
+        max-width: 360px;
       }
     }
 
-    @media (max-width:780px){
-      .hero-topbar{
-        align-items:flex-start;
-        gap:16px;
+    @media (max-width: 768px) {
+      .page {
+        padding: 18px 14px 32px;
       }
 
-      .hero-mark{
-        font-size:clamp(2.2rem,10vw,3.6rem);
+      .topbar {
+        align-items: center;
+        margin-bottom: 28px;
       }
 
-      .hero-menu-pill{
-        min-width:62px;
-        height:48px;
-        font-size:.88rem;
-        border-radius:14px;
-        padding:0 14px;
+      .brand {
+        font-size: 3rem;
       }
 
-      .hero-menu-circle{
-        width:48px;
-        height:48px;
-        font-size:.92rem;
+      .hero {
+        justify-content: flex-start;
+        align-items: center;
       }
 
-      .hero-center{
-        padding:12px 0 20px;
+      .headline {
+        font-size: clamp(2.6rem, 12vw, 4.8rem);
+        line-height: 0.92;
       }
 
-      .hero-editorial-title{
-        font-size:clamp(2.5rem,12vw,4.3rem);
-        line-height:.92;
+      .line {
+        gap: 10px;
       }
 
-      .hero-chip-dark{
-        min-width:100%;
-        width:100%;
-        height:58px;
+      .burger-card,
+      .bowl-card {
+        width: 100px;
+        height: 58px;
       }
 
-      .hero-image-card.top-card{
-        width:108px;
-        height:58px;
+      .logo-card {
+        height: 58px;
+        padding: 0 14px;
       }
 
-      .hero-image-card.bottom-card{
-        width:92px;
-        height:56px;
+      .logo-badge {
+        width: 34px;
+        height: 34px;
+        font-size: 0.7rem;
       }
 
-      .hero-editorial-sub{
-        margin-top:22px;
-        font-size:14px;
+      .logo-text strong {
+        font-size: 0.95rem;
       }
-    }
 
-    @media (max-width:760px){
-      :root{
-        --menu-rail-width:78px;
-        --sidebar-width:260px;
-        --menu-total-width:calc(var(--menu-rail-width) + var(--sidebar-width));
+      .logo-text span {
+        font-size: 0.58rem;
+      }
+
+      .logo-right {
+        font-size: 1.3rem;
       }
     }
 
-    @media (max-width:500px){
-      .hero-copy{
-        max-width:100%;
+    @media (max-width: 520px) {
+      .topbar {
+        flex-direction: column;
+        gap: 18px;
       }
 
-      .hero-editorial-title .line{
-        gap:12px;
+      .actions {
+        align-self: flex-end;
       }
 
-      .hero-mark span::after{
-        border-width:4px;
+      .headline {
+        font-size: clamp(2.2rem, 14vw, 4rem);
       }
     }
   </style>
 </head>
 <body>
-  <div class="menu-shell">
-    <aside class="menu-panel" id="sideMenu">
-      <div class="brand-box">
-        <a class="brand" href="#hero">The Boss Agency Co</a>
-        <div class="nav-stack">
-          <a class="nav-link" href="#hero"><span>Home</span><small>01</small></a>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand" aria-label="Sessions">
+        SESSION<span class="mark">S</span>
+      </div>
+
+      <div class="actions">
+        <button class="menu-btn">Menu</button>
+        <button class="circle-btn" aria-label="Open dropdown">▼</button>
+      </div>
+    </header>
+
+    <main class="hero">
+      <section class="headline">
+        <div class="line">
+          <span>We turn loved food</span>
+
+          <div class="media-card burger-card">
+            <img
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
+              alt="Burger"
+            />
+          </div>
         </div>
-      </div>
 
-      <div class="menu-socials">
-        <a href="#" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95Zm8.95 1.55a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.35A5.65 5.65 0 1 1 6.35 12 5.66 5.66 0 0 1 12 6.35Zm0 1.8A3.85 3.85 0 1 0 15.85 12 3.85 3.85 0 0 0 12 8.15Z"/></svg>
-        </a>
-        <a href="#" aria-label="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.76l.41-3.2H13.5V8.56c0-.92.26-1.55 1.58-1.55h1.69V4.15c-.29-.04-1.28-.12-2.44-.12-2.42 0-4.08 1.48-4.08 4.2v2.37H7.5v3.2h2.75V22z"/></svg>
-        </a>
-        <a href="#" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48 2.49 2.49 0 0 1 4.98 3.5ZM3 9h4v12H3Zm6.5 0h3.83v1.64h.05c.53-1.01 1.83-2.08 3.77-2.08 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.58c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94V21h-4Z"/></svg>
-        </a>
-      </div>
-    </aside>
+        <div class="line">
+          <span>Brands</span>
 
-    <button class="menu-trigger" id="menuToggle" type="button" aria-expanded="false" aria-controls="sideMenu" aria-label="Toggle menu">
-      <span class="menu-trigger-inner">
-        <span class="menu-tab-text">THE BOSS AGENCY</span>
-        <span class="menu-tab-line" aria-hidden="true"></span>
-      </span>
-    </button>
-  </div>
-
-  <div class="layout">
-    <main class="content">
-      <section class="hero" id="hero">
-        <div class="hero-inner">
-          <div class="hero-topbar">
-            <div class="hero-mark"><span>SESSIONS</span></div>
-
-            <div class="hero-actions-top">
-              <button class="hero-menu-pill" type="button" id="heroMenuButton">Menu</button>
-              <button class="hero-menu-circle" type="button" aria-label="Open menu" id="heroCircleButton">▼</button>
+          <div class="media-card logo-card">
+            <div class="logo-left">
+              <div class="logo-badge">LB</div>
+              <div class="logo-text">
+                <strong>LITTLE BAO BOY</strong>
+                <span>北方包子男孩</span>
+              </div>
             </div>
+            <div class="logo-right">BANG</div>
           </div>
 
-          <div class="hero-center">
-            <div class="hero-copy">
-              <h1 class="hero-editorial-title">
-                <span class="line">
-                  <span>WE TURN LOVED FOOD</span>
-                  <span class="hero-image-card top-card">
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="Featured burger" />
-                  </span>
-                </span>
+          <span>Into</span>
+        </div>
 
-                <span class="line">
-                  <span>BRANDS</span>
-                  <span class="hero-chip-dark">
-                    <span class="hero-chip-brand">
-                      <span>LITTLE<br>BAD BOY</span>
-                      <strong>BANG</strong>
-                    </span>
-                  </span>
-                  <span>INTO</span>
-                </span>
-
-                <span class="line">
-                  <span class="hero-image-card bottom-card">
-                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="Featured bowl" />
-                  </span>
-                  <span>NATIONAL FRANCHISES</span>
-                </span>
-              </h1>
-
-              <p class="hero-editorial-sub">
-                We build standout brands, websites, strategy, and digital presence for businesses that want sharper positioning and a stronger first impression.
-              </p>
-            </div>
+        <div class="line">
+          <div class="media-card bowl-card">
+            <img
+              src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=80"
+              alt="Bowl of food"
+            />
           </div>
+
+          <span>National Franchises</span>
         </div>
       </section>
     </main>
   </div>
-
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const heroMenuButton = document.getElementById('heroMenuButton');
-    const heroCircleButton = document.getElementById('heroCircleButton');
-
-    function toggleMenu(){
-      document.body.classList.toggle('menu-open');
-      const expanded = document.body.classList.contains('menu-open');
-      menuToggle.setAttribute('aria-expanded', expanded);
-    }
-
-    menuToggle.addEventListener('click', toggleMenu);
-    heroMenuButton.addEventListener('click', toggleMenu);
-    heroCircleButton.addEventListener('click', toggleMenu);
-  </script>
 </body>
 </html>
