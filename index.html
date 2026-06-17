@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Boss Agency Co</title>
 
-  <link rel="preconnect" href://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
@@ -776,7 +776,7 @@
       100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    /* NEW ABOUT SECTION */
+    /* UPDATED ABOUT SECTION */
     .about-editorial {
       min-height: 100vh;
       background: #f5f0ea;
@@ -784,6 +784,24 @@
       align-items: center;
       padding: 82px 24px;
       overflow: hidden;
+      position: relative;
+      border-top: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .about-divider-copy {
+      position: absolute;
+      top: 0;
+      left: 24px;
+      transform: translateY(-50%);
+      background: #f5f0ea;
+      padding: 0 12px 0 0;
+      font-size: 0.86rem;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: rgba(0,0,0,0.75);
+      z-index: 5;
+      white-space: nowrap;
     }
 
     .about-editorial-box {
@@ -791,6 +809,10 @@
       max-width: 1240px;
       margin: 0 auto;
       position: relative;
+      min-height: 760px;
+      display: flex;
+      align-items: flex-start;
+      padding-top: 18px;
     }
 
     .about-copy {
@@ -802,14 +824,20 @@
     .about-copy-top {
       font-family: 'Anton', sans-serif;
       font-size: clamp(3.6rem, 8.3vw, 8.4rem);
-      line-height: 0.88;
-      letter-spacing: -0.03em;
+      line-height: 0.86;
+      letter-spacing: -0.04em;
+      word-spacing: 0.18em;
       text-transform: lowercase;
       color: #111;
     }
 
+    .about-copy-top .line-gap {
+      display: block;
+      margin-top: 12px;
+    }
+
     .about-copy-bottom {
-      margin-top: 8px;
+      margin-top: 14px;
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3.2rem, 6.5vw, 6.4rem);
       line-height: 0.9;
@@ -834,10 +862,9 @@
 
     .about-photo-floating {
       position: absolute;
-      right: 2%;
-      top: 48%;
-      transform: translateY(-40%);
-      width: min(100%, 360px);
+      right: 1%;
+      bottom: -82px;
+      width: min(100%, 455px);
       z-index: 3;
       pointer-events: none;
     }
@@ -851,11 +878,11 @@
 
     .about-badge {
       position: absolute;
-      right: 23%;
-      top: 52%;
+      right: 22%;
+      top: 48%;
       transform: translateY(-50%);
-      width: 112px;
-      height: 112px;
+      width: 116px;
+      height: 116px;
       z-index: 4;
       display: flex;
       align-items: center;
@@ -908,17 +935,21 @@
         min-height: 200px;
       }
 
+      .about-editorial-box {
+        min-height: 700px;
+      }
+
       .about-photo-floating {
-        width: min(100%, 300px);
+        width: min(100%, 390px);
         right: 0;
-        top: 56%;
+        bottom: -72px;
       }
 
       .about-badge {
-        right: 18%;
-        top: 58%;
-        width: 96px;
-        height: 96px;
+        right: 16%;
+        top: 50%;
+        width: 98px;
+        height: 98px;
       }
     }
 
@@ -1060,13 +1091,32 @@
         padding: 72px 14px 88px;
       }
 
+      .about-divider-copy {
+        left: 14px;
+        font-size: 0.74rem;
+        max-width: calc(100% - 28px);
+        white-space: normal;
+        line-height: 1.2;
+      }
+
+      .about-editorial-box {
+        min-height: auto;
+        padding-top: 22px;
+      }
+
       .about-copy-top {
         font-size: clamp(3rem, 12vw, 5.4rem);
+        word-spacing: 0.14em;
+        line-height: 0.88;
+      }
+
+      .about-copy-top .line-gap {
+        margin-top: 10px;
       }
 
       .about-copy-bottom {
         font-size: clamp(2.7rem, 10vw, 4.4rem);
-        margin-top: 10px;
+        margin-top: 14px;
       }
 
       .about-squiggle {
@@ -1076,20 +1126,19 @@
 
       .about-photo-floating {
         position: relative;
-        top: auto;
         right: auto;
-        transform: none;
-        width: min(100%, 290px);
-        margin: 20px 0 0 auto;
+        bottom: auto;
+        width: min(100%, 340px);
+        margin: 26px 0 -18px auto;
       }
 
       .about-badge {
-        right: 10px;
+        right: 12px;
         top: auto;
-        bottom: 74px;
+        bottom: 102px;
         transform: none;
-        width: 82px;
-        height: 82px;
+        width: 86px;
+        height: 86px;
       }
     }
 
@@ -1227,6 +1276,7 @@
 
       .about-copy-top {
         font-size: clamp(2.6rem, 12.5vw, 4.2rem);
+        word-spacing: 0.11em;
       }
 
       .about-copy-bottom {
@@ -1234,13 +1284,14 @@
       }
 
       .about-photo-floating {
-        width: min(100%, 240px);
+        width: min(100%, 275px);
+        margin-bottom: -12px;
       }
 
       .about-badge {
-        width: 68px;
-        height: 68px;
-        bottom: 60px;
+        width: 70px;
+        height: 70px;
+        bottom: 84px;
       }
     }
   </style>
@@ -1472,11 +1523,13 @@
     </section>
 
     <section class="about-editorial" id="about">
+      <div class="about-divider-copy">For the changemakers, advocates, and trailblazers.</div>
+
       <div class="about-editorial-box">
         <div class="about-copy">
           <h2 class="about-copy-top">
-            an agency built<br>
-            for bold growth.
+            an agency built
+            <span class="line-gap">for bold growth.</span>
           </h2>
 
           <div class="about-copy-bottom">
@@ -1500,14 +1553,15 @@
 
         <div class="about-badge" aria-hidden="true">
           <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <path d="M57 20C44 10 24 17 19 34C15 48 20 66 34 75C46 83 55 92 60 100C65 92 74 83 86 75C100 66 105 48 101 34C96 17 76 10 63 20L60 23L57 20Z"
-                  fill="#2e8f83" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
-            <path d="M60 89C56 80 49 73 39 66C29 59 25 47 28 37C31 27 41 23 49 28C54 31 57 36 60 41C63 36 66 31 71 28C79 23 89 27 92 37C95 47 91 59 81 66C71 73 64 80 60 89Z"
-                  fill="none" stroke="#f5f0ea" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M60 75C58 70 53 65 47 61C41 57 38 50 40 44C42 38 48 36 53 39C56 41 58 45 60 48C62 45 64 41 67 39C72 36 78 38 80 44C82 50 79 57 73 61C67 65 62 70 60 75Z"
-                  fill="none" stroke="#f5f0ea" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M60 55L63.4 61.8L71 63L65.5 68.1L66.8 75.4L60 71.8L53.2 75.4L54.5 68.1L49 63L56.6 61.8L60 55Z"
-                  fill="#f5f0ea"/>
+            <rect x="10" y="18" width="72" height="94" rx="14" fill="#2e8f83" stroke="#111" stroke-width="6"/>
+            <rect x="28" y="28" width="36" height="4" rx="2" fill="#f5f0ea"/>
+            <rect x="24" y="42" width="44" height="52" rx="6" fill="none" stroke="#f5f0ea" stroke-width="3.5"/>
+            <path d="M34 82L43 70L52 75L61 56" fill="none" stroke="#f5f0ea" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="61" cy="56" r="3.5" fill="#f5f0ea"/>
+            <path d="M90 28V92" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+            <path d="M82 40H98" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+            <path d="M82 60H104" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+            <path d="M82 80H96" stroke="#111" stroke-width="6" stroke-linecap="round"/>
           </svg>
         </div>
       </div>
