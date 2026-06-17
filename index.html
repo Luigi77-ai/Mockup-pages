@@ -78,12 +78,8 @@
     }
 
     @keyframes marqueeMove {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
     .menu-trigger {
@@ -334,10 +330,13 @@
 
     /* SERVICES */
     .services-section {
-      min-height: 100vh;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      min-height: auto;
       background: #d9a11d;
       color: #111;
-      padding: 70px 36px 36px;
+      padding: 44px 0 36px;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -346,131 +345,50 @@
 
     .services-wrap {
       width: 100%;
-      max-width: 1400px;
+      max-width: 1440px;
       margin: 0 auto;
+      padding: 0 48px;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 0.95fr 1.05fr;
       align-items: center;
-      gap: 20px;
+      gap: 28px;
     }
 
     .services-left {
-      padding-left: 34px;
+      padding-left: 10px;
     }
 
     .services-kicker {
       font-size: 0.95rem;
       font-weight: 500;
-      margin-bottom: 130px;
+      margin-bottom: 44px;
       letter-spacing: 0.01em;
     }
 
     .services-quote {
       font-family: 'Anton', sans-serif;
       text-transform: uppercase;
-      line-height: 0.88;
+      line-height: 0.9;
       letter-spacing: 0.01em;
-      max-width: 9ch;
-      font-size: clamp(3.7rem, 7vw, 7rem);
+      max-width: 8.5ch;
+      font-size: clamp(2.4rem, 4.2vw, 4.8rem);
       color: #111;
+      margin-bottom: 18px;
     }
 
     .services-quote .muted {
       color: rgba(17,17,17,0.45);
     }
 
-    .services-bottom {
-      margin-top: 36px;
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .services-price {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      line-height: 1;
-      color: #111;
-    }
-
-    .services-sub {
-      font-size: clamp(1.1rem, 2vw, 1.95rem);
-      line-height: 1.2;
-      color: rgba(17,17,17,0.7);
-    }
-
-    .services-visual {
-      position: relative;
-      min-height: 720px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-    }
-
-    .service-card {
-      position: absolute;
-      background: transparent;
-      text-align: center;
-    }
-
-    .service-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-      filter: drop-shadow(0 24px 26px rgba(0,0,0,0.16));
-    }
-
-    .service-card h3 {
-      font-family: 'Anton', sans-serif;
-      text-transform: uppercase;
-      font-size: 1.4rem;
-      line-height: 1;
-      margin-top: 10px;
-      letter-spacing: 0.03em;
-    }
-
-    .service-card p {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(17,17,17,0.7);
-      margin-top: 6px;
-    }
-
-    .card-web {
-      width: 220px;
-      left: 5%;
-      bottom: 72px;
-      z-index: 2;
-    }
-
-    .card-seo {
-      width: 255px;
-      left: 31%;
-      bottom: 24px;
-      z-index: 3;
-    }
-
-    .card-va {
-      width: 220px;
-      right: 6%;
-      bottom: 68px;
-      z-index: 2;
-    }
-
-    .services-arrows {
-      position: absolute;
-      left: 34px;
-      bottom: 22px;
+    .services-controls {
       display: flex;
       gap: 10px;
+      margin-top: 8px;
     }
 
     .services-arrow {
-      width: 88px;
-      height: 52px;
+      width: 76px;
+      height: 46px;
       border: 2px solid #111;
       border-radius: 999px;
       display: inline-flex;
@@ -478,45 +396,94 @@
       justify-content: center;
       color: #111;
       background: transparent;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .services-arrow:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.12);
     }
 
     .services-arrow svg {
-      width: 28px;
-      height: 28px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .services-slider {
+      position: relative;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .services-viewport {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .services-track {
+      display: flex;
+      transition: transform 0.45s ease;
+    }
+
+    .service-slide {
+      min-width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      align-items: end;
+    }
+
+    .service-card {
+      text-align: center;
+    }
+
+    .service-image {
+      width: 100%;
+      aspect-ratio: 0.78 / 1;
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.16);
+      box-shadow: 0 20px 24px rgba(0,0,0,0.12);
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-card h3 {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      line-height: 1;
+      margin-top: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    .service-card p {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(17,17,17,0.72);
+      margin-top: 6px;
     }
 
     @media (max-width: 1100px) {
       .services-wrap {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 26px;
       }
 
       .services-left {
         padding-left: 0;
       }
 
-      .services-kicker {
-        margin-bottom: 50px;
-      }
-
-      .services-quote {
-        max-width: 100%;
-      }
-
-      .services-visual {
-        min-height: 780px;
-      }
-
-      .card-web {
-        left: 2%;
-      }
-
-      .card-seo {
-        left: 34%;
-      }
-
-      .card-va {
-        right: 2%;
+      .services-slider {
+        min-height: auto;
       }
     }
 
@@ -531,35 +498,22 @@
         font-size: 1.55rem;
       }
 
-      .services-section {
-        padding: 64px 20px 96px;
+      .services-wrap {
+        padding: 0 20px;
       }
 
-      .services-quote {
-        font-size: clamp(3rem, 10vw, 5.4rem);
-      }
-
-      .services-visual {
-        min-height: 920px;
+      .service-slide {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
       .service-card {
-        position: relative;
-        width: 100%;
-        max-width: 320px;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        margin: 0 auto 24px;
+        max-width: 360px;
+        margin: 0 auto;
       }
 
-      .services-visual {
-        display: block;
-      }
-
-      .services-arrows {
-        left: 20px;
-        bottom: 24px;
+      .service-image {
+        aspect-ratio: 1 / 1.1;
       }
     }
 
@@ -626,6 +580,18 @@
       .section {
         padding: 72px 14px;
       }
+
+      .services-section {
+        padding: 36px 0 28px;
+      }
+
+      .services-kicker {
+        margin-bottom: 24px;
+      }
+
+      .services-quote {
+        margin-bottom: 14px;
+      }
     }
 
     @media (max-width: 560px) {
@@ -675,25 +641,13 @@
         transform: translateY(-28px);
       }
 
-      .services-kicker {
-        margin-bottom: 30px;
-      }
-
-      .services-bottom {
-        margin-top: 24px;
-      }
-
-      .services-price {
-        font-size: 2rem;
-      }
-
-      .services-sub {
-        font-size: 1rem;
+      .services-wrap {
+        padding: 0 14px;
       }
 
       .services-arrow {
-        width: 74px;
-        height: 46px;
+        width: 68px;
+        height: 42px;
       }
     }
   </style>
@@ -816,20 +770,15 @@
             <span>Growth.”</span>
           </h2>
 
-          <div class="services-bottom">
-            <div class="services-price">6 Services</div>
-            <div class="services-sub">built for visibility, leads, and support</div>
-          </div>
-
-          <div class="services-arrows">
-            <button class="services-arrow" aria-label="Previous service">
+          <div class="services-controls">
+            <button class="services-arrow" id="servicesPrev" aria-label="Previous services">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 12H5"></path>
                 <path d="M12 19l-7-7 7-7"></path>
               </svg>
             </button>
 
-            <button class="services-arrow" aria-label="Next service">
+            <button class="services-arrow" id="servicesNext" aria-label="Next services">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14"></path>
                 <path d="M12 5l7 7-7 7"></path>
@@ -838,41 +787,61 @@
           </div>
         </div>
 
-        <div class="services-visual">
-          <div class="service-card card-web">
-            <img
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
-              alt="Website design and analytics"
-              loading="lazy"
-              width="900"
-              height="1200"
-            />
-            <h3>Web Design</h3>
-            <p>Web design · SEO · branding</p>
-          </div>
+        <div class="services-slider">
+          <div class="services-viewport">
+            <div class="services-track" id="servicesTrack">
+              <div class="service-slide">
+                <div class="service-card">
+                  <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Website design and analytics" loading="lazy" width="900" height="1200" />
+                  </div>
+                  <h3>Web Design</h3>
+                  <p>High-converting digital presence</p>
+                </div>
 
-          <div class="service-card card-seo">
-            <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
-              alt="Marketing strategy meeting"
-              loading="lazy"
-              width="900"
-              height="1200"
-            />
-            <h3>AI + Local SEO</h3>
-            <p>Search visibility · lead generation</p>
-          </div>
+                <div class="service-card">
+                  <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="SEO and strategy meeting" loading="lazy" width="900" height="1200" />
+                  </div>
+                  <h3>SEO Strategy</h3>
+                  <p>Search visibility that compounds</p>
+                </div>
 
-          <div class="service-card card-va">
-            <img
-              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80"
-              alt="Remote team collaboration"
-              loading="lazy"
-              width="900"
-              height="1200"
-            />
-            <h3>VA Recruitment</h3>
-            <p>Virtual assistants · support teams</p>
+                <div class="service-card">
+                  <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80" alt="Social media collaboration" loading="lazy" width="900" height="1200" />
+                  </div>
+                  <h3>Social Media</h3>
+                  <p>Consistent brand communication</p>
+                </div>
+              </div>
+
+              <div class="service-slide">
+                <div class="service-card">
+                  <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Local SEO insights on laptop" loading="lazy" width="900" height="1200" />
+                  </div>
+                  <h3>Local SEO</h3>
+                  <p>Show up where clients search</p>
+                </div>
+
+                <div class="service-card">
+                  <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" alt="AI marketing workflow" loading="lazy" width="900" height="1200" />
+                  </div>
+                  <h3>AI Marketing</h3>
+                  <p>Smarter systems and automation</p>
+                </div>
+
+                <div class="service-card">
+                  <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" alt="Virtual assistant recruitment" loading="lazy" width="900" height="1200" />
+                  </div>
+                  <h3>VA Recruitment</h3>
+                  <p>Reliable remote support teams</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -929,7 +898,6 @@
 
     function toggleMenu() {
       const isOpen = sideMenu.classList.contains('show');
-
       if (isOpen) {
         closeMenu();
       } else {
@@ -939,9 +907,28 @@
 
     menuToggle.addEventListener('click', toggleMenu);
     menuOverlay.addEventListener('click', closeMenu);
-
     menuLinks.forEach(link => {
       link.addEventListener('click', closeMenu);
+    });
+
+    const servicesTrack = document.getElementById('servicesTrack');
+    const servicesPrev = document.getElementById('servicesPrev');
+    const servicesNext = document.getElementById('servicesNext');
+    const totalServiceSlides = 2;
+    let currentServiceSlide = 0;
+
+    function updateServicesSlider() {
+      servicesTrack.style.transform = `translateX(-${currentServiceSlide * 100}%)`;
+    }
+
+    servicesPrev.addEventListener('click', () => {
+      currentServiceSlide = currentServiceSlide === 0 ? totalServiceSlides - 1 : currentServiceSlide - 1;
+      updateServicesSlider();
+    });
+
+    servicesNext.addEventListener('click', () => {
+      currentServiceSlide = currentServiceSlide === totalServiceSlides - 1 ? 0 : currentServiceSlide + 1;
+      updateServicesSlider();
     });
   </script>
 </body>
