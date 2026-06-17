@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -328,174 +328,308 @@
       line-height: 1.7;
     }
 
-    /* SERVICES */
+    /* SERVICES - NEW LAYOUT */
     .services-section {
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
-      min-height: auto;
-      padding: 44px 0 36px;
+      min-height: 100vh;
       position: relative;
       overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.52) 34%, rgba(0,0,0,0.22) 60%, rgba(0,0,0,0.28) 100%),
+        url("assets/descarga (7).jpg") center center / cover no-repeat;
       display: flex;
       align-items: center;
-      background-image:
-        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-        url("assets/descarga (7).jpg");
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      color: #ffffff;
+      color: #fff;
     }
 
-    .services-wrap {
+    .services-layout {
       width: 100%;
       max-width: 1440px;
       margin: 0 auto;
-      padding: 0 48px;
+      padding: 60px 48px 46px;
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
+      grid-template-columns: minmax(320px, 560px) minmax(340px, 430px);
+      justify-content: space-between;
       align-items: center;
-      gap: 28px;
-      position: relative;
-      z-index: 1;
+      gap: 36px;
     }
 
-    .services-left {
-      padding-left: 10px;
+    .services-content {
+      max-width: 520px;
+      padding-top: 42px;
     }
 
-    .services-kicker {
-      font-size: 0.95rem;
-      font-weight: 500;
-      margin-bottom: 44px;
-      letter-spacing: 0.01em;
-      color: rgba(255,255,255,0.9);
-    }
-
-    .services-quote {
-      font-family: 'Anton', sans-serif;
+    .services-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 28px;
+      border: 1.5px solid rgba(255,255,255,0.72);
+      border-radius: 999px;
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      line-height: 0.9;
-      letter-spacing: 0.01em;
-      max-width: 8.5ch;
-      font-size: clamp(2.4rem, 4.2vw, 4.8rem);
-      color: #ffffff;
-      margin-bottom: 18px;
-      text-shadow: 0 6px 22px rgba(0,0,0,0.28);
+      margin-bottom: 22px;
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.03);
     }
 
-    .services-quote .muted {
-      color: rgba(255,255,255,0.68);
+    .services-copy {
+      font-size: clamp(3rem, 5.6vw, 5.4rem);
+      line-height: 0.94;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      max-width: 9ch;
+      color: #fff;
+      text-shadow: 0 12px 32px rgba(0,0,0,0.26);
     }
 
-    .services-controls {
+    .services-meta {
+      margin-top: 24px;
+      font-size: clamp(1rem, 1.5vw, 1.18rem);
+      line-height: 1.45;
+      color: rgba(255,255,255,0.88);
+      max-width: 30ch;
+    }
+
+    .services-cta {
+      margin-top: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60px;
+      padding: 0 28px;
+      border-radius: 999px;
+      background: #f4b316;
+      color: #111;
+      font-weight: 700;
+      font-size: 1.06rem;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+    }
+
+    .services-nav {
+      margin-top: 72px;
       display: flex;
       gap: 10px;
-      margin-top: 8px;
     }
 
     .services-arrow {
-      width: 76px;
-      height: 46px;
-      border: 2px solid rgba(255,255,255,0.88);
+      width: 92px;
+      height: 50px;
+      border: 2px solid rgba(255,255,255,0.9);
       border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: #fff;
+      backdrop-filter: blur(4px);
       transition: transform 0.2s ease, background 0.2s ease;
     }
 
     .services-arrow:hover {
       transform: translateY(-2px);
-      background: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.1);
     }
 
     .services-arrow svg {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
     }
 
-    .services-slider {
-      position: relative;
-      min-height: 500px;
+    .services-phone-wrap {
       display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .services-phone {
+      width: min(100%, 410px);
+      background: #060606;
+      border: 3px solid #3f4c6f;
+      border-radius: 42px;
+      padding: 18px 16px 16px;
+      box-shadow: 0 35px 60px rgba(0,0,0,0.42);
+      color: #fff;
+      position: relative;
+    }
+
+    .services-phone::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 20px;
+      border-radius: 999px;
+      background: #0f0f0f;
+    }
+
+    .phone-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 10px 16px;
+      font-size: 0.92rem;
+      color: #fff;
+      margin-top: 6px;
+    }
+
+    .phone-time {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .phone-icons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.92;
+      font-size: 0.8rem;
+    }
+
+    .phone-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px 20px;
+    }
+
+    .phone-header h3 {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .phone-close {
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(255,255,255,0.8);
+      color: #fff;
+      font-size: 0.95rem;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
     }
 
-    .services-viewport {
-      width: 100%;
+    .phone-card {
+      background: #fff;
+      color: #111;
+      border-radius: 28px;
+      padding: 18px;
       overflow: hidden;
     }
 
-    .services-track {
+    .phone-card-top {
       display: flex;
-      transition: transform 0.45s ease;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 14px;
     }
 
-    .service-slide {
-      min-width: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      align-items: end;
+    .phone-card-top h4 {
+      font-size: 1.18rem;
+      line-height: 1.2;
+      font-weight: 800;
+      max-width: 12ch;
     }
 
-    .service-card {
-      text-align: center;
+    .phone-card-top span {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: rgba(0,0,0,0.62);
+      white-space: nowrap;
+      padding-top: 2px;
     }
 
-    .service-image {
+    .phone-card-top p {
+      margin-top: 6px;
+      font-size: 1rem;
+      color: rgba(0,0,0,0.72);
+    }
+
+    .phone-image {
       width: 100%;
-      aspect-ratio: 0.78 / 1;
-      border-radius: 18px;
+      aspect-ratio: 1 / 1.02;
+      border-radius: 20px;
       overflow: hidden;
-      background: rgba(255,255,255,0.14);
-      box-shadow: 0 20px 24px rgba(0,0,0,0.18);
-      backdrop-filter: blur(2px);
+      margin-bottom: 16px;
+      background: #ececec;
     }
 
-    .service-image img {
+    .phone-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    .service-card h3 {
-      font-family: 'Anton', sans-serif;
-      text-transform: uppercase;
-      font-size: 1.2rem;
-      line-height: 1;
-      margin-top: 12px;
-      letter-spacing: 0.03em;
-      color: #ffffff;
-      text-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    .phone-dates {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 18px;
     }
 
-    .service-card p {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.82);
-      margin-top: 6px;
+    .phone-label {
+      font-size: 0.84rem;
+      color: rgba(0,0,0,0.58);
+      margin-bottom: 6px;
+    }
+
+    .phone-date {
+      font-size: clamp(2rem, 3vw, 2.4rem);
+      line-height: 0.92;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+
+    .phone-small {
+      font-size: 0.92rem;
+      color: rgba(0,0,0,0.72);
+    }
+
+    .phone-action {
+      width: 100%;
+      min-height: 56px;
+      border-radius: 999px;
+      border: 1.8px solid #111;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #111;
+      background: #fff;
     }
 
     @media (max-width: 1100px) {
-      .services-wrap {
+      .services-layout {
         grid-template-columns: 1fr;
-        gap: 26px;
+        justify-content: center;
       }
 
-      .services-left {
-        padding-left: 0;
+      .services-content {
+        max-width: 620px;
+        padding-top: 10px;
       }
 
-      .services-slider {
-        min-height: auto;
+      .services-copy {
+        max-width: 100%;
+      }
+
+      .services-nav {
+        margin-top: 38px;
       }
     }
 
@@ -510,22 +644,12 @@
         font-size: 1.55rem;
       }
 
-      .services-wrap {
-        padding: 0 20px;
+      .services-layout {
+        padding: 42px 20px 36px;
       }
 
-      .service-slide {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .service-card {
-        max-width: 360px;
-        margin: 0 auto;
-      }
-
-      .service-image {
-        aspect-ratio: 1 / 1.1;
+      .services-phone {
+        max-width: 390px;
       }
     }
 
@@ -594,15 +718,15 @@
       }
 
       .services-section {
-        padding: 36px 0 28px;
+        min-height: auto;
       }
 
-      .services-kicker {
-        margin-bottom: 24px;
+      .services-content {
+        padding-top: 0;
       }
 
-      .services-quote {
-        margin-bottom: 14px;
+      .services-nav {
+        margin-top: 28px;
       }
     }
 
@@ -653,13 +777,47 @@
         transform: translateY(-28px);
       }
 
-      .services-wrap {
-        padding: 0 14px;
+      .services-layout {
+        padding: 34px 14px 28px;
+      }
+
+      .services-pill {
+        min-height: 46px;
+        padding: 0 20px;
+        font-size: 0.8rem;
+      }
+
+      .services-copy {
+        font-size: clamp(2.5rem, 11vw, 4rem);
+      }
+
+      .services-cta {
+        min-height: 54px;
+        padding: 0 22px;
+        font-size: 0.98rem;
       }
 
       .services-arrow {
-        width: 68px;
-        height: 42px;
+        width: 74px;
+        height: 46px;
+      }
+
+      .services-phone {
+        border-radius: 32px;
+        padding: 16px 12px 12px;
+      }
+
+      .phone-card {
+        border-radius: 22px;
+        padding: 14px;
+      }
+
+      .phone-card-top h4 {
+        font-size: 1.02rem;
+      }
+
+      .phone-date {
+        font-size: 1.9rem;
       }
     }
   </style>
@@ -768,29 +926,29 @@
     </section>
 
     <section class="services-section" id="services">
-      <div class="services-wrap">
-        <div class="services-left">
-          <div class="services-kicker">The Boss Agency Co Services</div>
+      <div class="services-layout">
+        <div class="services-content">
+          <div class="services-pill" id="servicesPill">Web Design</div>
 
-          <h2 class="services-quote">
-            <span>“Smart</span>
-            <span class="muted">Digital</span>
-            <span class="muted">Systems</span>
-            <span>That</span>
-            <span>Drive</span>
-            <span>Real</span>
-            <span>Growth.”</span>
-          </h2>
+          <div class="services-copy" id="servicesCopy">
+            “TBA builds digital systems that turn attention into growth.”
+          </div>
 
-          <div class="services-controls">
-            <button class="services-arrow" id="servicesPrev" aria-label="Previous services">
+          <div class="services-meta" id="servicesMeta">
+            Custom websites, stronger positioning, and smarter visibility for brands ready to grow.
+          </div>
+
+          <button class="services-cta" id="servicesCta">Explore this service</button>
+
+          <div class="services-nav">
+            <button class="services-arrow" id="servicesPrev" aria-label="Previous service">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 12H5"></path>
                 <path d="M12 19l-7-7 7-7"></path>
               </svg>
             </button>
 
-            <button class="services-arrow" id="servicesNext" aria-label="Next services">
+            <button class="services-arrow" id="servicesNext" aria-label="Next service">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14"></path>
                 <path d="M12 5l7 7-7 7"></path>
@@ -799,60 +957,56 @@
           </div>
         </div>
 
-        <div class="services-slider">
-          <div class="services-viewport">
-            <div class="services-track" id="servicesTrack">
-              <div class="service-slide">
-                <div class="service-card">
-                  <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Website design and analytics" loading="lazy" width="900" height="1200" />
-                  </div>
-                  <h3>Web Design</h3>
-                  <p>High-converting digital presence</p>
+        <div class="services-phone-wrap">
+          <div class="services-phone">
+            <div class="phone-top">
+              <div class="phone-time">12:01</div>
+              <div class="phone-icons">● ● ●</div>
+            </div>
+
+            <div class="phone-header">
+              <h3 id="phoneHeaderTitle">Service confirmed</h3>
+              <button class="phone-close">Close</button>
+            </div>
+
+            <div class="phone-card">
+              <div class="phone-card-top">
+                <div>
+                  <h4 id="phoneServiceTitle">Custom Website Design</h4>
+                  <p id="phoneServiceLocation">Built for ambitious brands</p>
+                </div>
+                <span id="phoneServiceCode">#TBA-WEB-01</span>
+              </div>
+
+              <div class="phone-image">
+                <img
+                  id="phoneServiceImage"
+                  src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1000&q=80"
+                  alt="Website design service"
+                  loading="lazy"
+                  width="1000"
+                  height="1200"
+                />
+              </div>
+
+              <div class="phone-dates">
+                <div>
+                  <div class="phone-label">Focus</div>
+                  <div class="phone-date" id="phoneFocus">Web</div>
+                  <div class="phone-small" id="phoneFocusTime">Design systems</div>
                 </div>
 
-                <div class="service-card">
-                  <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="SEO and strategy meeting" loading="lazy" width="900" height="1200" />
-                  </div>
-                  <h3>SEO Strategy</h3>
-                  <p>Search visibility that compounds</p>
-                </div>
-
-                <div class="service-card">
-                  <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80" alt="Social media collaboration" loading="lazy" width="900" height="1200" />
-                  </div>
-                  <h3>Social Media</h3>
-                  <p>Consistent brand communication</p>
+                <div>
+                  <div class="phone-label">Outcome</div>
+                  <div class="phone-date" id="phoneOutcome">Leads</div>
+                  <div class="phone-small" id="phoneOutcomeTime">Better conversions</div>
                 </div>
               </div>
 
-              <div class="service-slide">
-                <div class="service-card">
-                  <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Local SEO insights on laptop" loading="lazy" width="900" height="1200" />
-                  </div>
-                  <h3>Local SEO</h3>
-                  <p>Show up where clients search</p>
-                </div>
-
-                <div class="service-card">
-                  <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" alt="AI marketing workflow" loading="lazy" width="900" height="1200" />
-                  </div>
-                  <h3>AI Marketing</h3>
-                  <p>Smarter systems and automation</p>
-                </div>
-
-                <div class="service-card">
-                  <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" alt="Virtual assistant recruitment" loading="lazy" width="900" height="1200" />
-                  </div>
-                  <h3>VA Recruitment</h3>
-                  <p>Reliable remote support teams</p>
-                </div>
-              </div>
+              <button class="phone-action" id="phoneAction">
+                <span>＋</span>
+                <span>View service details</span>
+              </button>
             </div>
           </div>
         </div>
@@ -923,25 +1077,144 @@
       link.addEventListener('click', closeMenu);
     });
 
-    const servicesTrack = document.getElementById('servicesTrack');
+    const servicesData = [
+      {
+        pill: 'Web Design',
+        copy: '“TBA builds digital systems that turn attention into growth.”',
+        meta: 'Custom websites, stronger positioning, and smarter visibility for brands ready to grow.',
+        headerTitle: 'Service confirmed',
+        title: 'Custom Website Design',
+        location: 'Built for ambitious brands',
+        code: '#TBA-WEB-01',
+        image: 'https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1000&q=80',
+        imageAlt: 'Website design service',
+        focus: 'Web',
+        focusTime: 'Design systems',
+        outcome: 'Leads',
+        outcomeTime: 'Better conversions'
+      },
+      {
+        pill: 'SEO Strategy',
+        copy: '“SEO systems that help your brand get found by the right people.”',
+        meta: 'Search-first content and technical direction designed to increase qualified visibility.',
+        headerTitle: 'Service confirmed',
+        title: 'SEO Strategy',
+        location: 'Built for long-term discovery',
+        code: '#TBA-SEO-02',
+        image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=1000&q=80',
+        imageAlt: 'SEO strategy service',
+        focus: 'Rank',
+        focusTime: 'Search growth',
+        outcome: 'Reach',
+        outcomeTime: 'Qualified traffic'
+      },
+      {
+        pill: 'Local SEO',
+        copy: '“Show up when nearby clients are actively searching for your services.”',
+        meta: 'Local search visibility built to turn intent into calls, visits, and real opportunities.',
+        headerTitle: 'Service confirmed',
+        title: 'Local SEO',
+        location: 'Built for local market visibility',
+        code: '#TBA-LOC-03',
+        image: 'https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1000&q=80',
+        imageAlt: 'Local SEO service',
+        focus: 'Local',
+        focusTime: 'Near-me search',
+        outcome: 'Calls',
+        outcomeTime: 'Higher intent leads'
+      },
+      {
+        pill: 'AI Marketing',
+        copy: '“AI-powered workflows make your marketing faster, sharper, and more scalable.”',
+        meta: 'Automations and smart systems designed to improve consistency and campaign speed.',
+        headerTitle: 'Service confirmed',
+        title: 'AI Marketing Systems',
+        location: 'Built for smarter execution',
+        code: '#TBA-AI-04',
+        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=80',
+        imageAlt: 'AI marketing service',
+        focus: 'AI',
+        focusTime: 'Smarter workflows',
+        outcome: 'Scale',
+        outcomeTime: 'More efficient output'
+      },
+      {
+        pill: 'Social Media',
+        copy: '“Content systems that keep your brand consistent, visible, and active online.”',
+        meta: 'Social media management built to strengthen trust, presence, and audience connection.',
+        headerTitle: 'Service confirmed',
+        title: 'Social Media Management',
+        location: 'Built for daily brand presence',
+        code: '#TBA-SMM-05',
+        image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1000&q=80',
+        imageAlt: 'Social media management service',
+        focus: 'Social',
+        focusTime: 'Content rhythm',
+        outcome: 'Trust',
+        outcomeTime: 'Stronger brand recall'
+      },
+      {
+        pill: 'VA Recruitment',
+        copy: '“Find dependable virtual support so your business can grow without chaos.”',
+        meta: 'Recruitment support for virtual assistants and remote roles that keep operations moving.',
+        headerTitle: 'Service confirmed',
+        title: 'VA Recruitment Agency',
+        location: 'Built for operational support',
+        code: '#TBA-VA-06',
+        image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80',
+        imageAlt: 'VA recruitment service',
+        focus: 'Team',
+        focusTime: 'Remote support',
+        outcome: 'Flow',
+        outcomeTime: 'Better operations'
+      }
+    ];
+
+    let currentService = 0;
+
+    const servicesPill = document.getElementById('servicesPill');
+    const servicesCopy = document.getElementById('servicesCopy');
+    const servicesMeta = document.getElementById('servicesMeta');
+    const phoneHeaderTitle = document.getElementById('phoneHeaderTitle');
+    const phoneServiceTitle = document.getElementById('phoneServiceTitle');
+    const phoneServiceLocation = document.getElementById('phoneServiceLocation');
+    const phoneServiceCode = document.getElementById('phoneServiceCode');
+    const phoneServiceImage = document.getElementById('phoneServiceImage');
+    const phoneFocus = document.getElementById('phoneFocus');
+    const phoneFocusTime = document.getElementById('phoneFocusTime');
+    const phoneOutcome = document.getElementById('phoneOutcome');
+    const phoneOutcomeTime = document.getElementById('phoneOutcomeTime');
     const servicesPrev = document.getElementById('servicesPrev');
     const servicesNext = document.getElementById('servicesNext');
-    const totalServiceSlides = 2;
-    let currentServiceSlide = 0;
 
-    function updateServicesSlider() {
-      servicesTrack.style.transform = `translateX(-${currentServiceSlide * 100}%)`;
+    function renderService(index) {
+      const service = servicesData[index];
+      servicesPill.textContent = service.pill;
+      servicesCopy.textContent = service.copy;
+      servicesMeta.textContent = service.meta;
+      phoneHeaderTitle.textContent = service.headerTitle;
+      phoneServiceTitle.textContent = service.title;
+      phoneServiceLocation.textContent = service.location;
+      phoneServiceCode.textContent = service.code;
+      phoneServiceImage.src = service.image;
+      phoneServiceImage.alt = service.imageAlt;
+      phoneFocus.textContent = service.focus;
+      phoneFocusTime.textContent = service.focusTime;
+      phoneOutcome.textContent = service.outcome;
+      phoneOutcomeTime.textContent = service.outcomeTime;
     }
 
     servicesPrev.addEventListener('click', () => {
-      currentServiceSlide = currentServiceSlide === 0 ? totalServiceSlides - 1 : currentServiceSlide - 1;
-      updateServicesSlider();
+      currentService = currentService === 0 ? servicesData.length - 1 : currentService - 1;
+      renderService(currentService);
     });
 
     servicesNext.addEventListener('click', () => {
-      currentServiceSlide = currentServiceSlide === totalServiceSlides - 1 ? 0 : currentServiceSlide + 1;
-      updateServicesSlider();
+      currentService = currentService === servicesData.length - 1 ? 0 : currentService + 1;
+      renderService(currentService);
     });
+
+    renderService(currentService);
   </script>
 </body>
 </html>
