@@ -649,6 +649,76 @@
       margin-top: auto;
     }
 
+    /* NEW NUMBERS BLOCK */
+    .impact-strip {
+      width: 100%;
+      background: #fff;
+      padding: 56px 18px 52px;
+    }
+
+    .impact-box {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .impact-title {
+      max-width: 980px;
+      margin: 0 auto 34px;
+      text-align: center;
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(1.8rem, 3.6vw, 3.2rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: #111;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+      align-items: start;
+    }
+
+    .impact-card {
+      min-height: 210px;
+      padding: 12px 10px;
+      text-align: left;
+    }
+
+    .impact-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 16px;
+      color: #c9c9c9;
+    }
+
+    .impact-number {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(3.2rem, 7vw, 5.4rem);
+      line-height: 0.88;
+      letter-spacing: -0.03em;
+      color: #111;
+      margin-bottom: 12px;
+    }
+
+    .impact-label {
+      font-size: 1rem;
+      line-height: 1.45;
+      color: rgba(0,0,0,0.68);
+      max-width: 24ch;
+    }
+
+    .impact-number.is-visible {
+      animation: pulseIn 0.45s ease;
+    }
+
+    @keyframes pulseIn {
+      0% { opacity: 0.3; transform: translateY(10px) scale(0.96); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
     @media (max-width: 1100px) {
       .services-layout {
         grid-template-columns: 1fr;
@@ -678,6 +748,15 @@
       .services-phone {
         transform: translateY(72px) scale(1.01);
         margin-right: 0;
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .impact-card {
+        min-height: 190px;
       }
     }
 
@@ -786,6 +865,33 @@
 
       .phone-card {
         min-height: 430px;
+      }
+
+      .impact-strip {
+        padding: 48px 14px 46px;
+      }
+
+      .impact-title {
+        margin-bottom: 28px;
+      }
+
+      .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .impact-card {
+        min-height: auto;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .impact-icon {
+        margin: 0 auto 14px;
+      }
+
+      .impact-label {
+        margin: 0 auto;
       }
     }
 
@@ -903,6 +1009,14 @@
 
       .phone-card-top {
         min-height: 78px;
+      }
+
+      .impact-number {
+        font-size: clamp(2.8rem, 16vw, 4.2rem);
+      }
+
+      .impact-label {
+        font-size: 0.94rem;
       }
     }
   </style>
@@ -1075,6 +1189,50 @@
       </div>
     </section>
 
+    <!-- NEW COMPACT NUMBERS BLOCK -->
+    <section class="impact-strip" id="impact">
+      <div class="impact-box">
+        <h2 class="impact-title">
+          Real numbers that show how TBA support can improve visibility, speed, and business growth
+        </h2>
+
+        <div class="impact-grid">
+          <article class="impact-card">
+            <div class="impact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 17l6-6 4 4 7-8"></path>
+                <path d="M14 7h6v6"></path>
+              </svg>
+            </div>
+            <div class="impact-number" data-target="68" data-prefix="+" data-suffix="%">0</div>
+            <p class="impact-label">Stronger qualified visibility across web development, Google My Business, and social positioning</p>
+          </article>
+
+          <article class="impact-card">
+            <div class="impact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 8v5l3 3"></path>
+                <circle cx="12" cy="12" r="9"></circle>
+              </svg>
+            </div>
+            <div class="impact-number" data-target="32" data-suffix=" HRS">0</div>
+            <p class="impact-label">Saved each month through clearer systems, content support, and virtual assistant recruitment</p>
+          </article>
+
+          <article class="impact-card">
+            <div class="impact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20"></path>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14.5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="impact-number" data-target="41" data-prefix="+" data-suffix="%">0</div>
+            <p class="impact-label">Potential lift in conversion-ready traffic when branding, search, and content work together</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="about">
       <div class="section-box">
         <div class="section-tag">About</div>
@@ -1234,6 +1392,49 @@
     });
 
     renderService(currentService);
+
+    const impactNumbers = document.querySelectorAll('.impact-number');
+    let impactStarted = false;
+
+    function animateValue(element, start, end, duration, prefix = '', suffix = '') {
+      let startTimestamp = null;
+
+      function step(timestamp) {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        element.textContent = `${prefix}${value}${suffix}`;
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          element.textContent = `${prefix}${end}${suffix}`;
+        }
+      }
+
+      window.requestAnimationFrame(step);
+    }
+
+    const impactObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !impactStarted) {
+          impactStarted = true;
+          impactNumbers.forEach((item, index) => {
+            const target = Number(item.dataset.target || 0);
+            const prefix = item.dataset.prefix || '';
+            const suffix = item.dataset.suffix || '';
+            setTimeout(() => {
+              item.classList.add('is-visible');
+              animateValue(item, 0, target, 1400, prefix, suffix);
+            }, index * 180);
+          });
+        }
+      });
+    }, { threshold: 0.35 });
+
+    const impactSection = document.getElementById('impact');
+    if (impactSection) {
+      impactObserver.observe(impactSection);
+    }
   </script>
 </body>
 </html>
