@@ -328,7 +328,6 @@
       line-height: 1.7;
     }
 
-    /* SERVICES */
     .services-section {
       width: 100vw;
       margin-left: calc(50% - 50vw);
@@ -348,20 +347,21 @@
       width: 100%;
       max-width: 1440px;
       margin: 0 auto;
-      padding: 28px 48px 0;
+      padding: 28px 78px 0;
       display: grid;
-      grid-template-columns: minmax(320px, 530px) minmax(320px, 430px);
-      justify-content: space-between;
+      grid-template-columns: minmax(380px, 620px) minmax(360px, 520px);
+      justify-content: center;
       align-items: end;
-      gap: 22px;
+      gap: 30px;
       height: 100%;
     }
 
     .services-content {
-      max-width: 500px;
+      max-width: 560px;
       padding-top: 8px;
       padding-bottom: 28px;
       align-self: center;
+      justify-self: center;
     }
 
     .services-pill {
@@ -383,25 +383,31 @@
     }
 
     .services-copy {
-      font-size: clamp(2.55rem, 4.7vw, 4.55rem);
+      font-size: clamp(2.7rem, 4.9vw, 4.8rem);
       line-height: 0.94;
       font-weight: 800;
       letter-spacing: -0.04em;
-      max-width: 9ch;
+      max-width: 10ch;
       color: #fff;
       text-shadow: 0 12px 32px rgba(0,0,0,0.26);
     }
 
     .services-meta {
       margin-top: 18px;
-      font-size: clamp(0.94rem, 1.15vw, 1.06rem);
-      line-height: 1.42;
+      font-size: clamp(0.97rem, 1.15vw, 1.08rem);
+      line-height: 1.48;
       color: rgba(255,255,255,0.88);
-      max-width: 31ch;
+      max-width: 34ch;
+    }
+
+    .services-cta-wrap {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
 
     .services-cta {
-      margin-top: 22px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -416,8 +422,9 @@
     }
 
     .services-nav {
-      margin-top: 42px;
+      margin-top: 24px;
       display: flex;
+      justify-content: center;
       gap: 10px;
     }
 
@@ -447,7 +454,7 @@
 
     .services-phone-wrap {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: end;
       align-self: stretch;
       overflow: hidden;
@@ -457,18 +464,17 @@
     }
 
     .services-phone {
-      width: min(100%, 390px);
+      width: min(100%, 460px);
       background: linear-gradient(180deg, #111111 0%, #050505 100%);
       border: 2.5px solid #4f5c7d;
-      border-radius: 44px;
-      padding: 16px 12px 12px;
+      border-radius: 48px;
+      padding: 18px 14px 14px;
       box-shadow: 0 28px 55px rgba(0,0,0,0.42);
       color: #fff;
       position: relative;
-      transform: translateY(120px) scale(1.04);
+      transform: translateY(132px) scale(1.14);
       transform-origin: center top;
-      margin-right: 6px;
-      margin-bottom: -8px;
+      margin-bottom: -10px;
     }
 
     .services-phone::before {
@@ -477,8 +483,8 @@
       top: 11px;
       left: 50%;
       transform: translateX(-50%);
-      width: 118px;
-      height: 30px;
+      width: 128px;
+      height: 32px;
       border-radius: 999px;
       background: #090909;
       box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
@@ -551,8 +557,8 @@
     .phone-card {
       background: #fff;
       color: #111;
-      border-radius: 28px;
-      padding: 16px;
+      border-radius: 30px;
+      padding: 18px;
       overflow: hidden;
     }
 
@@ -565,8 +571,8 @@
     }
 
     .phone-card-top h4 {
-      font-size: 1.08rem;
-      line-height: 1.18;
+      font-size: 1.14rem;
+      line-height: 1.16;
       font-weight: 800;
       max-width: 12ch;
     }
@@ -587,10 +593,10 @@
 
     .phone-image {
       width: 100%;
-      aspect-ratio: 1 / 0.98;
+      aspect-ratio: 1 / 1.08;
       border-radius: 18px;
       overflow: hidden;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       background: #ececec;
     }
 
@@ -601,35 +607,9 @@
       display: block;
     }
 
-    .phone-dates {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 14px;
-    }
-
-    .phone-label {
-      font-size: 0.8rem;
-      color: rgba(0,0,0,0.58);
-      margin-bottom: 6px;
-    }
-
-    .phone-date {
-      font-size: clamp(1.7rem, 2.6vw, 2.1rem);
-      line-height: 0.92;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      margin-bottom: 6px;
-    }
-
-    .phone-small {
-      font-size: 0.86rem;
-      color: rgba(0,0,0,0.72);
-    }
-
     .phone-action {
       width: 100%;
-      min-height: 52px;
+      min-height: 54px;
       border-radius: 999px;
       border: 1.8px solid #111;
       display: inline-flex;
@@ -654,24 +634,29 @@
         max-width: 620px;
         padding-top: 0;
         padding-bottom: 14px;
+        text-align: center;
       }
 
-      .services-copy {
+      .services-pill {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .services-copy,
+      .services-meta {
         max-width: 100%;
-      }
-
-      .services-nav {
-        margin-top: 28px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .services-phone-wrap {
         justify-content: center;
         overflow: hidden;
-        min-height: 430px;
+        min-height: 520px;
       }
 
       .services-phone {
-        transform: translateY(90px) scale(0.98);
+        transform: translateY(108px) scale(1.02);
         margin-right: 0;
       }
     }
@@ -770,12 +755,12 @@
         order: 2;
         justify-content: center;
         padding-top: 0;
-        min-height: 390px;
+        min-height: 460px;
       }
 
       .services-phone {
-        width: min(100%, 330px);
-        transform: translateY(86px) scale(0.94);
+        width: min(100%, 390px);
+        transform: translateY(98px) scale(0.98);
       }
     }
 
@@ -846,15 +831,12 @@
         font-size: 0.92rem;
       }
 
-      .services-cta {
-        min-height: 50px;
-        padding: 0 20px;
-        font-size: 0.94rem;
+      .services-cta-wrap {
         margin-top: 18px;
       }
 
       .services-nav {
-        margin-top: 22px;
+        margin-top: 18px;
       }
 
       .services-arrow {
@@ -863,14 +845,14 @@
       }
 
       .services-phone-wrap {
-        min-height: 350px;
+        min-height: 390px;
       }
 
       .services-phone {
-        width: min(100%, 300px);
-        border-radius: 36px;
+        width: min(100%, 335px);
+        border-radius: 38px;
         padding: 14px 10px 10px;
-        transform: translateY(82px) scale(0.92);
+        transform: translateY(92px) scale(0.94);
       }
 
       .services-phone::before {
@@ -886,10 +868,6 @@
       .phone-card-top h4 {
         font-size: 0.98rem;
       }
-
-      .phone-date {
-        font-size: 1.6rem;
-      }
     }
   </style>
 </head>
@@ -897,27 +875,16 @@
 
   <div class="top-marquee" aria-label="Services marquee">
     <div class="marquee-track">
-      <span>Custom Web Design</span>
-      <span>SEO Strategy</span>
-      <span>Local SEO</span>
+      <span>Web Development</span>
+      <span>Google My Business</span>
+      <span>Social Media Strategy</span>
       <span>Social Media Management</span>
-      <span>Brand Strategy</span>
-      <span>Content Creation</span>
-      <span>AI Marketing</span>
-      <span>Digital Marketing Solutions</span>
-      <span>Data-Driven Insights</span>
-      <span>Business Growth Strategy</span>
-
-      <span>Custom Web Design</span>
-      <span>SEO Strategy</span>
-      <span>Local SEO</span>
+      <span>VA Recruitment Agency</span>
+      <span>Web Development</span>
+      <span>Google My Business</span>
+      <span>Social Media Strategy</span>
       <span>Social Media Management</span>
-      <span>Brand Strategy</span>
-      <span>Content Creation</span>
-      <span>AI Marketing</span>
-      <span>Digital Marketing Solutions</span>
-      <span>Data-Driven Insights</span>
-      <span>Business Growth Strategy</span>
+      <span>VA Recruitment Agency</span>
     </div>
   </div>
 
@@ -999,17 +966,19 @@
     <section class="services-section" id="services">
       <div class="services-layout">
         <div class="services-content">
-          <div class="services-pill" id="servicesPill">Web Design</div>
+          <div class="services-pill" id="servicesPill">Web Development</div>
 
           <div class="services-copy" id="servicesCopy">
-            “TBA builds digital systems that turn attention into growth.”
+            We build websites that help your brand stand out and convert attention into action.
           </div>
 
           <div class="services-meta" id="servicesMeta">
-            Custom websites, stronger positioning, and smarter visibility for brands ready to grow.
+            Custom development tailored to your business goals, brand identity, and growth stage.
           </div>
 
-          <button class="services-cta" id="servicesCta">Explore this service</button>
+          <div class="services-cta-wrap">
+            <button class="services-cta" id="servicesCta">Explore this service</button>
+          </div>
 
           <div class="services-nav">
             <button class="services-arrow" id="servicesPrev" aria-label="Previous service">
@@ -1043,8 +1012,8 @@
             <div class="phone-card">
               <div class="phone-card-top">
                 <div>
-                  <h4 id="phoneServiceTitle">Custom Website Design</h4>
-                  <p id="phoneServiceLocation">Built for ambitious brands</p>
+                  <h4 id="phoneServiceTitle">Web Development</h4>
+                  <p id="phoneServiceLocation">Built for growing brands</p>
                 </div>
                 <span id="phoneServiceCode">#TBA-WEB-01</span>
               </div>
@@ -1053,25 +1022,11 @@
                 <img
                   id="phoneServiceImage"
                   src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1000&q=80"
-                  alt="Website design service"
+                  alt="Web development service"
                   loading="lazy"
                   width="1000"
                   height="1200"
                 />
-              </div>
-
-              <div class="phone-dates">
-                <div>
-                  <div class="phone-label">Focus</div>
-                  <div class="phone-date" id="phoneFocus">Web</div>
-                  <div class="phone-small" id="phoneFocusTime">Design systems</div>
-                </div>
-
-                <div>
-                  <div class="phone-label">Outcome</div>
-                  <div class="phone-date" id="phoneOutcome">Leads</div>
-                  <div class="phone-small" id="phoneOutcomeTime">Better conversions</div>
-                </div>
               </div>
 
               <button class="phone-action" id="phoneAction">
@@ -1150,94 +1105,59 @@
 
     const servicesData = [
       {
-        pill: 'Web Design',
-        copy: '“TBA builds digital systems that turn attention into growth.”',
-        meta: 'Custom websites, stronger positioning, and smarter visibility for brands ready to grow.',
+        pill: 'Web Development',
+        copy: 'We build websites that help your brand stand out and convert attention into action.',
+        meta: 'Custom development tailored to your business goals, brand identity, and growth stage.',
         headerTitle: 'Service confirmed',
-        title: 'Custom Website Design',
-        location: 'Built for ambitious brands',
+        title: 'Web Development',
+        location: 'Built for growing brands',
         code: '#TBA-WEB-01',
         image: 'https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1000&q=80',
-        imageAlt: 'Website design service',
-        focus: 'Web',
-        focusTime: 'Design systems',
-        outcome: 'Leads',
-        outcomeTime: 'Better conversions'
+        imageAlt: 'Web development service'
       },
       {
-        pill: 'SEO Strategy',
-        copy: '“SEO systems that help your brand get found by the right people.”',
-        meta: 'Search-first content and technical direction designed to increase qualified visibility.',
+        pill: 'Google My Business',
+        copy: 'We optimize your presence so local customers can find, trust, and choose your business faster.',
+        meta: 'A stronger Google Business Profile helps improve visibility, engagement, and local search performance.',
         headerTitle: 'Service confirmed',
-        title: 'SEO Strategy',
-        location: 'Built for long-term discovery',
-        code: '#TBA-SEO-02',
-        image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=1000&q=80',
-        imageAlt: 'SEO strategy service',
-        focus: 'Rank',
-        focusTime: 'Search growth',
-        outcome: 'Reach',
-        outcomeTime: 'Qualified traffic'
+        title: 'Google My Business',
+        location: 'Built for local visibility',
+        code: '#TBA-GMB-02',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80',
+        imageAlt: 'Google My Business service'
       },
       {
-        pill: 'Local SEO',
-        copy: '“Show up when nearby clients are actively searching for your services.”',
-        meta: 'Local search visibility built to turn intent into calls, visits, and real opportunities.',
+        pill: 'Social Media Strategy',
+        copy: 'We create tailored social strategies that strengthen your brand and guide measurable growth online.',
+        meta: 'Whether you are starting fresh or refining your direction, your channels get a clearer plan and stronger positioning.',
         headerTitle: 'Service confirmed',
-        title: 'Local SEO',
-        location: 'Built for local market visibility',
-        code: '#TBA-LOC-03',
-        image: 'https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1000&q=80',
-        imageAlt: 'Local SEO service',
-        focus: 'Local',
-        focusTime: 'Near-me search',
-        outcome: 'Calls',
-        outcomeTime: 'Higher intent leads'
+        title: 'Social Media Strategy',
+        location: 'Built for brand direction',
+        code: '#TBA-SMS-03',
+        image: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=1000&q=80',
+        imageAlt: 'Social media strategy service'
       },
       {
-        pill: 'AI Marketing',
-        copy: '“AI-powered workflows make your marketing faster, sharper, and more scalable.”',
-        meta: 'Automations and smart systems designed to improve consistency and campaign speed.',
-        headerTitle: 'Service confirmed',
-        title: 'AI Marketing Systems',
-        location: 'Built for smarter execution',
-        code: '#TBA-AI-04',
-        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=80',
-        imageAlt: 'AI marketing service',
-        focus: 'AI',
-        focusTime: 'Smarter workflows',
-        outcome: 'Scale',
-        outcomeTime: 'More efficient output'
-      },
-      {
-        pill: 'Social Media',
-        copy: '“Content systems that keep your brand consistent, visible, and active online.”',
-        meta: 'Social media management built to strengthen trust, presence, and audience connection.',
+        pill: 'Social Media Management',
+        copy: 'We manage your day-to-day content presence so your brand stays consistent, visible, and active.',
+        meta: 'From branded content to engagement support, we help maintain a stronger and more professional online presence.',
         headerTitle: 'Service confirmed',
         title: 'Social Media Management',
-        location: 'Built for daily brand presence',
-        code: '#TBA-SMM-05',
-        image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1000&q=80',
-        imageAlt: 'Social media management service',
-        focus: 'Social',
-        focusTime: 'Content rhythm',
-        outcome: 'Trust',
-        outcomeTime: 'Stronger brand recall'
+        location: 'Built for daily presence',
+        code: '#TBA-SMM-04',
+        image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&w=1000&q=80',
+        imageAlt: 'Social media management service'
       },
       {
-        pill: 'VA Recruitment',
-        copy: '“Find dependable virtual support so your business can grow without chaos.”',
-        meta: 'Recruitment support for virtual assistants and remote roles that keep operations moving.',
+        pill: 'VA Recruitment Agency',
+        copy: 'We help businesses find reliable virtual support to improve systems, execution, and operational flow.',
+        meta: 'The right remote support structure gives your business more consistency, more capacity, and better momentum.',
         headerTitle: 'Service confirmed',
         title: 'VA Recruitment Agency',
         location: 'Built for operational support',
-        code: '#TBA-VA-06',
+        code: '#TBA-VA-05',
         image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80',
-        imageAlt: 'VA recruitment service',
-        focus: 'Team',
-        focusTime: 'Remote support',
-        outcome: 'Flow',
-        outcomeTime: 'Better operations'
+        imageAlt: 'VA recruitment agency service'
       }
     ];
 
@@ -1251,10 +1171,6 @@
     const phoneServiceLocation = document.getElementById('phoneServiceLocation');
     const phoneServiceCode = document.getElementById('phoneServiceCode');
     const phoneServiceImage = document.getElementById('phoneServiceImage');
-    const phoneFocus = document.getElementById('phoneFocus');
-    const phoneFocusTime = document.getElementById('phoneFocusTime');
-    const phoneOutcome = document.getElementById('phoneOutcome');
-    const phoneOutcomeTime = document.getElementById('phoneOutcomeTime');
     const servicesPrev = document.getElementById('servicesPrev');
     const servicesNext = document.getElementById('servicesNext');
 
@@ -1269,10 +1185,6 @@
       phoneServiceCode.textContent = service.code;
       phoneServiceImage.src = service.image;
       phoneServiceImage.alt = service.imageAlt;
-      phoneFocus.textContent = service.focus;
-      phoneFocusTime.textContent = service.focusTime;
-      phoneOutcome.textContent = service.outcome;
-      phoneOutcomeTime.textContent = service.outcomeTime;
     }
 
     servicesPrev.addEventListener('click', () => {
