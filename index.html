@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Boss Agency Co</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -776,68 +776,96 @@
       100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    /* ABOUT PHOTO + GOLD PANEL */
-    .about-photo-section {
+    /* NEW ABOUT SECTION */
+    .about-editorial {
       min-height: 100vh;
-      padding: 80px 18px;
+      background: #f5f0ea;
       display: flex;
       align-items: center;
+      padding: 82px 24px;
+      overflow: hidden;
     }
 
-    .about-photo-layout {
+    .about-editorial-box {
       width: 100%;
       max-width: 1240px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(300px, 430px) minmax(320px, 1fr);
-      align-items: center;
-      gap: 30px;
-    }
-
-    .about-photo-left {
-      display: flex;
-      align-items: center;
-      position: relative;
-      z-index: 3;
-    }
-
-    .about-photo-right {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      min-height: 680px;
       position: relative;
     }
 
-    .about-photo-right::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      width: 690px;
-      height: 540px;
-      background: linear-gradient(135deg, #9f6a00 0%, #d8a11b 18%, #ffd95b 38%, #fff1a8 52%, #f4c33c 68%, #b87900 100%);
-      box-shadow: 0 22px 60px rgba(184, 121, 0, 0.22);
-      z-index: 1;
-    }
-
-    .about-photo-wrap {
-      width: min(100%, 410px);
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin-left: auto;
+    .about-copy {
+      max-width: 980px;
       position: relative;
       z-index: 2;
     }
 
-    .about-photo-wrap img {
+    .about-copy-top {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(3.6rem, 8.3vw, 8.4rem);
+      line-height: 0.88;
+      letter-spacing: -0.03em;
+      text-transform: lowercase;
+      color: #111;
+    }
+
+    .about-copy-bottom {
+      margin-top: 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 6.5vw, 6.4rem);
+      line-height: 0.9;
+      font-style: italic;
+      font-weight: 400;
+      color: #111;
+      letter-spacing: -0.03em;
+    }
+
+    .about-copy-bottom .about-strong {
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .about-squiggle {
+      margin-top: 16px;
+      width: min(760px, 78%);
+      height: auto;
+      display: block;
+      color: #111;
+    }
+
+    .about-photo-floating {
+      position: absolute;
+      right: 2%;
+      top: 48%;
+      transform: translateY(-40%);
+      width: min(100%, 360px);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .about-photo-floating img {
       width: 100%;
-      max-width: 410px;
       height: auto;
       display: block;
       object-fit: contain;
+    }
+
+    .about-badge {
+      position: absolute;
+      right: 23%;
+      top: 52%;
+      transform: translateY(-50%);
+      width: 112px;
+      height: 112px;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-badge svg {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     @media (max-width: 1100px) {
@@ -880,31 +908,17 @@
         min-height: 200px;
       }
 
-      .about-photo-layout {
-        grid-template-columns: 1fr;
-        gap: 12px;
+      .about-photo-floating {
+        width: min(100%, 300px);
+        right: 0;
+        top: 56%;
       }
 
-      .about-photo-right {
-        justify-content: center;
-        min-height: auto;
-      }
-
-      .about-photo-right::before {
-        width: min(92%, 620px);
-        height: 470px;
-        right: 50%;
-        transform: translate(50%, -50%);
-      }
-
-      .about-photo-wrap {
-        margin-left: 0;
-        justify-content: center;
-        width: min(100%, 380px);
-      }
-
-      .about-photo-wrap img {
-        max-width: 380px;
+      .about-badge {
+        right: 18%;
+        top: 58%;
+        width: 96px;
+        height: 96px;
       }
     }
 
@@ -1041,21 +1055,41 @@
         margin: 8px 4px;
       }
 
-      .about-photo-section {
-        padding: 72px 14px;
+      .about-editorial {
+        min-height: auto;
+        padding: 72px 14px 88px;
       }
 
-      .about-photo-wrap {
-        width: min(100%, 340px);
+      .about-copy-top {
+        font-size: clamp(3rem, 12vw, 5.4rem);
       }
 
-      .about-photo-wrap img {
-        max-width: 340px;
+      .about-copy-bottom {
+        font-size: clamp(2.7rem, 10vw, 4.4rem);
+        margin-top: 10px;
       }
 
-      .about-photo-right::before {
-        width: min(94%, 520px);
-        height: 420px;
+      .about-squiggle {
+        width: min(100%, 520px);
+        margin-top: 14px;
+      }
+
+      .about-photo-floating {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: min(100%, 290px);
+        margin: 20px 0 0 auto;
+      }
+
+      .about-badge {
+        right: 10px;
+        top: auto;
+        bottom: 74px;
+        transform: none;
+        width: 82px;
+        height: 82px;
       }
     }
 
@@ -1187,17 +1221,26 @@
         padding: 7px 14px 9px;
       }
 
-      .about-photo-wrap {
-        width: min(100%, 300px);
+      .about-editorial {
+        padding: 64px 14px 78px;
       }
 
-      .about-photo-wrap img {
-        max-width: 300px;
+      .about-copy-top {
+        font-size: clamp(2.6rem, 12.5vw, 4.2rem);
       }
 
-      .about-photo-right::before {
-        width: min(96%, 420px);
-        height: 350px;
+      .about-copy-bottom {
+        font-size: clamp(2.2rem, 11vw, 3.3rem);
+      }
+
+      .about-photo-floating {
+        width: min(100%, 240px);
+      }
+
+      .about-badge {
+        width: 68px;
+        height: 68px;
+        bottom: 60px;
       }
     }
   </style>
@@ -1428,25 +1471,44 @@
       </div>
     </section>
 
-    <section class="about-photo-section" id="about">
-      <div class="about-photo-layout">
-        <div class="about-photo-left">
-          <div class="section-box">
-            <div class="section-tag">About</div>
-            <h2 class="section-title">Built For Bold Businesses Ready To Grow</h2>
+    <section class="about-editorial" id="about">
+      <div class="about-editorial-box">
+        <div class="about-copy">
+          <h2 class="about-copy-top">
+            an agency built<br>
+            for bold growth.
+          </h2>
+
+          <div class="about-copy-bottom">
+            from <span class="about-strong">strategy</span> to <span class="about-strong">visibility.</span>
           </div>
+
+          <svg class="about-squiggle" viewBox="0 0 760 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6 45C90 38 168 32 248 25C303 20 356 14 410 18C434 20 428 32 404 35C466 33 528 30 590 29C642 28 690 29 754 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
 
-        <div class="about-photo-right">
-          <div class="about-photo-wrap">
-            <img
-              src="assets/Diseño sin título.png"
-              alt="Portrait representing The Boss Agency Co."
-              loading="lazy"
-              width="1200"
-              height="1600"
-            />
-          </div>
+        <div class="about-photo-floating">
+          <img
+            src="assets/Diseño sin título.png"
+            alt="Portrait representing The Boss Agency Co."
+            loading="lazy"
+            width="1200"
+            height="1600"
+          />
+        </div>
+
+        <div class="about-badge" aria-hidden="true">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <path d="M57 20C44 10 24 17 19 34C15 48 20 66 34 75C46 83 55 92 60 100C65 92 74 83 86 75C100 66 105 48 101 34C96 17 76 10 63 20L60 23L57 20Z"
+                  fill="#2e8f83" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M60 89C56 80 49 73 39 66C29 59 25 47 28 37C31 27 41 23 49 28C54 31 57 36 60 41C63 36 66 31 71 28C79 23 89 27 92 37C95 47 91 59 81 66C71 73 64 80 60 89Z"
+                  fill="none" stroke="#f5f0ea" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M60 75C58 70 53 65 47 61C41 57 38 50 40 44C42 38 48 36 53 39C56 41 58 45 60 48C62 45 64 41 67 39C72 36 78 38 80 44C82 50 79 57 73 61C67 65 62 70 60 75Z"
+                  fill="none" stroke="#f5f0ea" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M60 55L63.4 61.8L71 63L65.5 68.1L66.8 75.4L60 71.8L53.2 75.4L54.5 68.1L49 63L56.6 61.8L60 55Z"
+                  fill="#f5f0ea"/>
+          </svg>
         </div>
       </div>
     </section>
