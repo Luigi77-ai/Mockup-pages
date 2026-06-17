@@ -776,7 +776,7 @@
       100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    /* ABOUT ONLY PHOTO */
+    /* ABOUT PHOTO + GOLD PANEL */
     .about-photo-section {
       min-height: 100vh;
       padding: 80px 18px;
@@ -797,6 +797,8 @@
     .about-photo-left {
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 3;
     }
 
     .about-photo-right {
@@ -804,6 +806,20 @@
       justify-content: flex-end;
       align-items: center;
       min-height: 680px;
+      position: relative;
+    }
+
+    .about-photo-right::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 690px;
+      height: 540px;
+      background: linear-gradient(135deg, #9f6a00 0%, #d8a11b 18%, #ffd95b 38%, #fff1a8 52%, #f4c33c 68%, #b87900 100%);
+      box-shadow: 0 22px 60px rgba(184, 121, 0, 0.22);
+      z-index: 1;
     }
 
     .about-photo-wrap {
@@ -812,6 +828,8 @@
       justify-content: flex-end;
       align-items: center;
       margin-left: auto;
+      position: relative;
+      z-index: 2;
     }
 
     .about-photo-wrap img {
@@ -870,6 +888,13 @@
       .about-photo-right {
         justify-content: center;
         min-height: auto;
+      }
+
+      .about-photo-right::before {
+        width: min(92%, 620px);
+        height: 470px;
+        right: 50%;
+        transform: translate(50%, -50%);
       }
 
       .about-photo-wrap {
@@ -1027,6 +1052,11 @@
       .about-photo-wrap img {
         max-width: 340px;
       }
+
+      .about-photo-right::before {
+        width: min(94%, 520px);
+        height: 420px;
+      }
     }
 
     @media (max-width: 560px) {
@@ -1163,6 +1193,11 @@
 
       .about-photo-wrap img {
         max-width: 300px;
+      }
+
+      .about-photo-right::before {
+        width: min(96%, 420px);
+        height: 350px;
       }
     }
   </style>
