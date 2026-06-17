@@ -776,7 +776,6 @@
       100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    /* UPDATED ABOUT SECTION */
     .about-editorial {
       min-height: 88vh;
       background: #f5f0ea;
@@ -862,8 +861,8 @@
 
     .about-badge {
       position: absolute;
-      right: 21%;
-      top: 43%;
+      right: 14%;
+      top: 56%;
       transform: translateY(-50%);
       width: 110px;
       height: 110px;
@@ -871,6 +870,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      pointer-events: none;
     }
 
     .about-badge svg,
@@ -894,22 +894,22 @@
     }
 
     .about-badge-2 {
-      left: 0;
-      top: 8%;
+      left: 3%;
+      top: 3%;
       width: 74px;
       height: 74px;
     }
 
     .about-badge-3 {
-      left: 20%;
-      bottom: 12%;
+      left: 10%;
+      bottom: 20%;
       width: 82px;
       height: 82px;
     }
 
     .about-badge-4 {
-      right: 6%;
-      top: 12%;
+      right: 2%;
+      top: 6%;
       width: 78px;
       height: 78px;
     }
@@ -924,7 +924,8 @@
       letter-spacing: 0.01em;
       color: rgba(0,0,0,0.78);
       z-index: 5;
-      max-width: 11ch;
+      max-width: none;
+      white-space: nowrap;
       text-transform: none;
     }
 
@@ -979,8 +980,8 @@
       }
 
       .about-badge {
-        right: 16%;
-        top: 45%;
+        right: 13%;
+        top: 58%;
         width: 96px;
         height: 96px;
       }
@@ -993,11 +994,18 @@
       .about-badge-3 {
         width: 72px;
         height: 72px;
+        left: 8%;
+        bottom: 18%;
       }
 
       .about-badge-4 {
         width: 66px;
         height: 66px;
+        right: 1%;
+      }
+
+      .about-divider-copy {
+        font-size: clamp(1.45rem, 3vw, 2.7rem);
       }
     }
 
@@ -1174,29 +1182,31 @@
       }
 
       .about-badge {
-        right: 18px;
-        top: 44%;
+        right: 8px;
+        top: auto;
+        bottom: 180px;
+        transform: none;
         width: 84px;
         height: 84px;
       }
 
       .about-badge-2 {
         left: 0;
-        top: 4%;
+        top: 0;
         width: 56px;
         height: 56px;
       }
 
       .about-badge-3 {
-        left: 8%;
-        bottom: 16%;
+        left: 2%;
+        bottom: 118px;
         width: 62px;
         height: 62px;
       }
 
       .about-badge-4 {
         right: 4%;
-        top: 9%;
+        top: 12px;
         width: 58px;
         height: 58px;
       }
@@ -1204,8 +1214,9 @@
       .about-divider-copy {
         left: 14px;
         bottom: 12px;
-        font-size: clamp(1.5rem, 7vw, 2.8rem);
-        max-width: 13ch;
+        font-size: clamp(1rem, 3.3vw, 1.6rem);
+        max-width: none;
+        white-space: nowrap;
       }
     }
 
@@ -1359,28 +1370,36 @@
       .about-badge {
         width: 68px;
         height: 68px;
-        right: 12px;
+        right: 6px;
+        bottom: 154px;
       }
 
       .about-badge-2 {
         width: 48px;
         height: 48px;
+        top: 4px;
       }
 
       .about-badge-3 {
         width: 54px;
         height: 54px;
-        left: 2%;
+        left: 0;
+        bottom: 100px;
       }
 
       .about-badge-4 {
         width: 50px;
         height: 50px;
+        right: 2px;
+        top: 10px;
       }
 
       .about-divider-copy {
-        font-size: clamp(1.28rem, 8vw, 2.2rem);
-        max-width: 12ch;
+        font-size: 0.82rem;
+        line-height: 1;
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+        max-width: none;
       }
     }
   </style>
