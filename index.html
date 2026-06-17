@@ -334,13 +334,14 @@
       margin-right: calc(50% - 50vw);
       min-height: calc(100dvh - 48px);
       position: relative;
-      overflow: hidden;
+      overflow: visible;
       background:
         linear-gradient(90deg, rgba(0,0,0,0.74) 0%, rgba(0,0,0,0.56) 34%, rgba(0,0,0,0.22) 62%, rgba(0,0,0,0.26) 100%),
         url("assets/descarga (7).jpg") center center / cover no-repeat;
       display: flex;
       align-items: center;
       color: #fff;
+      padding-bottom: 78px;
     }
 
     .services-layout {
@@ -649,6 +650,117 @@
       margin-top: auto;
     }
 
+    .about-toggle-bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 20;
+    }
+
+    .about-toggle {
+      width: 100%;
+      min-height: 78px;
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px 26px;
+      text-align: left;
+    }
+
+    .about-toggle-label {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(1.2rem, 2.2vw, 1.9rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .about-toggle-icon {
+      width: 42px;
+      height: 42px;
+      border: 1.5px solid rgba(255,255,255,0.28);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .about-toggle[aria-expanded="true"] .about-toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    .about-panel {
+      width: 100%;
+      background: #000;
+      color: #fff;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s ease;
+    }
+
+    .about-panel.open {
+      max-height: 520px;
+    }
+
+    .about-panel-inner {
+      padding: 26px 26px 34px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .about-panel-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .about-panel-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .about-panel-copy {
+      max-width: 64ch;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.84);
+    }
+
+    .about-panel-points {
+      display: grid;
+      gap: 14px;
+    }
+
+    .about-point {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 14px;
+    }
+
+    .about-point strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .about-point span {
+      display: block;
+      font-size: 0.96rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.8);
+    }
+
     .impact-strip {
       width: 100%;
       background: #fff;
@@ -878,117 +990,6 @@
       display: block;
     }
 
-    .about-toggle-wrap {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      z-index: 8;
-    }
-
-    .about-toggle {
-      width: 100%;
-      min-height: 78px;
-      background: #000;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 22px 26px;
-      text-align: left;
-    }
-
-    .about-toggle-label {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(1.2rem, 2.2vw, 1.9rem);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      line-height: 1;
-    }
-
-    .about-toggle-icon {
-      width: 42px;
-      height: 42px;
-      border: 1.5px solid rgba(255,255,255,0.28);
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: transform 0.3s ease;
-    }
-
-    .about-toggle[aria-expanded="true"] .about-toggle-icon {
-      transform: rotate(180deg);
-    }
-
-    .about-panel {
-      width: 100%;
-      background: #000;
-      color: #fff;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.45s ease;
-    }
-
-    .about-panel.open {
-      max-height: 520px;
-    }
-
-    .about-panel-inner {
-      padding: 26px 26px 34px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .about-panel-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.9fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .about-panel-title {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      line-height: 0.92;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .about-panel-copy {
-      max-width: 64ch;
-      font-size: 1rem;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.84);
-    }
-
-    .about-panel-points {
-      display: grid;
-      gap: 14px;
-    }
-
-    .about-point {
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 14px;
-    }
-
-    .about-point strong {
-      display: block;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      color: #fff;
-    }
-
-    .about-point span {
-      display: block;
-      font-size: 0.96rem;
-      line-height: 1.55;
-      color: rgba(255,255,255,0.8);
-    }
-
     @media (max-width: 1100px) {
       .services-layout {
         grid-template-columns: 1fr;
@@ -1020,6 +1021,10 @@
         margin-right: 0;
       }
 
+      .about-panel.open {
+        max-height: 700px;
+      }
+
       .impact-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px;
@@ -1037,10 +1042,6 @@
         width: min(100%, 390px);
         right: 0;
         bottom: -68px;
-      }
-
-      .about-panel.open {
-        max-height: 700px;
       }
     }
 
@@ -1122,6 +1123,7 @@
 
       .services-section {
         min-height: auto;
+        padding-bottom: 72px;
       }
 
       .services-layout {
@@ -1149,6 +1151,24 @@
 
       .phone-card {
         min-height: 430px;
+      }
+
+      .about-toggle {
+        min-height: 72px;
+        padding: 18px 18px;
+      }
+
+      .about-panel-inner {
+        padding: 22px 18px 28px;
+      }
+
+      .about-panel-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .about-panel.open {
+        max-height: 920px;
       }
 
       .impact-strip {
@@ -1184,7 +1204,7 @@
 
       .about-editorial-box {
         min-height: auto;
-        padding-top: 94px;
+        padding-top: 0;
       }
 
       .about-copy-top {
@@ -1222,24 +1242,6 @@
         bottom: -14px;
         font-size: clamp(1.5rem, 7vw, 2.8rem);
         max-width: 18ch;
-      }
-
-      .about-toggle {
-        min-height: 72px;
-        padding: 18px 18px;
-      }
-
-      .about-panel-inner {
-        padding: 22px 18px 28px;
-      }
-
-      .about-panel-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
-      }
-
-      .about-panel.open {
-        max-height: 920px;
       }
     }
 
@@ -1359,6 +1361,19 @@
         min-height: 78px;
       }
 
+      .about-toggle-label {
+        font-size: 1rem;
+      }
+
+      .about-toggle-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .about-panel.open {
+        max-height: 1100px;
+      }
+
       .impact-number {
         font-size: clamp(2.8rem, 16vw, 4.2rem);
       }
@@ -1376,7 +1391,7 @@
       }
 
       .about-editorial-box {
-        padding-top: 90px;
+        padding-top: 0;
       }
 
       .about-copy-top {
@@ -1399,19 +1414,6 @@
         bottom: -10px;
         font-size: clamp(1.28rem, 8vw, 2.2rem);
         max-width: 18ch;
-      }
-
-      .about-toggle-label {
-        font-size: 1rem;
-      }
-
-      .about-toggle-icon {
-        width: 38px;
-        height: 38px;
-      }
-
-      .about-panel.open {
-        max-height: 1100px;
       }
     }
   </style>
@@ -1581,6 +1583,47 @@
           </div>
         </div>
       </div>
+
+      <div class="about-toggle-bar">
+        <button class="about-toggle" id="aboutToggle" aria-expanded="false" aria-controls="aboutPanel">
+          <span class="about-toggle-label">About Us</span>
+          <span class="about-toggle-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </span>
+        </button>
+
+        <div class="about-panel" id="aboutPanel">
+          <div class="about-panel-inner">
+            <div class="about-panel-grid">
+              <div>
+                <h3 class="about-panel-title">The Boss Agency Co</h3>
+                <p class="about-panel-copy">
+                  We help businesses and non-profits grow their presence with clear digital strategy, strong branding, web development, SEO, and content that connects with the right audience. Every project is tailored to your goals so the work feels aligned, practical, and built for measurable growth.
+                </p>
+              </div>
+
+              <div class="about-panel-points">
+                <div class="about-point">
+                  <strong>What we do</strong>
+                  <span>Digital strategy, web development, SEO, branding, and content creation.</span>
+                </div>
+
+                <div class="about-point">
+                  <strong>How we work</strong>
+                  <span>A personalized approach focused on your audience, challenges, and next stage of growth.</span>
+                </div>
+
+                <div class="about-point">
+                  <strong>Why clients stay</strong>
+                  <span>We build lasting partnerships and solutions designed to create visible, measurable results.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="impact-strip" id="impact">
@@ -1643,47 +1686,6 @@
 
     <section class="about-editorial" id="about">
       <div class="about-editorial-box">
-        <div class="about-toggle-wrap">
-          <button class="about-toggle" id="aboutToggle" aria-expanded="false" aria-controls="aboutPanel">
-            <span class="about-toggle-label">About Us</span>
-            <span class="about-toggle-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 9l6 6 6-6"></path>
-              </svg>
-            </span>
-          </button>
-
-          <div class="about-panel" id="aboutPanel">
-            <div class="about-panel-inner">
-              <div class="about-panel-grid">
-                <div>
-                  <h3 class="about-panel-title">The Boss Agency Co</h3>
-                  <p class="about-panel-copy">
-                    We help businesses and non-profits grow their presence with clear digital strategy, strong branding, web development, SEO, and content that connects with the right audience. Every project is tailored to your goals so the work feels aligned, practical, and built for measurable growth.
-                  </p>
-                </div>
-
-                <div class="about-panel-points">
-                  <div class="about-point">
-                    <strong>What we do</strong>
-                    <span>Digital strategy, web development, SEO, branding, and content creation.</span>
-                  </div>
-
-                  <div class="about-point">
-                    <strong>How we work</strong>
-                    <span>A personalized approach focused on your audience, challenges, and next stage of growth.</span>
-                  </div>
-
-                  <div class="about-point">
-                    <strong>Why clients stay</strong>
-                    <span>We build lasting partnerships and solutions designed to create visible, measurable results.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div class="about-copy">
           <h2 class="about-copy-top">
             an agency built
@@ -1731,7 +1733,6 @@
 
     menuToggle.addEventListener('click', () => toggleMenu());
     menuOverlay.addEventListener('click', () => toggleMenu(false));
-
     document.querySelectorAll('.menu-links a').forEach(link => {
       link.addEventListener('click', () => toggleMenu(false));
     });
@@ -1780,21 +1781,20 @@
       {
         pill: 'Social Media Management',
         copy: 'Consistent day to day management for a polished digital presence',
-        meta: 'We keep your channels active, aligned, and professionally executed',
+        meta: 'We keep your channels active, aligned, and professionally presented',
         title: 'Social Management',
-        location: 'Ongoing content execution for stronger brand consistency',
+        location: 'Ongoing execution for stronger brand consistency',
         code: '#TBA-SMM-05',
         image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80',
         alt: 'Social media management service'
       }
     ];
 
-    let serviceIndex = 0;
+    let currentService = 0;
 
     const servicesPill = document.getElementById('servicesPill');
     const servicesCopy = document.getElementById('servicesCopy');
     const servicesMeta = document.getElementById('servicesMeta');
-    const phoneHeaderTitle = document.getElementById('phoneHeaderTitle');
     const phoneServiceTitle = document.getElementById('phoneServiceTitle');
     const phoneServiceLocation = document.getElementById('phoneServiceLocation');
     const phoneServiceCode = document.getElementById('phoneServiceCode');
@@ -1807,7 +1807,6 @@
       servicesPill.textContent = item.pill;
       servicesCopy.textContent = item.copy;
       servicesMeta.textContent = item.meta;
-      phoneHeaderTitle.textContent = 'Service confirmed';
       phoneServiceTitle.textContent = item.title;
       phoneServiceLocation.textContent = item.location;
       phoneServiceCode.textContent = item.code;
@@ -1816,58 +1815,57 @@
     }
 
     servicesPrev.addEventListener('click', () => {
-      serviceIndex = (serviceIndex - 1 + services.length) % services.length;
-      renderService(serviceIndex);
+      currentService = (currentService - 1 + services.length) % services.length;
+      renderService(currentService);
     });
 
     servicesNext.addEventListener('click', () => {
-      serviceIndex = (serviceIndex + 1) % services.length;
-      renderService(serviceIndex);
+      currentService = (currentService + 1) % services.length;
+      renderService(currentService);
     });
 
-    renderService(serviceIndex);
+    renderService(currentService);
 
-    const counters = document.querySelectorAll('.impact-number');
+    const impactNumbers = document.querySelectorAll('.impact-number');
 
-    const counterObserver = new IntersectionObserver((entries, observer) => {
+    const animateCounter = (el) => {
+      const target = Number(el.dataset.target || 0);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const startTime = performance.now();
+
+      function update(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.floor(target * eased);
+        el.textContent = `${prefix}${value}${suffix}`;
+        if (progress < 1) requestAnimationFrame(update);
+        else el.textContent = `${prefix}${target}${suffix}`;
+      }
+
+      el.classList.add('is-visible');
+      requestAnimationFrame(update);
+    };
+
+    const impactObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-
-        const el = entry.target;
-        const target = Number(el.dataset.target || 0);
-        const prefix = el.dataset.prefix || '';
-        const suffix = el.dataset.suffix || '';
-        const duration = 1400;
-        const start = performance.now();
-
-        function animate(now) {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          const current = Math.round(target * eased);
-          el.textContent = `${prefix}${current}${suffix}`;
-
-          if (progress < 1) {
-            requestAnimationFrame(animate);
-          } else {
-            el.textContent = `${prefix}${target}${suffix}`;
-            el.classList.add('is-visible');
-          }
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
         }
-
-        requestAnimationFrame(animate);
-        observer.unobserve(el);
       });
     }, { threshold: 0.45 });
 
-    counters.forEach(counter => counterObserver.observe(counter));
+    impactNumbers.forEach(number => impactObserver.observe(number));
 
     const aboutToggle = document.getElementById('aboutToggle');
     const aboutPanel = document.getElementById('aboutPanel');
 
     aboutToggle.addEventListener('click', () => {
-      const isOpen = aboutToggle.getAttribute('aria-expanded') === 'true';
-      aboutToggle.setAttribute('aria-expanded', String(!isOpen));
+      const isOpen = aboutPanel.classList.contains('open');
       aboutPanel.classList.toggle('open', !isOpen);
+      aboutToggle.setAttribute('aria-expanded', String(!isOpen));
     });
   </script>
 </body>
