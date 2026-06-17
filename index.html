@@ -993,254 +993,131 @@
 
     .ourwork-board {
       min-height: 100vh;
-      background: #f4eee8;
-      padding: 54px 22px 70px;
+      background: #f6f0ea;
+      padding: 66px 22px 74px;
       position: relative;
       overflow: hidden;
     }
 
     .ourwork-shell {
       width: 100%;
-      max-width: 1420px;
+      max-width: 1460px;
       margin: 0 auto;
       position: relative;
-      min-height: 760px;
-    }
-
-    .ourwork-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 10px;
-    }
-
-    .ourwork-mini {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #111;
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(1.7rem, 2.7vw, 2.6rem);
-      line-height: 1;
-      text-transform: lowercase;
-    }
-
-    .ourwork-burst {
-      width: 36px;
-      height: 36px;
-      background: #ff6c3a;
-      clip-path: polygon(50% 0%, 61% 22%, 84% 8%, 78% 33%, 100% 50%, 78% 67%, 84% 92%, 61% 78%, 50% 100%, 39% 78%, 16% 92%, 22% 67%, 0% 50%, 22% 33%, 16% 8%, 39% 22%);
-      flex-shrink: 0;
-    }
-
-    .ourwork-script {
-      position: absolute;
-      left: 50%;
-      top: 6px;
-      transform: translateX(-50%);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 5vw, 4.6rem);
-      font-style: italic;
-      font-weight: 500;
-      color: #111;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .ourwork-whatsapp {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: #fff;
-      border: 2px solid #111;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-      color: #111;
-    }
-
-    .ourwork-line {
-      position: absolute;
-      top: -2px;
-      right: 150px;
-      width: 180px;
-      height: 16px;
-      pointer-events: none;
-    }
-
-    .ourwork-line svg {
-      width: 100%;
-      height: 100%;
-      display: block;
+      min-height: 770px;
     }
 
     .ourwork-cards {
       position: relative;
-      height: 640px;
-      margin-top: 46px;
+      height: 690px;
+      margin-top: 8px;
     }
 
     .work-card {
       position: absolute;
-      width: 300px;
-      min-height: 440px;
-      border-radius: 18px;
-      padding: 28px 28px 24px;
-      box-shadow: 0 18px 30px rgba(0,0,0,0.1);
+      width: 282px;
+      min-height: 455px;
+      border-radius: 20px;
+      padding: 26px 24px 24px;
+      box-shadow: 0 18px 34px rgba(0,0,0,0.08);
       color: #111;
     }
 
     .work-card h3 {
       font-family: 'Anton', sans-serif;
-      font-size: clamp(2rem, 3vw, 3.2rem);
-      line-height: 0.92;
-      margin-bottom: 26px;
-      text-transform: lowercase;
-      letter-spacing: 0.01em;
+      font-size: clamp(1.45rem, 1.8vw, 2rem);
+      line-height: 1.02;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      max-width: 11ch;
     }
 
     .work-card .work-divider {
       width: 100%;
-      height: 4px;
+      height: 3px;
       border-radius: 999px;
       background: currentColor;
-      opacity: 0.9;
-      margin-bottom: 24px;
+      opacity: 0.85;
+      margin-bottom: 18px;
+    }
+
+    .work-card .benefit-title {
+      margin-top: 18px;
+      margin-bottom: 10px;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 800;
+      opacity: 0.86;
     }
 
     .work-card ul {
       list-style: none;
       display: grid;
-      gap: 10px;
+      gap: 9px;
     }
 
     .work-card li {
-      font-size: 0.98rem;
-      line-height: 1.42;
+      font-size: 0.96rem;
+      line-height: 1.38;
       font-weight: 500;
       position: relative;
-      padding-left: 18px;
+      padding-left: 16px;
     }
 
     .work-card li::before {
-      content: "✦";
+      content: "•";
       position: absolute;
       left: 0;
       top: 0;
-      font-size: 0.78rem;
-      line-height: 1.55;
-    }
-
-    .work-card .benefit-title {
-      margin-top: 22px;
-      margin-bottom: 10px;
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 800;
-      opacity: 0.9;
+      font-size: 1rem;
+      line-height: 1.2;
     }
 
     .work-card.card-1 {
-      left: 72px;
-      top: 64px;
-      background: #2f7f6f;
-      color: #fff7ef;
-      transform: rotate(-3deg);
+      left: 42px;
+      top: 122px;
+      background: #dcefdc;
+      color: #102117;
+      transform: rotate(-5deg);
       z-index: 2;
     }
 
     .work-card.card-2 {
-      left: 308px;
-      top: 118px;
-      background: #7d95f1;
-      color: #111;
-      transform: rotate(-5deg);
+      left: 292px;
+      top: 160px;
+      background: #d9dffb;
+      color: #141414;
+      transform: rotate(-2.5deg);
       z-index: 3;
     }
 
     .work-card.card-3 {
-      left: 562px;
-      top: 40px;
-      background: #ff6b3b;
-      color: #111;
-      transform: rotate(5deg);
+      left: 552px;
+      top: 98px;
+      background: #ffe2c8;
+      color: #1a1715;
+      transform: rotate(3deg);
       z-index: 4;
     }
 
     .work-card.card-4 {
-      left: 810px;
-      top: 86px;
-      background: #9d2f63;
-      color: #fff8f3;
-      transform: rotate(-4deg);
+      left: 826px;
+      top: 146px;
+      background: #ecd9f5;
+      color: #171219;
+      transform: rotate(-2deg);
       z-index: 5;
     }
 
     .work-card.card-5 {
-      left: 1060px;
-      top: 124px;
-      background: #dca8ef;
-      color: #111;
-      transform: rotate(4deg);
+      left: 1094px;
+      top: 112px;
+      background: #f9d9d9;
+      color: #1d1414;
+      transform: rotate(3.5deg);
       z-index: 2;
-    }
-
-    .work-sticker {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      z-index: 8;
-      filter: drop-shadow(0 8px 10px rgba(0,0,0,0.08));
-    }
-
-    .work-sticker svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-
-    .sticker-camera {
-      width: 150px;
-      height: 150px;
-      left: 210px;
-      top: 8px;
-      transform: rotate(-14deg);
-    }
-
-    .sticker-hand {
-      width: 130px;
-      height: 130px;
-      left: 474px;
-      top: 80px;
-      transform: rotate(-16deg);
-    }
-
-    .sticker-smile {
-      width: 122px;
-      height: 122px;
-      left: 730px;
-      top: 0;
-      transform: rotate(-6deg);
-    }
-
-    .sticker-bird {
-      width: 168px;
-      height: 120px;
-      left: 930px;
-      top: 18px;
-      transform: rotate(8deg);
-    }
-
-    .sticker-heart {
-      width: 138px;
-      height: 112px;
-      left: 1190px;
-      top: 108px;
-      transform: rotate(10deg);
     }
 
     .contact-section {
@@ -1251,30 +1128,24 @@
       justify-content: center;
     }
 
-    @media (max-width: 1420px) {
+    @media (max-width: 1500px) {
       .ourwork-shell {
-        max-width: 1180px;
+        max-width: 1240px;
       }
 
       .ourwork-cards {
-        height: 820px;
+        height: 760px;
       }
 
       .work-card {
-        width: 280px;
+        width: 270px;
       }
 
-      .work-card.card-1 { left: 20px; top: 88px; }
-      .work-card.card-2 { left: 220px; top: 160px; }
-      .work-card.card-3 { left: 455px; top: 54px; }
-      .work-card.card-4 { left: 680px; top: 130px; }
-      .work-card.card-5 { left: 900px; top: 205px; }
-
-      .sticker-camera { left: 130px; top: 20px; }
-      .sticker-hand { left: 376px; top: 114px; }
-      .sticker-smile { left: 620px; top: 6px; }
-      .sticker-bird { left: 776px; top: 50px; }
-      .sticker-heart { left: 986px; top: 170px; }
+      .work-card.card-1 { left: 8px; top: 130px; }
+      .work-card.card-2 { left: 222px; top: 185px; }
+      .work-card.card-3 { left: 456px; top: 100px; }
+      .work-card.card-4 { left: 696px; top: 172px; }
+      .work-card.card-5 { left: 936px; top: 124px; }
     }
 
     @media (max-width: 1100px) {
@@ -1332,7 +1203,7 @@
       }
 
       .ourwork-board {
-        padding: 48px 18px 64px;
+        padding: 52px 18px 64px;
       }
 
       .ourwork-shell {
@@ -1341,7 +1212,7 @@
 
       .ourwork-cards {
         height: auto;
-        margin-top: 34px;
+        margin-top: 0;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 22px;
@@ -1352,27 +1223,14 @@
         left: auto !important;
         top: auto !important;
         width: 100%;
-        min-height: 420px;
+        min-height: 430px;
+        transform: rotate(0deg) !important;
       }
 
-      .work-card.card-1 { transform: rotate(-2deg); }
-      .work-card.card-2 { transform: rotate(2deg); }
-      .work-card.card-3 { transform: rotate(-1deg); }
-      .work-card.card-4 { transform: rotate(2deg); }
       .work-card.card-5 {
-        transform: rotate(-2deg);
         grid-column: 1 / -1;
         max-width: 560px;
         margin: 0 auto;
-      }
-
-      .work-sticker {
-        display: none;
-      }
-
-      .ourwork-line {
-        right: 110px;
-        width: 130px;
       }
     }
 
@@ -1579,37 +1437,13 @@
         padding: 42px 14px 56px;
       }
 
-      .ourwork-top {
-        align-items: center;
-      }
-
-      .ourwork-script {
-        position: static;
-        transform: none;
-        text-align: center;
-        width: 100%;
-        margin-top: 16px;
-      }
-
-      .ourwork-shell {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .ourwork-line {
-        display: none;
-      }
-
       .ourwork-cards {
         grid-template-columns: 1fr;
         gap: 18px;
-        margin-top: 8px;
       }
 
       .work-card {
         min-height: auto;
-        transform: rotate(0deg) !important;
       }
 
       .work-card.card-5 {
@@ -1788,26 +1622,12 @@
         max-width: 18ch;
       }
 
-      .ourwork-mini {
-        font-size: 1.5rem;
-      }
-
-      .ourwork-burst {
-        width: 30px;
-        height: 30px;
-      }
-
-      .ourwork-whatsapp {
-        width: 40px;
-        height: 40px;
-      }
-
       .work-card {
-        padding: 22px 20px 20px;
+        padding: 22px 18px 20px;
       }
 
       .work-card h3 {
-        font-size: 2.2rem;
+        font-size: 1.3rem;
       }
 
       .work-card li {
@@ -2118,156 +1938,64 @@
 
     <section class="ourwork-board" id="work">
       <div class="ourwork-shell">
-        <div class="ourwork-top">
-          <div class="ourwork-mini">
-            <span class="ourwork-burst" aria-hidden="true"></span>
-            <span>work</span>
-          </div>
-
-          <a href="#" class="ourwork-whatsapp" aria-label="WhatsApp">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 12a7.9 7.9 0 0 1-1.2 4.2L20 20l-3.9-1.2A8 8 0 1 1 20 12Zm-8-6.3A6.3 6.3 0 0 0 6.5 15l.3.5-.7 2.1 2.2-.7.5.3A6.3 6.3 0 1 0 12 5.7Zm3.8 8c-.2-.1-1.2-.6-1.4-.7-.2-.1-.4-.1-.5.1l-.4.6c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.7-1-.7-.6-1.1-1.3-1.2-1.5-.1-.2 0-.3.1-.4l.3-.3.2-.3c.1-.1.1-.3 0-.4 0-.1-.5-1.3-.7-1.7-.2-.4-.3-.3-.5-.3h-.4c-.1 0-.4.1-.5.3-.2.2-.7.7-.7 1.7s.7 2 1 2.4c.1.1 1.5 2.3 3.7 3.2 2.1.9 2.1.6 2.5.6.4 0 1.2-.5 1.4-.9.2-.5.2-.9.1-1 0-.1-.2-.2-.4-.3Z"/>
-            </svg>
-          </a>
-        </div>
-
-        <div class="ourwork-script">services & benefits</div>
-
-        <div class="ourwork-line" aria-hidden="true">
-          <svg viewBox="0 0 180 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 13C38 10 74 6 110 5C132 4 151 5 178 3" stroke="#111111" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <div class="work-sticker sticker-camera" aria-hidden="true">
-          <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
-            <path d="M43 15C54 19 59 28 61 38C70 26 82 18 98 20C96 29 94 36 98 44C111 41 123 45 131 56C120 60 112 64 108 74C120 78 128 87 130 102C117 101 107 99 98 105C104 117 104 129 97 140C84 132 77 123 74 111C66 120 56 125 42 124C45 111 45 101 38 91C26 94 16 90 8 81C18 75 26 71 31 62C19 57 11 48 11 35C23 37 33 40 42 35C37 25 37 18 43 15Z" fill="#222222"/>
-            <path d="M47 24C57 28 63 35 65 46C74 34 86 27 100 29C98 37 98 44 102 50C113 48 122 52 128 61C118 65 111 70 107 78C117 82 123 90 124 101C113 99 104 100 95 105C99 116 99 126 94 135C83 128 77 120 73 109C66 116 56 119 45 118C48 107 46 98 40 90C29 92 21 88 15 81C24 76 31 71 35 63C25 59 19 51 18 40C29 42 38 43 46 39C42 31 42 27 47 24Z" fill="#ffffff"/>
-            <path d="M56 57L68 50H103L111 57H118C126 57 132 63 132 71V93C132 101 126 107 118 107H49C41 107 35 101 35 93V71C35 63 41 57 49 57H56Z" fill="#222222"/>
-            <circle cx="84" cy="82" r="23" fill="none" stroke="#ffffff" stroke-width="6"/>
-            <circle cx="84" cy="82" r="11" fill="none" stroke="#ffffff" stroke-width="5"/>
-          </svg>
-        </div>
-
-        <div class="work-sticker sticker-hand" aria-hidden="true">
-          <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 46C32 38 46 33 60 31C70 30 76 34 81 42L97 41C109 41 116 49 116 60C116 70 110 76 100 78L91 79L98 87C104 94 104 104 98 111C92 118 82 118 74 112L41 88C33 82 28 75 23 66L20 61C17 55 16 50 20 46Z" fill="#eff9a6" stroke="#9d2f63" stroke-width="4"/>
-            <path d="M37 56L65 52" stroke="#9d2f63" stroke-width="4" stroke-linecap="round"/>
-            <path d="M44 67L74 63" stroke="#9d2f63" stroke-width="4" stroke-linecap="round"/>
-            <path d="M51 78L80 74" stroke="#9d2f63" stroke-width="4" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <div class="work-sticker sticker-smile" aria-hidden="true">
-          <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="65" cy="65" r="42" fill="#7d95f1" stroke="#dfe889" stroke-width="4"/>
-            <circle cx="55" cy="54" r="4" fill="#dfe889"/>
-            <circle cx="78" cy="57" r="4" fill="#dfe889"/>
-            <path d="M50 79C58 87 72 87 80 79" stroke="#dfe889" stroke-width="4" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <div class="work-sticker sticker-bird" aria-hidden="true">
-          <svg viewBox="0 0 180 130" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 74C18 55 30 43 48 42C55 30 66 24 79 26C94 28 103 38 108 50C120 49 130 53 137 61C144 69 146 80 144 92C139 113 112 119 92 106L71 93C60 104 44 109 30 104C18 99 12 87 15 74Z" fill="#eef6a7" stroke="#ff6b3b" stroke-width="5"/>
-            <circle cx="67" cy="57" r="5" fill="#ff6b3b"/>
-            <path d="M76 59C84 67 96 67 104 59" stroke="#ff6b3b" stroke-width="4" stroke-linecap="round"/>
-            <path d="M117 64L149 58L124 78" fill="#ff6b3b"/>
-          </svg>
-        </div>
-
-        <div class="work-sticker sticker-heart" aria-hidden="true">
-          <svg viewBox="0 0 150 120" xmlns="http://www.w3.org/2000/svg">
-            <path d="M59 103C49 95 15 70 15 44C15 28 27 16 43 16C55 16 64 22 72 31C80 22 89 16 101 16C117 16 129 28 129 44C129 70 95 95 85 103C77 109 67 109 59 103Z" fill="#9d2f63"/>
-            <path d="M23 23L29 10" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
-            <path d="M120 24L132 15" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
-            <path d="M131 44L141 42" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
-          </svg>
-        </div>
-
         <div class="ourwork-cards">
           <article class="work-card card-1">
-            <h3>web</h3>
+            <h3>Web Developer</h3>
             <div class="work-divider"></div>
-            <ul>
-              <li>Landing pages</li>
-              <li>Business websites</li>
-              <li>Responsive design</li>
-              <li>Conversion structure</li>
-            </ul>
             <div class="benefit-title">Benefits</div>
             <ul>
-              <li>Stronger first impression</li>
-              <li>More credibility online</li>
-              <li>Better user experience</li>
+              <li>Professional online presence</li>
+              <li>Better first impressions</li>
+              <li>Clearer path to conversion</li>
+              <li>Responsive experience on all devices</li>
             </ul>
           </article>
 
           <article class="work-card card-2">
-            <h3>social</h3>
+            <h3>Social Media Strategy</h3>
             <div class="work-divider"></div>
-            <ul>
-              <li>Social media strategy</li>
-              <li>Content planning</li>
-              <li>Brand direction</li>
-              <li>Campaign support</li>
-            </ul>
             <div class="benefit-title">Benefits</div>
             <ul>
-              <li>Clearer positioning</li>
-              <li>Consistent messaging</li>
-              <li>More audience trust</li>
+              <li>Clearer brand direction</li>
+              <li>Stronger message consistency</li>
+              <li>Content aligned with business goals</li>
+              <li>More trust with your audience</li>
             </ul>
           </article>
 
           <article class="work-card card-3">
-            <h3>local</h3>
+            <h3>Google My Business</h3>
             <div class="work-divider"></div>
-            <ul>
-              <li>Google My Business</li>
-              <li>Profile optimization</li>
-              <li>Local visibility setup</li>
-              <li>Trust signal improvement</li>
-            </ul>
             <div class="benefit-title">Benefits</div>
             <ul>
-              <li>Easier local discovery</li>
-              <li>Better search presence</li>
-              <li>More qualified inquiries</li>
+              <li>Better local visibility</li>
+              <li>Easier customer discovery</li>
+              <li>Improved trust in search</li>
+              <li>Stronger presence on Google</li>
             </ul>
           </article>
 
           <article class="work-card card-4">
-            <h3>support</h3>
+            <h3>VA Recruitment Agency</h3>
             <div class="work-divider"></div>
-            <ul>
-              <li>VA recruitment</li>
-              <li>Role matching</li>
-              <li>Workflow support</li>
-              <li>Hiring assistance</li>
-            </ul>
             <div class="benefit-title">Benefits</div>
             <ul>
-              <li>More time for growth</li>
-              <li>Better daily execution</li>
-              <li>Scalable operations</li>
+              <li>More time for leadership tasks</li>
+              <li>Better operational support</li>
+              <li>Faster execution capacity</li>
+              <li>Scalable business support</li>
             </ul>
           </article>
 
           <article class="work-card card-5">
-            <h3>management</h3>
+            <h3>Social Media Management</h3>
             <div class="work-divider"></div>
-            <ul>
-              <li>Social media management</li>
-              <li>Publishing support</li>
-              <li>Content consistency</li>
-              <li>Channel upkeep</li>
-            </ul>
             <div class="benefit-title">Benefits</div>
             <ul>
-              <li>Active brand presence</li>
-              <li>Cleaner communication</li>
-              <li>Long-term consistency</li>
+              <li>Consistent daily presence</li>
+              <li>Cleaner communication across channels</li>
+              <li>Better content organization</li>
+              <li>Long-term brand consistency</li>
             </ul>
           </article>
         </div>
