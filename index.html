@@ -288,21 +288,11 @@
     }
 
     @keyframes fastSlide {
-      0% {
-        transform: translateX(0);
-      }
-      45% {
-        transform: translateX(0);
-      }
-      52% {
-        transform: translateX(150px);
-      }
-      60% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(0);
-      }
+      0% { transform: translateX(0); }
+      45% { transform: translateX(0); }
+      52% { transform: translateX(150px); }
+      60% { transform: translateX(0); }
+      100% { transform: translateX(0); }
     }
 
     .section {
@@ -342,6 +332,194 @@
       line-height: 1.7;
     }
 
+    /* SERVICES */
+    .services-section {
+      min-height: 100vh;
+      background: #d9a11d;
+      color: #111;
+      padding: 70px 36px 36px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .services-wrap {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .services-left {
+      padding-left: 34px;
+    }
+
+    .services-kicker {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 130px;
+      letter-spacing: 0.01em;
+    }
+
+    .services-quote {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      line-height: 0.88;
+      letter-spacing: 0.01em;
+      max-width: 9ch;
+      font-size: clamp(3.7rem, 7vw, 7rem);
+      color: #111;
+    }
+
+    .services-quote .muted {
+      color: rgba(17,17,17,0.45);
+    }
+
+    .services-bottom {
+      margin-top: 36px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .services-price {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1;
+      color: #111;
+    }
+
+    .services-sub {
+      font-size: clamp(1.1rem, 2vw, 1.95rem);
+      line-height: 1.2;
+      color: rgba(17,17,17,0.7);
+    }
+
+    .services-visual {
+      position: relative;
+      min-height: 720px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .service-card {
+      position: absolute;
+      background: transparent;
+      text-align: center;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 24px 26px rgba(0,0,0,0.16));
+    }
+
+    .service-card h3 {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      line-height: 1;
+      margin-top: 10px;
+      letter-spacing: 0.03em;
+    }
+
+    .service-card p {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(17,17,17,0.7);
+      margin-top: 6px;
+    }
+
+    .card-web {
+      width: 220px;
+      left: 5%;
+      bottom: 72px;
+      z-index: 2;
+    }
+
+    .card-seo {
+      width: 255px;
+      left: 31%;
+      bottom: 24px;
+      z-index: 3;
+    }
+
+    .card-va {
+      width: 220px;
+      right: 6%;
+      bottom: 68px;
+      z-index: 2;
+    }
+
+    .services-arrows {
+      position: absolute;
+      left: 34px;
+      bottom: 22px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .services-arrow {
+      width: 88px;
+      height: 52px;
+      border: 2px solid #111;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #111;
+      background: transparent;
+    }
+
+    .services-arrow svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    @media (max-width: 1100px) {
+      .services-wrap {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .services-left {
+        padding-left: 0;
+      }
+
+      .services-kicker {
+        margin-bottom: 50px;
+      }
+
+      .services-quote {
+        max-width: 100%;
+      }
+
+      .services-visual {
+        min-height: 780px;
+      }
+
+      .card-web {
+        left: 2%;
+      }
+
+      .card-seo {
+        left: 34%;
+      }
+
+      .card-va {
+        right: 2%;
+      }
+    }
+
     @media (max-width: 900px) {
       .statement-card {
         min-width: 340px;
@@ -351,6 +529,37 @@
 
       .statement-text {
         font-size: 1.55rem;
+      }
+
+      .services-section {
+        padding: 64px 20px 96px;
+      }
+
+      .services-quote {
+        font-size: clamp(3rem, 10vw, 5.4rem);
+      }
+
+      .services-visual {
+        min-height: 920px;
+      }
+
+      .service-card {
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        margin: 0 auto 24px;
+      }
+
+      .services-visual {
+        display: block;
+      }
+
+      .services-arrows {
+        left: 20px;
+        bottom: 24px;
       }
     }
 
@@ -465,6 +674,27 @@
       .hero-inner {
         transform: translateY(-28px);
       }
+
+      .services-kicker {
+        margin-bottom: 30px;
+      }
+
+      .services-bottom {
+        margin-top: 24px;
+      }
+
+      .services-price {
+        font-size: 2rem;
+      }
+
+      .services-sub {
+        font-size: 1rem;
+      }
+
+      .services-arrow {
+        width: 74px;
+        height: 46px;
+      }
     }
   </style>
 </head>
@@ -571,13 +801,80 @@
       </div>
     </section>
 
-    <section class="section" id="services">
-      <div class="section-box">
-        <div class="section-tag">Services</div>
-        <h2 class="section-title">Marketing That Moves Brands Forward</h2>
-        <p class="section-copy">
-          We build strategic digital experiences designed to increase visibility, sharpen brand positioning, and turn attention into qualified leads.
-        </p>
+    <section class="services-section" id="services">
+      <div class="services-wrap">
+        <div class="services-left">
+          <div class="services-kicker">The Boss Agency Co Services</div>
+
+          <h2 class="services-quote">
+            <span>“Smart</span>
+            <span class="muted">Digital</span>
+            <span class="muted">Systems</span>
+            <span>That</span>
+            <span>Drive</span>
+            <span>Real</span>
+            <span>Growth.”</span>
+          </h2>
+
+          <div class="services-bottom">
+            <div class="services-price">6 Services</div>
+            <div class="services-sub">built for visibility, leads, and support</div>
+          </div>
+
+          <div class="services-arrows">
+            <button class="services-arrow" aria-label="Previous service">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5"></path>
+                <path d="M12 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+
+            <button class="services-arrow" aria-label="Next service">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="services-visual">
+          <div class="service-card card-web">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
+              alt="Website design and analytics"
+              loading="lazy"
+              width="900"
+              height="1200"
+            />
+            <h3>Web Design</h3>
+            <p>Web design · SEO · branding</p>
+          </div>
+
+          <div class="service-card card-seo">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
+              alt="Marketing strategy meeting"
+              loading="lazy"
+              width="900"
+              height="1200"
+            />
+            <h3>AI + Local SEO</h3>
+            <p>Search visibility · lead generation</p>
+          </div>
+
+          <div class="service-card card-va">
+            <img
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80"
+              alt="Remote team collaboration"
+              loading="lazy"
+              width="900"
+              height="1200"
+            />
+            <h3>VA Recruitment</h3>
+            <p>Virtual assistants · support teams</p>
+          </div>
+        </div>
       </div>
     </section>
 
