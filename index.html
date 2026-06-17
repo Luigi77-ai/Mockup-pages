@@ -649,7 +649,6 @@
       margin-top: auto;
     }
 
-    /* NEW NUMBERS BLOCK */
     .impact-strip {
       width: 100%;
       background: #fff;
@@ -663,7 +662,7 @@
     }
 
     .impact-title {
-      max-width: 980px;
+      max-width: 1080px;
       margin: 0 auto 34px;
       text-align: center;
       font-family: 'Anton', sans-serif;
@@ -674,40 +673,98 @@
       color: #111;
     }
 
+    .impact-highlight {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 18px 10px;
+      margin: 0 6px;
+      background: #000;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      vertical-align: middle;
+    }
+
+    .impact-highlight::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background: linear-gradient(120deg, transparent 18%, rgba(255, 215, 90, 0.12) 35%, rgba(255, 239, 168, 0.8) 50%, rgba(255, 215, 90, 0.12) 65%, transparent 82%);
+      transform: translateX(-140%);
+      animation: goldSweep 3.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .impact-highlight span {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, #b88911 0%, #ffd95b 22%, #fff1a8 42%, #ffcf40 60%, #a46e00 100%);
+      background-size: 240% 240%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 18px rgba(255, 215, 90, 0.18);
+      animation: goldTextFlow 3.2s ease-in-out infinite;
+    }
+
+    @keyframes goldSweep {
+      0%, 18% { transform: translateX(-140%); opacity: 0; }
+      30% { opacity: 1; }
+      48% { transform: translateX(140%); opacity: 1; }
+      62%, 100% { transform: translateX(140%); opacity: 0; }
+    }
+
+    @keyframes goldTextFlow {
+      0%, 18% { background-position: 0% 50%; }
+      48% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .impact-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 26px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
       align-items: start;
+      justify-content: center;
     }
 
     .impact-card {
-      min-height: 210px;
+      min-height: 220px;
       padding: 12px 10px;
-      text-align: left;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
     }
 
     .impact-icon {
       width: 44px;
       height: 44px;
-      margin-bottom: 16px;
+      margin: 0 auto 16px;
       color: #c9c9c9;
     }
 
     .impact-number {
       font-family: 'Anton', sans-serif;
-      font-size: clamp(3.2rem, 7vw, 5.4rem);
+      font-size: clamp(3rem, 6vw, 5rem);
       line-height: 0.88;
       letter-spacing: -0.03em;
       color: #111;
       margin-bottom: 12px;
+      text-align: center;
+      width: 100%;
     }
 
     .impact-label {
       font-size: 1rem;
       line-height: 1.45;
       color: rgba(0,0,0,0.68);
-      max-width: 24ch;
+      max-width: 22ch;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .impact-number.is-visible {
@@ -751,12 +808,12 @@
       }
 
       .impact-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
       }
 
       .impact-card {
-        min-height: 190px;
+        min-height: 200px;
       }
     }
 
@@ -882,16 +939,15 @@
 
       .impact-card {
         min-height: auto;
-        text-align: center;
         padding: 10px 0;
-      }
-
-      .impact-icon {
-        margin: 0 auto 14px;
       }
 
       .impact-label {
         margin: 0 auto;
+      }
+
+      .impact-highlight {
+        margin: 8px 4px;
       }
     }
 
@@ -1017,6 +1073,10 @@
 
       .impact-label {
         font-size: 0.94rem;
+      }
+
+      .impact-highlight {
+        padding: 7px 14px 9px;
       }
     }
   </style>
@@ -1189,11 +1249,12 @@
       </div>
     </section>
 
-    <!-- NEW COMPACT NUMBERS BLOCK -->
     <section class="impact-strip" id="impact">
       <div class="impact-box">
         <h2 class="impact-title">
-          Real numbers that show how TBA support can improve visibility, speed, and business growth
+          Real numbers that show how
+          <span class="impact-highlight"><span>THE BOSS AGENCY CO</span></span>
+          support can improve visibility, speed, and business growth
         </h2>
 
         <div class="impact-grid">
@@ -1228,6 +1289,19 @@
             </div>
             <div class="impact-number" data-target="41" data-prefix="+" data-suffix="%">0</div>
             <p class="impact-label">Potential lift in conversion-ready traffic when branding, search, and content work together</p>
+          </article>
+
+          <article class="impact-card">
+            <div class="impact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9.5" cy="7" r="4"></circle>
+                <path d="M20 8v6"></path>
+                <path d="M23 11h-6"></path>
+              </svg>
+            </div>
+            <div class="impact-number" data-target="24" data-prefix="+" data-suffix="%">0</div>
+            <p class="impact-label">More execution capacity by hiring the right VA support through a faster recruitment process</p>
           </article>
         </div>
       </div>
