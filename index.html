@@ -351,7 +351,7 @@
       display: grid;
       grid-template-columns: minmax(380px, 620px) minmax(360px, 520px);
       justify-content: center;
-      align-items: end;
+      align-items: center;
       gap: 30px;
       height: 100%;
     }
@@ -362,6 +362,7 @@
       padding-bottom: 28px;
       align-self: center;
       justify-self: center;
+      text-align: center;
     }
 
     .services-pill {
@@ -377,33 +378,36 @@
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin: 0 auto 18px;
       backdrop-filter: blur(6px);
       background: rgba(255,255,255,0.03);
     }
 
     .services-copy {
-      font-size: clamp(2.7rem, 4.9vw, 4.8rem);
-      line-height: 0.94;
+      font-size: clamp(2.45rem, 4.45vw, 4.2rem);
+      line-height: 0.97;
       font-weight: 800;
       letter-spacing: -0.04em;
-      max-width: 10ch;
+      max-width: 11ch;
       color: #fff;
       text-shadow: 0 12px 32px rgba(0,0,0,0.26);
+      margin: 0 auto;
     }
 
     .services-meta {
-      margin-top: 18px;
-      font-size: clamp(0.97rem, 1.15vw, 1.08rem);
-      line-height: 1.48;
+      margin: 16px auto 0;
+      font-size: clamp(0.92rem, 1.05vw, 1rem);
+      line-height: 1.42;
       color: rgba(255,255,255,0.88);
-      max-width: 34ch;
+      max-width: 31ch;
+      min-height: 2.84em;
     }
 
     .services-cta-wrap {
-      margin-top: 24px;
+      margin-top: 22px;
       display: flex;
       justify-content: center;
+      align-items: center;
       width: 100%;
     }
 
@@ -419,13 +423,16 @@
       font-weight: 700;
       font-size: 0.98rem;
       box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+      margin: 0 auto;
     }
 
     .services-nav {
-      margin-top: 24px;
+      margin-top: 18px;
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 10px;
+      width: 100%;
     }
 
     .services-arrow {
@@ -464,7 +471,7 @@
     }
 
     .services-phone {
-      width: min(100%, 460px);
+      width: min(100%, 445px);
       background: linear-gradient(180deg, #111111 0%, #050505 100%);
       border: 2.5px solid #4f5c7d;
       border-radius: 48px;
@@ -472,7 +479,7 @@
       box-shadow: 0 28px 55px rgba(0,0,0,0.42);
       color: #fff;
       position: relative;
-      transform: translateY(132px) scale(1.14);
+      transform: translateY(82px) scale(1.11);
       transform-origin: center top;
       margin-bottom: -10px;
     }
@@ -587,8 +594,10 @@
 
     .phone-card-top p {
       margin-top: 6px;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: rgba(0,0,0,0.72);
+      min-height: 2.76em;
+      line-height: 1.38;
     }
 
     .phone-image {
@@ -634,29 +643,21 @@
         max-width: 620px;
         padding-top: 0;
         padding-bottom: 14px;
-        text-align: center;
-      }
-
-      .services-pill {
-        margin-left: auto;
-        margin-right: auto;
       }
 
       .services-copy,
       .services-meta {
         max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
       }
 
       .services-phone-wrap {
         justify-content: center;
         overflow: hidden;
-        min-height: 520px;
+        min-height: 500px;
       }
 
       .services-phone {
-        transform: translateY(108px) scale(1.02);
+        transform: translateY(72px) scale(1.01);
         margin-right: 0;
       }
     }
@@ -755,12 +756,12 @@
         order: 2;
         justify-content: center;
         padding-top: 0;
-        min-height: 460px;
+        min-height: 430px;
       }
 
       .services-phone {
         width: min(100%, 390px);
-        transform: translateY(98px) scale(0.98);
+        transform: translateY(58px) scale(0.98);
       }
     }
 
@@ -823,12 +824,12 @@
       }
 
       .services-copy {
-        font-size: clamp(2.18rem, 10.6vw, 3.2rem);
+        font-size: clamp(2.05rem, 10vw, 3rem);
       }
 
       .services-meta {
         margin-top: 14px;
-        font-size: 0.92rem;
+        font-size: 0.9rem;
       }
 
       .services-cta-wrap {
@@ -836,7 +837,7 @@
       }
 
       .services-nav {
-        margin-top: 18px;
+        margin-top: 16px;
       }
 
       .services-arrow {
@@ -845,14 +846,14 @@
       }
 
       .services-phone-wrap {
-        min-height: 390px;
+        min-height: 365px;
       }
 
       .services-phone {
         width: min(100%, 335px);
         border-radius: 38px;
         padding: 14px 10px 10px;
-        transform: translateY(92px) scale(0.94);
+        transform: translateY(50px) scale(0.94);
       }
 
       .services-phone::before {
@@ -868,6 +869,10 @@
       .phone-card-top h4 {
         font-size: 0.98rem;
       }
+
+      .phone-card-top p {
+        font-size: 0.88rem;
+      }
     }
   </style>
 </head>
@@ -875,16 +880,16 @@
 
   <div class="top-marquee" aria-label="Services marquee">
     <div class="marquee-track">
-      <span>Web Development</span>
-      <span>Google My Business</span>
+      <span>Web Developer</span>
       <span>Social Media Strategy</span>
-      <span>Social Media Management</span>
-      <span>VA Recruitment Agency</span>
-      <span>Web Development</span>
       <span>Google My Business</span>
-      <span>Social Media Strategy</span>
-      <span>Social Media Management</span>
       <span>VA Recruitment Agency</span>
+      <span>Social Media Management</span>
+      <span>Web Developer</span>
+      <span>Social Media Strategy</span>
+      <span>Google My Business</span>
+      <span>VA Recruitment Agency</span>
+      <span>Social Media Management</span>
     </div>
   </div>
 
@@ -966,14 +971,14 @@
     <section class="services-section" id="services">
       <div class="services-layout">
         <div class="services-content">
-          <div class="services-pill" id="servicesPill">Web Development</div>
+          <div class="services-pill" id="servicesPill">Web Developer</div>
 
           <div class="services-copy" id="servicesCopy">
-            We build websites that help your brand stand out and convert attention into action.
+            Custom websites built to strengthen your brand online.
           </div>
 
           <div class="services-meta" id="servicesMeta">
-            Custom development tailored to your business goals, brand identity, and growth stage.
+            We create clean, strategic digital experiences for business growth.
           </div>
 
           <div class="services-cta-wrap">
@@ -1012,8 +1017,8 @@
             <div class="phone-card">
               <div class="phone-card-top">
                 <div>
-                  <h4 id="phoneServiceTitle">Web Development</h4>
-                  <p id="phoneServiceLocation">Built for growing brands</p>
+                  <h4 id="phoneServiceTitle">Web Developer</h4>
+                  <p id="phoneServiceLocation">Custom websites for stronger online presence.</p>
                 </div>
                 <span id="phoneServiceCode">#TBA-WEB-01</span>
               </div>
@@ -1105,59 +1110,59 @@
 
     const servicesData = [
       {
-        pill: 'Web Development',
-        copy: 'We build websites that help your brand stand out and convert attention into action.',
-        meta: 'Custom development tailored to your business goals, brand identity, and growth stage.',
+        pill: 'Web Developer',
+        copy: 'Custom websites built to strengthen your brand online.',
+        meta: 'We create clean, strategic digital experiences for business growth.',
         headerTitle: 'Service confirmed',
-        title: 'Web Development',
-        location: 'Built for growing brands',
+        title: 'Web Developer',
+        location: 'Custom websites for stronger online presence.',
         code: '#TBA-WEB-01',
         image: 'https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1000&q=80',
         imageAlt: 'Web development service'
       },
       {
-        pill: 'Google My Business',
-        copy: 'We optimize your presence so local customers can find, trust, and choose your business faster.',
-        meta: 'A stronger Google Business Profile helps improve visibility, engagement, and local search performance.',
-        headerTitle: 'Service confirmed',
-        title: 'Google My Business',
-        location: 'Built for local visibility',
-        code: '#TBA-GMB-02',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80',
-        imageAlt: 'Google My Business service'
-      },
-      {
         pill: 'Social Media Strategy',
-        copy: 'We create tailored social strategies that strengthen your brand and guide measurable growth online.',
-        meta: 'Whether you are starting fresh or refining your direction, your channels get a clearer plan and stronger positioning.',
+        copy: 'A clearer content direction for stronger brand positioning.',
+        meta: 'We help shape messaging, planning, and strategy across your channels.',
         headerTitle: 'Service confirmed',
         title: 'Social Media Strategy',
-        location: 'Built for brand direction',
-        code: '#TBA-SMS-03',
+        location: 'Strategic planning for better online communication.',
+        code: '#TBA-SMS-02',
         image: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=1000&q=80',
         imageAlt: 'Social media strategy service'
       },
       {
-        pill: 'Social Media Management',
-        copy: 'We manage your day-to-day content presence so your brand stays consistent, visible, and active.',
-        meta: 'From branded content to engagement support, we help maintain a stronger and more professional online presence.',
+        pill: 'Google My Business',
+        copy: 'Better local visibility so customers can find you faster.',
+        meta: 'We optimize your listing to improve trust and local search presence.',
         headerTitle: 'Service confirmed',
-        title: 'Social Media Management',
-        location: 'Built for daily presence',
-        code: '#TBA-SMM-04',
-        image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&w=1000&q=80',
-        imageAlt: 'Social media management service'
+        title: 'Google My Business',
+        location: 'Optimization for local search and discovery.',
+        code: '#TBA-GMB-03',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80',
+        imageAlt: 'Google My Business service'
       },
       {
         pill: 'VA Recruitment Agency',
-        copy: 'We help businesses find reliable virtual support to improve systems, execution, and operational flow.',
-        meta: 'The right remote support structure gives your business more consistency, more capacity, and better momentum.',
+        copy: 'Reliable remote support to help your business run smoother.',
+        meta: 'We connect brands with virtual talent to improve execution and flow.',
         headerTitle: 'Service confirmed',
         title: 'VA Recruitment Agency',
-        location: 'Built for operational support',
-        code: '#TBA-VA-05',
+        location: 'Virtual support built for modern business operations.',
+        code: '#TBA-VA-04',
         image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80',
         imageAlt: 'VA recruitment agency service'
+      },
+      {
+        pill: 'Social Media Management',
+        copy: 'Consistent content management to keep your brand active.',
+        meta: 'We manage your day-to-day social presence with clarity and consistency.',
+        headerTitle: 'Service confirmed',
+        title: 'Social Media Management',
+        location: 'Ongoing support for a stronger daily social presence.',
+        code: '#TBA-SMM-05',
+        image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&w=1000&q=80',
+        imageAlt: 'Social media management service'
       }
     ];
 
