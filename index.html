@@ -778,30 +778,14 @@
 
     /* UPDATED ABOUT SECTION */
     .about-editorial {
-      min-height: 100vh;
+      min-height: 88vh;
       background: #f5f0ea;
       display: flex;
       align-items: center;
-      padding: 82px 24px;
+      padding: 62px 24px 54px;
       overflow: hidden;
       position: relative;
       border-top: 1px solid rgba(0,0,0,0.12);
-    }
-
-    .about-divider-copy {
-      position: absolute;
-      top: 0;
-      left: 24px;
-      transform: translateY(-50%);
-      background: #f5f0ea;
-      padding: 0 12px 0 0;
-      font-size: 0.86rem;
-      line-height: 1;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: rgba(0,0,0,0.75);
-      z-index: 5;
-      white-space: nowrap;
     }
 
     .about-editorial-box {
@@ -809,10 +793,10 @@
       max-width: 1240px;
       margin: 0 auto;
       position: relative;
-      min-height: 760px;
+      min-height: 620px;
       display: flex;
       align-items: flex-start;
-      padding-top: 18px;
+      padding-top: 10px;
     }
 
     .about-copy {
@@ -823,23 +807,23 @@
 
     .about-copy-top {
       font-family: 'Anton', sans-serif;
-      font-size: clamp(3.6rem, 8.3vw, 8.4rem);
-      line-height: 0.86;
-      letter-spacing: -0.04em;
-      word-spacing: 0.18em;
+      font-size: clamp(3.5rem, 8vw, 8.2rem);
+      line-height: 0.88;
+      letter-spacing: 0.045em;
+      word-spacing: 0.08em;
       text-transform: lowercase;
       color: #111;
     }
 
     .about-copy-top .line-gap {
       display: block;
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
     .about-copy-bottom {
       margin-top: 14px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.2rem, 6.5vw, 6.4rem);
+      font-size: clamp(3rem, 6.2vw, 6rem);
       line-height: 0.9;
       font-style: italic;
       font-weight: 400;
@@ -853,7 +837,7 @@
     }
 
     .about-squiggle {
-      margin-top: 16px;
+      margin-top: 14px;
       width: min(760px, 78%);
       height: auto;
       display: block;
@@ -863,8 +847,8 @@
     .about-photo-floating {
       position: absolute;
       right: 1%;
-      bottom: -82px;
-      width: min(100%, 455px);
+      bottom: -78px;
+      width: min(100%, 438px);
       z-index: 3;
       pointer-events: none;
     }
@@ -878,21 +862,70 @@
 
     .about-badge {
       position: absolute;
-      right: 22%;
-      top: 48%;
+      right: 21%;
+      top: 43%;
       transform: translateY(-50%);
-      width: 116px;
-      height: 116px;
+      width: 110px;
+      height: 110px;
       z-index: 4;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .about-badge svg {
+    .about-badge svg,
+    .about-badge-2 svg,
+    .about-badge-3 svg,
+    .about-badge-4 svg {
       width: 100%;
       height: 100%;
       display: block;
+    }
+
+    .about-badge-2,
+    .about-badge-3,
+    .about-badge-4 {
+      position: absolute;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .about-badge-2 {
+      left: 0;
+      top: 8%;
+      width: 74px;
+      height: 74px;
+    }
+
+    .about-badge-3 {
+      left: 20%;
+      bottom: 12%;
+      width: 82px;
+      height: 82px;
+    }
+
+    .about-badge-4 {
+      right: 6%;
+      top: 12%;
+      width: 78px;
+      height: 78px;
+    }
+
+    .about-divider-copy {
+      position: absolute;
+      left: 24px;
+      bottom: 18px;
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3.6rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: rgba(0,0,0,0.78);
+      z-index: 5;
+      max-width: 11ch;
+      text-transform: none;
     }
 
     @media (max-width: 1100px) {
@@ -936,20 +969,35 @@
       }
 
       .about-editorial-box {
-        min-height: 700px;
+        min-height: 600px;
       }
 
       .about-photo-floating {
         width: min(100%, 390px);
         right: 0;
-        bottom: -72px;
+        bottom: -68px;
       }
 
       .about-badge {
         right: 16%;
-        top: 50%;
-        width: 98px;
-        height: 98px;
+        top: 45%;
+        width: 96px;
+        height: 96px;
+      }
+
+      .about-badge-2 {
+        width: 64px;
+        height: 64px;
+      }
+
+      .about-badge-3 {
+        width: 72px;
+        height: 72px;
+      }
+
+      .about-badge-4 {
+        width: 66px;
+        height: 66px;
       }
     }
 
@@ -1088,26 +1136,19 @@
 
       .about-editorial {
         min-height: auto;
-        padding: 72px 14px 88px;
-      }
-
-      .about-divider-copy {
-        left: 14px;
-        font-size: 0.74rem;
-        max-width: calc(100% - 28px);
-        white-space: normal;
-        line-height: 1.2;
+        padding: 56px 14px 70px;
       }
 
       .about-editorial-box {
         min-height: auto;
-        padding-top: 22px;
+        padding-top: 16px;
       }
 
       .about-copy-top {
-        font-size: clamp(3rem, 12vw, 5.4rem);
-        word-spacing: 0.14em;
-        line-height: 0.88;
+        font-size: clamp(2.95rem, 11.8vw, 5.3rem);
+        letter-spacing: 0.03em;
+        word-spacing: 0.06em;
+        line-height: 0.9;
       }
 
       .about-copy-top .line-gap {
@@ -1115,8 +1156,8 @@
       }
 
       .about-copy-bottom {
-        font-size: clamp(2.7rem, 10vw, 4.4rem);
-        margin-top: 14px;
+        font-size: clamp(2.6rem, 9.6vw, 4.2rem);
+        margin-top: 12px;
       }
 
       .about-squiggle {
@@ -1128,17 +1169,43 @@
         position: relative;
         right: auto;
         bottom: auto;
-        width: min(100%, 340px);
-        margin: 26px 0 -18px auto;
+        width: min(100%, 330px);
+        margin: 20px 0 -10px auto;
       }
 
       .about-badge {
-        right: 12px;
-        top: auto;
-        bottom: 102px;
-        transform: none;
-        width: 86px;
-        height: 86px;
+        right: 18px;
+        top: 44%;
+        width: 84px;
+        height: 84px;
+      }
+
+      .about-badge-2 {
+        left: 0;
+        top: 4%;
+        width: 56px;
+        height: 56px;
+      }
+
+      .about-badge-3 {
+        left: 8%;
+        bottom: 16%;
+        width: 62px;
+        height: 62px;
+      }
+
+      .about-badge-4 {
+        right: 4%;
+        top: 9%;
+        width: 58px;
+        height: 58px;
+      }
+
+      .about-divider-copy {
+        left: 14px;
+        bottom: 12px;
+        font-size: clamp(1.5rem, 7vw, 2.8rem);
+        max-width: 13ch;
       }
     }
 
@@ -1271,27 +1338,49 @@
       }
 
       .about-editorial {
-        padding: 64px 14px 78px;
+        padding: 50px 14px 66px;
       }
 
       .about-copy-top {
-        font-size: clamp(2.6rem, 12.5vw, 4.2rem);
-        word-spacing: 0.11em;
+        font-size: clamp(2.45rem, 12vw, 4rem);
+        letter-spacing: 0.025em;
+        word-spacing: 0.05em;
       }
 
       .about-copy-bottom {
-        font-size: clamp(2.2rem, 11vw, 3.3rem);
+        font-size: clamp(2.1rem, 10.5vw, 3.2rem);
       }
 
       .about-photo-floating {
-        width: min(100%, 275px);
-        margin-bottom: -12px;
+        width: min(100%, 270px);
+        margin-bottom: -8px;
       }
 
       .about-badge {
-        width: 70px;
-        height: 70px;
-        bottom: 84px;
+        width: 68px;
+        height: 68px;
+        right: 12px;
+      }
+
+      .about-badge-2 {
+        width: 48px;
+        height: 48px;
+      }
+
+      .about-badge-3 {
+        width: 54px;
+        height: 54px;
+        left: 2%;
+      }
+
+      .about-badge-4 {
+        width: 50px;
+        height: 50px;
+      }
+
+      .about-divider-copy {
+        font-size: clamp(1.28rem, 8vw, 2.2rem);
+        max-width: 12ch;
       }
     }
   </style>
@@ -1523,8 +1612,6 @@
     </section>
 
     <section class="about-editorial" id="about">
-      <div class="about-divider-copy">For the changemakers, advocates, and trailblazers.</div>
-
       <div class="about-editorial-box">
         <div class="about-copy">
           <h2 class="about-copy-top">
@@ -1564,7 +1651,36 @@
             <path d="M82 80H96" stroke="#111" stroke-width="6" stroke-linecap="round"/>
           </svg>
         </div>
+
+        <div class="about-badge-2" aria-hidden="true">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="60" r="46" fill="#f4b316" stroke="#111" stroke-width="6"/>
+            <path d="M34 72L48 58L60 66L84 42" fill="none" stroke="#111" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M72 42H84V54" fill="none" stroke="#111" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="about-badge-3" aria-hidden="true">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="16" y="22" width="88" height="76" rx="18" fill="#ffffff" stroke="#111" stroke-width="6"/>
+            <rect x="30" y="72" width="12" height="14" rx="3" fill="#2e8f83"/>
+            <rect x="50" y="58" width="12" height="28" rx="3" fill="#2e8f83"/>
+            <rect x="70" y="44" width="12" height="42" rx="3" fill="#2e8f83"/>
+            <path d="M24 96H96" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="about-badge-4" aria-hidden="true">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="16" width="80" height="88" rx="16" fill="#111" stroke="#111" stroke-width="6"/>
+            <circle cx="60" cy="86" r="4" fill="#f5f0ea"/>
+            <rect x="30" y="28" width="60" height="44" rx="8" fill="#2e8f83"/>
+            <path d="M38 60L48 50L58 56L74 40L82 46" fill="none" stroke="#f5f0ea" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
       </div>
+
+      <div class="about-divider-copy">For the changemakers, advocates, and trailblazers.</div>
     </section>
 
     <section class="section" id="work">
