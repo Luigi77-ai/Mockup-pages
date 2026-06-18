@@ -1454,23 +1454,27 @@
       color: rgba(0,0,0,0.56);
     }
 
-    /* NUEVA SECCION */
     .projects-showcase {
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
       background: #000;
       color: #fff;
-      padding: 72px 24px 82px;
+      padding: 54px 24px 60px;
       position: relative;
       overflow: hidden;
+      transition: padding 0.35s ease;
+    }
+
+    .projects-showcase.is-expanded {
+      padding: 72px 24px 82px;
     }
 
     .projects-showcase-shell {
       max-width: 1240px;
       margin: 0 auto;
       display: grid;
-      gap: 34px;
+      gap: 26px;
     }
 
     .projects-showcase-head {
@@ -1489,28 +1493,29 @@
     .projects-showcase-title {
       font-family: 'Anton', sans-serif;
       font-size: clamp(2.2rem, 4.8vw, 4.8rem);
-      line-height: 0.94;
+      line-height: 0.9;
       text-transform: uppercase;
       color: #fff;
-      max-width: 11ch;
-      margin: 0 auto 12px;
+      max-width: 9ch;
+      margin: 0 auto;
     }
 
-    .projects-showcase-copy {
-      max-width: 52ch;
-      margin: 0 auto;
-      color: rgba(255,255,255,0.74);
-      font-size: 0.98rem;
-      line-height: 1.7;
+    .projects-showcase-title span {
+      display: block;
     }
 
     .projects-stage {
-      min-height: 840px;
+      min-height: 560px;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
+      transition: min-height 0.35s ease;
+    }
+
+    .projects-showcase.is-expanded .projects-stage {
+      min-height: 840px;
     }
 
     .projects-preview {
@@ -1519,8 +1524,12 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      min-height: 560px;
+      min-height: 470px;
       transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .projects-showcase.is-expanded .projects-preview {
+      min-height: 560px;
     }
 
     .projects-preview.is-hidden {
@@ -1535,10 +1544,14 @@
     .projects-preview-frame {
       position: relative;
       width: min(100%, 760px);
-      min-height: 540px;
+      min-height: 430px;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .projects-showcase.is-expanded .projects-preview-frame {
+      min-height: 540px;
     }
 
     .projects-doodle-left {
@@ -1567,22 +1580,31 @@
     .projects-card-stack {
       position: relative;
       width: 100%;
-      height: 520px;
+      height: 390px;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 2;
     }
 
+    .projects-showcase.is-expanded .projects-card-stack {
+      height: 520px;
+    }
+
     .stack-card {
       position: absolute;
-      width: 180px;
-      height: 314px;
+      width: 160px;
+      height: 278px;
       border-radius: 18px;
       overflow: hidden;
       border: 3px solid rgba(255,255,255,0.82);
       background: #171717;
       box-shadow: 0 24px 38px rgba(0,0,0,0.34);
+    }
+
+    .projects-showcase.is-expanded .stack-card {
+      width: 180px;
+      height: 314px;
     }
 
     .stack-card img,
@@ -1594,29 +1616,34 @@
     }
 
     .stack-card.s1 {
-      transform: translateX(-122px) rotate(-12deg);
+      transform: translateX(-112px) rotate(-12deg);
       z-index: 2;
     }
 
     .stack-card.s2 {
-      transform: translateX(-72px) rotate(-7deg);
+      transform: translateX(-66px) rotate(-7deg);
       z-index: 3;
     }
 
     .stack-card.s3 {
-      width: 214px;
-      height: 372px;
+      width: 192px;
+      height: 334px;
       transform: translateX(0) rotate(0deg);
       z-index: 5;
     }
 
+    .projects-showcase.is-expanded .stack-card.s3 {
+      width: 214px;
+      height: 372px;
+    }
+
     .stack-card.s4 {
-      transform: translateX(86px) rotate(8deg);
+      transform: translateX(78px) rotate(8deg);
       z-index: 3;
     }
 
     .stack-card.s5 {
-      transform: translateX(144px) rotate(13deg);
+      transform: translateX(132px) rotate(13deg);
       z-index: 2;
     }
 
@@ -1651,52 +1678,29 @@
       transform: rotate(-16deg);
     }
 
-    .stack-caption {
-      margin-top: 8px;
-      text-align: center;
-      position: relative;
-      z-index: 3;
-    }
-
-    .stack-brand {
+    .projects-view-trigger {
+      margin-top: 12px;
+      min-width: 240px;
+      min-height: 88px;
+      border-radius: 999px;
+      background: #fff;
+      color: #000;
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 30px;
-      padding: 0 12px;
-      border-radius: 999px;
-      background: #ff9958;
-      color: #111;
-      font-size: 0.78rem;
-      font-weight: 700;
-      margin-bottom: 10px;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      z-index: 4;
     }
 
-    .stack-title {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(1.9rem, 3.2vw, 3rem);
-      line-height: 0.95;
-      text-transform: lowercase;
-      margin-bottom: 16px;
-      color: #fff;
-    }
-
-    .stack-open {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .stack-open-line {
-      width: 84px;
-      height: 2px;
-      background: #fff;
-      border-radius: 999px;
-      opacity: 0.92;
+    .projects-view-trigger:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 44px rgba(0,0,0,0.34);
     }
 
     .projects-gallery {
@@ -2259,16 +2263,25 @@
       }
 
       .projects-stage {
+        min-height: 520px;
+      }
+
+      .projects-showcase.is-expanded .projects-stage {
         min-height: 760px;
       }
 
       .projects-preview-frame {
+        min-height: 420px;
+      }
+
+      .projects-showcase.is-expanded .projects-preview-frame {
         min-height: 500px;
       }
 
       .stack-card.s1 { transform: translateX(-88px) rotate(-12deg); }
       .stack-card.s2 { transform: translateX(-48px) rotate(-7deg); }
-      .stack-card.s3 { width: 196px; height: 342px; }
+      .stack-card.s3 { width: 176px; height: 304px; }
+      .projects-showcase.is-expanded .stack-card.s3 { width: 196px; height: 342px; }
       .stack-card.s4 { transform: translateX(58px) rotate(8deg); }
       .stack-card.s5 { transform: translateX(98px) rotate(13deg); }
 
@@ -2483,121 +2496,150 @@
         max-width: 18ch;
       }
 
-      .ourwork-board {
-        padding: 34px 14px 34px;
-      }
-
-      .ourwork-cards {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .work-card {
-        min-height: auto;
-      }
-
-      .work-card.card-5 {
-        max-width: none;
-      }
-
       .reviews-showcase {
-        padding: 48px 0 58px 14px;
+        padding: 48px 0 56px 14px;
       }
 
-      .review-card.low,
-      .review-card.mid,
-      .review-card.tall {
-        transform: translateY(0);
+      .review-card {
+        width: 258px;
+        flex-basis: 258px;
+      }
+
+      .review-visual {
+        min-height: 214px;
       }
 
       .projects-showcase {
-        padding: 58px 14px 68px;
+        padding: 46px 14px 52px;
+      }
+
+      .projects-showcase.is-expanded {
+        padding: 60px 14px 66px;
       }
 
       .projects-stage {
-        min-height: 700px;
+        min-height: 480px;
+      }
+
+      .projects-showcase.is-expanded .projects-stage {
+        min-height: 720px;
       }
 
       .projects-preview {
+        min-height: 400px;
+      }
+
+      .projects-showcase.is-expanded .projects-preview {
         min-height: 500px;
       }
 
       .projects-preview-frame {
-        min-height: 470px;
+        min-height: 380px;
+      }
+
+      .projects-showcase.is-expanded .projects-preview-frame {
+        min-height: 440px;
+      }
+
+      .projects-card-stack {
+        height: 330px;
+      }
+
+      .projects-showcase.is-expanded .projects-card-stack {
+        height: 420px;
+      }
+
+      .stack-card {
+        width: 132px;
+        height: 226px;
+      }
+
+      .stack-card.s3 {
+        width: 156px;
+        height: 270px;
+      }
+
+      .projects-showcase.is-expanded .stack-card.s3 {
+        width: 176px;
+        height: 304px;
+      }
+
+      .stack-card.s1 { transform: translateX(-76px) rotate(-12deg); }
+      .stack-card.s2 { transform: translateX(-40px) rotate(-7deg); }
+      .stack-card.s4 { transform: translateX(48px) rotate(8deg); }
+      .stack-card.s5 { transform: translateX(82px) rotate(13deg); }
+
+      .stack-floating-badge.views {
+        right: 28px;
+        top: 78px;
+        padding: 7px 11px;
+        font-size: 0.7rem;
+      }
+
+      .stack-floating-badge.sticker {
+        left: 78px;
+        bottom: 92px;
+        font-size: 2.4rem;
       }
 
       .projects-doodle-left {
-        left: 2px;
-        top: 58px;
-        width: 48px;
-        height: 90px;
+        left: 0;
+        top: 54px;
+        width: 46px;
+        height: 84px;
       }
 
       .projects-doodle-right {
         right: 6px;
-        bottom: 84px;
-        width: 104px;
-        height: 126px;
+        bottom: 48px;
+        width: 92px;
+        height: 118px;
       }
 
-      .stack-card {
-        width: 146px;
-        height: 256px;
-      }
-
-      .stack-card.s1 { transform: translateX(-70px) rotate(-12deg); }
-      .stack-card.s2 { transform: translateX(-38px) rotate(-7deg); }
-      .stack-card.s3 { width: 176px; height: 306px; }
-      .stack-card.s4 { transform: translateX(44px) rotate(8deg); }
-      .stack-card.s5 { transform: translateX(76px) rotate(13deg); }
-
-      .stack-floating-badge.views {
-        right: 22px;
-        top: 88px;
-      }
-
-      .stack-floating-badge.sticker {
-        left: 84px;
-        bottom: 132px;
-        font-size: 2.5rem;
-      }
-
-      .stack-title {
-        font-size: clamp(1.7rem, 7vw, 2.4rem);
+      .projects-view-trigger {
+        min-width: 190px;
+        min-height: 74px;
+        font-size: clamp(1.7rem, 7vw, 2.6rem);
       }
 
       .projects-display {
-        min-height: 460px;
+        min-height: 440px;
+        border-radius: 20px;
       }
 
       .projects-display-media {
-        height: 460px;
+        height: 440px;
       }
 
       .projects-display-meta {
-        position: static;
-        border-radius: 0;
-        background: #0f0f0f;
-        border: none;
-        border-top: 1px solid rgba(255,255,255,0.1);
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 14px;
+        border-radius: 16px;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .projects-thumbs {
         grid-template-columns: 1fr;
       }
 
+      .project-thumb {
+        grid-template-columns: 74px 1fr;
+      }
+
+      .project-thumb-media {
+        width: 74px;
+        height: 98px;
+      }
+
       .contact-section {
-        padding: 62px 14px;
+        padding: 64px 14px;
       }
 
-      .contact-form-card {
-        padding: 22px 18px 20px;
-        box-shadow: 7px 7px 0 #111;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
+      .contact-title {
+        max-width: 100%;
       }
     }
 
@@ -2742,22 +2784,6 @@
         padding: 7px 14px 9px;
       }
 
-      .impact-logos {
-        height: 40px;
-      }
-
-      .impact-logos-track {
-        gap: 20px;
-      }
-
-      .impact-logo {
-        height: 40px;
-      }
-
-      .impact-logo img {
-        max-height: 36px;
-      }
-
       .about-editorial {
         padding: 50px 14px 66px;
       }
@@ -2800,16 +2826,99 @@
         font-size: 0.92rem;
       }
 
-      .success-story-band-text {
-        white-space: normal;
+      .reviews-title {
+        font-size: clamp(2rem, 12vw, 3rem);
+      }
+
+      .reviews-copy {
+        max-width: 100%;
+      }
+
+      .review-card {
+        width: 224px;
+        flex-basis: 224px;
+      }
+
+      .review-visual {
+        min-height: 196px;
+      }
+
+      .review-avatar {
+        width: 132px;
+        height: 132px;
+      }
+
+      .review-avatar span {
+        font-size: 2.8rem;
+      }
+
+      .projects-showcase-title {
+        font-size: clamp(1.9rem, 12vw, 3rem);
+        max-width: 8ch;
+      }
+
+      .projects-stage {
+        min-height: 430px;
+      }
+
+      .projects-showcase.is-expanded .projects-stage {
+        min-height: 650px;
       }
 
       .projects-preview {
-        min-height: 440px;
+        min-height: 360px;
+      }
+
+      .projects-showcase.is-expanded .projects-preview {
+        min-height: 420px;
       }
 
       .projects-preview-frame {
-        min-height: 410px;
+        min-height: 330px;
+      }
+
+      .projects-showcase.is-expanded .projects-preview-frame {
+        min-height: 360px;
+      }
+
+      .projects-card-stack {
+        height: 276px;
+      }
+
+      .projects-showcase.is-expanded .projects-card-stack {
+        height: 330px;
+      }
+
+      .stack-card {
+        width: 110px;
+        height: 188px;
+        border-radius: 14px;
+      }
+
+      .stack-card.s3 {
+        width: 132px;
+        height: 230px;
+      }
+
+      .projects-showcase.is-expanded .stack-card.s3 {
+        width: 150px;
+        height: 258px;
+      }
+
+      .stack-card.s1 { transform: translateX(-56px) rotate(-12deg); }
+      .stack-card.s2 { transform: translateX(-28px) rotate(-7deg); }
+      .stack-card.s4 { transform: translateX(34px) rotate(8deg); }
+      .stack-card.s5 { transform: translateX(58px) rotate(13deg); }
+
+      .stack-floating-badge.views {
+        right: 4px;
+        top: 58px;
+      }
+
+      .stack-floating-badge.sticker {
+        left: 46px;
+        bottom: 66px;
+        font-size: 1.95rem;
       }
 
       .projects-doodle-left {
@@ -2817,44 +2926,20 @@
       }
 
       .projects-doodle-right {
-        width: 78px;
+        right: -10px;
+        bottom: 36px;
+        width: 76px;
         height: 96px;
-        right: -4px;
-        bottom: 92px;
       }
 
-      .stack-card {
-        width: 118px;
-        height: 208px;
-        border-radius: 14px;
-      }
-
-      .stack-card.s1 { transform: translateX(-54px) rotate(-12deg); }
-      .stack-card.s2 { transform: translateX(-28px) rotate(-7deg); }
-      .stack-card.s3 { width: 146px; height: 256px; }
-      .stack-card.s4 { transform: translateX(34px) rotate(8deg); }
-      .stack-card.s5 { transform: translateX(60px) rotate(13deg); }
-
-      .stack-floating-badge.views {
-        right: 8px;
-        top: 68px;
-        font-size: 0.7rem;
-        padding: 8px 10px;
-      }
-
-      .stack-floating-badge.sticker {
-        left: 42px;
-        bottom: 124px;
-        font-size: 2rem;
-      }
-
-      .stack-brand {
-        min-height: 28px;
-        font-size: 0.72rem;
+      .projects-view-trigger {
+        min-width: 168px;
+        min-height: 66px;
+        font-size: 1.6rem;
       }
 
       .projects-display {
-        border-radius: 20px;
+        min-height: 360px;
       }
 
       .projects-display-media {
@@ -2869,19 +2954,12 @@
         font-size: 0.84rem;
       }
 
-      .project-thumb {
-        grid-template-columns: 72px 1fr;
-        gap: 10px;
-        padding: 8px;
-      }
-
-      .project-thumb-media {
-        width: 72px;
-        height: 96px;
-      }
-
       .contact-title {
-        font-size: clamp(2.2rem, 14vw, 3.6rem);
+        font-size: clamp(2.2rem, 12vw, 4rem);
+      }
+
+      .contact-form-card {
+        padding: 22px 18px 20px;
       }
     }
   </style>
@@ -3102,29 +3180,18 @@
           support can improve visibility, speed, and business growth
         </h2>
 
-        <div class="impact-logos" aria-label="Client logos marquee">
+        <div class="impact-logos" aria-label="Partner logos">
           <div class="impact-logos-track">
-            <div class="impact-logo"><img src="assets/1.png" alt="Client logo 1" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/2.png" alt="Client logo 2" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/3.png" alt="Client logo 3" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/4.png" alt="Client logo 4" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/5.png" alt="Client logo 5" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/6.png" alt="Client logo 6" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/7.png" alt="Client logo 7" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/8.png" alt="Client logo 8" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/9.png" alt="Client logo 9" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/10.png" alt="Client logo 10" loading="lazy"></div>
-
-            <div class="impact-logo"><img src="assets/1.png" alt="Client logo 1 repeated" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/2.png" alt="Client logo 2 repeated" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/3.png" alt="Client logo 3 repeated" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/4.png" alt="Client logo 4 repeated" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/5.png" alt="Client logo 5 repeated" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/6.png" alt="Client logo 6 repeated" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/7.png" alt="Client logo 7 repeated" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/8.png" alt="Client logo 8 repeated" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/9.png" alt="Client logo 9 repeated" loading="lazy"></div>
-            <div class="impact-logo"><img src="assets/10.png" alt="Client logo 10 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo1.png" alt="Partner logo 1" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo2.png" alt="Partner logo 2" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo3.png" alt="Partner logo 3" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo4.png" alt="Partner logo 4" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo5.png" alt="Partner logo 5" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo1.png" alt="Partner logo 1 duplicate" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo2.png" alt="Partner logo 2 duplicate" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo3.png" alt="Partner logo 3 duplicate" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo4.png" alt="Partner logo 4 duplicate" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo5.png" alt="Partner logo 5 duplicate" loading="lazy"></div>
           </div>
         </div>
 
@@ -3278,37 +3345,37 @@
       </div>
     </section>
 
-    <section class="success-story-band">
+    <section class="success-story-band" aria-label="Success story message">
       <div class="success-story-band-text">Be One Success Story</div>
     </section>
 
-    <section class="reviews-showcase">
+    <section class="reviews-showcase" id="reviews">
       <div class="reviews-shell">
         <div class="reviews-intro">
-          <div class="reviews-kicker">Client love</div>
+          <div class="reviews-kicker">Reviews</div>
           <h2 class="reviews-title">
-            Here’s what our
-            <span class="chip-line">clients</span>
-            say.
+            Here’s what
+            <span class="chip-line">our clients</span>
+            say
           </h2>
           <p class="reviews-copy">
-            Real words from people and brands we’ve supported through strategy, visibility, and digital growth.
+            Real feedback from people and brands we’ve supported with strategy, content, visibility, and growth.
           </p>
-          <a href="#contact" class="reviews-cta">Work with us</a>
+          <a class="reviews-cta" href="#contact">Work with us</a>
         </div>
 
         <div class="reviews-marquee">
           <div class="reviews-marquee-track">
             <div class="reviews-group">
               <article class="review-card tall">
-                <div class="review-top-label">5-Star Review</div>
+                <div class="review-top-label">Google Review</div>
                 <div class="review-visual yellow">
-                  <div class="review-avatar"><span>JR</span></div>
-                  <div class="review-name-badge">Jasmine Rivera</div>
+                  <div class="review-avatar"><span>A</span></div>
+                  <div class="review-name-badge">Amanda R.</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The Boss Agency Co helped us clarify our message and improve how we show up online. The process felt thoughtful, strategic, and easy to follow.</p>
+                  <p>The team gave us clarity, consistency, and a better digital presence. Everything felt organized, fast, and intentional.</p>
                   <div class="review-meta">
                     <strong>Brand Strategy</strong>
                     <span>Verified client</span>
@@ -3319,30 +3386,46 @@
               <article class="review-card low">
                 <div class="review-top-label">Client Feedback</div>
                 <div class="review-visual orange">
-                  <div class="review-avatar"><span>MK</span></div>
-                  <div class="review-name-badge">Marcus King</div>
+                  <div class="review-avatar"><span>M</span></div>
+                  <div class="review-name-badge">Marco T.</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>Our website finally feels aligned with the quality of our work. We look more credible, more polished, and much easier to understand.</p>
+                  <p>We finally had a website and message that matched the quality of our business. The process was smooth from start to finish.</p>
                   <div class="review-meta">
                     <strong>Web Development</strong>
-                    <span>Verified client</span>
+                    <span>Small business owner</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card mid">
-                <div class="review-top-label">Top Result</div>
+                <div class="review-top-label">Partnership Note</div>
                 <div class="review-visual pink">
-                  <div class="review-avatar"><span>AL</span></div>
-                  <div class="review-name-badge">Andrea Lopez</div>
+                  <div class="review-avatar"><span>S</span></div>
+                  <div class="review-name-badge">Sofia L.</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The support we received with Google visibility and content planning made a real difference. Everything started to feel more intentional.</p>
+                  <p>The support with visibility and systems saved us hours every week. It felt like adding a strategic extension to our team.</p>
                   <div class="review-meta">
-                    <strong>Visibility Support</strong>
+                    <strong>VA Recruitment</strong>
+                    <span>Operations lead</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card tall">
+                <div class="review-top-label">Google Review</div>
+                <div class="review-visual yellow">
+                  <div class="review-avatar"><span>D</span></div>
+                  <div class="review-name-badge">Daniel P.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p>Professional, responsive, and strategic. Our content direction became stronger and much easier to execute.</p>
+                  <div class="review-meta">
+                    <strong>Social Strategy</strong>
                     <span>Verified client</span>
                   </div>
                 </div>
@@ -3351,14 +3434,14 @@
 
             <div class="reviews-group">
               <article class="review-card tall">
-                <div class="review-top-label">5-Star Review</div>
+                <div class="review-top-label">Google Review</div>
                 <div class="review-visual yellow">
-                  <div class="review-avatar"><span>JR</span></div>
-                  <div class="review-name-badge">Jasmine Rivera</div>
+                  <div class="review-avatar"><span>A</span></div>
+                  <div class="review-name-badge">Amanda R.</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The Boss Agency Co helped us clarify our message and improve how we show up online. The process felt thoughtful, strategic, and easy to follow.</p>
+                  <p>The team gave us clarity, consistency, and a better digital presence. Everything felt organized, fast, and intentional.</p>
                   <div class="review-meta">
                     <strong>Brand Strategy</strong>
                     <span>Verified client</span>
@@ -3369,30 +3452,46 @@
               <article class="review-card low">
                 <div class="review-top-label">Client Feedback</div>
                 <div class="review-visual orange">
-                  <div class="review-avatar"><span>MK</span></div>
-                  <div class="review-name-badge">Marcus King</div>
+                  <div class="review-avatar"><span>M</span></div>
+                  <div class="review-name-badge">Marco T.</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>Our website finally feels aligned with the quality of our work. We look more credible, more polished, and much easier to understand.</p>
+                  <p>We finally had a website and message that matched the quality of our business. The process was smooth from start to finish.</p>
                   <div class="review-meta">
                     <strong>Web Development</strong>
-                    <span>Verified client</span>
+                    <span>Small business owner</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card mid">
-                <div class="review-top-label">Top Result</div>
+                <div class="review-top-label">Partnership Note</div>
                 <div class="review-visual pink">
-                  <div class="review-avatar"><span>AL</span></div>
-                  <div class="review-name-badge">Andrea Lopez</div>
+                  <div class="review-avatar"><span>S</span></div>
+                  <div class="review-name-badge">Sofia L.</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The support we received with Google visibility and content planning made a real difference. Everything started to feel more intentional.</p>
+                  <p>The support with visibility and systems saved us hours every week. It felt like adding a strategic extension to our team.</p>
                   <div class="review-meta">
-                    <strong>Visibility Support</strong>
+                    <strong>VA Recruitment</strong>
+                    <span>Operations lead</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card tall">
+                <div class="review-top-label">Google Review</div>
+                <div class="review-visual yellow">
+                  <div class="review-avatar"><span>D</span></div>
+                  <div class="review-name-badge">Daniel P.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p>Professional, responsive, and strategic. Our content direction became stronger and much easier to execute.</p>
+                  <div class="review-meta">
+                    <strong>Social Strategy</strong>
                     <span>Verified client</span>
                   </div>
                 </div>
@@ -3403,140 +3502,67 @@
       </div>
     </section>
 
-    <section class="projects-showcase" id="projects-showcase">
+    <section class="projects-showcase" id="projectsShowcase">
       <div class="projects-showcase-shell">
         <div class="projects-showcase-head">
-          <div class="projects-showcase-kicker">Past work</div>
-          <h2 class="projects-showcase-title">Projects we’ve brought to life</h2>
-          <p class="projects-showcase-copy">
-            Click the featured stack to open a full visual gallery of previous work. Hover any item in the gallery to preview that photo or video instantly in the main frame.
-          </p>
+          <div class="projects-showcase-kicker">Previous Work</div>
+          <h2 class="projects-showcase-title">
+            <span>Projects we’ve</span>
+            <span>brought to life</span>
+          </h2>
         </div>
 
         <div class="projects-stage">
           <div class="projects-preview" id="projectsPreview">
             <div class="projects-preview-frame">
-              <svg class="projects-doodle-left" viewBox="0 0 60 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M33 3C35 18 23 23 17 31C11 39 11 50 20 61" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-                <path d="M47 17C49 28 41 33 35 38C29 43 28 53 34 63" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+              <svg class="projects-doodle-left" viewBox="0 0 64 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M44 7C46 23 37 33 24 35C39 41 45 52 42 69C35 58 26 52 13 51C23 63 24 75 15 90" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
 
               <div class="projects-doodle-right" aria-hidden="true"></div>
 
-              <button class="projects-card-stack" id="openProjectsGallery" aria-label="Open project gallery">
+              <div class="projects-card-stack">
                 <div class="stack-card s1">
-                  <img src="assets/project-work-1.jpg" alt="Previous project image 1" loading="lazy">
+                  <img src="assets/project-1.jpg" alt="Previous project preview 1" loading="lazy" width="900" height="1400">
                 </div>
-
                 <div class="stack-card s2">
-                  <img src="assets/project-work-2.jpg" alt="Previous project image 2" loading="lazy">
+                  <img src="assets/project-2.jpg" alt="Previous project preview 2" loading="lazy" width="900" height="1400">
                 </div>
-
                 <div class="stack-card s3">
-                  <img src="assets/project-work-3.jpg" alt="Previous project featured image" loading="lazy">
-                </div>
-
-                <div class="stack-card s4">
-                  <video muted playsinline preload="metadata">
-                    <source src="assets/project-work-4.mp4" type="video/mp4">
+                  <video autoplay muted loop playsinline>
+                    <source src="assets/project-main.mp4" type="video/mp4">
                   </video>
                 </div>
-
+                <div class="stack-card s4">
+                  <img src="assets/project-3.jpg" alt="Previous project preview 3" loading="lazy" width="900" height="1400">
+                </div>
                 <div class="stack-card s5">
-                  <img src="assets/project-work-5.jpg" alt="Previous project image 5" loading="lazy">
+                  <img src="assets/project-4.jpg" alt="Previous project preview 4" loading="lazy" width="900" height="1400">
                 </div>
 
-                <div class="stack-floating-badge views">
-                  ✦ <span>360</span>
-                </div>
-
-                <div class="stack-floating-badge sticker">💯</div>
-              </button>
-            </div>
-
-            <div class="stack-caption">
-              <div class="stack-brand">jumbo</div>
-              <div class="stack-title">super in de markt</div>
-              <button class="stack-open" id="openProjectsGalleryText" type="button">
-                <span>View project</span>
-                <span class="stack-open-line"></span>
-              </button>
+                <div class="stack-floating-badge views">✦ 360</div>
+                <div class="stack-floating-badge sticker">100</div>
+              </div>
             </div>
           </div>
+
+          <button class="projects-view-trigger" id="projectsViewTrigger" type="button">VIEW</button>
 
           <div class="projects-gallery" id="projectsGallery">
             <div class="projects-display">
               <div class="projects-display-media" id="projectsDisplayMedia"></div>
-
               <div class="projects-display-meta">
                 <div class="projects-display-text">
-                  <h3 id="projectsDisplayTitle">Event Showcase</h3>
-                  <p id="projectsDisplayCopy">A featured look at one of our previous visual projects, displayed full-screen inside the section.</p>
+                  <h3 id="projectsDisplayTitle">Project Preview</h3>
+                  <p id="projectsDisplayDescription">Hover any item in the gallery to preview it here.</p>
                 </div>
                 <div class="projects-display-type" id="projectsDisplayType">Photo</div>
               </div>
             </div>
 
-            <div class="projects-thumbs" id="projectsThumbs">
-              <button class="project-thumb active" type="button" data-type="image" data-src="assets/project-work-1.jpg" data-title="Brand Activation" data-copy="A previous campaign moment presented as a still image from our completed work.">
-                <div class="project-thumb-media">
-                  <img src="assets/project-work-1.jpg" alt="Project thumb 1" loading="lazy">
-                  <span class="project-thumb-type">Photo</span>
-                </div>
-                <div class="project-thumb-text">
-                  <strong>Brand Activation</strong>
-                  <span>Hover to preview this project image.</span>
-                </div>
-              </button>
+            <div class="projects-thumbs" id="projectsThumbs"></div>
 
-              <button class="project-thumb" type="button" data-type="image" data-src="assets/project-work-2.jpg" data-title="Event Visual" data-copy="A second still from past work, shown inside the same black gallery section.">
-                <div class="project-thumb-media">
-                  <img src="assets/project-work-2.jpg" alt="Project thumb 2" loading="lazy">
-                  <span class="project-thumb-type">Photo</span>
-                </div>
-                <div class="project-thumb-text">
-                  <strong>Event Visual</strong>
-                  <span>Hover to preview this project image.</span>
-                </div>
-              </button>
-
-              <button class="project-thumb" type="button" data-type="image" data-src="assets/project-work-3.jpg" data-title="Featured Night" data-copy="The main cover image for the gallery, used as the default full preview.">
-                <div class="project-thumb-media">
-                  <img src="assets/project-work-3.jpg" alt="Project thumb 3" loading="lazy">
-                  <span class="project-thumb-type">Photo</span>
-                </div>
-                <div class="project-thumb-text">
-                  <strong>Featured Night</strong>
-                  <span>Hover to preview this project image.</span>
-                </div>
-              </button>
-
-              <button class="project-thumb" type="button" data-type="video" data-src="assets/project-work-4.mp4" data-title="Live Experience" data-copy="A video preview from past work, displayed directly in the main frame on hover.">
-                <div class="project-thumb-media">
-                  <video muted playsinline preload="metadata">
-                    <source src="assets/project-work-4.mp4" type="video/mp4">
-                  </video>
-                  <span class="project-thumb-type">Video</span>
-                </div>
-                <div class="project-thumb-text">
-                  <strong>Live Experience</strong>
-                  <span>Hover to preview this project video.</span>
-                </div>
-              </button>
-
-              <button class="project-thumb" type="button" data-type="image" data-src="assets/project-work-5.jpg" data-title="Crowd Moment" data-copy="Another completed project capture shown as part of the interactive gallery.">
-                <div class="project-thumb-media">
-                  <img src="assets/project-work-5.jpg" alt="Project thumb 5" loading="lazy">
-                  <span class="project-thumb-type">Photo</span>
-                </div>
-                <div class="project-thumb-text">
-                  <strong>Crowd Moment</strong>
-                  <span>Hover to preview this project image.</span>
-                </div>
-              </button>
-            </div>
-
-            <button class="projects-close" id="closeProjectsGallery" type="button">Close gallery</button>
+            <button class="projects-close" id="projectsClose" type="button">Close gallery</button>
           </div>
         </div>
       </div>
@@ -3558,35 +3584,35 @@
           <form class="contact-form">
             <div class="field-row">
               <div class="field">
-                <label for="firstName">First name</label>
-                <input id="firstName" name="firstName" type="text" placeholder="Your first name">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your name">
               </div>
 
               <div class="field">
-                <label for="lastName">Last name</label>
-                <input id="lastName" name="lastName" type="text" placeholder="Your last name">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Your email">
               </div>
             </div>
 
             <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com">
+              <label for="business">Business</label>
+              <input id="business" type="text" placeholder="Business or organization name">
             </div>
 
             <div class="contact-service-selection">
-              <div class="contact-service-label">Select services</div>
-              <div class="contact-service-list" id="contactServiceList">
-                <button type="button" class="contact-service-chip" data-service="Web Developer">Web Developer</button>
-                <button type="button" class="contact-service-chip" data-service="Social Media Strategy">Social Media Strategy</button>
-                <button type="button" class="contact-service-chip" data-service="Google My Business">Google My Business</button>
-                <button type="button" class="contact-service-chip" data-service="VA Recruitment Agency">VA Recruitment Agency</button>
-                <button type="button" class="contact-service-chip" data-service="Social Media Management">Social Media Management</button>
+              <div class="contact-service-label">Services of interest</div>
+              <div class="contact-service-list">
+                <button type="button" class="contact-service-chip active">Web Developer</button>
+                <button type="button" class="contact-service-chip">Social Media Strategy</button>
+                <button type="button" class="contact-service-chip">Google My Business</button>
+                <button type="button" class="contact-service-chip">VA Recruitment</button>
+                <button type="button" class="contact-service-chip">Social Media Management</button>
               </div>
             </div>
 
             <div class="field">
               <label for="message">Project details</label>
-              <textarea id="message" name="message" placeholder="Tell us what you need help with"></textarea>
+              <textarea id="message" placeholder="Tell us what you need support with"></textarea>
             </div>
 
             <button type="submit" class="contact-submit">Send inquiry</button>
@@ -3599,12 +3625,10 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">© The Boss Agency Co. All rights reserved.</div>
-
       <div class="footer-links">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#work">Our Work</a>
+        <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -3759,75 +3783,150 @@
       aboutToggle.setAttribute('aria-expanded', String(!isOpen));
     });
 
-    const contactServiceChips = document.querySelectorAll('.contact-service-chip');
-
-    contactServiceChips.forEach(chip => {
+    const serviceChips = document.querySelectorAll('.contact-service-chip');
+    serviceChips.forEach(chip => {
       chip.addEventListener('click', () => {
         chip.classList.toggle('active');
       });
     });
 
-    const openProjectsGallery = document.getElementById('openProjectsGallery');
-    const openProjectsGalleryText = document.getElementById('openProjectsGalleryText');
-    const closeProjectsGallery = document.getElementById('closeProjectsGallery');
+    const projectItems = [
+      {
+        type: 'photo',
+        title: 'Project Photo 01',
+        description: 'Preview image for previous client work.',
+        src: 'assets/project-1.jpg',
+        thumb: 'assets/project-1.jpg',
+        alt: 'Previous project photo 1'
+      },
+      {
+        type: 'photo',
+        title: 'Project Photo 02',
+        description: 'Preview image for previous client work.',
+        src: 'assets/project-2.jpg',
+        thumb: 'assets/project-2.jpg',
+        alt: 'Previous project photo 2'
+      },
+      {
+        type: 'video',
+        title: 'Project Video 01',
+        description: 'Preview video for previous client work.',
+        src: 'assets/project-main.mp4',
+        thumb: 'assets/project-video-cover.jpg',
+        alt: 'Previous project video 1'
+      },
+      {
+        type: 'photo',
+        title: 'Project Photo 03',
+        description: 'Preview image for previous client work.',
+        src: 'assets/project-3.jpg',
+        thumb: 'assets/project-3.jpg',
+        alt: 'Previous project photo 3'
+      },
+      {
+        type: 'photo',
+        title: 'Project Photo 04',
+        description: 'Preview image for previous client work.',
+        src: 'assets/project-4.jpg',
+        thumb: 'assets/project-4.jpg',
+        alt: 'Previous project photo 4'
+      }
+    ];
+
+    const projectsShowcase = document.getElementById('projectsShowcase');
+    const projectsViewTrigger = document.getElementById('projectsViewTrigger');
     const projectsPreview = document.getElementById('projectsPreview');
     const projectsGallery = document.getElementById('projectsGallery');
     const projectsDisplayMedia = document.getElementById('projectsDisplayMedia');
     const projectsDisplayTitle = document.getElementById('projectsDisplayTitle');
-    const projectsDisplayCopy = document.getElementById('projectsDisplayCopy');
+    const projectsDisplayDescription = document.getElementById('projectsDisplayDescription');
     const projectsDisplayType = document.getElementById('projectsDisplayType');
-    const projectThumbs = document.querySelectorAll('.project-thumb');
+    const projectsThumbs = document.getElementById('projectsThumbs');
+    const projectsClose = document.getElementById('projectsClose');
 
-    function setProjectDisplay(button) {
-      const type = button.dataset.type;
-      const src = button.dataset.src;
-      const title = button.dataset.title;
-      const copy = button.dataset.copy;
-
-      projectThumbs.forEach(item => item.classList.remove('active'));
-      button.classList.add('active');
-
-      if (type === 'video') {
+    function renderProjectDisplay(item) {
+      if (item.type === 'video') {
         projectsDisplayMedia.innerHTML = `
-          <video controls autoplay muted loop playsinline>
-            <source src="${src}" type="video/mp4">
+          <video autoplay muted loop playsinline controls>
+            <source src="${item.src}" type="video/mp4">
           </video>
         `;
         projectsDisplayType.textContent = 'Video';
       } else {
         projectsDisplayMedia.innerHTML = `
-          <img src="${src}" alt="${title}" loading="lazy">
+          <img src="${item.src}" alt="${item.alt}" loading="lazy" width="1200" height="1600">
         `;
         projectsDisplayType.textContent = 'Photo';
       }
 
-      projectsDisplayTitle.textContent = title;
-      projectsDisplayCopy.textContent = copy;
+      projectsDisplayTitle.textContent = item.title;
+      projectsDisplayDescription.textContent = item.description;
     }
 
-    function openGallery() {
+    function setActiveThumb(index) {
+      const thumbs = projectsThumbs.querySelectorAll('.project-thumb');
+      thumbs.forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+      });
+    }
+
+    function buildProjectThumbs() {
+      projectsThumbs.innerHTML = '';
+
+      projectItems.forEach((item, index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'project-thumb';
+        button.innerHTML = `
+          <div class="project-thumb-media">
+            ${item.type === 'video'
+              ? `<img src="${item.thumb}" alt="${item.alt}" loading="lazy" width="400" height="600">`
+              : `<img src="${item.thumb}" alt="${item.alt}" loading="lazy" width="400" height="600">`
+            }
+            <span class="project-thumb-type">${item.type}</span>
+          </div>
+          <div class="project-thumb-text">
+            <strong>${item.title}</strong>
+            <span>${item.description}</span>
+          </div>
+        `;
+
+        button.addEventListener('mouseenter', () => {
+          renderProjectDisplay(item);
+          setActiveThumb(index);
+        });
+
+        button.addEventListener('focus', () => {
+          renderProjectDisplay(item);
+          setActiveThumb(index);
+        });
+
+        button.addEventListener('click', () => {
+          renderProjectDisplay(item);
+          setActiveThumb(index);
+        });
+
+        projectsThumbs.appendChild(button);
+      });
+    }
+
+    buildProjectThumbs();
+    renderProjectDisplay(projectItems[0]);
+    setActiveThumb(0);
+
+    projectsViewTrigger.addEventListener('click', () => {
+      projectsShowcase.classList.add('is-expanded');
       projectsPreview.classList.add('is-hidden');
       projectsGallery.classList.add('is-open');
-    }
-
-    function closeGallery() {
-      projectsGallery.classList.remove('is-open');
-      projectsPreview.classList.remove('is-hidden');
-    }
-
-    openProjectsGallery.addEventListener('click', openGallery);
-    openProjectsGalleryText.addEventListener('click', openGallery);
-    closeProjectsGallery.addEventListener('click', closeGallery);
-
-    projectThumbs.forEach(button => {
-      button.addEventListener('mouseenter', () => setProjectDisplay(button));
-      button.addEventListener('focus', () => setProjectDisplay(button));
-      button.addEventListener('click', () => setProjectDisplay(button));
+      projectsViewTrigger.style.display = 'none';
     });
 
-    if (projectThumbs.length) {
-      setProjectDisplay(projectThumbs[0]);
-    }
+    projectsClose.addEventListener('click', () => {
+      projectsShowcase.classList.remove('is-expanded');
+      projectsPreview.classList.remove('is-hidden');
+      projectsGallery.classList.remove('is-open');
+      projectsViewTrigger.style.display = 'inline-flex';
+    });
   </script>
 </body>
 </html>
