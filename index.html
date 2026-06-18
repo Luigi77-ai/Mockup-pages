@@ -1004,7 +1004,7 @@
       max-width: 1460px;
       margin: 0 auto;
       position: relative;
-      min-height: 1040px;
+      min-height: 1220px;
     }
 
     .ourwork-cards {
@@ -1127,96 +1127,200 @@
       right: 0;
       top: 470px;
       z-index: 2;
-      padding: 0 20px 0;
+      padding: 0 10px;
     }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.9fr 1.05fr 0.95fr;
-      grid-auto-rows: 92px;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .gallery-item {
+    .collage-stage {
       position: relative;
-      overflow: hidden;
-      border-radius: 22px;
-      box-shadow: 0 16px 34px rgba(0,0,0,0.12);
-      transform-origin: center center;
-      animation: floatDrift 9s ease-in-out infinite;
-      will-change: transform;
+      width: 100%;
+      height: 700px;
     }
 
-    .gallery-item::after {
+    .collage-piece {
+      position: absolute;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.14);
+    }
+
+    .collage-piece img,
+    .collage-piece video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .collage-piece.p1 { width: 210px; height: 250px; left: 210px; top: 8px; }
+    .collage-piece.p2 { width: 175px; height: 175px; left: 112px; top: 132px; }
+    .collage-piece.p3 { width: 205px; height: 205px; right: 188px; top: 44px; }
+    .collage-piece.p4 { width: 205px; height: 230px; left: 610px; top: 282px; }
+    .collage-piece.p5 { width: 175px; height: 175px; left: 748px; top: 402px; }
+    .collage-piece.p6 { width: 198px; height: 212px; left: 168px; top: 470px; }
+    .collage-piece.p7 { width: 172px; height: 210px; right: 132px; bottom: 20px; }
+
+    .sticker {
+      position: absolute;
+      z-index: 4;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 0.9;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    }
+
+    .sticker.orange {
+      background: #ff7a38;
+      color: #fff4ec;
+      border-radius: 26px;
+      padding: 16px 18px;
+      font-size: 1rem;
+      transform: rotate(-12deg);
+      left: 290px;
+      top: 176px;
+    }
+
+    .sticker.blue {
+      background: #6a6cff;
+      color: #efeefe;
+      border-radius: 28px;
+      padding: 14px 16px;
+      font-size: 0.98rem;
+      transform: rotate(-16deg);
+      right: 128px;
+      top: 148px;
+    }
+
+    .sticker.green {
+      background: #b8f36b;
+      color: #224125;
+      border-radius: 28px;
+      padding: 14px 16px;
+      font-size: 0.92rem;
+      transform: rotate(10deg);
+      left: 118px;
+      top: 520px;
+    }
+
+    .sticker.purple {
+      background: #6f79ff;
+      color: #f5f5ff;
+      border-radius: 28px;
+      padding: 14px 16px;
+      font-size: 0.96rem;
+      transform: rotate(-11deg);
+      left: 725px;
+      top: 428px;
+    }
+
+    .sticker.lilac {
+      background: #7e8cff;
+      color: #eef0ff;
+      border-radius: 28px;
+      padding: 14px 16px;
+      font-size: 0.86rem;
+      transform: rotate(-10deg);
+      right: 94px;
+      bottom: 26px;
+    }
+
+    .shape-leaf-top {
+      position: absolute;
+      right: 278px;
+      top: -10px;
+      width: 190px;
+      height: 170px;
+      background: #2e7e69;
+      border-radius: 48% 52% 42% 58% / 54% 40% 60% 46%;
+      z-index: 1;
+      transform: rotate(18deg);
+    }
+
+    .shape-leaf-top::before,
+    .shape-leaf-top::after {
+      content: "";
+      position: absolute;
+      background: #2e7e69;
+      border-radius: 50%;
+    }
+
+    .shape-leaf-top::before {
+      width: 112px;
+      height: 112px;
+      left: -24px;
+      top: 20px;
+    }
+
+    .shape-leaf-top::after {
+      width: 98px;
+      height: 98px;
+      right: -8px;
+      top: -20px;
+    }
+
+    .shape-wave-left {
+      position: absolute;
+      left: 28px;
+      bottom: 52px;
+      width: 240px;
+      height: 220px;
+      z-index: 1;
+      transform: rotate(-20deg);
+    }
+
+    .shape-wave-left::before,
+    .shape-wave-left::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0.10) 100%);
+      border-radius: 46% 54% 52% 48% / 60% 34% 66% 40%;
+      background: #546bff;
+    }
+
+    .shape-wave-left::after {
+      inset: 42px 38px 32px 42px;
+      background: #f6f0ea;
+      border-radius: 48% 52% 48% 52% / 58% 38% 62% 42%;
+    }
+
+    .mini-wordmark {
+      position: absolute;
+      top: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 1;
+      color: #fff;
+      z-index: 3;
+    }
+
+    .scribble-loop {
+      position: absolute;
+      left: 360px;
+      top: 164px;
+      width: 92px;
+      height: 118px;
+      z-index: 3;
       pointer-events: none;
     }
 
-    .gallery-item img,
-    .gallery-item video {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      transform: scale(1.04);
-      animation: slowZoom 14s ease-in-out infinite alternate;
-    }
-
-    .gallery-item.video-item::before {
-      content: "VIDEO";
+    .scribble-bird {
       position: absolute;
-      right: 14px;
-      bottom: 14px;
-      z-index: 2;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(0,0,0,0.78);
-      color: #fff;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      font-weight: 800;
-      text-transform: uppercase;
+      left: 526px;
+      bottom: 96px;
+      width: 54px;
+      height: 54px;
+      z-index: 3;
+      pointer-events: none;
     }
-
-    .gallery-item.g1 { grid-column: 1; grid-row: 1 / span 3; transform: rotate(-4deg) translateY(8px); animation-delay: -1s; }
-    .gallery-item.g2 { grid-column: 2; grid-row: 1 / span 2; transform: rotate(3deg) translateY(-10px); animation-delay: -3s; }
-    .gallery-item.g3 { grid-column: 3; grid-row: 1 / span 4; transform: rotate(-2deg) translateY(12px); animation-delay: -2s; }
-    .gallery-item.g4 { grid-column: 4; grid-row: 1 / span 2; transform: rotate(5deg) translateY(-4px); animation-delay: -4s; }
-
-    .gallery-item.g5 { grid-column: 2; grid-row: 3 / span 3; transform: rotate(-5deg) translateY(0); animation-delay: -6s; }
-    .gallery-item.g6 { grid-column: 4; grid-row: 3 / span 3; transform: rotate(-3deg) translateY(10px); animation-delay: -1.5s; }
-    .gallery-item.g7 { grid-column: 1; grid-row: 4 / span 2; transform: rotate(4deg) translateY(-6px); animation-delay: -7s; }
-    .gallery-item.g8 { display: none; }
-    .gallery-item.g9 { display: none; }
-    .gallery-item.g10 { display: none; }
-    .gallery-item.g11 { display: none; }
-    .gallery-item.g12 { display: none; }
-    .gallery-item.g13 { display: none; }
-    .gallery-item.g14 { display: none; }
-    .gallery-item.g15 { display: none; }
-    .gallery-item.g16 { display: none; }
-
-    @keyframes floatDrift {
-      0%, 100% { transform: translateY(0px) rotate(var(--r, 0deg)); }
-      50% { transform: translateY(-14px) rotate(var(--r, 0deg)) scale(1.01); }
-    }
-
-    @keyframes slowZoom {
-      0% { transform: scale(1.04); }
-      100% { transform: scale(1.12); }
-    }
-
-    .gallery-item.g1 { --r: -4deg; }
-    .gallery-item.g2 { --r: 3deg; }
-    .gallery-item.g3 { --r: -2deg; }
-    .gallery-item.g4 { --r: 5deg; }
-    .gallery-item.g5 { --r: -5deg; }
-    .gallery-item.g6 { --r: -3deg; }
-    .gallery-item.g7 { --r: 4deg; }
 
     .success-story-strip {
       background: #ffffff;
@@ -1270,7 +1374,7 @@
     @media (max-width: 1500px) {
       .ourwork-shell {
         max-width: 1240px;
-        min-height: 1040px;
+        min-height: 1220px;
       }
 
       .ourwork-cards {
@@ -1290,6 +1394,16 @@
       .ourwork-gallery {
         top: 480px;
       }
+
+      .collage-stage {
+        height: 690px;
+      }
+
+      .collage-piece.p1 { left: 170px; }
+      .collage-piece.p2 { left: 76px; }
+      .collage-piece.p4 { left: 510px; }
+      .collage-piece.p5 { left: 650px; }
+      .collage-piece.p6 { left: 136px; }
     }
 
     @media (max-width: 1100px) {
@@ -1380,33 +1494,65 @@
       .ourwork-gallery {
         position: relative;
         top: auto;
-        padding: 16px 0 0;
+        padding: 24px 0 0;
         margin-top: 0;
       }
 
-      .gallery-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-auto-rows: 86px;
-        gap: 16px;
+      .collage-stage {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        padding: 24px 8px 10px;
       }
 
-      .gallery-item.g1 { grid-column: 1; grid-row: span 3; }
-      .gallery-item.g2 { grid-column: 2; grid-row: span 2; }
-      .gallery-item.g3 { grid-column: 3; grid-row: span 3; }
-      .gallery-item.g4 { grid-column: 1; grid-row: span 2; }
-      .gallery-item.g5 { grid-column: 2; grid-row: span 3; }
-      .gallery-item.g6 { grid-column: 3; grid-row: span 3; }
-      .gallery-item.g7 { grid-column: 1; grid-row: span 2; }
+      .collage-piece,
+      .sticker,
+      .shape-leaf-top,
+      .shape-wave-left,
+      .mini-wordmark,
+      .scribble-loop,
+      .scribble-bird {
+        position: relative;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+      }
 
-      .gallery-item.g8,
-      .gallery-item.g9,
-      .gallery-item.g10,
-      .gallery-item.g11,
-      .gallery-item.g12,
-      .gallery-item.g13,
-      .gallery-item.g14,
-      .gallery-item.g15,
-      .gallery-item.g16 { display: none; }
+      .collage-piece {
+        width: 100% !important;
+        height: 240px !important;
+      }
+
+      .collage-piece.p4,
+      .collage-piece.p7 {
+        height: 270px !important;
+      }
+
+      .shape-leaf-top,
+      .shape-wave-left {
+        display: none;
+      }
+
+      .mini-wordmark {
+        grid-column: 1 / -1;
+        text-align: center;
+        color: #111;
+        font-size: 2.4rem;
+        margin-bottom: 4px;
+      }
+
+      .scribble-loop,
+      .scribble-bird {
+        display: none;
+      }
+
+      .sticker {
+        min-height: 72px;
+        font-size: 0.92rem !important;
+      }
     }
 
     @media (max-width: 900px) {
@@ -1627,42 +1773,32 @@
 
       .ourwork-gallery {
         margin-top: 0;
-        padding-top: 18px;
+        padding-top: 22px;
       }
 
-      .gallery-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-auto-rows: 84px;
-        gap: 14px;
+      .collage-stage {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 10px 0 0;
       }
 
-      .gallery-item.g1,
-      .gallery-item.g2,
-      .gallery-item.g3,
-      .gallery-item.g4,
-      .gallery-item.g5,
-      .gallery-item.g6,
-      .gallery-item.g7 {
-        grid-column: auto;
-        grid-row: span 2;
+      .collage-piece {
+        height: 260px !important;
       }
 
-      .gallery-item.g1,
-      .gallery-item.g3,
-      .gallery-item.g6 {
-        grid-row: span 3;
+      .collage-piece.p4,
+      .collage-piece.p7 {
+        height: 290px !important;
       }
 
-      .gallery-item.g8,
-      .gallery-item.g9,
-      .gallery-item.g10,
-      .gallery-item.g11,
-      .gallery-item.g12,
-      .gallery-item.g13,
-      .gallery-item.g14,
-      .gallery-item.g15,
-      .gallery-item.g16 {
-        display: none;
+      .sticker {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 18px !important;
+      }
+
+      .mini-wordmark {
+        font-size: 2rem;
       }
 
       .success-story-strip {
@@ -1853,39 +1989,22 @@
         font-size: 0.92rem;
       }
 
-      .gallery-grid {
-        grid-template-columns: 1fr;
-        grid-auto-rows: 110px;
+      .collage-piece {
+        height: 230px !important;
+        border-radius: 20px;
       }
 
-      .gallery-item.g1,
-      .gallery-item.g2,
-      .gallery-item.g3,
-      .gallery-item.g4,
-      .gallery-item.g5,
-      .gallery-item.g6,
-      .gallery-item.g7 {
-        grid-column: 1;
-        grid-row: span 2;
-        transform: rotate(0deg) !important;
+      .collage-piece.p4,
+      .collage-piece.p7 {
+        height: 250px !important;
       }
 
-      .gallery-item.g1,
-      .gallery-item.g3,
-      .gallery-item.g6 {
-        grid-row: span 3;
+      .mini-wordmark {
+        font-size: 1.8rem;
       }
 
-      .gallery-item.g8,
-      .gallery-item.g9,
-      .gallery-item.g10,
-      .gallery-item.g11,
-      .gallery-item.g12,
-      .gallery-item.g13,
-      .gallery-item.g14,
-      .gallery-item.g15,
-      .gallery-item.g16 {
-        display: none;
+      .sticker {
+        font-size: 0.82rem !important;
       }
 
       .success-story-strip {
@@ -2263,38 +2382,57 @@
         </div>
 
         <div class="ourwork-gallery">
-          <div class="gallery-grid">
-            <div class="gallery-item g1">
-              <img src="https://picsum.photos/seed/workgal1/900/1200" alt="Gallery placeholder 1" loading="lazy" width="900" height="1200">
+          <div class="collage-stage">
+            <div class="mini-wordmark">impact</div>
+
+            <div class="shape-leaf-top"></div>
+            <div class="shape-wave-left"></div>
+
+            <div class="collage-piece p1">
+              <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" alt="Marketing portrait 1" loading="lazy" width="900" height="1100">
             </div>
 
-            <div class="gallery-item g2 video-item">
-              <video autoplay muted loop playsinline>
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-              </video>
-            </div>
-
-            <div class="gallery-item g3">
-              <img src="https://picsum.photos/seed/workgal3/1000/1400" alt="Gallery placeholder 2" loading="lazy" width="1000" height="1400">
-            </div>
-
-            <div class="gallery-item g4">
-              <img src="https://picsum.photos/seed/workgal4/800/600" alt="Gallery placeholder 3" loading="lazy" width="800" height="600">
-            </div>
-
-            <div class="gallery-item g5">
-              <img src="https://picsum.photos/seed/workgal5/760/1100" alt="Gallery placeholder 4" loading="lazy" width="760" height="1100">
-            </div>
-
-            <div class="gallery-item g6 video-item">
+            <div class="collage-piece p2">
               <video autoplay muted loop playsinline>
                 <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
               </video>
             </div>
 
-            <div class="gallery-item g7">
-              <img src="https://picsum.photos/seed/workgal7/720/520" alt="Gallery placeholder 5" loading="lazy" width="720" height="520">
+            <div class="collage-piece p3">
+              <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80" alt="Marketing portrait 2" loading="lazy" width="900" height="900">
             </div>
+
+            <div class="collage-piece p4">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" alt="Marketing portrait 3" loading="lazy" width="900" height="1000">
+            </div>
+
+            <div class="collage-piece p5">
+              <video autoplay muted loop playsinline>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="collage-piece p6">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80" alt="Marketing portrait 4" loading="lazy" width="900" height="1000">
+            </div>
+
+            <div class="collage-piece p7">
+              <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=80" alt="Marketing portrait 5" loading="lazy" width="900" height="1100">
+            </div>
+
+            <div class="sticker orange">brand<br>boost</div>
+            <div class="sticker blue">social<br>growth</div>
+            <div class="sticker green">content<br>club</div>
+            <div class="sticker purple">ad<br>power</div>
+            <div class="sticker lilac">lead<br>flow</div>
+
+            <svg class="scribble-loop" viewBox="0 0 92 118" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4 6C31 14 41 34 41 51C41 69 24 75 16 67C6 57 16 37 35 36C55 35 77 51 84 75C88 89 86 102 82 114" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+            <svg class="scribble-bird" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 38C7 30 14 27 20 31C21 23 28 19 35 22C37 15 44 12 51 15" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
         </div>
       </div>
