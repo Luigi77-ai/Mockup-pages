@@ -1079,8 +1079,8 @@
     .work-card.card-1 {
       left: 42px;
       top: 48px;
-      background: #7cf26d;
-      color: #0d1e0d;
+      background: #fff4bf;
+      color: #1f1600;
       transform: rotate(-5deg);
       z-index: 5;
     }
@@ -1088,8 +1088,8 @@
     .work-card.card-2 {
       left: 292px;
       top: 82px;
-      background: #6ab8ff;
-      color: #0b1a28;
+      background: #f4b316;
+      color: #1e1400;
       transform: rotate(-2.5deg);
       z-index: 6;
     }
@@ -1097,7 +1097,7 @@
     .work-card.card-3 {
       left: 552px;
       top: 28px;
-      background: #ffb35c;
+      background: #ffe082;
       color: #24170b;
       transform: rotate(3deg);
       z-index: 7;
@@ -1106,8 +1106,8 @@
     .work-card.card-4 {
       left: 826px;
       top: 76px;
-      background: #d88cff;
-      color: #1f1027;
+      background: #111111;
+      color: #ffffff;
       transform: rotate(-2deg);
       z-index: 8;
     }
@@ -1115,8 +1115,8 @@
     .work-card.card-5 {
       left: 1094px;
       top: 44px;
-      background: #ff7f9d;
-      color: #281018;
+      background: #d4af37;
+      color: #1d1400;
       transform: rotate(3.5deg);
       z-index: 5;
     }
@@ -1202,7 +1202,7 @@
       min-height: 42px;
       padding: 0 18px;
       border-radius: 999px;
-      background: #ff99b4;
+      background: #f4b316;
       color: #111;
       border: 2px solid #111;
       font-size: 0.84rem;
@@ -1267,8 +1267,8 @@
     }
 
     .review-visual.yellow { background: #f4c20d; }
-    .review-visual.orange { background: #ff7d2a; }
-    .review-visual.pink { background: #ea7ca1; }
+    .review-visual.orange { background: #d4af37; }
+    .review-visual.pink { background: #fff4bf; }
 
     .review-avatar {
       width: 152px;
@@ -1305,7 +1305,7 @@
       left: 50%;
       bottom: 12px;
       transform: translateX(-50%);
-      background: #ff8a3d;
+      background: #111;
       color: #fff;
       border: 1.8px solid #111;
       border-radius: 999px;
@@ -1313,7 +1313,7 @@
       font-size: 0.68rem;
       font-weight: 800;
       white-space: nowrap;
-      box-shadow: 2px 2px 0 #111;
+      box-shadow: 2px 2px 0 #f4b316;
     }
 
     .review-content {
@@ -1688,34 +1688,17 @@
         max-width: 18ch;
       }
 
-      .ourwork-board {
-        padding: 34px 14px 34px;
-      }
-
-      .ourwork-cards {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .work-card {
-        min-height: auto;
-      }
-
-      .work-card.card-5 {
-        max-width: none;
-      }
-
       .reviews-showcase {
-        padding: 46px 14px 58px;
-      }
-
-      .reviews-showcase::before {
-        background-size: 33.333% 100%;
+        padding: 48px 14px 56px;
       }
 
       .reviews-grid {
         grid-template-columns: 1fr;
         gap: 18px;
+      }
+
+      .review-visual {
+        min-height: 220px;
       }
     }
 
@@ -1890,13 +1873,13 @@
         max-width: 18ch;
       }
 
-      .review-visual {
-        min-height: 210px;
+      .reviews-title {
+        font-size: clamp(2rem, 12vw, 3.2rem);
       }
 
       .review-avatar {
-        width: 136px;
-        height: 136px;
+        width: 132px;
+        height: 132px;
       }
 
       .review-avatar span {
@@ -1929,6 +1912,7 @@
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#work">Our Work</a>
+      <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
     </div>
 
@@ -2274,123 +2258,69 @@
     <section class="reviews-showcase" id="reviews">
       <div class="reviews-shell">
         <div class="reviews-intro">
-          <div class="reviews-kicker">Client feedback</div>
+          <div class="reviews-kicker">Google Reviews</div>
           <h2 class="reviews-title">
-            Our 2025<br>
-            <span class="chip-line">Reviews</span>
-            <span class="chip-line">Lineup</span>
+            Real words. <br>
+            <span class="chip-line">Real trust.</span>
           </h2>
           <p class="reviews-copy">
-            Real feedback from clients who trusted Diane and The Boss Agency with websites, marketing, visibility, and business growth.
+            Honest feedback from people who experienced the work, the strategy, and the support behind The Boss Agency Co.
           </p>
-          <div class="reviews-cta">Google Reviews</div>
+          <a
+            class="reviews-cta"
+            href="https://www.google.com/search?sca_esv=25926d3c99fa4024&sxsrf=ANbL-n4yz5Nj8T8aVeVCeWDF4pSjZTkQfg:1781804078678&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOSFY7DBMVWCqoKTZrhlonNRpX4TcXN0HKigmZpuoQztzJSIYlyClNtzFZ1fhlC9xNdJkBi647uVNLuPlrUgL3orSFhpCcYrbAr3jk-8p-gt4vf6qTg%3D%3D&q=The+Boss+Agency+Co+Opiniones&sa=X&ved=2ahUKEwjtzay5qZGVAxUaRDABHc_oAK8Q0bkNegQILBAF&biw=1536&bih=776&dpr=1.25"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google Reviews
+          </a>
         </div>
 
         <div class="reviews-grid">
           <article class="review-card tall">
-            <div class="review-top-label">Website</div>
+            <div class="review-top-label">Client Review</div>
             <div class="review-visual yellow">
-              <div class="review-avatar"><span>CS</span></div>
-              <div class="review-name-badge">Christi Slaven</div>
+              <div class="review-avatar"><span>A</span></div>
+              <div class="review-name-badge">5-Star Feedback</div>
             </div>
             <div class="review-content">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">
-                “I have been so impressed with Diane and her professionalism and attention to detail. She created such a dynamic website for me, and even my husband was blown away by it.”
-              </p>
+              <p class="review-text">Professional, creative, and clear from start to finish. The support felt intentional and the final work matched the vision perfectly.</p>
               <div class="review-meta">
-                <span>2 years ago</span>
-                <span>Attention to detail</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="review-card low">
-            <div class="review-top-label">Social Media</div>
-            <div class="review-visual orange">
-              <div class="review-avatar"><span>PC</span></div>
-              <div class="review-name-badge">Parri Clayton</div>
-            </div>
-            <div class="review-content">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">
-                “As soon as Diane took over, my followers quadrupled. I had more traffic, more interaction, and people constantly complimented the content.”
-              </p>
-              <div class="review-meta">
-                <span>4 years ago</span>
-                <span>Growth results</span>
+                <span>Google Review</span>
+                <span>Verified</span>
               </div>
             </div>
           </article>
 
           <article class="review-card mid">
-            <div class="review-top-label">Marketing</div>
-            <div class="review-visual pink">
-              <div class="review-avatar"><span>DW</span></div>
-              <div class="review-name-badge">Debra Waldron</div>
+            <div class="review-top-label">Client Review</div>
+            <div class="review-visual orange">
+              <div class="review-avatar"><span>M</span></div>
+              <div class="review-name-badge">Trusted Support</div>
             </div>
             <div class="review-content">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">
-                “Diane is as kind as she is professional. Her free consult was so helpful and got us moving in the right direction immediately.”
-              </p>
+              <p class="review-text">They helped bring structure, confidence, and a stronger digital presence. Communication was smooth and everything felt aligned.</p>
               <div class="review-meta">
-                <span>1 year ago</span>
-                <span>Professional & kind</span>
+                <span>Google Review</span>
+                <span>Verified</span>
               </div>
             </div>
           </article>
 
           <article class="review-card low">
-            <div class="review-top-label">Business Setup</div>
-            <div class="review-visual yellow">
-              <div class="review-avatar"><span>AN</span></div>
-              <div class="review-name-badge">Ana</div>
-            </div>
-            <div class="review-content">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">
-                “Diane is exceptional at teaching you how to manage and set up a business. Her knowledge is vast and I would definitely recommend her.”
-              </p>
-              <div class="review-meta">
-                <span>1 year ago</span>
-                <span>Insightful support</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="review-card tall">
-            <div class="review-top-label">Online Presence</div>
+            <div class="review-top-label">Client Review</div>
             <div class="review-visual pink">
-              <div class="review-avatar"><span>TH</span></div>
-              <div class="review-name-badge">Terryl Humphrey</div>
+              <div class="review-avatar"><span>S</span></div>
+              <div class="review-name-badge">Brand Growth</div>
             </div>
             <div class="review-content">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">
-                “The Boss Agency explained the steps to follow so I could build a strong online presence and market my podcast business the right way.”
-              </p>
+              <p class="review-text">The process felt strategic and supportive the whole way through. You can tell the agency really cares about quality and long-term results.</p>
               <div class="review-meta">
-                <span>1 year ago</span>
-                <span>Clear guidance</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="review-card mid">
-            <div class="review-top-label">Coaching</div>
-            <div class="review-visual orange">
-              <div class="review-avatar"><span>JF</span></div>
-              <div class="review-name-badge">Jessica</div>
-            </div>
-            <div class="review-content">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">
-                “Having Diane as a Life Coach was life changing. She helped me move through blockages and also assisted me with setting up my business.”
-              </p>
-              <div class="review-meta">
-                <span>5 years ago</span>
-                <span>Life changing</span>
+                <span>Google Review</span>
+                <span>Verified</span>
               </div>
             </div>
           </article>
