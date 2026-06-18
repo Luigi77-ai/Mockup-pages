@@ -476,47 +476,6 @@
       height: 25px;
     }
 
-    .service-selection-note {
-      margin: 16px auto 0;
-      font-size: 0.88rem;
-      line-height: 1.45;
-      color: rgba(255,255,255,0.82);
-      max-width: 34ch;
-    }
-
-    .service-multi-select {
-      margin: 18px auto 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      max-width: 520px;
-    }
-
-    .service-chip {
-      min-height: 42px;
-      padding: 0 16px;
-      border-radius: 999px;
-      border: 1.5px solid rgba(255,255,255,0.72);
-      background: rgba(255,255,255,0.04);
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .service-chip.active {
-      background: #f4b316;
-      color: #111;
-      border-color: #f4b316;
-    }
-
-    .service-chip:hover {
-      transform: translateY(-2px);
-    }
-
     .services-phone-wrap {
       display: flex;
       justify-content: center;
@@ -874,14 +833,17 @@
       width: 100%;
       overflow: hidden;
       position: relative;
+      height: 56px;
+      display: flex;
+      align-items: center;
     }
 
     .impact-logos-track {
       display: flex;
       width: max-content;
       align-items: center;
-      gap: 34px;
-      animation: logosSlide 28s linear infinite;
+      gap: 42px;
+      animation: logosSlide 22s linear infinite;
       will-change: transform;
     }
 
@@ -894,19 +856,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 48px;
+      height: 56px;
     }
 
     .impact-logo img {
       display: block;
-      max-height: 44px;
+      max-height: 52px;
       width: auto;
       object-fit: contain;
     }
 
     @keyframes logosSlide {
       from { transform: translateX(0); }
-      to { transform: translateX(calc(-50% - 17px)); }
+      to { transform: translateX(-50%); }
     }
 
     @keyframes goldSweep {
@@ -1604,6 +1566,50 @@
       resize: vertical;
     }
 
+    .contact-service-selection {
+      margin-top: 6px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-service-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.64);
+    }
+
+    .contact-service-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contact-service-chip {
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1.8px solid #111;
+      background: #fff;
+      color: #111;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .contact-service-chip.active {
+      background: #f4b316;
+      color: #111;
+      border-color: #111;
+    }
+
+    .contact-service-chip:hover {
+      transform: translateY(-2px);
+    }
+
     .contact-submit {
       margin-top: 8px;
       min-height: 54px;
@@ -1795,16 +1801,20 @@
         grid-template-columns: 1fr;
       }
 
+      .impact-logos {
+        height: 50px;
+      }
+
       .impact-logos-track {
-        gap: 24px;
+        gap: 28px;
       }
 
       .impact-logo {
-        height: 40px;
+        height: 50px;
       }
 
       .impact-logo img {
-        max-height: 36px;
+        max-height: 46px;
       }
     }
 
@@ -1932,6 +1942,15 @@
 
       .impact-logos {
         margin: 6px auto 26px;
+        height: 46px;
+      }
+
+      .impact-logo {
+        height: 46px;
+      }
+
+      .impact-logo img {
+        max-height: 42px;
       }
 
       .impact-grid {
@@ -2182,16 +2201,20 @@
         padding: 7px 14px 9px;
       }
 
+      .impact-logos {
+        height: 40px;
+      }
+
       .impact-logos-track {
-        gap: 18px;
+        gap: 20px;
       }
 
       .impact-logo {
-        height: 34px;
+        height: 40px;
       }
 
       .impact-logo img {
-        max-height: 30px;
+        max-height: 36px;
       }
 
       .about-editorial {
@@ -2369,16 +2392,6 @@
               </svg>
             </button>
           </div>
-
-          <p class="service-selection-note">You can select multiple services based on what your business needs right now.</p>
-
-          <div class="service-multi-select" id="serviceMultiSelect">
-            <button class="service-chip" data-service="Web Developer">Web Developer</button>
-            <button class="service-chip" data-service="Social Media Strategy">Social Media Strategy</button>
-            <button class="service-chip" data-service="Google My Business">Google My Business</button>
-            <button class="service-chip" data-service="VA Recruitment Agency">VA Recruitment Agency</button>
-            <button class="service-chip" data-service="Social Media Management">Social Media Management</button>
-          </div>
         </div>
 
         <div class="services-phone-wrap">
@@ -2474,27 +2487,27 @@
 
         <div class="impact-logos" aria-label="Client logos marquee">
           <div class="impact-logos-track">
-            <div class="impact-logo"><img src="assets/1.png" alt="Client logo 1" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/2.png" alt="Client logo 2" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/3.png" alt="Client logo 3" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/4.png" alt="Client logo 4" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/5.png" alt="Client logo 5" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/6.png" alt="Client logo 6" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/7.png" alt="Client logo 7" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/8.png" alt="Client logo 8" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/9.png" alt="Client logo 9" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/10.png" alt="Client logo 10" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/1.png" alt="Client logo 1" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/2.png" alt="Client logo 2" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/3.png" alt="Client logo 3" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/4.png" alt="Client logo 4" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/5.png" alt="Client logo 5" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/6.png" alt="Client logo 6" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/7.png" alt="Client logo 7" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/8.png" alt="Client logo 8" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/9.png" alt="Client logo 9" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/10.png" alt="Client logo 10" loading="lazy"></div>
 
-            <div class="impact-logo"><img src="assets/1.png" alt="Client logo 1 duplicate" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/2.png" alt="Client logo 2 duplicate" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/3.png" alt="Client logo 3 duplicate" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/4.png" alt="Client logo 4 duplicate" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/5.png" alt="Client logo 5 duplicate" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/6.png" alt="Client logo 6 duplicate" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/7.png" alt="Client logo 7 duplicate" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/8.png" alt="Client logo 8 duplicate" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/9.png" alt="Client logo 9 duplicate" loading="lazy" width="240" height="80"></div>
-            <div class="impact-logo"><img src="assets/10.png" alt="Client logo 10 duplicate" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/1.png" alt="Client logo 1 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/2.png" alt="Client logo 2 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/3.png" alt="Client logo 3 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/4.png" alt="Client logo 4 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/5.png" alt="Client logo 5 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/6.png" alt="Client logo 6 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/7.png" alt="Client logo 7 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/8.png" alt="Client logo 8 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/9.png" alt="Client logo 9 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/10.png" alt="Client logo 10 repeated" loading="lazy"></div>
           </div>
         </div>
 
@@ -2648,39 +2661,40 @@
       </div>
     </section>
 
-    <section class="success-story-band" aria-label="Success story heading">
-      <div class="success-story-band-text">BE ONE SUCCESS STORY</div>
+    <section class="success-story-band">
+      <div class="success-story-band-text">Be One Success Story</div>
     </section>
 
-    <section class="reviews-showcase" id="reviews">
+    <section class="reviews-showcase">
       <div class="reviews-shell">
         <div class="reviews-intro">
-          <div class="reviews-kicker">Reviews</div>
+          <div class="reviews-kicker">Client love</div>
           <h2 class="reviews-title">
-            Real words from
-            <span class="chip-line">real clients</span>
+            Here’s what our
+            <span class="chip-line">clients</span>
+            say.
           </h2>
           <p class="reviews-copy">
-            Feedback from businesses that trusted us with visibility, systems, and digital growth.
+            Real words from people and brands we’ve supported through strategy, visibility, and digital growth.
           </p>
-          <a href="#contact" class="reviews-cta">Start your project</a>
+          <a href="#contact" class="reviews-cta">Work with us</a>
         </div>
 
         <div class="reviews-marquee">
           <div class="reviews-marquee-track">
             <div class="reviews-group">
               <article class="review-card tall">
-                <div class="review-top-label">Client Feedback</div>
+                <div class="review-top-label">5-Star Review</div>
                 <div class="review-visual yellow">
-                  <div class="review-avatar"><span>A</span></div>
-                  <div class="review-name-badge">Alicia</div>
+                  <div class="review-avatar"><span>JR</span></div>
+                  <div class="review-name-badge">Jasmine Rivera</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The team made our brand feel clear and professional online. The website and strategy finally match who we are.</p>
+                  <p>The Boss Agency Co helped us clarify our message and improve how we show up online. The process felt thoughtful, strategic, and easy to follow.</p>
                   <div class="review-meta">
-                    <strong>Brand Growth</strong>
-                    <span>Web + Strategy</span>
+                    <strong>Brand Strategy</strong>
+                    <span>Verified client</span>
                   </div>
                 </div>
               </article>
@@ -2688,31 +2702,31 @@
               <article class="review-card low">
                 <div class="review-top-label">Client Feedback</div>
                 <div class="review-visual orange">
-                  <div class="review-avatar"><span>M</span></div>
-                  <div class="review-name-badge">Marco</div>
+                  <div class="review-avatar"><span>MK</span></div>
+                  <div class="review-name-badge">Marcus King</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>We needed support that was practical, fast, and organized. They helped us simplify operations and improve our visibility.</p>
+                  <p>Our website finally feels aligned with the quality of our work. We look more credible, more polished, and much easier to understand.</p>
                   <div class="review-meta">
-                    <strong>Operations</strong>
-                    <span>VA Recruitment</span>
+                    <strong>Web Development</strong>
+                    <span>Verified client</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card mid">
-                <div class="review-top-label">Client Feedback</div>
+                <div class="review-top-label">Top Result</div>
                 <div class="review-visual pink">
-                  <div class="review-avatar"><span>S</span></div>
-                  <div class="review-name-badge">Sophia</div>
+                  <div class="review-avatar"><span>AL</span></div>
+                  <div class="review-name-badge">Andrea Lopez</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>Our local presence improved quickly. The Google profile updates and content direction helped customers find us more easily.</p>
+                  <p>The support we received with Google visibility and content planning made a real difference. Everything started to feel more intentional.</p>
                   <div class="review-meta">
-                    <strong>Local Reach</strong>
-                    <span>GMB Support</span>
+                    <strong>Visibility Support</strong>
+                    <span>Verified client</span>
                   </div>
                 </div>
               </article>
@@ -2720,17 +2734,17 @@
 
             <div class="reviews-group">
               <article class="review-card tall">
-                <div class="review-top-label">Client Feedback</div>
+                <div class="review-top-label">5-Star Review</div>
                 <div class="review-visual yellow">
-                  <div class="review-avatar"><span>D</span></div>
-                  <div class="review-name-badge">Daniel</div>
+                  <div class="review-avatar"><span>JR</span></div>
+                  <div class="review-name-badge">Jasmine Rivera</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The social media planning gave our team direction. We stopped posting randomly and started communicating with purpose.</p>
+                  <p>The Boss Agency Co helped us clarify our message and improve how we show up online. The process felt thoughtful, strategic, and easy to follow.</p>
                   <div class="review-meta">
-                    <strong>Content Clarity</strong>
-                    <span>Social Strategy</span>
+                    <strong>Brand Strategy</strong>
+                    <span>Verified client</span>
                   </div>
                 </div>
               </article>
@@ -2738,31 +2752,31 @@
               <article class="review-card low">
                 <div class="review-top-label">Client Feedback</div>
                 <div class="review-visual orange">
-                  <div class="review-avatar"><span>L</span></div>
-                  <div class="review-name-badge">Laura</div>
+                  <div class="review-avatar"><span>MK</span></div>
+                  <div class="review-name-badge">Marcus King</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The process felt personalized from day one. We now have stronger systems, cleaner messaging, and more confidence online.</p>
+                  <p>Our website finally feels aligned with the quality of our work. We look more credible, more polished, and much easier to understand.</p>
                   <div class="review-meta">
-                    <strong>Full Support</strong>
-                    <span>Brand + Systems</span>
+                    <strong>Web Development</strong>
+                    <span>Verified client</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card mid">
-                <div class="review-top-label">Client Feedback</div>
+                <div class="review-top-label">Top Result</div>
                 <div class="review-visual pink">
-                  <div class="review-avatar"><span>J</span></div>
-                  <div class="review-name-badge">James</div>
+                  <div class="review-avatar"><span>AL</span></div>
+                  <div class="review-name-badge">Andrea Lopez</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The ongoing management made a huge difference. Our channels now look consistent, active, and much more professional.</p>
+                  <p>The support we received with Google visibility and content planning made a real difference. Everything started to feel more intentional.</p>
                   <div class="review-meta">
-                    <strong>Consistency</strong>
-                    <span>Social Management</span>
+                    <strong>Visibility Support</strong>
+                    <span>Verified client</span>
                   </div>
                 </div>
               </article>
@@ -2776,51 +2790,50 @@
       <div class="contact-layout">
         <div class="contact-copy-wrap">
           <div class="contact-eyebrow">Contact</div>
-          <h2 class="contact-title">Let’s Build Your Next Growth Move</h2>
+          <h2 class="contact-title">Lets Build Your Next Growth Move</h2>
           <p class="contact-copy">
-            Tell us about your goals, your audience, and the services you need. You can choose more than one service so we can shape the right support for your business.
+            Start with a clear conversation about your goals, your audience, and the digital systems needed to support your next stage of growth.
           </p>
         </div>
 
         <div class="contact-form-card">
-          <h3 class="contact-form-title">Start the Conversation</h3>
+          <h3 class="contact-form-title">Start your project</h3>
 
           <form class="contact-form">
             <div class="field-row">
               <div class="field">
-                <label for="firstName">First Name</label>
-                <input id="firstName" type="text" placeholder="Your first name">
+                <label for="firstName">First name</label>
+                <input id="firstName" name="firstName" type="text" placeholder="Your first name">
               </div>
 
               <div class="field">
-                <label for="lastName">Last Name</label>
-                <input id="lastName" type="text" placeholder="Your last name">
-              </div>
-            </div>
-
-            <div class="field-row">
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" type="email" placeholder="you@example.com">
-              </div>
-
-              <div class="field">
-                <label for="business">Business Name</label>
-                <input id="business" type="text" placeholder="Your business name">
+                <label for="lastName">Last name</label>
+                <input id="lastName" name="lastName" type="text" placeholder="Your last name">
               </div>
             </div>
 
             <div class="field">
-              <label for="servicesNeeded">Services Needed</label>
-              <input id="servicesNeeded" type="text" placeholder="You can choose multiple services" readonly>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com">
+            </div>
+
+            <div class="contact-service-selection">
+              <div class="contact-service-label">Select services</div>
+              <div class="contact-service-list" id="contactServiceList">
+                <button type="button" class="contact-service-chip" data-service="Web Developer">Web Developer</button>
+                <button type="button" class="contact-service-chip" data-service="Social Media Strategy">Social Media Strategy</button>
+                <button type="button" class="contact-service-chip" data-service="Google My Business">Google My Business</button>
+                <button type="button" class="contact-service-chip" data-service="VA Recruitment Agency">VA Recruitment Agency</button>
+                <button type="button" class="contact-service-chip" data-service="Social Media Management">Social Media Management</button>
+              </div>
             </div>
 
             <div class="field">
-              <label for="message">Project Details</label>
-              <textarea id="message" placeholder="Tell us what you need, what stage your business is in, and what kind of support would help most."></textarea>
+              <label for="message">Project details</label>
+              <textarea id="message" name="message" placeholder="Tell us what you need help with"></textarea>
             </div>
 
-            <button type="submit" class="contact-submit">Send Inquiry</button>
+            <button type="submit" class="contact-submit">Send inquiry</button>
           </form>
         </div>
       </div>
@@ -2829,11 +2842,14 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-copy">© 2026 All rights reserved</div>
+      <div class="footer-copy">© The Boss Agency Co. All rights reserved.</div>
+
       <div class="footer-links">
-        <a href="terms-conditions.html">Terms &amp; Conditions</a>
-        <span>|</span>
-        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#work">Our Work</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </footer>
@@ -2910,7 +2926,6 @@
     ];
 
     let currentService = 0;
-    const selectedServices = new Set();
 
     const servicesPill = document.getElementById('servicesPill');
     const servicesCopy = document.getElementById('servicesCopy');
@@ -2921,8 +2936,6 @@
     const phoneServiceImage = document.getElementById('phoneServiceImage');
     const servicesPrev = document.getElementById('servicesPrev');
     const servicesNext = document.getElementById('servicesNext');
-    const servicesNeededInput = document.getElementById('servicesNeeded');
-    const serviceChips = document.querySelectorAll('.service-chip');
 
     function renderService(index) {
       const item = services[index];
@@ -2936,12 +2949,6 @@
       phoneServiceImage.alt = item.alt;
     }
 
-    function updateSelectedServicesField() {
-      servicesNeededInput.value = selectedServices.size
-        ? Array.from(selectedServices).join(', ')
-        : '';
-    }
-
     servicesPrev.addEventListener('click', () => {
       currentService = (currentService - 1 + services.length) % services.length;
       renderService(currentService);
@@ -2950,20 +2957,6 @@
     servicesNext.addEventListener('click', () => {
       currentService = (currentService + 1) % services.length;
       renderService(currentService);
-    });
-
-    serviceChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        const serviceName = chip.dataset.service;
-        if (selectedServices.has(serviceName)) {
-          selectedServices.delete(serviceName);
-          chip.classList.remove('active');
-        } else {
-          selectedServices.add(serviceName);
-          chip.classList.add('active');
-        }
-        updateSelectedServicesField();
-      });
     });
 
     renderService(currentService);
@@ -3008,6 +3001,14 @@
       const isOpen = aboutPanel.classList.contains('open');
       aboutPanel.classList.toggle('open', !isOpen);
       aboutToggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    const contactServiceChips = document.querySelectorAll('.contact-service-chip');
+
+    contactServiceChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chip.classList.toggle('active');
+      });
     });
   </script>
 </body>
