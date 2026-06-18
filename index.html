@@ -1004,7 +1004,7 @@
       max-width: 1460px;
       margin: 0 auto;
       position: relative;
-      min-height: 1220px;
+      min-height: 1080px;
     }
 
     .ourwork-cards {
@@ -1188,16 +1188,15 @@
     .gallery-item.g4 { grid-column: 4; grid-row: 1 / span 2; transform: rotate(5deg) translateY(-4px); animation-delay: -4s; }
 
     .gallery-item.g5 { grid-column: 2; grid-row: 3 / span 3; transform: rotate(-5deg) translateY(0); animation-delay: -6s; }
-    .gallery-item.g6 { grid-column: 4; grid-row: 3 / span 4; transform: rotate(-3deg) translateY(10px); animation-delay: -1.5s; }
+    .gallery-item.g6 { grid-column: 4; grid-row: 3 / span 3; transform: rotate(-3deg) translateY(10px); animation-delay: -1.5s; }
     .gallery-item.g7 { grid-column: 1; grid-row: 4 / span 2; transform: rotate(4deg) translateY(-6px); animation-delay: -7s; }
-    .gallery-item.g8 { grid-column: 3; grid-row: 5 / span 2; transform: rotate(2deg) translateY(0); animation-delay: -5s; }
+    .gallery-item.g8 { grid-column: 3; grid-row: 5 / span 1; transform: rotate(2deg) translateY(0); animation-delay: -5s; }
 
-    .gallery-item.g9 { grid-column: 1; grid-row: 6 / span 3; transform: rotate(-3deg) translateY(6px); animation-delay: -2.5s; }
-    .gallery-item.g10 { grid-column: 2; grid-row: 6 / span 2; transform: rotate(6deg) translateY(-8px); animation-delay: -8s; }
-    .gallery-item.g11 { grid-column: 3; grid-row: 7 / span 2; transform: rotate(-4deg) translateY(10px); animation-delay: -4.5s; }
-    .gallery-item.g12 { grid-column: 4; grid-row: 7 / span 2; transform: rotate(3deg) translateY(-2px); animation-delay: -6.5s; }
-
-    .gallery-item.g13 { grid-column: 2; grid-row: 8 / span 1; transform: rotate(-2deg) translateY(8px); animation-delay: -2s; }
+    .gallery-item.g9  { display: none; }
+    .gallery-item.g10 { display: none; }
+    .gallery-item.g11 { display: none; }
+    .gallery-item.g12 { display: none; }
+    .gallery-item.g13 { display: none; }
     .gallery-item.g14 { display: none; }
     .gallery-item.g15 { display: none; }
     .gallery-item.g16 { display: none; }
@@ -1220,11 +1219,6 @@
     .gallery-item.g6 { --r: -3deg; }
     .gallery-item.g7 { --r: 4deg; }
     .gallery-item.g8 { --r: 2deg; }
-    .gallery-item.g9 { --r: -3deg; }
-    .gallery-item.g10 { --r: 6deg; }
-    .gallery-item.g11 { --r: -4deg; }
-    .gallery-item.g12 { --r: 3deg; }
-    .gallery-item.g13 { --r: -2deg; }
 
     .success-story-strip {
       background: #ffffff;
@@ -1278,7 +1272,7 @@
     @media (max-width: 1500px) {
       .ourwork-shell {
         max-width: 1240px;
-        min-height: 1180px;
+        min-height: 1080px;
       }
 
       .ourwork-cards {
@@ -1388,8 +1382,8 @@
       .ourwork-gallery {
         position: relative;
         top: auto;
-        padding: 10px 0 0;
-        margin-top: -18px;
+        padding: 16px 0 0;
+        margin-top: 0;
       }
 
       .gallery-grid {
@@ -1405,12 +1399,13 @@
       .gallery-item.g5 { grid-column: 2; grid-row: span 3; }
       .gallery-item.g6 { grid-column: 3; grid-row: span 3; }
       .gallery-item.g7 { grid-column: 1; grid-row: span 2; }
-      .gallery-item.g8 { grid-column: 2; grid-row: span 2; }
-      .gallery-item.g9 { grid-column: 3; grid-row: span 2; }
-      .gallery-item.g10 { grid-column: 1; grid-row: span 2; }
-      .gallery-item.g11 { grid-column: 2; grid-row: span 2; }
-      .gallery-item.g12 { grid-column: 3; grid-row: span 2; }
-      .gallery-item.g13 { grid-column: 1 / -1; grid-row: span 1; }
+      .gallery-item.g8 { grid-column: 2 / span 2; grid-row: span 1; }
+
+      .gallery-item.g9,
+      .gallery-item.g10,
+      .gallery-item.g11,
+      .gallery-item.g12,
+      .gallery-item.g13,
       .gallery-item.g14,
       .gallery-item.g15,
       .gallery-item.g16 { display: none; }
@@ -1633,7 +1628,8 @@
       }
 
       .ourwork-gallery {
-        margin-top: -8px;
+        margin-top: 0;
+        padding-top: 18px;
       }
 
       .gallery-grid {
@@ -1648,12 +1644,7 @@
       .gallery-item.g4,
       .gallery-item.g5,
       .gallery-item.g6,
-      .gallery-item.g7,
-      .gallery-item.g8,
-      .gallery-item.g9,
-      .gallery-item.g10,
-      .gallery-item.g11,
-      .gallery-item.g12 {
+      .gallery-item.g7 {
         grid-column: auto;
         grid-row: span 2;
       }
@@ -1664,6 +1655,15 @@
         grid-row: span 3;
       }
 
+      .gallery-item.g8 {
+        grid-column: 1 / -1;
+        grid-row: span 1;
+      }
+
+      .gallery-item.g9,
+      .gallery-item.g10,
+      .gallery-item.g11,
+      .gallery-item.g12,
       .gallery-item.g13,
       .gallery-item.g14,
       .gallery-item.g15,
@@ -1870,9 +1870,7 @@
       .gallery-item.g4,
       .gallery-item.g5,
       .gallery-item.g6,
-      .gallery-item.g7,
-      .gallery-item.g8,
-      .gallery-item.g9 {
+      .gallery-item.g7 {
         grid-column: 1;
         grid-row: span 2;
         transform: rotate(0deg) !important;
@@ -1884,6 +1882,13 @@
         grid-row: span 3;
       }
 
+      .gallery-item.g8 {
+        grid-column: 1;
+        grid-row: span 1;
+        transform: rotate(0deg) !important;
+      }
+
+      .gallery-item.g9,
       .gallery-item.g10,
       .gallery-item.g11,
       .gallery-item.g12,
@@ -2304,28 +2309,6 @@
 
             <div class="gallery-item g8">
               <img src="https://picsum.photos/seed/workgal8/820/620" alt="Gallery placeholder 6" loading="lazy" width="820" height="620">
-            </div>
-
-            <div class="gallery-item g9">
-              <img src="https://picsum.photos/seed/workgal9/900/900" alt="Gallery placeholder 7" loading="lazy" width="900" height="900">
-            </div>
-
-            <div class="gallery-item g10 video-item">
-              <video autoplay muted loop playsinline>
-                <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-              </video>
-            </div>
-
-            <div class="gallery-item g11">
-              <img src="https://picsum.photos/seed/workgal11/880/760" alt="Gallery placeholder 8" loading="lazy" width="880" height="760">
-            </div>
-
-            <div class="gallery-item g12">
-              <img src="https://picsum.photos/seed/workgal12/720/520" alt="Gallery placeholder 9" loading="lazy" width="720" height="520">
-            </div>
-
-            <div class="gallery-item g13">
-              <img src="https://picsum.photos/seed/workgal13/900/420" alt="Gallery placeholder 10" loading="lazy" width="900" height="420">
             </div>
           </div>
         </div>
