@@ -1512,7 +1512,7 @@
     }
 
     .projects-showcase.is-expanded .projects-stage {
-      min-height: 840px;
+      min-height: 980px;
     }
 
     .projects-preview {
@@ -1703,7 +1703,7 @@
     .projects-gallery {
       width: 100%;
       display: none;
-      grid-template-columns: minmax(320px, 1.2fr) minmax(220px, 0.8fr);
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 26px;
       align-items: start;
       margin-top: 8px;
@@ -1787,8 +1787,37 @@
       white-space: nowrap;
     }
 
+    .projects-side-panel {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .projects-side-copy {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 22px;
+      padding: 18px 18px 16px;
+    }
+
+    .projects-side-copy h4 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.15rem;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .projects-side-copy p {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.72);
+    }
+
     .projects-thumbs {
       display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
       align-content: start;
     }
@@ -1796,9 +1825,9 @@
     .project-thumb {
       width: 100%;
       display: grid;
-      grid-template-columns: 88px 1fr;
-      gap: 12px;
-      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      align-items: start;
       padding: 10px;
       background: #0f0f0f;
       border: 1px solid rgba(255,255,255,0.1);
@@ -1816,8 +1845,8 @@
     }
 
     .project-thumb-media {
-      width: 88px;
-      height: 116px;
+      width: 100%;
+      aspect-ratio: 0.88 / 1.12;
       border-radius: 12px;
       overflow: hidden;
       background: #1b1b1b;
@@ -2209,17 +2238,16 @@
         grid-template-columns: 1fr;
       }
 
+      .projects-thumbs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
       .projects-display {
         min-height: 560px;
       }
 
       .projects-display-media {
         height: 560px;
-      }
-
-      .projects-thumbs {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        display: grid;
       }
 
       .contact-layout {
@@ -2264,7 +2292,7 @@
       }
 
       .projects-showcase.is-expanded .projects-stage {
-        min-height: 760px;
+        min-height: 900px;
       }
 
       .projects-preview-frame {
@@ -2281,6 +2309,10 @@
       .projects-showcase.is-expanded .stack-card.s3 { width: 220px; height: 370px; }
       .stack-card.s4 { transform: translateX(78px) rotate(8deg); }
       .stack-card.s5 { transform: translateX(136px) rotate(13deg); }
+
+      .projects-thumbs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 820px) {
@@ -2509,7 +2541,7 @@
       }
 
       .projects-showcase.is-expanded .projects-stage {
-        min-height: 720px;
+        min-height: 820px;
       }
 
       .projects-preview {
@@ -2605,16 +2637,7 @@
       }
 
       .projects-thumbs {
-        grid-template-columns: 1fr;
-      }
-
-      .project-thumb {
-        grid-template-columns: 74px 1fr;
-      }
-
-      .project-thumb-media {
-        width: 74px;
-        height: 98px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .contact-section {
@@ -2828,6 +2851,10 @@
 
       .projects-view-row {
         justify-content: center;
+      }
+
+      .projects-thumbs {
+        grid-template-columns: 1fr;
       }
 
       .success-story-band-text {
@@ -3071,6 +3098,23 @@
           support can improve visibility, speed, and business growth
         </h2>
 
+        <div class="impact-logos" aria-label="Trusted partner logos">
+          <div class="impact-logos-track">
+            <div class="impact-logo"><img src="https://cdn.simpleicons.org/google/111111" alt="Google logo" loading="lazy" width="120" height="52"></div>
+            <div class="impact-logo"><img src="https://cdn.simpleicons.org/meta/111111" alt="Meta logo" loading="lazy" width="120" height="52"></div>
+            <div class="impact-logo"><img src="https://cdn.simpleicons.org/instagram/111111" alt="Instagram logo" loading="lazy" width="120" height="52"></div>
+            <div class="impact-logo"><img src="https://cdn.simpleicons.org/facebook/111111" alt="Facebook logo" loading="lazy" width="120" height="52"></div>
+            <div class="impact-logo"><img src="https://cdn.simpleicons.org/wordpress/111111" alt="WordPress logo" loading="lazy" width="120" height="52"></div>
+            <div class="impact-logo"><img src="https://cdn.simpleicons.org/linkedin/111111" alt="LinkedIn logo" loading="lazy" width="120" height="52"></div>
+            <div class="impact-logo"><img src="https://cdn.simpleicons.org/google/111111" alt="Google logo" loading="lazy" width="120" height="52"></div>
+            <div class="impact-logo"><img src="https://cdn.simpleicons.org/meta/111111" alt="Meta logo" loading="lazy" width="120" height="52"></div>
+            <div class="impact-logo"><img src="https://cdn.simpleicons.org/instagram/111111" alt="Instagram logo" loading="lazy" width="120" height="52"></div>
+            <div class="impact-logo"><img src="https://cdn.simpleicons.org/facebook/111111" alt="Facebook logo" loading="lazy" width="120" height="52"></div>
+            <div class="impact-logo"><img src="https://cdn.simpleicons.org/wordpress/111111" alt="WordPress logo" loading="lazy" width="120" height="52"></div>
+            <div class="impact-logo"><img src="https://cdn.simpleicons.org/linkedin/111111" alt="LinkedIn logo" loading="lazy" width="120" height="52"></div>
+          </div>
+        </div>
+
         <div class="impact-grid">
           <article class="impact-card">
             <div class="impact-icon" aria-hidden="true">
@@ -3228,47 +3272,47 @@
     <section class="reviews-showcase">
       <div class="reviews-shell">
         <div class="reviews-intro">
-          <div class="reviews-kicker">Client love</div>
+          <div class="reviews-kicker">What clients feel</div>
           <h2 class="reviews-title">
-            Words that
-            <span class="chip-line">move brands</span>
+            Real experiences,
+            <span class="chip-line">real momentum</span>
           </h2>
           <p class="reviews-copy">
-            A rolling wall of reactions, support, and trust from the people we’ve worked with.
+            The feeling behind the work matters too, so this section keeps the energy visual, human, and easy to scan.
           </p>
-          <button class="reviews-cta">Read the energy</button>
+          <button class="reviews-cta" type="button">Our client energy</button>
         </div>
 
         <div class="reviews-marquee">
           <div class="reviews-marquee-track">
             <div class="reviews-group">
               <article class="review-card tall">
-                <div class="review-top-label">Creative support</div>
+                <div class="review-top-label">Visibility growth</div>
                 <div class="review-visual yellow">
                   <div class="review-avatar"><span>A</span></div>
-                  <div class="review-name-badge">Alicia</div>
+                  <div class="review-name-badge">Ana</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>They brought structure, clarity, and a style that finally made our brand feel aligned.</p>
+                  <p>The strategy finally made our content feel aligned and our brand looked much more intentional online.</p>
                   <div class="review-meta">
-                    <strong>Branding</strong>
+                    <strong>Brand support</strong>
                     <span>Client note</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card low">
-                <div class="review-top-label">Growth partner</div>
+                <div class="review-top-label">Smooth process</div>
                 <div class="review-visual orange">
                   <div class="review-avatar"><span>M</span></div>
                   <div class="review-name-badge">Marco</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>Everything felt more intentional after working together, from website flow to how we show up online.</p>
+                  <p>Everything felt more organized, from communication to execution, and the website gave us a stronger first impression.</p>
                   <div class="review-meta">
-                    <strong>Website</strong>
+                    <strong>Web project</strong>
                     <span>Client note</span>
                   </div>
                 </div>
@@ -3293,32 +3337,32 @@
 
             <div class="reviews-group">
               <article class="review-card tall">
-                <div class="review-top-label">Creative support</div>
+                <div class="review-top-label">Visibility growth</div>
                 <div class="review-visual yellow">
                   <div class="review-avatar"><span>A</span></div>
-                  <div class="review-name-badge">Alicia</div>
+                  <div class="review-name-badge">Ana</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>They brought structure, clarity, and a style that finally made our brand feel aligned.</p>
+                  <p>The strategy finally made our content feel aligned and our brand looked much more intentional online.</p>
                   <div class="review-meta">
-                    <strong>Branding</strong>
+                    <strong>Brand support</strong>
                     <span>Client note</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card low">
-                <div class="review-top-label">Growth partner</div>
+                <div class="review-top-label">Smooth process</div>
                 <div class="review-visual orange">
                   <div class="review-avatar"><span>M</span></div>
                   <div class="review-name-badge">Marco</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>Everything felt more intentional after working together, from website flow to how we show up online.</p>
+                  <p>Everything felt more organized, from communication to execution, and the website gave us a stronger first impression.</p>
                   <div class="review-meta">
-                    <strong>Website</strong>
+                    <strong>Web project</strong>
                     <span>Client note</span>
                   </div>
                 </div>
@@ -3391,7 +3435,6 @@
           <div class="projects-gallery" id="projectsGallery">
             <div class="projects-display">
               <div class="projects-display-media" id="projectsDisplayMedia"></div>
-
               <div class="projects-display-meta">
                 <div class="projects-display-text">
                   <h3 id="projectsDisplayTitle">Campaign Visual</h3>
@@ -3401,7 +3444,13 @@
               </div>
             </div>
 
-            <div class="projects-thumbs" id="projectsThumbs"></div>
+            <div class="projects-side-panel">
+              <div class="projects-side-copy">
+                <h4>More photos & videos</h4>
+                <p>Choose any frame to switch the main display. The expanded view now opens into a fuller mixed gallery instead of the old fan style.</p>
+              </div>
+              <div class="projects-thumbs" id="projectsThumbs"></div>
+            </div>
 
             <button class="projects-close" id="projectsClose" type="button">Close</button>
           </div>
@@ -3638,7 +3687,7 @@
         title: 'Campaign Visual',
         desc: 'A larger featured frame for the photo and video collection you will continue adding later.',
         src: 'https://picsum.photos/seed/projectgallery1/1400/1800',
-        thumb: 'https://picsum.photos/seed/projectgallery1/400/520',
+        thumb: 'https://picsum.photos/seed/projectgallery1/600/760',
         alt: 'Project gallery visual 1'
       },
       {
@@ -3646,7 +3695,7 @@
         title: 'Motion Piece',
         desc: 'Video preview space inside the expanded gallery section.',
         src: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
-        thumb: 'https://picsum.photos/seed/projectgallery2/400/520',
+        thumb: 'https://picsum.photos/seed/projectgallery2/600/760',
         alt: 'Project gallery video preview'
       },
       {
@@ -3654,7 +3703,7 @@
         title: 'Brand Story Frame',
         desc: 'A flexible image slot ready for more campaign visuals and portfolio pieces.',
         src: 'https://picsum.photos/seed/projectgallery3/1400/1800',
-        thumb: 'https://picsum.photos/seed/projectgallery3/400/520',
+        thumb: 'https://picsum.photos/seed/projectgallery3/600/760',
         alt: 'Project gallery visual 2'
       },
       {
@@ -3662,8 +3711,40 @@
         title: 'Editorial Layout',
         desc: 'Another place for still imagery once more projects are added later.',
         src: 'https://picsum.photos/seed/projectgallery4/1400/1800',
-        thumb: 'https://picsum.photos/seed/projectgallery4/400/520',
+        thumb: 'https://picsum.photos/seed/projectgallery4/600/760',
         alt: 'Project gallery visual 3'
+      },
+      {
+        type: 'video',
+        title: 'Behind The Scene Reel',
+        desc: 'An extra motion slot so the expanded view feels more complete and visual.',
+        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        thumb: 'https://picsum.photos/seed/projectgallery5/600/760',
+        alt: 'Project gallery video preview 2'
+      },
+      {
+        type: 'photo',
+        title: 'Launch Detail',
+        desc: 'Additional image card for a fuller grid after pressing view.',
+        src: 'https://picsum.photos/seed/projectgallery6/1400/1800',
+        thumb: 'https://picsum.photos/seed/projectgallery6/600/760',
+        alt: 'Project gallery visual 4'
+      },
+      {
+        type: 'photo',
+        title: 'Creative Capture',
+        desc: 'More visual variety so the expanded section shows more content at once.',
+        src: 'https://picsum.photos/seed/projectgallery7/1400/1800',
+        thumb: 'https://picsum.photos/seed/projectgallery7/600/760',
+        alt: 'Project gallery visual 5'
+      },
+      {
+        type: 'video',
+        title: 'Short Visual Loop',
+        desc: 'A looping motion frame to balance the photo and video mix.',
+        src: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm',
+        thumb: 'https://picsum.photos/seed/projectgallery8/600/760',
+        alt: 'Project gallery video preview 3'
       }
     ];
 
@@ -3685,9 +3766,10 @@
       activeProjectIndex = index;
 
       if (item.type === 'video') {
+        const sourceType = item.src.endsWith('.webm') ? 'video/webm' : 'video/mp4';
         projectsDisplayMedia.innerHTML = `
           <video autoplay muted loop playsinline controls>
-            <source src="${item.src}" type="video/mp4">
+            <source src="${item.src}" type="${sourceType}">
           </video>
         `;
       } else {
@@ -3707,18 +3789,24 @@
     }
 
     function buildProjectThumbs() {
-      projectsThumbs.innerHTML = projectItems.map((item, index) => `
-        <button class="project-thumb ${index === 0 ? 'active' : ''}" type="button" data-project-index="${index}">
-          <div class="project-thumb-media">
-            <img src="${item.thumb}" alt="${item.alt}" loading="lazy" width="400" height="520">
-            <span class="project-thumb-type">${item.type}</span>
-          </div>
-          <div class="project-thumb-text">
-            <strong>${item.title}</strong>
-            <span>${item.desc}</span>
-          </div>
-        </button>
-      `).join('');
+      projectsThumbs.innerHTML = projectItems.map((item, index) => {
+        const mediaMarkup = item.type === 'video'
+          ? `<img src="${item.thumb}" alt="${item.alt}" loading="lazy" width="600" height="760">`
+          : `<img src="${item.thumb}" alt="${item.alt}" loading="lazy" width="600" height="760">`;
+
+        return `
+          <button class="project-thumb ${index === 0 ? 'active' : ''}" type="button" data-project-index="${index}">
+            <div class="project-thumb-media">
+              ${mediaMarkup}
+              <span class="project-thumb-type">${item.type}</span>
+            </div>
+            <div class="project-thumb-text">
+              <strong>${item.title}</strong>
+              <span>${item.desc}</span>
+            </div>
+          </button>
+        `;
+      }).join('');
 
       projectsThumbs.querySelectorAll('.project-thumb').forEach(button => {
         button.addEventListener('click', () => {
