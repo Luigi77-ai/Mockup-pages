@@ -1004,14 +1004,14 @@
       max-width: 1460px;
       margin: 0 auto;
       position: relative;
-      min-height: 1480px;
+      min-height: 1500px;
     }
 
     .ourwork-cards {
       position: relative;
       height: 620px;
       margin-top: 0;
-      z-index: 4;
+      z-index: 5;
     }
 
     .work-card {
@@ -1121,34 +1121,57 @@
       z-index: 5;
     }
 
-    .ourwork-media-cloud {
+    .ourwork-gallery {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 470px;
+      z-index: 2;
+      padding: 0 20px 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr 1.05fr 0.95fr;
+      grid-auto-rows: 92px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      box-shadow: 0 16px 34px rgba(0,0,0,0.12);
+      transform-origin: center center;
+      animation: floatDrift 9s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    .gallery-item::after {
+      content: "";
       position: absolute;
       inset: 0;
-      z-index: 1;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0.10) 100%);
       pointer-events: none;
     }
 
-    .media-float {
-      position: absolute;
-      overflow: hidden;
-      border-radius: 18px;
-      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
-      background: #ddd;
-    }
-
-    .media-float img,
-    .media-float video {
+    .gallery-item img,
+    .gallery-item video {
       width: 100%;
       height: 100%;
       display: block;
       object-fit: cover;
+      transform: scale(1.04);
+      animation: slowZoom 14s ease-in-out infinite alternate;
     }
 
-    .media-float.is-video::after {
+    .gallery-item.video-item::before {
       content: "VIDEO";
       position: absolute;
-      right: 12px;
-      bottom: 12px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 2;
       padding: 7px 12px;
       border-radius: 999px;
       background: rgba(0,0,0,0.78);
@@ -1159,26 +1182,52 @@
       text-transform: uppercase;
     }
 
-    .media-float.m1 { left: -10px; top: 300px; width: 168px; height: 240px; transform: rotate(-7deg); z-index: 1; }
-    .media-float.m2 { left: 120px; top: 432px; width: 240px; height: 178px; transform: rotate(5deg); z-index: 1; }
-    .media-float.m3 { left: 248px; top: 580px; width: 150px; height: 210px; transform: rotate(-4deg); z-index: 1; }
-    .media-float.m4 { left: 402px; top: 392px; width: 224px; height: 314px; transform: rotate(6deg); z-index: 2; }
-    .media-float.m5 { left: 604px; top: 520px; width: 180px; height: 134px; transform: rotate(-8deg); z-index: 2; }
-    .media-float.m6 { left: 758px; top: 360px; width: 272px; height: 194px; transform: rotate(3deg); z-index: 2; }
-    .media-float.m7 { left: 946px; top: 486px; width: 170px; height: 232px; transform: rotate(-5deg); z-index: 1; }
-    .media-float.m8 { left: 1116px; top: 362px; width: 238px; height: 168px; transform: rotate(7deg); z-index: 1; }
-    .media-float.m9 { left: 1286px; top: 548px; width: 154px; height: 214px; transform: rotate(-6deg); z-index: 1; }
-    .media-float.m10 { left: 42px; top: 678px; width: 256px; height: 182px; transform: rotate(4deg); z-index: 1; }
-    .media-float.m11 { left: 222px; top: 824px; width: 182px; height: 252px; transform: rotate(-6deg); z-index: 1; }
-    .media-float.m12 { left: 430px; top: 760px; width: 280px; height: 202px; transform: rotate(5deg); z-index: 1; }
-    .media-float.m13 { left: 662px; top: 908px; width: 164px; height: 232px; transform: rotate(-5deg); z-index: 1; }
-    .media-float.m14 { left: 844px; top: 736px; width: 248px; height: 176px; transform: rotate(6deg); z-index: 1; }
-    .media-float.m15 { left: 1040px; top: 882px; width: 204px; height: 284px; transform: rotate(-3deg); z-index: 1; }
-    .media-float.m16 { left: 1228px; top: 760px; width: 178px; height: 136px; transform: rotate(8deg); z-index: 1; }
-    .media-float.m17 { left: 870px; top: 1026px; width: 154px; height: 206px; transform: rotate(-9deg); z-index: 1; }
-    .media-float.m18 { left: 516px; top: 1086px; width: 222px; height: 158px; transform: rotate(7deg); z-index: 1; }
-    .media-float.m19 { left: 160px; top: 1088px; width: 196px; height: 264px; transform: rotate(-4deg); z-index: 1; }
-    .media-float.m20 { left: 1188px; top: 1112px; width: 212px; height: 154px; transform: rotate(5deg); z-index: 1; }
+    .gallery-item.g1 { grid-column: 1; grid-row: 1 / span 3; transform: rotate(-4deg) translateY(8px); animation-delay: -1s; }
+    .gallery-item.g2 { grid-column: 2; grid-row: 1 / span 2; transform: rotate(3deg) translateY(-10px); animation-delay: -3s; }
+    .gallery-item.g3 { grid-column: 3; grid-row: 1 / span 4; transform: rotate(-2deg) translateY(12px); animation-delay: -2s; }
+    .gallery-item.g4 { grid-column: 4; grid-row: 1 / span 2; transform: rotate(5deg) translateY(-4px); animation-delay: -4s; }
+
+    .gallery-item.g5 { grid-column: 2; grid-row: 3 / span 3; transform: rotate(-5deg) translateY(0); animation-delay: -6s; }
+    .gallery-item.g6 { grid-column: 4; grid-row: 3 / span 4; transform: rotate(-3deg) translateY(10px); animation-delay: -1.5s; }
+    .gallery-item.g7 { grid-column: 1; grid-row: 4 / span 2; transform: rotate(4deg) translateY(-6px); animation-delay: -7s; }
+    .gallery-item.g8 { grid-column: 3; grid-row: 5 / span 2; transform: rotate(2deg) translateY(0); animation-delay: -5s; }
+
+    .gallery-item.g9 { grid-column: 1; grid-row: 6 / span 4; transform: rotate(-3deg) translateY(6px); animation-delay: -2.5s; }
+    .gallery-item.g10 { grid-column: 2; grid-row: 6 / span 2; transform: rotate(6deg) translateY(-8px); animation-delay: -8s; }
+    .gallery-item.g11 { grid-column: 3; grid-row: 7 / span 3; transform: rotate(-4deg) translateY(10px); animation-delay: -4.5s; }
+    .gallery-item.g12 { grid-column: 4; grid-row: 7 / span 2; transform: rotate(3deg) translateY(-2px); animation-delay: -6.5s; }
+
+    .gallery-item.g13 { grid-column: 2; grid-row: 8 / span 3; transform: rotate(-2deg) translateY(8px); animation-delay: -2s; }
+    .gallery-item.g14 { grid-column: 4; grid-row: 9 / span 3; transform: rotate(4deg) translateY(-10px); animation-delay: -3.5s; }
+    .gallery-item.g15 { grid-column: 1; grid-row: 10 / span 2; transform: rotate(5deg) translateY(0); animation-delay: -7.5s; }
+    .gallery-item.g16 { grid-column: 3; grid-row: 10 / span 2; transform: rotate(-3deg) translateY(6px); animation-delay: -1.2s; }
+
+    @keyframes floatDrift {
+      0%, 100% { transform: translateY(0px) rotate(var(--r, 0deg)); }
+      50% { transform: translateY(-14px) rotate(var(--r, 0deg)) scale(1.01); }
+    }
+
+    @keyframes slowZoom {
+      0% { transform: scale(1.04); }
+      100% { transform: scale(1.12); }
+    }
+
+    .gallery-item.g1 { --r: -4deg; }
+    .gallery-item.g2 { --r: 3deg; }
+    .gallery-item.g3 { --r: -2deg; }
+    .gallery-item.g4 { --r: 5deg; }
+    .gallery-item.g5 { --r: -5deg; }
+    .gallery-item.g6 { --r: -3deg; }
+    .gallery-item.g7 { --r: 4deg; }
+    .gallery-item.g8 { --r: 2deg; }
+    .gallery-item.g9 { --r: -3deg; }
+    .gallery-item.g10 { --r: 6deg; }
+    .gallery-item.g11 { --r: -4deg; }
+    .gallery-item.g12 { --r: 3deg; }
+    .gallery-item.g13 { --r: -2deg; }
+    .gallery-item.g14 { --r: 4deg; }
+    .gallery-item.g15 { --r: 5deg; }
+    .gallery-item.g16 { --r: -3deg; }
 
     .contact-section {
       min-height: 100vh;
@@ -1191,7 +1240,7 @@
     @media (max-width: 1500px) {
       .ourwork-shell {
         max-width: 1240px;
-        min-height: 1560px;
+        min-height: 1500px;
       }
 
       .ourwork-cards {
@@ -1208,26 +1257,9 @@
       .work-card.card-4 { left: 696px; top: 90px; }
       .work-card.card-5 { left: 936px; top: 54px; }
 
-      .media-float.m1 { left: -4px; top: 308px; }
-      .media-float.m2 { left: 88px; top: 448px; }
-      .media-float.m3 { left: 214px; top: 604px; }
-      .media-float.m4 { left: 336px; top: 396px; }
-      .media-float.m5 { left: 540px; top: 556px; }
-      .media-float.m6 { left: 650px; top: 360px; }
-      .media-float.m7 { left: 850px; top: 520px; }
-      .media-float.m8 { left: 968px; top: 362px; }
-      .media-float.m9 { left: 1080px; top: 566px; }
-      .media-float.m10 { left: 44px; top: 714px; }
-      .media-float.m11 { left: 176px; top: 876px; }
-      .media-float.m12 { left: 392px; top: 792px; }
-      .media-float.m13 { left: 582px; top: 948px; }
-      .media-float.m14 { left: 734px; top: 756px; }
-      .media-float.m15 { left: 874px; top: 948px; }
-      .media-float.m16 { left: 1038px; top: 774px; }
-      .media-float.m17 { left: 744px; top: 1118px; }
-      .media-float.m18 { left: 448px; top: 1150px; }
-      .media-float.m19 { left: 106px; top: 1120px; }
-      .media-float.m20 { left: 994px; top: 1164px; }
+      .ourwork-gallery {
+        top: 480px;
+      }
     }
 
     @media (max-width: 1100px) {
@@ -1315,30 +1347,35 @@
         margin: 0 auto;
       }
 
-      .ourwork-media-cloud {
+      .ourwork-gallery {
         position: relative;
-        inset: auto;
-        margin-top: 26px;
-        display: grid;
+        top: auto;
+        padding: 10px 0 0;
+        margin-top: -18px;
+      }
+
+      .gallery-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: 86px;
         gap: 16px;
-        pointer-events: none;
       }
 
-      .media-float {
-        position: relative;
-        left: auto !important;
-        top: auto !important;
-        width: 100% !important;
-        height: 180px !important;
-        transform: rotate(0deg) !important;
-      }
-
-      .media-float.m4,
-      .media-float.m10,
-      .media-float.m15 {
-        height: 240px !important;
-      }
+      .gallery-item.g1 { grid-column: 1; grid-row: span 3; }
+      .gallery-item.g2 { grid-column: 2; grid-row: span 2; }
+      .gallery-item.g3 { grid-column: 3; grid-row: span 3; }
+      .gallery-item.g4 { grid-column: 1; grid-row: span 2; }
+      .gallery-item.g5 { grid-column: 2; grid-row: span 3; }
+      .gallery-item.g6 { grid-column: 3; grid-row: span 3; }
+      .gallery-item.g7 { grid-column: 1; grid-row: span 2; }
+      .gallery-item.g8 { grid-column: 2; grid-row: span 2; }
+      .gallery-item.g9 { grid-column: 3; grid-row: span 3; }
+      .gallery-item.g10 { grid-column: 1; grid-row: span 2; }
+      .gallery-item.g11 { grid-column: 2; grid-row: span 3; }
+      .gallery-item.g12 { grid-column: 3; grid-row: span 2; }
+      .gallery-item.g13 { grid-column: 1; grid-row: span 3; }
+      .gallery-item.g14 { grid-column: 2; grid-row: span 3; }
+      .gallery-item.g15 { grid-column: 3; grid-row: span 2; }
+      .gallery-item.g16 { grid-column: 1 / -1; grid-row: span 3; }
     }
 
     @media (max-width: 900px) {
@@ -1557,19 +1594,46 @@
         max-width: none;
       }
 
-      .ourwork-media-cloud {
+      .ourwork-gallery {
+        margin-top: -8px;
+      }
+
+      .gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 84px;
         gap: 14px;
       }
 
-      .media-float {
-        height: 170px !important;
+      .gallery-item.g1,
+      .gallery-item.g2,
+      .gallery-item.g3,
+      .gallery-item.g4,
+      .gallery-item.g5,
+      .gallery-item.g6,
+      .gallery-item.g7,
+      .gallery-item.g8,
+      .gallery-item.g9,
+      .gallery-item.g10,
+      .gallery-item.g11,
+      .gallery-item.g12,
+      .gallery-item.g13,
+      .gallery-item.g14,
+      .gallery-item.g15,
+      .gallery-item.g16 {
+        grid-column: auto;
+        grid-row: span 2;
       }
 
-      .media-float.m4,
-      .media-float.m10,
-      .media-float.m15 {
-        height: 220px !important;
+      .gallery-item.g1,
+      .gallery-item.g3,
+      .gallery-item.g5,
+      .gallery-item.g6,
+      .gallery-item.g9,
+      .gallery-item.g11,
+      .gallery-item.g13,
+      .gallery-item.g14,
+      .gallery-item.g16 {
+        grid-row: span 3;
       }
     }
 
@@ -1756,15 +1820,40 @@
         font-size: 0.92rem;
       }
 
-      .ourwork-media-cloud {
+      .gallery-grid {
         grid-template-columns: 1fr;
+        grid-auto-rows: 110px;
       }
 
-      .media-float,
-      .media-float.m4,
-      .media-float.m10,
-      .media-float.m15 {
-        height: 200px !important;
+      .gallery-item.g1,
+      .gallery-item.g2,
+      .gallery-item.g3,
+      .gallery-item.g4,
+      .gallery-item.g5,
+      .gallery-item.g6,
+      .gallery-item.g7,
+      .gallery-item.g8,
+      .gallery-item.g9,
+      .gallery-item.g10,
+      .gallery-item.g11,
+      .gallery-item.g12,
+      .gallery-item.g13,
+      .gallery-item.g14,
+      .gallery-item.g15,
+      .gallery-item.g16 {
+        grid-column: 1;
+        grid-row: span 2;
+        transform: rotate(0deg) !important;
+      }
+
+      .gallery-item.g1,
+      .gallery-item.g3,
+      .gallery-item.g6,
+      .gallery-item.g9,
+      .gallery-item.g11,
+      .gallery-item.g14,
+      .gallery-item.g16 {
+        grid-row: span 3;
       }
     }
   </style>
@@ -2071,81 +2160,6 @@
 
     <section class="ourwork-board" id="work">
       <div class="ourwork-shell">
-        <div class="ourwork-media-cloud">
-          <div class="media-float m1">
-            <img src="https://picsum.photos/seed/bossa1/500/700" alt="Gallery placeholder 1" loading="lazy" width="500" height="700">
-          </div>
-          <div class="media-float m2 is-video">
-            <video autoplay muted loop playsinline>
-              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="media-float m3">
-            <img src="https://picsum.photos/seed/bossa3/420/620" alt="Gallery placeholder 2" loading="lazy" width="420" height="620">
-          </div>
-          <div class="media-float m4">
-            <img src="https://picsum.photos/seed/bossa4/700/900" alt="Gallery placeholder 3" loading="lazy" width="700" height="900">
-          </div>
-          <div class="media-float m5 is-video">
-            <video autoplay muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="media-float m6">
-            <img src="https://picsum.photos/seed/bossa6/800/600" alt="Gallery placeholder 4" loading="lazy" width="800" height="600">
-          </div>
-          <div class="media-float m7">
-            <img src="https://picsum.photos/seed/bossa7/520/720" alt="Gallery placeholder 5" loading="lazy" width="520" height="720">
-          </div>
-          <div class="media-float m8 is-video">
-            <video autoplay muted loop playsinline>
-              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="media-float m9">
-            <img src="https://picsum.photos/seed/bossa9/420/620" alt="Gallery placeholder 6" loading="lazy" width="420" height="620">
-          </div>
-          <div class="media-float m10">
-            <img src="https://picsum.photos/seed/bossa10/780/560" alt="Gallery placeholder 7" loading="lazy" width="780" height="560">
-          </div>
-          <div class="media-float m11">
-            <img src="https://picsum.photos/seed/bossa11/480/720" alt="Gallery placeholder 8" loading="lazy" width="480" height="720">
-          </div>
-          <div class="media-float m12 is-video">
-            <video autoplay muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
-            </video>
-          </div>
-          <div class="media-float m13">
-            <img src="https://picsum.photos/seed/bossa13/460/680" alt="Gallery placeholder 9" loading="lazy" width="460" height="680">
-          </div>
-          <div class="media-float m14">
-            <img src="https://picsum.photos/seed/bossa14/760/540" alt="Gallery placeholder 10" loading="lazy" width="760" height="540">
-          </div>
-          <div class="media-float m15">
-            <img src="https://picsum.photos/seed/bossa15/560/760" alt="Gallery placeholder 11" loading="lazy" width="560" height="760">
-          </div>
-          <div class="media-float m16 is-video">
-            <video autoplay muted loop playsinline>
-              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="media-float m17">
-            <img src="https://picsum.photos/seed/bossa17/420/620" alt="Gallery placeholder 12" loading="lazy" width="420" height="620">
-          </div>
-          <div class="media-float m18">
-            <img src="https://picsum.photos/seed/bossa18/720/520" alt="Gallery placeholder 13" loading="lazy" width="720" height="520">
-          </div>
-          <div class="media-float m19">
-            <img src="https://picsum.photos/seed/bossa19/500/700" alt="Gallery placeholder 14" loading="lazy" width="500" height="700">
-          </div>
-          <div class="media-float m20 is-video">
-            <video autoplay muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-
         <div class="ourwork-cards">
           <article class="work-card card-1">
             <h3>Web Developer</h3>
@@ -2206,6 +2220,82 @@
               <li>Long-term brand consistency</li>
             </ul>
           </article>
+        </div>
+
+        <div class="ourwork-gallery">
+          <div class="gallery-grid">
+            <div class="gallery-item g1">
+              <img src="https://picsum.photos/seed/workgal1/900/1200" alt="Gallery placeholder 1" loading="lazy" width="900" height="1200">
+            </div>
+
+            <div class="gallery-item g2 video-item">
+              <video autoplay muted loop playsinline>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="gallery-item g3">
+              <img src="https://picsum.photos/seed/workgal3/1000/1400" alt="Gallery placeholder 2" loading="lazy" width="1000" height="1400">
+            </div>
+
+            <div class="gallery-item g4">
+              <img src="https://picsum.photos/seed/workgal4/800/600" alt="Gallery placeholder 3" loading="lazy" width="800" height="600">
+            </div>
+
+            <div class="gallery-item g5">
+              <img src="https://picsum.photos/seed/workgal5/760/1100" alt="Gallery placeholder 4" loading="lazy" width="760" height="1100">
+            </div>
+
+            <div class="gallery-item g6 video-item">
+              <video autoplay muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="gallery-item g7">
+              <img src="https://picsum.photos/seed/workgal7/720/520" alt="Gallery placeholder 5" loading="lazy" width="720" height="520">
+            </div>
+
+            <div class="gallery-item g8">
+              <img src="https://picsum.photos/seed/workgal8/820/620" alt="Gallery placeholder 6" loading="lazy" width="820" height="620">
+            </div>
+
+            <div class="gallery-item g9">
+              <img src="https://picsum.photos/seed/workgal9/900/1300" alt="Gallery placeholder 7" loading="lazy" width="900" height="1300">
+            </div>
+
+            <div class="gallery-item g10 video-item">
+              <video autoplay muted loop playsinline>
+                <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="gallery-item g11">
+              <img src="https://picsum.photos/seed/workgal11/880/1180" alt="Gallery placeholder 8" loading="lazy" width="880" height="1180">
+            </div>
+
+            <div class="gallery-item g12">
+              <img src="https://picsum.photos/seed/workgal12/720/520" alt="Gallery placeholder 9" loading="lazy" width="720" height="520">
+            </div>
+
+            <div class="gallery-item g13">
+              <img src="https://picsum.photos/seed/workgal13/820/1220" alt="Gallery placeholder 10" loading="lazy" width="820" height="1220">
+            </div>
+
+            <div class="gallery-item g14 video-item">
+              <video autoplay muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+              </video>
+            </div>
+
+            <div class="gallery-item g15">
+              <img src="https://picsum.photos/seed/workgal15/760/560" alt="Gallery placeholder 11" loading="lazy" width="760" height="560">
+            </div>
+
+            <div class="gallery-item g16">
+              <img src="https://picsum.photos/seed/workgal16/1200/800" alt="Gallery placeholder 12" loading="lazy" width="1200" height="800">
+            </div>
+          </div>
         </div>
       </div>
     </section>
