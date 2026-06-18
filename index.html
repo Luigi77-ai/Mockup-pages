@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Boss Agency Co</title>
 
-  <link rel="preconnect" href://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
@@ -32,10 +32,16 @@
       text-decoration: none;
     }
 
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
     button {
       border: none;
       background: none;
-      font: inherit;
       cursor: pointer;
     }
 
@@ -822,6 +828,49 @@
       animation: goldTextFlow 3.2s ease-in-out infinite;
     }
 
+    .impact-logos {
+      margin: 8px auto 34px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      height: 56px;
+      display: flex;
+      align-items: center;
+    }
+
+    .impact-logos-track {
+      display: flex;
+      width: max-content;
+      align-items: center;
+      gap: 42px;
+      animation: logosSlide 22s linear infinite;
+      will-change: transform;
+    }
+
+    .impact-logos:hover .impact-logos-track {
+      animation-play-state: paused;
+    }
+
+    .impact-logo {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 56px;
+    }
+
+    .impact-logo img {
+      display: block;
+      max-height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    @keyframes logosSlide {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
     @keyframes goldSweep {
       0%, 18% { transform: translateX(-140%); opacity: 0; }
       30% { opacity: 1; }
@@ -1004,7 +1053,7 @@
       max-width: 1460px;
       margin: 0 auto;
       position: relative;
-      min-height: 1040px;
+      min-height: 620px;
     }
 
     .ourwork-cards {
@@ -1079,8 +1128,8 @@
     .work-card.card-1 {
       left: 42px;
       top: 48px;
-      background: #7cf26d;
-      color: #0d1e0d;
+      background: #fff4bf;
+      color: #1f1600;
       transform: rotate(-5deg);
       z-index: 5;
     }
@@ -1088,8 +1137,8 @@
     .work-card.card-2 {
       left: 292px;
       top: 82px;
-      background: #6ab8ff;
-      color: #0b1a28;
+      background: #f4b316;
+      color: #1e1400;
       transform: rotate(-2.5deg);
       z-index: 6;
     }
@@ -1097,7 +1146,7 @@
     .work-card.card-3 {
       left: 552px;
       top: 28px;
-      background: #ffb35c;
+      background: #ffe082;
       color: #24170b;
       transform: rotate(3deg);
       z-index: 7;
@@ -1106,8 +1155,8 @@
     .work-card.card-4 {
       left: 826px;
       top: 76px;
-      background: #d88cff;
-      color: #1f1027;
+      background: #111111;
+      color: #ffffff;
       transform: rotate(-2deg);
       z-index: 8;
     }
@@ -1115,185 +1164,312 @@
     .work-card.card-5 {
       left: 1094px;
       top: 44px;
-      background: #ff7f9d;
-      color: #281018;
+      background: #d4af37;
+      color: #1d1400;
       transform: rotate(3.5deg);
       z-index: 5;
     }
 
-    .ourwork-gallery {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 470px;
-      z-index: 2;
-      padding: 0 20px 0;
+    .success-story-band {
+      width: 100%;
+      background: transparent;
+      color: #111;
+      overflow: hidden;
+      padding: 26px 0 24px;
+      position: relative;
+      z-index: 4;
     }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.9fr 1.05fr 0.95fr;
-      grid-auto-rows: 92px;
-      gap: 18px;
-      align-items: start;
+    .success-story-band-text {
+      width: 100%;
+      text-align: center;
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(2.4rem, 7vw, 6.8rem);
+      line-height: 0.9;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 0 20px;
+      color: #111;
     }
 
-    .gallery-item {
+    .reviews-showcase {
+      background: #ffffff;
+      padding: 58px 0 72px 24px;
       position: relative;
       overflow: hidden;
-      border-radius: 22px;
-      box-shadow: 0 16px 34px rgba(0,0,0,0.12);
-      transform-origin: center center;
-      animation: floatDrift 9s ease-in-out infinite;
-      will-change: transform;
     }
 
-    .gallery-item::after {
+    .reviews-showcase::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0.10) 100%);
+      background-image: linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px);
+      background-size: 20% 100%;
       pointer-events: none;
+      opacity: 0.55;
     }
 
-    .gallery-item img,
-    .gallery-item video {
+    .reviews-shell {
       width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      transform: scale(1.04);
-      animation: slowZoom 14s ease-in-out infinite alternate;
+      max-width: none;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+      padding-right: 0;
     }
 
-    .gallery-item.video-item::before {
-      content: "VIDEO";
-      position: absolute;
-      right: 14px;
-      bottom: 14px;
-      z-index: 2;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(0,0,0,0.78);
-      color: #fff;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
+    .reviews-intro {
+      position: sticky;
+      top: 110px;
+      padding-top: 38px;
+    }
+
+    .reviews-kicker {
+      font-size: 0.8rem;
       font-weight: 800;
       text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(0,0,0,0.62);
+      margin-bottom: 16px;
     }
 
-    .gallery-item.g1 { grid-column: 1; grid-row: 1 / span 3; transform: rotate(-4deg) translateY(8px); animation-delay: -1s; }
-    .gallery-item.g2 { grid-column: 2; grid-row: 1 / span 2; transform: rotate(3deg) translateY(-10px); animation-delay: -3s; }
-    .gallery-item.g3 { grid-column: 3; grid-row: 1 / span 4; transform: rotate(-2deg) translateY(12px); animation-delay: -2s; }
-    .gallery-item.g4 { grid-column: 4; grid-row: 1 / span 2; transform: rotate(5deg) translateY(-4px); animation-delay: -4s; }
-    .gallery-item.g5 { grid-column: 2; grid-row: 3 / span 3; transform: rotate(-5deg) translateY(0); animation-delay: -6s; }
-    .gallery-item.g6 { grid-column: 4; grid-row: 3 / span 3; transform: rotate(-3deg) translateY(10px); animation-delay: -1.5s; }
-    .gallery-item.g7 { grid-column: 1; grid-row: 4 / span 2; transform: rotate(4deg) translateY(-6px); animation-delay: -7s; }
-    .gallery-item.g8 { display: none; }
-    .gallery-item.g9 { display: none; }
-    .gallery-item.g10 { display: none; }
-    .gallery-item.g11 { display: none; }
-    .gallery-item.g12 { display: none; }
-    .gallery-item.g13 { display: none; }
-    .gallery-item.g14 { display: none; }
-    .gallery-item.g15 { display: none; }
-    .gallery-item.g16 { display: none; }
-
-    @keyframes floatDrift {
-      0%, 100% { transform: translateY(0px) rotate(var(--r, 0deg)); }
-      50% { transform: translateY(-14px) rotate(var(--r, 0deg)) scale(1.01); }
-    }
-
-    @keyframes slowZoom {
-      0% { transform: scale(1.04); }
-      100% { transform: scale(1.12); }
-    }
-
-    .gallery-item.g1 { --r: -4deg; }
-    .gallery-item.g2 { --r: 3deg; }
-    .gallery-item.g3 { --r: -2deg; }
-    .gallery-item.g4 { --r: 5deg; }
-    .gallery-item.g5 { --r: -5deg; }
-    .gallery-item.g6 { --r: -3deg; }
-    .gallery-item.g7 { --r: 4deg; }
-
-    .success-story-strip {
-      background: #ffffff;
-      padding: 56px 18px 68px;
-    }
-
-    .success-story-box {
-      width: 100%;
-      max-width: 1240px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .success-story-title {
+    .reviews-title {
       font-family: 'Anton', sans-serif;
-      text-transform: uppercase;
-      font-size: clamp(2.7rem, 7vw, 6.4rem);
+      font-size: clamp(2.4rem, 4.2vw, 4.4rem);
       line-height: 0.92;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
+      color: #111;
+      margin-bottom: 14px;
+      text-transform: none;
+    }
+
+    .reviews-title .chip-line {
       display: inline-block;
+      background: #f4b316;
+      color: #fff;
+      padding: 4px 12px 8px;
+      border: 2px solid #111;
+      border-radius: 8px;
+      box-shadow: 4px 4px 0 #111;
+      margin: 6px 0;
+      line-height: 0.95;
+    }
+
+    .reviews-copy {
+      max-width: 24ch;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(0,0,0,0.68);
+      margin-bottom: 18px;
+    }
+
+    .reviews-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: #f4b316;
+      color: #111;
+      border: 2px solid #111;
+      font-size: 0.84rem;
+      font-weight: 700;
+      box-shadow: 3px 3px 0 #111;
+    }
+
+    .reviews-marquee {
+      overflow: hidden;
+      width: 100%;
+      padding-top: 10px;
       position: relative;
-      background: linear-gradient(135deg, #b88911 0%, #ffd95b 22%, #fff1a8 42%, #ffcf40 60%, #a46e00 100%);
-      background-size: 240% 240%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 18px rgba(255, 215, 90, 0.18);
-      animation: goldTextFlow 3.2s ease-in-out infinite;
+      justify-self: stretch;
     }
 
-    .success-story-title::after {
-      content: "";
-      position: absolute;
-      inset: -12% -4%;
-      background: linear-gradient(120deg, transparent 18%, rgba(255, 215, 90, 0.10) 35%, rgba(255, 239, 168, 0.72) 50%, rgba(255, 215, 90, 0.10) 65%, transparent 82%);
-      transform: translateX(-140%);
-      animation: goldSweep 3.2s ease-in-out infinite;
-      pointer-events: none;
-      mix-blend-mode: screen;
+    .reviews-marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 22px;
+      animation: reviewsSlide 34s linear infinite;
+      will-change: transform;
     }
 
-    .va-recruitment-banner {
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
-      background: linear-gradient(180deg, #f7efe6 0%, #f3e4d0 52%, #efd9b2 100%);
-      padding: 52px 18px 56px;
+    .reviews-marquee:hover .reviews-marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes reviewsSlide {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-50% - 11px)); }
+    }
+
+    .reviews-group {
+      display: flex;
+      gap: 22px;
+      flex-shrink: 0;
+      align-items: flex-start;
+    }
+
+    .review-card {
+      width: 290px;
+      flex: 0 0 290px;
+      border: 1.8px solid #111;
+      box-shadow: 4px 4px 0 #111;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .review-card.tall {
+      transform: translateY(-10px);
+    }
+
+    .review-card.low {
+      transform: translateY(34px);
+    }
+
+    .review-card.mid {
+      transform: translateY(12px);
+    }
+
+    .review-top-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 0 12px;
+      background: #fff;
+      border: 1.8px solid #111;
+      border-radius: 7px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #111;
+      position: relative;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      margin-bottom: -14px;
+    }
+
+    .review-visual {
+      min-height: 230px;
+      padding: 26px 18px 16px;
+      display: flex;
+      align-items: end;
+      justify-content: center;
       position: relative;
       overflow: hidden;
     }
 
-    .va-recruitment-banner::before,
-    .va-recruitment-banner::after {
+    .review-visual.yellow { background: #f4c20d; }
+    .review-visual.orange { background: #d4af37; }
+    .review-visual.pink { background: #fff4bf; }
+
+    .review-avatar {
+      width: 152px;
+      height: 152px;
+      border-radius: 50%;
+      border: 3px solid #111;
+      background: rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 0 0 5px rgba(255,255,255,0.18);
+    }
+
+    .review-avatar::before {
+      content: "";
+      position: absolute;
+      inset: -11px;
+      border: 2px solid rgba(17,17,17,0.7);
+      border-radius: 52% 48% 53% 47% / 44% 52% 48% 56%;
+    }
+
+    .review-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .review-body {
+      padding: 20px 18px 18px;
+      background: #fff;
+    }
+
+    .review-stars {
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .review-text {
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: rgba(0,0,0,0.74);
+      margin-bottom: 14px;
+    }
+
+    .review-name {
+      font-family: 'Anton', sans-serif;
+      font-size: 1rem;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #111;
+      margin-bottom: 4px;
+    }
+
+    .review-role {
+      font-size: 0.8rem;
+      color: rgba(0,0,0,0.58);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .va-recruitment-hero {
+      position: relative;
+      background: linear-gradient(180deg, #f8efe4 0%, #f2e4cf 100%);
+      overflow: hidden;
+      padding: 54px 18px 56px;
+    }
+
+    .va-recruitment-hero::before,
+    .va-recruitment-hero::after {
       content: "✦";
       position: absolute;
       color: #d4af37;
-      opacity: 0.92;
-      text-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      text-shadow:
+        0 0 0 #111,
+        2px 2px 0 rgba(17,17,17,0.22),
+        0 0 22px rgba(212,175,55,0.22);
+      opacity: 0.95;
       line-height: 1;
       pointer-events: none;
     }
 
-    .va-recruitment-banner::before {
-      left: 4.5%;
-      top: 50%;
-      transform: translateY(-10%) rotate(-8deg);
-      font-size: clamp(3.2rem, 7vw, 6rem);
+    .va-recruitment-hero::before {
+      left: 2.5%;
+      top: 34%;
+      font-size: clamp(3rem, 8vw, 6.4rem);
+      transform: rotate(-12deg);
     }
 
-    .va-recruitment-banner::after {
-      right: 7%;
-      top: 28%;
-      transform: rotate(12deg);
-      font-size: clamp(2.6rem, 5vw, 4.6rem);
+    .va-recruitment-hero::after {
+      right: 3%;
+      top: 30%;
+      font-size: clamp(2.8rem, 7vw, 5.4rem);
+      transform: rotate(14deg);
     }
 
-    .va-recruitment-shell {
+    .va-recruitment-inner {
       width: 100%;
       max-width: 1240px;
       margin: 0 auto;
@@ -1302,75 +1478,64 @@
       z-index: 2;
     }
 
-    .va-recruitment-topline {
-      font-size: clamp(1.55rem, 2.8vw, 3.05rem);
-      line-height: 1.08;
-      font-weight: 500;
-      letter-spacing: -0.03em;
+    .va-recruitment-kicker {
+      font-size: clamp(1rem, 1.6vw, 1.35rem);
+      line-height: 1.2;
       color: #111;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+      font-weight: 500;
     }
 
     .va-recruitment-title {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 28px;
+      gap: 12px;
+      line-height: 0.9;
     }
 
-    .va-recruitment-word {
+    .va-bubble-line {
+      display: inline-block;
+      position: relative;
       font-family: 'Anton', sans-serif;
       text-transform: uppercase;
-      font-size: clamp(4rem, 11vw, 8.6rem);
-      line-height: 0.88;
-      letter-spacing: 0.01em;
-      color: #f4b316;
-      position: relative;
-      display: inline-block;
-      padding: 0 0.08em;
+      letter-spacing: 0.02em;
+      color: #f8e7a7;
+      -webkit-text-stroke: 2px #c28d12;
       text-shadow:
-        0 1px 0 #fff1a8,
-        0 2px 0 #e0a000,
-        0 3px 0 #cf9200,
-        0 4px 0 #b77d00,
-        0 5px 0 #9d6800,
-        0 6px 0 #7f5200,
-        0 7px 0 #5c3a00,
-        0 18px 22px rgba(0,0,0,0.24);
-      filter: saturate(1.02);
+        0 2px 0 #fff6d0,
+        0 4px 0 #f2cb53,
+        0 6px 0 #d4af37,
+        0 8px 0 #b88911,
+        0 10px 0 #111111,
+        0 18px 22px rgba(0,0,0,0.28);
+      background: linear-gradient(180deg, #fff6d0 0%, #ffe890 26%, #f4c84a 52%, #d4af37 72%, #b88911 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: saturate(1.05);
     }
 
-    .va-recruitment-word::before {
-      content: "";
-      position: absolute;
-      left: 7%;
-      right: 7%;
-      top: 8%;
-      height: 34%;
-      border-radius: 999px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.16) 70%, rgba(255,255,255,0) 100%);
-      pointer-events: none;
-      mix-blend-mode: screen;
+    .va-bubble-line.line-top {
+      font-size: clamp(3.7rem, 10vw, 8rem);
     }
 
-    .va-recruitment-word.recruitment {
-      transform: translateX(3%);
+    .va-bubble-line.line-bottom {
+      font-size: clamp(3.15rem, 8.8vw, 7rem);
     }
 
-    .va-recruitment-agency {
+    .va-recruitment-cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
-      padding: 0 22px;
+      min-height: 54px;
+      padding: 0 28px;
+      margin-top: 28px;
       border-radius: 999px;
       background: #111;
       color: #fff;
-      font-size: 0.92rem;
       font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+      font-size: 1rem;
       box-shadow: 0 12px 28px rgba(0,0,0,0.16);
     }
 
@@ -1382,28 +1547,22 @@
       justify-content: center;
     }
 
-    @media (max-width: 1500px) {
-      .ourwork-shell {
-        max-width: 1240px;
-        min-height: 1040px;
+    @media (max-width: 1200px) {
+      .reviews-shell {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-right: 18px;
       }
 
-      .ourwork-cards {
-        height: 620px;
+      .reviews-intro {
+        position: relative;
+        top: auto;
+        padding-top: 0;
+        padding-left: 0;
       }
 
-      .work-card {
-        width: 270px;
-      }
-
-      .work-card.card-1 { left: 8px; top: 58px; }
-      .work-card.card-2 { left: 222px; top: 102px; }
-      .work-card.card-3 { left: 456px; top: 26px; }
-      .work-card.card-4 { left: 696px; top: 90px; }
-      .work-card.card-5 { left: 936px; top: 54px; }
-
-      .ourwork-gallery {
-        top: 480px;
+      .reviews-copy {
+        max-width: 60ch;
       }
     }
 
@@ -1453,90 +1612,6 @@
 
       .about-editorial-box {
         min-height: 600px;
-      }
-
-      .about-photo-floating {
-        width: min(100%, 390px);
-        right: 0;
-        bottom: -68px;
-      }
-
-      .ourwork-board {
-        padding: 38px 18px 40px;
-      }
-
-      .ourwork-shell {
-        min-height: auto;
-      }
-
-      .ourwork-cards {
-        height: auto;
-        margin-top: 0;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px;
-      }
-
-      .work-card {
-        position: relative;
-        left: auto !important;
-        top: auto !important;
-        width: 100%;
-        min-height: 430px;
-        transform: rotate(0deg) !important;
-      }
-
-      .work-card.card-5 {
-        grid-column: 1 / -1;
-        max-width: 560px;
-        margin: 0 auto;
-      }
-
-      .ourwork-gallery {
-        position: relative;
-        top: auto;
-        padding: 16px 0 0;
-        margin-top: 0;
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-auto-rows: 86px;
-        gap: 16px;
-      }
-
-      .gallery-item.g1 { grid-column: 1; grid-row: span 3; }
-      .gallery-item.g2 { grid-column: 2; grid-row: span 2; }
-      .gallery-item.g3 { grid-column: 3; grid-row: span 3; }
-      .gallery-item.g4 { grid-column: 1; grid-row: span 2; }
-      .gallery-item.g5 { grid-column: 2; grid-row: span 3; }
-      .gallery-item.g6 { grid-column: 3; grid-row: span 3; }
-      .gallery-item.g7 { grid-column: 1; grid-row: span 2; }
-
-      .gallery-item.g8,
-      .gallery-item.g9,
-      .gallery-item.g10,
-      .gallery-item.g11,
-      .gallery-item.g12,
-      .gallery-item.g13,
-      .gallery-item.g14,
-      .gallery-item.g15,
-      .gallery-item.g16 { display: none; }
-
-      .va-recruitment-word {
-        font-size: clamp(3.4rem, 10vw, 6.8rem);
-      }
-    }
-
-    @media (max-width: 900px) {
-      .statement-card {
-        min-width: 340px;
-        height: 68px;
-        padding: 0 18px;
-      }
-
-      .statement-text {
-        font-size: 1.55rem;
       }
     }
 
@@ -1727,83 +1802,44 @@
         max-width: 18ch;
       }
 
-      .ourwork-board {
-        padding: 34px 14px 34px;
+      .success-story-band-text {
+        white-space: normal;
       }
 
-      .ourwork-cards {
-        grid-template-columns: 1fr;
-        gap: 18px;
+      .reviews-showcase {
+        padding: 46px 0 58px 14px;
       }
 
-      .work-card {
-        min-height: auto;
+      .reviews-marquee-track,
+      .reviews-group {
+        gap: 16px;
       }
 
-      .work-card.card-5 {
-        max-width: none;
+      .review-card {
+        width: 255px;
+        flex: 0 0 255px;
       }
 
-      .ourwork-gallery {
-        margin-top: 0;
-        padding-top: 18px;
+      .review-card.low,
+      .review-card.mid,
+      .review-card.tall {
+        transform: translateY(0);
       }
 
-      .gallery-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-auto-rows: 84px;
-        gap: 14px;
+      .va-recruitment-hero {
+        padding: 46px 14px 48px;
       }
 
-      .gallery-item.g1,
-      .gallery-item.g2,
-      .gallery-item.g3,
-      .gallery-item.g4,
-      .gallery-item.g5,
-      .gallery-item.g6,
-      .gallery-item.g7 {
-        grid-column: auto;
-        grid-row: span 2;
-      }
-
-      .gallery-item.g1,
-      .gallery-item.g3,
-      .gallery-item.g6 {
-        grid-row: span 3;
-      }
-
-      .gallery-item.g8,
-      .gallery-item.g9,
-      .gallery-item.g10,
-      .gallery-item.g11,
-      .gallery-item.g12,
-      .gallery-item.g13,
-      .gallery-item.g14,
-      .gallery-item.g15,
-      .gallery-item.g16 {
-        display: none;
-      }
-
-      .success-story-strip {
-        padding: 48px 14px 56px;
-      }
-
-      .va-recruitment-banner {
-        padding: 46px 14px 50px;
-      }
-
-      .va-recruitment-topline {
-        font-size: clamp(1.25rem, 5vw, 2rem);
+      .va-recruitment-kicker {
         margin-bottom: 18px;
       }
 
       .va-recruitment-title {
-        gap: 2px;
-        margin-bottom: 22px;
+        gap: 8px;
       }
 
-      .va-recruitment-word.recruitment {
-        transform: translateX(0);
+      .va-recruitment-cta {
+        margin-top: 24px;
       }
     }
 
@@ -1978,83 +2014,42 @@
         max-width: 18ch;
       }
 
-      .work-card {
-        padding: 22px 18px 20px;
+      .reviews-showcase {
+        padding-left: 12px;
       }
 
-      .work-card h3 {
-        font-size: 1.3rem;
+      .review-card {
+        width: 228px;
+        flex: 0 0 228px;
       }
 
-      .work-card li {
-        font-size: 0.92rem;
+      .review-visual {
+        min-height: 205px;
       }
 
-      .gallery-grid {
-        grid-template-columns: 1fr;
-        grid-auto-rows: 110px;
+      .review-avatar {
+        width: 132px;
+        height: 132px;
       }
 
-      .gallery-item.g1,
-      .gallery-item.g2,
-      .gallery-item.g3,
-      .gallery-item.g4,
-      .gallery-item.g5,
-      .gallery-item.g6,
-      .gallery-item.g7 {
-        grid-column: 1;
-        grid-row: span 2;
-        transform: rotate(0deg) !important;
+      .va-recruitment-hero::before {
+        left: 1.5%;
+        top: 38%;
       }
 
-      .gallery-item.g1,
-      .gallery-item.g3,
-      .gallery-item.g6 {
-        grid-row: span 3;
+      .va-recruitment-hero::after {
+        right: 1.5%;
+        top: 28%;
       }
 
-      .gallery-item.g8,
-      .gallery-item.g9,
-      .gallery-item.g10,
-      .gallery-item.g11,
-      .gallery-item.g12,
-      .gallery-item.g13,
-      .gallery-item.g14,
-      .gallery-item.g15,
-      .gallery-item.g16 {
-        display: none;
+      .va-recruitment-kicker {
+        font-size: 0.94rem;
       }
 
-      .success-story-strip {
-        padding: 42px 14px 48px;
-      }
-
-      .success-story-title {
-        font-size: clamp(2.1rem, 12vw, 3.8rem);
-      }
-
-      .va-recruitment-banner::before {
-        left: 2%;
-        top: 58%;
-        font-size: 2.8rem;
-      }
-
-      .va-recruitment-banner::after {
-        right: 3%;
-        top: 24%;
-        font-size: 2.3rem;
-      }
-
-      .va-recruitment-word {
-        font-size: clamp(2.7rem, 16vw, 4.6rem);
-        line-height: 0.9;
-      }
-
-      .va-recruitment-agency {
-        min-height: 46px;
-        padding: 0 16px;
-        font-size: 0.76rem;
-        letter-spacing: 0.12em;
+      .va-recruitment-cta {
+        min-height: 50px;
+        padding: 0 22px;
+        font-size: 0.94rem;
       }
     }
   </style>
@@ -2275,6 +2270,21 @@
           support can improve visibility, speed, and business growth
         </h2>
 
+        <div class="impact-logos">
+          <div class="impact-logos-track">
+            <div class="impact-logo"><img src="assets/logo 1.png" alt="Logo 1" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo 2.png" alt="Logo 2" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo 3.png" alt="Logo 3" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo 4.png" alt="Logo 4" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo 5.png" alt="Logo 5" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo 1.png" alt="Logo 1 duplicate" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo 2.png" alt="Logo 2 duplicate" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo 3.png" alt="Logo 3 duplicate" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo 4.png" alt="Logo 4 duplicate" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/logo 5.png" alt="Logo 5 duplicate" loading="lazy"></div>
+          </div>
+        </div>
+
         <div class="impact-grid">
           <article class="impact-card">
             <div class="impact-icon" aria-hidden="true">
@@ -2422,61 +2432,136 @@
             </ul>
           </article>
         </div>
+      </div>
+    </section>
 
-        <div class="ourwork-gallery">
-          <div class="gallery-grid">
-            <div class="gallery-item g1">
-              <img src="https://picsum.photos/seed/workgal1/900/1200" alt="Gallery placeholder 1" loading="lazy" width="900" height="1200">
+    <section class="success-story-band">
+      <div class="success-story-band-text">BE ONE SUCCESS STORY</div>
+    </section>
+
+    <section class="reviews-showcase">
+      <div class="reviews-shell">
+        <div class="reviews-intro">
+          <div class="reviews-kicker">Client love</div>
+          <h2 class="reviews-title">
+            What our clients <span class="chip-line">say about us</span>
+          </h2>
+          <p class="reviews-copy">
+            Real feedback from brands and organizations that trusted The Boss Agency Co to help them grow online with clarity and consistency.
+          </p>
+          <a href="#contact" class="reviews-cta">Work with us</a>
+        </div>
+
+        <div class="reviews-marquee">
+          <div class="reviews-marquee-track">
+            <div class="reviews-group">
+              <article class="review-card tall">
+                <div class="review-top-label">5.0 Rating</div>
+                <div class="review-visual yellow">
+                  <div class="review-avatar">
+                    <img src="assets/review-1.png" alt="Client review 1" loading="lazy">
+                  </div>
+                </div>
+                <div class="review-body">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">The Boss Agency Co helped us sharpen our digital presence and communicate our value much more clearly.</p>
+                  <div class="review-name">Alicia M.</div>
+                  <div class="review-role">Business Owner</div>
+                </div>
+              </article>
+
+              <article class="review-card low">
+                <div class="review-top-label">Trusted Partner</div>
+                <div class="review-visual orange">
+                  <div class="review-avatar">
+                    <img src="assets/review-2.png" alt="Client review 2" loading="lazy">
+                  </div>
+                </div>
+                <div class="review-body">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">Their strategy and execution gave our brand structure, consistency, and a much stronger online presence.</p>
+                  <div class="review-name">Daniel R.</div>
+                  <div class="review-role">Founder</div>
+                </div>
+              </article>
+
+              <article class="review-card mid">
+                <div class="review-top-label">Highly Recommended</div>
+                <div class="review-visual pink">
+                  <div class="review-avatar">
+                    <img src="assets/review-3.png" alt="Client review 3" loading="lazy">
+                  </div>
+                </div>
+                <div class="review-body">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">They made the process feel easy while delivering clear creative direction and real support for growth.</p>
+                  <div class="review-name">Sofia T.</div>
+                  <div class="review-role">Non-profit Lead</div>
+                </div>
+              </article>
             </div>
 
-            <div class="gallery-item g2 video-item">
-              <video autoplay muted loop playsinline>
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-              </video>
-            </div>
+            <div class="reviews-group">
+              <article class="review-card tall">
+                <div class="review-top-label">5.0 Rating</div>
+                <div class="review-visual yellow">
+                  <div class="review-avatar">
+                    <img src="assets/review-1.png" alt="Client review 1 duplicate" loading="lazy">
+                  </div>
+                </div>
+                <div class="review-body">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">The Boss Agency Co helped us sharpen our digital presence and communicate our value much more clearly.</p>
+                  <div class="review-name">Alicia M.</div>
+                  <div class="review-role">Business Owner</div>
+                </div>
+              </article>
 
-            <div class="gallery-item g3">
-              <img src="https://picsum.photos/seed/workgal3/1000/1400" alt="Gallery placeholder 2" loading="lazy" width="1000" height="1400">
-            </div>
+              <article class="review-card low">
+                <div class="review-top-label">Trusted Partner</div>
+                <div class="review-visual orange">
+                  <div class="review-avatar">
+                    <img src="assets/review-2.png" alt="Client review 2 duplicate" loading="lazy">
+                  </div>
+                </div>
+                <div class="review-body">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">Their strategy and execution gave our brand structure, consistency, and a much stronger online presence.</p>
+                  <div class="review-name">Daniel R.</div>
+                  <div class="review-role">Founder</div>
+                </div>
+              </article>
 
-            <div class="gallery-item g4">
-              <img src="https://picsum.photos/seed/workgal4/800/600" alt="Gallery placeholder 3" loading="lazy" width="800" height="600">
-            </div>
-
-            <div class="gallery-item g5">
-              <img src="https://picsum.photos/seed/workgal5/760/1100" alt="Gallery placeholder 4" loading="lazy" width="760" height="1100">
-            </div>
-
-            <div class="gallery-item g6 video-item">
-              <video autoplay muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-            </div>
-
-            <div class="gallery-item g7">
-              <img src="https://picsum.photos/seed/workgal7/720/520" alt="Gallery placeholder 5" loading="lazy" width="720" height="520">
+              <article class="review-card mid">
+                <div class="review-top-label">Highly Recommended</div>
+                <div class="review-visual pink">
+                  <div class="review-avatar">
+                    <img src="assets/review-3.png" alt="Client review 3 duplicate" loading="lazy">
+                  </div>
+                </div>
+                <div class="review-body">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">They made the process feel easy while delivering clear creative direction and real support for growth.</p>
+                  <div class="review-name">Sofia T.</div>
+                  <div class="review-role">Non-profit Lead</div>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="success-story-strip">
-      <div class="success-story-box">
-        <h2 class="success-story-title">Be One Success Story</h2>
-      </div>
-    </section>
-
-    <section class="va-recruitment-banner" id="va-recruitment">
-      <div class="va-recruitment-shell">
-        <p class="va-recruitment-topline">Help us build your next support system with</p>
+    <section class="va-recruitment-hero" aria-label="VA Recruitment Agency highlight">
+      <div class="va-recruitment-inner">
+        <p class="va-recruitment-kicker">Focused support for smart delegation and scalable growth</p>
 
         <div class="va-recruitment-title">
-          <span class="va-recruitment-word">VA</span>
-          <span class="va-recruitment-word recruitment">Recruitment</span>
+          <span class="va-bubble-line line-top">VA RECRUITMENT</span>
+          <span class="va-bubble-line line-bottom">AGENCY</span>
         </div>
 
-        <div class="va-recruitment-agency">Agency</div>
+        <div class="va-recruitment-cta">The Boss Agency Co</div>
       </div>
     </section>
 
