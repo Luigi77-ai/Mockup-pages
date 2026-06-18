@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Boss Agency Co</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -761,6 +762,133 @@
       color: rgba(255,255,255,0.8);
     }
 
+    .impact-strip {
+      width: 100%;
+      background: #fff;
+      padding: 56px 18px 52px;
+    }
+
+    .impact-box {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .impact-title {
+      max-width: 1080px;
+      margin: 0 auto 34px;
+      text-align: center;
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(1.8rem, 3.6vw, 3.2rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: #111;
+    }
+
+    .impact-highlight {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 18px 10px;
+      margin: 0 6px;
+      background: #000;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      vertical-align: middle;
+    }
+
+    .impact-highlight::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background: linear-gradient(120deg, transparent 18%, rgba(255, 215, 90, 0.12) 35%, rgba(255, 239, 168, 0.8) 50%, rgba(255, 215, 90, 0.12) 65%, transparent 82%);
+      transform: translateX(-140%);
+      animation: goldSweep 3.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .impact-highlight span {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, #b88911 0%, #ffd95b 22%, #fff1a8 42%, #ffcf40 60%, #a46e00 100%);
+      background-size: 240% 240%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 18px rgba(255, 215, 90, 0.18);
+      animation: goldTextFlow 3.2s ease-in-out infinite;
+    }
+
+    @keyframes goldSweep {
+      0%, 18% { transform: translateX(-140%); opacity: 0; }
+      30% { opacity: 1; }
+      48% { transform: translateX(140%); opacity: 1; }
+      62%, 100% { transform: translateX(140%); opacity: 0; }
+    }
+
+    @keyframes goldTextFlow {
+      0%, 18% { background-position: 0% 50%; }
+      48% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+      justify-content: center;
+    }
+
+    .impact-card {
+      min-height: 220px;
+      padding: 12px 10px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .impact-icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 16px;
+      color: #c9c9c9;
+    }
+
+    .impact-number {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height: 0.88;
+      letter-spacing: -0.03em;
+      color: #111;
+      margin-bottom: 12px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .impact-label {
+      font-size: 1rem;
+      line-height: 1.45;
+      color: rgba(0,0,0,0.68);
+      max-width: 22ch;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .impact-number.is-visible {
+      animation: pulseIn 0.45s ease;
+    }
+
+    @keyframes pulseIn {
+      0% { opacity: 0.3; transform: translateY(10px) scale(0.96); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
     .about-editorial {
       min-height: 88vh;
       background: #f5f0ea;
@@ -993,58 +1121,232 @@
       z-index: 5;
     }
 
-    .success-story-strip {
+    .reviews-showcase {
       background: #ffffff;
-      padding: 56px 18px 68px;
+      padding: 58px 24px 72px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .success-story-box {
+    .reviews-showcase::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px);
+      background-size: 20% 100%;
+      pointer-events: none;
+      opacity: 0.55;
+    }
+
+    .reviews-shell {
       width: 100%;
       max-width: 1240px;
       margin: 0 auto;
-      text-align: center;
-    }
-
-    .success-story-title {
-      font-family: 'Anton', sans-serif;
-      text-transform: uppercase;
-      font-size: clamp(2.7rem, 7vw, 6.4rem);
-      line-height: 0.92;
-      letter-spacing: 0.02em;
-      display: inline-block;
       position: relative;
-      background: linear-gradient(135deg, #b88911 0%, #ffd95b 22%, #fff1a8 42%, #ffcf40 60%, #a46e00 100%);
-      background-size: 240% 240%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 18px rgba(255, 215, 90, 0.18);
-      animation: goldTextFlow 3.2s ease-in-out infinite;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 26px;
+      align-items: start;
     }
 
-    .success-story-title::after {
+    .reviews-intro {
+      position: sticky;
+      top: 110px;
+      padding-top: 38px;
+    }
+
+    .reviews-kicker {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(0,0,0,0.62);
+      margin-bottom: 16px;
+    }
+
+    .reviews-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(2.4rem, 4.2vw, 4.4rem);
+      line-height: 0.92;
+      letter-spacing: 0.01em;
+      color: #111;
+      margin-bottom: 14px;
+      text-transform: none;
+    }
+
+    .reviews-title .chip-line {
+      display: inline-block;
+      background: #f4b316;
+      color: #fff;
+      padding: 4px 12px 8px;
+      border: 2px solid #111;
+      border-radius: 8px;
+      box-shadow: 4px 4px 0 #111;
+      margin: 6px 0;
+      line-height: 0.95;
+    }
+
+    .reviews-copy {
+      max-width: 24ch;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(0,0,0,0.68);
+      margin-bottom: 18px;
+    }
+
+    .reviews-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: #ff99b4;
+      color: #111;
+      border: 2px solid #111;
+      font-size: 0.84rem;
+      font-weight: 700;
+      box-shadow: 3px 3px 0 #111;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px 22px;
+      align-items: start;
+      padding-top: 10px;
+    }
+
+    .review-card {
+      border: 1.8px solid #111;
+      box-shadow: 4px 4px 0 #111;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .review-card.tall {
+      transform: translateY(-10px);
+    }
+
+    .review-card.low {
+      transform: translateY(34px);
+    }
+
+    .review-card.mid {
+      transform: translateY(12px);
+    }
+
+    .review-top-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 0 12px;
+      background: #fff;
+      border: 1.8px solid #111;
+      border-radius: 7px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #111;
+      position: relative;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      margin-bottom: -14px;
+    }
+
+    .review-visual {
+      min-height: 230px;
+      padding: 26px 18px 16px;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .review-visual.yellow { background: #f4c20d; }
+    .review-visual.orange { background: #ff7d2a; }
+    .review-visual.pink { background: #ea7ca1; }
+
+    .review-avatar {
+      width: 152px;
+      height: 152px;
+      border-radius: 50%;
+      border: 3px solid #111;
+      background: rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 0 0 5px rgba(255,255,255,0.18);
+    }
+
+    .review-avatar::before {
       content: "";
       position: absolute;
-      inset: -12% -4%;
-      background: linear-gradient(120deg, transparent 18%, rgba(255, 215, 90, 0.10) 35%, rgba(255, 239, 168, 0.72) 50%, rgba(255, 215, 90, 0.10) 65%, transparent 82%);
-      transform: translateX(-140%);
-      animation: goldSweep 3.2s ease-in-out infinite;
-      pointer-events: none;
-      mix-blend-mode: screen;
+      inset: -11px;
+      border: 2px solid rgba(17,17,17,0.7);
+      border-radius: 52% 48% 53% 47% / 44% 52% 48% 56%;
+      transform: rotate(-7deg);
     }
 
-    @keyframes goldSweep {
-      0%, 18% { transform: translateX(-140%); opacity: 0; }
-      30% { opacity: 1; }
-      48% { transform: translateX(140%); opacity: 1; }
-      62%, 100% { transform: translateX(140%); opacity: 0; }
+    .review-avatar span {
+      font-family: 'Anton', sans-serif;
+      font-size: 3.25rem;
+      line-height: 1;
+      color: #111;
+      letter-spacing: 0.02em;
     }
 
-    @keyframes goldTextFlow {
-      0%, 18% { background-position: 0% 50%; }
-      48% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .review-name-badge {
+      position: absolute;
+      left: 50%;
+      bottom: 12px;
+      transform: translateX(-50%);
+      background: #ff8a3d;
+      color: #fff;
+      border: 1.8px solid #111;
+      border-radius: 999px;
+      padding: 6px 12px 7px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      white-space: nowrap;
+      box-shadow: 2px 2px 0 #111;
+    }
+
+    .review-content {
+      padding: 16px 16px 18px;
+      background: #fff;
+    }
+
+    .review-stars {
+      font-size: 0.94rem;
+      letter-spacing: 0.1em;
+      color: #f4b316;
+      margin-bottom: 10px;
+    }
+
+    .review-text {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: rgba(0,0,0,0.78);
+      margin-bottom: 12px;
+    }
+
+    .review-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.72rem;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(0,0,0,0.54);
+      border-top: 1px solid rgba(0,0,0,0.12);
+      padding-top: 10px;
     }
 
     .contact-section {
@@ -1111,6 +1413,15 @@
         max-height: 700px;
       }
 
+      .impact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .impact-card {
+        min-height: 200px;
+      }
+
       .about-editorial-box {
         min-height: 600px;
       }
@@ -1150,6 +1461,31 @@
         grid-column: 1 / -1;
         max-width: 560px;
         margin: 0 auto;
+      }
+
+      .reviews-shell {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .reviews-intro {
+        position: relative;
+        top: auto;
+        padding-top: 0;
+      }
+
+      .reviews-copy {
+        max-width: 52ch;
+      }
+
+      .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .review-card.tall,
+      .review-card.low,
+      .review-card.mid {
+        transform: translateY(0);
       }
     }
 
@@ -1279,6 +1615,32 @@
         max-height: 920px;
       }
 
+      .impact-strip {
+        padding: 48px 14px 46px;
+      }
+
+      .impact-title {
+        margin-bottom: 28px;
+      }
+
+      .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .impact-card {
+        min-height: auto;
+        padding: 10px 0;
+      }
+
+      .impact-label {
+        margin: 0 auto;
+      }
+
+      .impact-highlight {
+        margin: 8px 4px;
+      }
+
       .about-editorial {
         min-height: auto;
         padding: 56px 14px 70px;
@@ -1343,8 +1705,17 @@
         max-width: none;
       }
 
-      .success-story-strip {
-        padding: 48px 14px 56px;
+      .reviews-showcase {
+        padding: 46px 14px 58px;
+      }
+
+      .reviews-showcase::before {
+        background-size: 33.333% 100%;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
       }
     }
 
@@ -1477,6 +1848,18 @@
         max-height: 1100px;
       }
 
+      .impact-number {
+        font-size: clamp(2.8rem, 16vw, 4.2rem);
+      }
+
+      .impact-label {
+        font-size: 0.94rem;
+      }
+
+      .impact-highlight {
+        padding: 7px 14px 9px;
+      }
+
       .about-editorial {
         padding: 50px 14px 66px;
       }
@@ -1507,24 +1890,17 @@
         max-width: 18ch;
       }
 
-      .work-card {
-        padding: 22px 18px 20px;
+      .review-visual {
+        min-height: 210px;
       }
 
-      .work-card h3 {
-        font-size: 1.3rem;
+      .review-avatar {
+        width: 136px;
+        height: 136px;
       }
 
-      .work-card li {
-        font-size: 0.92rem;
-      }
-
-      .success-story-strip {
-        padding: 42px 14px 48px;
-      }
-
-      .success-story-title {
-        font-size: clamp(2.1rem, 12vw, 3.8rem);
+      .review-avatar span {
+        font-size: 2.8rem;
       }
     }
   </style>
@@ -1737,6 +2113,64 @@
       </div>
     </section>
 
+    <section class="impact-strip" id="impact">
+      <div class="impact-box">
+        <h2 class="impact-title">
+          Real numbers that show how
+          <span class="impact-highlight"><span>THE BOSS AGENCY CO</span></span>
+          support can improve visibility, speed, and business growth
+        </h2>
+
+        <div class="impact-grid">
+          <article class="impact-card">
+            <div class="impact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 17l6-6 4 4 7-8"></path>
+                <path d="M14 7h6v6"></path>
+              </svg>
+            </div>
+            <div class="impact-number" data-target="68" data-prefix="+" data-suffix="%">0</div>
+            <p class="impact-label">Stronger qualified visibility across web development, Google My Business, and social positioning</p>
+          </article>
+
+          <article class="impact-card">
+            <div class="impact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 8v5l3 3"></path>
+                <circle cx="12" cy="12" r="9"></circle>
+              </svg>
+            </div>
+            <div class="impact-number" data-target="32" data-suffix=" HRS">0</div>
+            <p class="impact-label">Saved each month through clearer systems, content support, and virtual assistant recruitment</p>
+          </article>
+
+          <article class="impact-card">
+            <div class="impact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20"></path>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14.5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="impact-number" data-target="41" data-prefix="+" data-suffix="%">0</div>
+            <p class="impact-label">Potential lift in conversion-ready traffic when branding, search, and content work together</p>
+          </article>
+
+          <article class="impact-card">
+            <div class="impact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9.5" cy="7" r="4"></circle>
+                <path d="M20 8v6"></path>
+                <path d="M23 11h-6"></path>
+              </svg>
+            </div>
+            <div class="impact-number" data-target="24" data-prefix="+" data-suffix="%">0</div>
+            <p class="impact-label">More execution capacity by hiring the right VA support through a faster recruitment process</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="about-editorial" id="about">
       <div class="about-editorial-box">
         <div class="about-copy">
@@ -1837,9 +2271,130 @@
       </div>
     </section>
 
-    <section class="success-story-strip">
-      <div class="success-story-box">
-        <h2 class="success-story-title">Be One Success Story</h2>
+    <section class="reviews-showcase" id="reviews">
+      <div class="reviews-shell">
+        <div class="reviews-intro">
+          <div class="reviews-kicker">Client feedback</div>
+          <h2 class="reviews-title">
+            Our 2025<br>
+            <span class="chip-line">Reviews</span>
+            <span class="chip-line">Lineup</span>
+          </h2>
+          <p class="reviews-copy">
+            Real feedback from clients who trusted Diane and The Boss Agency with websites, marketing, visibility, and business growth.
+          </p>
+          <div class="reviews-cta">Google Reviews</div>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card tall">
+            <div class="review-top-label">Website</div>
+            <div class="review-visual yellow">
+              <div class="review-avatar"><span>CS</span></div>
+              <div class="review-name-badge">Christi Slaven</div>
+            </div>
+            <div class="review-content">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                “I have been so impressed with Diane and her professionalism and attention to detail. She created such a dynamic website for me, and even my husband was blown away by it.”
+              </p>
+              <div class="review-meta">
+                <span>2 years ago</span>
+                <span>Attention to detail</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card low">
+            <div class="review-top-label">Social Media</div>
+            <div class="review-visual orange">
+              <div class="review-avatar"><span>PC</span></div>
+              <div class="review-name-badge">Parri Clayton</div>
+            </div>
+            <div class="review-content">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                “As soon as Diane took over, my followers quadrupled. I had more traffic, more interaction, and people constantly complimented the content.”
+              </p>
+              <div class="review-meta">
+                <span>4 years ago</span>
+                <span>Growth results</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card mid">
+            <div class="review-top-label">Marketing</div>
+            <div class="review-visual pink">
+              <div class="review-avatar"><span>DW</span></div>
+              <div class="review-name-badge">Debra Waldron</div>
+            </div>
+            <div class="review-content">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                “Diane is as kind as she is professional. Her free consult was so helpful and got us moving in the right direction immediately.”
+              </p>
+              <div class="review-meta">
+                <span>1 year ago</span>
+                <span>Professional & kind</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card low">
+            <div class="review-top-label">Business Setup</div>
+            <div class="review-visual yellow">
+              <div class="review-avatar"><span>AN</span></div>
+              <div class="review-name-badge">Ana</div>
+            </div>
+            <div class="review-content">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                “Diane is exceptional at teaching you how to manage and set up a business. Her knowledge is vast and I would definitely recommend her.”
+              </p>
+              <div class="review-meta">
+                <span>1 year ago</span>
+                <span>Insightful support</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card tall">
+            <div class="review-top-label">Online Presence</div>
+            <div class="review-visual pink">
+              <div class="review-avatar"><span>TH</span></div>
+              <div class="review-name-badge">Terryl Humphrey</div>
+            </div>
+            <div class="review-content">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                “The Boss Agency explained the steps to follow so I could build a strong online presence and market my podcast business the right way.”
+              </p>
+              <div class="review-meta">
+                <span>1 year ago</span>
+                <span>Clear guidance</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card mid">
+            <div class="review-top-label">Coaching</div>
+            <div class="review-visual orange">
+              <div class="review-avatar"><span>JF</span></div>
+              <div class="review-name-badge">Jessica</div>
+            </div>
+            <div class="review-content">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">
+                “Having Diane as a Life Coach was life changing. She helped me move through blockages and also assisted me with setting up my business.”
+              </p>
+              <div class="review-meta">
+                <span>5 years ago</span>
+                <span>Life changing</span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -1960,6 +2515,39 @@
     });
 
     renderService(currentService);
+
+    const impactNumbers = document.querySelectorAll('.impact-number');
+
+    const animateCounter = (el) => {
+      const target = Number(el.dataset.target || 0);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const startTime = performance.now();
+
+      function update(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.floor(target * eased);
+        el.textContent = `${prefix}${value}${suffix}`;
+        if (progress < 1) requestAnimationFrame(update);
+        else el.textContent = `${prefix}${target}${suffix}`;
+      }
+
+      el.classList.add('is-visible');
+      requestAnimationFrame(update);
+    };
+
+    const impactObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.45 });
+
+    impactNumbers.forEach(number => impactObserver.observe(number));
 
     const aboutToggle = document.getElementById('aboutToggle');
     const aboutPanel = document.getElementById('aboutPanel');
