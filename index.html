@@ -869,6 +869,46 @@
       animation: goldTextFlow 3.2s ease-in-out infinite;
     }
 
+    .impact-logos {
+      margin: 8px auto 34px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .impact-logos-track {
+      display: flex;
+      width: max-content;
+      align-items: center;
+      gap: 34px;
+      animation: logosSlide 28s linear infinite;
+      will-change: transform;
+    }
+
+    .impact-logos:hover .impact-logos-track {
+      animation-play-state: paused;
+    }
+
+    .impact-logo {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+    }
+
+    .impact-logo img {
+      display: block;
+      max-height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    @keyframes logosSlide {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-50% - 17px)); }
+    }
+
     @keyframes goldSweep {
       0%, 18% { transform: translateX(-140%); opacity: 0; }
       30% { opacity: 1; }
@@ -1754,6 +1794,18 @@
       .field-row {
         grid-template-columns: 1fr;
       }
+
+      .impact-logos-track {
+        gap: 24px;
+      }
+
+      .impact-logo {
+        height: 40px;
+      }
+
+      .impact-logo img {
+        max-height: 36px;
+      }
     }
 
     @media (max-width: 820px) {
@@ -1876,6 +1928,10 @@
 
       .impact-title {
         margin-bottom: 28px;
+      }
+
+      .impact-logos {
+        margin: 6px auto 26px;
       }
 
       .impact-grid {
@@ -2124,6 +2180,18 @@
 
       .impact-highlight {
         padding: 7px 14px 9px;
+      }
+
+      .impact-logos-track {
+        gap: 18px;
+      }
+
+      .impact-logo {
+        height: 34px;
+      }
+
+      .impact-logo img {
+        max-height: 30px;
       }
 
       .about-editorial {
@@ -2403,6 +2471,32 @@
           <span class="impact-highlight"><span>THE BOSS AGENCY CO</span></span>
           support can improve visibility, speed, and business growth
         </h2>
+
+        <div class="impact-logos" aria-label="Client logos marquee">
+          <div class="impact-logos-track">
+            <div class="impact-logo"><img src="assets/1.png" alt="Client logo 1" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/2.png" alt="Client logo 2" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/3.png" alt="Client logo 3" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/4.png" alt="Client logo 4" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/5.png" alt="Client logo 5" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/6.png" alt="Client logo 6" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/7.png" alt="Client logo 7" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/8.png" alt="Client logo 8" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/9.png" alt="Client logo 9" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/10.png" alt="Client logo 10" loading="lazy" width="240" height="80"></div>
+
+            <div class="impact-logo"><img src="assets/1.png" alt="Client logo 1 duplicate" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/2.png" alt="Client logo 2 duplicate" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/3.png" alt="Client logo 3 duplicate" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/4.png" alt="Client logo 4 duplicate" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/5.png" alt="Client logo 5 duplicate" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/6.png" alt="Client logo 6 duplicate" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/7.png" alt="Client logo 7 duplicate" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/8.png" alt="Client logo 8 duplicate" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/9.png" alt="Client logo 9 duplicate" loading="lazy" width="240" height="80"></div>
+            <div class="impact-logo"><img src="assets/10.png" alt="Client logo 10 duplicate" loading="lazy" width="240" height="80"></div>
+          </div>
+        </div>
 
         <div class="impact-grid">
           <article class="impact-card">
