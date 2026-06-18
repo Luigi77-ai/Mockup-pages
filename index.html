@@ -829,11 +829,13 @@
     }
 
     .impact-logos {
-      margin: 8px auto 34px;
-      width: 100%;
+      margin: 8px 0 34px;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
       overflow: hidden;
       position: relative;
-      height: 56px;
+      height: 96px;
       display: flex;
       align-items: center;
     }
@@ -841,8 +843,11 @@
     .impact-logos-track {
       display: flex;
       width: max-content;
+      min-width: 100%;
       align-items: center;
-      gap: 42px;
+      justify-content: space-between;
+      gap: 72px;
+      padding: 0 34px;
       animation: logosSlide 22s linear infinite;
       will-change: transform;
     }
@@ -856,12 +861,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 56px;
+      height: 96px;
     }
 
     .impact-logo img {
       display: block;
-      max-height: 52px;
+      max-height: 82px;
       width: auto;
       object-fit: contain;
     }
@@ -2182,6 +2187,23 @@
         margin-bottom: 28px;
       }
 
+      .impact-logos {
+        height: 78px;
+      }
+
+      .impact-logos-track {
+        gap: 44px;
+        padding: 0 18px;
+      }
+
+      .impact-logo {
+        height: 78px;
+      }
+
+      .impact-logo img {
+        max-height: 58px;
+      }
+
       .impact-grid {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -2449,6 +2471,23 @@
 
       .about-panel.open {
         max-height: 1100px;
+      }
+
+      .impact-logos {
+        height: 70px;
+      }
+
+      .impact-logos-track {
+        gap: 30px;
+        padding: 0 14px;
+      }
+
+      .impact-logo {
+        height: 70px;
+      }
+
+      .impact-logo img {
+        max-height: 50px;
       }
 
       .impact-number {
@@ -2759,29 +2798,21 @@
           support can improve visibility, speed, and business growth
         </h2>
 
-        <div class="impact-logos" aria-label="Partner and platform logos">
+        <div class="impact-logos" aria-label="Client and platform logos">
           <div class="impact-logos-track">
-            <div class="impact-logo"><img src="assets/1.png" alt="Logo 1" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/2.png" alt="Logo 2" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/3.png" alt="Logo 3" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/4.png" alt="Logo 4" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/5.png" alt="Logo 5" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/6.png" alt="Logo 6" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/7.png" alt="Logo 7" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/8.png" alt="Logo 8" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/9.png" alt="Logo 9" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/10.png" alt="Logo 10" loading="lazy" width="180" height="60"></div>
+            <div class="impact-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook logo" loading="lazy" width="120" height="120"></div>
+            <div class="impact-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo" loading="lazy" width="120" height="120"></div>
+            <div class="impact-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/X_logo_2023_%28white%29.png" alt="X logo" loading="lazy" width="120" height="120"></div>
+            <div class="impact-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn logo" loading="lazy" width="120" height="120"></div>
+            <div class="impact-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Netflix_icon.svg" alt="Netflix logo" loading="lazy" width="120" height="120"></div>
+            <div class="impact-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google logo" loading="lazy" width="180" height="120"></div>
 
-            <div class="impact-logo"><img src="assets/1.png" alt="Logo 1" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/2.png" alt="Logo 2" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/3.png" alt="Logo 3" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/4.png" alt="Logo 4" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/5.png" alt="Logo 5" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/6.png" alt="Logo 6" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/7.png" alt="Logo 7" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/8.png" alt="Logo 8" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/9.png" alt="Logo 9" loading="lazy" width="180" height="60"></div>
-            <div class="impact-logo"><img src="assets/10.png" alt="Logo 10" loading="lazy" width="180" height="60"></div>
+            <div class="impact-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook logo" loading="lazy" width="120" height="120"></div>
+            <div class="impact-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo" loading="lazy" width="120" height="120"></div>
+            <div class="impact-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/X_logo_2023_%28white%29.png" alt="X logo" loading="lazy" width="120" height="120"></div>
+            <div class="impact-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn logo" loading="lazy" width="120" height="120"></div>
+            <div class="impact-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Netflix_icon.svg" alt="Netflix logo" loading="lazy" width="120" height="120"></div>
+            <div class="impact-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google logo" loading="lazy" width="180" height="120"></div>
           </div>
         </div>
 
@@ -2889,10 +2920,10 @@
             <div class="work-divider"></div>
             <div class="benefit-title">Benefits</div>
             <ul>
-              <li>Aligned messaging across platforms</li>
-              <li>Content with stronger purpose</li>
-              <li>Greater brand consistency</li>
-              <li>Smarter long term audience growth</li>
+              <li>Stronger content direction</li>
+              <li>Aligned messaging</li>
+              <li>Audience-focused planning</li>
+              <li>Smarter brand consistency</li>
             </ul>
           </article>
 
@@ -2901,10 +2932,10 @@
             <div class="work-divider"></div>
             <div class="benefit-title">Benefits</div>
             <ul>
-              <li>Improved local search presence</li>
-              <li>Higher trust with nearby customers</li>
-              <li>Better discovery on Google Maps</li>
-              <li>Stronger credibility in your market</li>
+              <li>Better local discoverability</li>
+              <li>Improved business credibility</li>
+              <li>Stronger map visibility</li>
+              <li>More customer actions</li>
             </ul>
           </article>
 
@@ -2913,10 +2944,10 @@
             <div class="work-divider"></div>
             <div class="benefit-title">Benefits</div>
             <ul>
-              <li>More time for high value work</li>
-              <li>Reliable operational support</li>
-              <li>Streamlined hiring process</li>
-              <li>Scalable support for growing teams</li>
+              <li>More team capacity</li>
+              <li>Less admin pressure</li>
+              <li>Better workflow support</li>
+              <li>Time saved for higher-value tasks</li>
             </ul>
           </article>
 
@@ -2925,81 +2956,76 @@
             <div class="work-divider"></div>
             <div class="benefit-title">Benefits</div>
             <ul>
-              <li>Consistent content execution</li>
-              <li>Stronger day to day brand presence</li>
-              <li>Professional posting rhythm</li>
-              <li>More time back for your business</li>
+              <li>Consistent posting rhythm</li>
+              <li>Professional account upkeep</li>
+              <li>More polished brand presence</li>
+              <li>Ongoing visibility support</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="success-story-band" aria-label="Success story heading">
-      <div class="success-story-band-text">Success Story</div>
+    <section class="success-story-band">
+      <div class="success-story-band-text">Success Story Success Story Success Story</div>
     </section>
 
     <section class="reviews-showcase" id="reviews">
       <div class="reviews-shell">
         <div class="reviews-intro">
-          <div class="reviews-kicker">Client feedback</div>
-          <h2 class="reviews-title">
-            What they say
-            <span class="chip-line">about us</span>
-          </h2>
-          <p class="reviews-copy">
-            Real experiences from brands and organizations we have supported with strategy, digital presence, and growth systems.
-          </p>
-          <a href="#contact" class="reviews-cta">Work with us</a>
+          <div class="reviews-kicker">Reviews</div>
+          <h2 class="reviews-title">What clients <span class="chip-line">say</span></h2>
+          <p class="reviews-copy">A few words from people and teams we’ve supported through strategy, visibility, and digital growth.</p>
+          <button class="reviews-cta">Client feedback</button>
         </div>
 
         <div class="reviews-marquee">
           <div class="reviews-marquee-track">
             <div class="reviews-group">
               <article class="review-card tall">
-                <div class="review-top-label">Growth</div>
+                <div class="review-top-label">5 stars</div>
                 <div class="review-visual yellow">
                   <div class="review-avatar"><span>A</span></div>
-                  <div class="review-name-badge">Client Review</div>
+                  <div class="review-name-badge">Andrea M.</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The strategy felt clear from the beginning and helped us present our work in a more professional and confident way online.</p>
+                  <p>The strategy helped us organize our message and look far more professional online. We finally had clarity and momentum.</p>
                   <div class="review-meta">
-                    <strong>Brand visibility</strong>
+                    <strong>Brand Growth</strong>
                     <span>Web + Strategy</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card low">
-                <div class="review-top-label">Support</div>
+                <div class="review-top-label">5 stars</div>
                 <div class="review-visual orange">
-                  <div class="review-avatar"><span>B</span></div>
-                  <div class="review-name-badge">Client Review</div>
+                  <div class="review-avatar"><span>D</span></div>
+                  <div class="review-name-badge">Daniel R.</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>We gained structure, better content direction, and a much stronger sense of consistency across everything we were putting out.</p>
+                  <p>Our Google presence improved quickly and clients started finding us more easily. The process felt simple and well guided.</p>
                   <div class="review-meta">
-                    <strong>Content systems</strong>
-                    <span>Management</span>
+                    <strong>Local Visibility</strong>
+                    <span>GMB Support</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card mid">
-                <div class="review-top-label">Results</div>
+                <div class="review-top-label">5 stars</div>
                 <div class="review-visual pink">
-                  <div class="review-avatar"><span>C</span></div>
-                  <div class="review-name-badge">Client Review</div>
+                  <div class="review-avatar"><span>S</span></div>
+                  <div class="review-name-badge">Sofia L.</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The process was thoughtful, organized, and focused on what would actually move the business forward instead of just looking good.</p>
+                  <p>The VA hiring support saved us so much time. We found someone aligned with our workflow much faster than expected.</p>
                   <div class="review-meta">
-                    <strong>Business growth</strong>
-                    <span>Strategy</span>
+                    <strong>Operations</strong>
+                    <span>Recruitment</span>
                   </div>
                 </div>
               </article>
@@ -3007,49 +3033,49 @@
 
             <div class="reviews-group">
               <article class="review-card tall">
-                <div class="review-top-label">Growth</div>
+                <div class="review-top-label">5 stars</div>
                 <div class="review-visual yellow">
-                  <div class="review-avatar"><span>A</span></div>
-                  <div class="review-name-badge">Client Review</div>
+                  <div class="review-avatar"><span>M</span></div>
+                  <div class="review-name-badge">Maria C.</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The strategy felt clear from the beginning and helped us present our work in a more professional and confident way online.</p>
+                  <p>Our website finally reflects the quality of what we do. It feels cleaner, stronger, and much easier for people to navigate.</p>
                   <div class="review-meta">
-                    <strong>Brand visibility</strong>
-                    <span>Web + Strategy</span>
+                    <strong>Website</strong>
+                    <span>Development</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card low">
-                <div class="review-top-label">Support</div>
+                <div class="review-top-label">5 stars</div>
                 <div class="review-visual orange">
-                  <div class="review-avatar"><span>B</span></div>
-                  <div class="review-name-badge">Client Review</div>
+                  <div class="review-avatar"><span>J</span></div>
+                  <div class="review-name-badge">Jason T.</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>We gained structure, better content direction, and a much stronger sense of consistency across everything we were putting out.</p>
+                  <p>They brought consistency to our social channels and helped us communicate with more purpose. The difference was noticeable.</p>
                   <div class="review-meta">
-                    <strong>Content systems</strong>
+                    <strong>Social Media</strong>
                     <span>Management</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card mid">
-                <div class="review-top-label">Results</div>
+                <div class="review-top-label">5 stars</div>
                 <div class="review-visual pink">
-                  <div class="review-avatar"><span>C</span></div>
-                  <div class="review-name-badge">Client Review</div>
+                  <div class="review-avatar"><span>N</span></div>
+                  <div class="review-name-badge">Nadia P.</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The process was thoughtful, organized, and focused on what would actually move the business forward instead of just looking good.</p>
+                  <p>Very thoughtful, strategic, and easy to work with. Everything felt tailored to our goals instead of being a generic solution.</p>
                   <div class="review-meta">
-                    <strong>Business growth</strong>
-                    <span>Strategy</span>
+                    <strong>Strategy</strong>
+                    <span>Consulting</span>
                   </div>
                 </div>
               </article>
@@ -3062,23 +3088,39 @@
     <section class="projects-showcase" id="projects">
       <div class="projects-showcase-shell">
         <div class="projects-showcase-head">
-          <div class="projects-showcase-kicker">Past work</div>
-          <h2 class="projects-showcase-title">A look at creative projects and digital builds</h2>
+          <div class="projects-showcase-kicker">Past Work</div>
+          <h2 class="projects-showcase-title">Selected projects and creative direction</h2>
         </div>
 
         <div class="projects-stage">
           <div class="projects-preview" id="projectsPreview">
             <div class="projects-preview-frame">
               <div class="projects-card-stack">
-                <div class="stack-card s1"><img src="assets/project-1.jpg" alt="Project preview 1" loading="lazy" width="800" height="1200"></div>
-                <div class="stack-card s2"><img src="assets/project-2.jpg" alt="Project preview 2" loading="lazy" width="800" height="1200"></div>
-                <div class="stack-card s3"><img src="assets/project-3.jpg" alt="Project preview 3" loading="lazy" width="800" height="1200"></div>
-                <div class="stack-card s4"><img src="assets/project-4.jpg" alt="Project preview 4" loading="lazy" width="800" height="1200"></div>
-                <div class="stack-card s5"><img src="assets/project-5.jpg" alt="Project preview 5" loading="lazy" width="800" height="1200"></div>
+                <div class="stack-card s1">
+                  <img src="https://picsum.photos/seed/fanleft1/900/1400" alt="Project preview 1" loading="lazy" width="900" height="1400">
+                </div>
+
+                <div class="stack-card s2">
+                  <img src="https://picsum.photos/seed/fanleft2/900/1400" alt="Project preview 2" loading="lazy" width="900" height="1400">
+                </div>
+
+                <div class="stack-card s3">
+                  <video autoplay muted loop playsinline>
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                  </video>
+                </div>
+
+                <div class="stack-card s4">
+                  <img src="https://picsum.photos/seed/fanright1/900/1400" alt="Project preview 4" loading="lazy" width="900" height="1400">
+                </div>
+
+                <div class="stack-card s5">
+                  <img src="https://picsum.photos/seed/fanright2/900/1400" alt="Project preview 5" loading="lazy" width="900" height="1400">
+                </div>
               </div>
 
               <div class="stack-caption">
-                <button class="stack-open" id="openProjectsGallery" type="button">Open gallery</button>
+                <button class="stack-open" id="openProjectsGallery">View Project</button>
               </div>
             </div>
           </div>
@@ -3086,71 +3128,77 @@
           <div class="projects-gallery" id="projectsGallery">
             <button class="project-thumb active" type="button">
               <div class="project-thumb-media">
-                <img src="assets/project-1.jpg" alt="Project item 1" loading="lazy" width="800" height="1200">
-                <span class="project-thumb-type">Brand</span>
+                <img src="https://picsum.photos/seed/gallery1/900/1200" alt="Gallery image 1" loading="lazy" width="900" height="1200">
+                <span class="project-thumb-type">Photo</span>
               </div>
             </button>
 
             <button class="project-thumb" type="button">
               <div class="project-thumb-media">
-                <img src="assets/project-2.jpg" alt="Project item 2" loading="lazy" width="800" height="1200">
-                <span class="project-thumb-type">Web</span>
+                <video autoplay muted loop playsinline>
+                  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                </video>
+                <span class="project-thumb-type">Video</span>
               </div>
             </button>
 
             <button class="project-thumb" type="button">
               <div class="project-thumb-media">
-                <img src="assets/project-3.jpg" alt="Project item 3" loading="lazy" width="800" height="1200">
-                <span class="project-thumb-type">Strategy</span>
+                <img src="https://picsum.photos/seed/gallery3/900/1400" alt="Gallery image 3" loading="lazy" width="900" height="1400">
+                <span class="project-thumb-type">Photo</span>
               </div>
             </button>
 
             <button class="project-thumb" type="button">
               <div class="project-thumb-media">
-                <img src="assets/project-4.jpg" alt="Project item 4" loading="lazy" width="800" height="1200">
-                <span class="project-thumb-type">Social</span>
+                <img src="https://picsum.photos/seed/gallery4/900/1100" alt="Gallery image 4" loading="lazy" width="900" height="1100">
+                <span class="project-thumb-type">Photo</span>
               </div>
             </button>
 
             <button class="project-thumb" type="button">
               <div class="project-thumb-media">
-                <img src="assets/project-5.jpg" alt="Project item 5" loading="lazy" width="800" height="1200">
-                <span class="project-thumb-type">Design</span>
+                <video autoplay muted loop playsinline>
+                  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                </video>
+                <span class="project-thumb-type">Video</span>
               </div>
             </button>
 
             <button class="project-thumb" type="button">
               <div class="project-thumb-media">
-                <img src="assets/project-6.jpg" alt="Project item 6" loading="lazy" width="800" height="1200">
-                <span class="project-thumb-type">Media</span>
+                <img src="https://picsum.photos/seed/gallery6/900/1000" alt="Gallery image 6" loading="lazy" width="900" height="1000">
+                <span class="project-thumb-type">Photo</span>
               </div>
             </button>
 
             <button class="project-thumb" type="button">
               <div class="project-thumb-media">
-                <img src="assets/project-7.jpg" alt="Project item 7" loading="lazy" width="800" height="1200">
-                <span class="project-thumb-type">Campaign</span>
+                <img src="https://picsum.photos/seed/gallery7/900/1300" alt="Gallery image 7" loading="lazy" width="900" height="1300">
+                <span class="project-thumb-type">Photo</span>
               </div>
             </button>
 
             <button class="project-thumb" type="button">
               <div class="project-thumb-media">
-                <img src="assets/project-8.jpg" alt="Project item 8" loading="lazy" width="800" height="1200">
-                <span class="project-thumb-type">Visual</span>
+                <video autoplay muted loop playsinline>
+                  <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                </video>
+                <span class="project-thumb-type">Video</span>
               </div>
             </button>
 
             <button class="project-thumb" type="button">
               <div class="project-thumb-media">
-                <img src="assets/project-9.jpg" alt="Project item 9" loading="lazy" width="800" height="1200">
-                <span class="project-thumb-type">Launch</span>
+                <img src="https://picsum.photos/seed/gallery9/900/1000" alt="Gallery image 9" loading="lazy" width="900" height="1000">
+                <span class="project-thumb-type">Photo</span>
               </div>
             </button>
 
             <button class="project-thumb" type="button">
               <div class="project-thumb-media">
-                <img src="assets/project-10.jpg" alt="Project item 10" loading="lazy" width="800" height="1200">
-                <span class="project-thumb-type">Growth</span>
+                <img src="https://picsum.photos/seed/gallery10/900/1300" alt="Gallery image 10" loading="lazy" width="900" height="1300">
+                <span class="project-thumb-type">Photo</span>
               </div>
             </button>
 
