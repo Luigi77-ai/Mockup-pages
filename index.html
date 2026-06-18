@@ -1210,15 +1210,40 @@
       box-shadow: 3px 3px 0 #111;
     }
 
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px 22px;
-      align-items: start;
+    .reviews-marquee {
+      overflow: hidden;
+      width: 100%;
       padding-top: 10px;
+      position: relative;
+    }
+
+    .reviews-marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 22px;
+      animation: reviewsSlide 34s linear infinite;
+      will-change: transform;
+    }
+
+    .reviews-marquee:hover .reviews-marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes reviewsSlide {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-50% - 11px)); }
+    }
+
+    .reviews-group {
+      display: flex;
+      gap: 22px;
+      flex-shrink: 0;
+      align-items: flex-start;
     }
 
     .review-card {
+      width: 290px;
+      flex: 0 0 290px;
       border: 1.8px solid #111;
       box-shadow: 4px 4px 0 #111;
       background: #fff;
@@ -1478,14 +1503,22 @@
         max-width: 52ch;
       }
 
-      .reviews-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .reviews-marquee-track {
+        gap: 18px;
       }
 
-      .review-card.tall,
-      .review-card.low,
-      .review-card.mid {
-        transform: translateY(0);
+      .reviews-group {
+        gap: 18px;
+      }
+
+      .review-card {
+        width: 270px;
+        flex-basis: 270px;
+      }
+
+      @keyframes reviewsSlide {
+        from { transform: translateX(0); }
+        to { transform: translateX(calc(-50% - 9px)); }
       }
     }
 
@@ -1689,16 +1722,44 @@
       }
 
       .reviews-showcase {
-        padding: 48px 14px 56px;
+        padding: 52px 14px 62px;
       }
 
-      .reviews-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
+      .review-card {
+        width: 248px;
+        flex-basis: 248px;
+      }
+
+      .review-card.tall,
+      .review-card.low,
+      .review-card.mid {
+        transform: translateY(0);
       }
 
       .review-visual {
-        min-height: 220px;
+        min-height: 212px;
+      }
+
+      .review-avatar {
+        width: 138px;
+        height: 138px;
+      }
+
+      .review-avatar span {
+        font-size: 2.95rem;
+      }
+
+      .reviews-marquee-track {
+        gap: 16px;
+      }
+
+      .reviews-group {
+        gap: 16px;
+      }
+
+      @keyframes reviewsSlide {
+        from { transform: translateX(0); }
+        to { transform: translateX(calc(-50% - 8px)); }
       }
     }
 
@@ -1873,17 +1934,39 @@
         max-width: 18ch;
       }
 
-      .reviews-title {
-        font-size: clamp(2rem, 12vw, 3.2rem);
+      .review-card {
+        width: 224px;
+        flex-basis: 224px;
+      }
+
+      .review-visual {
+        min-height: 198px;
       }
 
       .review-avatar {
-        width: 132px;
-        height: 132px;
+        width: 126px;
+        height: 126px;
       }
 
       .review-avatar span {
-        font-size: 2.8rem;
+        font-size: 2.65rem;
+      }
+
+      .review-content {
+        padding: 14px 14px 16px;
+      }
+
+      .reviews-marquee-track {
+        gap: 14px;
+      }
+
+      .reviews-group {
+        gap: 14px;
+      }
+
+      @keyframes reviewsSlide {
+        from { transform: translateX(0); }
+        to { transform: translateX(calc(-50% - 7px)); }
       }
     }
   </style>
@@ -2258,72 +2341,240 @@
     <section class="reviews-showcase" id="reviews">
       <div class="reviews-shell">
         <div class="reviews-intro">
-          <div class="reviews-kicker">Google Reviews</div>
+          <div class="reviews-kicker">Reviews</div>
           <h2 class="reviews-title">
-            Real words. <br>
-            <span class="chip-line">Real trust.</span>
+            Why clients<br>
+            <span class="chip-line">love working</span><br>
+            with us!
           </h2>
           <p class="reviews-copy">
-            Honest feedback from people who experienced the work, the strategy, and the support behind The Boss Agency Co.
+            Real feedback from people who trusted us with strategy, execution, and growth.
           </p>
-          <a
-            class="reviews-cta"
-            href="https://www.google.com/search?sca_esv=25926d3c99fa4024&sxsrf=ANbL-n4yz5Nj8T8aVeVCeWDF4pSjZTkQfg:1781804078678&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOSFY7DBMVWCqoKTZrhlonNRpX4TcXN0HKigmZpuoQztzJSIYlyClNtzFZ1fhlC9xNdJkBi647uVNLuPlrUgL3orSFhpCcYrbAr3jk-8p-gt4vf6qTg%3D%3D&q=The+Boss+Agency+Co+Opiniones&sa=X&ved=2ahUKEwjtzay5qZGVAxUaRDABHc_oAK8Q0bkNegQILBAF&biw=1536&bih=776&dpr=1.25"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Google Reviews
-          </a>
+          <a href="#contact" class="reviews-cta">Work with us</a>
         </div>
 
-        <div class="reviews-grid">
-          <article class="review-card tall">
-            <div class="review-top-label">Client Review</div>
-            <div class="review-visual yellow">
-              <div class="review-avatar"><span>A</span></div>
-              <div class="review-name-badge">5-Star Feedback</div>
-            </div>
-            <div class="review-content">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">Professional, creative, and clear from start to finish. The support felt intentional and the final work matched the vision perfectly.</p>
-              <div class="review-meta">
-                <span>Google Review</span>
-                <span>Verified</span>
-              </div>
-            </div>
-          </article>
+        <div class="reviews-marquee">
+          <div class="reviews-marquee-track">
+            <div class="reviews-group">
+              <article class="review-card tall">
+                <div class="review-top-label">Community impact</div>
+                <div class="review-visual yellow">
+                  <div class="review-avatar"><span>A</span></div>
+                  <div class="review-name-badge">Amanda R.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">
+                    Their support helped us communicate more clearly and show up with more confidence online.
+                  </p>
+                  <div class="review-meta">
+                    <span>Brand clarity</span>
+                    <span>Non-profit</span>
+                  </div>
+                </div>
+              </article>
 
-          <article class="review-card mid">
-            <div class="review-top-label">Client Review</div>
-            <div class="review-visual orange">
-              <div class="review-avatar"><span>M</span></div>
-              <div class="review-name-badge">Trusted Support</div>
-            </div>
-            <div class="review-content">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">They helped bring structure, confidence, and a stronger digital presence. Communication was smooth and everything felt aligned.</p>
-              <div class="review-meta">
-                <span>Google Review</span>
-                <span>Verified</span>
-              </div>
-            </div>
-          </article>
+              <article class="review-card low">
+                <div class="review-top-label">Stronger presence</div>
+                <div class="review-visual orange">
+                  <div class="review-avatar"><span>M</span></div>
+                  <div class="review-name-badge">Marcus T.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">
+                    The website and content direction made our business look more established almost immediately.
+                  </p>
+                  <div class="review-meta">
+                    <span>Web + strategy</span>
+                    <span>Small business</span>
+                  </div>
+                </div>
+              </article>
 
-          <article class="review-card low">
-            <div class="review-top-label">Client Review</div>
-            <div class="review-visual pink">
-              <div class="review-avatar"><span>S</span></div>
-              <div class="review-name-badge">Brand Growth</div>
+              <article class="review-card mid">
+                <div class="review-top-label">Local growth</div>
+                <div class="review-visual pink">
+                  <div class="review-avatar"><span>S</span></div>
+                  <div class="review-name-badge">Sofia L.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">
+                    We saw a much clearer local presence after improving our Google business profile and messaging.
+                  </p>
+                  <div class="review-meta">
+                    <span>GMB support</span>
+                    <span>Local brand</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card tall">
+                <div class="review-top-label">Team support</div>
+                <div class="review-visual yellow">
+                  <div class="review-avatar"><span>D</span></div>
+                  <div class="review-name-badge">Daniel C.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">
+                    Finding the right VA support gave us room to focus on higher-value work without losing momentum.
+                  </p>
+                  <div class="review-meta">
+                    <span>Recruitment</span>
+                    <span>Operations</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card low">
+                <div class="review-top-label">Consistency</div>
+                <div class="review-visual orange">
+                  <div class="review-avatar"><span>E</span></div>
+                  <div class="review-name-badge">Elena P.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">
+                    Our social channels finally felt aligned, active, and professionally managed week after week.
+                  </p>
+                  <div class="review-meta">
+                    <span>Management</span>
+                    <span>Content</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card mid">
+                <div class="review-top-label">Clear strategy</div>
+                <div class="review-visual pink">
+                  <div class="review-avatar"><span>J</span></div>
+                  <div class="review-name-badge">Julia N.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">
+                    They brought structure to our ideas and turned scattered efforts into a much clearer growth plan.
+                  </p>
+                  <div class="review-meta">
+                    <span>Strategy</span>
+                    <span>Growth</span>
+                  </div>
+                </div>
+              </article>
             </div>
-            <div class="review-content">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">The process felt strategic and supportive the whole way through. You can tell the agency really cares about quality and long-term results.</p>
-              <div class="review-meta">
-                <span>Google Review</span>
-                <span>Verified</span>
-              </div>
+
+            <div class="reviews-group" aria-hidden="true">
+              <article class="review-card tall">
+                <div class="review-top-label">Community impact</div>
+                <div class="review-visual yellow">
+                  <div class="review-avatar"><span>A</span></div>
+                  <div class="review-name-badge">Amanda R.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">
+                    Their support helped us communicate more clearly and show up with more confidence online.
+                  </p>
+                  <div class="review-meta">
+                    <span>Brand clarity</span>
+                    <span>Non-profit</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card low">
+                <div class="review-top-label">Stronger presence</div>
+                <div class="review-visual orange">
+                  <div class="review-avatar"><span>M</span></div>
+                  <div class="review-name-badge">Marcus T.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">
+                    The website and content direction made our business look more established almost immediately.
+                  </p>
+                  <div class="review-meta">
+                    <span>Web + strategy</span>
+                    <span>Small business</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card mid">
+                <div class="review-top-label">Local growth</div>
+                <div class="review-visual pink">
+                  <div class="review-avatar"><span>S</span></div>
+                  <div class="review-name-badge">Sofia L.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">
+                    We saw a much clearer local presence after improving our Google business profile and messaging.
+                  </p>
+                  <div class="review-meta">
+                    <span>GMB support</span>
+                    <span>Local brand</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card tall">
+                <div class="review-top-label">Team support</div>
+                <div class="review-visual yellow">
+                  <div class="review-avatar"><span>D</span></div>
+                  <div class="review-name-badge">Daniel C.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">
+                    Finding the right VA support gave us room to focus on higher-value work without losing momentum.
+                  </p>
+                  <div class="review-meta">
+                    <span>Recruitment</span>
+                    <span>Operations</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card low">
+                <div class="review-top-label">Consistency</div>
+                <div class="review-visual orange">
+                  <div class="review-avatar"><span>E</span></div>
+                  <div class="review-name-badge">Elena P.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">
+                    Our social channels finally felt aligned, active, and professionally managed week after week.
+                  </p>
+                  <div class="review-meta">
+                    <span>Management</span>
+                    <span>Content</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card mid">
+                <div class="review-top-label">Clear strategy</div>
+                <div class="review-visual pink">
+                  <div class="review-avatar"><span>J</span></div>
+                  <div class="review-name-badge">Julia N.</div>
+                </div>
+                <div class="review-content">
+                  <div class="review-stars">★★★★★</div>
+                  <p class="review-text">
+                    They brought structure to our ideas and turned scattered efforts into a much clearer growth plan.
+                  </p>
+                  <div class="review-meta">
+                    <span>Strategy</span>
+                    <span>Growth</span>
+                  </div>
+                </div>
+              </article>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
