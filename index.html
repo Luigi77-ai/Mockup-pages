@@ -1461,16 +1461,16 @@
       margin-right: calc(50% - 50vw);
       background: #000;
       color: #fff;
-      padding: 72px 24px 82px;
+      padding: 56px 24px 56px;
       position: relative;
       overflow: hidden;
     }
 
     .projects-showcase-shell {
-      max-width: 1240px;
+      max-width: 1380px;
       margin: 0 auto;
       display: grid;
-      gap: 34px;
+      gap: 22px;
     }
 
     .projects-showcase-head {
@@ -1488,24 +1488,21 @@
 
     .projects-showcase-title {
       font-family: 'Anton', sans-serif;
-      font-size: clamp(2.2rem, 4.8vw, 4.8rem);
-      line-height: 0.94;
+      font-size: clamp(1.7rem, 3.1vw, 3.25rem);
+      line-height: 1;
       text-transform: uppercase;
       color: #fff;
-      max-width: 11ch;
-      margin: 0 auto 12px;
+      white-space: nowrap;
+      margin: 0 auto;
+      max-width: none;
     }
 
     .projects-showcase-copy {
-      max-width: 52ch;
-      margin: 0 auto;
-      color: rgba(255,255,255,0.74);
-      font-size: 0.98rem;
-      line-height: 1.7;
+      display: none;
     }
 
     .projects-stage {
-      min-height: 840px;
+      min-height: 520px;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -1519,7 +1516,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      min-height: 560px;
+      min-height: 420px;
       transition: opacity 0.35s ease, transform 0.35s ease;
     }
 
@@ -1534,53 +1531,40 @@
 
     .projects-preview-frame {
       position: relative;
-      width: min(100%, 760px);
-      min-height: 540px;
+      width: min(100%, 1220px);
+      min-height: 400px;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0 22px;
     }
 
-    .projects-doodle-left {
-      position: absolute;
-      left: 10px;
-      top: 82px;
-      width: 62px;
-      height: 112px;
-      color: #fff;
-      opacity: 0.95;
-      z-index: 1;
-    }
-
-    .projects-doodle-right {
-      position: absolute;
-      right: 26px;
-      bottom: 68px;
-      width: 138px;
-      height: 168px;
-      background: #e8ff9f;
-      border-radius: 46% 54% 41% 59% / 52% 40% 60% 48%;
-      transform: rotate(20deg);
-      z-index: 1;
+    .projects-doodle-left,
+    .projects-doodle-right,
+    .stack-brand,
+    .stack-title,
+    .stack-floating-badge {
+      display: none;
     }
 
     .projects-card-stack {
       position: relative;
       width: 100%;
-      height: 520px;
+      height: 390px;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 2;
+      background: transparent;
     }
 
     .stack-card {
       position: absolute;
-      width: 180px;
-      height: 314px;
-      border-radius: 18px;
+      width: 230px;
+      height: 360px;
+      border-radius: 20px;
       overflow: hidden;
-      border: 3px solid rgba(255,255,255,0.82);
+      border: 3px solid rgba(255,255,255,0.88);
       background: #171717;
       box-shadow: 0 24px 38px rgba(0,0,0,0.34);
     }
@@ -1593,119 +1577,56 @@
       display: block;
     }
 
-    .stack-card.s1 {
-      transform: translateX(-122px) rotate(-12deg);
-      z-index: 2;
-    }
-
-    .stack-card.s2 {
-      transform: translateX(-72px) rotate(-7deg);
-      z-index: 3;
-    }
-
-    .stack-card.s3 {
-      width: 214px;
-      height: 372px;
-      transform: translateX(0) rotate(0deg);
-      z-index: 5;
-    }
-
-    .stack-card.s4 {
-      transform: translateX(86px) rotate(8deg);
-      z-index: 3;
-    }
-
-    .stack-card.s5 {
-      transform: translateX(144px) rotate(13deg);
-      z-index: 2;
-    }
-
-    .stack-floating-badge {
-      position: absolute;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 9px 14px;
-      border-radius: 12px;
-      background: #fff;
-      color: #111;
-      font-size: 0.78rem;
-      font-weight: 700;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.24);
-      z-index: 6;
-    }
-
-    .stack-floating-badge.views {
-      right: 108px;
-      top: 106px;
-      gap: 6px;
-    }
-
-    .stack-floating-badge.sticker {
-      left: 196px;
-      bottom: 126px;
-      background: transparent;
-      box-shadow: none;
-      padding: 0;
-      font-size: 3rem;
-      transform: rotate(-16deg);
-    }
+    .stack-card.s1 { transform: translateX(-290px) rotate(-18deg); z-index: 1; }
+    .stack-card.s2 { transform: translateX(-175px) rotate(-10deg); z-index: 2; }
+    .stack-card.s3 { width: 280px; height: 414px; transform: translateX(-18px) rotate(-1deg); z-index: 5; }
+    .stack-card.s4 { transform: translateX(160px) rotate(10deg); z-index: 3; }
+    .stack-card.s5 { transform: translateX(300px) rotate(18deg); z-index: 2; }
 
     .stack-caption {
-      margin-top: 8px;
-      text-align: center;
-      position: relative;
-      z-index: 3;
-    }
-
-    .stack-brand {
-      display: inline-flex;
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-top: 0;
+      text-align: right;
+      z-index: 7;
+      display: flex;
       align-items: center;
-      justify-content: center;
-      min-height: 30px;
-      padding: 0 12px;
-      border-radius: 999px;
-      background: #ff9958;
-      color: #111;
-      font-size: 0.78rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .stack-title {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(1.9rem, 3.2vw, 3rem);
-      line-height: 0.95;
-      text-transform: lowercase;
-      margin-bottom: 16px;
-      color: #fff;
+      justify-content: flex-end;
+      width: auto;
     }
 
     .stack-open {
       display: inline-flex;
-      flex-direction: column;
       align-items: center;
-      gap: 6px;
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.95rem;
+      justify-content: center;
+      min-height: 68px;
+      padding: 0 34px;
+      border-radius: 999px;
+      background: #fff;
+      color: #111;
+      font-weight: 800;
+      font-size: 1.02rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 18px 34px rgba(0,0,0,0.26);
+      border: 2px solid rgba(0,0,0,0.12);
+      white-space: nowrap;
+      gap: 0;
     }
 
     .stack-open-line {
-      width: 84px;
-      height: 2px;
-      background: #fff;
-      border-radius: 999px;
-      opacity: 0.92;
+      display: none;
     }
 
     .projects-gallery {
       width: 100%;
       display: none;
-      grid-template-columns: minmax(320px, 1.2fr) minmax(220px, 0.8fr);
-      gap: 26px;
-      align-items: start;
-      margin-top: 8px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+      margin-top: 0;
     }
 
     .projects-gallery.is-open {
@@ -1713,114 +1634,47 @@
     }
 
     .projects-display {
-      background: #0f0f0f;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 28px;
-      overflow: hidden;
-      min-height: 640px;
-      box-shadow: 0 24px 46px rgba(0,0,0,0.36);
-      position: relative;
+      display: none;
     }
 
-    .projects-display-media {
-      width: 100%;
-      height: 640px;
-      background: #080808;
-    }
-
-    .projects-display-media img,
-    .projects-display-media video {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    .projects-display-meta {
-      position: absolute;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 18px 18px 16px;
-      border-radius: 22px;
-      background: rgba(0,0,0,0.56);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .projects-display-text h3 {
-      font-family: 'Anton', sans-serif;
-      font-size: 1.4rem;
-      line-height: 1;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      color: #fff;
-    }
-
-    .projects-display-text p {
-      font-size: 0.92rem;
-      line-height: 1.55;
-      color: rgba(255,255,255,0.78);
-      max-width: 42ch;
-    }
-
-    .projects-display-type {
-      min-width: 92px;
-      min-height: 38px;
-      padding: 0 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.22);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.74rem;
-      font-weight: 800;
-      color: #fff;
-      background: rgba(255,255,255,0.06);
-      white-space: nowrap;
-    }
-
-    .projects-thumbs {
-      display: grid;
-      gap: 14px;
-      align-content: start;
+    .projects-display-media,
+    .projects-display-meta,
+    .projects-display-text,
+    .projects-display-type,
+    .projects-thumbs,
+    .project-thumb-text {
+      display: none;
     }
 
     .project-thumb {
       width: 100%;
-      display: grid;
-      grid-template-columns: 88px 1fr;
-      gap: 12px;
-      align-items: center;
-      padding: 10px;
-      background: #0f0f0f;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 18px;
+      display: block;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 22px;
       color: #fff;
-      transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+      transition: transform 0.2s ease, opacity 0.2s ease;
       text-align: left;
+      overflow: hidden;
     }
 
     .project-thumb:hover,
     .project-thumb.active {
-      border-color: rgba(255,255,255,0.36);
-      background: #161616;
-      transform: translateY(-2px);
+      transform: translateY(-4px);
+      opacity: 1;
     }
 
     .project-thumb-media {
-      width: 88px;
-      height: 116px;
-      border-radius: 12px;
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      border-radius: 22px;
       overflow: hidden;
-      background: #1b1b1b;
+      background: #111;
       position: relative;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.24);
     }
 
     .project-thumb-media img,
@@ -1831,43 +1685,40 @@
       display: block;
     }
 
+    .project-thumb:nth-child(1) .project-thumb-media { min-height: 300px; }
+    .project-thumb:nth-child(2) .project-thumb-media { min-height: 250px; }
+    .project-thumb:nth-child(3) .project-thumb-media { min-height: 340px; }
+    .project-thumb:nth-child(4) .project-thumb-media { min-height: 280px; }
+    .project-thumb:nth-child(5) .project-thumb-media { min-height: 320px; }
+    .project-thumb:nth-child(6) .project-thumb-media { min-height: 260px; }
+    .project-thumb:nth-child(7) .project-thumb-media { min-height: 300px; }
+    .project-thumb:nth-child(8) .project-thumb-media { min-height: 340px; }
+    .project-thumb:nth-child(9) .project-thumb-media { min-height: 260px; }
+    .project-thumb:nth-child(10) .project-thumb-media { min-height: 320px; }
+
     .project-thumb-type {
       position: absolute;
-      right: 7px;
-      bottom: 7px;
-      min-height: 20px;
-      padding: 0 7px;
+      right: 10px;
+      bottom: 10px;
+      min-height: 26px;
+      padding: 0 10px;
       border-radius: 999px;
       background: rgba(0,0,0,0.76);
       color: #fff;
-      font-size: 0.58rem;
+      font-size: 0.62rem;
       font-weight: 800;
       letter-spacing: 0.08em;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       text-transform: uppercase;
-    }
-
-    .project-thumb-text strong {
-      display: block;
-      font-size: 0.9rem;
-      line-height: 1.3;
-      margin-bottom: 5px;
-      color: #fff;
-    }
-
-    .project-thumb-text span {
-      display: block;
-      font-size: 0.78rem;
-      line-height: 1.45;
-      color: rgba(255,255,255,0.64);
+      z-index: 2;
     }
 
     .projects-close {
       justify-self: center;
-      margin-top: 8px;
-      min-height: 48px;
+      margin-top: 18px;
+      min-height: 50px;
       padding: 0 22px;
       border-radius: 999px;
       background: #fff;
@@ -1876,6 +1727,7 @@
       font-size: 0.88rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
+      grid-column: 1 / -1;
     }
 
     .contact-section {
@@ -2205,20 +2057,7 @@
       }
 
       .projects-gallery.is-open {
-        grid-template-columns: 1fr;
-      }
-
-      .projects-display {
-        min-height: 560px;
-      }
-
-      .projects-display-media {
-        height: 560px;
-      }
-
-      .projects-thumbs {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .contact-layout {
@@ -2259,27 +2098,45 @@
       }
 
       .projects-stage {
-        min-height: 760px;
+        min-height: 620px;
+      }
+
+      .projects-preview {
+        min-height: 360px;
       }
 
       .projects-preview-frame {
-        min-height: 500px;
+        min-height: 350px;
       }
 
-      .stack-card.s1 { transform: translateX(-88px) rotate(-12deg); }
-      .stack-card.s2 { transform: translateX(-48px) rotate(-7deg); }
-      .stack-card.s3 { width: 196px; height: 342px; }
-      .stack-card.s4 { transform: translateX(58px) rotate(8deg); }
-      .stack-card.s5 { transform: translateX(98px) rotate(13deg); }
-
-      .stack-floating-badge.views {
-        right: 64px;
-        top: 98px;
+      .projects-card-stack {
+        height: 330px;
       }
 
-      .stack-floating-badge.sticker {
-        left: 132px;
-        bottom: 130px;
+      .stack-card {
+        width: 185px;
+        height: 300px;
+      }
+
+      .stack-card.s1 { transform: translateX(-220px) rotate(-16deg); }
+      .stack-card.s2 { transform: translateX(-128px) rotate(-9deg); }
+      .stack-card.s3 { width: 230px; height: 344px; transform: translateX(-6px) rotate(-1deg); }
+      .stack-card.s4 { transform: translateX(116px) rotate(9deg); }
+      .stack-card.s5 { transform: translateX(220px) rotate(16deg); }
+
+      .stack-caption {
+        right: 0;
+        top: auto;
+        bottom: -4px;
+        transform: none;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .stack-open {
+        min-height: 62px;
+        padding: 0 30px;
+        font-size: 0.95rem;
       }
     }
 
@@ -2511,79 +2368,58 @@
       }
 
       .projects-showcase {
-        padding: 58px 14px 68px;
+        padding: 52px 14px 52px;
+      }
+
+      .projects-showcase-title {
+        font-size: clamp(1.3rem, 4.8vw, 2rem);
       }
 
       .projects-stage {
-        min-height: 700px;
+        min-height: 560px;
       }
 
       .projects-preview {
-        min-height: 500px;
+        min-height: 330px;
       }
 
       .projects-preview-frame {
-        min-height: 470px;
+        min-height: 320px;
+        padding: 0 8px;
       }
 
-      .projects-doodle-left {
-        left: 2px;
-        top: 58px;
-        width: 48px;
-        height: 90px;
-      }
-
-      .projects-doodle-right {
-        right: 6px;
-        bottom: 84px;
-        width: 104px;
-        height: 126px;
+      .projects-card-stack {
+        height: 290px;
       }
 
       .stack-card {
-        width: 146px;
-        height: 256px;
+        width: 145px;
+        height: 240px;
       }
 
-      .stack-card.s1 { transform: translateX(-70px) rotate(-12deg); }
-      .stack-card.s2 { transform: translateX(-38px) rotate(-7deg); }
-      .stack-card.s3 { width: 176px; height: 306px; }
-      .stack-card.s4 { transform: translateX(44px) rotate(8deg); }
-      .stack-card.s5 { transform: translateX(76px) rotate(13deg); }
+      .stack-card.s1 { transform: translateX(-156px) rotate(-15deg); }
+      .stack-card.s2 { transform: translateX(-90px) rotate(-8deg); }
+      .stack-card.s3 { width: 178px; height: 284px; transform: translateX(-4px) rotate(-1deg); }
+      .stack-card.s4 { transform: translateX(82px) rotate(8deg); }
+      .stack-card.s5 { transform: translateX(156px) rotate(15deg); }
 
-      .stack-floating-badge.views {
-        right: 22px;
-        top: 88px;
+      .stack-caption {
+        bottom: -10px;
       }
 
-      .stack-floating-badge.sticker {
-        left: 84px;
-        bottom: 132px;
-        font-size: 2.5rem;
+      .stack-open {
+        min-height: 58px;
+        padding: 0 24px;
+        font-size: 0.88rem;
       }
 
-      .stack-title {
-        font-size: clamp(1.7rem, 7vw, 2.4rem);
+      .projects-gallery.is-open {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
       }
 
-      .projects-display {
-        min-height: 460px;
-      }
-
-      .projects-display-media {
-        height: 460px;
-      }
-
-      .projects-display-meta {
-        position: static;
-        border-radius: 0;
-        background: #0f0f0f;
-        border: none;
-        border-top: 1px solid rgba(255,255,255,0.1);
-      }
-
-      .projects-thumbs {
-        grid-template-columns: 1fr;
+      .project-thumb-media {
+        min-height: 220px !important;
       }
 
       .contact-section {
@@ -2804,80 +2640,59 @@
         white-space: normal;
       }
 
+      .projects-showcase {
+        padding: 46px 14px 46px;
+      }
+
+      .projects-showcase-title {
+        font-size: clamp(1.05rem, 5vw, 1.35rem);
+        letter-spacing: 0.02em;
+      }
+
+      .projects-stage {
+        min-height: 510px;
+      }
+
       .projects-preview {
-        min-height: 440px;
+        min-height: 300px;
       }
 
       .projects-preview-frame {
-        min-height: 410px;
+        min-height: 290px;
       }
 
-      .projects-doodle-left {
-        display: none;
-      }
-
-      .projects-doodle-right {
-        width: 78px;
-        height: 96px;
-        right: -4px;
-        bottom: 92px;
+      .projects-card-stack {
+        height: 250px;
       }
 
       .stack-card {
-        width: 118px;
-        height: 208px;
+        width: 108px;
+        height: 180px;
         border-radius: 14px;
       }
 
-      .stack-card.s1 { transform: translateX(-54px) rotate(-12deg); }
-      .stack-card.s2 { transform: translateX(-28px) rotate(-7deg); }
-      .stack-card.s3 { width: 146px; height: 256px; }
-      .stack-card.s4 { transform: translateX(34px) rotate(8deg); }
-      .stack-card.s5 { transform: translateX(60px) rotate(13deg); }
+      .stack-card.s1 { transform: translateX(-104px) rotate(-14deg); }
+      .stack-card.s2 { transform: translateX(-58px) rotate(-7deg); }
+      .stack-card.s3 { width: 134px; height: 214px; transform: translateX(-2px) rotate(-1deg); }
+      .stack-card.s4 { transform: translateX(54px) rotate(7deg); }
+      .stack-card.s5 { transform: translateX(104px) rotate(14deg); }
 
-      .stack-floating-badge.views {
-        right: 8px;
-        top: 68px;
-        font-size: 0.7rem;
-        padding: 8px 10px;
+      .stack-caption {
+        bottom: -12px;
       }
 
-      .stack-floating-badge.sticker {
-        left: 42px;
-        bottom: 124px;
-        font-size: 2rem;
+      .stack-open {
+        min-height: 54px;
+        padding: 0 20px;
+        font-size: 0.8rem;
       }
 
-      .stack-brand {
-        min-height: 28px;
-        font-size: 0.72rem;
-      }
-
-      .projects-display {
-        border-radius: 20px;
-      }
-
-      .projects-display-media {
-        height: 360px;
-      }
-
-      .projects-display-text h3 {
-        font-size: 1.12rem;
-      }
-
-      .projects-display-text p {
-        font-size: 0.84rem;
-      }
-
-      .project-thumb {
-        grid-template-columns: 72px 1fr;
-        gap: 10px;
-        padding: 8px;
+      .projects-gallery.is-open {
+        grid-template-columns: 1fr;
       }
 
       .project-thumb-media {
-        width: 72px;
-        height: 96px;
+        min-height: 240px !important;
       }
 
       .contact-title {
@@ -3196,13 +3011,7 @@
         </div>
 
         <div class="about-photo-floating">
-          <img
-            src="assets/Diseño sin título.png"
-            alt="Portrait representing The Boss Agency Co."
-            loading="lazy"
-            width="1200"
-            height="1600"
-          />
+          <img src="assets/Diseño sin título.png" alt="Portrait representing The Boss Agency Co." loading="lazy" width="1200" height="1600" />
         </div>
 
         <div class="about-divider-copy">
@@ -3287,12 +3096,10 @@
         <div class="reviews-intro">
           <div class="reviews-kicker">Client love</div>
           <h2 class="reviews-title">
-            Here’s what our
-            <span class="chip-line">clients</span>
-            say.
+            Here's what our <span class="chip-line">clients</span> say.
           </h2>
           <p class="reviews-copy">
-            Real words from people and brands we’ve supported through strategy, visibility, and digital growth.
+            Real words from people and brands we've supported through strategy, visibility, and digital growth.
           </p>
           <a href="#contact" class="reviews-cta">Work with us</a>
         </div>
@@ -3407,7 +3214,7 @@
       <div class="projects-showcase-shell">
         <div class="projects-showcase-head">
           <div class="projects-showcase-kicker">Past work</div>
-          <h2 class="projects-showcase-title">Projects we’ve brought to life</h2>
+          <h2 class="projects-showcase-title">Projects we've brought to life</h2>
           <p class="projects-showcase-copy">
             Click the featured stack to open a full visual gallery of previous work. Hover any item in the gallery to preview that photo or video instantly in the main frame.
           </p>
@@ -3425,116 +3232,155 @@
 
               <button class="projects-card-stack" id="openProjectsGallery" aria-label="Open project gallery">
                 <div class="stack-card s1">
-                  <img src="assets/project-work-1.jpg" alt="Previous project image 1" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Previous project image 1" loading="lazy">
                 </div>
 
                 <div class="stack-card s2">
-                  <img src="assets/project-work-2.jpg" alt="Previous project image 2" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80" alt="Previous project image 2" loading="lazy">
                 </div>
 
                 <div class="stack-card s3">
-                  <img src="assets/project-work-3.jpg" alt="Previous project featured image" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80" alt="Previous project featured image" loading="lazy">
                 </div>
 
                 <div class="stack-card s4">
                   <video muted playsinline preload="metadata">
-                    <source src="assets/project-work-4.mp4" type="video/mp4">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
                   </video>
                 </div>
 
                 <div class="stack-card s5">
-                  <img src="assets/project-work-5.jpg" alt="Previous project image 5" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Previous project image 5" loading="lazy">
                 </div>
-
-                <div class="stack-floating-badge views">
-                  ✦ <span>360</span>
-                </div>
-
-                <div class="stack-floating-badge sticker">💯</div>
               </button>
-            </div>
 
-            <div class="stack-caption">
-              <div class="stack-brand">jumbo</div>
-              <div class="stack-title">super in de markt</div>
-              <button class="stack-open" id="openProjectsGalleryText" type="button">
-                <span>View project</span>
-                <span class="stack-open-line"></span>
-              </button>
+              <div class="stack-caption">
+                <div class="stack-brand">jumbo</div>
+                <div class="stack-title">super in de markt</div>
+                <button class="stack-open" id="openProjectsGalleryText" type="button">
+                  <span>View Project</span>
+                  <span class="stack-open-line"></span>
+                </button>
+              </div>
             </div>
           </div>
 
           <div class="projects-gallery" id="projectsGallery">
-            <div class="projects-display">
-              <div class="projects-display-media" id="projectsDisplayMedia"></div>
-
-              <div class="projects-display-meta">
-                <div class="projects-display-text">
-                  <h3 id="projectsDisplayTitle">Event Showcase</h3>
-                  <p id="projectsDisplayCopy">A featured look at one of our previous visual projects, displayed full-screen inside the section.</p>
-                </div>
-                <div class="projects-display-type" id="projectsDisplayType">Photo</div>
+            <button class="project-thumb active" type="button" data-type="image" data-src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" data-title="Brand Activation" data-copy="A previous campaign moment presented as a still image from our completed work.">
+              <div class="project-thumb-media">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Project thumb 1" loading="lazy">
+                <span class="project-thumb-type">Photo</span>
               </div>
-            </div>
+              <div class="project-thumb-text">
+                <strong>Brand Activation</strong>
+                <span>Hover to preview this project image.</span>
+              </div>
+            </button>
 
-            <div class="projects-thumbs" id="projectsThumbs">
-              <button class="project-thumb active" type="button" data-type="image" data-src="assets/project-work-1.jpg" data-title="Brand Activation" data-copy="A previous campaign moment presented as a still image from our completed work.">
-                <div class="project-thumb-media">
-                  <img src="assets/project-work-1.jpg" alt="Project thumb 1" loading="lazy">
-                  <span class="project-thumb-type">Photo</span>
-                </div>
-                <div class="project-thumb-text">
-                  <strong>Brand Activation</strong>
-                  <span>Hover to preview this project image.</span>
-                </div>
-              </button>
+            <button class="project-thumb" type="button" data-type="image" data-src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80" data-title="Event Visual" data-copy="A second still from past work, shown inside the same black gallery section.">
+              <div class="project-thumb-media">
+                <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80" alt="Project thumb 2" loading="lazy">
+                <span class="project-thumb-type">Photo</span>
+              </div>
+              <div class="project-thumb-text">
+                <strong>Event Visual</strong>
+                <span>Hover to preview this project image.</span>
+              </div>
+            </button>
 
-              <button class="project-thumb" type="button" data-type="image" data-src="assets/project-work-2.jpg" data-title="Event Visual" data-copy="A second still from past work, shown inside the same black gallery section.">
-                <div class="project-thumb-media">
-                  <img src="assets/project-work-2.jpg" alt="Project thumb 2" loading="lazy">
-                  <span class="project-thumb-type">Photo</span>
-                </div>
-                <div class="project-thumb-text">
-                  <strong>Event Visual</strong>
-                  <span>Hover to preview this project image.</span>
-                </div>
-              </button>
+            <button class="project-thumb" type="button" data-type="image" data-src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" data-title="Featured Night" data-copy="The main cover image for the gallery, used as the default full preview.">
+              <div class="project-thumb-media">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Project thumb 3" loading="lazy">
+                <span class="project-thumb-type">Photo</span>
+              </div>
+              <div class="project-thumb-text">
+                <strong>Featured Night</strong>
+                <span>Hover to preview this project image.</span>
+              </div>
+            </button>
 
-              <button class="project-thumb" type="button" data-type="image" data-src="assets/project-work-3.jpg" data-title="Featured Night" data-copy="The main cover image for the gallery, used as the default full preview.">
-                <div class="project-thumb-media">
-                  <img src="assets/project-work-3.jpg" alt="Project thumb 3" loading="lazy">
-                  <span class="project-thumb-type">Photo</span>
-                </div>
-                <div class="project-thumb-text">
-                  <strong>Featured Night</strong>
-                  <span>Hover to preview this project image.</span>
-                </div>
-              </button>
+            <button class="project-thumb" type="button" data-type="video" data-src="https://www.w3schools.com/html/mov_bbb.mp4" data-title="Live Experience" data-copy="A video preview from past work, displayed directly in the main frame on hover.">
+              <div class="project-thumb-media">
+                <video muted playsinline preload="metadata">
+                  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                </video>
+                <span class="project-thumb-type">Video</span>
+              </div>
+              <div class="project-thumb-text">
+                <strong>Live Experience</strong>
+                <span>Hover to preview this project video.</span>
+              </div>
+            </button>
 
-              <button class="project-thumb" type="button" data-type="video" data-src="assets/project-work-4.mp4" data-title="Live Experience" data-copy="A video preview from past work, displayed directly in the main frame on hover.">
-                <div class="project-thumb-media">
-                  <video muted playsinline preload="metadata">
-                    <source src="assets/project-work-4.mp4" type="video/mp4">
-                  </video>
-                  <span class="project-thumb-type">Video</span>
-                </div>
-                <div class="project-thumb-text">
-                  <strong>Live Experience</strong>
-                  <span>Hover to preview this project video.</span>
-                </div>
-              </button>
+            <button class="project-thumb" type="button" data-type="image" data-src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" data-title="Crowd Moment" data-copy="Another completed project capture shown as part of the interactive gallery.">
+              <div class="project-thumb-media">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Project thumb 5" loading="lazy">
+                <span class="project-thumb-type">Photo</span>
+              </div>
+              <div class="project-thumb-text">
+                <strong>Crowd Moment</strong>
+                <span>Hover to preview this project image.</span>
+              </div>
+            </button>
 
-              <button class="project-thumb" type="button" data-type="image" data-src="assets/project-work-5.jpg" data-title="Crowd Moment" data-copy="Another completed project capture shown as part of the interactive gallery.">
-                <div class="project-thumb-media">
-                  <img src="assets/project-work-5.jpg" alt="Project thumb 5" loading="lazy">
-                  <span class="project-thumb-type">Photo</span>
-                </div>
-                <div class="project-thumb-text">
-                  <strong>Crowd Moment</strong>
-                  <span>Hover to preview this project image.</span>
-                </div>
-              </button>
-            </div>
+            <button class="project-thumb" type="button" data-type="video" data-src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" data-title="Motion Detail" data-copy="A motion-based sample clip inside the previous work gallery.">
+              <div class="project-thumb-media">
+                <video muted playsinline preload="metadata">
+                  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                </video>
+                <span class="project-thumb-type">Video</span>
+              </div>
+              <div class="project-thumb-text">
+                <strong>Motion Detail</strong>
+                <span>Hover to preview this project video.</span>
+              </div>
+            </button>
+
+            <button class="project-thumb" type="button" data-type="image" data-src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" data-title="Digital Launch" data-copy="A generic visual still included to show another possible project angle.">
+              <div class="project-thumb-media">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Project thumb 7" loading="lazy">
+                <span class="project-thumb-type">Photo</span>
+              </div>
+              <div class="project-thumb-text">
+                <strong>Digital Launch</strong>
+                <span>Hover to preview this project image.</span>
+              </div>
+            </button>
+
+            <button class="project-thumb" type="button" data-type="image" data-src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80" data-title="Interior Campaign" data-copy="A gallery still used only for layout demonstration purposes.">
+              <div class="project-thumb-media">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80" alt="Project thumb 8" loading="lazy">
+                <span class="project-thumb-type">Photo</span>
+              </div>
+              <div class="project-thumb-text">
+                <strong>Interior Campaign</strong>
+                <span>Hover to preview this project image.</span>
+              </div>
+            </button>
+
+            <button class="project-thumb" type="button" data-type="video" data-src="https://www.w3schools.com/html/movie.mp4" data-title="Visual Reel" data-copy="A second generic video sample to demonstrate the gallery mix.">
+              <div class="project-thumb-media">
+                <video muted playsinline preload="metadata">
+                  <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                </video>
+                <span class="project-thumb-type">Video</span>
+              </div>
+              <div class="project-thumb-text">
+                <strong>Visual Reel</strong>
+                <span>Hover to preview this project video.</span>
+              </div>
+            </button>
+
+            <button class="project-thumb" type="button" data-type="image" data-src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1200&q=80" data-title="Studio Setup" data-copy="Another image-only tile in the expanded gallery.">
+              <div class="project-thumb-media">
+                <img src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=900&q=80" alt="Project thumb 10" loading="lazy">
+                <span class="project-thumb-type">Photo</span>
+              </div>
+              <div class="project-thumb-text">
+                <strong>Studio Setup</strong>
+                <span>Hover to preview this project image.</span>
+              </div>
+            </button>
 
             <button class="projects-close" id="closeProjectsGallery" type="button">Close gallery</button>
           </div>
@@ -3598,8 +3444,7 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-copy">© The Boss Agency Co. All rights reserved.</div>
-
+      <div class="footer-copy">The Boss Agency Co. All rights reserved.</div>
       <div class="footer-links">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
@@ -3772,37 +3617,11 @@
     const closeProjectsGallery = document.getElementById('closeProjectsGallery');
     const projectsPreview = document.getElementById('projectsPreview');
     const projectsGallery = document.getElementById('projectsGallery');
-    const projectsDisplayMedia = document.getElementById('projectsDisplayMedia');
-    const projectsDisplayTitle = document.getElementById('projectsDisplayTitle');
-    const projectsDisplayCopy = document.getElementById('projectsDisplayCopy');
-    const projectsDisplayType = document.getElementById('projectsDisplayType');
     const projectThumbs = document.querySelectorAll('.project-thumb');
 
     function setProjectDisplay(button) {
-      const type = button.dataset.type;
-      const src = button.dataset.src;
-      const title = button.dataset.title;
-      const copy = button.dataset.copy;
-
       projectThumbs.forEach(item => item.classList.remove('active'));
       button.classList.add('active');
-
-      if (type === 'video') {
-        projectsDisplayMedia.innerHTML = `
-          <video controls autoplay muted loop playsinline>
-            <source src="${src}" type="video/mp4">
-          </video>
-        `;
-        projectsDisplayType.textContent = 'Video';
-      } else {
-        projectsDisplayMedia.innerHTML = `
-          <img src="${src}" alt="${title}" loading="lazy">
-        `;
-        projectsDisplayType.textContent = 'Photo';
-      }
-
-      projectsDisplayTitle.textContent = title;
-      projectsDisplayCopy.textContent = copy;
     }
 
     function openGallery() {
