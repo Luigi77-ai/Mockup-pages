@@ -1454,27 +1454,23 @@
       color: rgba(0,0,0,0.56);
     }
 
+    /* NUEVA SECCION */
     .projects-showcase {
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
       background: #000;
       color: #fff;
-      padding: 54px 24px 60px;
+      padding: 72px 24px 82px;
       position: relative;
       overflow: hidden;
-      transition: padding 0.35s ease;
-    }
-
-    .projects-showcase.is-expanded {
-      padding: 72px 24px 82px;
     }
 
     .projects-showcase-shell {
-      max-width: 1320px;
+      max-width: 1240px;
       margin: 0 auto;
       display: grid;
-      gap: 26px;
+      gap: 34px;
     }
 
     .projects-showcase-head {
@@ -1492,27 +1488,29 @@
 
     .projects-showcase-title {
       font-family: 'Anton', sans-serif;
-      font-size: clamp(1.5rem, 2.7vw, 2.5rem);
-      line-height: 1;
+      font-size: clamp(2.2rem, 4.8vw, 4.8rem);
+      line-height: 0.94;
       text-transform: uppercase;
       color: #fff;
-      max-width: none;
+      max-width: 11ch;
+      margin: 0 auto 12px;
+    }
+
+    .projects-showcase-copy {
+      max-width: 52ch;
       margin: 0 auto;
-      white-space: nowrap;
+      color: rgba(255,255,255,0.74);
+      font-size: 0.98rem;
+      line-height: 1.7;
     }
 
     .projects-stage {
-      min-height: 620px;
+      min-height: 840px;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      transition: min-height 0.35s ease;
-    }
-
-    .projects-showcase.is-expanded .projects-stage {
-      min-height: 980px;
     }
 
     .projects-preview {
@@ -1521,12 +1519,8 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      min-height: 520px;
-      transition: opacity 0.35s ease, transform 0.35s ease;
-    }
-
-    .projects-showcase.is-expanded .projects-preview {
       min-height: 560px;
+      transition: opacity 0.35s ease, transform 0.35s ease;
     }
 
     .projects-preview.is-hidden {
@@ -1540,21 +1534,17 @@
 
     .projects-preview-frame {
       position: relative;
-      width: min(100%, 980px);
-      min-height: 500px;
+      width: min(100%, 760px);
+      min-height: 540px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .projects-showcase.is-expanded .projects-preview-frame {
-      min-height: 540px;
-    }
-
     .projects-doodle-left {
       position: absolute;
-      left: 8px;
-      top: 96px;
+      left: 10px;
+      top: 82px;
       width: 62px;
       height: 112px;
       color: #fff;
@@ -1564,8 +1554,8 @@
 
     .projects-doodle-right {
       position: absolute;
-      right: 18px;
-      bottom: 84px;
+      right: 26px;
+      bottom: 68px;
       width: 138px;
       height: 168px;
       background: #e8ff9f;
@@ -1577,31 +1567,22 @@
     .projects-card-stack {
       position: relative;
       width: 100%;
-      height: 470px;
+      height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 2;
     }
 
-    .projects-showcase.is-expanded .projects-card-stack {
-      height: 520px;
-    }
-
     .stack-card {
       position: absolute;
-      width: 200px;
-      height: 340px;
+      width: 180px;
+      height: 314px;
       border-radius: 18px;
       overflow: hidden;
       border: 3px solid rgba(255,255,255,0.82);
       background: #171717;
       box-shadow: 0 24px 38px rgba(0,0,0,0.34);
-    }
-
-    .projects-showcase.is-expanded .stack-card {
-      width: 210px;
-      height: 356px;
     }
 
     .stack-card img,
@@ -1613,34 +1594,29 @@
     }
 
     .stack-card.s1 {
-      transform: translateX(-170px) rotate(-14deg);
+      transform: translateX(-122px) rotate(-12deg);
       z-index: 2;
     }
 
     .stack-card.s2 {
-      transform: translateX(-88px) rotate(-8deg);
+      transform: translateX(-72px) rotate(-7deg);
       z-index: 3;
     }
 
     .stack-card.s3 {
-      width: 236px;
-      height: 396px;
+      width: 214px;
+      height: 372px;
       transform: translateX(0) rotate(0deg);
       z-index: 5;
     }
 
-    .projects-showcase.is-expanded .stack-card.s3 {
-      width: 246px;
-      height: 414px;
-    }
-
     .stack-card.s4 {
-      transform: translateX(100px) rotate(8deg);
+      transform: translateX(86px) rotate(8deg);
       z-index: 3;
     }
 
     .stack-card.s5 {
-      transform: translateX(182px) rotate(14deg);
+      transform: translateX(144px) rotate(13deg);
       z-index: 2;
     }
 
@@ -1660,50 +1636,73 @@
     }
 
     .stack-floating-badge.views {
-      display: none;
+      right: 108px;
+      top: 106px;
+      gap: 6px;
     }
 
     .stack-floating-badge.sticker {
-      display: none;
+      left: 196px;
+      bottom: 126px;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      font-size: 3rem;
+      transform: rotate(-16deg);
     }
 
-    .projects-view-row {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 10px;
+    .stack-caption {
+      margin-top: 8px;
+      text-align: center;
       position: relative;
-      z-index: 4;
+      z-index: 3;
     }
 
-    .projects-view-trigger {
-      min-width: 240px;
-      min-height: 88px;
-      border-radius: 999px;
-      background: #fff;
-      color: #000;
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .stack-brand {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 18px 36px rgba(0,0,0,0.28);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      position: relative;
-      z-index: 4;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: #ff9958;
+      color: #111;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
-    .projects-view-trigger:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 24px 44px rgba(0,0,0,0.34);
+    .stack-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(1.9rem, 3.2vw, 3rem);
+      line-height: 0.95;
+      text-transform: lowercase;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+
+    .stack-open {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .stack-open-line {
+      width: 84px;
+      height: 2px;
+      background: #fff;
+      border-radius: 999px;
+      opacity: 0.92;
     }
 
     .projects-gallery {
       width: 100%;
       display: none;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: minmax(320px, 1.2fr) minmax(220px, 0.8fr);
       gap: 26px;
       align-items: start;
       margin-top: 8px;
@@ -1787,37 +1786,8 @@
       white-space: nowrap;
     }
 
-    .projects-side-panel {
-      display: grid;
-      gap: 16px;
-      align-content: start;
-    }
-
-    .projects-side-copy {
-      background: #111;
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 22px;
-      padding: 18px 18px 16px;
-    }
-
-    .projects-side-copy h4 {
-      font-family: 'Anton', sans-serif;
-      font-size: 1.15rem;
-      line-height: 1;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-
-    .projects-side-copy p {
-      font-size: 0.88rem;
-      line-height: 1.55;
-      color: rgba(255,255,255,0.72);
-    }
-
     .projects-thumbs {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
       align-content: start;
     }
@@ -1825,9 +1795,9 @@
     .project-thumb {
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      align-items: start;
+      grid-template-columns: 88px 1fr;
+      gap: 12px;
+      align-items: center;
       padding: 10px;
       background: #0f0f0f;
       border: 1px solid rgba(255,255,255,0.1);
@@ -1845,8 +1815,8 @@
     }
 
     .project-thumb-media {
-      width: 100%;
-      aspect-ratio: 0.88 / 1.12;
+      width: 88px;
+      height: 116px;
       border-radius: 12px;
       overflow: hidden;
       background: #1b1b1b;
@@ -2238,16 +2208,17 @@
         grid-template-columns: 1fr;
       }
 
-      .projects-thumbs {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
       .projects-display {
         min-height: 560px;
       }
 
       .projects-display-media {
         height: 560px;
+      }
+
+      .projects-thumbs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        display: grid;
       }
 
       .contact-layout {
@@ -2288,30 +2259,27 @@
       }
 
       .projects-stage {
-        min-height: 560px;
-      }
-
-      .projects-showcase.is-expanded .projects-stage {
-        min-height: 900px;
+        min-height: 760px;
       }
 
       .projects-preview-frame {
-        min-height: 450px;
-      }
-
-      .projects-showcase.is-expanded .projects-preview-frame {
         min-height: 500px;
       }
 
-      .stack-card.s1 { transform: translateX(-126px) rotate(-12deg); }
-      .stack-card.s2 { transform: translateX(-68px) rotate(-7deg); }
-      .stack-card.s3 { width: 210px; height: 352px; }
-      .projects-showcase.is-expanded .stack-card.s3 { width: 220px; height: 370px; }
-      .stack-card.s4 { transform: translateX(78px) rotate(8deg); }
-      .stack-card.s5 { transform: translateX(136px) rotate(13deg); }
+      .stack-card.s1 { transform: translateX(-88px) rotate(-12deg); }
+      .stack-card.s2 { transform: translateX(-48px) rotate(-7deg); }
+      .stack-card.s3 { width: 196px; height: 342px; }
+      .stack-card.s4 { transform: translateX(58px) rotate(8deg); }
+      .stack-card.s5 { transform: translateX(98px) rotate(13deg); }
 
-      .projects-thumbs {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .stack-floating-badge.views {
+        right: 64px;
+        top: 98px;
+      }
+
+      .stack-floating-badge.sticker {
+        left: 132px;
+        bottom: 130px;
       }
     }
 
@@ -2515,137 +2483,121 @@
         max-width: 18ch;
       }
 
+      .ourwork-board {
+        padding: 34px 14px 34px;
+      }
+
+      .ourwork-cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .work-card {
+        min-height: auto;
+      }
+
+      .work-card.card-5 {
+        max-width: none;
+      }
+
       .reviews-showcase {
-        padding: 48px 0 56px 14px;
+        padding: 48px 0 58px 14px;
       }
 
-      .review-card {
-        width: 258px;
-        flex-basis: 258px;
-      }
-
-      .review-visual {
-        min-height: 214px;
+      .review-card.low,
+      .review-card.mid,
+      .review-card.tall {
+        transform: translateY(0);
       }
 
       .projects-showcase {
-        padding: 46px 14px 52px;
-      }
-
-      .projects-showcase.is-expanded {
-        padding: 60px 14px 66px;
+        padding: 58px 14px 68px;
       }
 
       .projects-stage {
-        min-height: 500px;
-      }
-
-      .projects-showcase.is-expanded .projects-stage {
-        min-height: 820px;
+        min-height: 700px;
       }
 
       .projects-preview {
-        min-height: 420px;
-      }
-
-      .projects-showcase.is-expanded .projects-preview {
         min-height: 500px;
       }
 
       .projects-preview-frame {
-        min-height: 390px;
+        min-height: 470px;
       }
-
-      .projects-showcase.is-expanded .projects-preview-frame {
-        min-height: 440px;
-      }
-
-      .projects-card-stack {
-        height: 350px;
-      }
-
-      .projects-showcase.is-expanded .projects-card-stack {
-        height: 420px;
-      }
-
-      .stack-card {
-        width: 150px;
-        height: 248px;
-      }
-
-      .stack-card.s3 {
-        width: 176px;
-        height: 294px;
-      }
-
-      .projects-showcase.is-expanded .stack-card.s3 {
-        width: 188px;
-        height: 314px;
-      }
-
-      .stack-card.s1 { transform: translateX(-88px) rotate(-12deg); }
-      .stack-card.s2 { transform: translateX(-46px) rotate(-7deg); }
-      .stack-card.s4 { transform: translateX(54px) rotate(8deg); }
-      .stack-card.s5 { transform: translateX(96px) rotate(13deg); }
 
       .projects-doodle-left {
-        left: 0;
-        top: 54px;
-        width: 46px;
-        height: 84px;
+        left: 2px;
+        top: 58px;
+        width: 48px;
+        height: 90px;
       }
 
       .projects-doodle-right {
         right: 6px;
-        bottom: 48px;
-        width: 92px;
-        height: 118px;
+        bottom: 84px;
+        width: 104px;
+        height: 126px;
       }
 
-      .projects-showcase-title {
-        font-size: clamp(1.2rem, 3.8vw, 1.8rem);
-        white-space: normal;
+      .stack-card {
+        width: 146px;
+        height: 256px;
       }
 
-      .projects-view-row {
-        justify-content: center;
+      .stack-card.s1 { transform: translateX(-70px) rotate(-12deg); }
+      .stack-card.s2 { transform: translateX(-38px) rotate(-7deg); }
+      .stack-card.s3 { width: 176px; height: 306px; }
+      .stack-card.s4 { transform: translateX(44px) rotate(8deg); }
+      .stack-card.s5 { transform: translateX(76px) rotate(13deg); }
+
+      .stack-floating-badge.views {
+        right: 22px;
+        top: 88px;
       }
 
-      .projects-view-trigger {
-        min-width: 190px;
-        min-height: 74px;
-        font-size: clamp(1.7rem, 7vw, 2.6rem);
+      .stack-floating-badge.sticker {
+        left: 84px;
+        bottom: 132px;
+        font-size: 2.5rem;
+      }
+
+      .stack-title {
+        font-size: clamp(1.7rem, 7vw, 2.4rem);
       }
 
       .projects-display {
-        min-height: 440px;
-        border-radius: 20px;
+        min-height: 460px;
       }
 
       .projects-display-media {
-        height: 440px;
+        height: 460px;
       }
 
       .projects-display-meta {
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        padding: 14px;
-        border-radius: 16px;
-        flex-direction: column;
-        align-items: flex-start;
+        position: static;
+        border-radius: 0;
+        background: #0f0f0f;
+        border: none;
+        border-top: 1px solid rgba(255,255,255,0.1);
       }
 
       .projects-thumbs {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
       }
 
       .contact-section {
-        padding: 64px 14px;
+        padding: 62px 14px;
       }
 
-      .contact-title {
-        max-width: 100%;
+      .contact-form-card {
+        padding: 22px 18px 20px;
+        box-shadow: 7px 7px 0 #111;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
@@ -2790,6 +2742,22 @@
         padding: 7px 14px 9px;
       }
 
+      .impact-logos {
+        height: 40px;
+      }
+
+      .impact-logos-track {
+        gap: 20px;
+      }
+
+      .impact-logo {
+        height: 40px;
+      }
+
+      .impact-logo img {
+        max-height: 36px;
+      }
+
       .about-editorial {
         padding: 50px 14px 66px;
       }
@@ -2820,64 +2788,100 @@
         max-width: 18ch;
       }
 
-      .projects-showcase-title {
-        font-size: 1.1rem;
-        line-height: 1.1;
+      .work-card {
+        padding: 22px 18px 20px;
       }
 
-      .projects-card-stack {
-        height: 310px;
+      .work-card h3 {
+        font-size: 1.3rem;
+      }
+
+      .work-card li {
+        font-size: 0.92rem;
+      }
+
+      .success-story-band-text {
+        white-space: normal;
+      }
+
+      .projects-preview {
+        min-height: 440px;
+      }
+
+      .projects-preview-frame {
+        min-height: 410px;
+      }
+
+      .projects-doodle-left {
+        display: none;
+      }
+
+      .projects-doodle-right {
+        width: 78px;
+        height: 96px;
+        right: -4px;
+        bottom: 92px;
       }
 
       .stack-card {
         width: 118px;
-        height: 196px;
+        height: 208px;
+        border-radius: 14px;
       }
 
-      .stack-card.s3 {
-        width: 142px;
-        height: 236px;
+      .stack-card.s1 { transform: translateX(-54px) rotate(-12deg); }
+      .stack-card.s2 { transform: translateX(-28px) rotate(-7deg); }
+      .stack-card.s3 { width: 146px; height: 256px; }
+      .stack-card.s4 { transform: translateX(34px) rotate(8deg); }
+      .stack-card.s5 { transform: translateX(60px) rotate(13deg); }
+
+      .stack-floating-badge.views {
+        right: 8px;
+        top: 68px;
+        font-size: 0.7rem;
+        padding: 8px 10px;
       }
 
-      .projects-showcase.is-expanded .stack-card.s3 {
-        width: 154px;
-        height: 256px;
+      .stack-floating-badge.sticker {
+        left: 42px;
+        bottom: 124px;
+        font-size: 2rem;
       }
 
-      .stack-card.s1 { transform: translateX(-66px) rotate(-11deg); }
-      .stack-card.s2 { transform: translateX(-34px) rotate(-6deg); }
-      .stack-card.s4 { transform: translateX(40px) rotate(7deg); }
-      .stack-card.s5 { transform: translateX(72px) rotate(11deg); }
-
-      .projects-view-row {
-        justify-content: center;
+      .stack-brand {
+        min-height: 28px;
+        font-size: 0.72rem;
       }
 
-      .projects-thumbs {
-        grid-template-columns: 1fr;
+      .projects-display {
+        border-radius: 20px;
       }
 
-      .success-story-band-text {
-        font-size: clamp(1.8rem, 10vw, 3.8rem);
+      .projects-display-media {
+        height: 360px;
       }
 
-      .review-card {
-        width: 228px;
-        flex-basis: 228px;
+      .projects-display-text h3 {
+        font-size: 1.12rem;
+      }
+
+      .projects-display-text p {
+        font-size: 0.84rem;
+      }
+
+      .project-thumb {
+        grid-template-columns: 72px 1fr;
+        gap: 10px;
+        padding: 8px;
+      }
+
+      .project-thumb-media {
+        width: 72px;
+        height: 96px;
       }
 
       .contact-title {
-        font-size: clamp(2.2rem, 14vw, 3.4rem);
-      }
-
-      .contact-form-card {
-        padding: 22px 18px 20px;
-        border-radius: 20px;
-        box-shadow: 7px 7px 0 #111;
-      }
-
-      .site-footer {
-        padding-inline: 14px;
+        font-size: clamp(2.2rem, 14vw, 3.6rem);
       }
     }
   </style>
@@ -3098,20 +3102,29 @@
           support can improve visibility, speed, and business growth
         </h2>
 
-        <div class="impact-logos" aria-label="Trusted partner logos">
+        <div class="impact-logos" aria-label="Client logos marquee">
           <div class="impact-logos-track">
-            <div class="impact-logo"><img src="https://cdn.simpleicons.org/google/111111" alt="Google logo" loading="lazy" width="120" height="52"></div>
-            <div class="impact-logo"><img src="https://cdn.simpleicons.org/meta/111111" alt="Meta logo" loading="lazy" width="120" height="52"></div>
-            <div class="impact-logo"><img src="https://cdn.simpleicons.org/instagram/111111" alt="Instagram logo" loading="lazy" width="120" height="52"></div>
-            <div class="impact-logo"><img src="https://cdn.simpleicons.org/facebook/111111" alt="Facebook logo" loading="lazy" width="120" height="52"></div>
-            <div class="impact-logo"><img src="https://cdn.simpleicons.org/wordpress/111111" alt="WordPress logo" loading="lazy" width="120" height="52"></div>
-            <div class="impact-logo"><img src="https://cdn.simpleicons.org/linkedin/111111" alt="LinkedIn logo" loading="lazy" width="120" height="52"></div>
-            <div class="impact-logo"><img src="https://cdn.simpleicons.org/google/111111" alt="Google logo" loading="lazy" width="120" height="52"></div>
-            <div class="impact-logo"><img src="https://cdn.simpleicons.org/meta/111111" alt="Meta logo" loading="lazy" width="120" height="52"></div>
-            <div class="impact-logo"><img src="https://cdn.simpleicons.org/instagram/111111" alt="Instagram logo" loading="lazy" width="120" height="52"></div>
-            <div class="impact-logo"><img src="https://cdn.simpleicons.org/facebook/111111" alt="Facebook logo" loading="lazy" width="120" height="52"></div>
-            <div class="impact-logo"><img src="https://cdn.simpleicons.org/wordpress/111111" alt="WordPress logo" loading="lazy" width="120" height="52"></div>
-            <div class="impact-logo"><img src="https://cdn.simpleicons.org/linkedin/111111" alt="LinkedIn logo" loading="lazy" width="120" height="52"></div>
+            <div class="impact-logo"><img src="assets/1.png" alt="Client logo 1" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/2.png" alt="Client logo 2" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/3.png" alt="Client logo 3" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/4.png" alt="Client logo 4" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/5.png" alt="Client logo 5" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/6.png" alt="Client logo 6" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/7.png" alt="Client logo 7" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/8.png" alt="Client logo 8" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/9.png" alt="Client logo 9" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/10.png" alt="Client logo 10" loading="lazy"></div>
+
+            <div class="impact-logo"><img src="assets/1.png" alt="Client logo 1 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/2.png" alt="Client logo 2 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/3.png" alt="Client logo 3 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/4.png" alt="Client logo 4 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/5.png" alt="Client logo 5 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/6.png" alt="Client logo 6 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/7.png" alt="Client logo 7 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/8.png" alt="Client logo 8 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/9.png" alt="Client logo 9 repeated" loading="lazy"></div>
+            <div class="impact-logo"><img src="assets/10.png" alt="Client logo 10 repeated" loading="lazy"></div>
           </div>
         </div>
 
@@ -3272,64 +3285,65 @@
     <section class="reviews-showcase">
       <div class="reviews-shell">
         <div class="reviews-intro">
-          <div class="reviews-kicker">What clients feel</div>
+          <div class="reviews-kicker">Client love</div>
           <h2 class="reviews-title">
-            Real experiences,
-            <span class="chip-line">real momentum</span>
+            Here’s what our
+            <span class="chip-line">clients</span>
+            say.
           </h2>
           <p class="reviews-copy">
-            The feeling behind the work matters too, so this section keeps the energy visual, human, and easy to scan.
+            Real words from people and brands we’ve supported through strategy, visibility, and digital growth.
           </p>
-          <button class="reviews-cta" type="button">Our client energy</button>
+          <a href="#contact" class="reviews-cta">Work with us</a>
         </div>
 
         <div class="reviews-marquee">
           <div class="reviews-marquee-track">
             <div class="reviews-group">
               <article class="review-card tall">
-                <div class="review-top-label">Visibility growth</div>
+                <div class="review-top-label">5-Star Review</div>
                 <div class="review-visual yellow">
-                  <div class="review-avatar"><span>A</span></div>
-                  <div class="review-name-badge">Ana</div>
+                  <div class="review-avatar"><span>JR</span></div>
+                  <div class="review-name-badge">Jasmine Rivera</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The strategy finally made our content feel aligned and our brand looked much more intentional online.</p>
+                  <p>The Boss Agency Co helped us clarify our message and improve how we show up online. The process felt thoughtful, strategic, and easy to follow.</p>
                   <div class="review-meta">
-                    <strong>Brand support</strong>
-                    <span>Client note</span>
+                    <strong>Brand Strategy</strong>
+                    <span>Verified client</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card low">
-                <div class="review-top-label">Smooth process</div>
+                <div class="review-top-label">Client Feedback</div>
                 <div class="review-visual orange">
-                  <div class="review-avatar"><span>M</span></div>
-                  <div class="review-name-badge">Marco</div>
+                  <div class="review-avatar"><span>MK</span></div>
+                  <div class="review-name-badge">Marcus King</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>Everything felt more organized, from communication to execution, and the website gave us a stronger first impression.</p>
+                  <p>Our website finally feels aligned with the quality of our work. We look more credible, more polished, and much easier to understand.</p>
                   <div class="review-meta">
-                    <strong>Web project</strong>
-                    <span>Client note</span>
+                    <strong>Web Development</strong>
+                    <span>Verified client</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card mid">
-                <div class="review-top-label">Smart execution</div>
+                <div class="review-top-label">Top Result</div>
                 <div class="review-visual pink">
-                  <div class="review-avatar"><span>S</span></div>
-                  <div class="review-name-badge">Sonia</div>
+                  <div class="review-avatar"><span>AL</span></div>
+                  <div class="review-name-badge">Andrea Lopez</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>They made the process lighter, faster, and much more strategic than anything we had before.</p>
+                  <p>The support we received with Google visibility and content planning made a real difference. Everything started to feel more intentional.</p>
                   <div class="review-meta">
-                    <strong>Strategy</strong>
-                    <span>Client note</span>
+                    <strong>Visibility Support</strong>
+                    <span>Verified client</span>
                   </div>
                 </div>
               </article>
@@ -3337,49 +3351,49 @@
 
             <div class="reviews-group">
               <article class="review-card tall">
-                <div class="review-top-label">Visibility growth</div>
+                <div class="review-top-label">5-Star Review</div>
                 <div class="review-visual yellow">
-                  <div class="review-avatar"><span>A</span></div>
-                  <div class="review-name-badge">Ana</div>
+                  <div class="review-avatar"><span>JR</span></div>
+                  <div class="review-name-badge">Jasmine Rivera</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>The strategy finally made our content feel aligned and our brand looked much more intentional online.</p>
+                  <p>The Boss Agency Co helped us clarify our message and improve how we show up online. The process felt thoughtful, strategic, and easy to follow.</p>
                   <div class="review-meta">
-                    <strong>Brand support</strong>
-                    <span>Client note</span>
+                    <strong>Brand Strategy</strong>
+                    <span>Verified client</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card low">
-                <div class="review-top-label">Smooth process</div>
+                <div class="review-top-label">Client Feedback</div>
                 <div class="review-visual orange">
-                  <div class="review-avatar"><span>M</span></div>
-                  <div class="review-name-badge">Marco</div>
+                  <div class="review-avatar"><span>MK</span></div>
+                  <div class="review-name-badge">Marcus King</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>Everything felt more organized, from communication to execution, and the website gave us a stronger first impression.</p>
+                  <p>Our website finally feels aligned with the quality of our work. We look more credible, more polished, and much easier to understand.</p>
                   <div class="review-meta">
-                    <strong>Web project</strong>
-                    <span>Client note</span>
+                    <strong>Web Development</strong>
+                    <span>Verified client</span>
                   </div>
                 </div>
               </article>
 
               <article class="review-card mid">
-                <div class="review-top-label">Smart execution</div>
+                <div class="review-top-label">Top Result</div>
                 <div class="review-visual pink">
-                  <div class="review-avatar"><span>S</span></div>
-                  <div class="review-name-badge">Sonia</div>
+                  <div class="review-avatar"><span>AL</span></div>
+                  <div class="review-name-badge">Andrea Lopez</div>
                 </div>
                 <div class="review-content">
                   <div class="review-stars">★★★★★</div>
-                  <p>They made the process lighter, faster, and much more strategic than anything we had before.</p>
+                  <p>The support we received with Google visibility and content planning made a real difference. Everything started to feel more intentional.</p>
                   <div class="review-meta">
-                    <strong>Strategy</strong>
-                    <span>Client note</span>
+                    <strong>Visibility Support</strong>
+                    <span>Verified client</span>
                   </div>
                 </div>
               </article>
@@ -3389,70 +3403,140 @@
       </div>
     </section>
 
-    <section class="projects-showcase" id="projectsShowcase">
+    <section class="projects-showcase" id="projects-showcase">
       <div class="projects-showcase-shell">
         <div class="projects-showcase-head">
-          <div class="projects-showcase-kicker">Selected work</div>
+          <div class="projects-showcase-kicker">Past work</div>
           <h2 class="projects-showcase-title">Projects we’ve brought to life</h2>
+          <p class="projects-showcase-copy">
+            Click the featured stack to open a full visual gallery of previous work. Hover any item in the gallery to preview that photo or video instantly in the main frame.
+          </p>
         </div>
 
         <div class="projects-stage">
           <div class="projects-preview" id="projectsPreview">
             <div class="projects-preview-frame">
-              <svg class="projects-doodle-left" viewBox="0 0 70 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M60 6C50 20 36 34 25 50C14 66 8 80 12 95C15 108 28 116 44 120" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M18 87C29 88 40 93 47 103" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              <svg class="projects-doodle-left" viewBox="0 0 60 110" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M33 3C35 18 23 23 17 31C11 39 11 50 20 61" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M47 17C49 28 41 33 35 38C29 43 28 53 34 63" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
               </svg>
 
-              <div class="projects-doodle-right"></div>
+              <div class="projects-doodle-right" aria-hidden="true"></div>
 
-              <div class="projects-card-stack">
+              <button class="projects-card-stack" id="openProjectsGallery" aria-label="Open project gallery">
                 <div class="stack-card s1">
-                  <img src="https://picsum.photos/seed/projectstack1/900/1400" alt="Project stack preview 1" loading="lazy" width="900" height="1400">
+                  <img src="assets/project-work-1.jpg" alt="Previous project image 1" loading="lazy">
                 </div>
+
                 <div class="stack-card s2">
-                  <img src="https://picsum.photos/seed/projectstack2/900/1400" alt="Project stack preview 2" loading="lazy" width="900" height="1400">
+                  <img src="assets/project-work-2.jpg" alt="Previous project image 2" loading="lazy">
                 </div>
+
                 <div class="stack-card s3">
-                  <img src="https://picsum.photos/seed/projectstack3/900/1400" alt="Project stack preview 3" loading="lazy" width="900" height="1400">
+                  <img src="assets/project-work-3.jpg" alt="Previous project featured image" loading="lazy">
                 </div>
+
                 <div class="stack-card s4">
-                  <video autoplay muted loop playsinline>
-                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                  <video muted playsinline preload="metadata">
+                    <source src="assets/project-work-4.mp4" type="video/mp4">
                   </video>
                 </div>
-                <div class="stack-card s5">
-                  <img src="https://picsum.photos/seed/projectstack5/900/1400" alt="Project stack preview 4" loading="lazy" width="900" height="1400">
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="projects-view-row">
-            <button class="projects-view-trigger" id="projectsViewTrigger" type="button">VIEW</button>
+                <div class="stack-card s5">
+                  <img src="assets/project-work-5.jpg" alt="Previous project image 5" loading="lazy">
+                </div>
+
+                <div class="stack-floating-badge views">
+                  ✦ <span>360</span>
+                </div>
+
+                <div class="stack-floating-badge sticker">💯</div>
+              </button>
+            </div>
+
+            <div class="stack-caption">
+              <div class="stack-brand">jumbo</div>
+              <div class="stack-title">super in de markt</div>
+              <button class="stack-open" id="openProjectsGalleryText" type="button">
+                <span>View project</span>
+                <span class="stack-open-line"></span>
+              </button>
+            </div>
           </div>
 
           <div class="projects-gallery" id="projectsGallery">
             <div class="projects-display">
               <div class="projects-display-media" id="projectsDisplayMedia"></div>
+
               <div class="projects-display-meta">
                 <div class="projects-display-text">
-                  <h3 id="projectsDisplayTitle">Campaign Visual</h3>
-                  <p id="projectsDisplayDesc">A larger featured frame for the photo and video collection you will continue adding later.</p>
+                  <h3 id="projectsDisplayTitle">Event Showcase</h3>
+                  <p id="projectsDisplayCopy">A featured look at one of our previous visual projects, displayed full-screen inside the section.</p>
                 </div>
                 <div class="projects-display-type" id="projectsDisplayType">Photo</div>
               </div>
             </div>
 
-            <div class="projects-side-panel">
-              <div class="projects-side-copy">
-                <h4>More photos & videos</h4>
-                <p>Choose any frame to switch the main display. The expanded view now opens into a fuller mixed gallery instead of the old fan style.</p>
-              </div>
-              <div class="projects-thumbs" id="projectsThumbs"></div>
+            <div class="projects-thumbs" id="projectsThumbs">
+              <button class="project-thumb active" type="button" data-type="image" data-src="assets/project-work-1.jpg" data-title="Brand Activation" data-copy="A previous campaign moment presented as a still image from our completed work.">
+                <div class="project-thumb-media">
+                  <img src="assets/project-work-1.jpg" alt="Project thumb 1" loading="lazy">
+                  <span class="project-thumb-type">Photo</span>
+                </div>
+                <div class="project-thumb-text">
+                  <strong>Brand Activation</strong>
+                  <span>Hover to preview this project image.</span>
+                </div>
+              </button>
+
+              <button class="project-thumb" type="button" data-type="image" data-src="assets/project-work-2.jpg" data-title="Event Visual" data-copy="A second still from past work, shown inside the same black gallery section.">
+                <div class="project-thumb-media">
+                  <img src="assets/project-work-2.jpg" alt="Project thumb 2" loading="lazy">
+                  <span class="project-thumb-type">Photo</span>
+                </div>
+                <div class="project-thumb-text">
+                  <strong>Event Visual</strong>
+                  <span>Hover to preview this project image.</span>
+                </div>
+              </button>
+
+              <button class="project-thumb" type="button" data-type="image" data-src="assets/project-work-3.jpg" data-title="Featured Night" data-copy="The main cover image for the gallery, used as the default full preview.">
+                <div class="project-thumb-media">
+                  <img src="assets/project-work-3.jpg" alt="Project thumb 3" loading="lazy">
+                  <span class="project-thumb-type">Photo</span>
+                </div>
+                <div class="project-thumb-text">
+                  <strong>Featured Night</strong>
+                  <span>Hover to preview this project image.</span>
+                </div>
+              </button>
+
+              <button class="project-thumb" type="button" data-type="video" data-src="assets/project-work-4.mp4" data-title="Live Experience" data-copy="A video preview from past work, displayed directly in the main frame on hover.">
+                <div class="project-thumb-media">
+                  <video muted playsinline preload="metadata">
+                    <source src="assets/project-work-4.mp4" type="video/mp4">
+                  </video>
+                  <span class="project-thumb-type">Video</span>
+                </div>
+                <div class="project-thumb-text">
+                  <strong>Live Experience</strong>
+                  <span>Hover to preview this project video.</span>
+                </div>
+              </button>
+
+              <button class="project-thumb" type="button" data-type="image" data-src="assets/project-work-5.jpg" data-title="Crowd Moment" data-copy="Another completed project capture shown as part of the interactive gallery.">
+                <div class="project-thumb-media">
+                  <img src="assets/project-work-5.jpg" alt="Project thumb 5" loading="lazy">
+                  <span class="project-thumb-type">Photo</span>
+                </div>
+                <div class="project-thumb-text">
+                  <strong>Crowd Moment</strong>
+                  <span>Hover to preview this project image.</span>
+                </div>
+              </button>
             </div>
 
-            <button class="projects-close" id="projectsClose" type="button">Close</button>
+            <button class="projects-close" id="closeProjectsGallery" type="button">Close gallery</button>
           </div>
         </div>
       </div>
@@ -3469,43 +3553,43 @@
         </div>
 
         <div class="contact-form-card">
-          <h3 class="contact-form-title">Start the conversation</h3>
+          <h3 class="contact-form-title">Start your project</h3>
 
           <form class="contact-form">
             <div class="field-row">
               <div class="field">
-                <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Your name">
+                <label for="firstName">First name</label>
+                <input id="firstName" name="firstName" type="text" placeholder="Your first name">
               </div>
 
               <div class="field">
-                <label for="email">Email</label>
-                <input id="email" type="email" placeholder="Your email">
+                <label for="lastName">Last name</label>
+                <input id="lastName" name="lastName" type="text" placeholder="Your last name">
               </div>
             </div>
 
             <div class="field">
-              <label for="business">Business</label>
-              <input id="business" type="text" placeholder="Business or organization">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com">
             </div>
 
             <div class="contact-service-selection">
-              <div class="contact-service-label">Interested in</div>
-              <div class="contact-service-list">
-                <button class="contact-service-chip active" type="button">Web Developer</button>
-                <button class="contact-service-chip" type="button">Social Media Strategy</button>
-                <button class="contact-service-chip" type="button">Google My Business</button>
-                <button class="contact-service-chip" type="button">VA Recruitment</button>
-                <button class="contact-service-chip" type="button">Social Media Management</button>
+              <div class="contact-service-label">Select services</div>
+              <div class="contact-service-list" id="contactServiceList">
+                <button type="button" class="contact-service-chip" data-service="Web Developer">Web Developer</button>
+                <button type="button" class="contact-service-chip" data-service="Social Media Strategy">Social Media Strategy</button>
+                <button type="button" class="contact-service-chip" data-service="Google My Business">Google My Business</button>
+                <button type="button" class="contact-service-chip" data-service="VA Recruitment Agency">VA Recruitment Agency</button>
+                <button type="button" class="contact-service-chip" data-service="Social Media Management">Social Media Management</button>
               </div>
             </div>
 
             <div class="field">
-              <label for="message">Message</label>
-              <textarea id="message" placeholder="Tell us a little about what you need"></textarea>
+              <label for="message">Project details</label>
+              <textarea id="message" name="message" placeholder="Tell us what you need help with"></textarea>
             </div>
 
-            <button class="contact-submit" type="submit">Send inquiry</button>
+            <button type="submit" class="contact-submit">Send inquiry</button>
           </form>
         </div>
       </div>
@@ -3515,11 +3599,13 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">© The Boss Agency Co. All rights reserved.</div>
+
       <div class="footer-links">
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">YouTube</a>
-        <a href="#">WhatsApp</a>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#work">Our Work</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </footer>
@@ -3673,162 +3759,75 @@
       aboutToggle.setAttribute('aria-expanded', String(!isOpen));
     });
 
-    const serviceChips = document.querySelectorAll('.contact-service-chip');
-    serviceChips.forEach(chip => {
+    const contactServiceChips = document.querySelectorAll('.contact-service-chip');
+
+    contactServiceChips.forEach(chip => {
       chip.addEventListener('click', () => {
-        serviceChips.forEach(item => item.classList.remove('active'));
-        chip.classList.add('active');
+        chip.classList.toggle('active');
       });
     });
 
-    const projectItems = [
-      {
-        type: 'photo',
-        title: 'Campaign Visual',
-        desc: 'A larger featured frame for the photo and video collection you will continue adding later.',
-        src: 'https://picsum.photos/seed/projectgallery1/1400/1800',
-        thumb: 'https://picsum.photos/seed/projectgallery1/600/760',
-        alt: 'Project gallery visual 1'
-      },
-      {
-        type: 'video',
-        title: 'Motion Piece',
-        desc: 'Video preview space inside the expanded gallery section.',
-        src: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
-        thumb: 'https://picsum.photos/seed/projectgallery2/600/760',
-        alt: 'Project gallery video preview'
-      },
-      {
-        type: 'photo',
-        title: 'Brand Story Frame',
-        desc: 'A flexible image slot ready for more campaign visuals and portfolio pieces.',
-        src: 'https://picsum.photos/seed/projectgallery3/1400/1800',
-        thumb: 'https://picsum.photos/seed/projectgallery3/600/760',
-        alt: 'Project gallery visual 2'
-      },
-      {
-        type: 'photo',
-        title: 'Editorial Layout',
-        desc: 'Another place for still imagery once more projects are added later.',
-        src: 'https://picsum.photos/seed/projectgallery4/1400/1800',
-        thumb: 'https://picsum.photos/seed/projectgallery4/600/760',
-        alt: 'Project gallery visual 3'
-      },
-      {
-        type: 'video',
-        title: 'Behind The Scene Reel',
-        desc: 'An extra motion slot so the expanded view feels more complete and visual.',
-        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        thumb: 'https://picsum.photos/seed/projectgallery5/600/760',
-        alt: 'Project gallery video preview 2'
-      },
-      {
-        type: 'photo',
-        title: 'Launch Detail',
-        desc: 'Additional image card for a fuller grid after pressing view.',
-        src: 'https://picsum.photos/seed/projectgallery6/1400/1800',
-        thumb: 'https://picsum.photos/seed/projectgallery6/600/760',
-        alt: 'Project gallery visual 4'
-      },
-      {
-        type: 'photo',
-        title: 'Creative Capture',
-        desc: 'More visual variety so the expanded section shows more content at once.',
-        src: 'https://picsum.photos/seed/projectgallery7/1400/1800',
-        thumb: 'https://picsum.photos/seed/projectgallery7/600/760',
-        alt: 'Project gallery visual 5'
-      },
-      {
-        type: 'video',
-        title: 'Short Visual Loop',
-        desc: 'A looping motion frame to balance the photo and video mix.',
-        src: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm',
-        thumb: 'https://picsum.photos/seed/projectgallery8/600/760',
-        alt: 'Project gallery video preview 3'
-      }
-    ];
-
-    const projectsShowcase = document.getElementById('projectsShowcase');
+    const openProjectsGallery = document.getElementById('openProjectsGallery');
+    const openProjectsGalleryText = document.getElementById('openProjectsGalleryText');
+    const closeProjectsGallery = document.getElementById('closeProjectsGallery');
     const projectsPreview = document.getElementById('projectsPreview');
     const projectsGallery = document.getElementById('projectsGallery');
-    const projectsViewTrigger = document.getElementById('projectsViewTrigger');
-    const projectsClose = document.getElementById('projectsClose');
     const projectsDisplayMedia = document.getElementById('projectsDisplayMedia');
     const projectsDisplayTitle = document.getElementById('projectsDisplayTitle');
-    const projectsDisplayDesc = document.getElementById('projectsDisplayDesc');
+    const projectsDisplayCopy = document.getElementById('projectsDisplayCopy');
     const projectsDisplayType = document.getElementById('projectsDisplayType');
-    const projectsThumbs = document.getElementById('projectsThumbs');
+    const projectThumbs = document.querySelectorAll('.project-thumb');
 
-    let activeProjectIndex = 0;
+    function setProjectDisplay(button) {
+      const type = button.dataset.type;
+      const src = button.dataset.src;
+      const title = button.dataset.title;
+      const copy = button.dataset.copy;
 
-    function renderProjectDisplay(index) {
-      const item = projectItems[index];
-      activeProjectIndex = index;
+      projectThumbs.forEach(item => item.classList.remove('active'));
+      button.classList.add('active');
 
-      if (item.type === 'video') {
-        const sourceType = item.src.endsWith('.webm') ? 'video/webm' : 'video/mp4';
+      if (type === 'video') {
         projectsDisplayMedia.innerHTML = `
-          <video autoplay muted loop playsinline controls>
-            <source src="${item.src}" type="${sourceType}">
+          <video controls autoplay muted loop playsinline>
+            <source src="${src}" type="video/mp4">
           </video>
         `;
+        projectsDisplayType.textContent = 'Video';
       } else {
         projectsDisplayMedia.innerHTML = `
-          <img src="${item.src}" alt="${item.alt}" loading="lazy" width="1400" height="1800">
+          <img src="${src}" alt="${title}" loading="lazy">
         `;
+        projectsDisplayType.textContent = 'Photo';
       }
 
-      projectsDisplayTitle.textContent = item.title;
-      projectsDisplayDesc.textContent = item.desc;
-      projectsDisplayType.textContent = item.type;
-
-      const thumbButtons = projectsThumbs.querySelectorAll('.project-thumb');
-      thumbButtons.forEach((button, buttonIndex) => {
-        button.classList.toggle('active', buttonIndex === index);
-      });
+      projectsDisplayTitle.textContent = title;
+      projectsDisplayCopy.textContent = copy;
     }
 
-    function buildProjectThumbs() {
-      projectsThumbs.innerHTML = projectItems.map((item, index) => {
-        const mediaMarkup = item.type === 'video'
-          ? `<img src="${item.thumb}" alt="${item.alt}" loading="lazy" width="600" height="760">`
-          : `<img src="${item.thumb}" alt="${item.alt}" loading="lazy" width="600" height="760">`;
-
-        return `
-          <button class="project-thumb ${index === 0 ? 'active' : ''}" type="button" data-project-index="${index}">
-            <div class="project-thumb-media">
-              ${mediaMarkup}
-              <span class="project-thumb-type">${item.type}</span>
-            </div>
-            <div class="project-thumb-text">
-              <strong>${item.title}</strong>
-              <span>${item.desc}</span>
-            </div>
-          </button>
-        `;
-      }).join('');
-
-      projectsThumbs.querySelectorAll('.project-thumb').forEach(button => {
-        button.addEventListener('click', () => {
-          renderProjectDisplay(Number(button.dataset.projectIndex));
-        });
-      });
-    }
-
-    buildProjectThumbs();
-    renderProjectDisplay(0);
-
-    projectsViewTrigger.addEventListener('click', () => {
-      projectsShowcase.classList.add('is-expanded');
+    function openGallery() {
       projectsPreview.classList.add('is-hidden');
       projectsGallery.classList.add('is-open');
+    }
+
+    function closeGallery() {
+      projectsGallery.classList.remove('is-open');
+      projectsPreview.classList.remove('is-hidden');
+    }
+
+    openProjectsGallery.addEventListener('click', openGallery);
+    openProjectsGalleryText.addEventListener('click', openGallery);
+    closeProjectsGallery.addEventListener('click', closeGallery);
+
+    projectThumbs.forEach(button => {
+      button.addEventListener('mouseenter', () => setProjectDisplay(button));
+      button.addEventListener('focus', () => setProjectDisplay(button));
+      button.addEventListener('click', () => setProjectDisplay(button));
     });
 
-    projectsClose.addEventListener('click', () => {
-      projectsShowcase.classList.remove('is-expanded');
-      projectsPreview.classList.remove('is-hidden');
-      projectsGallery.classList.remove('is-open');
-    });
+    if (projectThumbs.length) {
+      setProjectDisplay(projectThumbs[0]);
+    }
   </script>
 </body>
 </html>
