@@ -1,356 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>VA Recruitment Agency — Floating Button Preview</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VA Recruitment Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
-  body { margin: 0; background: #ffffff; }
 
-  .va-banner {
-    width: 100%;
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
     background: #ffffff;
-    padding: 56px 24px 64px;
+  }
+
+  .va-hero {
+    width: 100%;
+    min-height: 100vh;
+    padding: 34px 20px 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      linear-gradient(180deg, #e8dce5 0%, #f3e3d6 38%, #f7e7b0 100%);
+    overflow: hidden;
+  }
+
+  .va-wrap {
+    width: 100%;
+    max-width: 1220px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 14px;
     position: relative;
-    overflow: hidden;
-    min-height: 420px;
   }
 
-  .va-banner::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 30% 35%, rgba(255,158,210,0.10), transparent 38%),
-      radial-gradient(circle at 72% 30%, rgba(147,197,253,0.10), transparent 38%),
-      radial-gradient(circle at 50% 75%, rgba(253,224,71,0.08), transparent 42%);
-    pointer-events: none;
-  }
-
-  .va-eyebrow {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #9a9a9a;
-    position: relative;
-    z-index: 3;
+  .va-topline {
+    font-size: clamp(1.6rem, 3vw, 4rem);
+    line-height: 1.05;
+    font-weight: 500;
+    color: #1f1d23;
+    text-align: center;
+    margin: 0 0 26px;
+    letter-spacing: -0.04em;
   }
 
   .va-stage {
     position: relative;
-    width: min(100%, 760px);
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 34px;
+    padding: 10px 0 24px;
   }
 
-  .va-banner-btn {
-    display: inline-flex;
+  .va-word-art {
+    position: relative;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 3;
-    cursor: pointer;
-    animation: vaFloat 4.2s ease-in-out infinite;
-    transition: transform 0.25s ease;
-    text-decoration: none;
-  }
-
-  .va-banner-btn:hover {
-    animation-play-state: paused;
-    transform: translateY(-8px) scale(1.04) rotate(-1deg);
-  }
-
-  .va-banner-btn:active {
-    transform: translateY(-2px) scale(0.98);
-  }
-
-  @keyframes vaFloat {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(0.6deg); }
-  }
-
-  .va-text-wrap {
-    position: relative;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    padding: 6px 16px 10px;
-    filter: drop-shadow(0 14px 22px rgba(0,0,0,0.14));
+    gap: 10px;
+    transform: rotate(-1deg);
   }
 
   .va-line {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
-    line-height: 0.9;
-    letter-spacing: -0.05em;
+    margin: 0;
     text-align: center;
-    white-space: nowrap;
-    background: linear-gradient(
-      135deg,
-      #ff9ecf 0%,
-      #ffd89e 16%,
-      #fff7c2 28%,
-      #7dd3fc 48%,
-      #b794f6 68%,
-      #ff9ecf 84%,
-      #fde68a 100%
-    );
-    background-size: 220% 220%;
+    text-transform: lowercase;
+    font-weight: 900;
+    line-height: 0.82;
+    letter-spacing: -0.08em;
+    position: relative;
+    color: transparent;
+    background:
+      linear-gradient(
+        180deg,
+        #f7b8ff 0%,
+        #e985ff 10%,
+        #c94bff 24%,
+        #9c20ff 42%,
+        #7f12ff 58%,
+        #5a00cc 74%,
+        #21005d 100%
+      );
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
-    -webkit-text-stroke: 2px rgba(173, 104, 183, 0.55);
-    text-shadow:
-      0 1px 0 rgba(255,255,255,0.65),
-      0 8px 18px rgba(255,105,180,0.10),
-      0 14px 28px rgba(0,0,0,0.08);
-    animation: vaHoloShift 6s linear infinite;
-  }
-
-  .va-line-top {
-    font-size: clamp(4.4rem, 12vw, 8.4rem);
-  }
-
-  .va-line-mid,
-  .va-line-bottom {
-    font-size: clamp(2.15rem, 6vw, 4.3rem);
-    margin-top: 6px;
+    filter: drop-shadow(0 10px 0 rgba(36, 0, 92, 0.9))
+            drop-shadow(0 22px 16px rgba(48, 0, 122, 0.28));
+    -webkit-text-stroke: 2px rgba(255,255,255,0.18);
   }
 
   .va-line::before {
     content: attr(data-text);
     position: absolute;
-    inset: auto;
+    left: 0.035em;
+    top: 0.16em;
     z-index: -1;
-    color: rgba(255,255,255,0.62);
-    filter: blur(10px);
-    transform: translateY(4px);
+    color: rgba(26, 0, 76, 0.98);
+    -webkit-text-stroke: 0 transparent;
+    filter: blur(0.4px);
   }
 
-  @keyframes vaHoloShift {
-    0%   { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
-  }
-
-  .va-ground-shadow {
+  .va-line::after {
+    content: attr(data-text);
     position: absolute;
-    bottom: -10px;
-    left: 50%;
-    width: 260px;
-    height: 24px;
-    background: radial-gradient(ellipse, rgba(0,0,0,0.14), transparent 75%);
-    transform: translateX(-50%);
-    z-index: 1;
-    animation: vaShadowPulse 4.2s ease-in-out infinite;
-  }
-
-  @keyframes vaShadowPulse {
-    0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
-    50% { opacity: 0.35; transform: translateX(-50%) scale(0.82); }
-  }
-
-  .va-tag {
-    position: absolute;
-    top: -6px;
-    right: -4px;
-    background: #111;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 5px 10px;
-    border-radius: 999px;
-    z-index: 4;
-    white-space: nowrap;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
-    animation: vaTagPulse 2.6s ease-in-out infinite;
-  }
-
-  @keyframes vaTagPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-  }
-
-  .va-deco {
-    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255,255,255,0.95) 0%,
+        rgba(255,255,255,0.42) 14%,
+        rgba(255,255,255,0) 32%
+      );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     pointer-events: none;
-    z-index: 2;
+    mix-blend-mode: screen;
   }
 
-  .va-bubble {
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff9ecf, #b794f6, #7dd3fc, #6ee7b7, #fde68a);
-    background-size: 200% 200%;
-    opacity: 0.5;
-    filter: blur(0.3px);
-    box-shadow: inset 0 0 6px rgba(255,255,255,0.6);
-    animation: vaBubbleFloat ease-in-out infinite, vaBubbleHue 6s linear infinite;
+  .va-line-top {
+    font-size: clamp(4.4rem, 12vw, 10rem);
   }
 
-  @keyframes vaBubbleHue {
-    0%   { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
-  }
-
-  .b1 { width: 26px; height: 26px; left: 6%; top: 12%; animation-duration: 5.2s, 6s; animation-delay: 0s; }
-  .b2 { width: 14px; height: 14px; left: 18%; top: -2%; animation-duration: 4s, 5s; animation-delay: 0.6s; }
-  .b3 { width: 18px; height: 18px; right: 10%; top: 24%; animation-duration: 4.8s, 7s; animation-delay: 1.1s; }
-  .b4 { width: 10px; height: 10px; right: 18%; top: 82%; animation-duration: 3.6s, 4.5s; animation-delay: 0.3s; }
-  .b5 { width: 20px; height: 20px; left: 16%; bottom: -12px; animation-duration: 5.6s, 6.5s; animation-delay: 0.9s; }
-  .b6 { width: 12px; height: 12px; right: 24%; bottom: -10px; animation-duration: 4.4s, 5.5s; animation-delay: 1.4s; }
-
-  @keyframes vaBubbleFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-9px); }
+  .va-line-bottom {
+    font-size: clamp(3rem, 8.1vw, 6.9rem);
   }
 
   .va-star {
-    width: clamp(12px, 1.6vw, 20px);
-    animation: vaStarSpin ease-in-out infinite;
+    position: absolute;
+    width: clamp(80px, 10vw, 126px);
+    height: auto;
+    color: #d9d9df;
+    filter:
+      drop-shadow(0 5px 4px rgba(255,255,255,0.55))
+      drop-shadow(0 10px 10px rgba(0,0,0,0.16));
   }
 
-  .s1 { left: 10%; top: 50%; animation-duration: 3.4s; }
-  .s2 { right: 12%; top: 6%; animation-duration: 4.1s; }
-  .s3 { right: 8%; bottom: 8%; animation-duration: 3.8s; }
-  .s4 { left: 8%; bottom: -18px; animation-duration: 3.2s; }
-
-  @keyframes vaStarSpin {
-    0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.55; }
-    50% { transform: rotate(20deg) scale(1.15); opacity: 0.85; }
+  .va-star.left {
+    left: 2%;
+    top: 42%;
+    transform: translateY(-50%) rotate(-10deg);
   }
 
-  .va-sub {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.86rem;
-    color: #8a8a8a;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    text-align: center;
-    max-width: 30ch;
-    position: relative;
-    z-index: 3;
+  .va-star.right {
+    right: 5%;
+    top: 24%;
+    transform: translateY(-50%) rotate(8deg);
   }
 
-  @media (max-width: 600px) {
-    .va-banner {
-      padding: 44px 18px 50px;
-      min-height: 340px;
+  .va-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 0 26px;
+    border-radius: 999px;
+    background: #23222b;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  }
+
+  .va-cta:hover {
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 900px) {
+    .va-stage {
+      margin-bottom: 28px;
+      padding-bottom: 10px;
+    }
+
+    .va-star.left {
+      left: -1%;
+      top: 48%;
+    }
+
+    .va-star.right {
+      right: 1%;
+      top: 19%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .va-hero {
+      min-height: auto;
+      padding: 34px 14px 40px;
+    }
+
+    .va-topline {
+      font-size: clamp(1.2rem, 7vw, 2.2rem);
+      margin-bottom: 18px;
     }
 
     .va-stage {
-      width: min(100%, 340px);
+      margin-bottom: 22px;
+      padding-top: 8px;
     }
 
-    .va-line-top {
-      font-size: clamp(3.2rem, 19vw, 5rem);
-    }
-
-    .va-line-mid,
-    .va-line-bottom {
-      font-size: clamp(1.6rem, 10vw, 2.6rem);
-      margin-top: 4px;
+    .va-word-art {
+      gap: 6px;
     }
 
     .va-line {
-      -webkit-text-stroke: 1.4px rgba(173, 104, 183, 0.55);
+      -webkit-text-stroke: 1.2px rgba(255,255,255,0.16);
+      filter: drop-shadow(0 6px 0 rgba(36, 0, 92, 0.9))
+              drop-shadow(0 14px 10px rgba(48, 0, 122, 0.22));
     }
 
-    .va-ground-shadow {
-      width: 190px;
-      height: 18px;
+    .va-line::before {
+      left: 0.03em;
+      top: 0.13em;
     }
 
-    .va-tag {
-      right: 4px;
-      top: -10px;
+    .va-line-top {
+      font-size: clamp(3.3rem, 16vw, 5.4rem);
+    }
+
+    .va-line-bottom {
+      font-size: clamp(2.05rem, 10vw, 3.4rem);
+    }
+
+    .va-star {
+      width: 58px;
+    }
+
+    .va-star.left {
+      left: -4px;
+      top: 50%;
+    }
+
+    .va-star.right {
+      right: 0;
+      top: 16%;
+    }
+
+    .va-cta {
+      min-height: 50px;
+      padding: 0 22px;
+      font-size: 0.95rem;
     }
   }
 </style>
 </head>
 <body>
 
-<div class="va-banner">
+<section class="va-hero">
+  <div class="va-wrap">
+    <h2 class="va-topline">Help us build stronger teams with</h2>
 
-  <span class="va-eyebrow">Now hiring &mdash; join the team</span>
-
-  <div class="va-stage">
-
-    <span class="va-deco va-bubble b1"></span>
-    <span class="va-deco va-bubble b2"></span>
-    <span class="va-deco va-bubble b3"></span>
-    <span class="va-deco va-bubble b4"></span>
-    <span class="va-deco va-bubble b5"></span>
-    <span class="va-deco va-bubble b6"></span>
-
-    <span class="va-deco va-star s1" aria-hidden="true">
-      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M40 4 C40 4 43 30 40 40 C37 30 40 4 40 4Z" fill="#c9a8f5"/>
-        <path d="M76 40 C76 40 50 43 40 40 C50 37 76 40 76 40Z" fill="#c9a8f5"/>
-        <path d="M40 76 C40 76 37 50 40 40 C43 50 40 76 40 76Z" fill="#93c5fd"/>
-        <path d="M4 40 C4 40 30 37 40 40 C30 43 4 40 4 40Z" fill="#93c5fd"/>
+    <div class="va-stage">
+      <svg class="va-star left" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 4C63 38 69 51 116 60C69 69 63 82 60 116C57 82 51 69 4 60C51 51 57 38 60 4Z" fill="url(#silverA)"/>
+        <defs>
+          <linearGradient id="silverA" x1="4" y1="4" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8D8E96"/>
+            <stop offset="0.2" stop-color="#FFFFFF"/>
+            <stop offset="0.45" stop-color="#A8A9B1"/>
+            <stop offset="0.68" stop-color="#F5F5F8"/>
+            <stop offset="1" stop-color="#7F8088"/>
+          </linearGradient>
+        </defs>
       </svg>
-    </span>
 
-    <span class="va-deco va-star s2" aria-hidden="true">
-      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M40 4 C40 4 43 30 40 40 C37 30 40 4 40 4Z" fill="#ff9ecf"/>
-        <path d="M76 40 C76 40 50 43 40 40 C50 37 76 40 76 40Z" fill="#ff9ecf"/>
-        <path d="M40 76 C40 76 37 50 40 40 C43 50 40 76 40 76Z" fill="#fde68a"/>
-        <path d="M4 40 C4 40 30 37 40 40 C30 43 4 40 4 40Z" fill="#fde68a"/>
+      <div class="va-word-art">
+        <h1 class="va-line va-line-top" data-text="va">va</h1>
+        <h1 class="va-line va-line-bottom" data-text="recruitment agency">recruitment agency</h1>
+      </div>
+
+      <svg class="va-star right" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 4C63 38 69 51 116 60C69 69 63 82 60 116C57 82 51 69 4 60C51 51 57 38 60 4Z" fill="url(#silverB)"/>
+        <defs>
+          <linearGradient id="silverB" x1="4" y1="4" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8D8E96"/>
+            <stop offset="0.2" stop-color="#FFFFFF"/>
+            <stop offset="0.45" stop-color="#A8A9B1"/>
+            <stop offset="0.68" stop-color="#F5F5F8"/>
+            <stop offset="1" stop-color="#7F8088"/>
+          </linearGradient>
+        </defs>
       </svg>
-    </span>
+    </div>
 
-    <span class="va-deco va-star s3" aria-hidden="true">
-      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M40 4 C40 4 43 30 40 40 C37 30 40 4 40 4Z" fill="#7dd3fc"/>
-        <path d="M76 40 C76 40 50 43 40 40 C50 37 76 40 76 40Z" fill="#7dd3fc"/>
-        <path d="M40 76 C40 76 37 50 40 40 C43 50 40 76 40 76Z" fill="#6ee7b7"/>
-        <path d="M4 40 C4 40 30 37 40 40 C30 43 4 40 4 40Z" fill="#6ee7b7"/>
-      </svg>
-    </span>
-
-    <span class="va-deco va-star s4" aria-hidden="true">
-      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M40 4 C40 4 43 30 40 40 C37 30 40 4 40 4Z" fill="#fdeb9a"/>
-        <path d="M76 40 C76 40 50 43 40 40 C50 37 76 40 76 40Z" fill="#fdeb9a"/>
-        <path d="M40 76 C40 76 37 50 40 40 C43 50 40 76 40 76Z" fill="#ff9ecf"/>
-        <path d="M4 40 C4 40 30 37 40 40 C30 43 4 40 4 40Z" fill="#ff9ecf"/>
-      </svg>
-    </span>
-
-    <a href="#" class="va-banner-btn" aria-label="VA Recruitment Agency — Learn more">
-      <span class="va-tag">Apply now</span>
-
-      <span class="va-text-wrap">
-        <span class="va-line va-line-top" data-text="VA">VA</span>
-        <span class="va-line va-line-mid" data-text="Recruitment">Recruitment</span>
-        <span class="va-line va-line-bottom" data-text="Agency">Agency</span>
-      </span>
-
-      <span class="va-ground-shadow"></span>
-    </a>
-
+    <a href="#" class="va-cta">Join our VA team</a>
   </div>
-
-  <span class="va-sub">We place the right people with the right businesses &mdash; fast.</span>
-
-</div>
+</section>
 
 </body>
 </html>
