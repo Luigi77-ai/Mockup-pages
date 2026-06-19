@@ -209,20 +209,72 @@
     }
 
     .hero {
-      min-height: calc(100vh - 120px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 
-    .hero-inner {
-      width: 100%;
-      max-width: 1120px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      transform: translateY(-55px);
-    }
+.hero-inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  transform: translateY(-55px);
+  position: relative;
+}
+
+.hero-corner-logo {
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.hero-corner-logo img {
+  display: block;
+  width: clamp(86px, 9vw, 128px);
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+@media (max-width: 820px) {
+  .hero-inner {
+    justify-content: center;
+    transform: translateY(-40px);
+  }
+
+  .hero-corner-logo {
+    top: -10px;
+    right: 4px;
+  }
+
+  .hero-corner-logo img {
+    width: clamp(72px, 18vw, 100px);
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-inner {
+    transform: translateY(-28px);
+  }
+
+  .hero-corner-logo {
+    top: -14px;
+    right: 2px;
+  }
+
+  .hero-corner-logo img {
+    width: clamp(64px, 20vw, 84px);
+  }
+}
 
     .headline {
       width: 100%;
@@ -3170,34 +3222,31 @@
   <div class="menu-overlay" id="menuOverlay"></div>
 
   <main class="page">
-    <section class="hero" id="home">
-      <div class="hero-inner">
-        <div class="headline">
-          <div class="line headline-main">
-            <span>We Build</span>
-          </div>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <a class="hero-corner-logo" href="#home" aria-label="The Boss Agency Co. home">
+      <img
+        src="assets/Logo nuevo The Boss Agency Co..png"
+        alt="The Boss Agency Co. logo"
+        loading="eager"
+        width="128"
+        height="128"
+      />
+    </a>
 
-          <div class="line headline-focus">
-            <span>Visibility</span>
-          </div>
-
-          <div class="line headline-main">
-            <span>With Strategy</span>
-
-            <div class="statement-card">
-              <div class="statement-track">
-                <span class="statement-text">We Know What We Do</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="line headline-sub">
-            <span>And Growth</span>
-          </div>
+    <div class="headline">
+      <div class="line headline-main"><span>We Build</span></div>
+      <div class="line headline-focus"><span>Visibility</span></div>
+      <div class="line headline-main"><span>With Strategy</span></div>
+      <div class="statement-card">
+        <div class="statement-track">
+          <span class="statement-text">We Know What We Do</span>
         </div>
       </div>
-    </section>
-
+      <div class="line headline-sub"><span>And Growth</span></div>
+    </div>
+  </div>
+</section>
     <section class="services-section" id="services">
       <div class="services-layout">
         <div class="services-content">
