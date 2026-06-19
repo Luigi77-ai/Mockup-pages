@@ -1,152 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Map Style Hero</title>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VA Recruitment Agency</title>
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
+      margin: 0;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #ffffff;
-      overflow-x: hidden;
-      font-family: Arial, sans-serif;
+      background: #11121a;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .hero-map-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 1200px;
+    .va-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
       padding: 40px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
-    .hero-map-text {
+    .balloon-text-image {
+      display: block;
+      width: 100%;
+      max-width: 640px;
+      height: auto;
+      margin-bottom: -18px;
+    }
+
+    .view-more-btn {
       position: relative;
-      z-index: 2;
-      width: 100%;
-      display: flex;
-      justify-content: center;
+      display: inline-flex;
       align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 38px;
+      border-radius: 999px;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #3a2a08;
+      background: linear-gradient(180deg, #fff3c4 0%, #f6cf5b 22%, #e0a92b 55%, #c4860f 78%, #a76b06 100%);
+      box-shadow:
+        0 10px 22px rgba(180, 120, 10, 0.35),
+        inset 0 2px 2px rgba(255, 255, 255, 0.85),
+        inset 0 -6px 10px rgba(120, 70, 0, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .hero-map-text-image {
-      display: block;
-      width: min(57vw, 760px);
-      max-width: 100%;
-      height: auto;
+    .view-more-btn:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 14px 28px rgba(180, 120, 10, 0.4),
+        inset 0 2px 2px rgba(255, 255, 255, 0.9),
+        inset 0 -6px 10px rgba(120, 70, 0, 0.35);
     }
 
-    .hero-map-sparkle {
-      position: absolute;
-      left: 10%;
-      top: 50%;
-      transform: translateY(-38%);
-      z-index: 3;
-      width: min(14vw, 140px);
+    .view-more-btn:active {
+      transform: translateY(0);
     }
 
-    .hero-map-sparkle img {
-      display: block;
-      width: 100%;
-      height: auto;
+    .view-more-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: #3a2a08;
+      stroke-width: 2.4;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.2s ease;
     }
 
-    .hero-map-star {
-      position: absolute;
-      right: 11%;
-      top: 28%;
-      z-index: 3;
-      width: min(8vw, 82px);
+    .view-more-btn:hover svg {
+      transform: translateX(3px);
     }
 
-    .hero-map-star img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    @media (max-width: 991px) {
-      .hero-map-wrap {
-        padding: 24px 16px;
+    @media (max-width: 600px) {
+      .balloon-text-image {
+        max-width: 90vw;
       }
 
-      .hero-map-text-image {
-        width: 92vw;
-        max-width: 760px;
-      }
-
-      .hero-map-sparkle {
-        left: 4%;
-        top: 56%;
-        width: min(21vw, 120px);
-      }
-
-      .hero-map-star {
-        right: 5%;
-        top: 24%;
-        width: min(11vw, 64px);
+      .view-more-btn {
+        font-size: 13px;
+        padding: 14px 30px;
       }
     }
   </style>
 </head>
 <body>
-  <section class="hero-map-wrap">
-    <div class="hero-map-sparkle">
-      <img
-        src="https://cdn.prod.website-files.com/667ad2c31e593132fcd80f3d/667ad2c31e593132fcd80f8e/icon-3d-sparkle.png"
-        srcset="
-          https://cdn.prod.website-files.com/667ad2c31e593132fcd80f3d/667ad2c31e593132fcd80f8e/icon-3d-sparkle-p-500.png 500w,
-          https://cdn.prod.website-files.com/667ad2c31e593132fcd80f3d/667ad2c31e593132fcd80f8e/icon-3d-sparkle.png 720w
-        "
-        sizes="(max-width: 991px) 21vw, 14vw"
-        alt="3D sparkle"
-        loading="eager"
-        decoding="async"
-      />
-    </div>
 
-    <div class="hero-map-text">
-      <img
-        src="https://cdn.prod.website-files.com/667ad2c31e593132fcd80f3d/667ad2c31e593132fcd80f8c/text-themap.png"
-        srcset="
-          https://cdn.prod.website-files.com/667ad2c31e593132fcd80f3d/667ad2c31e593132fcd80f8c/text-themap-p-500.png 500w,
-          https://cdn.prod.website-files.com/667ad2c31e593132fcd80f3d/667ad2c31e593132fcd80f8c/text-themap-p-800.png 800w,
-          https://cdn.prod.website-files.com/667ad2c31e593132fcd80f3d/667ad2c31e593132fcd80f8c/text-themap-p-1080.png 1080w,
-          https://cdn.prod.website-files.com/667ad2c31e593132fcd80f3d/667ad2c31e593132fcd80f8c/text-themap.png 1440w
-        "
-        sizes="(max-width: 991px) 92vw, 57vw"
-        alt="3D Balloon letters The map"
-        class="hero-map-text-image"
-        loading="eager"
-        decoding="async"
-      />
-    </div>
+  <div class="va-block">
+    <img
+      src="assets/WhatsApp Image 2026-06-19 at 4.28.44 PM.jpeg"
+      alt="VA Recruitment Agency"
+      class="balloon-text-image"
+      loading="eager"
+    />
 
-    <div class="hero-map-star">
-      <img
-        src="https://cdn.prod.website-files.com/667ad2c31e593132fcd80f3d/667ad2c31e593132fcd80f88/icon-3d-star.png"
-        srcset="
-          https://cdn.prod.website-files.com/667ad2c31e593132fcd80f3d/667ad2c31e593132fcd80f88/icon-3d-star-p-500.png 500w,
-          https://cdn.prod.website-files.com/667ad2c31e593132fcd80f3d/667ad2c31e593132fcd80f88/icon-3d-star.png 720w
-        "
-        sizes="(max-width: 991px) 11vw, 8vw"
-        alt="3D star"
-        loading="eager"
-        decoding="async"
-      />
-    </div>
-  </section>
+    <a class="view-more-btn" href="#" target="_blank" rel="noopener">
+      View more
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 12h14"></path>
+        <path d="M13 5l7 7-7 7"></path>
+      </svg>
+    </a>
+  </div>
+
 </body>
 </html>
