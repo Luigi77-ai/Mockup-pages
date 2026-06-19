@@ -2799,10 +2799,11 @@
   display: inline-block;
   text-decoration: none;
   outline: none;
-  animation: floatButton 3.6s ease-in-out infinite;
+  animation: floatButton 2.8s ease-in-out infinite;
   transform-origin: center center;
   transition: transform 0.28s ease, filter 0.28s ease;
   z-index: 1;
+  will-change: transform;
 }
 
 .image-button:focus-visible {
@@ -2811,13 +2812,13 @@
 }
 
 .image-button:hover {
-  transform: translateY(-8px) rotate(-1deg) scale(1.025);
-  filter: brightness(1.03);
+  transform: translateY(-10px) rotate(-1.2deg) scale(1.03);
+  filter: brightness(1.04);
   animation-play-state: paused;
 }
 
 .image-button:active {
-  transform: translateY(-2px) scale(0.992);
+  transform: translateY(-3px) scale(0.992);
 }
 
 .image-button::before {
@@ -2856,11 +2857,12 @@
   border-radius: 999px;
   text-decoration: none;
   cursor: pointer;
-  font-family: 'Anton', sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: #ffffff;
   background: linear-gradient(180deg, #ffe8a3 0%, #f4c94d 20%, #dca21b 48%, #bb7d08 74%, #9f6503 100%);
   box-shadow:
@@ -2920,7 +2922,7 @@
   width: 16px;
   height: 16px;
   stroke: #ffffff;
-  stroke-width: 2.4;
+  stroke-width: 2.2;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -2933,19 +2935,22 @@
 
 @keyframes floatButton {
   0% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px) rotate(0deg) scale(1);
   }
-  25% {
-    transform: translateY(-10px) rotate(-1deg);
+  20% {
+    transform: translateY(-14px) rotate(-1.2deg) scale(1.01);
   }
-  50% {
-    transform: translateY(-3px) rotate(1deg);
+  40% {
+    transform: translateY(-6px) rotate(1.1deg) scale(1.015);
   }
-  75% {
-    transform: translateY(-12px) rotate(-0.65deg);
+  60% {
+    transform: translateY(-18px) rotate(-0.8deg) scale(1.02);
+  }
+  80% {
+    transform: translateY(-8px) rotate(1deg) scale(1.01);
   }
   100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px) rotate(0deg) scale(1);
   }
 }
 
@@ -2974,7 +2979,7 @@
   }
 
   .image-button {
-    animation: floatButton 3.6s ease-in-out infinite;
+    animation: floatButton 2.6s ease-in-out infinite;
   }
 
   .balloon-text-image {
@@ -2985,8 +2990,8 @@
     min-height: 56px;
     padding: 0 30px;
     margin-top: -72px;
-    font-size: 0.88rem;
-    letter-spacing: 0.07em;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
   }
 
   .view-here-btn::before {
@@ -2995,6 +3000,18 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .image-button,
+  .image-button::before,
+  .view-here-btn::before {
+    animation: none;
+  }
+
+  .image-button:hover,
+  .view-here-btn:hover,
+  .view-here-btn:hover svg {
+    transform: none;
+  }
+}
   .image-button,
   .image-button::before,
   .view-here-btn::before {
