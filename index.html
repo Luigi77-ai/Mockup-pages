@@ -21,19 +21,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 72px 24px;
+      padding: 56px 24px;
       background: #ffffff;
       overflow: hidden;
     }
 
     .tba-feature-inner {
       width: 100%;
-      max-width: 980px;
+      max-width: 1400px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 18px;
+      gap: 24px;
       text-align: center;
     }
 
@@ -41,34 +41,33 @@
       position: relative;
       display: inline-block;
       text-decoration: none;
-      border-radius: 28px;
       outline: none;
       animation: floatButton 3.6s ease-in-out infinite;
       transform-origin: center center;
-      transition: transform 0.25s ease, filter 0.25s ease;
+      transition: transform 0.28s ease, filter 0.28s ease;
     }
 
     .image-button:focus-visible {
-      box-shadow: 0 0 0 4px rgba(212, 170, 53, 0.3);
-      border-radius: 28px;
+      border-radius: 36px;
+      box-shadow: 0 0 0 5px rgba(219, 177, 63, 0.28);
     }
 
     .image-button:hover {
-      transform: translateY(-6px) rotate(-1deg) scale(1.02);
+      transform: translateY(-8px) rotate(-1deg) scale(1.025);
       filter: brightness(1.03);
       animation-play-state: paused;
     }
 
     .image-button:active {
-      transform: translateY(-1px) scale(0.99);
+      transform: translateY(-2px) scale(0.992);
     }
 
     .image-button::before {
       content: "";
       position: absolute;
-      inset: -12px -18px -24px -18px;
-      background: radial-gradient(circle at center, rgba(228, 179, 62, 0.2) 0%, rgba(228, 179, 62, 0) 72%);
-      filter: blur(18px);
+      inset: -18px -28px -34px -28px;
+      background: radial-gradient(circle at center, rgba(231, 184, 73, 0.22) 0%, rgba(231, 184, 73, 0) 72%);
+      filter: blur(24px);
       z-index: 0;
       pointer-events: none;
       animation: glowPulse 3.6s ease-in-out infinite;
@@ -78,52 +77,92 @@
       position: relative;
       z-index: 1;
       display: block;
-      width: 100%;
-      max-width: 640px;
+      width: min(92vw, 1120px);
+      max-width: 100%;
       height: auto;
       filter:
-        drop-shadow(0 18px 30px rgba(0, 0, 0, 0.16))
-        drop-shadow(0 8px 12px rgba(208, 158, 37, 0.12));
+        drop-shadow(0 26px 38px rgba(0, 0, 0, 0.14))
+        drop-shadow(0 10px 20px rgba(219, 169, 46, 0.14));
       will-change: transform;
     }
 
     .view-here-btn {
+      position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 54px;
-      padding: 0 34px;
+      min-height: 64px;
+      padding: 0 42px;
       border-radius: 999px;
-      background: #000000;
-      color: #ffffff;
       text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 700;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 15px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: #ffffff;
+      background: linear-gradient(180deg, #ffe8a3 0%, #f4c94d 20%, #dca21b 48%, #bb7d08 74%, #9f6503 100%);
+      box-shadow:
+        0 16px 30px rgba(185, 128, 12, 0.28),
+        inset 0 3px 4px rgba(255, 255, 255, 0.88),
+        inset 0 -8px 14px rgba(121, 76, 0, 0.35);
       transition:
         transform 0.22s ease,
-        background 0.22s ease,
-        box-shadow 0.22s ease;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+        box-shadow 0.22s ease,
+        filter 0.22s ease;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .view-here-btn::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 10%;
+      width: 80%;
+      height: 42%;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0.16) 100%);
+      filter: blur(0.4px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .view-here-btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0) 34%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .view-here-btn span,
+    .view-here-btn svg {
+      position: relative;
+      z-index: 1;
     }
 
     .view-here-btn:hover {
-      transform: translateY(-2px);
-      background: #1b1b1b;
-      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+      transform: translateY(-3px) scale(1.02);
+      filter: saturate(1.05) brightness(1.03);
+      box-shadow:
+        0 20px 34px rgba(185, 128, 12, 0.34),
+        inset 0 3px 4px rgba(255, 255, 255, 0.9),
+        inset 0 -8px 14px rgba(121, 76, 0, 0.35);
     }
 
     .view-here-btn:active {
-      transform: translateY(0);
+      transform: translateY(0) scale(0.992);
     }
 
     .view-here-btn svg {
-      width: 15px;
-      height: 15px;
-      stroke: currentColor;
-      stroke-width: 2.2;
+      width: 16px;
+      height: 16px;
+      stroke: #ffffff;
+      stroke-width: 2.4;
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -139,13 +178,13 @@
         transform: translateY(0px) rotate(0deg);
       }
       25% {
-        transform: translateY(-8px) rotate(-1deg);
+        transform: translateY(-10px) rotate(-1deg);
       }
       50% {
-        transform: translateY(-2px) rotate(1deg);
+        transform: translateY(-3px) rotate(1deg);
       }
       75% {
-        transform: translateY(-10px) rotate(-0.6deg);
+        transform: translateY(-12px) rotate(-0.65deg);
       }
       100% {
         transform: translateY(0px) rotate(0deg);
@@ -158,8 +197,8 @@
         transform: scale(0.98);
       }
       50% {
-        opacity: 0.82;
-        transform: scale(1.04);
+        opacity: 0.9;
+        transform: scale(1.05);
       }
       100% {
         opacity: 0.45;
@@ -167,19 +206,23 @@
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
       .tba-feature-section {
-        padding: 56px 16px;
+        padding: 48px 16px;
+      }
+
+      .tba-feature-inner {
+        gap: 20px;
       }
 
       .balloon-text-image {
-        max-width: 92vw;
+        width: 96vw;
       }
 
       .view-here-btn {
-        min-height: 50px;
-        padding: 0 26px;
-        font-size: 0.82rem;
+        min-height: 56px;
+        padding: 0 30px;
+        font-size: 13px;
         letter-spacing: 0.1em;
       }
     }
@@ -212,7 +255,7 @@
       </a>
 
       <a class="view-here-btn" href="next-page.html">
-        View Here
+        <span>View Here</span>
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M5 12h14"></path>
           <path d="M13 5l7 7-7 7"></path>
