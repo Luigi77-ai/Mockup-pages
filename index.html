@@ -3377,29 +3377,394 @@
 }
 </style>
 
+<style>
+.hero {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  transform: translateY(-22px);
+}
+
+.hero-corner-logo {
+  position: fixed;
+  top: 10px;
+  right: 22px;
+  z-index: 1600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.hero-corner-logo img {
+  display: block;
+  width: clamp(155px, 13vw, 220px);
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+.headline {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.hero-line {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.hero-line + .hero-line {
+  margin-top: 12px;
+}
+
+.hero-word {
+  font-family: Anton, sans-serif;
+  font-size: clamp(3.4rem, 6.5vw, 7.15rem);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+}
+
+.hero-word.hero-word-tight {
+  letter-spacing: 0;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 410px;
+  min-height: 78px;
+  padding: 0 28px;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  vertical-align: middle;
+}
+
+.hero-badge-text {
+  font-family: Anton, sans-serif;
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .hero-inner {
+    transform: translateY(-10px);
+  }
+
+  .hero-line {
+    gap: 12px;
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .hero-badge {
+    min-width: 320px;
+    min-height: 68px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 820px) {
+  .hero-corner-logo {
+    top: 4px;
+    right: 12px;
+  }
+
+  .hero-corner-logo img {
+    width: clamp(110px, 22vw, 150px);
+  }
+
+  .hero-inner {
+    transform: translateY(8px);
+  }
+
+  .headline {
+    max-width: 100%;
+  }
+
+  .hero-word {
+    font-size: clamp(2.5rem, 11vw, 4.9rem);
+  }
+
+  .hero-badge {
+    min-width: 100%;
+    max-width: 340px;
+    min-height: 62px;
+  }
+
+  .hero-badge-text {
+    font-size: clamp(1.12rem, 4.4vw, 1.45rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    min-height: auto;
+    padding-top: 42px;
+  }
+
+  .hero-corner-logo {
+    top: 2px;
+    right: 8px;
+  }
+
+  .hero-corner-logo img {
+    width: clamp(92px, 24vw, 122px);
+  }
+
+  .hero-inner {
+    transform: translateY(18px);
+  }
+
+  .hero-line + .hero-line {
+    margin-top: 10px;
+  }
+
+  .hero-word {
+    font-size: clamp(2.1rem, 12vw, 3.8rem);
+  }
+
+  .hero-badge {
+    max-width: 100%;
+    min-height: 58px;
+    padding: 0 16px;
+  }
+}
+</style>
+
 <section class="hero" id="home">
   <a class="hero-corner-logo" href="#home" aria-label="The Boss Agency Co. home">
     <img
       src="assets/Logo nuevo The Boss Agency Co..png"
       alt="The Boss Agency Co. logo"
       loading="eager"
-      width="210"
-      height="210"
+      width="220"
+      height="220"
+    />
+  </a>
+<style>
+.hero {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  transform: translateY(-22px);
+}
+
+.hero-corner-logo {
+  position: fixed;
+  top: 10px;
+  right: 22px;
+  z-index: 1600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.hero-corner-logo img {
+  display: block;
+  width: clamp(155px, 13vw, 220px);
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+.headline {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.hero-line {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.hero-line + .hero-line {
+  margin-top: 12px;
+}
+
+.hero-word {
+  font-family: Anton, sans-serif;
+  font-size: clamp(3.4rem, 6.5vw, 7.15rem);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+}
+
+.hero-word.hero-word-tight {
+  letter-spacing: 0;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 410px;
+  min-height: 78px;
+  padding: 0 28px;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  vertical-align: middle;
+}
+
+.hero-badge-text {
+  font-family: Anton, sans-serif;
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .hero-inner {
+    transform: translateY(-10px);
+  }
+
+  .hero-line {
+    gap: 12px;
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .hero-badge {
+    min-width: 320px;
+    min-height: 68px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 820px) {
+  .hero-corner-logo {
+    top: 4px;
+    right: 12px;
+  }
+
+  .hero-corner-logo img {
+    width: clamp(110px, 22vw, 150px);
+  }
+
+  .hero-inner {
+    transform: translateY(8px);
+  }
+
+  .headline {
+    max-width: 100%;
+  }
+
+  .hero-word {
+    font-size: clamp(2.5rem, 11vw, 4.9rem);
+  }
+
+  .hero-badge {
+    min-width: 100%;
+    max-width: 340px;
+    min-height: 62px;
+  }
+
+  .hero-badge-text {
+    font-size: clamp(1.12rem, 4.4vw, 1.45rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    min-height: auto;
+    padding-top: 42px;
+  }
+
+  .hero-corner-logo {
+    top: 2px;
+    right: 8px;
+  }
+
+  .hero-corner-logo img {
+    width: clamp(92px, 24vw, 122px);
+  }
+
+  .hero-inner {
+    transform: translateY(18px);
+  }
+
+  .hero-line + .hero-line {
+    margin-top: 10px;
+  }
+
+  .hero-word {
+    font-size: clamp(2.1rem, 12vw, 3.8rem);
+  }
+
+  .hero-badge {
+    max-width: 100%;
+    min-height: 58px;
+    padding: 0 16px;
+  }
+}
+</style>
+
+<section class="hero" id="home">
+  <a class="hero-corner-logo" href="#home" aria-label="The Boss Agency Co. home">
+    <img
+      src="assets/Logo nuevo The Boss Agency Co..png"
+      alt="The Boss Agency Co. logo"
+      loading="eager"
+      width="220"
+      height="220"
     />
   </a>
 
   <div class="hero-inner">
     <div class="headline">
-      <div class="hero-line-a">
-        <span class="hero-word-small">Strategic</span>
-        <span class="hero-word-big">Visibility</span>
+      <div class="hero-line">
+        <span class="hero-word">We Build</span>
+        <span class="hero-word hero-word-tight">Visibility</span>
       </div>
 
-      <div class="hero-line-b">
-        <span class="hero-word-small">That Drives</span>
-        <span class="hero-pill">
-          <span class="hero-pill-text">Real Growth</span>
+      <div class="hero-line">
+        <span class="hero-word">With Strategy</span>
+        <span class="hero-badge">
+          <span class="hero-badge-text">We Know What We Do</span>
         </span>
+        <span class="hero-word">And Growth</span>
       </div>
     </div>
   </div>
