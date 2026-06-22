@@ -3703,20 +3703,223 @@
 }
 </style>
 
+<style>
+.hero {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  transform: translateY(-55px);
+}
+
+.headline {
+  width: 100%;
+  font-family: Anton, sans-serif;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0 auto;
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.line + .line {
+  margin-top: 14px;
+}
+
+.headline-main {
+  font-size: clamp(3rem, 6vw, 6.1rem);
+}
+
+.headline-focus {
+  font-size: clamp(3.9rem, 8vw, 7.6rem);
+}
+
+.headline-sub {
+  font-size: clamp(2.5rem, 5vw, 4.7rem);
+}
+
+.hero-bar-line {
+  display: grid;
+  grid-template-columns: auto minmax(340px, 1fr);
+  align-items: center;
+  gap: 18px;
+  width: calc(100vw - 36px);
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.hero-bar-copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+}
+
+.statement-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 86px;
+  background: #111;
+  color: #fff;
+  border-radius: 8px 0 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.statement-track {
+  display: inline-flex;
+  will-change: transform;
+  animation: fastSlide 10s ease-in-out infinite;
+}
+
+.statement-text {
+  font-family: Anton, sans-serif;
+  font-size: clamp(1.8rem, 3vw, 3.15rem);
+  line-height: 0.92;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: normal;
+  max-width: 12ch;
+}
+
+@keyframes fastSlide {
+  0% { transform: translateX(0); }
+  45% { transform: translateX(0); }
+  52% { transform: translateX(150px); }
+  60% { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 1100px) {
+  .hero-inner {
+    transform: translateY(-34px);
+  }
+
+  .hero-bar-line {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-right: auto;
+  }
+
+  .hero-bar-copy {
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .statement-card {
+    border-radius: 8px;
+    min-height: 78px;
+  }
+
+  .statement-text {
+    max-width: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .page {
+    padding: 108px 14px 28px;
+  }
+
+  .hero-inner {
+    transform: translateY(-22px);
+  }
+
+  .line {
+    gap: 10px;
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .line + .line {
+    margin-top: 10px;
+  }
+
+  .headline-main {
+    font-size: clamp(2.3rem, 12vw, 4rem);
+  }
+
+  .headline-focus {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+
+  .headline-sub {
+    font-size: clamp(2rem, 10vw, 3.4rem);
+  }
+
+  .statement-card {
+    min-height: 70px;
+    padding: 0 20px;
+  }
+
+  .statement-text {
+    font-size: clamp(1.35rem, 6vw, 2.1rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-inner {
+    transform: translateY(-12px);
+  }
+
+  .statement-card {
+    min-height: 64px;
+    padding: 0 16px;
+  }
+
+  .statement-text {
+    font-size: clamp(1.18rem, 7vw, 1.7rem);
+  }
+}
+</style>
+
 <section class="hero" id="home">
   <div class="hero-inner">
     <div class="headline">
-      <div class="hero-copy-left">
-        <div class="hero-copy-line">WE BUILT VISIBILITY WITH</div>
-        <div class="hero-copy-line">STRATEGY AND GROWTH</div>
+      <div class="line headline-main">
+        <span>We Build</span>
       </div>
 
-      <div class="hero-copy-right">
+      <div class="line headline-focus">
+        <span>Visibility</span>
+      </div>
+
+      <div class="hero-bar-line">
+        <div class="hero-bar-copy headline-main">
+          <span>With Strategy</span>
+        </div>
+
         <div class="statement-card">
           <div class="statement-track">
             <span class="statement-text">WE KNOW WHAT WE DO</span>
           </div>
         </div>
+      </div>
+
+      <div class="line headline-sub">
+        <span>And Growth</span>
       </div>
     </div>
   </div>
