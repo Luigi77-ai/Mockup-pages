@@ -7476,7 +7476,7 @@
     </div>
   </div>
 </section>
-   <section class="success-story-band">
+  <section class="success-story-band">
   <style>
     .success-story-band {
       width: 100%;
@@ -7488,32 +7488,18 @@
       z-index: 4;
     }
 
-    .success-story-band-track {
-      display: flex;
-      width: max-content;
-      white-space: nowrap;
-      will-change: transform;
-      animation: successStoryBandMove 18s linear infinite;
-    }
-
     .success-story-band-text {
-      flex: 0 0 auto;
+      width: 100%;
+      display: block;
+      text-align: center;
       font-family: Anton, sans-serif;
-      font-size: clamp(2.4rem, 7vw, 6.8rem);
+      font-size: clamp(2.1rem, 6.4vw, 6.4rem);
       line-height: 0.9;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
       text-transform: uppercase;
       color: #111;
-      padding-right: 44px;
-    }
-
-    @keyframes successStoryBandMove {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
+      white-space: nowrap;
+      padding: 0 12px;
     }
 
     @media (max-width: 820px) {
@@ -7522,7 +7508,8 @@
       }
 
       .success-story-band-text {
-        padding-right: 28px;
+        font-size: clamp(1.75rem, 7.8vw, 4.4rem);
+        letter-spacing: 0.015em;
       }
     }
 
@@ -7532,20 +7519,14 @@
       }
 
       .success-story-band-text {
-        font-size: clamp(1.9rem, 11vw, 3.6rem);
-        padding-right: 22px;
+        font-size: clamp(1.28rem, 7.1vw, 2.3rem);
+        letter-spacing: 0.01em;
+        padding: 0 8px;
       }
     }
   </style>
 
-  <div class="success-story-band-track" aria-label="Be one success story">
-    <div class="success-story-band-text">
-      BE ONE SUCCESS STORY • BE ONE SUCCESS STORY • BE ONE SUCCESS STORY • BE ONE SUCCESS STORY •
-    </div>
-    <div class="success-story-band-text" aria-hidden="true">
-      BE ONE SUCCESS STORY • BE ONE SUCCESS STORY • BE ONE SUCCESS STORY • BE ONE SUCCESS STORY •
-    </div>
-  </div>
+  <div class="success-story-band-text">BE ONE SUCCESS STORY</div>
 </section>
 
     <section class="reviews-showcase" id="reviews">
