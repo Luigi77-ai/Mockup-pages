@@ -7098,13 +7098,14 @@
       min-height: 980px;
       display: flex;
       align-items: flex-start;
-      padding-top: 10px;
+      padding-top: 120px;
     }
 
     .about-copy {
       max-width: 980px;
       position: relative;
       z-index: 3;
+      margin-top: 120px;
     }
 
     .about-copy-top {
@@ -7166,7 +7167,7 @@
       position: absolute;
       left: 24px;
       top: auto;
-      bottom: 18px;
+      bottom: -78px;
       font-family: Anton, sans-serif;
       font-size: clamp(1.8rem, 4vw, 3.6rem);
       line-height: 0.95;
@@ -7188,12 +7189,21 @@
 
       .about-editorial-box {
         min-height: 860px;
+        padding-top: 90px;
+      }
+
+      .about-copy {
+        margin-top: 90px;
       }
 
       .about-photo-floating {
         width: min(100%, 500px);
         right: 0;
         bottom: -390px;
+      }
+
+      .about-divider-copy {
+        bottom: -56px;
       }
     }
 
@@ -7205,7 +7215,11 @@
 
       .about-editorial-box {
         min-height: auto;
-        padding-top: 0;
+        padding-top: 40px;
+      }
+
+      .about-copy {
+        margin-top: 40px;
       }
 
       .about-copy-top {
@@ -7241,7 +7255,7 @@
       .about-divider-copy {
         left: 14px;
         top: auto;
-        bottom: -4px;
+        bottom: -34px;
         font-size: clamp(1.5rem, 7vw, 2.8rem);
         max-width: 18ch;
       }
@@ -7250,6 +7264,14 @@
     @media (max-width: 560px) {
       .about-editorial {
         padding: 50px 14px 92px;
+      }
+
+      .about-editorial-box {
+        padding-top: 24px;
+      }
+
+      .about-copy {
+        margin-top: 24px;
       }
 
       .about-copy-top {
@@ -7270,7 +7292,7 @@
 
       .about-divider-copy {
         top: auto;
-        bottom: 0;
+        bottom: -18px;
         font-size: clamp(1.28rem, 8vw, 2.2rem);
         max-width: 18ch;
       }
@@ -7298,7 +7320,7 @@
 
     <div class="about-divider-copy">
       <span>For the changemakers,</span>
-      <span>advocates, and trailblazers.</span>
+      <span>advocates, and trailblazers</span>
     </div>
   </div>
 </section>
