@@ -5977,6 +5977,252 @@
 }
 </style>
 
+<style>
+.hero {
+  min-height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-top: none;
+  border-bottom: none;
+  background: #ffffff;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  transform: none;
+}
+
+.home-festival {
+  position: relative;
+  width: 100%;
+  min-height: 660px;
+  overflow: hidden;
+  padding: 92px 20px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.home-rainbow {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.home-rainbow.left {
+  left: -8px;
+  bottom: -8px;
+  background:
+    radial-gradient(circle at 0 100%, transparent 0 98px, #111 98px 101px, transparent 101px),
+    radial-gradient(circle at 0 100%, transparent 0 124px, #ff9f1c 124px 164px, #111 164px 167px, transparent 167px),
+    radial-gradient(circle at 0 100%, transparent 0 172px, #f4b316 172px 212px, #111 212px 215px, transparent 215px),
+    radial-gradient(circle at 0 100%, transparent 0 220px, #fff0a8 220px 260px, #111 260px 263px, transparent 263px);
+}
+
+.home-rainbow.right {
+  right: -8px;
+  top: -8px;
+  background:
+    radial-gradient(circle at 100% 0, transparent 0 98px, #111 98px 101px, transparent 101px),
+    radial-gradient(circle at 100% 0, transparent 0 124px, #ff9f1c 124px 164px, #111 164px 167px, transparent 167px),
+    radial-gradient(circle at 100% 0, transparent 0 172px, #f4b316 172px 212px, #111 212px 215px, transparent 215px),
+    radial-gradient(circle at 100% 0, transparent 0 220px, #fff0a8 220px 260px, #111 260px 263px, transparent 263px);
+}
+
+.home-main-copy {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1320px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.home-main-copy h1 {
+  margin: 0;
+  font-family: Arial, "Arial Black", sans-serif;
+  font-weight: 900;
+  font-size: clamp(4rem, 10vw, 8.2rem);
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+  color: #111;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow:
+    -5px -5px 0 #fff,
+     5px -5px 0 #fff,
+    -5px  5px 0 #fff,
+     5px  5px 0 #fff,
+     0   -5px 0 #fff,
+     0    5px 0 #fff,
+    -5px  0   0 #fff,
+     5px  0   0 #fff,
+     0   12px 0 rgba(0,0,0,0.10),
+     10px 16px 0 rgba(0,0,0,0.14);
+  transform: rotate(-1.6deg);
+}
+
+.home-main-copy h1 span {
+  display: block;
+}
+
+.home-slanted-banner {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  margin-top: 22px;
+  background: rgba(17,17,17,0.08);
+  border: 2px solid #111;
+  border-radius: 10px;
+  padding: 14px 30px 16px;
+  transform: rotate(-4deg);
+  box-shadow: 8px 10px 0 rgba(0,0,0,0.12);
+  animation: homeBannerBounce 1.25s ease-in-out infinite;
+  transform-origin: center center;
+  overflow: hidden;
+}
+
+.home-slanted-banner span {
+  position: relative;
+  z-index: 2;
+  display: block;
+  font-family: Anton, sans-serif;
+  font-size: clamp(2rem, 4.1vw, 3.7rem);
+  line-height: 0.96;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #8c6518 0%, #b88911 16%, #ffd95b 34%, #fff1a8 48%, #ffc933 62%, #d49a16 78%, #7a5300 100%);
+  background-size: 220% 220%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 0 rgba(95, 63, 0, 0.28)) drop-shadow(0 6px 12px rgba(0,0,0,0.16));
+  animation: homeGoldTextFlow 3.4s ease-in-out infinite;
+}
+
+.home-slanted-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,0) 18%, rgba(255,255,255,0.16) 34%, rgba(255,255,255,0.48) 50%, rgba(255,255,255,0.14) 66%, rgba(255,255,255,0) 82%);
+  transform: translateX(-145%);
+  animation: homeBannerShine 3.1s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes homeBannerBounce {
+  0%   { transform: rotate(-4deg) translateX(0); }
+  35%  { transform: rotate(-4deg) translateX(22px); }
+  55%  { transform: rotate(-4deg) translateX(8px); }
+  75%  { transform: rotate(-4deg) translateX(14px); }
+  100% { transform: rotate(-4deg) translateX(0); }
+}
+
+@keyframes homeBannerShine {
+  0%, 20%   { transform: translateX(-145%); opacity: 0; }
+  35%       { opacity: 1; }
+  55%       { transform: translateX(145%); opacity: 1; }
+  72%, 100% { transform: translateX(145%); opacity: 0; }
+}
+
+@keyframes homeGoldTextFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (max-width: 1100px) {
+  .home-festival {
+    min-height: 600px;
+    padding: 86px 18px 42px;
+  }
+
+  .home-rainbow {
+    width: 220px;
+    height: 220px;
+  }
+
+  .home-main-copy h1 {
+    font-size: clamp(3.4rem, 10vw, 6.6rem);
+  }
+}
+
+@media (max-width: 820px) {
+  .home-festival {
+    min-height: 520px;
+    padding: 78px 14px 36px;
+  }
+
+  .home-rainbow {
+    width: 160px;
+    height: 160px;
+  }
+
+  .home-main-copy {
+    padding: 0 10px;
+  }
+
+  .home-main-copy h1 {
+    font-size: clamp(2.7rem, 12vw, 5rem);
+    line-height: 0.9;
+    text-shadow:
+      -3px -3px 0 #fff,
+       3px -3px 0 #fff,
+      -3px  3px 0 #fff,
+       3px  3px 0 #fff,
+       0   -3px 0 #fff,
+       0    3px 0 #fff,
+      -3px  0   0 #fff,
+       3px  0   0 #fff,
+       0    8px 0 rgba(0,0,0,0.10),
+       6px 10px 0 rgba(0,0,0,0.14);
+  }
+
+  .home-slanted-banner {
+    margin-top: 18px;
+    padding: 12px 20px 14px;
+  }
+
+  .home-slanted-banner span {
+    font-size: clamp(1.45rem, 7vw, 2.6rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .home-festival {
+    min-height: 450px;
+    padding: 70px 12px 28px;
+  }
+
+  .home-rainbow {
+    width: 118px;
+    height: 118px;
+  }
+
+  .home-main-copy h1 {
+    font-size: clamp(2.1rem, 12.8vw, 3.6rem);
+  }
+
+  .home-slanted-banner span {
+    font-size: clamp(1.08rem, 7.8vw, 1.8rem);
+  }
+}
+</style>
+
 <section class="hero" id="home">
   <div class="hero-inner">
     <div class="home-festival">
