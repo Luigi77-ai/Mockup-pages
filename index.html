@@ -3195,13 +3195,75 @@
       }
     }
   </style>
+<style>
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .menu-links a {
+    font-family: Anton, sans-serif;
+    font-size: 1.55rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+
+  .menu-links .menu-link-va {
+    display: block;
+    margin: 8px 0 6px;
+    padding: 14px 14px 13px;
+    background: linear-gradient(180deg, #7c3aed 0%, #5b21b6 100%);
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+  }
+
+  .menu-links .menu-link-va span {
+    display: block;
+    line-height: 0.95;
+  }
+
+  @media (max-width: 820px) {
+    .menu-links a {
+      font-size: 1.3rem;
+    }
+
+    .menu-links .menu-link-va {
+      padding: 12px 12px 11px;
+      border-radius: 9px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .menu-links a {
+      font-size: 1.1rem;
+    }
+
+    .menu-links .menu-link-va {
+      padding: 11px 10px 10px;
+      border-radius: 8px;
+    }
+  }
+</style>
+
 <div class="menu-links">
   <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
+  <a href="#services">About</a>
+  <a href="#about">Services</a>
   <a href="#reviews">Reviews</a>
-  <a href="#work">Our Work</a>
-  <a href="#va-recruitment">VA Recruitment Agency</a>
+  <a href="#projects">Our Work</a>
+  <a href="#va-recruitment" class="menu-link-va">
+    <span>VA Recruitment</span>
+    <span>Agency</span>
+  </a>
   <a href="#contact">Contact</a>
 </div>
   <div class="menu-footer">
