@@ -2107,28 +2107,30 @@
         padding: 28px 16px 0;
         gap: 8px;
         min-height: auto;
+        grid-template-columns: 1fr;
       }
 
       .services-content {
         order: 1;
         padding-bottom: 12px;
-        min-height: 320px;
+        min-height: auto;
       }
 
       .services-phone-wrap {
         order: 2;
         justify-content: center;
         padding-top: 0;
-        min-height: 430px;
+        min-height: 340px;
+        overflow: hidden;
       }
 
       .services-phone {
         width: min(100%, 390px);
-        transform: translateY(58px) scale(0.98);
+        transform: translateY(0px) scale(0.98);
       }
 
       .phone-card {
-        min-height: 430px;
+        min-height: 360px;
       }
 
       .about-toggle {
@@ -2950,15 +2952,19 @@
   }
 
   .balloon-text-image {
-    width: 96vw;
+    width: min(90vw, 600px);
+    position: relative;
+    z-index: 1;
   }
 
   .view-here-btn {
     min-height: 56px;
     padding: 0 30px;
-    margin-top: -72px;
+    margin-top: 20px;
     font-size: 0.88rem;
     letter-spacing: 0.07em;
+    position: relative;
+    z-index: 2;
   }
 
   .view-here-btn::before {
@@ -3556,7 +3562,7 @@
           </div>
 
           <div class="services-cta-wrap">
-            <button class="services-cta" id="servicesCta">Explore this service</button>
+            <button class="services-cta" id="servicesCta" onclick="var pill=document.getElementById('servicesPill'); var target = (pill && pill.textContent.includes('VA Recruitment')) ? '#va-recruitment' : '#contact'; document.querySelector(target).scrollIntoView({behavior:'smooth'});">Explore this service</button>
           </div>
 
           <div class="services-nav">
@@ -4165,7 +4171,7 @@
               <article class="review-card tall">
                 <div class="review-top-label">5 stars</div>
                 <div class="review-visual yellow">
-                  <div class="review-avatar"><span>A</span></div>
+                  <div class="review-avatar"><img src="https://api.dicebear.com/7.x/personas/svg?seed=Andrea&backgroundColor=b6e3f4" alt="Andrea M." style="width:100%;height:100%;border-radius:50%;object-fit:cover;"></div>
                   <div class="review-name-badge">Andrea M.</div>
                 </div>
                 <div class="review-content">
@@ -4181,7 +4187,7 @@
               <article class="review-card low">
                 <div class="review-top-label">5 stars</div>
                 <div class="review-visual orange">
-                  <div class="review-avatar"><span>D</span></div>
+                  <div class="review-avatar"><img src="https://api.dicebear.com/7.x/personas/svg?seed=Daniel&backgroundColor=ffdfbf" alt="Daniel R." style="width:100%;height:100%;border-radius:50%;object-fit:cover;"></div>
                   <div class="review-name-badge">Daniel R.</div>
                 </div>
                 <div class="review-content">
@@ -4197,7 +4203,7 @@
               <article class="review-card mid">
                 <div class="review-top-label">5 stars</div>
                 <div class="review-visual pink">
-                  <div class="review-avatar"><span>S</span></div>
+                  <div class="review-avatar"><img src="https://api.dicebear.com/7.x/personas/svg?seed=Sofia&backgroundColor=ffd5dc" alt="Sofia L." style="width:100%;height:100%;border-radius:50%;object-fit:cover;"></div>
                   <div class="review-name-badge">Sofia L.</div>
                 </div>
                 <div class="review-content">
@@ -4215,7 +4221,7 @@
               <article class="review-card tall">
                 <div class="review-top-label">5 stars</div>
                 <div class="review-visual yellow">
-                  <div class="review-avatar"><span>M</span></div>
+                  <div class="review-avatar"><img src="https://api.dicebear.com/7.x/personas/svg?seed=Maria&backgroundColor=c0aede" alt="Maria C." style="width:100%;height:100%;border-radius:50%;object-fit:cover;"></div>
                   <div class="review-name-badge">Maria C.</div>
                 </div>
                 <div class="review-content">
@@ -4231,7 +4237,7 @@
               <article class="review-card low">
                 <div class="review-top-label">5 stars</div>
                 <div class="review-visual orange">
-                  <div class="review-avatar"><span>J</span></div>
+                  <div class="review-avatar"><img src="https://api.dicebear.com/7.x/personas/svg?seed=Jason&backgroundColor=d1d4f9" alt="Jason T." style="width:100%;height:100%;border-radius:50%;object-fit:cover;"></div>
                   <div class="review-name-badge">Jason T.</div>
                 </div>
                 <div class="review-content">
@@ -4247,7 +4253,7 @@
               <article class="review-card mid">
                 <div class="review-top-label">5 stars</div>
                 <div class="review-visual pink">
-                  <div class="review-avatar"><span>N</span></div>
+                  <div class="review-avatar"><img src="https://api.dicebear.com/7.x/personas/svg?seed=Nadia&backgroundColor=b6e3f4" alt="Nadia P." style="width:100%;height:100%;border-radius:50%;object-fit:cover;"></div>
                   <div class="review-name-badge">Nadia P.</div>
                 </div>
                 <div class="review-content">
