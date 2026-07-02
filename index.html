@@ -1549,161 +1549,43 @@
   overflow: hidden;
   background: #111;
 }
-
-.site-scroll iframe {
-  width: 100%;
-  height: 220%;
-  border: 0;
-  display: block;
-  transform: translateY(0);
-  transform-origin: top center;
-  pointer-events: none;
-  animation: autoSiteScroll 14s ease-in-out infinite alternate;
-}
-
-.stack-card.s3 .site-scroll iframe {
-  animation-duration: 16s;
-}
-
-.stack-caption {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-top: 0;
-  text-align: right;
-  z-index: 7;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: auto;
-}
-.stack-open {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 68px;
-  padding: 0 34px;
-  border-radius: 999px;
-  background: #fff;
-  color: #111;
-  font-weight: 800;
-  font-size: 1.02rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  box-shadow: 0 18px 34px rgba(0,0,0,0.26);
-  border: 2px solid rgba(0,0,0,0.12);
-  white-space: nowrap;
-  gap: 0;
-}
-.stack-open-line {
-  display: none;
-}
-.projects-gallery {
-  width: 100%;
-  display: none;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  align-items: stretch;
-  margin-top: 0;
-}
-.projects-gallery.is-open {
-  display: grid;
-}
-.projects-display {
-  display: none;
-}
-.projects-display-media,
-.projects-display-meta,
-.projects-display-text,
-.projects-display-type,
-.projects-thumbs,
-.project-thumb-text {
-  display: none;
-}
-.project-thumb {
-  width: 100%;
-  display: block;
-  padding: 0;
-  background: transparent;
-  border: none;
-  border-radius: 22px;
-  color: #fff;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  text-align: left;
-  overflow: hidden;
-}
-.project-thumb:hover,
-.project-thumb.active {
-  transform: translateY(-4px);
-  opacity: 1;
-}
-.project-thumb-media {
+.site-scroll {
+  position: relative;
   width: 100%;
   height: 100%;
-  min-height: 250px;
-  border-radius: 22px;
   overflow: hidden;
   background: #111;
-  position: relative;
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.24);
 }
+
+.site-scroll img {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: top center;
+  transform: translateY(0);
+  animation: autoSiteScroll 22s ease-in-out infinite alternate;
+}
+
+.stack-card.s3 .site-scroll img {
+  animation-duration: 26s;
+}
+
 .project-thumb-media .site-scroll {
   min-height: inherit;
   height: 100%;
 }
-.project-thumb-media .site-scroll iframe {
+
+.project-thumb-media .site-scroll img {
   width: 100%;
-  height: 240%;
-  border: 0;
+  height: auto;
+  min-height: 100%;
   display: block;
+  object-fit: contain;
+  object-position: top center;
   transform: translateY(0);
-  transform-origin: top center;
-  pointer-events: none;
-  animation: autoSiteScroll 18s ease-in-out infinite alternate;
-}
-.project-thumb:nth-child(1) .project-thumb-media { min-height: 300px; }
-.project-thumb:nth-child(2) .project-thumb-media { min-height: 250px; }
-.project-thumb:nth-child(3) .project-thumb-media { min-height: 340px; }
-.project-thumb:nth-child(4) .project-thumb-media { min-height: 280px; }
-.project-thumb:nth-child(5) .project-thumb-media { min-height: 320px; }
-.project-thumb:nth-child(6) .project-thumb-media { min-height: 260px; }
-.project-thumb:nth-child(7) .project-thumb-media { min-height: 300px; }
-.project-thumb:nth-child(8) .project-thumb-media { min-height: 340px; }
-.project-thumb:nth-child(9) .project-thumb-media { min-height: 260px; }
-.project-thumb:nth-child(10) .project-thumb-media { min-height: 320px; }
-.project-thumb-type {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  min-height: 26px;
-  padding: 0 10px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.76);
-  color: #fff;
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  z-index: 2;
-}
-.projects-close {
-  justify-self: center;
-  margin-top: 18px;
-  min-height: 50px;
-  padding: 0 22px;
-  border-radius: 999px;
-  background: #fff;
-  color: #111;
-  font-weight: 800;
-  font-size: 0.88rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  grid-column: 1 / -1;
+  animation: autoSiteScroll 28s ease-in-out infinite alternate;
 }
 
 @keyframes autoSiteScroll {
@@ -1711,10 +1593,9 @@
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-52%);
+    transform: translateY(-45%);
   }
 }
-
     .contact-section {
       min-height: 100vh;
       padding: 80px 18px;
