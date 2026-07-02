@@ -1535,6 +1535,30 @@
 .stack-card.s3 { width: 280px; height: 414px; transform: translateX(-18px) rotate(-1deg); z-index: 5; }
 .stack-card.s4 { transform: translateX(160px) rotate(10deg); z-index: 3; }
 .stack-card.s5 { transform: translateX(300px) rotate(18deg); z-index: 2; }
+.stack-card a { display: block; width: 100%; height: 100%; overflow: hidden; }
+.stack-card a img { width: 100%; min-height: 200%; display: block; object-fit: cover; object-position: center top; animation: imgPanDown 12s ease-in-out infinite alternate; }
+.stack-card a { display: block; width: 100%; height: 100%; overflow: hidden; }
+.stack-card a img { width: 100%; height: auto; min-height: 200%; display: block; object-fit: cover; object-position: center top; animation: imgPanDown 12s ease-in-out infinite alternate; }
+.stack-card a { display: block; width: 100%; height: 100%; overflow: hidden; }
+.stack-card a img {
+  width: 100%;
+  height: auto;
+  min-height: 200%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  animation: imgPanDown 12s ease-in-out infinite alternate;
+}
+.stack-card a { display: block; width: 100%; height: 100%; overflow: hidden; }
+.stack-card img {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  animation: imgPanDown 12s ease-in-out infinite alternate;
+}
 
 .project-site-card {
   display: block;
@@ -1551,14 +1575,17 @@
 }
 
 .site-scroll iframe {
-  width: 100%;
-  height: 220%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 3600px;
   border: 0;
   display: block;
-  transform: translateY(0);
-  transform-origin: top center;
+  transform: scale(0.18);
+  transform-origin: top left;
   pointer-events: none;
-  animation: autoSiteScroll 14s ease-in-out infinite alternate;
+  animation: iframeTopScroll 14s ease-in-out infinite alternate;
 }
 
 .stack-card.s3 .site-scroll iframe {
@@ -1649,19 +1676,33 @@
   border: 1px solid rgba(255,255,255,0.12);
   box-shadow: 0 14px 30px rgba(0,0,0,0.24);
 }
+.project-thumb-media > img { width: 100%; min-height: 200%; display: block; object-fit: cover; object-position: center top; animation: imgPanDown 16s ease-in-out infinite alternate; }
+.project-thumb-media > img { width: 100%; height: auto; min-height: 200%; display: block; object-fit: cover; object-position: center top; animation: imgPanDown 16s ease-in-out infinite alternate; }
+.project-thumb-media > img {
+  width: 100%;
+  height: auto;
+  min-height: 200%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  animation: imgPanDown 16s ease-in-out infinite alternate;
+}
 .project-thumb-media .site-scroll {
   min-height: inherit;
   height: 100%;
 }
 .project-thumb-media .site-scroll iframe {
-  width: 100%;
-  height: 240%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 3600px;
   border: 0;
   display: block;
-  transform: translateY(0);
-  transform-origin: top center;
+  transform: scale(0.22);
+  transform-origin: top left;
   pointer-events: none;
-  animation: autoSiteScroll 18s ease-in-out infinite alternate;
+  animation: iframeTopScroll 18s ease-in-out infinite alternate;
 }
 .project-thumb:nth-child(1) .project-thumb-media { min-height: 300px; }
 .project-thumb:nth-child(2) .project-thumb-media { min-height: 250px; }
@@ -1707,12 +1748,16 @@
 }
 
 @keyframes autoSiteScroll {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-52%);
-  }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-52%); }
+}
+@keyframes imgPanDown {
+  0% { object-position: center 0%; }
+  100% { object-position: center 100%; }
+}
+@keyframes iframeTopScroll {
+  0% { top: 0px; }
+  100% { top: -560px; }
 }
 
     .contact-section {
@@ -4315,31 +4360,31 @@
           <div class="projects-card-stack">
             <div class="stack-card s1">
               <a href="https://beautyspabyzulma.square.site/" target="_blank" rel="noopener noreferrer">
-                <img src="https://image.thum.io/get/width/900/https://beautyspabyzulma.square.site/" alt="Beauty Spa by Zulma website preview" loading="lazy" width="900" height="1400">
+                <img src="https://image.thum.io/get/fullpage/width/900/https://beautyspabyzulma.square.site/" alt="Beauty Spa by Zulma website preview" loading="lazy" width="900" height="1400">
               </a>
             </div>
 
             <div class="stack-card s2">
               <a href="https://happykidspediatric.com/" target="_blank" rel="noopener noreferrer">
-                <img src="https://image.thum.io/get/width/900/https://happykidspediatric.com/" alt="Happy Kids Pediatric website preview" loading="lazy" width="900" height="1400">
+                <img src="https://image.thum.io/get/fullpage/width/900/https://happykidspediatric.com/" alt="Happy Kids Pediatric website preview" loading="lazy" width="900" height="1400">
               </a>
             </div>
 
             <div class="stack-card s3">
               <a href="https://happyfamilydentalgroup.com/" target="_blank" rel="noopener noreferrer">
-                <img src="https://image.thum.io/get/width/900/https://happyfamilydentalgroup.com/" alt="Happy Family Dental Group website preview" loading="lazy" width="900" height="1400">
+                <img src="https://image.thum.io/get/fullpage/width/900/https://happyfamilydentalgroup.com/" alt="Happy Family Dental Group website preview" loading="lazy" width="900" height="1400">
               </a>
             </div>
 
             <div class="stack-card s4">
               <a href="https://professorposture.com/" target="_blank" rel="noopener noreferrer">
-                <img src="https://image.thum.io/get/width/900/https://professorposture.com/" alt="Professor Posture website preview" loading="lazy" width="900" height="1400">
+                <img src="https://image.thum.io/get/fullpage/width/900/https://professorposture.com/" alt="Professor Posture website preview" loading="lazy" width="900" height="1400">
               </a>
             </div>
 
             <div class="stack-card s5">
               <a href="https://overflowoutreach.org/" target="_blank" rel="noopener noreferrer">
-                <img src="https://image.thum.io/get/width/900/https://overflowoutreach.org/" alt="Overflow Outreach website preview" loading="lazy" width="900" height="1400">
+                <img src="https://image.thum.io/get/fullpage/width/900/https://overflowoutreach.org/" alt="Overflow Outreach website preview" loading="lazy" width="900" height="1400">
               </a>
             </div>
           </div>
@@ -4353,70 +4398,70 @@
       <div class="projects-gallery" id="projectsGallery">
         <a class="project-thumb active" href="https://www.actionzone.org/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/width/900/https://www.actionzone.org/" alt="Action Zone website preview" loading="lazy" width="900" height="1200">
+            <img src="https://image.thum.io/get/fullpage/width/900/https://www.actionzone.org/" alt="Action Zone website preview" loading="lazy" width="900" height="1200">
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
 
         <a class="project-thumb" href="https://daistonconsulting.com/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/width/900/https://daistonconsulting.com/" alt="Daiston Consulting website preview" loading="lazy" width="900" height="1200">
+            <img src="https://image.thum.io/get/fullpage/width/900/https://daistonconsulting.com/" alt="Daiston Consulting website preview" loading="lazy" width="900" height="1200">
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
 
         <a class="project-thumb" href="https://systrosolutions.com/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/width/900/https://systrosolutions.com/" alt="Systro Solutions website preview" loading="lazy" width="900" height="1400">
+            <img src="https://image.thum.io/get/fullpage/width/900/https://systrosolutions.com/" alt="Systro Solutions website preview" loading="lazy" width="900" height="1400">
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
 
         <a class="project-thumb" href="https://thefoodwhisperer.info/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/width/900/https://thefoodwhisperer.info/" alt="The Food Whisperer website preview" loading="lazy" width="900" height="1100">
+            <img src="https://image.thum.io/get/fullpage/width/900/https://thefoodwhisperer.info/" alt="The Food Whisperer website preview" loading="lazy" width="900" height="1100">
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
 
         <a class="project-thumb" href="https://cannolifalcone.com/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/width/900/https://cannolifalcone.com/" alt="Cannoli Falcone website preview" loading="lazy" width="900" height="1200">
+            <img src="https://image.thum.io/get/fullpage/width/900/https://cannolifalcone.com/" alt="Cannoli Falcone website preview" loading="lazy" width="900" height="1200">
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
 
         <a class="project-thumb" href="https://p3financial.net/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/width/900/https://p3financial.net/" alt="P3 Financial website preview" loading="lazy" width="900" height="1000">
+            <img src="https://image.thum.io/get/fullpage/width/900/https://p3financial.net/" alt="P3 Financial website preview" loading="lazy" width="900" height="1000">
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
 
         <a class="project-thumb" href="https://mbago.org/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/width/900/https://mbago.org/" alt="MBAGO website preview" loading="lazy" width="900" height="1300">
+            <img src="https://image.thum.io/get/fullpage/width/900/https://mbago.org/" alt="MBAGO website preview" loading="lazy" width="900" height="1300">
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
 
         <a class="project-thumb" href="https://beautyspabyzulma.square.site/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/width/900/https://beautyspabyzulma.square.site/" alt="Beauty Spa by Zulma website preview" loading="lazy" width="900" height="1400">
+            <img src="https://image.thum.io/get/fullpage/width/900/https://beautyspabyzulma.square.site/" alt="Beauty Spa by Zulma website preview" loading="lazy" width="900" height="1400">
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
 
         <a class="project-thumb" href="https://happykidspediatric.com/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/width/900/https://happykidspediatric.com/" alt="Happy Kids Pediatric website preview" loading="lazy" width="900" height="1000">
+            <img src="https://image.thum.io/get/fullpage/width/900/https://happykidspediatric.com/" alt="Happy Kids Pediatric website preview" loading="lazy" width="900" height="1000">
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
 
         <a class="project-thumb" href="https://happyfamilydentalgroup.com/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/width/900/https://happyfamilydentalgroup.com/" alt="Happy Family Dental Group website preview" loading="lazy" width="900" height="1300">
+            <img src="https://image.thum.io/get/fullpage/width/900/https://happyfamilydentalgroup.com/" alt="Happy Family Dental Group website preview" loading="lazy" width="900" height="1300">
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
