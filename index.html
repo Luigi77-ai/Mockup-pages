@@ -1538,6 +1538,10 @@
 .stack-card.s4 { transform: translateX(160px) rotate(10deg); z-index: 3; }
 .stack-card.s5 { transform: translateX(300px) rotate(18deg); z-index: 2; }
 .stack-card a { display: block; width: 100%; height: 100%; overflow: hidden; }
+.stack-media-wrap { display: block; width: 100%; height: 100%; overflow: hidden; }
+.stack-media-wrap img, .stack-media-wrap video { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top; }
+.stack-media-wrap img { animation: imgPanDown 12s ease-in-out infinite alternate; }
+.stack-media-wrap video { object-position: center center; animation: none; }
 .stack-card a img { width: 100%; min-height: 200%; display: block; object-fit: cover; object-position: center top; animation: imgPanDown 12s ease-in-out infinite alternate; }
 .stack-card a { display: block; width: 100%; height: 100%; overflow: hidden; }
 .stack-card a img { width: 100%; height: auto; min-height: 200%; display: block; object-fit: cover; object-position: center top; animation: imgPanDown 12s ease-in-out infinite alternate; }
@@ -1568,8 +1572,8 @@
   text-decoration: none;
 }
 .project-site-card .project-thumb-media {
-  min-height: 300px;
-  height: 300px;
+  min-height: 250px;
+  height: 250px;
 }
 .project-site-card .site-scroll {
   width: 100%;
@@ -1590,10 +1594,10 @@
   top: 0;
   left: 0;
   width: 1280px;
-  height: 3600px;
+  height: 3200px;
   border: 0;
   display: block;
-  transform: scale(0.18);
+  transform: scale(0.195);
   transform-origin: top left;
   pointer-events: none;
   animation: iframeTopScroll 14s ease-in-out infinite alternate;
@@ -1678,7 +1682,7 @@
 }
 .project-thumb-media {
   width: 100%;
-  height: 100%;
+  height: 250px;
   min-height: 250px;
   border-radius: 22px;
   overflow: hidden;
@@ -1743,6 +1747,11 @@
   text-transform: uppercase;
   z-index: 2;
 }
+/* media gallery cards */
+.media-card .project-thumb-media { background: #111; }
+.media-card .project-thumb-media > img { width: 100%; height: 100%; min-height: 250px; display: block; object-fit: cover; object-position: center top; animation: imgPanDown 16s ease-in-out infinite alternate; }
+.video-card .project-thumb-media { background: #000; }
+.video-card .project-thumb-media video { width: 100%; height: 100%; min-height: 250px; display: block; object-fit: cover; object-position: center; }
 .projects-close {
   justify-self: center;
   margin-top: 18px;
@@ -3665,7 +3674,7 @@
   <span class="phone-time">9:41</span>
   <div class="phone-icons">
     <span>5G</span>
-    <span>●●●</span>
+    <span>âââ</span>
   </div>
 </div>
             <div class="phone-header">
@@ -3694,7 +3703,7 @@
               </div>
 
               <button class="phone-action" id="phoneAction">
-                <span>✕</span>
+                <span>âÂ</span>
                 <span>View service details</span>
               </button>
             </div>
@@ -4369,208 +4378,221 @@
       <div class="projects-preview" id="projectsPreview">
         <div class="projects-preview-frame">
           <div class="projects-card-stack">
+
             <div class="stack-card s1">
-              <a href="https://beautyspabyzulma.square.site/" target="_blank" rel="noopener noreferrer">
-                <img src="https://image.thum.io/get/fullpage/width/900/https://beautyspabyzulma.square.site/" alt="Beauty Spa by Zulma website preview" loading="lazy" width="900" height="1400">
-              </a>
+              <div class="stack-media-wrap">
+                <img src="assets/media/Captura%20de%20pantalla%202026-06-05%20183508.png" alt="Project photo 1" loading="lazy">
+              </div>
             </div>
 
             <div class="stack-card s2">
-              <a href="https://happykidspediatric.com/" target="_blank" rel="noopener noreferrer">
-                <img src="https://image.thum.io/get/fullpage/width/900/https://happykidspediatric.com/" alt="Happy Kids Pediatric website preview" loading="lazy" width="900" height="1400">
-              </a>
+              <div class="stack-media-wrap">
+                <img src="assets/media/Captura%20de%20pantalla%202026-06-05%20183618.png" alt="Project photo 2" loading="lazy">
+              </div>
             </div>
 
             <div class="stack-card s3">
-              <a href="https://happyfamilydentalgroup.com/" target="_blank" rel="noopener noreferrer">
-                <img src="https://image.thum.io/get/fullpage/width/900/https://happyfamilydentalgroup.com/" alt="Happy Family Dental Group website preview" loading="lazy" width="900" height="1400">
-              </a>
+              <div class="stack-media-wrap">
+                <img src="assets/media/Captura%20de%20pantalla%202026-06-05%20183821.png" alt="Project photo 3" loading="lazy">
+              </div>
             </div>
 
             <div class="stack-card s4">
-              <a href="https://professorposture.com/" target="_blank" rel="noopener noreferrer">
-                <img src="https://image.thum.io/get/fullpage/width/900/https://professorposture.com/" alt="Professor Posture website preview" loading="lazy" width="900" height="1400">
-              </a>
+              <div class="stack-media-wrap">
+                <video src="assets/media/Grabaci%C3%B3n%202026-06-05%20185658.mp4" autoplay muted loop playsinline></video>
+              </div>
             </div>
 
             <div class="stack-card s5">
-              <a href="https://overflowoutreach.org/" target="_blank" rel="noopener noreferrer">
-                <img src="https://image.thum.io/get/fullpage/width/900/https://overflowoutreach.org/" alt="Overflow Outreach website preview" loading="lazy" width="900" height="1400">
-              </a>
+              <div class="stack-media-wrap">
+                <video src="assets/media/Grabaci%C3%B3n%202026-06-05%20185803.mp4" autoplay muted loop playsinline></video>
+              </div>
             </div>
-          </div>
 
-          <div class="stack-caption">
-            <button class="stack-open" id="openProjectsGallery" type="button">View Project</button>
           </div>
+        </div>
+
+        <div class="stack-caption">
+          <button class="stack-open" id="openProjectsGallery" type="button">View Project</button>
         </div>
       </div>
 
       <div class="projects-gallery" id="projectsGallery">
-        <a class="project-thumb active" href="https://www.actionzone.org/" target="_blank" rel="noopener noreferrer">
+
+        <!-- PHOTOS -->
+        <div class="project-thumb media-card">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/fullpage/width/900/https://www.actionzone.org/" alt="Action Zone website preview" loading="lazy" width="900" height="1200">
-            <span class="project-thumb-type">Website</span>
+            <img src="assets/media/Captura%20de%20pantalla%202026-06-05%20183508.png" alt="Project photo" loading="lazy">
+            <span class="project-thumb-type">Photo</span>
           </div>
-        </a>
+        </div>
 
-        <a class="project-thumb" href="https://daistonconsulting.com/" target="_blank" rel="noopener noreferrer">
+        <div class="project-thumb media-card">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/fullpage/width/900/https://daistonconsulting.com/" alt="Daiston Consulting website preview" loading="lazy" width="900" height="1200">
-            <span class="project-thumb-type">Website</span>
+            <img src="assets/media/Captura%20de%20pantalla%202026-06-05%20183618.png" alt="Project photo" loading="lazy">
+            <span class="project-thumb-type">Photo</span>
           </div>
-        </a>
+        </div>
 
-        <a class="project-thumb" href="https://systrosolutions.com/" target="_blank" rel="noopener noreferrer">
+        <div class="project-thumb media-card">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/fullpage/width/900/https://systrosolutions.com/" alt="Systro Solutions website preview" loading="lazy" width="900" height="1400">
-            <span class="project-thumb-type">Website</span>
+            <img src="assets/media/Captura%20de%20pantalla%202026-06-05%20183821.png" alt="Project photo" loading="lazy">
+            <span class="project-thumb-type">Photo</span>
           </div>
-        </a>
+        </div>
 
-        <a class="project-thumb" href="https://thefoodwhisperer.info/" target="_blank" rel="noopener noreferrer">
+        <div class="project-thumb media-card">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/fullpage/width/900/https://thefoodwhisperer.info/" alt="The Food Whisperer website preview" loading="lazy" width="900" height="1100">
-            <span class="project-thumb-type">Website</span>
+            <img src="assets/media/Captura%20de%20pantalla%202026-06-05%20184102.png" alt="Project photo" loading="lazy">
+            <span class="project-thumb-type">Photo</span>
           </div>
-        </a>
+        </div>
 
-        <a class="project-thumb" href="https://cannolifalcone.com/" target="_blank" rel="noopener noreferrer">
+        <div class="project-thumb media-card">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/fullpage/width/900/https://cannolifalcone.com/" alt="Cannoli Falcone website preview" loading="lazy" width="900" height="1200">
-            <span class="project-thumb-type">Website</span>
+            <img src="assets/media/Captura%20de%20pantalla%202026-06-05%20184144.png" alt="Project photo" loading="lazy">
+            <span class="project-thumb-type">Photo</span>
           </div>
-        </a>
+        </div>
 
-        <a class="project-thumb" href="https://p3financial.net/" target="_blank" rel="noopener noreferrer">
+        <div class="project-thumb media-card">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/fullpage/width/900/https://p3financial.net/" alt="P3 Financial website preview" loading="lazy" width="900" height="1000">
-            <span class="project-thumb-type">Website</span>
+            <img src="assets/media/Captura%20de%20pantalla%202026-06-05%20184209.png" alt="Project photo" loading="lazy">
+            <span class="project-thumb-type">Photo</span>
           </div>
-        </a>
+        </div>
 
-        <a class="project-thumb" href="https://mbago.org/" target="_blank" rel="noopener noreferrer">
+        <div class="project-thumb media-card">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/fullpage/width/900/https://mbago.org/" alt="MBAGO website preview" loading="lazy" width="900" height="1300">
-            <span class="project-thumb-type">Website</span>
+            <img src="assets/media/Captura%20de%20pantalla%202026-06-05%20184304.png" alt="Project photo" loading="lazy">
+            <span class="project-thumb-type">Photo</span>
           </div>
-        </a>
+        </div>
 
-        <a class="project-thumb" href="https://beautyspabyzulma.square.site/" target="_blank" rel="noopener noreferrer">
+        <div class="project-thumb media-card">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/fullpage/width/900/https://beautyspabyzulma.square.site/" alt="Beauty Spa by Zulma website preview" loading="lazy" width="900" height="1400">
-            <span class="project-thumb-type">Website</span>
+            <img src="assets/media/Captura%20de%20pantalla%202026-06-05%20184316.png" alt="Project photo" loading="lazy">
+            <span class="project-thumb-type">Photo</span>
           </div>
-        </a>
+        </div>
 
-        <a class="project-thumb" href="https://happykidspediatric.com/" target="_blank" rel="noopener noreferrer">
+        <!-- VIDEOS -->
+        <div class="project-thumb media-card video-card">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/fullpage/width/900/https://happykidspediatric.com/" alt="Happy Kids Pediatric website preview" loading="lazy" width="900" height="1000">
-            <span class="project-thumb-type">Website</span>
+            <video src="assets/media/introvideo.mp4" autoplay muted loop playsinline></video>
+            <span class="project-thumb-type">Video</span>
           </div>
-        </a>
+        </div>
 
-        <a class="project-thumb" href="https://happyfamilydentalgroup.com/" target="_blank" rel="noopener noreferrer">
+        <div class="project-thumb media-card video-card">
           <div class="project-thumb-media">
-            <img src="https://image.thum.io/get/fullpage/width/900/https://happyfamilydentalgroup.com/" alt="Happy Family Dental Group website preview" loading="lazy" width="900" height="1300">
-            <span class="project-thumb-type">Website</span>
+            <video src="assets/media/Grabaci%C3%B3n%202026-06-05%20185658.mp4" autoplay muted loop playsinline></video>
+            <span class="project-thumb-type">Video</span>
           </div>
-        </a>
+        </div>
 
-        <button class="projects-close" id="closeProjectsGallery" type="button">Close Gallery</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <div class="projects-gallery" id="projectsGallery">
-
-        <a class="project-thumb active project-site-card" href="https://www.actionzone.org/" target="_blank" rel="noopener noreferrer">
+        <div class="project-thumb media-card video-card">
           <div class="project-thumb-media">
-            <div class="site-scroll">
-              <iframe src="https://www.actionzone.org/" title="Action Zone preview" loading="lazy"></iframe>
-            </div>
-            <span class="project-thumb-type">Website</span>
+            <video src="assets/media/Grabaci%C3%B3n%202026-06-05%20185803.mp4" autoplay muted loop playsinline></video>
+            <span class="project-thumb-type">Video</span>
           </div>
-        </a>
+        </div>
 
-        <a class="project-thumb project-site-card" href="https://daistonconsulting.com/" target="_blank" rel="noopener noreferrer">
+        <div class="project-thumb media-card video-card">
           <div class="project-thumb-media">
-            <div class="site-scroll">
-              <iframe src="https://daistonconsulting.com/" title="Daiston Consulting preview" loading="lazy"></iframe>
-            </div>
-            <span class="project-thumb-type">Website</span>
+            <video src="assets/media/Grabaci%C3%B3n%202026-06-05%20185845.mp4" autoplay muted loop playsinline></video>
+            <span class="project-thumb-type">Video</span>
           </div>
-        </a>
+        </div>
 
-        <a class="project-thumb project-site-card" href="https://systrosolutions.com/" target="_blank" rel="noopener noreferrer">
+        <div class="project-thumb media-card video-card">
           <div class="project-thumb-media">
-            <div class="site-scroll">
-              <iframe src="https://systrosolutions.com/" title="Systro Solutions preview" loading="lazy"></iframe>
-            </div>
-            <span class="project-thumb-type">Website</span>
+            <video src="assets/media/Grabaci%C3%B3n%202026-06-05%20185922.mp4" autoplay muted loop playsinline></video>
+            <span class="project-thumb-type">Video</span>
           </div>
-        </a>
+        </div>
 
-        <a class="project-thumb project-site-card" href="https://thefoodwhisperer.info/" target="_blank" rel="noopener noreferrer">
-          <div class="project-thumb-media">
-            <div class="site-scroll">
-              <iframe src="https://thefoodwhisperer.info/" title="The Food Whisperer preview" loading="lazy"></iframe>
-            </div>
-            <span class="project-thumb-type">Website</span>
-          </div>
-        </a>
-
-        <a class="project-thumb project-site-card" href="https://cannolifalcone.com/" target="_blank" rel="noopener noreferrer">
-          <div class="project-thumb-media">
-            <div class="site-scroll">
-              <iframe src="https://cannolifalcone.com/" title="Cannoli Falcone preview" loading="lazy"></iframe>
-            </div>
-            <span class="project-thumb-type">Website</span>
-          </div>
-        </a>
-
-        <a class="project-thumb project-site-card" href="https://p3financial.net/" target="_blank" rel="noopener noreferrer">
-          <div class="project-thumb-media">
-            <div class="site-scroll">
-              <iframe src="https://p3financial.net/" title="P3 Financial preview" loading="lazy"></iframe>
-            </div>
-            <span class="project-thumb-type">Website</span>
-          </div>
-        </a>
-
-        <a class="project-thumb project-site-card" href="https://mbago.org/" target="_blank" rel="noopener noreferrer">
-          <div class="project-thumb-media">
-            <div class="site-scroll">
-              <iframe src="https://mbago.org/" title="MBAGO preview" loading="lazy"></iframe>
-            </div>
-            <span class="project-thumb-type">Website</span>
-          </div>
-        </a>
-
+        <!-- WEBSITES -->
         <a class="project-thumb project-site-card" href="https://beautyspabyzulma.square.site/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <div class="site-scroll">
-              <iframe src="https://beautyspabyzulma.square.site/" title="Beauty Spa by Zulma preview duplicate" loading="lazy"></iframe>
-            </div>
+            <div class="site-scroll"><iframe src="https://beautyspabyzulma.square.site/" title="Beauty Spa preview" loading="lazy"></iframe></div>
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
 
         <a class="project-thumb project-site-card" href="https://happykidspediatric.com/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <div class="site-scroll">
-              <iframe src="https://happykidspediatric.com/" title="Happy Kids Pediatric preview duplicate" loading="lazy"></iframe>
-            </div>
+            <div class="site-scroll"><iframe src="https://happykidspediatric.com/" title="Happy Kids preview" loading="lazy"></iframe></div>
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
 
         <a class="project-thumb project-site-card" href="https://happyfamilydentalgroup.com/" target="_blank" rel="noopener noreferrer">
           <div class="project-thumb-media">
-            <div class="site-scroll">
-              <iframe src="https://happyfamilydentalgroup.com/" title="Happy Family Dental Group preview duplicate" loading="lazy"></iframe>
-            </div>
+            <div class="site-scroll"><iframe src="https://happyfamilydentalgroup.com/" title="Happy Family Dental preview" loading="lazy"></iframe></div>
+            <span class="project-thumb-type">Website</span>
+          </div>
+        </a>
+
+        <a class="project-thumb project-site-card" href="https://professorposture.com/" target="_blank" rel="noopener noreferrer">
+          <div class="project-thumb-media">
+            <div class="site-scroll"><iframe src="https://professorposture.com/" title="Professor Posture preview" loading="lazy"></iframe></div>
+            <span class="project-thumb-type">Website</span>
+          </div>
+        </a>
+
+        <a class="project-thumb project-site-card" href="https://overflowoutreach.org/" target="_blank" rel="noopener noreferrer">
+          <div class="project-thumb-media">
+            <div class="site-scroll"><iframe src="https://overflowoutreach.org/" title="Overflow Outreach preview" loading="lazy"></iframe></div>
+            <span class="project-thumb-type">Website</span>
+          </div>
+        </a>
+
+        <a class="project-thumb project-site-card" href="https://www.actionzone.org/" target="_blank" rel="noopener noreferrer">
+          <div class="project-thumb-media">
+            <div class="site-scroll"><iframe src="https://www.actionzone.org/" title="Action Zone preview" loading="lazy"></iframe></div>
+            <span class="project-thumb-type">Website</span>
+          </div>
+        </a>
+
+        <a class="project-thumb project-site-card" href="https://daistonconsulting.com/" target="_blank" rel="noopener noreferrer">
+          <div class="project-thumb-media">
+            <div class="site-scroll"><iframe src="https://daistonconsulting.com/" title="Daiston Consulting preview" loading="lazy"></iframe></div>
+            <span class="project-thumb-type">Website</span>
+          </div>
+        </a>
+
+        <a class="project-thumb project-site-card" href="https://systrosolutions.com/" target="_blank" rel="noopener noreferrer">
+          <div class="project-thumb-media">
+            <div class="site-scroll"><iframe src="https://systrosolutions.com/" title="Systro Solutions preview" loading="lazy"></iframe></div>
+            <span class="project-thumb-type">Website</span>
+          </div>
+        </a>
+
+        <a class="project-thumb project-site-card" href="https://thefoodwhisperer.info/" target="_blank" rel="noopener noreferrer">
+          <div class="project-thumb-media">
+            <div class="site-scroll"><iframe src="https://thefoodwhisperer.info/" title="The Food Whisperer preview" loading="lazy"></iframe></div>
+            <span class="project-thumb-type">Website</span>
+          </div>
+        </a>
+
+        <a class="project-thumb project-site-card" href="https://cannolifalcone.com/" target="_blank" rel="noopener noreferrer">
+          <div class="project-thumb-media">
+            <div class="site-scroll"><iframe src="https://cannolifalcone.com/" title="Cannoli Falcone preview" loading="lazy"></iframe></div>
+            <span class="project-thumb-type">Website</span>
+          </div>
+        </a>
+
+        <a class="project-thumb project-site-card" href="https://p3financial.net/" target="_blank" rel="noopener noreferrer">
+          <div class="project-thumb-media">
+            <div class="site-scroll"><iframe src="https://p3financial.net/" title="P3 Financial preview" loading="lazy"></iframe></div>
+            <span class="project-thumb-type">Website</span>
+          </div>
+        </a>
+
+        <a class="project-thumb project-site-card" href="https://mbago.org/" target="_blank" rel="noopener noreferrer">
+          <div class="project-thumb-media">
+            <div class="site-scroll"><iframe src="https://mbago.org/" title="MBAGO preview" loading="lazy"></iframe></div>
             <span class="project-thumb-type">Website</span>
           </div>
         </a>
@@ -4580,8 +4602,6 @@
     </div>
   </div>
 </section>
-
-    </section>
 
 <!-- =====================================================
      VA RECRUITMENT AGENCY &mdash; BANNER (button, links to subpage)
@@ -4670,15 +4690,15 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">
-        © The Boss Agency Co. All rights reserved.
+        Â© The Boss Agency Co. All rights reserved.
       </div>
       <div class="footer-links">
         <a href="#home">Home</a>
-        <span>·</span>
+        <span>Â·</span>
         <a href="#services">Services</a>
-        <span>·</span>
+        <span>Â·</span>
         <a href="#work">Work</a>
-        <span>·</span>
+        <span>Â·</span>
         <a href="#contact">Contact</a>
       </div>
     </div>
