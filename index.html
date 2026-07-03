@@ -2594,6 +2594,18 @@
       .stack-card.s4 { transform: translateX(42px) rotate(8deg); }
       .stack-card.s5 { transform: translateX(78px) rotate(16deg); }
 
+      .projects-card-stack { width: 100%; max-width: 300px; margin: 0 auto; }
+
+      @media (max-width: 400px) {
+        .stack-card { width: 92px; height: 150px; }
+        .stack-card.s1 { transform: translateX(-62px) rotate(-16deg); }
+        .stack-card.s2 { transform: translateX(-34px) rotate(-8deg); }
+        .stack-card.s3 { width: 114px; height: 178px; transform: translateX(0px) rotate(-1deg); }
+        .stack-card.s4 { transform: translateX(34px) rotate(8deg); }
+        .stack-card.s5 { transform: translateX(62px) rotate(16deg); }
+        .projects-card-stack { height: 208px; max-width: 260px; }
+      }
+
       .projects-gallery.is-open {
         grid-template-columns: 1fr;
       }
@@ -3736,11 +3748,28 @@
             left: auto;
             top: auto;
             bottom: auto;
-            font-size: clamp(1.8rem, 7.8vw, 3.2rem);
-            max-width: 18ch;
+            font-size: clamp(1.5rem, 6.4vw, 2.4rem);
+            max-width: 16ch;
             margin-top: 16px;
           }
         }
+
+        @media (max-width: 560px) {
+          .about-editorial { padding: 0 16px 72px; }
+          .about-copy-top { font-size: clamp(2.3rem, 10.5vw, 3.6rem); }
+          .about-copy-bottom { font-size: clamp(2.1rem, 9vw, 3.1rem); margin-top: 10px; }
+          .about-photo-floating { width: min(100%, 260px); }
+          .about-divider-copy {
+            font-size: clamp(1.05rem, 5.4vw, 1.5rem);
+            max-width: 13ch;
+            margin-top: 14px;
+            line-height: 1.12;
+          }
+        }
+
+        .contact-form-status { margin-top: 14px; font-size: 0.92rem; line-height: 1.4; }
+        .contact-form-status.is-success { color: #1a7f37; font-weight: 600; }
+        .contact-form-status.is-error { color: #c0392b; font-weight: 600; }
       </style>
 
       <div class="about-editorial-box">
@@ -4278,28 +4307,28 @@
         <div class="contact-form-card">
           <h3 class="contact-form-title">Send your inquiry</h3>
 
-          <form class="contact-form">
+          <form class="contact-form" id="contactForm">
             <div class="field-row">
               <div class="field">
                 <label for="firstName">First name</label>
-                <input id="firstName" type="text" placeholder="Your first name">
+                <input id="firstName" name="firstName" type="text" placeholder="Your first name">
               </div>
 
               <div class="field">
                 <label for="lastName">Last name</label>
-                <input id="lastName" type="text" placeholder="Your last name">
+                <input id="lastName" name="lastName" type="text" placeholder="Your last name">
               </div>
             </div>
 
             <div class="field-row">
               <div class="field">
                 <label for="email">Email</label>
-                <input id="email" type="email" placeholder="you@example.com">
+                <input id="email" name="email" type="email" placeholder="you@example.com" required>
               </div>
 
               <div class="field">
                 <label for="phone">Phone</label>
-                <input id="phone" type="tel" placeholder="(000) 000-0000">
+                <input id="phone" name="phone" type="tel" placeholder="(000) 000-0000">
               </div>
             </div>
 
@@ -4316,10 +4345,17 @@
 
             <div class="field">
               <label for="message">Project details</label>
-              <textarea id="message" placeholder="Tell us about your goals and what you need support with."></textarea>
+              <textarea id="message" name="message" placeholder="Tell us about your goals and what you need support with."></textarea>
             </div>
 
-            <button type="submit" class="contact-submit">Submit inquiry</button>
+            <input type="hidden" name="services" id="servicesHidden">
+            <input type="hidden" name="_subject" value="New inquiry from The Boss Agency Co website">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+
+            <button type="submit" class="contact-submit" id="contactSubmitBtn">Submit inquiry</button>
+
+            <div class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite"></div>
           </form>
         </div>
       </div>
@@ -4498,6 +4534,46 @@
         chip.classList.toggle('active');
       });
     });
+
+    const contactForm = document.getElementById('contactForm');
+    const contactStatus = document.getElementById('contactFormStatus');
+    const servicesHidden = document.getElementById('servicesHidden');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var activeServices = Array.from(document.querySelectorAll('.contact-service-chip.active')).map(function(c){ return c.textContent.trim(); });
+        if (servicesHidden) { servicesHidden.value = activeServices.join(', '); }
+        var submitBtn = document.getElementById('contactSubmitBtn');
+        var formData = new FormData(contactForm);
+        var payload = {};
+        formData.forEach(function(value, key){ payload[key] = value; });
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+        if (contactStatus) { contactStatus.textContent = ''; contactStatus.className = 'contact-form-status'; }
+        fetch('https://formsubmit.co/ajax/Hello@thebossagency.co', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+        .then(function(res){ return res.json(); })
+        .then(function(){
+          if (contactStatus) {
+            contactStatus.textContent = 'Thank you! Your information has been sent successfully. We will get back to you soon.';
+            contactStatus.classList.add('is-success');
+          }
+          contactForm.reset();
+          document.querySelectorAll('.contact-service-chip').forEach(function(c){ c.classList.remove('active'); });
+        })
+        .catch(function(){
+          if (contactStatus) {
+            contactStatus.textContent = 'Something went wrong sending your message. Please try again or email us directly at Hello@thebossagency.co.';
+            contactStatus.classList.add('is-error');
+          }
+        })
+        .finally(function(){
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit inquiry'; }
+        });
+      });
+    }
 
     const openProjectsGallery = document.getElementById('openProjectsGallery');
     const closeProjectsGallery = document.getElementById('closeProjectsGallery');
