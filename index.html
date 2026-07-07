@@ -1871,7 +1871,8 @@
     }
 
     .field input,
-    .field textarea {
+    .field select,
+.field textarea {
       width: 100%;
       border: 1.8px solid #111;
       border-radius: 16px;
@@ -4333,6 +4334,32 @@
               </div>
             </div>
 
+<div class="field-row">
+              <div class="field">
+                <label for="budget">Estimated budget</label>
+                <select id="budget" name="budget">
+                  <option value="">Select a range</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                  <option value="Under $1,000/mo">Under $1,000/mo</option>
+                  <option value="$1,000 - $2,500/mo">$1,000 - $2,500/mo</option>
+                  <option value="$2,500 - $5,000/mo">$2,500 - $5,000/mo</option>
+                  <option value="$5,000+/mo">$5,000+/mo</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="leadSource">How did you hear about us?</label>
+                <select id="leadSource" name="leadSource">
+                  <option value="">Select an option</option>
+                  <option value="Google Search">Google Search</option>
+                  <option value="Social Media">Social Media</option>
+                  <option value="Referral">Referral</option>
+                  <option value="Email">Email</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
             <div class="contact-service-selection">
               <div class="contact-service-label">Services needed</div>
               <div class="contact-service-list">
@@ -4346,13 +4373,14 @@
 
             <div class="field">
               <label for="message">Project details</label>
-              <textarea id="message" name="message" placeholder="Tell us about your goals and what you need support with."></textarea>
+              <textarea id="message" name="message" placeholder="Tell us about your goals and what you need support with." required></textarea>
             </div>
 
             <input type="hidden" name="services" id="servicesHidden">
-            <input type="hidden" name="_subject" value="New inquiry from The Boss Agency Co website">
+            <input type="hidden" name="_subject" id="contactSubjectField" value="New inquiry from The Boss Agency Co website">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_autoresponse" value="Hi! Thanks for reaching out to The Boss Agency Co. We've received your information and a member of our team will follow up within 1-2 business days.">
 
             <button type="submit" class="contact-submit" id="contactSubmitBtn">Submit inquiry</button>
 
@@ -4543,7 +4571,16 @@
       contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         var activeServices = Array.from(document.querySelectorAll('.contact-service-chip.active')).map(function(c){ return c.textContent.trim(); });
+        if (activeServices.length === 0) {
+          if (contactStatus) { contactStatus.textContent = 'Please select at least one service so we can direct your inquiry correctly.'; contactStatus.className = 'contact-form-status is-error'; }
+          return;
+        }
         if (servicesHidden) { servicesHidden.value = activeServices.join(', '); }
+        var firstNameVal = (document.getElementById('firstName').value || '').trim();
+        var lastNameVal = (document.getElementById('lastName').value || '').trim();
+        var fullNameForSubject = (firstNameVal + ' ' + lastNameVal).trim() || 'Website visitor';
+        var contactSubjectField = document.getElementById('contactSubjectField');
+        if (contactSubjectField) { contactSubjectField.value = 'New inquiry from ' + fullNameForSubject + ' — ' + activeServices.join(', '); }
         var submitBtn = document.getElementById('contactSubmitBtn');
         var formData = new FormData(contactForm);
         var payload = {};
