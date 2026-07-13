@@ -1258,7 +1258,7 @@
     .reviews-marquee {
       overflow: hidden;
       width: 100%;
-      padding-top: 10px;
+      padding: 24px 40px; text-shadow: 2px 2px 8px rgba(255,255,255,0.9); background: rgba(255,255,255,0.2); border: 3px solid #000; border-radius: 4px; backdrop-filter: blur(2px);
       position: relative;
       justify-self: stretch;
     }
@@ -1799,7 +1799,7 @@
     }
 
     .contact-copy-wrap {
-      padding-top: 10px;
+      padding: 24px 40px; text-shadow: 2px 2px 8px rgba(255,255,255,0.9); background: rgba(255,255,255,0.2); border: 3px solid #000; border-radius: 4px; backdrop-filter: blur(2px);
     }
 
     .contact-form-card {
@@ -2826,7 +2826,7 @@
       overflow: visible;
     }
 
-    @keyframes va-scroll-up{0%{transform:translateY(0)}100%{transform:translateY(-50%)}} .va-coming-overlay{position:absolute;inset:0;overflow:hidden;pointer-events:none;display:flex;justify-content:center;align-items:flex-start;} .va-coming-track{display:flex;flex-direction:column;align-items:center;gap:32px;font-family:'Anton',sans-serif;font-size:2.8rem;font-weight:900;letter-spacing:0.18em;color:rgba(255,255,255,0.13);text-transform:uppercase;animation:va-scroll-up 7s linear infinite;padding-top:10px;} .tba-feature-inner {
+    @keyframes va-zoom-pulse{0%,100%{transform:scale(1);opacity:0.9}50%{transform:scale(1.12);opacity:1}} .va-coming-overlay{position:absolute;inset:0;pointer-events:none;display:flex;justify-content:center;align-items:center;z-index:10;} .va-coming-track{display:flex;flex-direction:column;align-items:center;gap:32px;font-family:'Anton',sans-serif;font-size:2.8rem;font-weight:900;letter-spacing:0.18em;color:rgba(255,255,255,0.13);text-transform:uppercase;animation:va-scroll-up 7s linear infinite;padding-top:10px;} .tba-feature-inner {
       width: 100%;
       max-width: 1400px;
       display: flex;
@@ -4286,7 +4286,7 @@
           />
         </a>
 
-            <div style="position:absolute;bottom:60px;left:-60px;right:-60px;background:#FFD700;color:#000000;font-weight:900;font-size:0.85rem;letter-spacing:0.25em;text-align:center;padding:14px 0;transform:rotate(-12deg);z-index:10;pointer-events:none;border-top:3px solid #000;border-bottom:3px solid #000;text-transform:uppercase;font-family:'Inter',sans-serif;">★ COMING SOON ★ COMING SOON ★ COMING SOON ★ COMING SOON ★;left:-40px;right:-40px;background:#FFD700;color:#000000;font-weight:800;font-size:1rem;letter-spacing:0.15em;text-align:center;padding:12px 0;transform:rotate(-12deg);z-index:10;pointer-events:none;">COMING SOON</div>
+                        <div class="va-coming-overlay"><div class="va-coming-track">COMING SOON</div></div>
         <a class="view-here-btn" href="next-page.html">
           <span>View Here</span>
           <svg viewBox="0 0 24 24" aria-hidden="true">
