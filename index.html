@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Boss Agency Co</title>
+<script>window.__tbaLang = localStorage.getItem('tba_lang') || 'en';</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -226,10 +227,10 @@
     }
 
     .hero-corner-logo {
-      position: absolute;
-      top: 68px;
-      right: 50px;
-      z-index: 1600;
+position: absolute;
+top: 22px;
+right: 26px;
+z-index: 1600;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -238,7 +239,7 @@
 
     .hero-corner-logo img {
       display: block;
-      width: clamp(150px, 14vw, 200px);
+      width: clamp(64px, 5.5vw, 100px);
       height: auto;
       object-fit: contain;
       background: transparent;
@@ -251,13 +252,13 @@
       }
 
       .hero-corner-logo {
-        top: 10px;
-        right: 14px;
-      }
+top: 10px;
+right: 14px;
+}
 
-      .hero-corner-logo img {
-        width: clamp(110px, 18vw, 150px);
-      }
+.hero-corner-logo img {
+width: clamp(60px, 10vw, 84px);
+}
     }
 
     @media (max-width: 560px) {
@@ -266,13 +267,13 @@
       }
 
       .hero-corner-logo {
-        top: 8px;
-        right: 10px;
-      }
+top: 8px;
+right: 10px;
+}
 
-      .hero-corner-logo img {
-        width: clamp(100px, 22vw, 130px);
-      }
+.hero-corner-logo img {
+width: clamp(52px, 13vw, 70px);
+}
     }
 
     .headline {
@@ -748,12 +749,13 @@
     }
 
     .about-panel.open {
-      width: 100%;
-      background: #000;
-      color: #fff;
-      overflow: hidden;
-      transition: max-height 0.45s ease;
-    }
+width: 100%;
+background: #000;
+color: #fff;
+max-height: 1400px;
+overflow: hidden;
+transition: max-height 0.45s ease;
+}
 
     .about-panel-inner {
       padding: 26px 26px 34px;
@@ -2826,7 +2828,12 @@
       overflow: visible;
     }
 
-    @keyframes va-zoom-pulse{0%,100%{transform:scale(1);opacity:0.9}50%{transform:scale(1.12);opacity:1}} .va-coming-overlay{position:absolute;inset:0;pointer-events:none;display:flex;justify-content:center;align-items:center;z-index:10;} .va-coming-track{display:flex;flex-direction:column;align-items:center;gap:32px;font-family:'Anton',sans-serif;font-size:2.8rem;font-weight:900;letter-spacing:0.18em;color:rgba(255,255,255,0.13);text-transform:uppercase;animation:va-scroll-up 7s linear infinite;padding-top:10px;} .tba-feature-inner {
+    @keyframes va-zoom-pulse{0%,100%{transform:scale(1);opacity:0.9}50%{transform:scale(1.12);opacity:1}} .va-coming-overlay{position:absolute;inset:0;pointer-events:none;display:flex;justify-content:center;align-items:center;z-index:10;}
+.va-coming-badge{display:inline-flex;align-items:center;justify-content:center;padding:24px 58px;border-radius:999px;background:#0a0a0a;border:3px solid rgba(244,179,22,0.9);box-shadow:0 20px 50px rgba(0,0,0,0.35),0 0 46px rgba(244,179,22,0.4),inset 0 0 22px rgba(244,179,22,0.12);animation:comingSoonPulse 2.6s ease-in-out infinite;}
+.va-coming-text{font-family:'Anton',sans-serif;font-size:clamp(2.2rem, 6vw, 4.6rem);letter-spacing:0.14em;text-transform:uppercase;line-height:1;background:linear-gradient(135deg,#fff8dd 0%,#ffd95b 20%,#f4b316 42%,#fff1a8 58%,#d4af37 78%,#ffe9a8 100%);background-size:220% 220%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:0 8px 26px rgba(0,0,0,0.35);animation:comingSoonShine 3.4s ease-in-out infinite;white-space:nowrap;}
+@keyframes comingSoonPulse{0%,100%{transform:scale(1);box-shadow:0 20px 50px rgba(0,0,0,0.35),0 0 46px rgba(244,179,22,0.4),inset 0 0 22px rgba(244,179,22,0.12);}50%{transform:scale(1.06);box-shadow:0 26px 60px rgba(0,0,0,0.4),0 0 66px rgba(244,179,22,0.6),inset 0 0 30px rgba(244,179,22,0.2);}}
+@keyframes comingSoonShine{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+@media (max-width:820px){.va-coming-badge{padding:16px 34px;}.va-coming-text{font-size:clamp(1.6rem, 8vw, 2.8rem);letter-spacing:0.1em;}} .tba-feature-inner {
       width: 100%;
       max-width: 1400px;
       display: flex;
@@ -3000,23 +3007,57 @@
       .image-button, .image-button::before, .view-here-btn::before { animation: none; }
       .image-button:hover, .view-here-btn:hover, .view-here-btn:hover svg { transform: none; }
     }
-  </style>
+  
+.lang-toggle{position:fixed;top:0;right:0;height:48px;z-index:1500;display:flex;align-items:center;justify-content:center;min-width:56px;padding:0 18px;background:#000;color:#f4b316;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:800;letter-spacing:0.1em;border-left:1px solid rgba(255,255,255,0.16);cursor:pointer;transition:background 0.2s ease, color 0.2s ease;}
+.lang-toggle:hover{background:#151515;color:#fff1a8;}
+@media (max-width:820px){.lang-toggle{height:44px;font-size:0.74rem;padding:0 14px;min-width:48px;}}
+
+.blog-section{width:100%;background:#f5f0ea;padding:90px 18px 100px;border-top:1px solid rgba(0,0,0,0.12);}
+.blog-shell{width:100%;max-width:1240px;margin:0 auto;}
+.blog-kicker{font-size:0.82rem;font-weight:800;text-transform:uppercase;letter-spacing:0.16em;color:rgba(0,0,0,0.55);margin-bottom:14px;text-align:center;}
+.blog-title{font-family:'Anton',sans-serif;font-size:clamp(2.4rem, 5vw, 4.6rem);line-height:0.95;text-transform:uppercase;text-align:center;color:#111;margin:0 auto 18px;max-width:18ch;}
+.blog-intro{max-width:60ch;margin:0 auto 48px;text-align:center;font-size:1rem;line-height:1.7;color:rgba(0,0,0,0.68);}
+.blog-subhead{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(1.3rem,2.4vw,1.8rem);color:#111;text-align:center;margin:56px 0 28px;}
+.blog-featured-grid{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:22px;margin-bottom:20px;}
+.blog-featured-card{background:#fff;border:1.8px solid #111;box-shadow:6px 6px 0 #111;border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:12px;}
+.blog-featured-tag{display:inline-flex;align-self:flex-start;padding:4px 12px;border-radius:999px;background:#f4b316;color:#111;font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;}
+.blog-featured-card h3{font-family:'Anton',sans-serif;font-size:1.25rem;line-height:1.14;text-transform:none;color:#111;}
+.blog-featured-card p{font-size:0.92rem;line-height:1.6;color:rgba(0,0,0,0.7);}
+.blog-featured-note{font-size:0.76rem;color:rgba(0,0,0,0.5);font-style:italic;}
+.blog-read-more{margin-top:auto;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:42px;padding:0 18px;border-radius:999px;background:#111;color:#fff;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;}
+.blog-original-grid{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:26px;margin-bottom:12px;}
+.blog-original-card{background:#111;color:#fff;border-radius:22px;padding:32px 28px;box-shadow:0 18px 34px rgba(0,0,0,0.18);display:flex;flex-direction:column;gap:14px;}
+.blog-original-card h3{font-family:'Anton',sans-serif;font-size:clamp(1.4rem, 2.2vw, 1.9rem);line-height:1.08;text-transform:uppercase;color:#fff;}
+.blog-original-card p{font-size:0.95rem;line-height:1.7;color:rgba(255,255,255,0.82);}
+.blog-original-toggle{margin-top:4px;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:46px;padding:0 20px;border-radius:999px;background:#f4b316;color:#111;font-weight:800;font-size:0.86rem;text-transform:uppercase;letter-spacing:0.04em;}
+.blog-original-body{max-height:0;overflow:hidden;transition:max-height 0.5s ease;}
+.blog-original-body.open{max-height:1600px;}
+.blog-original-body-inner{padding-top:14px;border-top:1px solid rgba(255,255,255,0.14);display:grid;gap:12px;}
+.blog-original-body-inner p{font-size:0.94rem;line-height:1.72;color:rgba(255,255,255,0.82);}
+.blog-original-body-inner strong{color:#f4b316;}
+@media (max-width:1000px){.blog-featured-grid, .blog-original-grid{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
   <div class="top-marquee" aria-label="Services marquee">
-    <div class="marquee-track">
-      <span>Web Developer</span>
-      <span>Social Media Strategy</span>
-      <span>Google My Business</span>
-      <span>VA Recruitment Agency</span>
-      <span>Social Media Management</span>
-      <span>Web Developer</span>
-      <span>Social Media Strategy</span>
-      <span>Google My Business</span>
-      <span>VA Recruitment Agency</span>
-      <span>Social Media Management</span>
-    </div>
-  </div>
+<div class="marquee-track">
+<span data-i18n="mq-webdesign">Web Design</span>
+<span data-i18n="mq-smm">Social Media Marketing</span>
+<span data-i18n="mq-seo">SEO</span>
+<span data-i18n="mq-gmb">Google My Business</span>
+<span data-i18n="mq-va">VA Recruitment Agency</span>
+<span data-i18n="mq-ads">Google Meta Ads</span>
+<span data-i18n="mq-ai">Boss AI</span>
+<span data-i18n="mq-webdesign">Web Design</span>
+<span data-i18n="mq-smm">Social Media Marketing</span>
+<span data-i18n="mq-seo">SEO</span>
+<span data-i18n="mq-gmb">Google My Business</span>
+<span data-i18n="mq-va">VA Recruitment Agency</span>
+<span data-i18n="mq-ads">Google Meta Ads</span>
+<span data-i18n="mq-ai">Boss AI</span>
+</div>
+<button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language / Cambiar idioma">ES</button>
+</div>
 
   <button class="menu-trigger" id="menuToggle" aria-label="Open menu">Menu</button>
 
@@ -3145,19 +3186,20 @@
     </style>
 
     <div class="menu-links">
-      <a href="#home">Home</a>
-      <a href="#services">About</a>
-      <a href="#about">Services</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#projects">Our Work</a>
-      <a href="#va-recruitment" class="menu-link-va">
-        <span>VA Recruitment</span>
-        <span>Agency</span>
-      </a>
-      <a href="#contact">Contact</a>
-    </div>
+<a href="#home" data-i18n="nav-home">Home</a>
+<a href="#services" data-i18n="nav-about">About</a>
+<a href="#about" data-i18n="nav-services">Services</a>
+<a href="#reviews" data-i18n="nav-reviews">Reviews</a>
+<a href="#projects" data-i18n="nav-work">Our Work</a>
+<a href="#blog" data-i18n="nav-blog">Blog</a>
+<a href="#va-recruitment" class="menu-link-va">
+<span data-i18n="nav-va-1">VA Recruitment</span>
+<span data-i18n="nav-va-2">Agency</span>
+</a>
+<a href="#contact" data-i18n="nav-contact">Contact</a>
+</div>
     <div class="menu-footer">
-      <div class="menu-note">Creative strategy, smart systems, measurable growth.</div>
+      <div class="menu-note" data-i18n="nav-note">Creative strategy, smart systems, measurable growth.</div>
       <div class="socials">
         <a href="#" aria-label="Instagram">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -3369,14 +3411,14 @@
       <div class="hero-inner">
         <div class="home-festival">
           <div class="home-main-copy">
-            <h1>
-              <span>WE KNOW WHAT</span>
-              <span>WE DO</span>
-            </h1>
+            <h1 data-i18n="hero-h1">
+<span>WE KNOW WHAT</span>
+<span>WE DO</span>
+</h1>
 
-            <div class="home-slanted-banner">
-              <span>The Boss Agency is back</span>
-            </div>
+<div class="home-slanted-banner">
+<span data-i18n="hero-banner">The Boss Agency is back</span>
+</div>
           </div>
         </div>
       </div>
@@ -3396,7 +3438,7 @@
           </div>
 
           <div class="services-cta-wrap">
-            <button class="services-cta" id="servicesCta" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'});">Explore this service</button>
+            <button class="services-cta" id="servicesCta" data-i18n="services-cta" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'});">Explore this service</button>
           </div>
 
           <div class="services-nav">
@@ -3426,8 +3468,8 @@
               </div>
             </div>
             <div class="phone-header">
-              <h3 id="phoneHeaderTitle">Service confirmed</h3>
-              <button class="phone-close">Close</button>
+              <h3 id="phoneHeaderTitle" data-i18n="phone-header-title">Service confirmed</h3>
+              <button class="phone-close" data-i18n="phone-close">Close</button>
             </div>
 
             <div class="phone-card">
@@ -3451,8 +3493,8 @@
               </div>
 
               <button class="phone-action" id="phoneAction">
-                <span>View service details</span>
-              </button>
+<span data-i18n="phone-action">View service details</span>
+</button>
             </div>
           </div>
         </div>
@@ -3460,7 +3502,7 @@
 
       <div class="about-toggle-bar">
         <button class="about-toggle" id="aboutToggle" aria-expanded="false" aria-controls="aboutPanel">
-          <span class="about-toggle-label">About Us</span>
+          <span class="about-toggle-label" data-i18n="about-toggle-label">About Us</span>
           <span class="about-toggle-icon" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 9l6 6 6-6"></path>
@@ -3473,27 +3515,27 @@
             <div class="about-panel-grid">
               <div>
                 <h3 class="about-panel-title">The Boss Agency Co</h3>
-                <p class="about-panel-copy">
-                  We help businesses and non-profits grow their presence with clear digital strategy, strong branding, web development, SEO, and content that connects with the right audience. Every project is tailored to your goals so the work feels aligned, practical, and built for measurable growth.
-                </p>
-              </div>
+<p class="about-panel-copy" data-i18n="about-panel-copy">
+We help businesses and non-profits grow their presence with clear digital strategy, strong branding, web development, SEO, and content that connects with the right audience. Every project is tailored to your goals so the work feels aligned, practical, and built for measurable growth.
+</p>
+</div>
 
-              <div class="about-panel-points">
-                <div class="about-point">
-                  <strong>What we do</strong>
-                  <span>Digital strategy, web development, SEO, branding, and content creation.</span>
-                </div>
+<div class="about-panel-points">
+<div class="about-point">
+<strong data-i18n="about-point-1-title">What we do</strong>
+<span data-i18n="about-point-1-copy">Digital strategy, web development, SEO, branding, and content creation.</span>
+</div>
 
-                <div class="about-point">
-                  <strong>How we work</strong>
-                  <span>A personalized approach focused on your audience, challenges, and next stage of growth.</span>
-                </div>
+<div class="about-point">
+<strong data-i18n="about-point-2-title">How we work</strong>
+<span data-i18n="about-point-2-copy">A personalized approach focused on your audience, challenges, and next stage of growth.</span>
+</div>
 
-                <div class="about-point">
-                  <strong>Why clients stay</strong>
-                  <span>We build lasting partnerships and solutions designed to create visible, measurable results.</span>
-                </div>
-              </div>
+<div class="about-point">
+<strong data-i18n="about-point-3-title">Why clients stay</strong>
+<span data-i18n="about-point-3-copy">We build lasting partnerships and solutions designed to create visible, measurable results.</span>
+</div>
+</div>
             </div>
           </div>
         </div>
@@ -3502,11 +3544,11 @@
 
     <section class="impact-strip" id="impact">
       <div class="impact-box">
-        <h2 class="impact-title">
-          Real numbers that show how
-          <span class="impact-highlight"><span>THE BOSS AGENCY CO</span></span>
-          support can improve visibility, speed, and business growth
-        </h2>
+        <h2 class="impact-title" data-i18n="impact-title">
+Real numbers that show how
+<span class="impact-highlight"><span>THE BOSS AGENCY CO</span></span>
+support can improve visibility, speed, and business growth
+</h2>
 
         <div class="impact-logos" aria-label="Brand logos">
           <div class="impact-logos-track">
@@ -3543,7 +3585,7 @@
               </svg>
             </div>
             <div class="impact-number" data-target="68" data-prefix="+" data-suffix="%">0</div>
-            <p class="impact-label">Stronger qualified visibility across web development, Google My Business, and social positioning</p>
+            <p class="impact-label" data-i18n="impact-label-1">Stronger qualified visibility across web development, Google My Business, and social positioning</p>
           </article>
 
           <article class="impact-card">
@@ -3554,7 +3596,7 @@
               </svg>
             </div>
             <div class="impact-number" data-target="32" data-suffix=" HRS">0</div>
-            <p class="impact-label">Saved each month through clearer systems, content support, and virtual assistant recruitment</p>
+            <p class="impact-label" data-i18n="impact-label-2">Saved each month through clearer systems, content support, and virtual assistant recruitment</p>
           </article>
 
           <article class="impact-card">
@@ -3565,7 +3607,7 @@
               </svg>
             </div>
             <div class="impact-number" data-target="41" data-prefix="+" data-suffix="%">0</div>
-            <p class="impact-label">Potential lift in conversion-ready traffic when branding, search, and content work together</p>
+            <p class="impact-label" data-i18n="impact-label-3">Potential lift in conversion-ready traffic when branding, search, and content work together</p>
           </article>
 
           <article class="impact-card">
@@ -3578,7 +3620,7 @@
               </svg>
             </div>
             <div class="impact-number" data-target="24" data-prefix="+" data-suffix="%">0</div>
-            <p class="impact-label">More execution capacity by hiring the right VA support through a faster recruitment process</p>
+            <p class="impact-label" data-i18n="impact-label-4">More execution capacity by hiring the right VA support through a faster recruitment process</p>
           </article>
         </div>
       </div>
@@ -3861,79 +3903,79 @@
       <div class="ourwork-shell">
         <div class="ourwork-cards">
           <article class="work-card card-1">
-            <h3>Web Developer</h3>
-            <div class="work-divider"></div>
-            <div class="benefit-title">Benefits</div>
-            <ul>
-              <li>Professional online presence</li>
-              <li>Better first impressions</li>
-              <li>Clearer path to conversion</li>
-              <li>Responsive experience on all devices</li>
-            </ul>
-          </article>
+<h3 data-i18n="wc1-title">Web Developer</h3>
+<div class="work-divider"></div>
+<div class="benefit-title" data-i18n="benefits-label">Benefits</div>
+<ul>
+<li data-i18n="wc1-li1">Professional online presence</li>
+<li data-i18n="wc1-li2">Better first impressions</li>
+<li data-i18n="wc1-li3">Clearer path to conversion</li>
+<li data-i18n="wc1-li4">Responsive experience on all devices</li>
+</ul>
+</article>
 
           <article class="work-card card-2">
-            <h3>Social Media Strategy</h3>
-            <div class="work-divider"></div>
-            <div class="benefit-title">Benefits</div>
-            <ul>
-              <li>Stronger content direction</li>
-              <li>Aligned messaging</li>
-              <li>Audience-focused planning</li>
-              <li>Smarter brand consistency</li>
-            </ul>
-          </article>
+<h3 data-i18n="wc2-title">Social Media Strategy</h3>
+<div class="work-divider"></div>
+<div class="benefit-title" data-i18n="benefits-label">Benefits</div>
+<ul>
+<li data-i18n="wc2-li1">Stronger content direction</li>
+<li data-i18n="wc2-li2">Aligned messaging</li>
+<li data-i18n="wc2-li3">Audience-focused planning</li>
+<li data-i18n="wc2-li4">Smarter brand consistency</li>
+</ul>
+</article>
 
           <article class="work-card card-3">
-            <h3>Google My Business</h3>
-            <div class="work-divider"></div>
-            <div class="benefit-title">Benefits</div>
-            <ul>
-              <li>Better local discoverability</li>
-              <li>Improved business credibility</li>
-              <li>Stronger map visibility</li>
-              <li>More customer actions</li>
-            </ul>
-          </article>
+<h3 data-i18n="wc3-title">Google My Business</h3>
+<div class="work-divider"></div>
+<div class="benefit-title" data-i18n="benefits-label">Benefits</div>
+<ul>
+<li data-i18n="wc3-li1">Better local discoverability</li>
+<li data-i18n="wc3-li2">Improved business credibility</li>
+<li data-i18n="wc3-li3">Stronger map visibility</li>
+<li data-i18n="wc3-li4">More customer actions</li>
+</ul>
+</article>
 
           <article class="work-card card-4">
-            <h3>VA Recruitment Agency</h3>
-            <div class="work-divider"></div>
-            <div class="benefit-title">Benefits</div>
-            <ul>
-              <li>More team capacity</li>
-              <li>Less admin pressure</li>
-              <li>Better workflow support</li>
-              <li>Time saved for higher-value tasks</li>
-            </ul>
-          </article>
+<h3 data-i18n="wc4-title">VA Recruitment Agency</h3>
+<div class="work-divider"></div>
+<div class="benefit-title" data-i18n="benefits-label">Benefits</div>
+<ul>
+<li data-i18n="wc4-li1">More team capacity</li>
+<li data-i18n="wc4-li2">Less admin pressure</li>
+<li data-i18n="wc4-li3">Better workflow support</li>
+<li data-i18n="wc4-li4">Time saved for higher-value tasks</li>
+</ul>
+</article>
 
           <article class="work-card card-5">
-            <h3>Social Media Management</h3>
-            <div class="work-divider"></div>
-            <div class="benefit-title">Benefits</div>
-            <ul>
-              <li>Consistent posting rhythm</li>
-              <li>Professional account upkeep</li>
-              <li>More polished brand presence</li>
-              <li>Ongoing visibility support</li>
-            </ul>
-          </article>
+<h3 data-i18n="wc5-title">Social Media Management</h3>
+<div class="work-divider"></div>
+<div class="benefit-title" data-i18n="benefits-label">Benefits</div>
+<ul>
+<li data-i18n="wc5-li1">Consistent posting rhythm</li>
+<li data-i18n="wc5-li2">Professional account upkeep</li>
+<li data-i18n="wc5-li3">More polished brand presence</li>
+<li data-i18n="wc5-li4">Ongoing visibility support</li>
+</ul>
+</article>
         </div>
       </div>
     </section>
     
     <section class="success-story-band">
-      <div class="success-story-band-text">BE ONE SUCCESS STORY</div>
+      <div class="success-story-band-text" data-i18n="success-band">BE ONE SUCCESS STORY</div>
     </section>
 
     <section class="reviews-showcase" id="reviews">
       <div class="reviews-shell">
         <div class="reviews-intro">
-          <div class="reviews-kicker">Reviews</div>
-          <h2 class="reviews-title">What clients <span class="chip-line">say</span></h2>
-          <p class="reviews-copy">A few words from people and teams we&#x2019;ve supported through strategy, visibility, and digital growth.</p>
-          <button class="reviews-cta">Client feedback</button>
+          <div class="reviews-kicker" data-i18n="reviews-kicker">Reviews</div>
+<h2 class="reviews-title" data-i18n="reviews-title">What clients <span class="chip-line">say</span></h2>
+<p class="reviews-copy" data-i18n="reviews-copy">A few words from people and teams we&#x2019;ve supported through strategy, visibility, and digital growth.</p>
+<button class="reviews-cta" data-i18n="reviews-cta">Client feedback</button>
         </div>
 
         <div class="reviews-marquee">
@@ -4045,8 +4087,8 @@
     <section class="projects-showcase" id="projects">
       <div class="projects-showcase-shell">
         <div class="projects-showcase-head">
-          <div class="projects-showcase-kicker">Past Work</div>
-          <h2 class="projects-showcase-title">Selected projects and creative direction</h2>
+          <div class="projects-showcase-kicker" data-i18n="projects-kicker">Past Work</div>
+<h2 class="projects-showcase-title" data-i18n="projects-title">Selected projects and creative direction</h2>
         </div>
 
         <div class="projects-stage">
@@ -4088,7 +4130,7 @@
             </div>
 
             <div class="stack-caption">
-              <button class="stack-open" id="openProjectsGallery" type="button">View Project</button>
+              <button class="stack-open" id="openProjectsGallery" type="button" data-i18n="projects-view">View Project</button>
             </div>
           </div>
 
@@ -4269,7 +4311,7 @@
               </div>
             </a>
 
-            <button class="projects-close" id="closeProjectsGallery" type="button">Close Gallery</button>
+            <button class="projects-close" id="closeProjectsGallery" type="button" data-i18n="projects-close">Close Gallery</button>
           </div>
         </div>
       </div>
@@ -4286,9 +4328,9 @@
           />
         </a>
 
-                        <div class="va-coming-overlay"><div class="va-coming-track">COMING SOON</div></div>
+                        <div class="va-coming-overlay"><div class="va-coming-badge"><span class="va-coming-text" data-i18n="va-coming">Coming Soon</span></div></div>
         <a class="view-here-btn" href="next-page.html">
-          <span>View Here</span>
+<span data-i18n="va-view-here">View Here</span>
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 12h14"></path>
             <path d="M13 5l7 7-7 7"></path>
@@ -4297,84 +4339,209 @@
       </div>
     </section>
     
-    <section class="contact-section" id="contact">
+    
+<section class="blog-section" id="blog">
+<div class="blog-shell">
+<div class="blog-kicker" data-i18n="blog-kicker">Blog</div>
+<h2 class="blog-title" data-i18n="blog-title">Insights, Updates And Ideas</h2>
+<p class="blog-intro" data-i18n="blog-intro">A mix of original articles about our VA Recruitment Agency and Boss AI services, plus a roundup of posts from The Boss Agency Co. team.</p>
+
+<div class="blog-original-grid">
+<article class="blog-original-card">
+<span class="blog-featured-tag" data-i18n="blog-tag-va">VA Recruitment</span>
+<h3 data-i18n="blog-va-title">Inside Our VA Recruitment Agency: Built For Real Growth</h3>
+<p data-i18n="blog-va-p1">Finding reliable remote support should not feel like a guessing game. Our VA Recruitment Agency connects growing businesses with virtual assistants who are vetted, prepared, and ready to contribute from day one.</p>
+<button type="button" class="blog-original-toggle" data-target="blogBodyVA" data-i18n="blog-read-article">Read Article</button>
+<div class="blog-original-body" id="blogBodyVA">
+<div class="blog-original-body-inner">
+<p data-i18n="blog-va-p2">For business owners, that means less time spent screening candidates and more time focused on the work that actually moves your company forward. Every VA in our pool is matched based on the skills and workflow your business truly needs.</p>
+<p data-i18n="blog-va-p3">For virtual assistants, it means something different: <strong>steady, vetted clients</strong> instead of unpredictable gigs, fair pay with clear expectations from the start, and ongoing support plus a community built around long-term growth, not one-off projects.</p>
+<p data-i18n="blog-va-p4">Whether you are a business ready to bring on dependable support or a VA looking for real opportunities, our recruitment agency was built to make that connection simple and lasting.</p>
+<a class="blog-read-more" href="https://luigi77-ai.github.io/VA-Recruitment-Agency/" target="_blank" rel="noopener noreferrer" data-i18n="blog-va-cta">Visit VA Recruitment Agency</a>
+</div>
+</div>
+</article>
+
+<article class="blog-original-card">
+<span class="blog-featured-tag" data-i18n="blog-tag-ai">Boss AI</span>
+<h3 data-i18n="blog-ai-title">Boss AI: Smarter Systems For Everyday Business Growth</h3>
+<p data-i18n="blog-ai-p1">Artificial intelligence is not just for big tech companies anymore. Through Boss AI, we help businesses put practical AI tools to work in everyday operations, from automating repetitive tasks to responding to customers faster.</p>
+<button type="button" class="blog-original-toggle" data-target="blogBodyAI" data-i18n="blog-read-article">Read Article</button>
+<div class="blog-original-body" id="blogBodyAI">
+<div class="blog-original-body-inner">
+<p data-i18n="blog-ai-p2">The goal is simple: give business owners back their time. Instead of spending hours on manual follow-ups, scheduling, or content drafts, AI-powered systems can handle the repetitive layer of the work while your team focuses on strategy and relationships.</p>
+<p data-i18n="blog-ai-p3"><strong>The benefits add up quickly:</strong> faster response times for customers, fewer manual errors, more consistent follow-up, and a business that can scale support without immediately scaling headcount.</p>
+<p data-i18n="blog-ai-p4">If you are curious about where AI could fit into your business, it is worth a conversation. Boss AI is built to work alongside your existing team, not replace the personal touch that makes your brand memorable.</p>
+<a class="blog-read-more" href="#contact" data-i18n="blog-ai-cta">Talk To Us About Boss AI</a>
+</div>
+</div>
+</article>
+</div>
+
+<h3 class="blog-subhead" data-i18n="blog-more-title">More From The Boss Agency Co.</h3>
+
+<div class="blog-featured-grid">
+<article class="blog-featured-card">
+<span class="blog-featured-tag" data-i18n="blog-tag-wellbeing">Wellbeing</span>
+<h3>Self-Care for Entrepreneurs</h3>
+<p data-i18n="blog-t1">Practical ways busy business owners can protect their wellbeing while still scaling with support from our team.</p>
+<span class="blog-featured-note" data-i18n="blog-en-note">Article in English</span>
+<a class="blog-read-more" href="https://thebossagency.co/self-care-for-entrepreneurs-why-having-the-boss-agency-co-on-your-side-is-a-game-changer/" target="_blank" rel="noopener noreferrer" data-i18n="blog-learn-more">Learn More</a>
+</article>
+
+<article class="blog-featured-card">
+<span class="blog-featured-tag" data-i18n="blog-tag-strategy">Strategy</span>
+<h3>The Power of Precision: Choosing a Niche</h3>
+<p data-i18n="blog-t2">Why narrowing your focus to a clear niche can make your brand easier to recognize and grow.</p>
+<span class="blog-featured-note" data-i18n="blog-en-note">Article in English</span>
+<a class="blog-read-more" href="https://thebossagency.co/the-power-of-precision-why-choosing-a-niche-is-critical-for-business-success/" target="_blank" rel="noopener noreferrer" data-i18n="blog-learn-more">Learn More</a>
+</article>
+
+<article class="blog-featured-card">
+<span class="blog-featured-tag" data-i18n="blog-tag-community">Community</span>
+<h3>Startup Stars: Hispanic Entrepreneurs</h3>
+<p data-i18n="blog-t3">A look at the challenges and support systems that help Hispanic founders build lasting businesses.</p>
+<span class="blog-featured-note" data-i18n="blog-en-note">Article in English</span>
+<a class="blog-read-more" href="https://thebossagency.co/startup-stars-elevating-hispanic-entrepreneurs-to-new-heights/" target="_blank" rel="noopener noreferrer" data-i18n="blog-learn-more">Learn More</a>
+</article>
+
+<article class="blog-featured-card">
+<span class="blog-featured-tag" data-i18n="blog-tag-ai2">AI</span>
+<h3>Embracing AI For Entrepreneurs</h3>
+<p data-i18n="blog-t4">How small business owners are using artificial intelligence to save time and serve customers better.</p>
+<span class="blog-featured-note" data-i18n="blog-en-note">Article in English</span>
+<a class="blog-read-more" href="https://thebossagency.co/embracing-ai-for-entrepreneurs/" target="_blank" rel="noopener noreferrer" data-i18n="blog-learn-more">Learn More</a>
+</article>
+
+<article class="blog-featured-card">
+<span class="blog-featured-tag" data-i18n="blog-tag-content">Content</span>
+<h3>How To Use Blogs For Your Business</h3>
+<p data-i18n="blog-t5">A quick guide to using blogging as part of a smarter digital marketing strategy.</p>
+<span class="blog-featured-note" data-i18n="blog-en-note">Article in English</span>
+<a class="blog-read-more" href="https://thebossagency.co/how-to-use-blogs-for-your-business/" target="_blank" rel="noopener noreferrer" data-i18n="blog-learn-more">Learn More</a>
+</article>
+
+<article class="blog-featured-card">
+<span class="blog-featured-tag" data-i18n="blog-tag-marketing">Marketing</span>
+<h3>Why You Should Hire a Digital Marketer</h3>
+<p data-i18n="blog-t6">What a digital marketer actually does and how that expertise can accelerate business growth.</p>
+<span class="blog-featured-note" data-i18n="blog-en-note">Article in English</span>
+<a class="blog-read-more" href="https://thebossagency.co/why-you-should-hire-a-digital-marketer/" target="_blank" rel="noopener noreferrer" data-i18n="blog-learn-more">Learn More</a>
+</article>
+
+<article class="blog-featured-card">
+<span class="blog-featured-tag" data-i18n="blog-tag-webdesign">Web Design</span>
+<h3>Smart Web Design Strategies</h3>
+<p data-i18n="blog-t7">Web design tips to help small businesses build a site that truly supports growth.</p>
+<span class="blog-featured-note" data-i18n="blog-en-note">Article in English</span>
+<a class="blog-read-more" href="https://thebossagency.co/smart-web-design-strategies-small-business-success/" target="_blank" rel="noopener noreferrer" data-i18n="blog-learn-more">Learn More</a>
+</article>
+
+<article class="blog-featured-card">
+<span class="blog-featured-tag" data-i18n="blog-tag-webdesign">Web Design</span>
+<h3>Why WordPress Is Good For Your Business</h3>
+<p data-i18n="blog-t8">A look at why WordPress remains one of the most reliable platforms for building a business site.</p>
+<span class="blog-featured-note" data-i18n="blog-en-note">Article in English</span>
+<a class="blog-read-more" href="https://thebossagency.co/why-wordpress-is-good-for-your-business/" target="_blank" rel="noopener noreferrer" data-i18n="blog-learn-more">Learn More</a>
+</article>
+
+<article class="blog-featured-card">
+<span class="blog-featured-tag" data-i18n="blog-tag-marketing">Marketing</span>
+<h3>Digital Marketing Strategies for Entrepreneurs</h3>
+<p data-i18n="blog-t9">Core digital marketing strategies every new business should prioritize to grow faster.</p>
+<span class="blog-featured-note" data-i18n="blog-en-note">Article in English</span>
+<a class="blog-read-more" href="https://thebossagency.co/digital-marketing-strategies-for-entrepreneurs-and-new-businesses/" target="_blank" rel="noopener noreferrer" data-i18n="blog-learn-more">Learn More</a>
+</article>
+
+<article class="blog-featured-card">
+<span class="blog-featured-tag" data-i18n="blog-tag-marketing">Marketing</span>
+<h3>Challenges Entrepreneurs Face in Digital Marketing</h3>
+<p data-i18n="blog-t10">Common digital marketing obstacles small businesses run into, and why the right support matters.</p>
+<span class="blog-featured-note" data-i18n="blog-en-note">Article in English</span>
+<a class="blog-read-more" href="https://thebossagency.co/challenges-entrepreneurs-face-when-it-comes-to-digital-marketing/" target="_blank" rel="noopener noreferrer" data-i18n="blog-learn-more">Learn More</a>
+</article>
+</div>
+</div>
+</section>
+
+<section class="contact-section" id="contact">
       <div class="contact-layout">
         <div class="contact-copy-wrap">
-          <div class="contact-eyebrow">Contact</div>
-          <h2 class="contact-title">Let&#x2019;s build your next growth move</h2>
-          <p class="contact-copy">
-            Start with a clear conversation about your goals, your audience, and the digital systems needed to support your next stage of growth.
-          </p>
+          <div class="contact-eyebrow" data-i18n="contact-eyebrow">Contact</div>
+<h2 class="contact-title" data-i18n="contact-title">Let&#x2019;s build your next growth move</h2>
+<p class="contact-copy" data-i18n="contact-copy">
+Start with a clear conversation about your goals, your audience, and the digital systems needed to support your next stage of growth.
+</p>
         </div>
 
         <div class="contact-form-card">
-          <h3 class="contact-form-title">Send your inquiry</h3>
+          <h3 class="contact-form-title" data-i18n="contact-form-title">Send your inquiry</h3>
 
           <form class="contact-form" id="contactForm">
             <div class="field-row">
               <div class="field">
-                <label for="firstName">First name</label>
-                <input id="firstName" name="firstName" type="text" placeholder="Your first name">
-              </div>
+                <label for="firstName" data-i18n="lbl-firstname">First name</label>
+<input id="firstName" name="firstName" type="text" placeholder="Your first name" data-i18n-ph="ph-firstname">
+</div>
 
-              <div class="field">
-                <label for="lastName">Last name</label>
-                <input id="lastName" name="lastName" type="text" placeholder="Your last name">
+<div class="field">
+<label for="lastName" data-i18n="lbl-lastname">Last name</label>
+<input id="lastName" name="lastName" type="text" placeholder="Your last name" data-i18n-ph="ph-lastname">
               </div>
             </div>
 
             <div class="field-row">
               <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@example.com" required>
-              </div>
+                <label for="email" data-i18n="lbl-email">Email</label>
+<input id="email" name="email" type="email" placeholder="you@example.com" required>
+</div>
 
-              <div class="field">
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" placeholder="(000) 000-0000">
+<div class="field">
+<label for="phone" data-i18n="lbl-phone">Phone</label>
+<input id="phone" name="phone" type="tel" placeholder="(000) 000-0000" data-i18n-ph="ph-phone">
               </div>
             </div>
 
 <div class="field-row">
               <div class="field">
-                <label for="budget">Estimated budget</label>
-                <select id="budget" name="budget">
-                  <option value="">Select a range</option>
-                  <option value="Not sure yet">Not sure yet</option>
-                  <option value="Under $1,000/mo">Under $1,000/mo</option>
-                  <option value="$1,000 - $2,500/mo">$1,000 - $2,500/mo</option>
-                  <option value="$2,500 - $5,000/mo">$2,500 - $5,000/mo</option>
-                  <option value="$5,000+/mo">$5,000+/mo</option>
-                </select>
+                <label for="budget" data-i18n="lbl-budget">Estimated budget</label>
+<select id="budget" name="budget">
+<option value="" data-i18n="opt-select-range">Select a range</option>
+<option value="Not sure yet" data-i18n="opt-not-sure">Not sure yet</option>
+<option value="Under $1,000/mo" data-i18n="opt-under-1k">Under $1,000/mo</option>
+<option value="$1,000 - $2,500/mo" data-i18n="opt-1k-2.5k">$1,000 - $2,500/mo</option>
+<option value="$2,500 - $5,000/mo" data-i18n="opt-2.5k-5k">$2,500 - $5,000/mo</option>
+<option value="$5,000+/mo" data-i18n="opt-5k-plus">$5,000+/mo</option>
+</select>
               </div>
 
               <div class="field">
-                <label for="leadSource">How did you hear about us?</label>
-                <select id="leadSource" name="leadSource">
-                  <option value="">Select an option</option>
-                  <option value="Google Search">Google Search</option>
-                  <option value="Social Media">Social Media</option>
-                  <option value="Referral">Referral</option>
-                  <option value="Email">Email</option>
-                  <option value="Other">Other</option>
-                </select>
+                <label for="leadSource" data-i18n="lbl-leadsource">How did you hear about us?</label>
+<select id="leadSource" name="leadSource">
+<option value="" data-i18n="opt-select-option">Select an option</option>
+<option value="Google Search" data-i18n="opt-google">Google Search</option>
+<option value="Social Media" data-i18n="opt-social">Social Media</option>
+<option value="Referral" data-i18n="opt-referral">Referral</option>
+<option value="Email" data-i18n="opt-email">Email</option>
+<option value="Other" data-i18n="opt-other">Other</option>
+</select>
               </div>
             </div>
 
             <div class="contact-service-selection">
-              <div class="contact-service-label">Services needed</div>
-              <div class="contact-service-list">
-                <button type="button" class="contact-service-chip active">Web Developer</button>
-                <button type="button" class="contact-service-chip">Social Media Strategy</button>
-                <button type="button" class="contact-service-chip">Google My Business</button>
-                <button type="button" class="contact-service-chip">VA Recruitment</button>
-                <button type="button" class="contact-service-chip">Social Media Management</button>
-              </div>
+              <div class="contact-service-label" data-i18n="lbl-services-needed">Services needed</div>
+<div class="contact-service-list">
+<button type="button" class="contact-service-chip active" data-i18n="chip-web">Web Developer</button>
+<button type="button" class="contact-service-chip" data-i18n="chip-smstrategy">Social Media Strategy</button>
+<button type="button" class="contact-service-chip" data-i18n="chip-gmb">Google My Business</button>
+<button type="button" class="contact-service-chip" data-i18n="chip-va">VA Recruitment</button>
+<button type="button" class="contact-service-chip" data-i18n="chip-smm">Social Media Management</button>
+</div>
             </div>
 
             <div class="field">
-              <label for="message">Project details</label>
-              <textarea id="message" name="message" placeholder="Tell us about your goals and what you need support with." required></textarea>
+              <label for="message" data-i18n="lbl-message">Project details</label>
+<textarea id="message" name="message" placeholder="Tell us about your goals and what you need support with." required data-i18n-ph="ph-message"></textarea>
             </div>
 
             <input type="hidden" name="services" id="servicesHidden">
@@ -4383,7 +4550,7 @@
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_autoresponse" value="Hi! Thanks for reaching out to The Boss Agency Co. We've received your information and a member of our team will follow up within 1-2 business days.">
 
-            <button type="submit" class="contact-submit" id="contactSubmitBtn">Submit inquiry</button>
+            <button type="submit" class="contact-submit" id="contactSubmitBtn" data-i18n="submit-btn">Submit inquiry</button>
 
             <div class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite"></div>
           </form>
@@ -4394,18 +4561,20 @@
   
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-copy">
-        © The Boss Agency Co. All rights reserved.
-      </div>
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <span>·</span>
-        <a href="#services">Services</a>
-        <span>·</span>
-        <a href="#work">Work</a>
-        <span>·</span>
-        <a href="#contact">Contact</a>
-      </div>
+      <div class="footer-copy" data-i18n="footer-copy">
+© The Boss Agency Co. All rights reserved.
+</div>
+<div class="footer-links">
+<a href="#home" data-i18n="nav-home">Home</a>
+<span>·</span>
+<a href="#services" data-i18n="nav-services">Services</a>
+<span>·</span>
+<a href="#work" data-i18n="nav-work">Work</a>
+<span>·</span>
+<a href="#blog" data-i18n="nav-blog">Blog</a>
+<span>·</span>
+<a href="#contact" data-i18n="nav-contact">Contact</a>
+</div>
     </div>
   </footer>
   
@@ -4428,57 +4597,57 @@
     });
 
     const services = [
-      {
-        pill: 'Web Developer',
-        copy: 'Custom websites built to strengthen your brand online',
-        meta: 'We create clean, strategic digital experiences for business growth',
-        title: 'Web Developer',
-        location: 'Custom websites for stronger online presence',
-        code: '#TBA-WEB-01',
-        image: 'https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1000&q=80',
-        alt: 'Web development service'
-      },
-      {
-        pill: 'Social Media Strategy',
-        copy: 'Strategic content plans designed to build trust and visibility',
-        meta: 'We shape your message so every post supports business goals',
-        title: 'Social Strategy',
-        location: 'Content direction that supports visibility and growth',
-        code: '',
-        image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&w=1000&q=80',
-        alt: 'Social media strategy service'
-      },
-      {
-        pill: 'Google My Business',
-        copy: 'Optimized local presence that helps customers find you faster',
-        meta: 'We improve credibility, search visibility, and local discovery',
-        title: 'Google Business',
-        location: 'Local search visibility that brings real attention',
-        code: '',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80',
-        alt: 'Google My Business optimization service'
-      },
-      {
-        pill: 'VA Recruitment Agency',
-        copy: 'Reliable virtual assistant recruitment tailored to your workflow',
-        meta: 'We help you build support systems that save time and reduce friction',
-        title: 'VA Recruitment',
-        location: 'Hiring support for efficient and scalable operations',
-        code: '',
-        image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80',
-        alt: 'VA recruitment service'
-      },
-      {
-        pill: 'Social Media Management',
-        copy: 'Consistent day to day management for a polished digital presence',
-        meta: 'We keep your channels active, aligned, and professionally presented',
-        title: 'Social Management',
-        location: 'Ongoing execution for stronger brand consistency',
-        code: '',
-        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80',
-        alt: 'Social media management service'
-      }
-    ];
+{
+pill: 'Web Developer', pill_es: 'Desarrollo Web',
+copy: 'Custom websites built to strengthen your brand online', copy_es: 'Sitios web personalizados que fortalecen tu marca en linea',
+meta: 'We create clean, strategic digital experiences for business growth', meta_es: 'Creamos experiencias digitales claras y estrategicas para el crecimiento de tu negocio',
+title: 'Web Developer', title_es: 'Desarrollo Web',
+location: 'Custom websites for stronger online presence', location_es: 'Sitios web personalizados para una presencia en linea mas solida',
+code: '#TBA-WEB-01',
+image: 'https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1000&q=80',
+alt: 'Web development service', alt_es: 'Servicio de desarrollo web'
+},
+{
+pill: 'Social Media Strategy', pill_es: 'Estrategia de Redes Sociales',
+copy: 'Strategic content plans designed to build trust and visibility', copy_es: 'Planes de contenido estrategicos disenados para generar confianza y visibilidad',
+meta: 'We shape your message so every post supports business goals', meta_es: 'Damos forma a tu mensaje para que cada publicacion apoye tus metas de negocio',
+title: 'Social Strategy', title_es: 'Estrategia Social',
+location: 'Content direction that supports visibility and growth', location_es: 'Direccion de contenido que impulsa visibilidad y crecimiento',
+code: '',
+image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&w=1000&q=80',
+alt: 'Social media strategy service', alt_es: 'Servicio de estrategia en redes sociales'
+},
+{
+pill: 'Google My Business', pill_es: 'Google My Business',
+copy: 'Optimized local presence that helps customers find you faster', copy_es: 'Presencia local optimizada que ayuda a tus clientes a encontrarte mas rapido',
+meta: 'We improve credibility, search visibility, and local discovery', meta_es: 'Mejoramos tu credibilidad, visibilidad en busquedas y descubrimiento local',
+title: 'Google Business', title_es: 'Google Business',
+location: 'Local search visibility that brings real attention', location_es: 'Visibilidad en busquedas locales que atrae atencion real',
+code: '',
+image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80',
+alt: 'Google My Business optimization service', alt_es: 'Servicio de optimizacion de Google My Business'
+},
+{
+pill: 'VA Recruitment Agency', pill_es: 'Agencia de Reclutamiento VA',
+copy: 'Reliable virtual assistant recruitment tailored to your workflow', copy_es: 'Reclutamiento confiable de asistentes virtuales adaptado a tu flujo de trabajo',
+meta: 'We help you build support systems that save time and reduce friction', meta_es: 'Te ayudamos a construir sistemas de apoyo que ahorran tiempo y reducen fricciones',
+title: 'VA Recruitment', title_es: 'Reclutamiento VA',
+location: 'Hiring support for efficient and scalable operations', location_es: 'Apoyo de contratacion para operaciones eficientes y escalables',
+code: '',
+image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80',
+alt: 'VA recruitment service', alt_es: 'Servicio de reclutamiento de VAs'
+},
+{
+pill: 'Social Media Management', pill_es: 'Gestion de Redes Sociales',
+copy: 'Consistent day to day management for a polished digital presence', copy_es: 'Gestion diaria y constante para una presencia digital pulida',
+meta: 'We keep your channels active, aligned, and professionally presented', meta_es: 'Mantenemos tus canales activos, alineados y presentados de forma profesional',
+title: 'Social Management', title_es: 'Gestion Social',
+location: 'Ongoing execution for stronger brand consistency', location_es: 'Ejecucion constante para una marca mas consistente',
+code: '',
+image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80',
+alt: 'Social media management service', alt_es: 'Servicio de gestion de redes sociales'
+}
+];
 
     let currentService = 0;
 
@@ -4493,16 +4662,18 @@
     const servicesNext = document.getElementById('servicesNext');
 
     function renderService(index) {
-      const item = services[index];
-      servicesPill.textContent = item.pill;
-      servicesCopy.textContent = item.copy;
-      servicesMeta.textContent = item.meta;
-      phoneServiceTitle.textContent = item.title;
-      phoneServiceLocation.textContent = item.location;
-      phoneServiceCode.textContent = item.code;
-      phoneServiceImage.src = item.image;
-      phoneServiceImage.alt = item.alt;
-    }
+const item = services[index];
+const __es = (window.__tbaLang === 'es');
+servicesPill.textContent = __es ? item.pill_es : item.pill;
+servicesCopy.textContent = __es ? item.copy_es : item.copy;
+servicesMeta.textContent = __es ? item.meta_es : item.meta;
+phoneServiceTitle.textContent = __es ? item.title_es : item.title;
+phoneServiceLocation.textContent = __es ? item.location_es : item.location;
+phoneServiceCode.textContent = item.code;
+phoneServiceImage.src = item.image;
+phoneServiceImage.alt = __es ? item.alt_es : item.alt;
+}
+window.__tbaRefreshService = function(){ renderService(currentService); };
 
     servicesPrev.addEventListener('click', () => {
       currentService = (currentService - 1 + services.length) % services.length;
@@ -4637,5 +4808,206 @@
           data-widget-id="6a238429ed0ee22f92f984a5"
           data-source="WEB_USER"></script>
 
-  </body>
+  <script>
+(function(){
+var esDict = {
+'mq-webdesign':'Diseno Web',
+'mq-smm':'Marketing en Redes Sociales',
+'mq-seo':'SEO',
+'mq-gmb':'Google My Business',
+'mq-va':'Agencia de Reclutamiento VA',
+'mq-ads':'Anuncios de Google y Meta',
+'mq-ai':'Boss AI',
+'nav-home':'Inicio',
+'nav-about':'Nosotros',
+'nav-services':'Servicios',
+'nav-reviews':'Resenas',
+'nav-work':'Trabajos',
+'nav-blog':'Blog',
+'nav-va-1':'Reclutamiento VA',
+'nav-va-2':'Agencia',
+'nav-contact':'Contacto',
+'nav-note':'Estrategia creativa, sistemas inteligentes, crecimiento medible.',
+'hero-h1':'<span>SABEMOS LO QUE</span><span>HACEMOS</span>',
+'hero-banner':'The Boss Agency ha vuelto',
+'about-toggle-label':'Sobre Nosotros',
+'services-cta':'Explorar este servicio',
+'phone-header-title':'Servicio confirmado',
+'phone-close':'Cerrar',
+'phone-action':'Ver detalles del servicio',
+'about-panel-copy':'Ayudamos a negocios y organizaciones sin fines de lucro a crecer su presencia con una estrategia digital clara, marca solida, desarrollo web, SEO y contenido que conecta con la audiencia correcta. Cada proyecto se adapta a tus metas para que el trabajo se sienta alineado, practico y enfocado en un crecimiento medible.',
+'about-point-1-title':'Que hacemos',
+'about-point-1-copy':'Estrategia digital, desarrollo web, SEO, branding y creacion de contenido.',
+'about-point-2-title':'Como trabajamos',
+'about-point-2-copy':'Un enfoque personalizado centrado en tu audiencia, tus retos y tu proxima etapa de crecimiento.',
+'about-point-3-title':'Por que los clientes se quedan',
+'about-point-3-copy':'Construimos relaciones duraderas y soluciones pensadas para generar resultados visibles y medibles.',
+'impact-title':'Cifras reales que muestran como el respaldo de <span class="impact-highlight"><span>THE BOSS AGENCY CO</span></span> puede mejorar la visibilidad, la velocidad y el crecimiento de tu negocio',
+'impact-label-1':'Mayor visibilidad calificada en desarrollo web, Google My Business y posicionamiento social',
+'impact-label-2':'Horas ahorradas cada mes gracias a sistemas mas claros, apoyo de contenido y reclutamiento de asistentes virtuales',
+'impact-label-3':'Aumento potencial en trafico listo para convertir cuando marca, busqueda y contenido trabajan juntos',
+'impact-label-4':'Mas capacidad de ejecucion al contratar el apoyo correcto de VA mediante un proceso de reclutamiento mas rapido',
+'wc1-title':'Desarrollo Web',
+'wc2-title':'Estrategia de Redes Sociales',
+'wc3-title':'Google My Business',
+'wc4-title':'Agencia de Reclutamiento VA',
+'wc5-title':'Gestion de Redes Sociales',
+'benefits-label':'Beneficios',
+'wc1-li1':'Presencia profesional en linea',
+'wc1-li2':'Mejores primeras impresiones',
+'wc1-li3':'Camino mas claro hacia la conversion',
+'wc1-li4':'Experiencia responsiva en todos los dispositivos',
+'wc2-li1':'Direccion de contenido mas solida',
+'wc2-li2':'Mensaje alineado',
+'wc2-li3':'Planificacion enfocada en la audiencia',
+'wc2-li4':'Mayor consistencia de marca',
+'wc3-li1':'Mejor descubrimiento local',
+'wc3-li2':'Mayor credibilidad del negocio',
+'wc3-li3':'Mas visibilidad en el mapa',
+'wc3-li4':'Mas acciones de clientes',
+'wc4-li1':'Mas capacidad de equipo',
+'wc4-li2':'Menos presion administrativa',
+'wc4-li3':'Mejor apoyo en el flujo de trabajo',
+'wc4-li4':'Tiempo ahorrado para tareas de mayor valor',
+'wc5-li1':'Ritmo de publicacion constante',
+'wc5-li2':'Mantenimiento profesional de cuentas',
+'wc5-li3':'Presencia de marca mas pulida',
+'wc5-li4':'Apoyo continuo de visibilidad',
+'success-band':'SE UNA HISTORIA DE EXITO',
+'reviews-kicker':'Resenas',
+'reviews-title':'Lo que dicen <span class="chip-line">nuestros clientes</span>',
+'reviews-copy':'Algunas palabras de personas y equipos a los que hemos apoyado con estrategia, visibilidad y crecimiento digital.',
+'reviews-cta':'Opiniones de clientes',
+'projects-kicker':'Trabajos Anteriores',
+'projects-title':'Proyectos seleccionados y direccion creativa',
+'projects-view':'Ver Proyecto',
+'projects-close':'Cerrar Galeria',
+'va-view-here':'Ver Aqui',
+'va-coming':'Proximamente',
+'contact-eyebrow':'Contacto',
+'contact-title':'Construyamos tu proximo paso de crecimiento',
+'contact-copy':'Empecemos con una conversacion clara sobre tus metas, tu audiencia y los sistemas digitales que necesitas para tu proxima etapa de crecimiento.',
+'contact-form-title':'Envianos tu consulta',
+'lbl-firstname':'Nombre',
+'lbl-lastname':'Apellido',
+'lbl-email':'Correo electronico',
+'lbl-phone':'Telefono',
+'lbl-budget':'Presupuesto estimado',
+'opt-select-range':'Selecciona un rango',
+'opt-not-sure':'Aun no estoy seguro',
+'opt-under-1k':'Menos de $1,000/mes',
+'opt-1k-2.5k':'$1,000 - $2,500/mes',
+'opt-2.5k-5k':'$2,500 - $5,000/mes',
+'opt-5k-plus':'$5,000+/mes',
+'lbl-leadsource':'Como nos conociste?',
+'opt-select-option':'Selecciona una opcion',
+'opt-google':'Busqueda en Google',
+'opt-social':'Redes Sociales',
+'opt-referral':'Referido',
+'opt-email':'Correo electronico',
+'opt-other':'Otro',
+'lbl-services-needed':'Servicios que necesitas',
+'chip-web':'Desarrollo Web',
+'chip-smstrategy':'Estrategia de Redes Sociales',
+'chip-gmb':'Google My Business',
+'chip-va':'Reclutamiento VA',
+'chip-smm':'Gestion de Redes Sociales',
+'lbl-message':'Detalles del proyecto',
+'submit-btn':'Enviar consulta',
+'footer-copy':'(c) The Boss Agency Co. Todos los derechos reservados.',
+'blog-kicker':'Blog',
+'blog-title':'Ideas, Novedades Y Contenido',
+'blog-intro':'Una mezcla de articulos originales sobre nuestra Agencia de Reclutamiento VA y los servicios de Boss AI, ademas de un resumen de publicaciones del equipo de The Boss Agency Co.',
+'blog-tag-va':'Reclutamiento VA',
+'blog-va-title':'Conoce Nuestra Agencia de Reclutamiento de VAs: Creada Para Un Crecimiento Real',
+'blog-va-p1':'Encontrar apoyo remoto confiable no deberia sentirse como una apuesta. Nuestra Agencia de Reclutamiento de VAs conecta a negocios en crecimiento con asistentes virtuales evaluados, preparados y listos para aportar desde el primer dia.',
+'blog-read-article':'Leer Articulo',
+'blog-va-p2':'Para los duenos de negocio, esto significa menos tiempo filtrando candidatos y mas tiempo enfocado en lo que realmente hace avanzar a la empresa. Cada VA en nuestro grupo de talento se asigna segun las habilidades y el flujo de trabajo que tu negocio realmente necesita.',
+'blog-va-p3':'Para las asistentes virtuales, significa algo distinto: <strong>clientes constantes y evaluados</strong> en lugar de encargos impredecibles, pago justo con expectativas claras desde el inicio, y apoyo continuo junto con una comunidad pensada para el crecimiento a largo plazo, no para proyectos de una sola vez.',
+'blog-va-p4':'Ya sea que tengas un negocio listo para sumar apoyo confiable o seas una VA en busca de oportunidades reales, nuestra agencia de reclutamiento fue creada para que esa conexion sea simple y duradera.',
+'blog-va-cta':'Visitar la Agencia de Reclutamiento VA',
+'blog-tag-ai':'Boss AI',
+'blog-ai-title':'Boss AI: Sistemas Mas Inteligentes Para El Crecimiento Diario De Tu Negocio',
+'blog-ai-p1':'La inteligencia artificial ya no es solo para las grandes empresas de tecnologia. A traves de Boss AI, ayudamos a los negocios a poner herramientas de IA practicas al servicio de sus operaciones diarias, desde automatizar tareas repetitivas hasta responder a los clientes mas rapido.',
+'blog-ai-p2':'El objetivo es simple: devolverle tiempo al dueno del negocio. En lugar de pasar horas en seguimientos manuales, agendas o borradores de contenido, los sistemas impulsados por IA pueden encargarse de la parte repetitiva del trabajo mientras tu equipo se enfoca en la estrategia y las relaciones.',
+'blog-ai-p3':'<strong>Los beneficios se acumulan rapido:</strong> tiempos de respuesta mas rapidos para los clientes, menos errores manuales, un seguimiento mas constante, y un negocio que puede escalar su capacidad de atencion sin escalar de inmediato su nomina.',
+'blog-ai-p4':'Si tienes curiosidad sobre donde podria encajar la IA en tu negocio, vale la pena conversarlo. Boss AI esta diseniado para trabajar junto a tu equipo actual, no para reemplazar el toque humano que hace memorable a tu marca.',
+'blog-ai-cta':'Hablemos Sobre Boss AI',
+'blog-more-title':'Mas De The Boss Agency Co.',
+'blog-tag-wellbeing':'Bienestar',
+'blog-t1':'Formas practicas para que los duenos de negocio cuiden su bienestar mientras crecen con el apoyo de nuestro equipo.',
+'blog-en-note':'Articulo en ingles',
+'blog-learn-more':'Ver Mas',
+'blog-tag-strategy':'Estrategia',
+'blog-t2':'Por que enfocar tu negocio en un nicho claro facilita que tu marca sea reconocida y crezca.',
+'blog-tag-community':'Comunidad',
+'blog-t3':'Un vistazo a los retos y las redes de apoyo que ayudan a emprendedores hispanos a construir negocios duraderos.',
+'blog-tag-ai2':'IA',
+'blog-t4':'Como los duenos de pequenios negocios usan la inteligencia artificial para ahorrar tiempo y atender mejor a sus clientes.',
+'blog-tag-content':'Contenido',
+'blog-t5':'Una guia rapida para usar el blog como parte de una estrategia de marketing digital mas inteligente.',
+'blog-tag-marketing':'Marketing',
+'blog-t6':'Que hace realmente un especialista en marketing digital y como esa experiencia acelera el crecimiento del negocio.',
+'blog-tag-webdesign':'Diseno Web',
+'blog-t7':'Consejos de diseno web para que los pequenios negocios tengan un sitio que impulse su crecimiento.',
+'blog-t8':'Un repaso de por que WordPress sigue siendo una de las plataformas mas confiables para construir un sitio de negocio.',
+'blog-t9':'Estrategias clave de marketing digital que todo negocio nuevo deberia priorizar para crecer mas rapido.',
+'blog-t10':'Los obstaculos mas comunes en marketing digital para pequenios negocios, y por que el apoyo adecuado importa.'
+};
+var phDict = {
+'ph-firstname':'Tu nombre',
+'ph-lastname':'Tu apellido',
+'ph-phone':'(000) 000-0000',
+'ph-message':'Cuentanos sobre tus metas y en que necesitas apoyo.'
+};
+var originalText = {};
+var originalPH = {};
+function captureOriginals(){
+document.querySelectorAll('[data-i18n]').forEach(function(el){
+var key = el.getAttribute('data-i18n');
+if(!(key in originalText)) originalText[key] = el.innerHTML;
+});
+document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+var key = el.getAttribute('data-i18n-ph');
+if(!(key in originalPH)) originalPH[key] = el.getAttribute('placeholder') || '';
+});
+}
+function applyLang(lang){
+document.querySelectorAll('[data-i18n]').forEach(function(el){
+var key = el.getAttribute('data-i18n');
+if(lang === 'es' && esDict[key] != null){ el.innerHTML = esDict[key]; }
+else if(originalText[key] != null){ el.innerHTML = originalText[key]; }
+});
+document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+var key = el.getAttribute('data-i18n-ph');
+if(lang === 'es' && phDict[key] != null){ el.setAttribute('placeholder', phDict[key]); }
+else if(originalPH[key] != null){ el.setAttribute('placeholder', originalPH[key]); }
+});
+document.documentElement.setAttribute('lang', lang === 'es' ? 'es' : 'en');
+window.__tbaLang = lang;
+localStorage.setItem('tba_lang', lang);
+var btn = document.getElementById('langToggle');
+if(btn) btn.textContent = lang === 'es' ? 'EN' : 'ES';
+if (typeof window.__tbaRefreshService === 'function') window.__tbaRefreshService();
+}
+captureOriginals();
+applyLang(window.__tbaLang || 'en');
+var langBtn = document.getElementById('langToggle');
+if(langBtn){
+langBtn.addEventListener('click', function(){
+applyLang(window.__tbaLang === 'es' ? 'en' : 'es');
+});
+}
+document.querySelectorAll('.blog-original-toggle').forEach(function(btn){
+btn.addEventListener('click', function(){
+var targetId = btn.getAttribute('data-target');
+var body = document.getElementById(targetId);
+if(!body) return;
+var isOpen = body.classList.contains('open');
+body.classList.toggle('open', !isOpen);
+});
+});
+})();
+</script>
+</body>
 </html>
