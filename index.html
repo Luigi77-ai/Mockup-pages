@@ -226,14 +226,20 @@
     }
 
     .hero-corner-logo {
-position: absolute;
+position: fixed;
 top: 58px;
 right: 26px;
 z-index: 1600;
+transition: opacity 0.25s ease;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       line-height: 0;
+    }
+
+    .hero-corner-logo.is-hidden {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .hero-corner-logo img {
@@ -255,7 +261,12 @@ top: 54px;
 right: 14px;
 }
 
-.hero-corner-logo img {
+.hero-corner-logo.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .hero-corner-logo img {
 width: clamp(68px, 11vw, 94px);
 }
     }
@@ -270,7 +281,12 @@ top: 50px;
 right: 10px;
 }
 
-.hero-corner-logo img {
+.hero-corner-logo.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .hero-corner-logo img {
 width: clamp(58px, 14.5vw, 78px);
 }
     }
@@ -5008,5 +5024,6 @@ body.classList.toggle('open', !isOpen);
 });
 })();
 </script>
-</body>
+<script>(function(){var logo=document.querySelector('.hero-corner-logo');if(!logo)return;window.addEventListener('scroll',function(){if(window.scrollY>10){logo.classList.add('is-hidden');}else{logo.classList.remove('is-hidden');}},{passive:true});})();</script>
+  </body>
 </html>
